@@ -94,7 +94,7 @@
       "amount_thb": 10000.0,
       "balance_thb": 10000.4,
       "channel": "PROMPTPAY",
-      "ref": "IMG_5870.jpg"
+      "ref": "IMG_5870.webp"
     },
     {
       "date_str": "23/10/2026 03:01 น.",
@@ -102,7 +102,7 @@
       "amount_thb": -9999.81,
       "balance_thb": 0.59,
       "channel": "Dime! Save",
-      "ref": "IMG_5870.jpg"
+      "ref": "IMG_5870.webp"
     }
   ],
   "dividends": [

@@ -150,8 +150,12 @@ def resolve_slip_relative_path(filename: Optional[str], from_reports_dir: bool =
     fn = filename.strip()
     prefix = "../" if from_reports_dir else ""
     for folder in ["data/screenshots", "data/set-screenshot", "src/port"]:
-        if (Path(folder) / fn).exists():
+        target = Path(folder) / fn
+        if target.exists():
             return f"{prefix}{folder}/{fn}"
+        webp_target = target.with_suffix(".webp")
+        if webp_target.exists():
+            return f"{prefix}{folder}/{webp_target.name}"
     return f"{prefix}data/screenshots/{fn}"
 
 

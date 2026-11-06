@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>พอร์ตจำลองช้อนซื้อหุ้น Dip (Paper Trading) (ตัวละ ฿10,000)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #070b14;
+            --bg-card: #0d1527;
+            --bg-card-subtle: #111c34;
+            --border-color: rgba(255, 255, 255, 0.08);
+            --border-subtle: rgba(255, 255, 255, 0.04);
+            --text-main: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --emerald: #10b981;
+            --rose: #f43f5e;
+            --blue: #3b82f6;
+            --amber: #f59e0b;
+            --purple: #8b5cf6;
+            --cyan: #06b6d4;
+            --radius-sm: 8px;
+            --radius-md: 14px;
+            --radius-lg: 18px;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Prompt', 'Inter', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 24px;
+            min-height: 100vh;
+        }
+        .container { max-width: 1440px; margin: 0 auto; }
+        .header {
+            display: flex; justify-content: space-between; align-items: center;
+            flex-wrap: wrap; gap: 16px; margin-bottom: 24px; padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .meta-pill {
+            background: var(--bg-card); padding: 8px 16px; border-radius: var(--radius-sm);
+            border: 1px solid var(--border-color); font-size: 0.88rem; color: var(--text-secondary);
+        }
+        .grid-4-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 18px; margin-bottom: 24px; }
+        .grid-3-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 18px; margin-bottom: 24px; }
+        .card {
+            background: var(--bg-card); border: 1px solid var(--border-color);
+            border-radius: var(--radius-md); padding: 22px;
+        }
+        .kpi-label { font-size: 0.82rem; color: var(--text-secondary); text-transform: uppercase; margin-bottom: 8px; letter-spacing: 0.5px; }
+        .kpi-value { font-size: 1.95rem; font-weight: 700; font-family: 'Inter', sans-serif; }
+        .kpi-subtext { font-size: 0.88rem; color: var(--text-muted); margin-top: 6px; }
+        .section-title {
+            font-size: 1.25rem; font-weight: 700; margin-bottom: 16px;
+            display: flex; align-items: center; gap: 10px;
+        }
+        table {
+            width: 100%; border-collapse: collapse; font-size: 0.90rem;
+        }
+        th {
+            background: rgba(255, 255, 255, 0.03); color: var(--text-secondary);
+            padding: 12px 14px; text-align: left; font-weight: 600;
+            border-bottom: 1px solid var(--border-color); font-size: 0.82rem; text-transform: uppercase;
+        }
+        td {
+            padding: 14px; border-bottom: 1px solid var(--border-subtle); vertical-align: middle;
+        }
+        tr:hover td { background: rgba(255, 255, 255, 0.015); }
+        .ticker-link {
+            color: #60a5fa; font-weight: 700; text-decoration: none; font-family: 'Inter', sans-serif;
+        }
+        .ticker-link:hover { text-decoration: underline; }
+        .ticker-badge {
+            background: rgba(59, 130, 246, 0.15); color: #60a5fa; padding: 4px 10px;
+            border-radius: 6px; font-weight: 700; font-family: 'Inter', sans-serif; font-size: 0.90rem;
+        }
+        .badge {
+            display: inline-block; padding: 4px 10px; border-radius: 6px;
+            font-size: 0.78rem; font-weight: 600; text-align: center; white-space: nowrap;
+        }
+        .badge-success { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
+        .badge-danger { background: rgba(244, 63, 94, 0.15); color: #fb7185; border: 1px solid rgba(244, 63, 94, 0.3); }
+        .badge-warning { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
+        .badge-info { background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); }
+        .progress-bar-bg {
+            background: rgba(255, 255, 255, 0.08); border-radius: 6px; height: 8px; width: 100%; overflow: hidden;
+        }
+        .progress-bar-fill {
+            background: linear-gradient(90deg, #f43f5e, #f59e0b, #10b981); height: 100%; border-radius: 6px;
+        }
+        .metric-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+        .metric-box {
+            background: rgba(255, 255, 255, 0.02); padding: 10px; border-radius: 8px;
+            border: 1px solid var(--border-subtle);
+        }
+        .metric-lbl { font-size: 0.75rem; color: var(--text-muted); margin-bottom: 2px; }
+        .metric-val { font-size: 1.05rem; font-weight: 700; font-family: 'Inter', sans-serif; }
+        .card-item {
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        .card-item:hover {
+            transform: translateY(-2px); border-color: rgba(255, 255, 255, 0.15);
+        }
+        .text-muted { color: var(--text-muted); }
+        .small { font-size: 0.80rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <style>
+.rnav { display: flex; flex-direction: column; gap: 10px; box-sizing: border-box; width: 100%; max-width: 100%;
+  padding: 10px 14px; margin: 0 0 16px 0; background: #0f172a; border: 1px solid rgba(255,255,255,0.08); border-radius: 12px;
+  font-family: 'Prompt', 'Inter', -apple-system, sans-serif; font-size: 0.86rem; }
+.rnav-top-row { display: flex; align-items: center; justify-content: space-between; gap: 8px 16px; width: 100%; flex-wrap: wrap; }
+.rnav-links { display: flex; gap: 6px; min-width: 0; flex: 1 1 auto; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+.rnav-links::-webkit-scrollbar { display: none; }
+.rnav-link { flex: 0 0 auto; white-space: nowrap; padding: 6px 12px; border-radius: 8px; text-decoration: none; color: #94a3b8;
+  border: 1px solid transparent; transition: color 0.15s, background 0.15s; }
+.rnav-link:hover { color: #f8fafc; background: rgba(255,255,255,0.06); }
+.rnav-link.active { color: #60a5fa; background: rgba(59,130,246,0.15); border-color: #3b82f6; font-weight: 600; }
+.rnav-time { white-space: nowrap; color: #64748b; font-size: 0.78rem; }
+
+/* GLOBAL LIVE CONTROLS BAR */
+.rnav-live-bar { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap;
+  padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.06); font-size: 0.82rem; }
+.rnav-live-left { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.rnav-live-right { display: flex; align-items: center; gap: 10px; margin-left: auto; flex-wrap: wrap; }
+.rnav-refresh-btn { display: inline-flex; align-items: center; gap: 6px; background: linear-gradient(135deg, rgba(59, 130, 246, 0.22) 0%, rgba(37, 99, 235, 0.32) 100%);
+  border: 1px solid rgba(59, 130, 246, 0.45); color: #93c5fd; padding: 5px 12px; border-radius: 8px; font-size: 0.82rem; font-weight: 600;
+  cursor: pointer; transition: all 0.2s ease; font-family: inherit; }
+.rnav-refresh-btn:hover { background: linear-gradient(135deg, rgba(59, 130, 246, 0.35) 0%, rgba(37, 99, 235, 0.45) 100%); border-color: #60a5fa; color: #ffffff; }
+.rnav-live-badge { font-size: 0.66rem; background: rgba(59, 130, 246, 0.25); border: 1px solid rgba(59, 130, 246, 0.4); padding: 1px 5px; border-radius: 4px; color: #93c5fd; font-weight: 700; }
+.rnav-int-group { display: inline-flex; align-items: center; gap: 3px; background: rgba(15, 23, 42, 0.75); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 8px; padding: 2px 4px; }
+.rnav-int-label { font-size: 0.76rem; color: #94a3b8; font-weight: 600; padding-left: 4px; }
+.rnav-int-btn { padding: 3px 8px; border-radius: 5px; border: 1px solid transparent; background: transparent; color: #94a3b8; font-size: 0.78rem; font-weight: 600; cursor: pointer; transition: all 0.15s ease; font-family: inherit; }
+.rnav-int-btn:hover { color: #f8fafc; background: rgba(255, 255, 255, 0.08); }
+.rnav-int-btn.active { background: rgba(59, 130, 246, 0.3); border-color: #3b82f6; color: #60a5fa; font-weight: 700; }
+.rnav-status { font-size: 0.78rem; color: #94a3b8; white-space: nowrap; }
+
+@media (max-width: 640px) {
+  .rnav { padding: 8px 10px; gap: 8px; }
+  .rnav-top-row { gap: 6px; }
+  .rnav-live-bar { flex-direction: column; align-items: stretch; gap: 8px; padding-top: 6px; }
+  .rnav-live-left { justify-content: space-between; width: 100%; }
+  .rnav-live-right { width: 100%; justify-content: space-between; margin-left: 0; }
+  .rnav-time { font-size: 0.72rem; }
+  .rnav-status { font-size: 0.74rem; }
+  /* Every tab visible at once: wrap instead of scrolling sideways. */
+  .rnav-links { flex-wrap: wrap; overflow: visible; gap: 4px; }
+  .rnav-link { padding: 6px 9px; font-size: 0.80rem; }
+  /* Live bar: refresh and interval on one row, status underneath. */
+  .rnav-live-left { flex-wrap: nowrap; gap: 6px; }
+  .rnav-refresh-btn { padding: 5px 9px; }
+  .rnav-live-badge { display: none; }
+  .rnav-int-word { display: none; }
+  .rnav-int-btn { padding: 3px 6px; }
+}
+</style>
+<nav class="rnav" aria-label="รายงาน"><div class="rnav-top-row"><div class="rnav-links"><a href="portfolio_master.html" class="rnav-link">ภาพรวม</a><a href="portfolio_review.html" class="rnav-link">สุขภาพพอร์ต</a><a href="portfolio_recovery.html" class="rnav-link">แก้ดอย</a><a href="portfolio_dip_sim.html" class="rnav-link active" aria-current="page">Dip จำลอง</a><a href="trades_ledger.html" class="rnav-link">รายการซื้อขายทั้งหมด</a><a href="stock_chart.html" class="rnav-link">กราฟ</a><a href="watchlist.html" class="rnav-link">หุ้นที่สนใจ</a><a href="advisor.html" class="rnav-link">คำแนะนำ</a></div></div><div class="rnav-live-bar"><div class="rnav-live-left"><button id="rnav-btn-refresh" class="rnav-refresh-btn" onclick="triggerGlobalRefresh()" title="กดเพื่อดึงราคาตลาดสดทันที"><span id="rnav-refresh-icon" style="display:inline-block; transition:transform 0.6s ease;">🔄</span> <span id="rnav-refresh-text">รีเฟรชราคา</span> <span class="rnav-live-badge">Live</span></button><div class="rnav-int-group" title="อัปเดตราคาหุ้นอัตโนมัติ (5วิ - 60วิ)"><span class="rnav-int-label">⏱️<span class="rnav-int-word"> อัปเดตสด:</span></span><button id="rnav-live-0" class="rnav-int-btn active" onclick="setGlobalLiveInterval(0)">ปิด</button><button id="rnav-live-5" class="rnav-int-btn" onclick="setGlobalLiveInterval(5)">5s</button><button id="rnav-live-15" class="rnav-int-btn" onclick="setGlobalLiveInterval(15)">15s</button><button id="rnav-live-30" class="rnav-int-btn" onclick="setGlobalLiveInterval(30)">30s</button><button id="rnav-live-60" class="rnav-int-btn" onclick="setGlobalLiveInterval(60)">60s</button></div></div><div class="rnav-live-right"><span id="rnav-live-status" class="rnav-status">⚪ อัปเดตด้วยตนเอง</span><span class="rnav-time">อัปเดต: 2026-11-06 16:55</span></div></div></nav>
+<script>
+(function() {
+  var activeLink = document.querySelector(".rnav-link.active");
+  if (activeLink && activeLink.parentNode) {
+    activeLink.parentNode.scrollLeft = activeLink.offsetLeft - activeLink.parentNode.offsetLeft - 16;
+  }
+
+  var globalIntervalSec = 0;
+  var globalCountdownSec = 0;
+  var globalCountdownTimer = null;
+  var globalLastSyncTime = '';
+
+  window.triggerGlobalRefresh = async function() {
+    var btn = document.getElementById('rnav-btn-refresh');
+    var icon = document.getElementById('rnav-refresh-icon');
+    var text = document.getElementById('rnav-refresh-text');
+    var statusEl = document.getElementById('rnav-live-status');
+
+    if (btn) { btn.disabled = true; btn.style.opacity = '0.7'; }
+    if (icon) icon.style.transform = 'rotate(360deg)';
+    if (text) text.textContent = 'กำลังดึง...';
+
+    try {
+      if (typeof window.refreshLiveQuotes === 'function') {
+        await window.refreshLiveQuotes();
+      } else if (typeof window.fetchChartLiveQuotes === 'function') {
+        await window.fetchChartLiveQuotes();
+      } else {
+        await fetchGenericLiveQuotes();
+      }
+      var now = new Date();
+      globalLastSyncTime = now.toLocaleTimeString('th-TH', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+      updateGlobalStatusUI();
+    } catch (e) {
+      console.warn('Global refresh error:', e);
+      if (statusEl) statusEl.textContent = '⚠️ รีเฟรชไม่สำเร็จ';
+    } finally {
+      if (btn) { btn.disabled = false; btn.style.opacity = '1'; }
+      if (icon) icon.style.transform = 'none';
+      if (text) text.textContent = 'รีเฟรชราคา';
+    }
+  };
+
+  window.setGlobalLiveInterval = function(sec) {
+    globalIntervalSec = parseInt(sec, 10) || 0;
+    try {
+      localStorage.setItem('portfolio_live_interval', globalIntervalSec);
+    } catch (e) {}
+
+    [0, 5, 15, 30, 60].forEach(function(s) {
+      var b = document.getElementById('rnav-live-' + s);
+      if (b) b.classList.toggle('active', s === globalIntervalSec);
+    });
+
+    if (globalCountdownTimer) {
+      clearInterval(globalCountdownTimer);
+      globalCountdownTimer = null;
+    }
+
+    if (typeof window.setLiveInterval === 'function') {
+      window.setLiveInterval(globalIntervalSec);
+    }
+    if (typeof window.setChartLiveInterval === 'function') {
+      window.setChartLiveInterval(globalIntervalSec);
+    }
+
+    if (globalIntervalSec <= 0) {
+      updateGlobalStatusUI();
+      return;
+    }
+
+    globalCountdownSec = globalIntervalSec;
+    updateGlobalStatusUI();
+
+    if (typeof window.setLiveInterval !== 'function' && typeof window.setChartLiveInterval !== 'function') {
+      window.triggerGlobalRefresh();
+      globalCountdownTimer = setInterval(function() {
+        if (document.hidden) return;
+        globalCountdownSec--;
+        if (globalCountdownSec <= 0) {
+          globalCountdownSec = globalIntervalSec;
+          window.triggerGlobalRefresh();
+        }
+        updateGlobalStatusUI();
+      }, 1000);
+    }
+  };
+
+  function updateGlobalStatusUI() {
+    var statusEl = document.getElementById('rnav-live-status');
+    if (!statusEl) return;
+    if (globalIntervalSec <= 0) {
+      statusEl.innerHTML = globalLastSyncTime 
+        ? '🟢 ซิงค์ล่าสุด: <strong style="color:#60a5fa;">' + globalLastSyncTime + ' น.</strong>'
+        : '⚪ อัปเดตด้วยตนเอง';
+    } else {
+      var dot = '<span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:#10b981;box-shadow:0 0 6px #10b981;margin-right:4px;"></span>';
+      statusEl.innerHTML = dot + 'Live (' + globalIntervalSec + 's): <strong style="color:#10b981;">' + globalCountdownSec + 's</strong>' +
+        (globalLastSyncTime ? ' | <strong style="color:#60a5fa;">' + globalLastSyncTime + ' น.</strong>' : '');
+    }
+  }
+
+  async function fetchGenericLiveQuotes() {
+    var res = await fetch('https://scanner.tradingview.com/america/scan', {
+      method: 'POST',
+      mode: 'cors',
+      body: JSON.stringify({
+        symbols: { tickers: ["NASDAQ:NVDA","NASDAQ:AAPL","NASDAQ:MSFT","NASDAQ:GOOGL","NASDAQ:AMZN","NYSE:LLY","NASDAQ:TSLA","NASDAQ:AVGO","AMEX:VOO","NASDAQ:QQQI"] },
+        columns: ['close', 'change', 'premarket_close', 'premarket_change', 'postmarket_close', 'postmarket_change']
+      })
+    });
+    if (!res.ok) return;
+    var data = await res.json();
+    var quotes = {};
+    (data.data || []).forEach(function(item) {
+      var parts = (item.s || '').split(':');
+      var tk = parts.length > 1 ? parts[1] : parts[0];
+      quotes[tk] = {
+        close: item.d[0],
+        change: item.d[1],
+        premarket_close: item.d[2],
+        premarket_change: item.d[3],
+        postmarket_close: item.d[4],
+        postmarket_change: item.d[5]
+      };
+    });
+    var now = new Date();
+    var timeStr = now.toLocaleTimeString('th-TH', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+    var payload = { quotes: quotes, timeStr: timeStr, timestamp: Date.now() };
+    try { localStorage.setItem('portfolio_live_bus', JSON.stringify(payload)); } catch(e) {}
+    try {
+      if (!window.__LIVE_BC__) window.__LIVE_BC__ = new BroadcastChannel('stock_portfolio_live_channel');
+      window.__LIVE_BC__.postMessage(payload);
+    } catch(e) {}
+  }
+
+  window.addEventListener('DOMContentLoaded', function() {
+    try {
+      var saved = parseInt(localStorage.getItem('portfolio_live_interval') || '0', 10);
+      if (saved > 0) {
+        setGlobalLiveInterval(saved);
+      }
+    } catch (e) {}
+  });
+
+  try {
+    if (!window.__LIVE_BC__) window.__LIVE_BC__ = new BroadcastChannel('stock_portfolio_live_channel');
+    window.__LIVE_BC__.onmessage = function(ev) {
+      if (ev.data && ev.data.timeStr) {
+        globalLastSyncTime = ev.data.timeStr;
+        updateGlobalStatusUI();
+      }
+    };
+  } catch(e) {}
+})();
+</script>
+<style>
+@media (max-width: 640px) {
+  .rc-wrap { overflow: visible !important; border: none !important; background: transparent !important; box-shadow: none !important; }
+  table.rc-cards { display: block; width: 100% !important; min-width: 0 !important; border: none !important; background: transparent !important; }
+  table.rc-cards thead { display: none; }
+  table.rc-cards tbody, table.rc-cards tfoot { display: block; }
+  table.rc-cards tr { display: block; margin: 0 0 10px 0; padding: 10px 12px; border: 1px solid rgba(255,255,255,0.10);
+    border-radius: 12px; background: rgba(15,23,42,0.75); }
+  table.rc-cards td { display: flow-root; padding: 7px 0 !important; border: none !important;
+    border-bottom: 1px dashed rgba(255,255,255,0.06) !important; text-align: right !important; white-space: normal !important;
+    min-width: 0 !important; max-width: none !important; width: auto !important; position: static !important;
+    box-shadow: none !important; background: transparent !important; }
+  table.rc-cards td:last-child { border-bottom: none !important; }
+  table.rc-cards td[data-label]::before { content: attr(data-label); float: left; width: 40%; margin-right: 10px; text-align: left;
+    color: #94a3b8; font-size: 0.74rem; font-weight: 600; line-height: 1.5; }
+  table.rc-cards td.rc-head { font-size: 1.02rem; padding-bottom: 8px !important;
+    border-bottom: 1px solid rgba(255,255,255,0.10) !important; text-align: left !important; }
+  table.rc-cards td.rc-head::before { display: none; }
+  table.rc-cards td.rc-empty { display: none; }
+}
+</style>
+<script>
+(function () {
+  var PHONE = 640, timer = null;
+  function headers(table) {
+    var row = table.tHead && table.tHead.rows[table.tHead.rows.length - 1];
+    if (!row) return [];
+    var out = [];
+    for (var i = 0; i < row.cells.length; i++) {
+      var c = row.cells[i], tmp = document.createElement('div');
+      tmp.innerHTML = c.innerHTML.replace(/<br\s*\/?>/gi, ' ');
+      var text = (tmp.textContent || '').replace(/\s+/g, ' ').trim();
+      for (var k = 0; k < (c.colSpan || 1); k++) out.push(text);
+    }
+    return out;
+  }
+  function label(table) {
+    var hs = headers(table);
+    for (var b = 0; b < table.tBodies.length; b++) {
+      var rows = table.tBodies[b].rows;
+      for (var r = 0; r < rows.length; r++) {
+        var col = 0, cells = rows[r].cells;
+        for (var i = 0; i < cells.length; i++) {
+          var td = cells[i], h = hs[col] || '';
+          col += td.colSpan || 1;
+          if (i === 0 && cells.length > 1) { td.classList.add('rc-head'); continue; }
+          if (cells.length === 1) continue;
+          if (h) td.setAttribute('data-label', h);
+          var txt = (td.textContent || '').trim();
+          td.classList.toggle('rc-empty', !txt || txt === '-');
+        }
+      }
+    }
+  }
+  function apply() {
+    var phone = window.innerWidth <= PHONE;
+    var tables = document.querySelectorAll('table:not(.no-cards):not(.fin-table)');
+    for (var t = 0; t < tables.length; t++) {
+      var table = tables[t], wrap = table.parentElement;
+      if (!phone) {
+        if (table.classList.contains('rc-cards')) { table.classList.remove('rc-cards'); if (wrap) wrap.classList.remove('rc-wrap'); }
+        continue;
+      }
+      if (!table.tHead || table.closest('.rc-skip')) continue;
+      if (!table.classList.contains('rc-cards')) {
+        var avail = wrap ? wrap.clientWidth : window.innerWidth;
+        if (table.scrollWidth <= avail + 4) continue;
+        table.classList.add('rc-cards');
+        if (wrap) wrap.classList.add('rc-wrap');
+      }
+      label(table);
+    }
+  }
+  function schedule() { clearTimeout(timer); timer = setTimeout(apply, 120); }
+  document.addEventListener('DOMContentLoaded', function () {
+    apply();
+    window.addEventListener('resize', schedule);
+    // Live price refreshes rewrite rows; relabel them.
+    try { new MutationObserver(function (ms) {
+      for (var i = 0; i < ms.length; i++) { if (ms[i].target.closest && ms[i].target.closest('table')) { schedule(); return; } }
+      schedule();
+    }).observe(document.body, { childList: true, subtree: true }); } catch (e) {}
+  });
+})();
+</script>
+        <!-- HEADER -->
+        <div class="header">
+            <div>
+                <h1 style="font-size: 1.75rem; font-weight: 800; display: flex; align-items: center; gap: 12px;">
+                    <span>🧪</span> พอร์ตจำลองช้อนซื้อหุ้น Dip (Paper Trading)
+                </h1>
+                <div style="color: var(--text-secondary); margin-top: 4px; font-size: 0.92rem;">
+                    พอร์ตทดลองกลยุทธ์ Super Pullback in Uptrend ทุนจำลองตัวละ 10,000 บาท | เงินลงทุนจำลองคงที่ตัวละ <strong>฿10,000.00 THB</strong>
+                </div>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 10px;">
+                <div class="meta-pill">FX: 33.55 THB/USD</div>
+            </div>
+        </div>
+
+        <!-- KPI SUMMARY CARDS -->
+        <div class="grid-4-cols">
+            <div class="card" style="border-left: 4px solid var(--blue);">
+                <div class="kpi-label">เงินทุนจำลองรวม (Total Capital)</div>
+                <div class="kpi-value">฿0.00</div>
+                <div class="kpi-subtext">~$0.00 USD (0 หุ้น x ฿10,000)</div>
+            </div>
+            <div class="card" style="border-left: 4px solid var(--cyan);">
+                <div class="kpi-label">มูลค่าพอร์ตจำลองปัจจุบัน (Simulated NAV)</div>
+                <div class="kpi-value">฿0.00</div>
+                <div class="kpi-subtext">~$0.00 USD</div>
+                
+            </div>
+            <div class="card" style="border-left: 4px solid #94a3b8;">
+                <div class="kpi-label">กำไร/ขาดทุนจำลองรวม (Simulated P/L)</div>
+                <div class="kpi-value" style="color: #94a3b8;">฿0.00</div>
+                <div class="kpi-subtext" style="color: #94a3b8; font-weight: 700;">0.00% ($0.00 USD)</div>
+            </div>
+            <div class="card" style="border-left: 4px solid var(--border-color);">
+                <div class="kpi-label">สถานะการเทรดจำลอง (Trade Progress)</div>
+                <div class="kpi-value" style="font-size: 1.55rem; color: #94a3b8;">0/0 แดนบวก</div>
+                <div class="kpi-subtext">ชน TP: 0 | ชน SL: 0</div>
+            </div>
+        </div>
+
+        <!-- SECTION 1: SIMULATION HOLDINGS TABLE -->
+        
+        <div class="card" style="text-align: center; padding: 48px 24px; margin-bottom: 32px; border: 1px dashed var(--border-color);">
+            <div style="font-size: 2.5rem; margin-bottom: 12px;">🌱</div>
+            <h3 style="font-size: 1.25rem; font-weight: 700; color: #f1f5f9; margin-bottom: 8px;">ยังไม่มีไม้จำลอง</h3>
+            <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 0;">ใช้ <code>/dip</code> เพื่อสแกนหุ้นย่อ</p>
+        </div>
+        
+
+        <!-- SECTION 1.5: CLOSED TRADES / STOP-LOSS & TAKE-PROFIT EXECUTIONS -->
+        
+
+        <!-- SECTION 2: TRADE STRATEGY CARDS -->
+        
+
+        <!-- SECTION 3: RULES & PHILOSOPHY -->
+        <div class="card" style="background: rgba(13, 21, 39, 0.6); border: 1px dashed var(--border-color); margin-bottom: 32px;">
+            <h3 style="font-size: 1.1rem; margin-bottom: 12px; color: var(--amber);">
+                💡 วัตถุประสงค์และกติกาของพอร์ตจำลอง Dip นี้ (Paper Trading Rules)
+            </h3>
+            <ul style="padding-left: 20px; color: var(--text-secondary); font-size: 0.90rem; line-height: 1.8;">
+                <li><strong>เงินทุนเท่ากันทุกตัว:</strong> กำหนดเงินลงทุนจำลองคงที่ตัวละ ฿10,000 เพื่อวัดผลตอบแทนอย่างเที่ยงตรงโดยไม่ให้น้ำหนักตัวใดตัวหนึ่งเบี่ยงเบน.</li>
+                <li><strong>แยกขาดจากพอร์ตจริง:</strong> ตัวเลขในหน้านี้เป็นข้อมูลทดลองเชิงสถิติ จะไม่ถูกนำไปนับรวมในพอร์ตหลัก Dime! ของคุณ.</li>
+                <li><strong>ทดสอบวินัย Take-Profit และ Stop-Loss:</strong> บันทึกจุด Stop Loss ที่ 1.5 ATR และเป้าทำกำไรที่เส้น 50 วัน เพื่อพิสูจน์ว่าในระยะยาวอัตรา Win Rate และ Risk-to-Reward จะเป็นบวกจริงตามหลักคณิตศาสตร์.</li>
+                <li><strong>สามารถกลับมาเปิดดูเพื่อประเมินผลได้ตลอดเวลา:</strong> ระบบจะเชื่อมโยงราคาตลาดสดจาก TradingView API เสมอ.</li>
+            </ul>
+        </div>
+
+        <div style="text-align: center; color: var(--text-muted); font-size: 0.82rem; padding: 20px 0; border-top: 1px solid var(--border-subtle);">
+            Simulated Dip Paper Trading Engine | Developed with TradingView Screener live scanner API | All data is purely for educational simulation.
+        </div>
+    </div>
+    
+<!-- Stock Chart Dedicated Navigation Handler -->
+<script>
+function openChartModal(ticker, exchange, name, sector, cost, price, support, resistance, sl, tp, targetAvg) {
+    const params = new URLSearchParams();
+    if (ticker) params.set('ticker', ticker);
+    if (exchange) params.set('exchange', exchange);
+    if (name) params.set('name', name);
+    if (sector) params.set('sector', sector);
+    if (cost) params.set('cost', cost);
+    if (price) params.set('price', price);
+    if (support) params.set('support', support);
+    if (resistance) params.set('resistance', resistance);
+    if (sl) params.set('sl', sl);
+    if (tp) params.set('tp', tp);
+    if (targetAvg) params.set('target', targetAvg);
+    window.location.href = 'stock_chart.html?' + params.toString() + '#' + encodeURIComponent(ticker || '');
+}
+</script>
+
+</body>
+</html>

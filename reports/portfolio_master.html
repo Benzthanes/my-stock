@@ -1,0 +1,2085 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Master Portfolio & Wealth Summary - ไม่รวยก็ซวยอ่ะค้าบ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- TradingView Lightweight Charts -->
+    <script type="text/javascript" src="https://unpkg.com/lightweight-charts@4.2.0/dist/lightweight-charts.standalone.production.js"></script>
+    <style>
+        :root {
+            --bg-body: #070b14;
+            --bg-card: #0d1527;
+            --bg-card-subtle: #111c34;
+            --border-color: rgba(255, 255, 255, 0.08);
+            --border-subtle: rgba(255, 255, 255, 0.04);
+            --text-main: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --emerald: #10b981;
+            --rose: #f43f5e;
+            --blue: #3b82f6;
+            --amber: #f59e0b;
+            --purple: #8b5cf6;
+            --radius-sm: 8px;
+            --radius-md: 14px;
+            --radius-lg: 18px;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Prompt', 'Inter', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 24px;
+            min-height: 100vh;
+        }
+        .container { max-width: 1480px; margin: 0 auto; }
+        .header {
+            display: flex; justify-content: space-between; align-items: center;
+            flex-wrap: wrap; gap: 16px; margin-bottom: 24px; padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .meta-pill {
+            background: var(--bg-card); padding: 8px 16px; border-radius: var(--radius-sm);
+            border: 1px solid var(--border-color); font-size: 0.88rem; color: var(--text-secondary);
+        }
+        .grid-4-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; margin-bottom: 24px; }
+        .grid-3-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 18px; margin-bottom: 24px; }
+        .card {
+            background: var(--bg-card); border: 1px solid var(--border-color);
+            border-radius: var(--radius-md); padding: 24px;
+        }
+        .kpi-label { font-size: 0.82rem; color: var(--text-secondary); text-transform: uppercase; margin-bottom: 8px; letter-spacing: 0.5px; }
+        .kpi-value { font-size: 1.95rem; font-weight: 700; font-family: 'Inter', sans-serif; }
+        .kpi-subtext { font-size: 0.88rem; color: var(--text-muted); margin-top: 6px; }
+        .section-title {
+            font-size: 1.25rem; font-weight: 700; margin-bottom: 16px;
+            display: flex; align-items: center; gap: 10px;
+        }
+        .table-container {
+            overflow-x: auto;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-color);
+            background: var(--bg-card);
+        }
+        table {
+            width: 100%; border-collapse: collapse; font-size: 0.90rem;
+        }
+        th {
+            background: #0f192e; color: var(--text-secondary);
+            padding: 12px 14px; text-align: left; font-weight: 600;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky; top: 0; z-index: 10;
+        }
+        td {
+            padding: 12px 14px; border-bottom: 1px solid var(--border-subtle);
+        }
+        tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+        }
+        .badge {
+            padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; font-weight: 600; display: inline-block;
+        }
+        .badge-success { background: rgba(16, 185, 129, 0.15); color: var(--emerald); }
+        .badge-rose { background: rgba(244, 63, 94, 0.15); color: var(--rose); }
+        .badge-info { background: rgba(59, 130, 246, 0.15); color: var(--blue); }
+        .badge-purple { background: rgba(139, 92, 246, 0.15); color: var(--purple); }
+        .badge-amber { background: rgba(245, 158, 11, 0.15); color: var(--amber); border: 1px solid rgba(245, 158, 11, 0.3); }
+        .badge-neutral { background: rgba(255, 255, 255, 0.08); color: var(--text-secondary); }
+        .master-tab-bar {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 24px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 14px;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+        .master-tab-bar::-webkit-scrollbar { display: none; }
+        .master-tab-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            color: var(--text-secondary);
+            font-family: 'Prompt', 'Inter', -apple-system, sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+        .master-tab-btn:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.07);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+        .master-tab-btn.active {
+            color: #60a5fa;
+            background: rgba(59, 130, 246, 0.15);
+            border-color: #3b82f6;
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.2);
+        }
+        .tab-badge {
+            padding: 2px 8px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 6px;
+            font-size: 0.78rem;
+            font-weight: 500;
+            color: inherit;
+        }
+        .sub-tab-bar {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+        .sub-tab-btn {
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--text-secondary);
+            font-family: 'Prompt', 'Inter', -apple-system, sans-serif;
+            font-size: 0.88rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        .sub-tab-btn:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.08);
+        }
+        .sub-tab-btn.active {
+            background: rgba(139, 92, 246, 0.2);
+            border-color: #8b5cf6;
+            color: #c084fc;
+            font-weight: 600;
+        }
+        /* WEALTH & NAV GROWTH TIMELINE CARD */
+        .wealth-chart-card {
+            background: linear-gradient(180deg, rgba(13, 21, 39, 0.95) 0%, rgba(9, 14, 26, 0.98) 100%);
+            border: 1px solid rgba(59, 130, 246, 0.25);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            margin-bottom: 36px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+        }
+        .wealth-chart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-bottom: 18px;
+        }
+        .wealth-chart-title {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: #f8fafc;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .wealth-chart-sub {
+            font-size: 0.86rem;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+        .wealth-controls-bar {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .chart-ctrl-group {
+            display: inline-flex;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 3px;
+            gap: 3px;
+        }
+        .ctrl-btn {
+            padding: 6px 12px;
+            border-radius: 6px;
+            border: 1px solid transparent;
+            background: transparent;
+            color: var(--text-secondary);
+            font-size: 0.82rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            font-family: inherit;
+        }
+        .ctrl-btn:hover {
+            color: #f8fafc;
+            background: rgba(255, 255, 255, 0.06);
+        }
+        .ctrl-btn.active {
+            background: rgba(59, 130, 246, 0.25);
+            border-color: #3b82f6;
+            color: #60a5fa;
+            font-weight: 700;
+        }
+        .wealth-hud {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            gap: 12px;
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            padding: 14px 18px;
+            margin-bottom: 16px;
+        }
+        .wealth-hud-item {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+        .wealth-hud-label {
+            font-size: 0.74rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .wealth-hud-val {
+            font-size: 1.15rem;
+            font-weight: 700;
+            font-family: 'Inter', sans-serif;
+            color: #f8fafc;
+        }
+        .wealth-hud-sub {
+            font-size: 0.78rem;
+            color: var(--text-secondary);
+            font-family: 'Inter', sans-serif;
+        }
+        .wealth-legend-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+        }
+        .legend-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .legend-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        /* SUBCHART RESPONSIVE LAYOUT */
+        .wealth-subchart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 14px;
+            margin-bottom: 6px;
+            padding: 6px 4px 0 4px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        .subchart-title-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: #cbd5e1;
+        }
+        .subchart-ctrls-box {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 640px) {
+            .wealth-chart-card {
+                padding: 12px 10px;
+                margin-bottom: 20px;
+                border-radius: 12px;
+            }
+            .wealth-chart-header {
+                gap: 10px;
+                margin-bottom: 12px;
+            }
+            .wealth-chart-title {
+                font-size: 1.05rem;
+                line-height: 1.35;
+                gap: 6px;
+            }
+            .wealth-chart-sub {
+                font-size: 0.78rem;
+            }
+            .wealth-controls-bar {
+                width: 100%;
+                justify-content: space-between;
+            }
+            .wealth-hud {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 8px;
+                padding: 10px 12px;
+                border-radius: 10px;
+            }
+            .wealth-hud-item:last-child {
+                grid-column: span 2;
+            }
+            .wealth-hud-label {
+                font-size: 0.68rem;
+            }
+            .wealth-hud-val {
+                font-size: 1.0rem;
+            }
+            .wealth-hud-sub {
+                font-size: 0.72rem;
+            }
+            .wealth-subchart-header {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 8px;
+            }
+            .subchart-title-box {
+                font-size: 0.82rem;
+                justify-content: space-between;
+            }
+            .subchart-ctrls-box {
+                width: 100%;
+                justify-content: flex-end;
+            }
+            #sub-mode-hint {
+                display: none;
+            }
+            .wealth-legend-bar {
+                font-size: 0.72rem;
+                gap: 8px 10px;
+                padding-top: 10px;
+                margin-top: 10px;
+            }
+            .legend-item {
+                font-size: 0.72rem;
+                gap: 6px;
+            }
+            .header h1 {
+                font-size: 1.35rem !important;
+            }
+            .header p {
+                font-size: 0.82rem !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <style>
+.rnav { display: flex; flex-direction: column; gap: 10px; box-sizing: border-box; width: 100%; max-width: 100%;
+  padding: 10px 14px; margin: 0 0 16px 0; background: #0f172a; border: 1px solid rgba(255,255,255,0.08); border-radius: 12px;
+  font-family: 'Prompt', 'Inter', -apple-system, sans-serif; font-size: 0.86rem; }
+.rnav-top-row { display: flex; align-items: center; justify-content: space-between; gap: 8px 16px; width: 100%; flex-wrap: wrap; }
+.rnav-links { display: flex; gap: 6px; min-width: 0; flex: 1 1 auto; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+.rnav-links::-webkit-scrollbar { display: none; }
+.rnav-link { flex: 0 0 auto; white-space: nowrap; padding: 6px 12px; border-radius: 8px; text-decoration: none; color: #94a3b8;
+  border: 1px solid transparent; transition: color 0.15s, background 0.15s; }
+.rnav-link:hover { color: #f8fafc; background: rgba(255,255,255,0.06); }
+.rnav-link.active { color: #60a5fa; background: rgba(59,130,246,0.15); border-color: #3b82f6; font-weight: 600; }
+.rnav-time { white-space: nowrap; color: #64748b; font-size: 0.78rem; }
+
+/* GLOBAL LIVE CONTROLS BAR */
+.rnav-live-bar { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap;
+  padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.06); font-size: 0.82rem; }
+.rnav-live-left { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.rnav-live-right { display: flex; align-items: center; gap: 10px; margin-left: auto; flex-wrap: wrap; }
+.rnav-refresh-btn { display: inline-flex; align-items: center; gap: 6px; background: linear-gradient(135deg, rgba(59, 130, 246, 0.22) 0%, rgba(37, 99, 235, 0.32) 100%);
+  border: 1px solid rgba(59, 130, 246, 0.45); color: #93c5fd; padding: 5px 12px; border-radius: 8px; font-size: 0.82rem; font-weight: 600;
+  cursor: pointer; transition: all 0.2s ease; font-family: inherit; }
+.rnav-refresh-btn:hover { background: linear-gradient(135deg, rgba(59, 130, 246, 0.35) 0%, rgba(37, 99, 235, 0.45) 100%); border-color: #60a5fa; color: #ffffff; }
+.rnav-live-badge { font-size: 0.66rem; background: rgba(59, 130, 246, 0.25); border: 1px solid rgba(59, 130, 246, 0.4); padding: 1px 5px; border-radius: 4px; color: #93c5fd; font-weight: 700; }
+.rnav-int-group { display: inline-flex; align-items: center; gap: 3px; background: rgba(15, 23, 42, 0.75); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 8px; padding: 2px 4px; }
+.rnav-int-label { font-size: 0.76rem; color: #94a3b8; font-weight: 600; padding-left: 4px; }
+.rnav-int-btn { padding: 3px 8px; border-radius: 5px; border: 1px solid transparent; background: transparent; color: #94a3b8; font-size: 0.78rem; font-weight: 600; cursor: pointer; transition: all 0.15s ease; font-family: inherit; }
+.rnav-int-btn:hover { color: #f8fafc; background: rgba(255, 255, 255, 0.08); }
+.rnav-int-btn.active { background: rgba(59, 130, 246, 0.3); border-color: #3b82f6; color: #60a5fa; font-weight: 700; }
+.rnav-status { font-size: 0.78rem; color: #94a3b8; white-space: nowrap; }
+
+@media (max-width: 640px) {
+  .rnav { padding: 8px 10px; gap: 8px; }
+  .rnav-top-row { gap: 6px; }
+  .rnav-live-bar { flex-direction: column; align-items: stretch; gap: 8px; padding-top: 6px; }
+  .rnav-live-left { justify-content: space-between; width: 100%; }
+  .rnav-live-right { width: 100%; justify-content: space-between; margin-left: 0; }
+  .rnav-time { font-size: 0.72rem; }
+  .rnav-status { font-size: 0.74rem; }
+  /* Every tab visible at once: wrap instead of scrolling sideways. */
+  .rnav-links { flex-wrap: wrap; overflow: visible; gap: 4px; }
+  .rnav-link { padding: 6px 9px; font-size: 0.80rem; }
+  /* Live bar: refresh and interval on one row, status underneath. */
+  .rnav-live-left { flex-wrap: nowrap; gap: 6px; }
+  .rnav-refresh-btn { padding: 5px 9px; }
+  .rnav-live-badge { display: none; }
+  .rnav-int-word { display: none; }
+  .rnav-int-btn { padding: 3px 6px; }
+}
+</style>
+<nav class="rnav" aria-label="รายงาน"><div class="rnav-top-row"><div class="rnav-links"><a href="portfolio_master.html" class="rnav-link active" aria-current="page">ภาพรวม</a><a href="portfolio_review.html" class="rnav-link">สุขภาพพอร์ต</a><a href="portfolio_recovery.html" class="rnav-link">แก้ดอย</a><a href="portfolio_dip_sim.html" class="rnav-link">Dip จำลอง</a><a href="trades_ledger.html" class="rnav-link">รายการซื้อขายทั้งหมด</a><a href="stock_chart.html" class="rnav-link">กราฟ</a><a href="watchlist.html" class="rnav-link">หุ้นที่สนใจ</a><a href="advisor.html" class="rnav-link">คำแนะนำ</a></div></div><div class="rnav-live-bar"><div class="rnav-live-left"><button id="rnav-btn-refresh" class="rnav-refresh-btn" onclick="triggerGlobalRefresh()" title="กดเพื่อดึงราคาตลาดสดทันที"><span id="rnav-refresh-icon" style="display:inline-block; transition:transform 0.6s ease;">🔄</span> <span id="rnav-refresh-text">รีเฟรชราคา</span> <span class="rnav-live-badge">Live</span></button><div class="rnav-int-group" title="อัปเดตราคาหุ้นอัตโนมัติ (5วิ - 60วิ)"><span class="rnav-int-label">⏱️<span class="rnav-int-word"> อัปเดตสด:</span></span><button id="rnav-live-0" class="rnav-int-btn active" onclick="setGlobalLiveInterval(0)">ปิด</button><button id="rnav-live-5" class="rnav-int-btn" onclick="setGlobalLiveInterval(5)">5s</button><button id="rnav-live-15" class="rnav-int-btn" onclick="setGlobalLiveInterval(15)">15s</button><button id="rnav-live-30" class="rnav-int-btn" onclick="setGlobalLiveInterval(30)">30s</button><button id="rnav-live-60" class="rnav-int-btn" onclick="setGlobalLiveInterval(60)">60s</button></div></div><div class="rnav-live-right"><span id="rnav-live-status" class="rnav-status">⚪ อัปเดตด้วยตนเอง</span><span class="rnav-time">อัปเดต: 2026-11-06 16:55</span></div></div></nav>
+<script>
+(function() {
+  var activeLink = document.querySelector(".rnav-link.active");
+  if (activeLink && activeLink.parentNode) {
+    activeLink.parentNode.scrollLeft = activeLink.offsetLeft - activeLink.parentNode.offsetLeft - 16;
+  }
+
+  var globalIntervalSec = 0;
+  var globalCountdownSec = 0;
+  var globalCountdownTimer = null;
+  var globalLastSyncTime = '';
+
+  window.triggerGlobalRefresh = async function() {
+    var btn = document.getElementById('rnav-btn-refresh');
+    var icon = document.getElementById('rnav-refresh-icon');
+    var text = document.getElementById('rnav-refresh-text');
+    var statusEl = document.getElementById('rnav-live-status');
+
+    if (btn) { btn.disabled = true; btn.style.opacity = '0.7'; }
+    if (icon) icon.style.transform = 'rotate(360deg)';
+    if (text) text.textContent = 'กำลังดึง...';
+
+    try {
+      if (typeof window.refreshLiveQuotes === 'function') {
+        await window.refreshLiveQuotes();
+      } else if (typeof window.fetchChartLiveQuotes === 'function') {
+        await window.fetchChartLiveQuotes();
+      } else {
+        await fetchGenericLiveQuotes();
+      }
+      var now = new Date();
+      globalLastSyncTime = now.toLocaleTimeString('th-TH', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+      updateGlobalStatusUI();
+    } catch (e) {
+      console.warn('Global refresh error:', e);
+      if (statusEl) statusEl.textContent = '⚠️ รีเฟรชไม่สำเร็จ';
+    } finally {
+      if (btn) { btn.disabled = false; btn.style.opacity = '1'; }
+      if (icon) icon.style.transform = 'none';
+      if (text) text.textContent = 'รีเฟรชราคา';
+    }
+  };
+
+  window.setGlobalLiveInterval = function(sec) {
+    globalIntervalSec = parseInt(sec, 10) || 0;
+    try {
+      localStorage.setItem('portfolio_live_interval', globalIntervalSec);
+    } catch (e) {}
+
+    [0, 5, 15, 30, 60].forEach(function(s) {
+      var b = document.getElementById('rnav-live-' + s);
+      if (b) b.classList.toggle('active', s === globalIntervalSec);
+    });
+
+    if (globalCountdownTimer) {
+      clearInterval(globalCountdownTimer);
+      globalCountdownTimer = null;
+    }
+
+    if (typeof window.setLiveInterval === 'function') {
+      window.setLiveInterval(globalIntervalSec);
+    }
+    if (typeof window.setChartLiveInterval === 'function') {
+      window.setChartLiveInterval(globalIntervalSec);
+    }
+
+    if (globalIntervalSec <= 0) {
+      updateGlobalStatusUI();
+      return;
+    }
+
+    globalCountdownSec = globalIntervalSec;
+    updateGlobalStatusUI();
+
+    if (typeof window.setLiveInterval !== 'function' && typeof window.setChartLiveInterval !== 'function') {
+      window.triggerGlobalRefresh();
+      globalCountdownTimer = setInterval(function() {
+        if (document.hidden) return;
+        globalCountdownSec--;
+        if (globalCountdownSec <= 0) {
+          globalCountdownSec = globalIntervalSec;
+          window.triggerGlobalRefresh();
+        }
+        updateGlobalStatusUI();
+      }, 1000);
+    }
+  };
+
+  function updateGlobalStatusUI() {
+    var statusEl = document.getElementById('rnav-live-status');
+    if (!statusEl) return;
+    if (globalIntervalSec <= 0) {
+      statusEl.innerHTML = globalLastSyncTime 
+        ? '🟢 ซิงค์ล่าสุด: <strong style="color:#60a5fa;">' + globalLastSyncTime + ' น.</strong>'
+        : '⚪ อัปเดตด้วยตนเอง';
+    } else {
+      var dot = '<span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:#10b981;box-shadow:0 0 6px #10b981;margin-right:4px;"></span>';
+      statusEl.innerHTML = dot + 'Live (' + globalIntervalSec + 's): <strong style="color:#10b981;">' + globalCountdownSec + 's</strong>' +
+        (globalLastSyncTime ? ' | <strong style="color:#60a5fa;">' + globalLastSyncTime + ' น.</strong>' : '');
+    }
+  }
+
+  async function fetchGenericLiveQuotes() {
+    var res = await fetch('https://scanner.tradingview.com/america/scan', {
+      method: 'POST',
+      mode: 'cors',
+      body: JSON.stringify({
+        symbols: { tickers: ["NASDAQ:NVDA","NASDAQ:AAPL","NASDAQ:MSFT","NASDAQ:GOOGL","NASDAQ:AMZN","NYSE:LLY","NASDAQ:TSLA","NASDAQ:AVGO","AMEX:VOO","NASDAQ:QQQI"] },
+        columns: ['close', 'change', 'premarket_close', 'premarket_change', 'postmarket_close', 'postmarket_change']
+      })
+    });
+    if (!res.ok) return;
+    var data = await res.json();
+    var quotes = {};
+    (data.data || []).forEach(function(item) {
+      var parts = (item.s || '').split(':');
+      var tk = parts.length > 1 ? parts[1] : parts[0];
+      quotes[tk] = {
+        close: item.d[0],
+        change: item.d[1],
+        premarket_close: item.d[2],
+        premarket_change: item.d[3],
+        postmarket_close: item.d[4],
+        postmarket_change: item.d[5]
+      };
+    });
+    var now = new Date();
+    var timeStr = now.toLocaleTimeString('th-TH', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+    var payload = { quotes: quotes, timeStr: timeStr, timestamp: Date.now() };
+    try { localStorage.setItem('portfolio_live_bus', JSON.stringify(payload)); } catch(e) {}
+    try {
+      if (!window.__LIVE_BC__) window.__LIVE_BC__ = new BroadcastChannel('stock_portfolio_live_channel');
+      window.__LIVE_BC__.postMessage(payload);
+    } catch(e) {}
+  }
+
+  window.addEventListener('DOMContentLoaded', function() {
+    try {
+      var saved = parseInt(localStorage.getItem('portfolio_live_interval') || '0', 10);
+      if (saved > 0) {
+        setGlobalLiveInterval(saved);
+      }
+    } catch (e) {}
+  });
+
+  try {
+    if (!window.__LIVE_BC__) window.__LIVE_BC__ = new BroadcastChannel('stock_portfolio_live_channel');
+    window.__LIVE_BC__.onmessage = function(ev) {
+      if (ev.data && ev.data.timeStr) {
+        globalLastSyncTime = ev.data.timeStr;
+        updateGlobalStatusUI();
+      }
+    };
+  } catch(e) {}
+})();
+</script>
+<style>
+@media (max-width: 640px) {
+  .rc-wrap { overflow: visible !important; border: none !important; background: transparent !important; box-shadow: none !important; }
+  table.rc-cards { display: block; width: 100% !important; min-width: 0 !important; border: none !important; background: transparent !important; }
+  table.rc-cards thead { display: none; }
+  table.rc-cards tbody, table.rc-cards tfoot { display: block; }
+  table.rc-cards tr { display: block; margin: 0 0 10px 0; padding: 10px 12px; border: 1px solid rgba(255,255,255,0.10);
+    border-radius: 12px; background: rgba(15,23,42,0.75); }
+  table.rc-cards td { display: flow-root; padding: 7px 0 !important; border: none !important;
+    border-bottom: 1px dashed rgba(255,255,255,0.06) !important; text-align: right !important; white-space: normal !important;
+    min-width: 0 !important; max-width: none !important; width: auto !important; position: static !important;
+    box-shadow: none !important; background: transparent !important; }
+  table.rc-cards td:last-child { border-bottom: none !important; }
+  table.rc-cards td[data-label]::before { content: attr(data-label); float: left; width: 40%; margin-right: 10px; text-align: left;
+    color: #94a3b8; font-size: 0.74rem; font-weight: 600; line-height: 1.5; }
+  table.rc-cards td.rc-head { font-size: 1.02rem; padding-bottom: 8px !important;
+    border-bottom: 1px solid rgba(255,255,255,0.10) !important; text-align: left !important; }
+  table.rc-cards td.rc-head::before { display: none; }
+  table.rc-cards td.rc-empty { display: none; }
+}
+</style>
+<script>
+(function () {
+  var PHONE = 640, timer = null;
+  function headers(table) {
+    var row = table.tHead && table.tHead.rows[table.tHead.rows.length - 1];
+    if (!row) return [];
+    var out = [];
+    for (var i = 0; i < row.cells.length; i++) {
+      var c = row.cells[i], tmp = document.createElement('div');
+      tmp.innerHTML = c.innerHTML.replace(/<br\s*\/?>/gi, ' ');
+      var text = (tmp.textContent || '').replace(/\s+/g, ' ').trim();
+      for (var k = 0; k < (c.colSpan || 1); k++) out.push(text);
+    }
+    return out;
+  }
+  function label(table) {
+    var hs = headers(table);
+    for (var b = 0; b < table.tBodies.length; b++) {
+      var rows = table.tBodies[b].rows;
+      for (var r = 0; r < rows.length; r++) {
+        var col = 0, cells = rows[r].cells;
+        for (var i = 0; i < cells.length; i++) {
+          var td = cells[i], h = hs[col] || '';
+          col += td.colSpan || 1;
+          if (i === 0 && cells.length > 1) { td.classList.add('rc-head'); continue; }
+          if (cells.length === 1) continue;
+          if (h) td.setAttribute('data-label', h);
+          var txt = (td.textContent || '').trim();
+          td.classList.toggle('rc-empty', !txt || txt === '-');
+        }
+      }
+    }
+  }
+  function apply() {
+    var phone = window.innerWidth <= PHONE;
+    var tables = document.querySelectorAll('table:not(.no-cards):not(.fin-table)');
+    for (var t = 0; t < tables.length; t++) {
+      var table = tables[t], wrap = table.parentElement;
+      if (!phone) {
+        if (table.classList.contains('rc-cards')) { table.classList.remove('rc-cards'); if (wrap) wrap.classList.remove('rc-wrap'); }
+        continue;
+      }
+      if (!table.tHead || table.closest('.rc-skip')) continue;
+      if (!table.classList.contains('rc-cards')) {
+        var avail = wrap ? wrap.clientWidth : window.innerWidth;
+        if (table.scrollWidth <= avail + 4) continue;
+        table.classList.add('rc-cards');
+        if (wrap) wrap.classList.add('rc-wrap');
+      }
+      label(table);
+    }
+  }
+  function schedule() { clearTimeout(timer); timer = setTimeout(apply, 120); }
+  document.addEventListener('DOMContentLoaded', function () {
+    apply();
+    window.addEventListener('resize', schedule);
+    // Live price refreshes rewrite rows; relabel them.
+    try { new MutationObserver(function (ms) {
+      for (var i = 0; i < ms.length; i++) { if (ms[i].target.closest && ms[i].target.closest('table')) { schedule(); return; } }
+      schedule();
+    }).observe(document.body, { childList: true, subtree: true }); } catch (e) {}
+  });
+})();
+</script>
+        <!-- HEADER -->
+        <div class="header">
+            <div>
+                <h1 style="font-size: 2.1rem; font-weight: 800; letter-spacing: -0.5px;">
+                    💎 ศูนย์รวมข้อมูลพอร์ตการลงทุน Master Summary
+                </h1>
+                <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 4px;">
+                    พอร์ต: <strong style="color: #fff;">ไม่รวยก็ซวยอ่ะค้าบ</strong> | 
+                    โบรกเกอร์: <strong style="color: #fff;">Dime! (KKP Securities)</strong> | 
+                    บัญชี: <code>2081682995</code>
+                </p>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 8px;">
+                <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap; justify-content: flex-end;">
+                    <span id="kpi-fx-pill" class="meta-pill">⚡ 1 USD = 33.55 THB</span>
+                    <a href="https://github.com/Benzthanes/Stock-portfolio/actions/workflows/update_portfolio.yml" target="_blank" style="display: inline-flex; align-items: center; gap: 4px; text-decoration: none; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.35); color: #34d399; padding: 7px 12px; border-radius: 8px; font-size: 0.85rem; font-weight: 600; transition: all 0.2s ease; font-family: inherit;">
+                        <span>⚡ สั่งคำนวณสดบน Cloud ↗</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4 MAIN HERO KPIS -->
+        <div class="grid-4-cols">
+            <div class="card" style="border-left: 4px solid var(--blue);">
+                <div class="kpi-label" title="Total Net Worth / NAV">มูลค่าพอร์ตรวมสุทธิ</div>
+                <div id="kpi-net-worth-thb" class="kpi-value" style="color: #60a5fa; white-space: nowrap;">฿1,652,346.84</div>
+                <div id="kpi-net-worth-usd-sub" class="kpi-subtext">~$49,248.81 USD (หุ้น + เงินสด)</div>
+            </div>
+            <div class="card" style="border-left: 4px solid var(--purple);">
+                <div class="kpi-label" title="Net Deposited Capital">เงินต้นทุนเติมสุทธิ</div>
+                <div class="kpi-value" style="white-space: nowrap;">฿1,295,000.00</div>
+                <div class="kpi-subtext">จาก KKP Statement ทางการ 100% (PromptPay 19 ครั้ง - ถอนออก 1 ครั้ง)</div>
+            </div>
+            <div class="card" style="border-left: 4px solid #10b981;">
+                <div class="kpi-label" title="All-Time Net Profit">กำไรรวมสุทธิของพอร์ต</div>
+                <div id="kpi-all-time-profit-thb" class="kpi-value" style="color: #10b981; white-space: nowrap;">+฿357,346.84</div>
+                <div id="kpi-all-time-roi-sub" class="kpi-subtext" style="color: #10b981; font-weight: 700;">+27.59% All-Time ROI</div>
+            </div>
+            <div class="card" style="border-left: 4px solid var(--emerald);">
+                <div class="kpi-label" title="Total Idle Cash">เงินสดคงเหลือรวม</div>
+                <div id="kpi-total-cash-thb" class="kpi-value" style="white-space: nowrap;">฿51,672.15</div>
+                <div class="kpi-subtext">Dime! Save: ฿0.59 | Dime! USD: $1,540.09</div>
+            </div>
+        </div>
+
+        
+        <div class="card" style="background: rgba(245, 158, 11, 0.08); border: 1px solid rgba(245, 158, 11, 0.25); border-left: 4px solid var(--amber); margin-bottom: 24px; padding: 14px 18px; display: flex; align-items: center; gap: 12px;">
+            <span style="font-size: 1.25rem;">⚠️</span>
+            <div>
+                <strong style="color: var(--amber);">แจ้งเตือนความเสี่ยงการกระจุกตัว:</strong> พอร์ตมีหุ้นเดี่ยวเกินเกณฑ์ 40% (<strong>LLY = 79.1%</strong> ของพอร์ต) ควรระมัดระวังความผันผวนเฉพาะตัวของหุ้น
+            </div>
+        </div>
+        
+
+        <!-- SECONDARY METRICS: 3-COLS -->
+        <div class="grid-3-cols">
+            <div class="card">
+                <div class="kpi-label" title="Active Holdings">หุ้นที่กำลังถือครอง</div>
+                <div style="font-size: 1.45rem; font-weight: 700;">8 บริษัท</div>
+                <div style="margin-top: 8px; font-size: 0.9rem; color: var(--text-secondary);">
+                    มูลค่าตลาด: <strong id="kpi-stock-market-val-usd">$47,708.70</strong> (<span id="kpi-stock-market-val-thb">฿1,600,674.69</span>)<br>
+                    กำไรที่ยังไม่ขาย: <strong id="kpi-stock-unrealized-pl" style="color: #10b981;">+$8,546.18 (+21.82%)</strong>
+                </div>
+            </div>
+            <div class="card">
+                <div class="kpi-label" title="Realized P&L">กำไรที่ขายทำกำไรจริง</div>
+                <div style="font-size: 1.45rem; font-weight: 700; color: #10b981; white-space: nowrap;">+฿27,496.84</div>
+                <div style="margin-top: 8px; font-size: 0.9rem; color: var(--text-secondary);">
+                    คิดเป็นดอลลาร์: <strong style="color: #10b981; white-space: nowrap;">~+$821.39 USD</strong><br>
+                    ผลงานเทรด: <strong style="color: #10b981;">8/8 ไม้กำไร</strong>
+                </div>
+            </div>
+            <div class="card">
+                <div class="kpi-label" title="Dividends">เงินปันผลรับสะสม</div>
+                <div style="font-size: 1.45rem; font-weight: 700; color: #10b981; white-space: nowrap;">+$141.74</div>
+                <div style="margin-top: 8px; font-size: 0.9rem; color: var(--text-secondary);">
+                    คิดเป็นเงินไทย: <strong style="color: #10b981; white-space: nowrap;">+฿4,755.52</strong> (รับรวม 13 ครั้ง)<br>
+                    รวมกำไรปิดไม้ + ปันผล: <strong style="color: #10b981; white-space: nowrap;">+฿32,283.27</strong>
+                </div>
+            </div>
+        </div>
+
+        
+    <!-- SECTION: TOTAL WEALTH & NAV TIMELINE CHART -->
+    <div class="wealth-chart-card">
+        <div class="wealth-chart-header">
+            <div>
+                <div class="wealth-chart-title">
+                    <span>📈</span> กราฟการเติบโตของสินทรัพย์รวมสุทธิ (Total Wealth & NAV Growth)
+                    <span class="badge badge-info" style="font-size: 0.78rem; font-weight: 600;">เริ่มตั้งแต่เติมเงินวันแรก 2 ก.พ. 2569</span>
+                </div>
+                <div class="wealth-chart-sub">
+                    ติดตามมูลค่าพอร์ตรวมสุทธิ (หุ้น + เงินสด) เทียบกับเงินต้นเติมสุทธิตามจริง (278 วัน)
+                </div>
+            </div>
+            <div class="wealth-controls-bar">
+                <!-- Currency Toggle -->
+                <div class="chart-ctrl-group" title="สลับหน่วยสกุลเงิน">
+                    <button id="btn-ccy-thb" class="ctrl-btn active" onclick="switchWealthCcy('THB')">฿ THB</button>
+                    <button id="btn-ccy-usd" class="ctrl-btn" onclick="switchWealthCcy('USD')">$ USD</button>
+                </div>
+                <!-- Timeframe Filters -->
+                <div class="chart-ctrl-group" title="เลือกช่วงเวลา">
+                    <button id="btn-tf-1m" class="ctrl-btn" onclick="setWealthTf('1M')">1M</button>
+                    <button id="btn-tf-3m" class="ctrl-btn" onclick="setWealthTf('3M')">3M</button>
+                    <button id="btn-tf-6m" class="ctrl-btn" onclick="setWealthTf('6M')">6M</button>
+                    <button id="btn-tf-all" class="ctrl-btn active" onclick="setWealthTf('ALL')">ALL</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dynamic HUD / Crosshair Stats Strip -->
+        <div class="wealth-hud">
+            <div class="wealth-hud-item">
+                <span class="wealth-hud-label">วันที่อ้างอิง</span>
+                <span id="whud-date" class="wealth-hud-val" style="font-size: 1.02rem;">2026-11-06 <span style="color:#00e5ff; font-weight:600;">(ล่าสุด)</span></span>
+                <span class="wealth-hud-sub" style="color: var(--text-muted);">เริ่ม: 2026-02-02</span>
+            </div>
+            <div class="wealth-hud-item">
+                <span class="wealth-hud-label">สินทรัพย์รวมสุทธิ (NAV)</span>
+                <span id="whud-nav" class="wealth-hud-val" style="color: #00e5ff;">฿1,652,346.84</span>
+                <span class="wealth-hud-sub" style="color: #38bdf8;">ATH: ฿1,700,932.06</span>
+            </div>
+            <div class="wealth-hud-item">
+                <span class="wealth-hud-label">เงินต้นเติมสะสมสุทธิ</span>
+                <span id="whud-capital" class="wealth-hud-val" style="color: #fbbf24;">฿1,295,000.00</span>
+                <span class="wealth-hud-sub" style="color: var(--text-muted);">KKP Statement & Slips</span>
+            </div>
+            <div class="wealth-hud-item">
+                <span class="wealth-hud-label">กำไรสุทธิรวม (All-Time Profit)</span>
+                <span id="whud-profit" class="wealth-hud-val" style="color: #10b981;">+฿357,346.84 (+27.6%)</span>
+                <span class="wealth-hud-sub" style="color: #10b981;">ผลตอบแทนสุทธิตลอดกาล</span>
+            </div>
+            <div class="wealth-hud-item">
+                <span class="wealth-hud-label">มูลค่าหุ้นในพอร์ต</span>
+                <span id="whud-stock" class="wealth-hud-val">฿1,600,674.69</span>
+                <span class="wealth-hud-sub">เงินสด: <strong id="whud-cash" style="color: #10b981;">฿51,672.15</strong></span>
+            </div>
+        </div>
+
+        <!-- Main Chart Canvas Container -->
+        <div id="wealth-chart-container" style="width: 100%; height: 320px; position: relative;"></div>
+
+        <!-- Sub-Pane: Cumulative Net Profit & ROI Curve -->
+        <div class="wealth-subchart-header">
+            <div class="subchart-title-box">
+                <span>💰</span> <span id="subchart-title-text">กราฟกำไรสุทธิสะสมตลอดกาล (Cumulative All-Time Net Profit)</span>
+                <span id="sub-profit-badge" style="font-size: 0.80rem; font-weight: 700; padding: 2px 10px; border-radius: 9999px; background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3);">
+                    +฿357,346.84 (+27.6%)
+                </span>
+            </div>
+            <div class="subchart-ctrls-box">
+                <span id="sub-mode-hint" style="font-size: 0.78rem; color: var(--text-muted);">เส้นฐาน 0 บาท (เขียว = กำไรสะสม / แดง = ขาดทุนสะสม)</span>
+                <div class="chart-ctrl-group" style="margin: 0;" title="สลับมุมมองกำไรเป็นจำนวนเงินหรืออัตราส่วนต่อเงินทุน">
+                    <button id="btn-sub-val" class="ctrl-btn active" onclick="switchSubChartMode('VAL')">จำนวนเงิน (฿)</button>
+                    <button id="btn-sub-pct" class="ctrl-btn" onclick="switchSubChartMode('PCT')">อัตราส่วน (%)</button>
+                </div>
+            </div>
+        </div>
+        <div id="wealth-subchart-container" style="width: 100%; height: 135px; position: relative;"></div>
+
+        <!-- Legend and Footnote -->
+        <div class="wealth-legend-bar">
+            <div style="display: flex; gap: 20px; flex-wrap: wrap; align-items: center;">
+                <span class="legend-item">
+                    <span class="legend-dot" style="background: #00e5ff; box-shadow: 0 0 10px rgba(0, 229, 255, 0.8);"></span>
+                    <strong style="color: #00e5ff;">มูลค่าสินทรัพย์รวม (Total NAV: หุ้น + เงินสด)</strong>
+                </span>
+                <span class="legend-item">
+                    <span class="legend-dot" style="background: #fbbf24; box-shadow: 0 0 10px rgba(251, 191, 36, 0.8);"></span>
+                    <strong style="color: #fbbf24;">เงินต้นเติมสะสมสุทธิ (Net Capital)</strong>
+                </span>
+                <span class="legend-item">
+                    <span class="legend-dot" style="background: #10b981; box-shadow: 0 0 10px rgba(16, 185, 129, 0.8);"></span>
+                    <strong style="color: #10b981;">Diff กำไรเหนือทุน (NAV &gt; ทุน)</strong>
+                </span>
+                <span class="legend-item">
+                    <span class="legend-dot" style="background: #f43f5e; box-shadow: 0 0 10px rgba(244, 63, 94, 0.8);"></span>
+                    <strong style="color: #f43f5e;">Diff ต่ำกว่าทุน (NAV &lt; ทุน)</strong>
+                </span>
+                <span class="legend-item">
+                    <span class="legend-dot" style="background: #34d399; box-shadow: 0 0 10px rgba(52, 211, 153, 0.8);"></span>
+                    <strong id="legend-profit-text" style="color: #34d399;">เส้นกำไรสุทธิสะสม (Net Profit Baseline)</strong>
+                </span>
+            </div>
+            <div style="font-size: 0.78rem; color: var(--text-muted);">
+                💡 ชี้เมาส์บนกราฟเพื่อดูมูลค่า กำไร และสัดส่วนสินทรัพย์ในแต่ละวัน | หน้าต่างบนและล่างจะเลื่อนและซูมพร้อมกันอัตโนมัติ
+            </div>
+        </div>
+    </div>
+
+    <!-- Chart Script -->
+    <script>
+    (function() {
+        const rawData = [{"time": "2026-02-02", "nav_thb": 500000.0, "nav_usd": 14902.69, "capital_thb": 500000.0, "capital_usd": 14902.69, "stock_thb": 0.0, "stock_usd": 0.0, "cash_thb": 500000.0, "cash_usd": 14902.69, "profit_thb": 0.0, "profit_usd": 0.0, "roi_pct": 0.0}, {"time": "2026-02-03", "nav_thb": 441302.06, "nav_usd": 13153.17, "capital_thb": 450000.0, "capital_usd": 13412.42, "stock_thb": 31300.99, "stock_usd": 932.94, "cash_thb": 410001.07, "cash_usd": 12220.23, "profit_thb": -8697.94, "profit_usd": -259.25, "roi_pct": -1.93}, {"time": "2026-02-04", "nav_thb": 487378.01, "nav_usd": 14526.48, "capital_thb": 450000.0, "capital_usd": 13412.42, "stock_thb": 487377.84, "stock_usd": 14526.48, "cash_thb": 0.17, "cash_usd": 0.01, "profit_thb": 37378.01, "profit_usd": 1114.07, "roi_pct": 8.31}, {"time": "2026-02-05", "nav_thb": 450755.67, "nav_usd": 13434.94, "capital_thb": 450000.0, "capital_usd": 13412.42, "stock_thb": 450755.5, "stock_usd": 13434.93, "cash_thb": 0.17, "cash_usd": 0.01, "profit_thb": 755.67, "profit_usd": 22.52, "roi_pct": 0.17}, {"time": "2026-02-06", "nav_thb": 466895.42, "nav_usd": 13915.99, "capital_thb": 450000.0, "capital_usd": 13412.42, "stock_thb": 466895.25, "stock_usd": 13915.99, "cash_thb": 0.17, "cash_usd": 0.01, "profit_thb": 16895.42, "profit_usd": 503.57, "roi_pct": 3.75}, {"time": "2026-02-07", "nav_thb": 466895.42, "nav_usd": 13915.99, "capital_thb": 450000.0, "capital_usd": 13412.42, "stock_thb": 466895.25, "stock_usd": 13915.99, "cash_thb": 0.17, "cash_usd": 0.01, "profit_thb": 16895.42, "profit_usd": 503.57, "roi_pct": 3.75}, {"time": "2026-02-08", "nav_thb": 466895.42, "nav_usd": 13915.99, "capital_thb": 450000.0, "capital_usd": 13412.42, "stock_thb": 466895.25, "stock_usd": 13915.99, "cash_thb": 0.17, "cash_usd": 0.01, "profit_thb": 16895.42, "profit_usd": 503.57, "roi_pct": 3.75}, {"time": "2026-02-09", "nav_thb": 461327.88, "nav_usd": 13750.05, "capital_thb": 450000.0, "capital_usd": 13412.42, "stock_thb": 461327.71, "stock_usd": 13750.04, "cash_thb": 0.17, "cash_usd": 0.01, "profit_thb": 11327.88, "profit_usd": 337.63, "roi_pct": 2.52}, {"time": "2026-02-10", "nav_thb": 452969.36, "nav_usd": 13500.92, "capital_thb": 450000.0, "capital_usd": 13412.42, "stock_thb": 452969.19, "stock_usd": 13500.91, "cash_thb": 0.17, "cash_usd": 0.01, "profit_thb": 2969.36, "profit_usd": 88.5, "roi_pct": 0.66}, {"time": "2026-02-11", "nav_thb": 448865.51, "nav_usd": 13378.6, "capital_thb": 450000.0, "capital_usd": 13412.42, "stock_thb": 448865.34, "stock_usd": 13378.6, "cash_thb": 0.17, "cash_usd": 0.01, "profit_thb": -1134.49, "profit_usd": -33.81, "roi_pct": -0.25}, {"time": "2026-02-12", "nav_thb": 458228.09, "nav_usd": 13657.66, "capital_thb": 450000.0, "capital_usd": 13412.42, "stock_thb": 458227.92, "stock_usd": 13657.65, "cash_thb": 0.17, "cash_usd": 0.01, "profit_thb": 8228.09, "profit_usd": 245.24, "roi_pct": 1.83}, {"time": "2026-02-13", "nav_thb": 458983.4, "nav_usd": 13680.17, "capital_thb": 450000.0, "capital_usd": 13412.42, "stock_thb": 458983.23, "stock_usd": 13680.17, "cash_thb": 0.17, "cash_usd": 0.01, "profit_thb": 8983.4, "profit_usd": 267.75, "roi_pct": 2.0}, {"time": "2026-02-14", "nav_thb": 458983.4, "nav_usd": 13680.17, "capital_thb": 450000.0, "capital_usd": 13412.42, "stock_thb": 458983.23, "stock_usd": 13680.17, "cash_thb": 0.17, "cash_usd": 0.01, "profit_thb": 8983.4, "profit_usd": 267.75, "roi_pct": 2.0}, {"time": "2026-02-15", "nav_thb": 458983.4, "nav_usd": 13680.17, "capital_thb": 450000.0, "capital_usd": 13412.42, "stock_thb": 458983.23, "stock_usd": 13680.17, "cash_thb": 0.17, "cash_usd": 0.01, "profit_thb": 8983.4, "profit_usd": 267.75, "roi_pct": 2.0}, {"time": "2026-02-16", "nav_thb": 458983.4, "nav_usd": 13680.17, "capital_thb": 450000.0, "capital_usd": 13412.42, "stock_thb": 458983.23, "stock_usd": 13680.17, "cash_thb": 0.17, "cash_usd": 0.01, "profit_thb": 8983.4, "profit_usd": 267.75, "roi_pct": 2.0}, {"time": "2026-02-17", "nav_thb": 457335.05, "nav_usd": 13631.04, "capital_thb": 450000.0, "capital_usd": 13412.42, "stock_thb": 457334.88, "stock_usd": 13631.04, "cash_thb": 0.17, "cash_usd": 0.01, "profit_thb": 7335.05, "profit_usd": 218.62, "roi_pct": 1.63}, {"time": "2026-02-18", "nav_thb": 450816.45, "nav_usd": 13436.75, "capital_thb": 450000.0, "capital_usd": 13412.42, "stock_thb": 450816.28, "stock_usd": 13436.75, "cash_thb": 0.17, "cash_usd": 0.01, "profit_thb": 816.45, "profit_usd": 24.33, "roi_pct": 0.18}, {"time": "2026-02-19", "nav_thb": 451873.35, "nav_usd": 13468.25, "capital_thb": 450000.0, "capital_usd": 13412.42, "stock_thb": 451873.18, "stock_usd": 13468.25, "cash_thb": 0.17, "cash_usd": 0.01, "profit_thb": 1873.35, "profit_usd": 55.84, "roi_pct": 0.42}, {"time": "2026-02-20", "nav_thb": 446256.52, "nav_usd": 13300.84, "capital_thb": 450000.0, "capital_usd": 13412.42, "stock_thb": 446256.35, "stock_usd": 13300.84, "cash_thb": 0.17, "cash_usd": 0.01, "profit_thb": -3743.48, "profit_usd": -111.58, "roi_pct": -0.83}, {"time": "2026-02-21", "nav_thb": 446376.64, "nav_usd": 13304.42, "capital_thb": 450000.0, "capital_usd": 13412.42, "stock_thb": 446256.35, "stock_usd": 13300.84, "cash_thb": 120.28, "cash_usd": 3.59, "profit_thb": -3623.36, "profit_usd": -108.0, "roi_pct": -0.81}, {"time": "2026-02-22", "nav_thb": 446376.64, "nav_usd": 13304.42, "capital_thb": 450000.0, "capital_usd": 13412.42, "stock_thb": 446256.35, "stock_usd": 13300.84, "cash_thb": 120.28, "cash_usd": 3.59, "profit_thb": -3623.36, "profit_usd": -108.0, "roi_pct": -0.81}, {"time": "2026-02-23", "nav_thb": 466824.07, "nav_usd": 13913.86, "capital_thb": 450000.0, "capital_usd": 13412.42, "stock_thb": 466703.78, "stock_usd": 13910.28, "cash_thb": 120.28, "cash_usd": 3.59, "profit_thb": 16824.07, "profit_usd": 501.45, "roi_pct": 3.74}, {"time": "2026-02-24", "nav_thb": 460088.19, "nav_usd": 13713.1, "capital_thb": 450000.0, "capital_usd": 13412.42, "stock_thb": 459967.91, "stock_usd": 13709.51, "cash_thb": 120.28, "cash_usd": 3.59, "profit_thb": 10088.19, "profit_usd": 300.68, "roi_pct": 2.24}, {"time": "2026-02-25", "nav_thb": 454696.22, "nav_usd": 13552.39, "capital_thb": 450000.0, "capital_usd": 13412.42, "stock_thb": 454575.93, "stock_usd": 13548.8, "cash_thb": 120.28, "cash_usd": 3.59, "profit_thb": 4696.22, "profit_usd": 139.97, "roi_pct": 1.04}, {"time": "2026-02-26", "nav_thb": 451661.03, "nav_usd": 13461.92, "capital_thb": 450000.0, "capital_usd": 13412.42, "stock_thb": 451540.75, "stock_usd": 13458.34, "cash_thb": 120.28, "cash_usd": 3.59, "profit_thb": 1661.03, "profit_usd": 49.51, "roi_pct": 0.37}, {"time": "2026-02-27", "nav_thb": 464215.67, "nav_usd": 13836.12, "capital_thb": 450000.0, "capital_usd": 13412.42, "stock_thb": 464095.39, "stock_usd": 13832.54, "cash_thb": 120.28, "cash_usd": 3.59, "profit_thb": 14215.67, "profit_usd": 423.7, "roi_pct": 3.16}, {"time": "2026-02-28", "nav_thb": 464215.67, "nav_usd": 13836.12, "capital_thb": 450000.0, "capital_usd": 13412.42, "stock_thb": 464095.39, "stock_usd": 13832.54, "cash_thb": 120.28, "cash_usd": 3.59, "profit_thb": 14215.67, "profit_usd": 423.7, "roi_pct": 3.16}, {"time": "2026-03-01", "nav_thb": 464215.67, "nav_usd": 13836.12, "capital_thb": 450000.0, "capital_usd": 13412.42, "stock_thb": 464095.39, "stock_usd": 13832.54, "cash_thb": 120.28, "cash_usd": 3.59, "profit_thb": 14215.67, "profit_usd": 423.7, "roi_pct": 3.16}, {"time": "2026-03-02", "nav_thb": 449888.32, "nav_usd": 13409.09, "capital_thb": 450000.0, "capital_usd": 13412.42, "stock_thb": 449768.04, "stock_usd": 13405.5, "cash_thb": 120.28, "cash_usd": 3.59, "profit_thb": -111.68, "profit_usd": -3.33, "roi_pct": -0.02}, {"time": "2026-03-03", "nav_thb": 445392.43, "nav_usd": 13275.09, "capital_thb": 550000.0, "capital_usd": 16392.95, "stock_thb": 445272.06, "stock_usd": 13271.5, "cash_thb": 120.36, "cash_usd": 3.59, "profit_thb": -104607.57, "profit_usd": -3117.87, "roi_pct": -19.02}, {"time": "2026-03-04", "nav_thb": 447090.6, "nav_usd": 13325.7, "capital_thb": 550000.0, "capital_usd": 16392.95, "stock_thb": 447090.35, "stock_usd": 13325.69, "cash_thb": 0.25, "cash_usd": 0.01, "profit_thb": -102909.4, "profit_usd": -3067.25, "roi_pct": -18.71}, {"time": "2026-03-05", "nav_thb": 438444.23, "nav_usd": 13067.99, "capital_thb": 550000.0, "capital_usd": 16392.95, "stock_thb": 438443.98, "stock_usd": 13067.99, "cash_thb": 0.25, "cash_usd": 0.01, "profit_thb": -111555.77, "profit_usd": -3324.96, "roi_pct": -20.28}, {"time": "2026-03-06", "nav_thb": 441244.48, "nav_usd": 13151.46, "capital_thb": 550000.0, "capital_usd": 16392.95, "stock_thb": 441244.23, "stock_usd": 13151.45, "cash_thb": 0.25, "cash_usd": 0.01, "profit_thb": -108755.52, "profit_usd": -3241.5, "roi_pct": -19.77}, {"time": "2026-03-07", "nav_thb": 441244.48, "nav_usd": 13151.46, "capital_thb": 550000.0, "capital_usd": 16392.95, "stock_thb": 441244.23, "stock_usd": 13151.45, "cash_thb": 0.25, "cash_usd": 0.01, "profit_thb": -108755.52, "profit_usd": -3241.5, "roi_pct": -19.77}, {"time": "2026-03-08", "nav_thb": 441244.48, "nav_usd": 13151.46, "capital_thb": 550000.0, "capital_usd": 16392.95, "stock_thb": 441244.23, "stock_usd": 13151.45, "cash_thb": 0.25, "cash_usd": 0.01, "profit_thb": -108755.52, "profit_usd": -3241.5, "roi_pct": -19.77}, {"time": "2026-03-09", "nav_thb": 449054.04, "nav_usd": 13384.22, "capital_thb": 550000.0, "capital_usd": 16392.95, "stock_thb": 449053.79, "stock_usd": 13384.21, "cash_thb": 0.25, "cash_usd": 0.01, "profit_thb": -100945.96, "profit_usd": -3008.73, "roi_pct": -18.35}, {"time": "2026-03-10", "nav_thb": 446677.76, "nav_usd": 13313.4, "capital_thb": 550000.0, "capital_usd": 16392.95, "stock_thb": 445948.45, "stock_usd": 13291.66, "cash_thb": 729.31, "cash_usd": 21.74, "profit_thb": -103322.24, "profit_usd": -3079.56, "roi_pct": -18.79}, {"time": "2026-03-11", "nav_thb": 446051.82, "nav_usd": 13294.74, "capital_thb": 550000.0, "capital_usd": 16392.95, "stock_thb": 445322.5, "stock_usd": 13273.0, "cash_thb": 729.31, "cash_usd": 21.74, "profit_thb": -103948.18, "profit_usd": -3098.21, "roi_pct": -18.9}, {"time": "2026-03-12", "nav_thb": 436266.33, "nav_usd": 13003.08, "capital_thb": 550000.0, "capital_usd": 16392.95, "stock_thb": 435537.02, "stock_usd": 12981.34, "cash_thb": 729.31, "cash_usd": 21.74, "profit_thb": -113733.67, "profit_usd": -3389.87, "roi_pct": -20.68}, {"time": "2026-03-13", "nav_thb": 439400.45, "nav_usd": 13096.49, "capital_thb": 550000.0, "capital_usd": 16392.95, "stock_thb": 438671.13, "stock_usd": 13074.76, "cash_thb": 729.31, "cash_usd": 21.74, "profit_thb": -110599.55, "profit_usd": -3296.46, "roi_pct": -20.11}, {"time": "2026-03-14", "nav_thb": 442031.22, "nav_usd": 13174.9, "capital_thb": 550000.0, "capital_usd": 16392.95, "stock_thb": 442030.97, "stock_usd": 13174.9, "cash_thb": 0.25, "cash_usd": 0.01, "profit_thb": -107968.78, "profit_usd": -3218.05, "roi_pct": -19.63}, {"time": "2026-03-15", "nav_thb": 442031.22, "nav_usd": 13174.9, "capital_thb": 550000.0, "capital_usd": 16392.95, "stock_thb": 442030.97, "stock_usd": 13174.9, "cash_thb": 0.25, "cash_usd": 0.01, "profit_thb": -107968.78, "profit_usd": -3218.05, "roi_pct": -19.63}, {"time": "2026-03-16", "nav_thb": 445682.02, "nav_usd": 13283.72, "capital_thb": 550000.0, "capital_usd": 16392.95, "stock_thb": 445681.77, "stock_usd": 13283.71, "cash_thb": 0.25, "cash_usd": 0.01, "profit_thb": -104317.98, "profit_usd": -3109.24, "roi_pct": -18.97}, {"time": "2026-03-17", "nav_thb": 514045.88, "nav_usd": 15321.33, "capital_thb": 550000.0, "capital_usd": 16392.95, "stock_thb": 514045.63, "stock_usd": 15321.32, "cash_thb": 0.25, "cash_usd": 0.01, "profit_thb": -35954.12, "profit_usd": -1071.63, "roi_pct": -6.54}, {"time": "2026-03-18", "nav_thb": 507010.28, "nav_usd": 15111.63, "capital_thb": 550000.0, "capital_usd": 16392.95, "stock_thb": 507010.03, "stock_usd": 15111.62, "cash_thb": 0.25, "cash_usd": 0.01, "profit_thb": -42989.72, "profit_usd": -1281.32, "roi_pct": -7.82}, {"time": "2026-03-19", "nav_thb": 506782.3, "nav_usd": 15104.83, "capital_thb": 550000.0, "capital_usd": 16392.95, "stock_thb": 506782.05, "stock_usd": 15104.83, "cash_thb": 0.25, "cash_usd": 0.01, "profit_thb": -43217.7, "profit_usd": -1288.12, "roi_pct": -7.86}, {"time": "2026-03-20", "nav_thb": 500629.41, "nav_usd": 14921.45, "capital_thb": 830000.0, "capital_usd": 24738.46, "stock_thb": 500629.37, "stock_usd": 14921.44, "cash_thb": 0.04, "cash_usd": 0.0, "profit_thb": -329370.59, "profit_usd": -9817.01, "roi_pct": -39.68}, {"time": "2026-03-21", "nav_thb": 500748.52, "nav_usd": 14925.0, "capital_thb": 830000.0, "capital_usd": 24738.46, "stock_thb": 500629.37, "stock_usd": 14921.44, "cash_thb": 119.15, "cash_usd": 3.55, "profit_thb": -329251.48, "profit_usd": -9813.46, "roi_pct": -39.67}, {"time": "2026-03-22", "nav_thb": 500748.52, "nav_usd": 14925.0, "capital_thb": 830000.0, "capital_usd": 24738.46, "stock_thb": 500629.37, "stock_usd": 14921.44, "cash_thb": 119.15, "cash_usd": 3.55, "profit_thb": -329251.48, "profit_usd": -9813.46, "roi_pct": -39.67}, {"time": "2026-03-23", "nav_thb": 503435.25, "nav_usd": 15005.07, "capital_thb": 830000.0, "capital_usd": 24738.46, "stock_thb": 503316.1, "stock_usd": 15001.52, "cash_thb": 119.15, "cash_usd": 3.55, "profit_thb": -326564.75, "profit_usd": -9733.38, "roi_pct": -39.35}, {"time": "2026-03-24", "nav_thb": 499110.79, "nav_usd": 14876.18, "capital_thb": 830000.0, "capital_usd": 24738.46, "stock_thb": 498991.64, "stock_usd": 14872.63, "cash_thb": 119.15, "cash_usd": 3.55, "profit_thb": -330889.21, "profit_usd": -9862.28, "roi_pct": -39.87}, {"time": "2026-03-25", "nav_thb": 506148.94, "nav_usd": 15085.96, "capital_thb": 830000.0, "capital_usd": 24738.46, "stock_thb": 506029.8, "stock_usd": 15082.41, "cash_thb": 119.15, "cash_usd": 3.55, "profit_thb": -323851.06, "profit_usd": -9652.5, "roi_pct": -39.02}, {"time": "2026-03-26", "nav_thb": 495332.95, "nav_usd": 14763.58, "capital_thb": 830000.0, "capital_usd": 24738.46, "stock_thb": 495213.81, "stock_usd": 14760.03, "cash_thb": 119.15, "cash_usd": 3.55, "profit_thb": -334667.05, "profit_usd": -9974.88, "roi_pct": -40.32}, {"time": "2026-03-27", "nav_thb": 485000.62, "nav_usd": 14455.62, "capital_thb": 830000.0, "capital_usd": 24738.46, "stock_thb": 484881.47, "stock_usd": 14452.07, "cash_thb": 119.15, "cash_usd": 3.55, "profit_thb": -344999.38, "profit_usd": -10282.83, "roi_pct": -41.57}, {"time": "2026-03-28", "nav_thb": 485000.62, "nav_usd": 14455.62, "capital_thb": 830000.0, "capital_usd": 24738.46, "stock_thb": 484881.47, "stock_usd": 14452.07, "cash_thb": 119.15, "cash_usd": 3.55, "profit_thb": -344999.38, "profit_usd": -10282.83, "roi_pct": -41.57}, {"time": "2026-03-29", "nav_thb": 485000.62, "nav_usd": 14455.62, "capital_thb": 830000.0, "capital_usd": 24738.46, "stock_thb": 484881.47, "stock_usd": 14452.07, "cash_thb": 119.15, "cash_usd": 3.55, "profit_thb": -344999.38, "profit_usd": -10282.83, "roi_pct": -41.57}, {"time": "2026-03-30", "nav_thb": 488986.66, "nav_usd": 14574.43, "capital_thb": 830000.0, "capital_usd": 24738.46, "stock_thb": 488867.52, "stock_usd": 14570.88, "cash_thb": 119.15, "cash_usd": 3.55, "profit_thb": -341013.34, "profit_usd": -10164.03, "roi_pct": -41.09}, {"time": "2026-03-31", "nav_thb": 507222.97, "nav_usd": 15117.97, "capital_thb": 830000.0, "capital_usd": 24738.46, "stock_thb": 507103.83, "stock_usd": 15114.42, "cash_thb": 119.15, "cash_usd": 3.55, "profit_thb": -322777.03, "profit_usd": -9620.49, "roi_pct": -38.89}, {"time": "2026-04-01", "nav_thb": 809901.99, "nav_usd": 24139.43, "capital_thb": 830000.0, "capital_usd": 24738.46, "stock_thb": 809901.95, "stock_usd": 24139.43, "cash_thb": 0.04, "cash_usd": 0.0, "profit_thb": -20098.01, "profit_usd": -599.03, "roi_pct": -2.42}, {"time": "2026-04-02", "nav_thb": 794512.26, "nav_usd": 23680.73, "capital_thb": 830000.0, "capital_usd": 24738.46, "stock_thb": 794512.22, "stock_usd": 23680.73, "cash_thb": 0.04, "cash_usd": 0.0, "profit_thb": -35487.74, "profit_usd": -1057.73, "roi_pct": -4.28}, {"time": "2026-04-03", "nav_thb": 794512.26, "nav_usd": 23680.73, "capital_thb": 830000.0, "capital_usd": 24738.46, "stock_thb": 794512.22, "stock_usd": 23680.73, "cash_thb": 0.04, "cash_usd": 0.0, "profit_thb": -35487.74, "profit_usd": -1057.73, "roi_pct": -4.28}, {"time": "2026-04-04", "nav_thb": 794512.26, "nav_usd": 23680.73, "capital_thb": 830000.0, "capital_usd": 24738.46, "stock_thb": 794512.22, "stock_usd": 23680.73, "cash_thb": 0.04, "cash_usd": 0.0, "profit_thb": -35487.74, "profit_usd": -1057.73, "roi_pct": -4.28}, {"time": "2026-04-05", "nav_thb": 794512.26, "nav_usd": 23680.73, "capital_thb": 830000.0, "capital_usd": 24738.46, "stock_thb": 794512.22, "stock_usd": 23680.73, "cash_thb": 0.04, "cash_usd": 0.0, "profit_thb": -35487.74, "profit_usd": -1057.73, "roi_pct": -4.28}, {"time": "2026-04-06", "nav_thb": 787694.97, "nav_usd": 23477.54, "capital_thb": 830000.0, "capital_usd": 24738.46, "stock_thb": 787694.93, "stock_usd": 23477.54, "cash_thb": 0.04, "cash_usd": 0.0, "profit_thb": -42305.03, "profit_usd": -1260.92, "roi_pct": -5.1}, {"time": "2026-04-07", "nav_thb": 791014.67, "nav_usd": 23576.49, "capital_thb": 830000.0, "capital_usd": 24738.46, "stock_thb": 791014.63, "stock_usd": 23576.48, "cash_thb": 0.04, "cash_usd": 0.0, "profit_thb": -38985.33, "profit_usd": -1161.97, "roi_pct": -4.7}, {"time": "2026-04-08", "nav_thb": 809345.9, "nav_usd": 24122.85, "capital_thb": 830000.0, "capital_usd": 24738.46, "stock_thb": 809345.86, "stock_usd": 24122.85, "cash_thb": 0.04, "cash_usd": 0.0, "profit_thb": -20654.1, "profit_usd": -615.6, "roi_pct": -2.49}, {"time": "2026-04-09", "nav_thb": 810601.96, "nav_usd": 24160.29, "capital_thb": 830000.0, "capital_usd": 24738.46, "stock_thb": 810601.92, "stock_usd": 24160.29, "cash_thb": 0.04, "cash_usd": 0.0, "profit_thb": -19398.04, "profit_usd": -578.17, "roi_pct": -2.34}, {"time": "2026-04-10", "nav_thb": 808388.26, "nav_usd": 24094.31, "capital_thb": 840000.0, "capital_usd": 25036.51, "stock_thb": 808388.04, "stock_usd": 24094.31, "cash_thb": 0.22, "cash_usd": 0.01, "profit_thb": -31611.74, "profit_usd": -942.2, "roi_pct": -3.76}, {"time": "2026-04-11", "nav_thb": 808388.26, "nav_usd": 24094.31, "capital_thb": 840000.0, "capital_usd": 25036.51, "stock_thb": 808388.04, "stock_usd": 24094.31, "cash_thb": 0.22, "cash_usd": 0.01, "profit_thb": -31611.74, "profit_usd": -942.2, "roi_pct": -3.76}, {"time": "2026-04-12", "nav_thb": 808388.26, "nav_usd": 24094.31, "capital_thb": 840000.0, "capital_usd": 25036.51, "stock_thb": 808388.04, "stock_usd": 24094.31, "cash_thb": 0.22, "cash_usd": 0.01, "profit_thb": -31611.74, "profit_usd": -942.2, "roi_pct": -3.76}, {"time": "2026-04-13", "nav_thb": 800984.59, "nav_usd": 23873.64, "capital_thb": 840000.0, "capital_usd": 25036.51, "stock_thb": 800984.37, "stock_usd": 23873.64, "cash_thb": 0.22, "cash_usd": 0.01, "profit_thb": -39015.41, "profit_usd": -1162.87, "roi_pct": -4.64}, {"time": "2026-04-14", "nav_thb": 795881.88, "nav_usd": 23721.55, "capital_thb": 840000.0, "capital_usd": 25036.51, "stock_thb": 795881.66, "stock_usd": 23721.55, "cash_thb": 0.22, "cash_usd": 0.01, "profit_thb": -44118.12, "profit_usd": -1314.96, "roi_pct": -5.25}, {"time": "2026-04-15", "nav_thb": 782589.77, "nav_usd": 23325.38, "capital_thb": 840000.0, "capital_usd": 25036.51, "stock_thb": 782589.55, "stock_usd": 23325.37, "cash_thb": 0.22, "cash_usd": 0.01, "profit_thb": -57410.23, "profit_usd": -1711.13, "roi_pct": -6.83}, {"time": "2026-04-16", "nav_thb": 781890.65, "nav_usd": 23304.54, "capital_thb": 840000.0, "capital_usd": 25036.51, "stock_thb": 781890.43, "stock_usd": 23304.53, "cash_thb": 0.22, "cash_usd": 0.01, "profit_thb": -58109.35, "profit_usd": -1731.97, "roi_pct": -6.92}, {"time": "2026-04-17", "nav_thb": 801463.28, "nav_usd": 23887.91, "capital_thb": 840000.0, "capital_usd": 25036.51, "stock_thb": 801463.06, "stock_usd": 23887.9, "cash_thb": 0.22, "cash_usd": 0.01, "profit_thb": -38536.72, "profit_usd": -1148.6, "roi_pct": -4.59}, {"time": "2026-04-18", "nav_thb": 801463.28, "nav_usd": 23887.91, "capital_thb": 840000.0, "capital_usd": 25036.51, "stock_thb": 801463.06, "stock_usd": 23887.9, "cash_thb": 0.22, "cash_usd": 0.01, "profit_thb": -38536.72, "profit_usd": -1148.6, "roi_pct": -4.59}, {"time": "2026-04-19", "nav_thb": 801463.28, "nav_usd": 23887.91, "capital_thb": 840000.0, "capital_usd": 25036.51, "stock_thb": 801463.06, "stock_usd": 23887.9, "cash_thb": 0.22, "cash_usd": 0.01, "profit_thb": -38536.72, "profit_usd": -1148.6, "roi_pct": -4.59}, {"time": "2026-04-20", "nav_thb": 795555.66, "nav_usd": 23711.83, "capital_thb": 840000.0, "capital_usd": 25036.51, "stock_thb": 795555.44, "stock_usd": 23711.82, "cash_thb": 0.22, "cash_usd": 0.01, "profit_thb": -44444.34, "profit_usd": -1324.68, "roi_pct": -5.29}, {"time": "2026-04-21", "nav_thb": 781582.22, "nav_usd": 23295.35, "capital_thb": 840000.0, "capital_usd": 25036.51, "stock_thb": 781582.0, "stock_usd": 23295.34, "cash_thb": 0.22, "cash_usd": 0.01, "profit_thb": -58417.78, "profit_usd": -1741.16, "roi_pct": -6.95}, {"time": "2026-04-22", "nav_thb": 797647.49, "nav_usd": 23774.18, "capital_thb": 840000.0, "capital_usd": 25036.51, "stock_thb": 797647.27, "stock_usd": 23774.17, "cash_thb": 0.22, "cash_usd": 0.01, "profit_thb": -42352.51, "profit_usd": -1262.33, "roi_pct": -5.04}, {"time": "2026-04-23", "nav_thb": 793092.29, "nav_usd": 23638.41, "capital_thb": 840000.0, "capital_usd": 25036.51, "stock_thb": 793092.07, "stock_usd": 23638.4, "cash_thb": 0.22, "cash_usd": 0.01, "profit_thb": -46907.71, "profit_usd": -1398.1, "roi_pct": -5.58}, {"time": "2026-04-24", "nav_thb": 765964.55, "nav_usd": 22829.86, "capital_thb": 840000.0, "capital_usd": 25036.51, "stock_thb": 765964.33, "stock_usd": 22829.85, "cash_thb": 0.22, "cash_usd": 0.01, "profit_thb": -74035.45, "profit_usd": -2206.65, "roi_pct": -8.81}, {"time": "2026-04-25", "nav_thb": 766088.01, "nav_usd": 22833.54, "capital_thb": 840000.0, "capital_usd": 25036.51, "stock_thb": 765964.33, "stock_usd": 22829.85, "cash_thb": 123.69, "cash_usd": 3.69, "profit_thb": -73911.99, "profit_usd": -2202.97, "roi_pct": -8.8}, {"time": "2026-04-26", "nav_thb": 766088.01, "nav_usd": 22833.54, "capital_thb": 840000.0, "capital_usd": 25036.51, "stock_thb": 765964.33, "stock_usd": 22829.85, "cash_thb": 123.69, "cash_usd": 3.69, "profit_thb": -73911.99, "profit_usd": -2202.97, "roi_pct": -8.8}, {"time": "2026-04-27", "nav_thb": 753221.11, "nav_usd": 22450.03, "capital_thb": 840000.0, "capital_usd": 25036.51, "stock_thb": 753097.42, "stock_usd": 22446.35, "cash_thb": 123.69, "cash_usd": 3.69, "profit_thb": -86778.89, "profit_usd": -2586.48, "roi_pct": -10.33}, {"time": "2026-04-28", "nav_thb": 757567.6, "nav_usd": 22579.58, "capital_thb": 840000.0, "capital_usd": 25036.51, "stock_thb": 757443.91, "stock_usd": 22575.9, "cash_thb": 123.69, "cash_usd": 3.69, "profit_thb": -82432.4, "profit_usd": -2456.93, "roi_pct": -9.81}, {"time": "2026-04-29", "nav_thb": 738539.11, "nav_usd": 22012.43, "capital_thb": 840000.0, "capital_usd": 25036.51, "stock_thb": 738415.42, "stock_usd": 22008.75, "cash_thb": 123.69, "cash_usd": 3.69, "profit_thb": -101460.89, "profit_usd": -3024.08, "roi_pct": -12.08}, {"time": "2026-04-30", "nav_thb": 807036.79, "nav_usd": 24054.03, "capital_thb": 840000.0, "capital_usd": 25036.51, "stock_thb": 806913.1, "stock_usd": 24050.34, "cash_thb": 123.69, "cash_usd": 3.69, "profit_thb": -32963.21, "profit_usd": -982.48, "roi_pct": -3.92}, {"time": "2026-05-01", "nav_thb": 831278.88, "nav_usd": 24776.58, "capital_thb": 840000.0, "capital_usd": 25036.51, "stock_thb": 831155.19, "stock_usd": 24772.89, "cash_thb": 123.69, "cash_usd": 3.69, "profit_thb": -8721.12, "profit_usd": -259.94, "roi_pct": -1.04}, {"time": "2026-05-02", "nav_thb": 831278.88, "nav_usd": 24776.58, "capital_thb": 840000.0, "capital_usd": 25036.51, "stock_thb": 831155.19, "stock_usd": 24772.89, "cash_thb": 123.69, "cash_usd": 3.69, "profit_thb": -8721.12, "profit_usd": -259.94, "roi_pct": -1.04}, {"time": "2026-05-03", "nav_thb": 831278.88, "nav_usd": 24776.58, "capital_thb": 840000.0, "capital_usd": 25036.51, "stock_thb": 831155.19, "stock_usd": 24772.89, "cash_thb": 123.69, "cash_usd": 3.69, "profit_thb": -8721.12, "profit_usd": -259.94, "roi_pct": -1.04}, {"time": "2026-05-04", "nav_thb": 835158.94, "nav_usd": 24892.22, "capital_thb": 840000.0, "capital_usd": 25036.51, "stock_thb": 835035.25, "stock_usd": 24888.54, "cash_thb": 123.69, "cash_usd": 3.69, "profit_thb": -4841.06, "profit_usd": -144.29, "roi_pct": -0.58}, {"time": "2026-05-05", "nav_thb": 851187.1, "nav_usd": 25369.95, "capital_thb": 940000.0, "capital_usd": 28017.05, "stock_thb": 851063.1, "stock_usd": 25366.25, "cash_thb": 124.0, "cash_usd": 3.7, "profit_thb": -88812.9, "profit_usd": -2647.1, "roi_pct": -9.45}, {"time": "2026-05-06", "nav_thb": 951766.17, "nav_usd": 28367.74, "capital_thb": 940000.0, "capital_usd": 28017.05, "stock_thb": 951765.64, "stock_usd": 28367.73, "cash_thb": 0.53, "cash_usd": 0.02, "profit_thb": 11766.17, "profit_usd": 350.69, "roi_pct": 1.25}, {"time": "2026-05-07", "nav_thb": 940803.63, "nav_usd": 28041.0, "capital_thb": 940000.0, "capital_usd": 28017.05, "stock_thb": 940803.1, "stock_usd": 28040.99, "cash_thb": 0.53, "cash_usd": 0.02, "profit_thb": 803.63, "profit_usd": 23.95, "roi_pct": 0.09}, {"time": "2026-05-08", "nav_thb": 918161.5, "nav_usd": 27366.14, "capital_thb": 940000.0, "capital_usd": 28017.05, "stock_thb": 918160.97, "stock_usd": 27366.13, "cash_thb": 0.53, "cash_usd": 0.02, "profit_thb": -21838.5, "profit_usd": -650.9, "roi_pct": -2.32}, {"time": "2026-05-09", "nav_thb": 918161.5, "nav_usd": 27366.14, "capital_thb": 940000.0, "capital_usd": 28017.05, "stock_thb": 918160.97, "stock_usd": 27366.13, "cash_thb": 0.53, "cash_usd": 0.02, "profit_thb": -21838.5, "profit_usd": -650.9, "roi_pct": -2.32}, {"time": "2026-05-10", "nav_thb": 918161.5, "nav_usd": 27366.14, "capital_thb": 940000.0, "capital_usd": 28017.05, "stock_thb": 918160.97, "stock_usd": 27366.13, "cash_thb": 0.53, "cash_usd": 0.02, "profit_thb": -21838.5, "profit_usd": -650.9, "roi_pct": -2.32}, {"time": "2026-05-11", "nav_thb": 935575.67, "nav_usd": 27885.18, "capital_thb": 940000.0, "capital_usd": 28017.05, "stock_thb": 935575.14, "stock_usd": 27885.16, "cash_thb": 0.53, "cash_usd": 0.02, "profit_thb": -4424.33, "profit_usd": -131.87, "roi_pct": -0.47}, {"time": "2026-05-12", "nav_thb": 955302.53, "nav_usd": 28473.15, "capital_thb": 940000.0, "capital_usd": 28017.05, "stock_thb": 955302.0, "stock_usd": 28473.13, "cash_thb": 0.53, "cash_usd": 0.02, "profit_thb": 15302.53, "profit_usd": 456.1, "roi_pct": 1.63}, {"time": "2026-05-13", "nav_thb": 978716.06, "nav_usd": 29171.0, "capital_thb": 940000.0, "capital_usd": 28017.05, "stock_thb": 978715.53, "stock_usd": 29170.98, "cash_thb": 0.53, "cash_usd": 0.02, "profit_thb": 38716.06, "profit_usd": 1153.95, "roi_pct": 4.12}, {"time": "2026-05-14", "nav_thb": 971267.54, "nav_usd": 28948.99, "capital_thb": 940000.0, "capital_usd": 28017.05, "stock_thb": 971267.01, "stock_usd": 28948.97, "cash_thb": 0.53, "cash_usd": 0.02, "profit_thb": 31267.54, "profit_usd": 931.94, "roi_pct": 3.33}, {"time": "2026-05-15", "nav_thb": 969131.52, "nav_usd": 28885.32, "capital_thb": 940000.0, "capital_usd": 28017.05, "stock_thb": 969130.99, "stock_usd": 28885.31, "cash_thb": 0.53, "cash_usd": 0.02, "profit_thb": 29131.52, "profit_usd": 868.28, "roi_pct": 3.1}, {"time": "2026-05-16", "nav_thb": 969131.52, "nav_usd": 28885.32, "capital_thb": 940000.0, "capital_usd": 28017.05, "stock_thb": 969130.99, "stock_usd": 28885.31, "cash_thb": 0.53, "cash_usd": 0.02, "profit_thb": 29131.52, "profit_usd": 868.28, "roi_pct": 3.1}, {"time": "2026-05-17", "nav_thb": 969131.52, "nav_usd": 28885.32, "capital_thb": 940000.0, "capital_usd": 28017.05, "stock_thb": 969130.99, "stock_usd": 28885.31, "cash_thb": 0.53, "cash_usd": 0.02, "profit_thb": 29131.52, "profit_usd": 868.28, "roi_pct": 3.1}, {"time": "2026-05-18", "nav_thb": 954096.0, "nav_usd": 28437.19, "capital_thb": 940000.0, "capital_usd": 28017.05, "stock_thb": 954095.47, "stock_usd": 28437.17, "cash_thb": 0.53, "cash_usd": 0.02, "profit_thb": 14096.0, "profit_usd": 420.14, "roi_pct": 1.5}, {"time": "2026-05-19", "nav_thb": 983847.85, "nav_usd": 29323.95, "capital_thb": 940000.0, "capital_usd": 28017.05, "stock_thb": 983847.32, "stock_usd": 29323.93, "cash_thb": 0.53, "cash_usd": 0.02, "profit_thb": 43847.85, "profit_usd": 1306.9, "roi_pct": 4.66}, {"time": "2026-05-20", "nav_thb": 982031.25, "nav_usd": 29269.81, "capital_thb": 940000.0, "capital_usd": 28017.05, "stock_thb": 982030.72, "stock_usd": 29269.79, "cash_thb": 0.53, "cash_usd": 0.02, "profit_thb": 42031.25, "profit_usd": 1252.76, "roi_pct": 4.47}, {"time": "2026-05-21", "nav_thb": 1003045.38, "nav_usd": 29896.14, "capital_thb": 940000.0, "capital_usd": 28017.05, "stock_thb": 1003044.85, "stock_usd": 29896.12, "cash_thb": 0.53, "cash_usd": 0.02, "profit_thb": 63045.38, "profit_usd": 1879.09, "roi_pct": 6.71}, {"time": "2026-05-22", "nav_thb": 1025066.45, "nav_usd": 30552.49, "capital_thb": 940000.0, "capital_usd": 28017.05, "stock_thb": 1025065.92, "stock_usd": 30552.47, "cash_thb": 0.53, "cash_usd": 0.02, "profit_thb": 85066.45, "profit_usd": 2535.44, "roi_pct": 9.05}, {"time": "2026-05-23", "nav_thb": 1025195.63, "nav_usd": 30556.34, "capital_thb": 940000.0, "capital_usd": 28017.05, "stock_thb": 1025065.92, "stock_usd": 30552.47, "cash_thb": 129.7, "cash_usd": 3.87, "profit_thb": 85195.63, "profit_usd": 2539.29, "roi_pct": 9.06}, {"time": "2026-05-24", "nav_thb": 1025195.63, "nav_usd": 30556.34, "capital_thb": 940000.0, "capital_usd": 28017.05, "stock_thb": 1025065.92, "stock_usd": 30552.47, "cash_thb": 129.7, "cash_usd": 3.87, "profit_thb": 85195.63, "profit_usd": 2539.29, "roi_pct": 9.06}, {"time": "2026-05-25", "nav_thb": 1025195.63, "nav_usd": 30556.34, "capital_thb": 940000.0, "capital_usd": 28017.05, "stock_thb": 1025065.92, "stock_usd": 30552.47, "cash_thb": 129.7, "cash_usd": 3.87, "profit_thb": 85195.63, "profit_usd": 2539.29, "roi_pct": 9.06}, {"time": "2026-05-26", "nav_thb": 1025893.71, "nav_usd": 30577.14, "capital_thb": 940000.0, "capital_usd": 28017.05, "stock_thb": 1025764.0, "stock_usd": 30573.28, "cash_thb": 129.7, "cash_usd": 3.87, "profit_thb": 85893.71, "profit_usd": 2560.09, "roi_pct": 9.14}, {"time": "2026-05-27", "nav_thb": 1051075.23, "nav_usd": 31327.69, "capital_thb": 960000.0, "capital_usd": 28613.16, "stock_thb": 1050945.18, "stock_usd": 31323.81, "cash_thb": 130.05, "cash_usd": 3.88, "profit_thb": 91075.23, "profit_usd": 2714.53, "roi_pct": 9.49}, {"time": "2026-05-28", "nav_thb": 1092824.96, "nav_usd": 32572.05, "capital_thb": 960000.0, "capital_usd": 28613.16, "stock_thb": 1092694.91, "stock_usd": 32568.18, "cash_thb": 130.05, "cash_usd": 3.88, "profit_thb": 132824.96, "profit_usd": 3958.9, "roi_pct": 13.84}, {"time": "2026-05-29", "nav_thb": 1081045.17, "nav_usd": 32220.95, "capital_thb": 960000.0, "capital_usd": 28613.16, "stock_thb": 1081044.29, "stock_usd": 32220.93, "cash_thb": 0.88, "cash_usd": 0.03, "profit_thb": 121045.17, "profit_usd": 3607.8, "roi_pct": 12.61}, {"time": "2026-05-30", "nav_thb": 1081045.17, "nav_usd": 32220.95, "capital_thb": 960000.0, "capital_usd": 28613.16, "stock_thb": 1081044.29, "stock_usd": 32220.93, "cash_thb": 0.88, "cash_usd": 0.03, "profit_thb": 121045.17, "profit_usd": 3607.8, "roi_pct": 12.61}, {"time": "2026-05-31", "nav_thb": 1081045.17, "nav_usd": 32220.95, "capital_thb": 960000.0, "capital_usd": 28613.16, "stock_thb": 1081044.29, "stock_usd": 32220.93, "cash_thb": 0.88, "cash_usd": 0.03, "profit_thb": 121045.17, "profit_usd": 3607.8, "roi_pct": 12.61}, {"time": "2026-06-01", "nav_thb": 1068866.47, "nav_usd": 31857.96, "capital_thb": 960000.0, "capital_usd": 28613.16, "stock_thb": 1068865.59, "stock_usd": 31857.94, "cash_thb": 0.88, "cash_usd": 0.03, "profit_thb": 108866.47, "profit_usd": 3244.81, "roi_pct": 11.34}, {"time": "2026-06-02", "nav_thb": 1051139.42, "nav_usd": 31329.6, "capital_thb": 960000.0, "capital_usd": 28613.16, "stock_thb": 1051138.54, "stock_usd": 31329.57, "cash_thb": 0.88, "cash_usd": 0.03, "profit_thb": 91139.42, "profit_usd": 2716.44, "roi_pct": 9.49}, {"time": "2026-06-03", "nav_thb": 1061259.61, "nav_usd": 31631.24, "capital_thb": 960000.0, "capital_usd": 28613.16, "stock_thb": 1061258.73, "stock_usd": 31631.21, "cash_thb": 0.88, "cash_usd": 0.03, "profit_thb": 101259.61, "profit_usd": 3018.08, "roi_pct": 10.55}, {"time": "2026-06-04", "nav_thb": 1102857.3, "nav_usd": 32871.07, "capital_thb": 960000.0, "capital_usd": 28613.16, "stock_thb": 1102856.42, "stock_usd": 32871.04, "cash_thb": 0.88, "cash_usd": 0.03, "profit_thb": 142857.3, "profit_usd": 4257.91, "roi_pct": 14.88}, {"time": "2026-06-05", "nav_thb": 1102640.41, "nav_usd": 32864.61, "capital_thb": 960000.0, "capital_usd": 28613.16, "stock_thb": 1102639.53, "stock_usd": 32864.58, "cash_thb": 0.88, "cash_usd": 0.03, "profit_thb": 142640.41, "profit_usd": 4251.45, "roi_pct": 14.86}, {"time": "2026-06-06", "nav_thb": 1102640.41, "nav_usd": 32864.61, "capital_thb": 960000.0, "capital_usd": 28613.16, "stock_thb": 1102639.53, "stock_usd": 32864.58, "cash_thb": 0.88, "cash_usd": 0.03, "profit_thb": 142640.41, "profit_usd": 4251.45, "roi_pct": 14.86}, {"time": "2026-06-07", "nav_thb": 1102640.41, "nav_usd": 32864.61, "capital_thb": 960000.0, "capital_usd": 28613.16, "stock_thb": 1102639.53, "stock_usd": 32864.58, "cash_thb": 0.88, "cash_usd": 0.03, "profit_thb": 142640.41, "profit_usd": 4251.45, "roi_pct": 14.86}, {"time": "2026-06-08", "nav_thb": 1119319.02, "nav_usd": 33361.72, "capital_thb": 960000.0, "capital_usd": 28613.16, "stock_thb": 1119318.14, "stock_usd": 33361.69, "cash_thb": 0.88, "cash_usd": 0.03, "profit_thb": 159319.02, "profit_usd": 4748.56, "roi_pct": 16.6}, {"time": "2026-06-09", "nav_thb": 1112787.98, "nav_usd": 33167.06, "capital_thb": 960000.0, "capital_usd": 28613.16, "stock_thb": 1112787.1, "stock_usd": 33167.03, "cash_thb": 0.88, "cash_usd": 0.03, "profit_thb": 152787.98, "profit_usd": 4553.9, "roi_pct": 15.92}, {"time": "2026-06-10", "nav_thb": 1103825.39, "nav_usd": 32899.93, "capital_thb": 960000.0, "capital_usd": 28613.16, "stock_thb": 1103824.51, "stock_usd": 32899.9, "cash_thb": 0.88, "cash_usd": 0.03, "profit_thb": 143825.39, "profit_usd": 4286.77, "roi_pct": 14.98}, {"time": "2026-06-11", "nav_thb": 1129137.71, "nav_usd": 33654.37, "capital_thb": 960000.0, "capital_usd": 28613.16, "stock_thb": 1127585.43, "stock_usd": 33608.1, "cash_thb": 1552.28, "cash_usd": 46.27, "profit_thb": 169137.71, "profit_usd": 5041.21, "roi_pct": 17.62}, {"time": "2026-06-12", "nav_thb": 1135253.93, "nav_usd": 33836.66, "capital_thb": 990000.0, "capital_usd": 29507.32, "stock_thb": 1135253.76, "stock_usd": 33836.66, "cash_thb": 0.17, "cash_usd": 0.01, "profit_thb": 145253.93, "profit_usd": 4329.35, "roi_pct": 14.67}, {"time": "2026-06-13", "nav_thb": 1135253.93, "nav_usd": 33836.66, "capital_thb": 990000.0, "capital_usd": 29507.32, "stock_thb": 1135253.76, "stock_usd": 33836.66, "cash_thb": 0.17, "cash_usd": 0.01, "profit_thb": 145253.93, "profit_usd": 4329.35, "roi_pct": 14.67}, {"time": "2026-06-14", "nav_thb": 1135253.93, "nav_usd": 33836.66, "capital_thb": 990000.0, "capital_usd": 29507.32, "stock_thb": 1135253.76, "stock_usd": 33836.66, "cash_thb": 0.17, "cash_usd": 0.01, "profit_thb": 145253.93, "profit_usd": 4329.35, "roi_pct": 14.67}, {"time": "2026-06-15", "nav_thb": 1193519.29, "nav_usd": 35573.29, "capital_thb": 1040000.0, "capital_usd": 30997.59, "stock_thb": 1193518.93, "stock_usd": 35573.27, "cash_thb": 0.36, "cash_usd": 0.01, "profit_thb": 153519.29, "profit_usd": 4575.7, "roi_pct": 14.76}, {"time": "2026-06-16", "nav_thb": 1189268.97, "nav_usd": 35446.6, "capital_thb": 1040000.0, "capital_usd": 30997.59, "stock_thb": 1189268.61, "stock_usd": 35446.59, "cash_thb": 0.36, "cash_usd": 0.01, "profit_thb": 149268.97, "profit_usd": 4449.02, "roi_pct": 14.35}, {"time": "2026-06-17", "nav_thb": 1175810.62, "nav_usd": 35045.47, "capital_thb": 1040000.0, "capital_usd": 30997.59, "stock_thb": 1134226.15, "stock_usd": 33806.03, "cash_thb": 41584.48, "cash_usd": 1239.44, "profit_thb": 135810.62, "profit_usd": 4047.89, "roi_pct": 13.06}, {"time": "2026-06-18", "nav_thb": 1163443.06, "nav_usd": 34676.85, "capital_thb": 1040000.0, "capital_usd": 30997.59, "stock_thb": 1121858.58, "stock_usd": 33437.41, "cash_thb": 41584.48, "cash_usd": 1239.44, "profit_thb": 123443.06, "profit_usd": 3679.27, "roi_pct": 11.87}, {"time": "2026-06-19", "nav_thb": 1163571.89, "nav_usd": 34680.69, "capital_thb": 1040000.0, "capital_usd": 30997.59, "stock_thb": 1121858.58, "stock_usd": 33437.41, "cash_thb": 41713.31, "cash_usd": 1243.28, "profit_thb": 123571.89, "profit_usd": 3683.11, "roi_pct": 11.88}, {"time": "2026-06-20", "nav_thb": 1163571.89, "nav_usd": 34680.69, "capital_thb": 1040000.0, "capital_usd": 30997.59, "stock_thb": 1121858.58, "stock_usd": 33437.41, "cash_thb": 41713.31, "cash_usd": 1243.28, "profit_thb": 123571.89, "profit_usd": 3683.11, "roi_pct": 11.88}, {"time": "2026-06-21", "nav_thb": 1163571.89, "nav_usd": 34680.69, "capital_thb": 1040000.0, "capital_usd": 30997.59, "stock_thb": 1121858.58, "stock_usd": 33437.41, "cash_thb": 41713.31, "cash_usd": 1243.28, "profit_thb": 123571.89, "profit_usd": 3683.11, "roi_pct": 11.88}, {"time": "2026-06-22", "nav_thb": 1163293.85, "nav_usd": 34672.4, "capital_thb": 1040000.0, "capital_usd": 30997.59, "stock_thb": 1136895.9, "stock_usd": 33885.6, "cash_thb": 26397.95, "cash_usd": 786.8, "profit_thb": 123293.85, "profit_usd": 3674.82, "roi_pct": 11.86}, {"time": "2026-06-23", "nav_thb": 1165434.44, "nav_usd": 34736.21, "capital_thb": 1040000.0, "capital_usd": 30997.59, "stock_thb": 1149240.69, "stock_usd": 34253.54, "cash_thb": 16193.75, "cash_usd": 482.66, "profit_thb": 125434.44, "profit_usd": 3738.62, "roi_pct": 12.06}, {"time": "2026-06-24", "nav_thb": 1173296.35, "nav_usd": 34970.53, "capital_thb": 1040000.0, "capital_usd": 30997.59, "stock_thb": 1157102.6, "stock_usd": 34487.87, "cash_thb": 16193.75, "cash_usd": 482.66, "profit_thb": 133296.35, "profit_usd": 3972.95, "roi_pct": 12.82}, {"time": "2026-06-25", "nav_thb": 1180171.41, "nav_usd": 35175.45, "capital_thb": 1040000.0, "capital_usd": 30997.59, "stock_thb": 1153185.98, "stock_usd": 34371.14, "cash_thb": 26985.43, "cash_usd": 804.31, "profit_thb": 140171.41, "profit_usd": 4177.86, "roi_pct": 13.48}, {"time": "2026-06-26", "nav_thb": 1253351.06, "nav_usd": 37356.59, "capital_thb": 1040000.0, "capital_usd": 30997.59, "stock_thb": 1226365.63, "stock_usd": 36552.28, "cash_thb": 26985.43, "cash_usd": 804.31, "profit_thb": 213351.06, "profit_usd": 6359.01, "roi_pct": 20.51}, {"time": "2026-06-27", "nav_thb": 1253351.06, "nav_usd": 37356.59, "capital_thb": 1040000.0, "capital_usd": 30997.59, "stock_thb": 1226365.63, "stock_usd": 36552.28, "cash_thb": 26985.43, "cash_usd": 804.31, "profit_thb": 213351.06, "profit_usd": 6359.01, "roi_pct": 20.51}, {"time": "2026-06-28", "nav_thb": 1253351.06, "nav_usd": 37356.59, "capital_thb": 1040000.0, "capital_usd": 30997.59, "stock_thb": 1226365.63, "stock_usd": 36552.28, "cash_thb": 26985.43, "cash_usd": 804.31, "profit_thb": 213351.06, "profit_usd": 6359.01, "roi_pct": 20.51}, {"time": "2026-06-29", "nav_thb": 1277048.78, "nav_usd": 38062.91, "capital_thb": 1040000.0, "capital_usd": 30997.59, "stock_thb": 1261171.75, "stock_usd": 37589.69, "cash_thb": 15877.03, "cash_usd": 473.22, "profit_thb": 237048.78, "profit_usd": 7065.33, "roi_pct": 22.79}, {"time": "2026-06-30", "nav_thb": 1250905.42, "nav_usd": 37283.7, "capital_thb": 1040000.0, "capital_usd": 30997.59, "stock_thb": 1234997.48, "stock_usd": 36809.56, "cash_thb": 15907.94, "cash_usd": 474.14, "profit_thb": 210905.42, "profit_usd": 6286.11, "roi_pct": 20.28}, {"time": "2026-07-01", "nav_thb": 1248142.25, "nav_usd": 37201.34, "capital_thb": 1040000.0, "capital_usd": 30997.59, "stock_thb": 1232201.77, "stock_usd": 36726.23, "cash_thb": 15940.48, "cash_usd": 475.11, "profit_thb": 208142.25, "profit_usd": 6203.76, "roi_pct": 20.01}, {"time": "2026-07-02", "nav_thb": 1267650.32, "nav_usd": 37782.79, "capital_thb": 1040000.0, "capital_usd": 30997.59, "stock_thb": 1251709.84, "stock_usd": 37307.68, "cash_thb": 15940.48, "cash_usd": 475.11, "profit_thb": 227650.32, "profit_usd": 6785.2, "roi_pct": 21.89}, {"time": "2026-07-03", "nav_thb": 1267650.32, "nav_usd": 37782.79, "capital_thb": 1040000.0, "capital_usd": 30997.59, "stock_thb": 1251709.84, "stock_usd": 37307.68, "cash_thb": 15940.48, "cash_usd": 475.11, "profit_thb": 227650.32, "profit_usd": 6785.2, "roi_pct": 21.89}, {"time": "2026-07-04", "nav_thb": 1267650.32, "nav_usd": 37782.79, "capital_thb": 1040000.0, "capital_usd": 30997.59, "stock_thb": 1251709.84, "stock_usd": 37307.68, "cash_thb": 15940.48, "cash_usd": 475.11, "profit_thb": 227650.32, "profit_usd": 6785.2, "roi_pct": 21.89}, {"time": "2026-07-05", "nav_thb": 1267650.32, "nav_usd": 37782.79, "capital_thb": 1040000.0, "capital_usd": 30997.59, "stock_thb": 1251709.84, "stock_usd": 37307.68, "cash_thb": 15940.48, "cash_usd": 475.11, "profit_thb": 227650.32, "profit_usd": 6785.2, "roi_pct": 21.89}, {"time": "2026-07-06", "nav_thb": 1258475.71, "nav_usd": 37509.34, "capital_thb": 1040000.0, "capital_usd": 30997.59, "stock_thb": 1242535.23, "stock_usd": 37034.22, "cash_thb": 15940.48, "cash_usd": 475.11, "profit_thb": 218475.71, "profit_usd": 6511.75, "roi_pct": 21.01}, {"time": "2026-07-07", "nav_thb": 1290421.22, "nav_usd": 38461.48, "capital_thb": 1040000.0, "capital_usd": 30997.59, "stock_thb": 1274480.74, "stock_usd": 37986.37, "cash_thb": 15940.48, "cash_usd": 475.11, "profit_thb": 250421.22, "profit_usd": 7463.9, "roi_pct": 24.08}, {"time": "2026-07-08", "nav_thb": 1270611.63, "nav_usd": 37871.05, "capital_thb": 1040000.0, "capital_usd": 30997.59, "stock_thb": 1254671.14, "stock_usd": 37395.94, "cash_thb": 15940.48, "cash_usd": 475.11, "profit_thb": 230611.63, "profit_usd": 6873.47, "roi_pct": 22.17}, {"time": "2026-07-09", "nav_thb": 1272071.1, "nav_usd": 37914.55, "capital_thb": 1040000.0, "capital_usd": 30997.59, "stock_thb": 1256130.62, "stock_usd": 37439.44, "cash_thb": 15940.48, "cash_usd": 475.11, "profit_thb": 232071.1, "profit_usd": 6916.97, "roi_pct": 22.31}, {"time": "2026-07-10", "nav_thb": 1244697.07, "nav_usd": 37098.66, "capital_thb": 1040000.0, "capital_usd": 30997.59, "stock_thb": 1228688.48, "stock_usd": 36621.52, "cash_thb": 16008.59, "cash_usd": 477.14, "profit_thb": 204697.07, "profit_usd": 6101.07, "roi_pct": 19.68}, {"time": "2026-07-11", "nav_thb": 1244697.07, "nav_usd": 37098.66, "capital_thb": 1040000.0, "capital_usd": 30997.59, "stock_thb": 1228688.48, "stock_usd": 36621.52, "cash_thb": 16008.59, "cash_usd": 477.14, "profit_thb": 204697.07, "profit_usd": 6101.07, "roi_pct": 19.68}, {"time": "2026-07-12", "nav_thb": 1244697.07, "nav_usd": 37098.66, "capital_thb": 1040000.0, "capital_usd": 30997.59, "stock_thb": 1228688.48, "stock_usd": 36621.52, "cash_thb": 16008.59, "cash_usd": 477.14, "profit_thb": 204697.07, "profit_usd": 6101.07, "roi_pct": 19.68}, {"time": "2026-07-13", "nav_thb": 1238148.99, "nav_usd": 36903.49, "capital_thb": 1040000.0, "capital_usd": 30997.59, "stock_thb": 1222140.4, "stock_usd": 36426.35, "cash_thb": 16008.59, "cash_usd": 477.14, "profit_thb": 198148.99, "profit_usd": 5905.9, "roi_pct": 19.05}, {"time": "2026-07-14", "nav_thb": 1213007.84, "nav_usd": 36154.15, "capital_thb": 1040000.0, "capital_usd": 30997.59, "stock_thb": 1196999.25, "stock_usd": 35677.01, "cash_thb": 16008.59, "cash_usd": 477.14, "profit_thb": 173007.84, "profit_usd": 5156.56, "roi_pct": 16.64}, {"time": "2026-07-15", "nav_thb": 1217857.56, "nav_usd": 36298.7, "capital_thb": 1040000.0, "capital_usd": 30997.59, "stock_thb": 1217802.13, "stock_usd": 36297.04, "cash_thb": 55.43, "cash_usd": 1.65, "profit_thb": 177857.56, "profit_usd": 5301.11, "roi_pct": 17.1}, {"time": "2026-07-16", "nav_thb": 1228995.18, "nav_usd": 36630.66, "capital_thb": 1045000.0, "capital_usd": 31146.61, "stock_thb": 1228970.43, "stock_usd": 36629.92, "cash_thb": 24.75, "cash_usd": 0.74, "profit_thb": 183995.18, "profit_usd": 5484.04, "roi_pct": 17.61}, {"time": "2026-07-17", "nav_thb": 1234736.32, "nav_usd": 36801.77, "capital_thb": 1045000.0, "capital_usd": 31146.61, "stock_thb": 1234711.57, "stock_usd": 36801.04, "cash_thb": 24.75, "cash_usd": 0.74, "profit_thb": 189736.32, "profit_usd": 5655.16, "roi_pct": 18.16}, {"time": "2026-07-18", "nav_thb": 1234736.32, "nav_usd": 36801.77, "capital_thb": 1045000.0, "capital_usd": 31146.61, "stock_thb": 1234711.57, "stock_usd": 36801.04, "cash_thb": 24.75, "cash_usd": 0.74, "profit_thb": 189736.32, "profit_usd": 5655.16, "roi_pct": 18.16}, {"time": "2026-07-19", "nav_thb": 1234736.32, "nav_usd": 36801.77, "capital_thb": 1045000.0, "capital_usd": 31146.61, "stock_thb": 1234711.57, "stock_usd": 36801.04, "cash_thb": 24.75, "cash_usd": 0.74, "profit_thb": 189736.32, "profit_usd": 5655.16, "roi_pct": 18.16}, {"time": "2026-07-20", "nav_thb": 1207537.88, "nav_usd": 35991.11, "capital_thb": 1045000.0, "capital_usd": 31146.61, "stock_thb": 1207513.13, "stock_usd": 35990.38, "cash_thb": 24.75, "cash_usd": 0.74, "profit_thb": 162537.88, "profit_usd": 4844.5, "roi_pct": 15.55}, {"time": "2026-07-21", "nav_thb": 1232841.59, "nav_usd": 36745.3, "capital_thb": 1045000.0, "capital_usd": 31146.61, "stock_thb": 1232816.84, "stock_usd": 36744.56, "cash_thb": 24.75, "cash_usd": 0.74, "profit_thb": 187841.59, "profit_usd": 5598.69, "roi_pct": 17.98}, {"time": "2026-07-22", "nav_thb": 1215653.25, "nav_usd": 36233.0, "capital_thb": 1045000.0, "capital_usd": 31146.61, "stock_thb": 1215628.51, "stock_usd": 36232.26, "cash_thb": 24.75, "cash_usd": 0.74, "profit_thb": 170653.25, "profit_usd": 5086.38, "roi_pct": 16.33}, {"time": "2026-07-23", "nav_thb": 1268141.02, "nav_usd": 37797.41, "capital_thb": 1085000.0, "capital_usd": 32338.83, "stock_thb": 1268116.09, "stock_usd": 37796.67, "cash_thb": 24.94, "cash_usd": 0.74, "profit_thb": 183141.02, "profit_usd": 5458.59, "roi_pct": 16.88}, {"time": "2026-07-24", "nav_thb": 1277379.46, "nav_usd": 38072.77, "capital_thb": 1085000.0, "capital_usd": 32338.83, "stock_thb": 1277354.52, "stock_usd": 38072.03, "cash_thb": 24.94, "cash_usd": 0.74, "profit_thb": 192379.46, "profit_usd": 5733.94, "roi_pct": 17.73}, {"time": "2026-07-25", "nav_thb": 1277379.46, "nav_usd": 38072.77, "capital_thb": 1085000.0, "capital_usd": 32338.83, "stock_thb": 1277354.52, "stock_usd": 38072.03, "cash_thb": 24.94, "cash_usd": 0.74, "profit_thb": 192379.46, "profit_usd": 5733.94, "roi_pct": 17.73}, {"time": "2026-07-26", "nav_thb": 1277379.46, "nav_usd": 38072.77, "capital_thb": 1085000.0, "capital_usd": 32338.83, "stock_thb": 1277354.52, "stock_usd": 38072.03, "cash_thb": 24.94, "cash_usd": 0.74, "profit_thb": 192379.46, "profit_usd": 5733.94, "roi_pct": 17.73}, {"time": "2026-07-27", "nav_thb": 1285696.03, "nav_usd": 38320.65, "capital_thb": 1085000.0, "capital_usd": 32338.83, "stock_thb": 1285671.09, "stock_usd": 38319.9, "cash_thb": 24.94, "cash_usd": 0.74, "profit_thb": 200696.03, "profit_usd": 5981.82, "roi_pct": 18.5}, {"time": "2026-07-28", "nav_thb": 1324652.84, "nav_usd": 39481.77, "capital_thb": 1085000.0, "capital_usd": 32338.83, "stock_thb": 1237510.72, "stock_usd": 36884.47, "cash_thb": 87142.12, "cash_usd": 2597.3, "profit_thb": 239652.84, "profit_usd": 7142.94, "roi_pct": 22.09}, {"time": "2026-07-29", "nav_thb": 1314153.4, "nav_usd": 39168.83, "capital_thb": 1085000.0, "capital_usd": 32338.83, "stock_thb": 1227011.28, "stock_usd": 36571.53, "cash_thb": 87142.12, "cash_usd": 2597.3, "profit_thb": 229153.4, "profit_usd": 6830.0, "roi_pct": 21.12}, {"time": "2026-07-30", "nav_thb": 1266036.17, "nav_usd": 37734.68, "capital_thb": 1085000.0, "capital_usd": 32338.83, "stock_thb": 1178894.05, "stock_usd": 35137.37, "cash_thb": 87142.12, "cash_usd": 2597.3, "profit_thb": 181036.17, "profit_usd": 5395.85, "roi_pct": 16.69}, {"time": "2026-07-31", "nav_thb": 1267447.27, "nav_usd": 37776.74, "capital_thb": 1085000.0, "capital_usd": 32338.83, "stock_thb": 1180305.14, "stock_usd": 35179.43, "cash_thb": 87142.12, "cash_usd": 2597.3, "profit_thb": 182447.27, "profit_usd": 5437.91, "roi_pct": 16.82}, {"time": "2026-08-01", "nav_thb": 1267447.27, "nav_usd": 37776.74, "capital_thb": 1085000.0, "capital_usd": 32338.83, "stock_thb": 1180305.14, "stock_usd": 35179.43, "cash_thb": 87142.12, "cash_usd": 2597.3, "profit_thb": 182447.27, "profit_usd": 5437.91, "roi_pct": 16.82}, {"time": "2026-08-02", "nav_thb": 1267447.27, "nav_usd": 37776.74, "capital_thb": 1085000.0, "capital_usd": 32338.83, "stock_thb": 1180305.14, "stock_usd": 35179.43, "cash_thb": 87142.12, "cash_usd": 2597.3, "profit_thb": 182447.27, "profit_usd": 5437.91, "roi_pct": 16.82}, {"time": "2026-08-03", "nav_thb": 1248746.83, "nav_usd": 37219.36, "capital_thb": 1085000.0, "capital_usd": 32338.83, "stock_thb": 1161604.71, "stock_usd": 34622.06, "cash_thb": 87142.12, "cash_usd": 2597.3, "profit_thb": 163746.83, "profit_usd": 4880.53, "roi_pct": 15.09}, {"time": "2026-08-04", "nav_thb": 1246716.15, "nav_usd": 37158.84, "capital_thb": 1085000.0, "capital_usd": 32338.83, "stock_thb": 1194202.35, "stock_usd": 35593.64, "cash_thb": 52513.8, "cash_usd": 1565.19, "profit_thb": 161716.15, "profit_usd": 4820.01, "roi_pct": 14.9}, {"time": "2026-08-05", "nav_thb": 1291524.62, "nav_usd": 38494.37, "capital_thb": 1085000.0, "capital_usd": 32338.83, "stock_thb": 1239010.83, "stock_usd": 36929.18, "cash_thb": 52513.8, "cash_usd": 1565.19, "profit_thb": 206524.62, "profit_usd": 6155.54, "roi_pct": 19.03}, {"time": "2026-08-06", "nav_thb": 1310191.94, "nav_usd": 39050.76, "capital_thb": 1085000.0, "capital_usd": 32338.83, "stock_thb": 1257678.14, "stock_usd": 37485.56, "cash_thb": 52513.8, "cash_usd": 1565.19, "profit_thb": 225191.94, "profit_usd": 6711.93, "roi_pct": 20.76}, {"time": "2026-08-07", "nav_thb": 1303215.38, "nav_usd": 38842.82, "capital_thb": 1085000.0, "capital_usd": 32338.83, "stock_thb": 1250701.58, "stock_usd": 37277.62, "cash_thb": 52513.8, "cash_usd": 1565.19, "profit_thb": 218215.38, "profit_usd": 6503.99, "roi_pct": 20.11}, {"time": "2026-08-08", "nav_thb": 1303215.38, "nav_usd": 38842.82, "capital_thb": 1085000.0, "capital_usd": 32338.83, "stock_thb": 1250701.58, "stock_usd": 37277.62, "cash_thb": 52513.8, "cash_usd": 1565.19, "profit_thb": 218215.38, "profit_usd": 6503.99, "roi_pct": 20.11}, {"time": "2026-08-09", "nav_thb": 1303215.38, "nav_usd": 38842.82, "capital_thb": 1085000.0, "capital_usd": 32338.83, "stock_thb": 1250701.58, "stock_usd": 37277.62, "cash_thb": 52513.8, "cash_usd": 1565.19, "profit_thb": 218215.38, "profit_usd": 6503.99, "roi_pct": 20.11}, {"time": "2026-08-10", "nav_thb": 1346482.37, "nav_usd": 40132.41, "capital_thb": 1085000.0, "capital_usd": 32338.83, "stock_thb": 1293968.57, "stock_usd": 38567.21, "cash_thb": 52513.8, "cash_usd": 1565.19, "profit_thb": 261482.37, "profit_usd": 7793.58, "roi_pct": 24.1}, {"time": "2026-08-11", "nav_thb": 1327590.12, "nav_usd": 39569.32, "capital_thb": 1085000.0, "capital_usd": 32338.83, "stock_thb": 1275076.32, "stock_usd": 38004.12, "cash_thb": 52513.8, "cash_usd": 1565.19, "profit_thb": 242590.12, "profit_usd": 7230.49, "roi_pct": 22.36}, {"time": "2026-08-12", "nav_thb": 1335312.26, "nav_usd": 39799.48, "capital_thb": 1085000.0, "capital_usd": 32338.83, "stock_thb": 1282708.21, "stock_usd": 38231.59, "cash_thb": 52604.05, "cash_usd": 1567.88, "profit_thb": 250312.26, "profit_usd": 7460.65, "roi_pct": 23.07}, {"time": "2026-08-13", "nav_thb": 1326489.42, "nav_usd": 39536.51, "capital_thb": 1085000.0, "capital_usd": 32338.83, "stock_thb": 1273885.37, "stock_usd": 37968.63, "cash_thb": 52604.05, "cash_usd": 1567.88, "profit_thb": 241489.42, "profit_usd": 7197.68, "roi_pct": 22.26}, {"time": "2026-08-14", "nav_thb": 1300114.81, "nav_usd": 38750.4, "capital_thb": 1085000.0, "capital_usd": 32338.83, "stock_thb": 1247510.76, "stock_usd": 37182.52, "cash_thb": 52604.05, "cash_usd": 1567.88, "profit_thb": 215114.81, "profit_usd": 6411.58, "roi_pct": 19.83}, {"time": "2026-08-15", "nav_thb": 1300114.81, "nav_usd": 38750.4, "capital_thb": 1085000.0, "capital_usd": 32338.83, "stock_thb": 1247510.76, "stock_usd": 37182.52, "cash_thb": 52604.05, "cash_usd": 1567.88, "profit_thb": 215114.81, "profit_usd": 6411.58, "roi_pct": 19.83}, {"time": "2026-08-16", "nav_thb": 1300114.81, "nav_usd": 38750.4, "capital_thb": 1085000.0, "capital_usd": 32338.83, "stock_thb": 1247510.76, "stock_usd": 37182.52, "cash_thb": 52604.05, "cash_usd": 1567.88, "profit_thb": 215114.81, "profit_usd": 6411.58, "roi_pct": 19.83}, {"time": "2026-08-17", "nav_thb": 1302349.75, "nav_usd": 38817.02, "capital_thb": 1085000.0, "capital_usd": 32338.83, "stock_thb": 1249745.69, "stock_usd": 37249.13, "cash_thb": 52604.05, "cash_usd": 1567.88, "profit_thb": 217349.75, "profit_usd": 6478.19, "roi_pct": 20.03}, {"time": "2026-08-18", "nav_thb": 1340724.48, "nav_usd": 39960.79, "capital_thb": 1085000.0, "capital_usd": 32338.83, "stock_thb": 1288120.43, "stock_usd": 38392.91, "cash_thb": 52604.05, "cash_usd": 1567.88, "profit_thb": 255724.48, "profit_usd": 7621.96, "roi_pct": 23.57}, {"time": "2026-08-19", "nav_thb": 1390920.07, "nav_usd": 41456.89, "capital_thb": 1085000.0, "capital_usd": 32338.83, "stock_thb": 1338316.02, "stock_usd": 39889.01, "cash_thb": 52604.05, "cash_usd": 1567.88, "profit_thb": 305920.07, "profit_usd": 9118.06, "roi_pct": 28.2}, {"time": "2026-08-20", "nav_thb": 1356222.0, "nav_usd": 40422.7, "capital_thb": 1085000.0, "capital_usd": 32338.83, "stock_thb": 1303617.95, "stock_usd": 38854.82, "cash_thb": 52604.05, "cash_usd": 1567.88, "profit_thb": 271222.0, "profit_usd": 8083.87, "roi_pct": 25.0}, {"time": "2026-08-21", "nav_thb": 1367932.32, "nav_usd": 40771.73, "capital_thb": 1085000.0, "capital_usd": 32338.83, "stock_thb": 1315328.27, "stock_usd": 39203.85, "cash_thb": 52604.05, "cash_usd": 1567.88, "profit_thb": 282932.32, "profit_usd": 8432.9, "roi_pct": 26.08}, {"time": "2026-08-22", "nav_thb": 1367932.32, "nav_usd": 40771.73, "capital_thb": 1085000.0, "capital_usd": 32338.83, "stock_thb": 1315328.27, "stock_usd": 39203.85, "cash_thb": 52604.05, "cash_usd": 1567.88, "profit_thb": 282932.32, "profit_usd": 8432.9, "roi_pct": 26.08}, {"time": "2026-08-23", "nav_thb": 1367932.32, "nav_usd": 40771.73, "capital_thb": 1085000.0, "capital_usd": 32338.83, "stock_thb": 1315328.27, "stock_usd": 39203.85, "cash_thb": 52604.05, "cash_usd": 1567.88, "profit_thb": 282932.32, "profit_usd": 8432.9, "roi_pct": 26.08}, {"time": "2026-08-24", "nav_thb": 1360189.87, "nav_usd": 40540.96, "capital_thb": 1085000.0, "capital_usd": 32338.83, "stock_thb": 1307585.82, "stock_usd": 38973.08, "cash_thb": 52604.05, "cash_usd": 1567.88, "profit_thb": 275189.87, "profit_usd": 8202.14, "roi_pct": 25.36}, {"time": "2026-08-25", "nav_thb": 1348778.95, "nav_usd": 40200.86, "capital_thb": 1085000.0, "capital_usd": 32338.83, "stock_thb": 1296174.9, "stock_usd": 38632.97, "cash_thb": 52604.05, "cash_usd": 1567.88, "profit_thb": 263778.95, "profit_usd": 7862.03, "roi_pct": 24.31}, {"time": "2026-08-26", "nav_thb": 1306301.48, "nav_usd": 38934.8, "capital_thb": 1085000.0, "capital_usd": 32338.83, "stock_thb": 1253697.43, "stock_usd": 37366.92, "cash_thb": 52604.05, "cash_usd": 1567.88, "profit_thb": 221301.48, "profit_usd": 6595.97, "roi_pct": 20.4}, {"time": "2026-08-27", "nav_thb": 1294153.85, "nav_usd": 38572.74, "capital_thb": 1085000.0, "capital_usd": 32338.83, "stock_thb": 1241549.8, "stock_usd": 37004.85, "cash_thb": 52604.05, "cash_usd": 1567.88, "profit_thb": 209153.85, "profit_usd": 6233.91, "roi_pct": 19.28}, {"time": "2026-08-28", "nav_thb": 1293308.03, "nav_usd": 38547.53, "capital_thb": 1085000.0, "capital_usd": 32338.83, "stock_thb": 1240703.98, "stock_usd": 36979.64, "cash_thb": 52604.05, "cash_usd": 1567.88, "profit_thb": 208308.03, "profit_usd": 6208.7, "roi_pct": 19.2}, {"time": "2026-08-29", "nav_thb": 1293308.03, "nav_usd": 38547.53, "capital_thb": 1085000.0, "capital_usd": 32338.83, "stock_thb": 1240703.98, "stock_usd": 36979.64, "cash_thb": 52604.05, "cash_usd": 1567.88, "profit_thb": 208308.03, "profit_usd": 6208.7, "roi_pct": 19.2}, {"time": "2026-08-30", "nav_thb": 1293308.03, "nav_usd": 38547.53, "capital_thb": 1085000.0, "capital_usd": 32338.83, "stock_thb": 1240703.98, "stock_usd": 36979.64, "cash_thb": 52604.05, "cash_usd": 1567.88, "profit_thb": 208308.03, "profit_usd": 6208.7, "roi_pct": 19.2}, {"time": "2026-08-31", "nav_thb": 1274247.21, "nav_usd": 37979.41, "capital_thb": 1085000.0, "capital_usd": 32338.83, "stock_thb": 1221643.16, "stock_usd": 36411.53, "cash_thb": 52604.05, "cash_usd": 1567.88, "profit_thb": 189247.21, "profit_usd": 5640.58, "roi_pct": 17.44}, {"time": "2026-09-01", "nav_thb": 1275261.48, "nav_usd": 38009.64, "capital_thb": 1085000.0, "capital_usd": 32338.83, "stock_thb": 1222657.43, "stock_usd": 36441.76, "cash_thb": 52604.05, "cash_usd": 1567.88, "profit_thb": 190261.48, "profit_usd": 5670.81, "roi_pct": 17.54}, {"time": "2026-09-02", "nav_thb": 1275728.44, "nav_usd": 38023.56, "capital_thb": 1085000.0, "capital_usd": 32338.83, "stock_thb": 1223124.39, "stock_usd": 36455.68, "cash_thb": 52604.05, "cash_usd": 1567.88, "profit_thb": 190728.44, "profit_usd": 5684.73, "roi_pct": 17.58}, {"time": "2026-09-03", "nav_thb": 1276777.29, "nav_usd": 38054.82, "capital_thb": 1085000.0, "capital_usd": 32338.83, "stock_thb": 1224173.24, "stock_usd": 36486.94, "cash_thb": 52604.05, "cash_usd": 1567.88, "profit_thb": 191777.29, "profit_usd": 5715.99, "roi_pct": 17.68}, {"time": "2026-09-04", "nav_thb": 1266825.2, "nav_usd": 37758.19, "capital_thb": 1085000.0, "capital_usd": 32338.83, "stock_thb": 1214221.14, "stock_usd": 36190.31, "cash_thb": 52604.05, "cash_usd": 1567.88, "profit_thb": 181825.2, "profit_usd": 5419.37, "roi_pct": 16.76}, {"time": "2026-09-05", "nav_thb": 1266825.2, "nav_usd": 37758.19, "capital_thb": 1085000.0, "capital_usd": 32338.83, "stock_thb": 1214221.14, "stock_usd": 36190.31, "cash_thb": 52604.05, "cash_usd": 1567.88, "profit_thb": 181825.2, "profit_usd": 5419.37, "roi_pct": 16.76}, {"time": "2026-09-06", "nav_thb": 1266825.2, "nav_usd": 37758.19, "capital_thb": 1085000.0, "capital_usd": 32338.83, "stock_thb": 1214221.14, "stock_usd": 36190.31, "cash_thb": 52604.05, "cash_usd": 1567.88, "profit_thb": 181825.2, "profit_usd": 5419.37, "roi_pct": 16.76}, {"time": "2026-09-07", "nav_thb": 1266825.2, "nav_usd": 37758.19, "capital_thb": 1085000.0, "capital_usd": 32338.83, "stock_thb": 1214221.14, "stock_usd": 36190.31, "cash_thb": 52604.05, "cash_usd": 1567.88, "profit_thb": 181825.2, "profit_usd": 5419.37, "roi_pct": 16.76}, {"time": "2026-09-08", "nav_thb": 1244998.9, "nav_usd": 37107.65, "capital_thb": 1085000.0, "capital_usd": 32338.83, "stock_thb": 1192394.85, "stock_usd": 35539.77, "cash_thb": 52604.05, "cash_usd": 1567.88, "profit_thb": 159998.9, "profit_usd": 4768.83, "roi_pct": 14.75}, {"time": "2026-09-09", "nav_thb": 1243405.96, "nav_usd": 37060.18, "capital_thb": 1085000.0, "capital_usd": 32338.83, "stock_thb": 1216374.48, "stock_usd": 36254.49, "cash_thb": 27031.48, "cash_usd": 805.68, "profit_thb": 158405.96, "profit_usd": 4721.35, "roi_pct": 14.6}, {"time": "2026-09-10", "nav_thb": 1244103.42, "nav_usd": 37080.96, "capital_thb": 1085000.0, "capital_usd": 32338.83, "stock_thb": 1215467.2, "stock_usd": 36227.45, "cash_thb": 28636.22, "cash_usd": 853.51, "profit_thb": 159103.42, "profit_usd": 4742.14, "roi_pct": 14.66}, {"time": "2026-09-11", "nav_thb": 1241234.0, "nav_usd": 36995.44, "capital_thb": 1085000.0, "capital_usd": 32338.83, "stock_thb": 1212597.78, "stock_usd": 36141.93, "cash_thb": 28636.22, "cash_usd": 853.51, "profit_thb": 156234.0, "profit_usd": 4656.61, "roi_pct": 14.4}, {"time": "2026-09-12", "nav_thb": 1241234.0, "nav_usd": 36995.44, "capital_thb": 1085000.0, "capital_usd": 32338.83, "stock_thb": 1212597.78, "stock_usd": 36141.93, "cash_thb": 28636.22, "cash_usd": 853.51, "profit_thb": 156234.0, "profit_usd": 4656.61, "roi_pct": 14.4}, {"time": "2026-09-13", "nav_thb": 1241234.0, "nav_usd": 36995.44, "capital_thb": 1085000.0, "capital_usd": 32338.83, "stock_thb": 1212597.78, "stock_usd": 36141.93, "cash_thb": 28636.22, "cash_usd": 853.51, "profit_thb": 156234.0, "profit_usd": 4656.61, "roi_pct": 14.4}, {"time": "2026-09-14", "nav_thb": 1261672.69, "nav_usd": 37604.62, "capital_thb": 1085000.0, "capital_usd": 32338.83, "stock_thb": 1232971.04, "stock_usd": 36749.16, "cash_thb": 28701.65, "cash_usd": 855.46, "profit_thb": 176672.69, "profit_usd": 5265.8, "roi_pct": 16.28}, {"time": "2026-09-15", "nav_thb": 1258546.43, "nav_usd": 37511.44, "capital_thb": 1085000.0, "capital_usd": 32338.83, "stock_thb": 1229844.78, "stock_usd": 36655.98, "cash_thb": 28701.65, "cash_usd": 855.46, "profit_thb": 173546.43, "profit_usd": 5172.62, "roi_pct": 16.0}, {"time": "2026-09-16", "nav_thb": 1260245.92, "nav_usd": 37562.1, "capital_thb": 1085000.0, "capital_usd": 32338.83, "stock_thb": 1231544.27, "stock_usd": 36706.63, "cash_thb": 28701.65, "cash_usd": 855.46, "profit_thb": 175245.92, "profit_usd": 5223.27, "roi_pct": 16.15}, {"time": "2026-09-17", "nav_thb": 1277114.96, "nav_usd": 38064.89, "capital_thb": 1085000.0, "capital_usd": 32338.83, "stock_thb": 1248413.31, "stock_usd": 37209.42, "cash_thb": 28701.65, "cash_usd": 855.46, "profit_thb": 192114.96, "profit_usd": 5726.06, "roi_pct": 17.71}, {"time": "2026-09-18", "nav_thb": 1278666.31, "nav_usd": 38111.12, "capital_thb": 1085000.0, "capital_usd": 32338.83, "stock_thb": 1249964.67, "stock_usd": 37255.66, "cash_thb": 28701.65, "cash_usd": 855.46, "profit_thb": 193666.31, "profit_usd": 5772.3, "roi_pct": 17.85}, {"time": "2026-09-19", "nav_thb": 1278666.31, "nav_usd": 38111.12, "capital_thb": 1085000.0, "capital_usd": 32338.83, "stock_thb": 1249964.67, "stock_usd": 37255.66, "cash_thb": 28701.65, "cash_usd": 855.46, "profit_thb": 193666.31, "profit_usd": 5772.3, "roi_pct": 17.85}, {"time": "2026-09-20", "nav_thb": 1278666.31, "nav_usd": 38111.12, "capital_thb": 1085000.0, "capital_usd": 32338.83, "stock_thb": 1249964.67, "stock_usd": 37255.66, "cash_thb": 28701.65, "cash_usd": 855.46, "profit_thb": 193666.31, "profit_usd": 5772.3, "roi_pct": 17.85}, {"time": "2026-09-21", "nav_thb": 1292843.95, "nav_usd": 38533.69, "capital_thb": 1085000.0, "capital_usd": 32338.83, "stock_thb": 1264142.31, "stock_usd": 37678.23, "cash_thb": 28701.65, "cash_usd": 855.46, "profit_thb": 207843.95, "profit_usd": 6194.87, "roi_pct": 19.16}, {"time": "2026-09-22", "nav_thb": 1295921.4, "nav_usd": 38625.42, "capital_thb": 1085000.0, "capital_usd": 32338.83, "stock_thb": 1267219.75, "stock_usd": 37769.95, "cash_thb": 28701.65, "cash_usd": 855.46, "profit_thb": 210921.4, "profit_usd": 6286.59, "roi_pct": 19.44}, {"time": "2026-09-23", "nav_thb": 1272263.03, "nav_usd": 37920.27, "capital_thb": 1095000.0, "capital_usd": 32636.88, "stock_thb": 1272261.94, "stock_usd": 37920.24, "cash_thb": 1.09, "cash_usd": 0.03, "profit_thb": 177263.03, "profit_usd": 5283.39, "roi_pct": 16.19}, {"time": "2026-09-24", "nav_thb": 1336989.65, "nav_usd": 39849.47, "capital_thb": 1145000.0, "capital_usd": 34127.15, "stock_thb": 1336989.2, "stock_usd": 39849.46, "cash_thb": 0.45, "cash_usd": 0.01, "profit_thb": 191989.65, "profit_usd": 5722.32, "roi_pct": 16.77}, {"time": "2026-09-25", "nav_thb": 1396575.46, "nav_usd": 41625.45, "capital_thb": 1175000.0, "capital_usd": 35021.31, "stock_thb": 1396574.86, "stock_usd": 41625.43, "cash_thb": 0.6, "cash_usd": 0.02, "profit_thb": 221575.46, "profit_usd": 6604.14, "roi_pct": 18.86}, {"time": "2026-09-26", "nav_thb": 1396575.46, "nav_usd": 41625.45, "capital_thb": 1175000.0, "capital_usd": 35021.31, "stock_thb": 1396574.86, "stock_usd": 41625.43, "cash_thb": 0.6, "cash_usd": 0.02, "profit_thb": 221575.46, "profit_usd": 6604.14, "roi_pct": 18.86}, {"time": "2026-09-27", "nav_thb": 1396575.46, "nav_usd": 41625.45, "capital_thb": 1175000.0, "capital_usd": 35021.31, "stock_thb": 1396574.86, "stock_usd": 41625.43, "cash_thb": 0.6, "cash_usd": 0.02, "profit_thb": 221575.46, "profit_usd": 6604.14, "roi_pct": 18.86}, {"time": "2026-09-28", "nav_thb": 1394436.98, "nav_usd": 41561.71, "capital_thb": 1175000.0, "capital_usd": 35021.31, "stock_thb": 1394436.38, "stock_usd": 41561.69, "cash_thb": 0.6, "cash_usd": 0.02, "profit_thb": 219436.98, "profit_usd": 6540.4, "roi_pct": 18.68}, {"time": "2026-09-29", "nav_thb": 1394183.68, "nav_usd": 41554.16, "capital_thb": 1175000.0, "capital_usd": 35021.31, "stock_thb": 1394183.08, "stock_usd": 41554.14, "cash_thb": 0.6, "cash_usd": 0.02, "profit_thb": 219183.68, "profit_usd": 6532.85, "roi_pct": 18.65}, {"time": "2026-09-30", "nav_thb": 1429020.79, "nav_usd": 42592.49, "capital_thb": 1225000.0, "capital_usd": 36511.58, "stock_thb": 1389020.06, "stock_usd": 41400.26, "cash_thb": 40000.73, "cash_usd": 1192.24, "profit_thb": 204020.79, "profit_usd": 6080.92, "roi_pct": 16.65}, {"time": "2026-10-01", "nav_thb": 1420669.9, "nav_usd": 42343.59, "capital_thb": 1225000.0, "capital_usd": 36511.58, "stock_thb": 1380638.97, "stock_usd": 41150.46, "cash_thb": 40030.93, "cash_usd": 1193.14, "profit_thb": 195669.9, "profit_usd": 5832.01, "roi_pct": 15.97}, {"time": "2026-10-02", "nav_thb": 1417728.13, "nav_usd": 42255.91, "capital_thb": 1225000.0, "capital_usd": 36511.58, "stock_thb": 1377697.21, "stock_usd": 41062.78, "cash_thb": 40030.93, "cash_usd": 1193.14, "profit_thb": 192728.13, "profit_usd": 5744.33, "roi_pct": 15.73}, {"time": "2026-10-03", "nav_thb": 1407645.65, "nav_usd": 41955.4, "capital_thb": 1225000.0, "capital_usd": 36511.58, "stock_thb": 1382614.4, "stock_usd": 41209.33, "cash_thb": 25031.26, "cash_usd": 746.07, "profit_thb": 182645.65, "profit_usd": 5443.82, "roi_pct": 14.91}, {"time": "2026-10-04", "nav_thb": 1407645.65, "nav_usd": 41955.4, "capital_thb": 1225000.0, "capital_usd": 36511.58, "stock_thb": 1382614.4, "stock_usd": 41209.33, "cash_thb": 25031.26, "cash_usd": 746.07, "profit_thb": 182645.65, "profit_usd": 5443.82, "roi_pct": 14.91}, {"time": "2026-10-05", "nav_thb": 1409656.93, "nav_usd": 42015.35, "capital_thb": 1225000.0, "capital_usd": 36511.58, "stock_thb": 1384625.68, "stock_usd": 41269.28, "cash_thb": 25031.26, "cash_usd": 746.07, "profit_thb": 184656.93, "profit_usd": 5503.77, "roi_pct": 15.07}, {"time": "2026-10-06", "nav_thb": 1426382.82, "nav_usd": 42513.87, "capital_thb": 1225000.0, "capital_usd": 36511.58, "stock_thb": 1389701.99, "stock_usd": 41420.58, "cash_thb": 36680.83, "cash_usd": 1093.29, "profit_thb": 201382.82, "profit_usd": 6002.29, "roi_pct": 16.44}, {"time": "2026-10-07", "nav_thb": 1454721.59, "nav_usd": 43358.52, "capital_thb": 1225000.0, "capital_usd": 36511.58, "stock_thb": 1423040.49, "stock_usd": 42414.25, "cash_thb": 31681.1, "cash_usd": 944.27, "profit_thb": 229721.59, "profit_usd": 6846.94, "roi_pct": 18.75}, {"time": "2026-10-08", "nav_thb": 1435330.06, "nav_usd": 42780.54, "capital_thb": 1225000.0, "capital_usd": 36511.58, "stock_thb": 1420324.41, "stock_usd": 42333.3, "cash_thb": 15005.66, "cash_usd": 447.25, "profit_thb": 210330.06, "profit_usd": 6268.97, "roi_pct": 17.17}, {"time": "2026-10-09", "nav_thb": 1447757.78, "nav_usd": 43150.96, "capital_thb": 1225000.0, "capital_usd": 36511.58, "stock_thb": 1432752.12, "stock_usd": 42703.71, "cash_thb": 15005.66, "cash_usd": 447.25, "profit_thb": 222757.78, "profit_usd": 6639.38, "roi_pct": 18.18}, {"time": "2026-10-10", "nav_thb": 1447757.78, "nav_usd": 43150.96, "capital_thb": 1225000.0, "capital_usd": 36511.58, "stock_thb": 1432752.12, "stock_usd": 42703.71, "cash_thb": 15005.66, "cash_usd": 447.25, "profit_thb": 222757.78, "profit_usd": 6639.38, "roi_pct": 18.18}, {"time": "2026-10-11", "nav_thb": 1447757.78, "nav_usd": 43150.96, "capital_thb": 1225000.0, "capital_usd": 36511.58, "stock_thb": 1432752.12, "stock_usd": 42703.71, "cash_thb": 15005.66, "cash_usd": 447.25, "profit_thb": 222757.78, "profit_usd": 6639.38, "roi_pct": 18.18}, {"time": "2026-10-12", "nav_thb": 1448043.12, "nav_usd": 43159.46, "capital_thb": 1225000.0, "capital_usd": 36511.58, "stock_thb": 1433037.47, "stock_usd": 42712.21, "cash_thb": 15005.66, "cash_usd": 447.25, "profit_thb": 223043.12, "profit_usd": 6647.88, "roi_pct": 18.21}, {"time": "2026-10-13", "nav_thb": 1433433.89, "nav_usd": 42724.03, "capital_thb": 1225000.0, "capital_usd": 36511.58, "stock_thb": 1433428.97, "stock_usd": 42723.88, "cash_thb": 4.92, "cash_usd": 0.15, "profit_thb": 208433.89, "profit_usd": 6212.45, "roi_pct": 17.02}, {"time": "2026-10-14", "nav_thb": 1485387.19, "nav_usd": 44272.52, "capital_thb": 1245000.0, "capital_usd": 37107.69, "stock_thb": 1485383.17, "stock_usd": 44272.4, "cash_thb": 4.03, "cash_usd": 0.12, "profit_thb": 240387.19, "profit_usd": 7164.83, "roi_pct": 19.31}, {"time": "2026-10-15", "nav_thb": 1530998.53, "nav_usd": 45631.98, "capital_thb": 1245000.0, "capital_usd": 37107.69, "stock_thb": 1530994.51, "stock_usd": 45631.86, "cash_thb": 4.03, "cash_usd": 0.12, "profit_thb": 285998.53, "profit_usd": 8524.29, "roi_pct": 22.97}, {"time": "2026-10-16", "nav_thb": 1528220.17, "nav_usd": 45549.17, "capital_thb": 1245000.0, "capital_usd": 37107.69, "stock_thb": 1528216.15, "stock_usd": 45549.05, "cash_thb": 4.03, "cash_usd": 0.12, "profit_thb": 283220.17, "profit_usd": 8441.48, "roi_pct": 22.75}, {"time": "2026-10-17", "nav_thb": 1528220.17, "nav_usd": 45549.17, "capital_thb": 1245000.0, "capital_usd": 37107.69, "stock_thb": 1528216.15, "stock_usd": 45549.05, "cash_thb": 4.03, "cash_usd": 0.12, "profit_thb": 283220.17, "profit_usd": 8441.48, "roi_pct": 22.75}, {"time": "2026-10-18", "nav_thb": 1528220.17, "nav_usd": 45549.17, "capital_thb": 1245000.0, "capital_usd": 37107.69, "stock_thb": 1528216.15, "stock_usd": 45549.05, "cash_thb": 4.03, "cash_usd": 0.12, "profit_thb": 283220.17, "profit_usd": 8441.48, "roi_pct": 22.75}, {"time": "2026-10-19", "nav_thb": 1514502.32, "nav_usd": 45140.3, "capital_thb": 1245000.0, "capital_usd": 37107.69, "stock_thb": 1514498.29, "stock_usd": 45140.18, "cash_thb": 4.03, "cash_usd": 0.12, "profit_thb": 269502.32, "profit_usd": 8032.62, "roi_pct": 21.65}, {"time": "2026-10-20", "nav_thb": 1554087.12, "nav_usd": 46320.14, "capital_thb": 1245000.0, "capital_usd": 37107.69, "stock_thb": 1554083.1, "stock_usd": 46320.02, "cash_thb": 4.03, "cash_usd": 0.12, "profit_thb": 309087.12, "profit_usd": 9212.46, "roi_pct": 24.83}, {"time": "2026-10-21", "nav_thb": 1540268.01, "nav_usd": 45908.26, "capital_thb": 1245000.0, "capital_usd": 37107.69, "stock_thb": 1540263.98, "stock_usd": 45908.14, "cash_thb": 4.03, "cash_usd": 0.12, "profit_thb": 295268.01, "profit_usd": 8800.57, "roi_pct": 23.72}, {"time": "2026-10-22", "nav_thb": 1601505.37, "nav_usd": 47733.46, "capital_thb": 1285000.0, "capital_usd": 38299.9, "stock_thb": 1601504.97, "stock_usd": 47733.45, "cash_thb": 0.4, "cash_usd": 0.01, "profit_thb": 316505.37, "profit_usd": 9433.56, "roi_pct": 24.63}, {"time": "2026-10-23", "nav_thb": 1567818.63, "nav_usd": 46729.42, "capital_thb": 1295000.0, "capital_usd": 38597.96, "stock_thb": 1567818.04, "stock_usd": 46729.4, "cash_thb": 0.59, "cash_usd": 0.02, "profit_thb": 272818.63, "profit_usd": 8131.46, "roi_pct": 21.07}, {"time": "2026-10-24", "nav_thb": 1567818.63, "nav_usd": 46729.42, "capital_thb": 1295000.0, "capital_usd": 38597.96, "stock_thb": 1567818.04, "stock_usd": 46729.4, "cash_thb": 0.59, "cash_usd": 0.02, "profit_thb": 272818.63, "profit_usd": 8131.46, "roi_pct": 21.07}, {"time": "2026-10-25", "nav_thb": 1567818.63, "nav_usd": 46729.42, "capital_thb": 1295000.0, "capital_usd": 38597.96, "stock_thb": 1567818.04, "stock_usd": 46729.4, "cash_thb": 0.59, "cash_usd": 0.02, "profit_thb": 272818.63, "profit_usd": 8131.46, "roi_pct": 21.07}, {"time": "2026-10-26", "nav_thb": 1576303.63, "nav_usd": 46982.31, "capital_thb": 1295000.0, "capital_usd": 38597.96, "stock_thb": 1576303.04, "stock_usd": 46982.3, "cash_thb": 0.59, "cash_usd": 0.02, "profit_thb": 281303.63, "profit_usd": 8384.36, "roi_pct": 21.72}, {"time": "2026-10-27", "nav_thb": 1582851.28, "nav_usd": 47177.47, "capital_thb": 1295000.0, "capital_usd": 38597.96, "stock_thb": 1582850.69, "stock_usd": 47177.45, "cash_thb": 0.59, "cash_usd": 0.02, "profit_thb": 287851.28, "profit_usd": 8579.51, "roi_pct": 22.23}, {"time": "2026-10-28", "nav_thb": 1598478.47, "nav_usd": 47643.24, "capital_thb": 1295000.0, "capital_usd": 38597.96, "stock_thb": 1598477.88, "stock_usd": 47643.23, "cash_thb": 0.59, "cash_usd": 0.02, "profit_thb": 303478.47, "profit_usd": 9045.29, "roi_pct": 23.43}, {"time": "2026-10-29", "nav_thb": 1664020.85, "nav_usd": 49596.76, "capital_thb": 1295000.0, "capital_usd": 38597.96, "stock_thb": 1664020.26, "stock_usd": 49596.74, "cash_thb": 0.59, "cash_usd": 0.02, "profit_thb": 369020.85, "profit_usd": 10998.8, "roi_pct": 28.5}, {"time": "2026-10-30", "nav_thb": 1691510.29, "nav_usd": 50416.09, "capital_thb": 1295000.0, "capital_usd": 38597.96, "stock_thb": 1691509.7, "stock_usd": 50416.07, "cash_thb": 0.59, "cash_usd": 0.02, "profit_thb": 396510.29, "profit_usd": 11818.14, "roi_pct": 30.62}, {"time": "2026-10-31", "nav_thb": 1691510.29, "nav_usd": 50416.09, "capital_thb": 1295000.0, "capital_usd": 38597.96, "stock_thb": 1691509.7, "stock_usd": 50416.07, "cash_thb": 0.59, "cash_usd": 0.02, "profit_thb": 396510.29, "profit_usd": 11818.14, "roi_pct": 30.62}, {"time": "2026-11-01", "nav_thb": 1691510.29, "nav_usd": 50416.09, "capital_thb": 1295000.0, "capital_usd": 38597.96, "stock_thb": 1691509.7, "stock_usd": 50416.07, "cash_thb": 0.59, "cash_usd": 0.02, "profit_thb": 396510.29, "profit_usd": 11818.14, "roi_pct": 30.62}, {"time": "2026-11-02", "nav_thb": 1683863.57, "nav_usd": 50188.18, "capital_thb": 1295000.0, "capital_usd": 38597.96, "stock_thb": 1683862.98, "stock_usd": 50188.16, "cash_thb": 0.59, "cash_usd": 0.02, "profit_thb": 388863.57, "profit_usd": 11590.22, "roi_pct": 30.03}, {"time": "2026-11-03", "nav_thb": 1686203.88, "nav_usd": 50257.93, "capital_thb": 1295000.0, "capital_usd": 38597.96, "stock_thb": 1686203.29, "stock_usd": 50257.91, "cash_thb": 0.59, "cash_usd": 0.02, "profit_thb": 391203.88, "profit_usd": 11659.98, "roi_pct": 30.21}, {"time": "2026-11-04", "nav_thb": 1700932.06, "nav_usd": 50696.91, "capital_thb": 1295000.0, "capital_usd": 38597.96, "stock_thb": 1659177.25, "stock_usd": 49452.39, "cash_thb": 41754.81, "cash_usd": 1244.52, "profit_thb": 405932.06, "profit_usd": 12098.96, "roi_pct": 31.35}, {"time": "2026-11-05", "nav_thb": 1646960.69, "nav_usd": 49088.27, "capital_thb": 1295000.0, "capital_usd": 38597.96, "stock_thb": 1605205.89, "stock_usd": 47843.76, "cash_thb": 41754.81, "cash_usd": 1244.52, "profit_thb": 351960.69, "profit_usd": 10490.32, "roi_pct": 27.18}, {"time": "2026-11-06", "nav_thb": 1652346.84, "nav_usd": 49248.81, "capital_thb": 1295000.0, "capital_usd": 38597.96, "stock_thb": 1600674.69, "stock_usd": 47708.7, "cash_thb": 51672.15, "cash_usd": 1540.11, "profit_thb": 357346.84, "profit_usd": 10650.86, "roi_pct": 27.59}];
+        let currentCcy = 'THB';
+        let currentTf = 'ALL';
+        let currentSubMode = 'VAL';
+        let chartInstance = null;
+        let subChartInstance = null;
+        let navSeries = null;
+        let capSeries = null;
+        let profitSeries = null;
+        let zeroPriceLine = null;
+        let diffCanvas = null;
+        let animFrameId = null;
+        let isSyncingRange = false;
+
+        if (!rawData || !rawData.length) {
+            const c = document.getElementById('wealth-chart-container');
+            if (c) c.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100%;color:#94a3b8;">ยังไม่มีข้อมูลเส้นเวลาสินทรัพย์</div>';
+            return;
+        }
+
+        const latestPoint = rawData[rawData.length - 1];
+
+        function updateHud(pt) {
+            if (!pt) pt = latestPoint;
+            const isThb = (currentCcy === 'THB');
+            const ccySym = isThb ? '฿' : '$';
+            const navVal = isThb ? pt.nav_thb : pt.nav_usd;
+            const capVal = isThb ? pt.capital_thb : pt.capital_usd;
+            const profitVal = isThb ? pt.profit_thb : pt.profit_usd;
+            const stockVal = isThb ? pt.stock_thb : pt.stock_usd;
+            const cashVal = isThb ? pt.cash_thb : pt.cash_usd;
+            const roiVal = pt.roi_pct;
+
+            const dateEl = document.getElementById('whud-date');
+            const navEl = document.getElementById('whud-nav');
+            const capEl = document.getElementById('whud-capital');
+            const profitEl = document.getElementById('whud-profit');
+            const stockEl = document.getElementById('whud-stock');
+            const cashEl = document.getElementById('whud-cash');
+            const subBadgeEl = document.getElementById('sub-profit-badge');
+
+            if (dateEl) {
+                const isLatest = (pt.time === latestPoint.time);
+                dateEl.innerHTML = pt.time + (isLatest ? ' <span style="color:#60a5fa; font-weight:600;">(ล่าสุด)</span>' : '');
+            }
+            if (navEl) navEl.textContent = fmtMoney(navVal, ccySym);
+            if (capEl) capEl.textContent = fmtMoney(capVal, ccySym);
+            if (profitEl) {
+                const pColor = profitVal >= 0 ? '#10b981' : '#f43f5e';
+                profitEl.style.color = pColor;
+                profitEl.textContent = fmtMoney(profitVal, ccySym, true) + ' (' + fmtPct(roiVal, 2) + ')';
+            }
+            if (subBadgeEl) {
+                const pColor = profitVal >= 0 ? '#10b981' : '#f43f5e';
+                const pBg = profitVal >= 0 ? 'rgba(16, 185, 129, 0.15)' : 'rgba(244, 63, 94, 0.15)';
+                const pBorder = profitVal >= 0 ? 'rgba(16, 185, 129, 0.3)' : 'rgba(244, 63, 94, 0.3)';
+                subBadgeEl.style.color = pColor;
+                subBadgeEl.style.background = pBg;
+                subBadgeEl.style.borderColor = pBorder;
+                if (currentSubMode === 'PCT') {
+                    subBadgeEl.textContent = fmtPct(roiVal, 2) + ' (' + fmtMoney(profitVal, ccySym, true) + ')';
+                } else {
+                    subBadgeEl.textContent = fmtMoney(profitVal, ccySym, true) + ' (' + fmtPct(roiVal, 2) + ')';
+                }
+            }
+            if (stockEl) stockEl.textContent = fmtMoney(stockVal, ccySym);
+            if (cashEl) cashEl.textContent = fmtMoney(cashVal, ccySym);
+        }
+
+        function syncDiffCanvasSize() {
+            const container = document.getElementById('wealth-chart-container');
+            if (!container) return;
+            if (!diffCanvas) diffCanvas = document.getElementById('wealth-diff-canvas');
+            if (!diffCanvas) return;
+            const mainCanvas = container.querySelector('.tv-lightweight-charts canvas') || container.querySelector('canvas:not(#wealth-diff-canvas)');
+            const w = mainCanvas ? mainCanvas.clientWidth : (container.clientWidth || 900);
+            const h = mainCanvas ? mainCanvas.clientHeight : 320;
+            const dpr = window.devicePixelRatio || 1;
+            const targetW = Math.round(w * dpr);
+            const targetH = Math.round(h * dpr);
+            if (diffCanvas.width !== targetW || diffCanvas.height !== targetH) {
+                diffCanvas.width = targetW;
+                diffCanvas.height = targetH;
+                diffCanvas.style.width = w + 'px';
+                diffCanvas.style.height = h + 'px';
+            }
+        }
+
+        function drawDiffRibbon() {
+            const container = document.getElementById('wealth-chart-container');
+            if (!container || !chartInstance || !navSeries || !capSeries) return;
+            if (!diffCanvas) diffCanvas = document.getElementById('wealth-diff-canvas');
+            if (!diffCanvas) return;
+            syncDiffCanvasSize();
+            const ctx = diffCanvas.getContext('2d');
+            if (!ctx) return;
+            const dpr = window.devicePixelRatio || 1;
+            ctx.clearRect(0, 0, diffCanvas.width, diffCanvas.height);
+
+            ctx.save();
+            ctx.scale(dpr, dpr);
+
+            const mainCanvas = container.querySelector('.tv-lightweight-charts canvas') || container.querySelector('canvas:not(#wealth-diff-canvas)');
+            const clipW = mainCanvas ? mainCanvas.clientWidth : (container.clientWidth || 900);
+            const clipH = mainCanvas ? mainCanvas.clientHeight : 380;
+            ctx.beginPath();
+            ctx.rect(0, 0, clipW, clipH);
+            ctx.clip();
+
+            const ts = chartInstance.timeScale();
+            const isThb = (currentCcy === 'THB');
+            const greenFill = 'rgba(16, 185, 129, 0.42)';
+            const redFill = 'rgba(244, 63, 94, 0.42)';
+
+            for (let i = 0; i < rawData.length - 1; i++) {
+                const p1 = rawData[i];
+                const p2 = rawData[i + 1];
+
+                const x1 = ts.timeToCoordinate(p1.time);
+                const x2 = ts.timeToCoordinate(p2.time);
+                if (x1 === null || x2 === null) continue;
+
+                const vNav1 = isThb ? p1.nav_thb : p1.nav_usd;
+                const vCap1 = isThb ? p1.capital_thb : p1.capital_usd;
+                const vNav2 = isThb ? p2.nav_thb : p2.nav_usd;
+                const vCap2 = isThb ? p2.capital_thb : p2.capital_usd;
+
+                const yNav1 = navSeries.priceToCoordinate(vNav1);
+                const yCap1 = capSeries.priceToCoordinate(vCap1);
+                const yNav2 = navSeries.priceToCoordinate(vNav2);
+                const yCap2 = capSeries.priceToCoordinate(vCap2);
+                if (yNav1 === null || yCap1 === null || yNav2 === null || yCap2 === null) continue;
+
+                const diff1 = vNav1 - vCap1;
+                const diff2 = vNav2 - vCap2;
+
+                if ((diff1 >= 0 && diff2 >= 0) || (diff1 <= 0 && diff2 <= 0)) {
+                    ctx.fillStyle = (diff1 >= 0 && diff2 >= 0) ? greenFill : redFill;
+                    ctx.beginPath();
+                    ctx.moveTo(x1, yNav1);
+                    ctx.lineTo(x2, yNav2);
+                    ctx.lineTo(x2, yCap2);
+                    ctx.lineTo(x1, yCap1);
+                    ctx.closePath();
+                    ctx.fill();
+                } else {
+                    const t = Math.abs(diff1) / (Math.abs(diff1) + Math.abs(diff2));
+                    const xm = x1 + t * (x2 - x1);
+                    const ymNav = yNav1 + t * (yNav2 - yNav1);
+                    const ymCap = yCap1 + t * (yCap2 - yCap1);
+                    const ym = (ymNav + ymCap) / 2;
+
+                    ctx.fillStyle = diff1 >= 0 ? greenFill : redFill;
+                    ctx.beginPath();
+                    ctx.moveTo(x1, yNav1);
+                    ctx.lineTo(xm, ym);
+                    ctx.lineTo(x1, yCap1);
+                    ctx.closePath();
+                    ctx.fill();
+
+                    ctx.fillStyle = diff2 >= 0 ? greenFill : redFill;
+                    ctx.beginPath();
+                    ctx.moveTo(xm, ym);
+                    ctx.lineTo(x2, yNav2);
+                    ctx.lineTo(x2, yCap2);
+                    ctx.closePath();
+                    ctx.fill();
+                }
+            }
+            ctx.restore();
+        }
+
+        function scheduleDiffRibbonDraw() {
+            if (animFrameId) cancelAnimationFrame(animFrameId);
+            animFrameId = requestAnimationFrame(drawDiffRibbon);
+        }
+
+        function initChart() {
+            const container = document.getElementById('wealth-chart-container');
+            const subContainer = document.getElementById('wealth-subchart-container');
+            if (!container) return;
+
+            if (typeof LightweightCharts === 'undefined') {
+                container.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100%;color:#94a3b8;background:rgba(255,255,255,0.02);border-radius:10px;">⚠️ กำลังโหลดไลบรารีกราฟ หรือเครือข่ายออฟไลน์</div>';
+                return;
+            }
+
+            container.innerHTML = '';
+            if (subContainer) subContainer.innerHTML = '';
+
+            const isMobile = (window.innerWidth || container.clientWidth || 900) <= 640;
+            const mainHeight = isMobile ? 240 : 320;
+            const subHeight = isMobile ? 110 : 135;
+            container.style.height = mainHeight + 'px';
+            if (subContainer) subContainer.style.height = subHeight + 'px';
+
+            const commonOpts = {
+                layout: {
+                    background: { type: 'solid', color: 'transparent' },
+                    textColor: '#94a3b8',
+                    fontFamily: "'Inter', 'Prompt', -apple-system, sans-serif",
+                    fontSize: isMobile ? 11 : 12
+                },
+                grid: {
+                    vertLines: { color: 'rgba(255, 255, 255, 0.04)' },
+                    horzLines: { color: 'rgba(255, 255, 255, 0.04)' }
+                },
+                rightPriceScale: {
+                    borderColor: 'rgba(255, 255, 255, 0.08)',
+                    autoScale: true,
+                    scaleMargins: {
+                        top: 0.1,
+                        bottom: 0.1
+                    }
+                },
+                handleScroll: {
+                    mouseWheel: true,
+                    pressedMouseMove: true,
+                    horzTouchDrag: true,
+                    vertTouchDrag: false
+                },
+                handleScale: {
+                    axisPressedMouseMove: true,
+                    mouseWheel: true,
+                    pinch: true
+                },
+                crosshair: {
+                    mode: LightweightCharts.CrosshairMode.Normal,
+                    vertLine: {
+                        color: 'rgba(96, 165, 250, 0.4)',
+                        width: 1,
+                        style: LightweightCharts.LineStyle.Dashed
+                    },
+                    horzLine: {
+                        color: 'rgba(96, 165, 250, 0.4)',
+                        width: 1,
+                        style: LightweightCharts.LineStyle.Dashed
+                    }
+                }
+            };
+
+            chartInstance = LightweightCharts.createChart(container, Object.assign({}, commonOpts, {
+                width: container.clientWidth || (isMobile ? 360 : 900),
+                height: mainHeight,
+                timeScale: {
+                    visible: false,
+                    fixLeftEdge: true,
+                    fixRightEdge: true
+                }
+            }));
+
+            if (subContainer) {
+                subChartInstance = LightweightCharts.createChart(subContainer, Object.assign({}, commonOpts, {
+                    width: subContainer.clientWidth || (isMobile ? 360 : 900),
+                    height: subHeight,
+                    timeScale: {
+                        borderColor: 'rgba(255, 255, 255, 0.08)',
+                        visible: true,
+                        timeVisible: true,
+                        secondsVisible: false,
+                        fixLeftEdge: true,
+                        fixRightEdge: true
+                    }
+                }));
+
+                profitSeries = subChartInstance.addBaselineSeries({
+                    baseValue: { type: 'price', price: 0 },
+                    topLineColor: '#10b981',
+                    topFillColor1: 'rgba(16, 185, 129, 0.35)',
+                    topFillColor2: 'rgba(16, 185, 129, 0.04)',
+                    bottomLineColor: '#f43f5e',
+                    bottomFillColor1: 'rgba(244, 63, 94, 0.04)',
+                    bottomFillColor2: 'rgba(244, 63, 94, 0.35)',
+                    lineWidth: 2.5
+                });
+
+                zeroPriceLine = profitSeries.createPriceLine({
+                    price: 0,
+                    color: 'rgba(255, 255, 255, 0.45)',
+                    lineWidth: 1.5,
+                    lineStyle: LightweightCharts.LineStyle.Dashed,
+                    axisLabelVisible: true,
+                    title: '฿0.00'
+                });
+
+                chartInstance.timeScale().subscribeVisibleLogicalRangeChange(range => {
+                    if (isSyncingRange || !range || !subChartInstance) return;
+                    isSyncingRange = true;
+                    subChartInstance.timeScale().setVisibleLogicalRange(range);
+                    isSyncingRange = false;
+                });
+
+                subChartInstance.timeScale().subscribeVisibleLogicalRangeChange(range => {
+                    if (isSyncingRange || !range || !chartInstance) return;
+                    isSyncingRange = true;
+                    chartInstance.timeScale().setVisibleLogicalRange(range);
+                    isSyncingRange = false;
+                });
+
+                subChartInstance.subscribeCrosshairMove(function(param) {
+                    if (!param || !param.time || !param.seriesData || !param.seriesData.get(profitSeries)) {
+                        updateHud(latestPoint);
+                        return;
+                    }
+                    const timeStr = typeof param.time === 'string' ? param.time : 
+                        (param.time.year + '-' + String(param.time.month).padStart(2, '0') + '-' + String(param.time.day).padStart(2, '0'));
+                    const matchPt = rawData.find(d => d.time === timeStr);
+                    if (matchPt) {
+                        updateHud(matchPt);
+                    }
+                });
+            }
+
+            navSeries = chartInstance.addLineSeries({
+                color: '#00e5ff',
+                lineWidth: 3
+            });
+
+            capSeries = chartInstance.addLineSeries({
+                color: '#fbbf24',
+                lineColor: '#fbbf24',
+                lineWidth: 2.5,
+                lineStyle: LightweightCharts.LineStyle.Solid,
+                lineType: LightweightCharts.LineType.WithSteps
+            });
+
+            diffCanvas = document.getElementById('wealth-diff-canvas');
+            if (!diffCanvas) {
+                diffCanvas = document.createElement('canvas');
+                diffCanvas.id = 'wealth-diff-canvas';
+                diffCanvas.style.position = 'absolute';
+                diffCanvas.style.left = '0';
+                diffCanvas.style.top = '0';
+                diffCanvas.style.pointerEvents = 'none';
+                diffCanvas.style.zIndex = '2';
+                container.appendChild(diffCanvas);
+            }
+
+            chartInstance.timeScale().subscribeVisibleTimeRangeChange(scheduleDiffRibbonDraw);
+            chartInstance.timeScale().subscribeVisibleLogicalRangeChange(scheduleDiffRibbonDraw);
+
+            feedData();
+            setTimeout(scheduleDiffRibbonDraw, 80);
+            setTimeout(scheduleDiffRibbonDraw, 250);
+
+            chartInstance.subscribeCrosshairMove(function(param) {
+                if (!param || !param.time || !param.seriesData || !param.seriesData.get(navSeries)) {
+                    updateHud(latestPoint);
+                    return;
+                }
+                const timeStr = typeof param.time === 'string' ? param.time : 
+                    (param.time.year + '-' + String(param.time.month).padStart(2, '0') + '-' + String(param.time.day).padStart(2, '0'));
+                const matchPt = rawData.find(d => d.time === timeStr);
+                if (matchPt) {
+                    updateHud(matchPt);
+                }
+            });
+
+            if (window.ResizeObserver) {
+                const resizeObserver = new ResizeObserver(entries => {
+                    if (entries.length > 0 && chartInstance) {
+                        const newWidth = entries[0].contentRect.width;
+                        const isMob = newWidth <= 640;
+                        const mH = isMob ? 240 : 320;
+                        const sH = isMob ? 110 : 135;
+                        if (newWidth > 0) {
+                            chartInstance.applyOptions({ width: newWidth, height: mH });
+                            container.style.height = mH + 'px';
+                            if (subChartInstance) {
+                                subChartInstance.applyOptions({ width: newWidth, height: sH });
+                                if (subContainer) subContainer.style.height = sH + 'px';
+                            }
+                            scheduleDiffRibbonDraw();
+                        }
+                    }
+                });
+                resizeObserver.observe(container);
+            }
+
+            updateHud(latestPoint);
+        }
+
+        function feedData() {
+            if (!navSeries || !capSeries) return;
+            const isThb = (currentCcy === 'THB');
+            const navData = rawData.map(d => ({ time: d.time, value: isThb ? d.nav_thb : d.nav_usd }));
+            const capData = rawData.map(d => ({ time: d.time, value: isThb ? d.capital_thb : d.capital_usd }));
+
+            let subData;
+            let subPriceFormatter;
+            let zeroTitle;
+            if (currentSubMode === 'PCT') {
+                subData = rawData.map(d => ({ time: d.time, value: d.roi_pct }));
+                subPriceFormatter = (p) => (p >= 0 ? '+' : '') + p.toFixed(2) + '%';
+                zeroTitle = '0.0%';
+            } else {
+                subData = rawData.map(d => ({ time: d.time, value: isThb ? d.profit_thb : d.profit_usd }));
+                subPriceFormatter = (p) => fmtMoney(p, isThb ? '฿' : '$');
+                zeroTitle = isThb ? '฿0.00' : '$0.00';
+            }
+
+            navSeries.setData(navData);
+            capSeries.setData(capData);
+            if (profitSeries) {
+                profitSeries.setData(subData);
+                profitSeries.applyOptions({
+                    priceFormat: { type: 'custom', formatter: subPriceFormatter }
+                });
+                if (zeroPriceLine) {
+                    zeroPriceLine.applyOptions({
+                        title: zeroTitle
+                    });
+                }
+            }
+
+            const priceFormatter = (p) => fmtMoney(p, isThb ? '฿' : '$');
+            navSeries.applyOptions({
+                color: '#00e5ff',
+                priceFormat: { type: 'custom', formatter: priceFormatter }
+            });
+            capSeries.applyOptions({
+                color: '#fbbf24',
+                lineColor: '#fbbf24',
+                priceFormat: { type: 'custom', formatter: priceFormatter }
+            });
+
+            applyTimeframe(currentTf);
+            scheduleDiffRibbonDraw();
+        }
+
+        function applyTimeframe(tf) {
+            if (!chartInstance || !rawData.length) return;
+            currentTf = tf;
+
+            ['1m', '3m', '6m', 'all'].forEach(k => {
+                const btn = document.getElementById('btn-tf-' + k);
+                if (btn) btn.classList.toggle('active', k === tf.toLowerCase());
+            });
+
+            if (tf === 'ALL') {
+                chartInstance.timeScale().fitContent();
+                if (subChartInstance) subChartInstance.timeScale().fitContent();
+                setTimeout(scheduleDiffRibbonDraw, 40);
+                return;
+            }
+
+            const lastDate = new Date(latestPoint.time);
+            let days = 30;
+            if (tf === '3M') days = 90;
+            if (tf === '6M') days = 180;
+
+            const fromDate = new Date(lastDate);
+            fromDate.setDate(fromDate.getDate() - days);
+            const fromStr = fromDate.toISOString().split('T')[0];
+
+            chartInstance.timeScale().setVisibleRange({
+                from: fromStr,
+                to: latestPoint.time
+            });
+            if (subChartInstance) {
+                subChartInstance.timeScale().setVisibleRange({
+                    from: fromStr,
+                    to: latestPoint.time
+                });
+            }
+            setTimeout(scheduleDiffRibbonDraw, 40);
+        }
+
+        window.switchSubChartMode = function(mode) {
+            currentSubMode = mode;
+            const btnVal = document.getElementById('btn-sub-val');
+            const btnPct = document.getElementById('btn-sub-pct');
+            const titleEl = document.getElementById('subchart-title-text');
+            const hintEl = document.getElementById('sub-mode-hint');
+            const legendProfitEl = document.getElementById('legend-profit-text');
+
+            if (btnVal) btnVal.classList.toggle('active', mode === 'VAL');
+            if (btnPct) btnPct.classList.toggle('active', mode === 'PCT');
+
+            if (mode === 'PCT') {
+                if (titleEl) titleEl.textContent = 'กราฟอัตราส่วนกำไรสะสมต่อเงินทุน (Cumulative ROI %)';
+                if (hintEl) hintEl.textContent = 'เส้นฐาน 0.0% (เขียว = กำไรเหนือทุน / แดง = ขาดทุน)';
+                if (legendProfitEl) legendProfitEl.textContent = 'เส้นอัตราส่วนกำไรสะสมต่อทุน (ROI % Baseline)';
+            } else {
+                const ccySym = (currentCcy === 'THB') ? 'บาท' : 'ดอลลาร์';
+                if (titleEl) titleEl.textContent = 'กราฟกำไรสุทธิสะสมตลอดกาล (Cumulative All-Time Net Profit)';
+                if (hintEl) hintEl.textContent = 'เส้นฐาน 0 ' + ccySym + ' (เขียว = กำไรสะสม / แดง = ขาดทุนสะสม)';
+                if (legendProfitEl) legendProfitEl.textContent = 'เส้นกำไรสุทธิสะสม (Net Profit Baseline)';
+            }
+
+            feedData();
+            updateHud(latestPoint);
+        };
+
+        window.switchWealthCcy = function(ccy) {
+            currentCcy = ccy;
+            const btnThb = document.getElementById('btn-ccy-thb');
+            const btnUsd = document.getElementById('btn-ccy-usd');
+            const btnSubVal = document.getElementById('btn-sub-val');
+            const hintEl = document.getElementById('sub-mode-hint');
+            if (btnThb) btnThb.classList.toggle('active', ccy === 'THB');
+            if (btnUsd) btnUsd.classList.toggle('active', ccy === 'USD');
+            if (btnSubVal) btnSubVal.textContent = (ccy === 'THB') ? 'จำนวนเงิน (฿)' : 'จำนวนเงิน ($)';
+            if (currentSubMode === 'VAL' && hintEl) {
+                hintEl.textContent = 'เส้นฐาน 0 ' + (ccy === 'THB' ? 'บาท' : 'ดอลลาร์') + ' (เขียว = กำไรสะสม / แดง = ขาดทุนสะสม)';
+            }
+            feedData();
+            updateHud(latestPoint);
+        };
+
+        window.setWealthTf = function(tf) {
+            applyTimeframe(tf);
+        };
+
+        window.__WEALTH_CHART_UPDATE__ = function(liveData) {
+            if (!liveData || !rawData.length) return;
+            const last = rawData[rawData.length - 1];
+            if (liveData.total_net_worth_thb !== undefined) last.nav_thb = liveData.total_net_worth_thb;
+            if (liveData.total_net_worth_usd !== undefined) last.nav_usd = liveData.total_net_worth_usd;
+            if (liveData.stock_market_val_thb !== undefined) last.stock_thb = liveData.stock_market_val_thb;
+            if (liveData.stock_market_val_usd !== undefined) last.stock_usd = liveData.stock_market_val_usd;
+            if (liveData.total_cash_thb !== undefined) last.cash_thb = liveData.total_cash_thb;
+            if (liveData.all_time_profit_thb !== undefined) last.profit_thb = liveData.all_time_profit_thb;
+            if (liveData.all_time_roi_pct !== undefined) last.roi_pct = liveData.all_time_roi_pct;
+            feedData();
+            updateHud(last);
+        };
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initChart);
+        } else {
+            initChart();
+        }
+    })();
+    </script>
+    
+
+        <!-- SECTION 1: ACTIVE HOLDINGS TABLE -->
+        <div style="margin-bottom: 36px;">
+            <div class="section-title">
+                <span>📈</span> 1. รายการหุ้นที่กำลังถือครองในพอร์ต (Active Holdings: 8 ตัว)
+                <span class="badge badge-info">ราคาตลาดสดจาก TradingView API</span>
+            </div>
+            <div class="card" style="padding: 0; overflow-x: auto;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Ticker</th>
+                            <th>ชื่อบริษัท</th>
+                            <th style="text-align: right;">จำนวนหุ้น</th>
+                            <th style="text-align: right;">ต้นทุน ($)</th>
+                            <th style="text-align: right;">ราคาตลาด ($)</th>
+                            <th style="text-align: right;">มูลค่า ($)</th>
+                            <th style="text-align: right;">มูลค่า (฿)</th>
+                            <th style="text-align: right;">กำไร ($)</th>
+                            <th style="text-align: right;">กำไร (฿)</th>
+                            <th style="text-align: right;">% ผลตอบแทน</th>
+                            <th style="text-align: right;">สัดส่วน</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+        <tr class="holding-row" data-ticker="LLY" data-exchange="NYSE" data-shares="27.6477631" data-cost="1021.1077" data-cost-usd="28231.34" data-cost-thb="949137.8" data-server-val-usd="37731.731735463">
+            <td style="font-weight: 700; font-family: 'Inter', sans-serif; white-space: nowrap;">
+                <span class="clickable-ticker" onclick="openChartModal(&quot;LLY&quot;, &quot;NYSE&quot;, &quot;Eli Lilly and Company&quot;, &quot;Health Technology&quot;, 1021.1077, 1364.73, 1134.64, 1451.8, 1293.32, 1473.91, 1490.71)" style="background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); padding: 3px 8px; border-radius: 6px; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;" title="คลิกเปิดดูกราฟเทคนิคัลอัจฉริยะ">LLY 📈</span>
+            </td>
+            <td>Eli Lilly and Company</td>
+            <td style="text-align: right; font-family: 'Inter', sans-serif; white-space: nowrap;">27.6478</td>
+            <td style="text-align: right; font-family: 'Inter', sans-serif; white-space: nowrap;">$1,021.11</td>
+            <td class="cell-price" style="text-align: right; font-family: 'Inter', sans-serif; font-weight: 600; white-space: nowrap;">$1,364.73</td>
+            <td class="cell-val-usd" style="text-align: right; font-family: 'Inter', sans-serif; white-space: nowrap;">$37,731.73</td>
+            <td class="cell-val-thb" style="text-align: right; font-family: 'Inter', sans-serif; white-space: nowrap;">฿1,265,937.33</td>
+            <td class="cell-pl-usd" style="text-align: right; color: #10b981; font-family: 'Inter', sans-serif; font-weight: 700; white-space: nowrap;">+$9,500.39</td>
+            <td class="cell-pl-thb" style="text-align: right; color: #10b981; font-family: 'Inter', sans-serif; font-weight: 600; white-space: nowrap;">+฿316,799.53</td>
+            <td class="cell-pl-pct" style="text-align: right; color: #10b981; font-family: 'Inter', sans-serif; font-weight: 700; white-space: nowrap;">+33.65%</td>
+            <td class="cell-weight" style="text-align: right; font-family: 'Inter', sans-serif; white-space: nowrap;">79.1%</td>
+        </tr>
+        
+        <tr class="holding-row" data-ticker="GOOGL" data-exchange="NASDAQ" data-shares="11.1897032" data-cost="341.7162" data-cost-usd="3823.7" data-cost-thb="128552.88" data-server-val-usd="3161.874433224">
+            <td style="font-weight: 700; font-family: 'Inter', sans-serif; white-space: nowrap;">
+                <span class="clickable-ticker" onclick="openChartModal(&quot;GOOGL&quot;, &quot;NASDAQ&quot;, &quot;Alphabet Inc. Class A&quot;, &quot;Technology Services&quot;, 341.7162, 282.57, 265.87, 334.05, 266.23, 334.05, 396.11)" style="background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); padding: 3px 8px; border-radius: 6px; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;" title="คลิกเปิดดูกราฟเทคนิคัลอัจฉริยะ">GOOGL 📈</span>
+            </td>
+            <td>Alphabet Inc. Class A</td>
+            <td style="text-align: right; font-family: 'Inter', sans-serif; white-space: nowrap;">11.1897</td>
+            <td style="text-align: right; font-family: 'Inter', sans-serif; white-space: nowrap;">$341.72</td>
+            <td class="cell-price" style="text-align: right; font-family: 'Inter', sans-serif; font-weight: 600; white-space: nowrap;">$282.57</td>
+            <td class="cell-val-usd" style="text-align: right; font-family: 'Inter', sans-serif; white-space: nowrap;">$3,161.87</td>
+            <td class="cell-val-thb" style="text-align: right; font-family: 'Inter', sans-serif; white-space: nowrap;">฿106,084.05</td>
+            <td class="cell-pl-usd" style="text-align: right; color: #f43f5e; font-family: 'Inter', sans-serif; font-weight: 700; white-space: nowrap;">-$661.83</td>
+            <td class="cell-pl-thb" style="text-align: right; color: #f43f5e; font-family: 'Inter', sans-serif; font-weight: 600; white-space: nowrap;">-฿22,468.83</td>
+            <td class="cell-pl-pct" style="text-align: right; color: #f43f5e; font-family: 'Inter', sans-serif; font-weight: 700; white-space: nowrap;">-17.31%</td>
+            <td class="cell-weight" style="text-align: right; font-family: 'Inter', sans-serif; white-space: nowrap;">6.6%</td>
+        </tr>
+        
+        <tr class="holding-row" data-ticker="ABNB" data-exchange="NASDAQ" data-shares="9.8248563" data-cost="151.7895" data-cost-usd="1491.31" data-cost-thb="50137.84" data-server-val-usd="1671.502802319">
+            <td style="font-weight: 700; font-family: 'Inter', sans-serif; white-space: nowrap;">
+                <span class="clickable-ticker" onclick="openChartModal(&quot;ABNB&quot;, &quot;NASDAQ&quot;, &quot;Airbnb, Inc.&quot;, &quot;Consumer Services&quot;, 151.7895, 170.13, 161.77, 178.75, 161.71, 183.74, 185.53)" style="background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); padding: 3px 8px; border-radius: 6px; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;" title="คลิกเปิดดูกราฟเทคนิคัลอัจฉริยะ">ABNB 📈</span>
+            </td>
+            <td>Airbnb, Inc.</td>
+            <td style="text-align: right; font-family: 'Inter', sans-serif; white-space: nowrap;">9.8249</td>
+            <td style="text-align: right; font-family: 'Inter', sans-serif; white-space: nowrap;">$151.79</td>
+            <td class="cell-price" style="text-align: right; font-family: 'Inter', sans-serif; font-weight: 600; white-space: nowrap;">$170.13</td>
+            <td class="cell-val-usd" style="text-align: right; font-family: 'Inter', sans-serif; white-space: nowrap;">$1,671.50</td>
+            <td class="cell-val-thb" style="text-align: right; font-family: 'Inter', sans-serif; white-space: nowrap;">฿56,080.59</td>
+            <td class="cell-pl-usd" style="text-align: right; color: #10b981; font-family: 'Inter', sans-serif; font-weight: 700; white-space: nowrap;">+$180.19</td>
+            <td class="cell-pl-thb" style="text-align: right; color: #10b981; font-family: 'Inter', sans-serif; font-weight: 600; white-space: nowrap;">+฿5,942.75</td>
+            <td class="cell-pl-pct" style="text-align: right; color: #10b981; font-family: 'Inter', sans-serif; font-weight: 700; white-space: nowrap;">+12.08%</td>
+            <td class="cell-weight" style="text-align: right; font-family: 'Inter', sans-serif; white-space: nowrap;">3.5%</td>
+        </tr>
+        
+        <tr class="holding-row" data-ticker="NOK" data-exchange="NYSE" data-shares="208.8669845" data-cost="10.6208" data-cost-usd="2218.33" data-cost-thb="74698.53" data-server-val-usd="1558.14770437">
+            <td style="font-weight: 700; font-family: 'Inter', sans-serif; white-space: nowrap;">
+                <span class="clickable-ticker" onclick="openChartModal(&quot;NOK&quot;, &quot;NYSE&quot;, &quot;Nokia Oyj&quot;, &quot;Electronic Technology&quot;, 10.6208, 7.46, 6.67, 9.8, 6.67, 9.8, 12.7)" style="background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); padding: 3px 8px; border-radius: 6px; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;" title="คลิกเปิดดูกราฟเทคนิคัลอัจฉริยะ">NOK 📈</span>
+            </td>
+            <td>Nokia Oyj</td>
+            <td style="text-align: right; font-family: 'Inter', sans-serif; white-space: nowrap;">208.8670</td>
+            <td style="text-align: right; font-family: 'Inter', sans-serif; white-space: nowrap;">$10.62</td>
+            <td class="cell-price" style="text-align: right; font-family: 'Inter', sans-serif; font-weight: 600; white-space: nowrap;">$7.46</td>
+            <td class="cell-val-usd" style="text-align: right; font-family: 'Inter', sans-serif; white-space: nowrap;">$1,558.15</td>
+            <td class="cell-val-thb" style="text-align: right; font-family: 'Inter', sans-serif; white-space: nowrap;">฿52,277.41</td>
+            <td class="cell-pl-usd" style="text-align: right; color: #f43f5e; font-family: 'Inter', sans-serif; font-weight: 700; white-space: nowrap;">-$660.18</td>
+            <td class="cell-pl-thb" style="text-align: right; color: #f43f5e; font-family: 'Inter', sans-serif; font-weight: 600; white-space: nowrap;">-฿22,421.12</td>
+            <td class="cell-pl-pct" style="text-align: right; color: #f43f5e; font-family: 'Inter', sans-serif; font-weight: 700; white-space: nowrap;">-29.76%</td>
+            <td class="cell-weight" style="text-align: right; font-family: 'Inter', sans-serif; white-space: nowrap;">3.3%</td>
+        </tr>
+        
+        <tr class="holding-row" data-ticker="BAC" data-exchange="NYSE" data-shares="27.3711243" data-cost="54.3123" data-cost-usd="1486.59" data-cost-thb="49979.16" data-server-val-usd="1361.987145168">
+            <td style="font-weight: 700; font-family: 'Inter', sans-serif; white-space: nowrap;">
+                <span class="clickable-ticker" onclick="openChartModal(&quot;BAC&quot;, &quot;NYSE&quot;, &quot;Bank of America Corp&quot;, &quot;Finance&quot;, 54.3123, 49.76, 48.39, 55.47, 47.74, 55.47, 62.28)" style="background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); padding: 3px 8px; border-radius: 6px; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;" title="คลิกเปิดดูกราฟเทคนิคัลอัจฉริยะ">BAC 📈</span>
+            </td>
+            <td>Bank of America Corp</td>
+            <td style="text-align: right; font-family: 'Inter', sans-serif; white-space: nowrap;">27.3711</td>
+            <td style="text-align: right; font-family: 'Inter', sans-serif; white-space: nowrap;">$54.31</td>
+            <td class="cell-price" style="text-align: right; font-family: 'Inter', sans-serif; font-weight: 600; white-space: nowrap;">$49.76</td>
+            <td class="cell-val-usd" style="text-align: right; font-family: 'Inter', sans-serif; white-space: nowrap;">$1,361.99</td>
+            <td class="cell-val-thb" style="text-align: right; font-family: 'Inter', sans-serif; white-space: nowrap;">฿45,696.03</td>
+            <td class="cell-pl-usd" style="text-align: right; color: #f43f5e; font-family: 'Inter', sans-serif; font-weight: 700; white-space: nowrap;">-$124.60</td>
+            <td class="cell-pl-thb" style="text-align: right; color: #f43f5e; font-family: 'Inter', sans-serif; font-weight: 600; white-space: nowrap;">-฿4,283.13</td>
+            <td class="cell-pl-pct" style="text-align: right; color: #f43f5e; font-family: 'Inter', sans-serif; font-weight: 700; white-space: nowrap;">-8.38%</td>
+            <td class="cell-weight" style="text-align: right; font-family: 'Inter', sans-serif; white-space: nowrap;">2.9%</td>
+        </tr>
+        
+        <tr class="holding-row" data-ticker="APP" data-exchange="NASDAQ" data-shares="2.9770995" data-cost="285.3213" data-cost-usd="849.43" data-cost-thb="28557.84" data-server-val-usd="1060.1451319500002">
+            <td style="font-weight: 700; font-family: 'Inter', sans-serif; white-space: nowrap;">
+                <span class="clickable-ticker" onclick="openChartModal(&quot;APP&quot;, &quot;NASDAQ&quot;, &quot;AppLovin Corp&quot;, &quot;Technology Services&quot;, 285.3213, 356.1, 217.53, 409.96, 326.33, 384.59, 457.23)" style="background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); padding: 3px 8px; border-radius: 6px; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;" title="คลิกเปิดดูกราฟเทคนิคัลอัจฉริยะ">APP 📈</span>
+            </td>
+            <td>AppLovin Corp</td>
+            <td style="text-align: right; font-family: 'Inter', sans-serif; white-space: nowrap;">2.9771</td>
+            <td style="text-align: right; font-family: 'Inter', sans-serif; white-space: nowrap;">$285.32</td>
+            <td class="cell-price" style="text-align: right; font-family: 'Inter', sans-serif; font-weight: 600; white-space: nowrap;">$356.10</td>
+            <td class="cell-val-usd" style="text-align: right; font-family: 'Inter', sans-serif; white-space: nowrap;">$1,060.15</td>
+            <td class="cell-val-thb" style="text-align: right; font-family: 'Inter', sans-serif; white-space: nowrap;">฿35,568.93</td>
+            <td class="cell-pl-usd" style="text-align: right; color: #10b981; font-family: 'Inter', sans-serif; font-weight: 700; white-space: nowrap;">+$210.72</td>
+            <td class="cell-pl-thb" style="text-align: right; color: #10b981; font-family: 'Inter', sans-serif; font-weight: 600; white-space: nowrap;">+฿7,011.09</td>
+            <td class="cell-pl-pct" style="text-align: right; color: #10b981; font-family: 'Inter', sans-serif; font-weight: 700; white-space: nowrap;">+24.81%</td>
+            <td class="cell-weight" style="text-align: right; font-family: 'Inter', sans-serif; white-space: nowrap;">2.2%</td>
+        </tr>
+        
+        <tr class="holding-row" data-ticker="MNST" data-exchange="NASDAQ" data-shares="17.3443578" data-cost="42.935" data-cost-usd="744.68" data-cost-thb="25036.14" data-server-val-usd="829.580633574">
+            <td style="font-weight: 700; font-family: 'Inter', sans-serif; white-space: nowrap;">
+                <span class="clickable-ticker" onclick="openChartModal(&quot;MNST&quot;, &quot;NASDAQ&quot;, &quot;Monster Beverage Corp&quot;, &quot;Consumer Non-Durables&quot;, 42.935, 47.83, 43.19, 49.11, 46.11, 51.66, 50.69)" style="background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); padding: 3px 8px; border-radius: 6px; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;" title="คลิกเปิดดูกราฟเทคนิคัลอัจฉริยะ">MNST 📈</span>
+            </td>
+            <td>Monster Beverage Corp</td>
+            <td style="text-align: right; font-family: 'Inter', sans-serif; white-space: nowrap;">17.3444</td>
+            <td style="text-align: right; font-family: 'Inter', sans-serif; white-space: nowrap;">$42.94</td>
+            <td class="cell-price" style="text-align: right; font-family: 'Inter', sans-serif; font-weight: 600; white-space: nowrap;">$47.83</td>
+            <td class="cell-val-usd" style="text-align: right; font-family: 'Inter', sans-serif; white-space: nowrap;">$829.58</td>
+            <td class="cell-val-thb" style="text-align: right; font-family: 'Inter', sans-serif; white-space: nowrap;">฿27,833.26</td>
+            <td class="cell-pl-usd" style="text-align: right; color: #10b981; font-family: 'Inter', sans-serif; font-weight: 700; white-space: nowrap;">+$84.90</td>
+            <td class="cell-pl-thb" style="text-align: right; color: #10b981; font-family: 'Inter', sans-serif; font-weight: 600; white-space: nowrap;">+฿2,797.12</td>
+            <td class="cell-pl-pct" style="text-align: right; color: #10b981; font-family: 'Inter', sans-serif; font-weight: 700; white-space: nowrap;">+11.40%</td>
+            <td class="cell-weight" style="text-align: right; font-family: 'Inter', sans-serif; white-space: nowrap;">1.7%</td>
+        </tr>
+        
+        <tr class="holding-row" data-ticker="VOO" data-exchange="AMEX" data-shares="0.4951753" data-cost="640.46" data-cost-usd="317.14" data-cost-thb="10662.25" data-server-val-usd="333.733296941">
+            <td style="font-weight: 700; font-family: 'Inter', sans-serif; white-space: nowrap;">
+                <span class="clickable-ticker" onclick="openChartModal(&quot;VOO&quot;, &quot;AMEX&quot;, &quot;Vanguard S&amp;P 500 ETF&quot;, &quot;Miscellaneous&quot;, 640.46, 673.97, 671.39, 704.7, 659.95, 704.7, null)" style="background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); padding: 3px 8px; border-radius: 6px; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;" title="คลิกเปิดดูกราฟเทคนิคัลอัจฉริยะ">VOO 📈</span>
+            </td>
+            <td>Vanguard S&amp;P 500 ETF</td>
+            <td style="text-align: right; font-family: 'Inter', sans-serif; white-space: nowrap;">0.4952</td>
+            <td style="text-align: right; font-family: 'Inter', sans-serif; white-space: nowrap;">$640.46</td>
+            <td class="cell-price" style="text-align: right; font-family: 'Inter', sans-serif; font-weight: 600; white-space: nowrap;">$673.97</td>
+            <td class="cell-val-usd" style="text-align: right; font-family: 'Inter', sans-serif; white-space: nowrap;">$333.73</td>
+            <td class="cell-val-thb" style="text-align: right; font-family: 'Inter', sans-serif; white-space: nowrap;">฿11,197.09</td>
+            <td class="cell-pl-usd" style="text-align: right; color: #10b981; font-family: 'Inter', sans-serif; font-weight: 700; white-space: nowrap;">+$16.59</td>
+            <td class="cell-pl-thb" style="text-align: right; color: #10b981; font-family: 'Inter', sans-serif; font-weight: 600; white-space: nowrap;">+฿534.84</td>
+            <td class="cell-pl-pct" style="text-align: right; color: #10b981; font-family: 'Inter', sans-serif; font-weight: 700; white-space: nowrap;">+5.23%</td>
+            <td class="cell-weight" style="text-align: right; font-family: 'Inter', sans-serif; white-space: nowrap;">0.7%</td>
+        </tr>
+        
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Link to Deep-Dive Health & Catalysts -->
+            <div class="card" style="margin-top: 18px; padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; background: rgba(59, 130, 246, 0.05); border: 1px solid rgba(59, 130, 246, 0.2);">
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <span style="font-size: 1.4rem;">🔭</span>
+                    <div>
+                        <div style="color: #f8fafc; font-size: 0.95rem; font-weight: 700;">ต้องการอ่านวิสัยทัศน์ ตัวเร่งราคา และบทวิเคราะห์ข่าว AI เชิงลึกรายตัว?</div>
+                        <div style="color: var(--text-secondary); font-size: 0.84rem;">ตรวจสุขภาพพอร์ต สัดส่วนกลุ่มธุรกิจ แผน Action Roadmap และปฏิทินงบการเงิน</div>
+                    </div>
+                </div>
+                <a href="portfolio_review.html" style="display: inline-flex; align-items: center; gap: 6px; background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.35); color: #60a5fa; padding: 8px 16px; border-radius: 8px; font-size: 0.88rem; font-weight: 600; text-decoration: none; transition: all 0.2s;">
+                    <span>ดูรายงานตรวจสุขภาพพอร์ตฉบับเต็ม</span> <span>→</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- LINK TO COMPLETE TRADES LEDGER -->
+        <div class="card" style="margin-top: 24px; background: linear-gradient(135deg, rgba(59, 130, 246, 0.08) 0%, rgba(139, 92, 246, 0.08) 100%); border: 1px solid rgba(139, 92, 246, 0.3); padding: 24px; text-align: center;">
+            <div style="font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 8px;">
+                📑 รายการซื้อขาย เงินปันผล และประวัติเดินบัญชีทั้งหมด
+            </div>
+            <p style="color: var(--text-secondary); font-size: 0.92rem; margin-bottom: 16px;">
+                ตรวจสอบประวัติคำสั่งซื้อหุ้น 57 ไม้ | ปิดขายทำกำไร 8 ไม้ | ปันผลรับ 13 ครั้ง | เดินบัญชี 59 รายการ
+            </p>
+            <a href="trades_ledger.html" style="display: inline-flex; align-items: center; gap: 8px; background: #3b82f6; color: #fff; padding: 10px 24px; border-radius: 10px; font-weight: 600; text-decoration: none; transition: background 0.2s;">
+                <span>ดูรายการซื้อขายทั้งหมด</span> <span>→</span>
+            </a>
+        </div>
+
+    </div>
+    <script>
+    window.addEventListener('DOMContentLoaded', function() {
+        var hash = (window.location.hash || '').replace('#', '');
+        if (['ledger', 'transactions', 'trades', 'buys', 'sells', 'divs', 'cash'].indexOf(hash) !== -1) {
+            window.location.replace('trades_ledger.html' + window.location.hash);
+        }
+    });
+    </script>
+    
+    <script>
+    function fmtMoney(v, sym, signed) {
+    if (v === null || v === undefined || isNaN(v)) return '-';
+    var a = Math.abs(v).toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+    var zero = a === '0.00';
+    var sign = (v < 0 && !zero) ? '-' : ((signed && v > 0 && !zero) ? '+' : '');
+    return sign + (sym === undefined ? '$' : sym) + a;
+}
+function fmtPct(v, digits) {
+    if (v === null || v === undefined || isNaN(v)) return '-';
+    var d = digits === undefined ? 1 : digits;
+    var a = Math.abs(v).toFixed(d);
+    var zero = parseFloat(a) === 0;
+    return (zero ? '' : (v < 0 ? '-' : '+')) + a + '%';
+}
+    const PORTFOLIO_STATIC = {
+        netInjectedCapitalThb: 1295000.0,
+        dimeSaveCashThb: 0.59,
+        dimeUsdCash: 1540.09,
+        fxRate: 33.551
+    };
+
+    let liveIntervalSec = 0; // default 0 = ปิด
+    let liveCountdownSec = 0;
+    let liveCountdownTimer = null;
+    let lastSyncTimeStr = '';
+
+    window.setLiveInterval = function(sec) {
+        liveIntervalSec = parseInt(sec, 10) || 0;
+        try {
+            localStorage.setItem('portfolio_live_interval', liveIntervalSec);
+        } catch (e) {}
+
+        [0, 5, 15, 30, 60].forEach(s => {
+            const b = document.getElementById('btn-live-' + s);
+            if (b) b.classList.toggle('active', s === liveIntervalSec);
+            const rb = document.getElementById('rnav-live-' + s);
+            if (rb) rb.classList.toggle('active', s === liveIntervalSec);
+        });
+
+        if (liveCountdownTimer) {
+            clearInterval(liveCountdownTimer);
+            liveCountdownTimer = null;
+        }
+
+        const ts = document.getElementById('rnav-live-status') || document.getElementById('refresh-timestamp');
+
+        if (liveIntervalSec <= 0) {
+            if (ts) {
+                ts.innerHTML = lastSyncTimeStr 
+                    ? '🟢 ซิงค์ล่าสุด: <strong style="color: #60a5fa;">' + lastSyncTimeStr + ' น.</strong>'
+                    : '⚪ อัปเดตด้วยตนเอง';
+            }
+            return;
+        }
+
+        liveCountdownSec = liveIntervalSec;
+        updateLiveCountdownStatus();
+        refreshLiveQuotes();
+
+        liveCountdownTimer = setInterval(() => {
+            if (document.hidden) return; // Pause on locked screen to save mobile battery
+            liveCountdownSec--;
+            if (liveCountdownSec <= 0) {
+                liveCountdownSec = liveIntervalSec;
+                refreshLiveQuotes();
+            }
+            updateLiveCountdownStatus();
+        }, 1000);
+    };
+
+    function updateLiveCountdownStatus() {
+        const ts = document.getElementById('rnav-live-status') || document.getElementById('refresh-timestamp');
+        if (!ts || liveIntervalSec <= 0) return;
+        const pulseDot = '<span style="display:inline-block; width:7px; height:7px; border-radius:50%; background:#10b981; box-shadow:0 0 6px #10b981; margin-right:4px;"></span>';
+        ts.innerHTML = pulseDot + 'Live (' + liveIntervalSec + 's): <strong style="color:#10b981;">' + liveCountdownSec + 's</strong>' + 
+            (lastSyncTimeStr ? ' | <strong style="color:#60a5fa;">' + lastSyncTimeStr + ' น.</strong>' : '');
+    }
+
+    document.addEventListener('visibilitychange', () => {
+        if (!document.hidden && liveIntervalSec > 0) {
+            liveCountdownSec = liveIntervalSec;
+            refreshLiveQuotes();
+            updateLiveCountdownStatus();
+        }
+    });
+
+    async function refreshLiveQuotes() {
+        const btn = document.getElementById('rnav-btn-refresh') || document.getElementById('btn-refresh-live');
+        const icon = document.getElementById('rnav-refresh-icon') || document.getElementById('refresh-icon');
+        const text = document.getElementById('rnav-refresh-text') || document.getElementById('refresh-text');
+        const ts = document.getElementById('rnav-live-status') || document.getElementById('refresh-timestamp');
+
+        if (btn) {
+            btn.disabled = true;
+            btn.style.opacity = '0.7';
+        }
+        if (text) text.textContent = 'กำลังดึงราคา...';
+        if (icon) icon.style.transform = 'rotate(360deg)';
+
+        try {
+            // 1. Fetch USD/THB rate
+            let currentFx = PORTFOLIO_STATIC.fxRate;
+            try {
+                const fxRes = await fetch('https://scanner.tradingview.com/forex/scan', {
+                    method: 'POST',
+                    mode: 'cors',
+                    body: JSON.stringify({
+                        symbols: { tickers: ['FX_IDC:USDTHB'] },
+                        columns: ['close']
+                    })
+                });
+                if (fxRes.ok) {
+                    const fxData = await fxRes.json();
+                    if (fxData.data && fxData.data.length > 0 && fxData.data[0].d && fxData.data[0].d[0]) {
+                        currentFx = parseFloat(fxData.data[0].d[0]);
+                    }
+                }
+            } catch (e) {
+                console.warn('Could not fetch latest FX rate, using fallback', e);
+            }
+
+            // 2. Collect symbols from rows
+            const rows = document.querySelectorAll('tr.holding-row');
+            const tickers = [];
+            rows.forEach(r => {
+                const ex = r.dataset.exchange || 'NASDAQ';
+                const tk = r.dataset.ticker;
+                if (tk) {
+                    tickers.push(ex + ':' + tk);
+                }
+            });
+
+            if (tickers.length === 0) {
+                throw new Error('ไม่พบรายชื่อหุ้นในตาราง');
+            }
+
+            // 3. Fetch stock quotes from TradingView Scanner API (simple request without custom headers)
+            const stockRes = await fetch('https://scanner.tradingview.com/america/scan', {
+                method: 'POST',
+                mode: 'cors',
+                body: JSON.stringify({
+                    symbols: { tickers: tickers },
+                    columns: ['close', 'change']
+                })
+            });
+
+            if (!stockRes.ok) {
+                throw new Error('TradingView ตอบกลับด้วยรหัส ' + stockRes.status);
+            }
+
+            const stockData = await stockRes.json();
+            const quotes = {};
+            (stockData.data || []).forEach(item => {
+                const symParts = (item.s || '').split(':');
+                const ticker = symParts.length > 1 ? symParts[1] : symParts[0];
+                quotes[ticker] = {
+                    close: item.d[0],
+                    change: item.d[1]
+                };
+            });
+
+            // 4. Update rows and compute totals
+            let totalMarketValUsd = 0;
+            let totalCostUsd = 0;
+            let totalCostThb = 0;
+
+            rows.forEach(r => {
+                const ticker = r.dataset.ticker;
+                const shares = parseFloat(r.dataset.shares) || 0;
+                const avgCost = parseFloat(r.dataset.cost) || 0;
+                const serverValUsd = parseFloat(r.dataset.serverValUsd);
+                const quote = quotes[ticker];
+                const costUsd = parseFloat(r.dataset.costUsd) || shares * avgCost;
+                // THB P/L uses the THB actually paid, matching the server-rendered value.
+                const costThb = parseFloat(r.dataset.costThb) || costUsd * currentFx;
+
+                if (!(quote && typeof quote.close === 'number')) {
+                    if (!isNaN(serverValUsd)) {
+                        totalMarketValUsd += serverValUsd;
+                        totalCostUsd += costUsd;
+                        totalCostThb += costThb;
+                        r.dataset.currentValUsd = serverValUsd;
+                        r.title = 'ไม่ได้ราคาสด ใช้มูลค่าล่าสุดจากเซิร์ฟเวอร์';
+                    } else {
+                        r.dataset.currentValUsd = 0;
+                    }
+                    return;
+                }
+
+                const close = quote.close;
+                const valUsd = shares * close;
+                const valThb = valUsd * currentFx;
+                const plUsd = valUsd - costUsd;
+                const plThb = valThb - costThb;
+                const plPct = costUsd > 0 ? (plUsd / costUsd * 100) : 0;
+
+                totalMarketValUsd += valUsd;
+                totalCostUsd += costUsd;
+                totalCostThb += costThb;
+
+                r.dataset.currentValUsd = valUsd;
+                r.title = '';
+
+                const priceCell = r.querySelector('.cell-price');
+                const valUsdCell = r.querySelector('.cell-val-usd');
+                const valThbCell = r.querySelector('.cell-val-thb');
+                const plUsdCell = r.querySelector('.cell-pl-usd');
+                const plThbCell = r.querySelector('.cell-pl-thb');
+                const plPctCell = r.querySelector('.cell-pl-pct');
+
+                const color = plUsd >= 0 ? '#10b981' : '#f43f5e';
+
+                if (priceCell) priceCell.textContent = fmtMoney(close, '$');
+                if (valUsdCell) valUsdCell.textContent = fmtMoney(valUsd, '$');
+                if (valThbCell) valThbCell.textContent = fmtMoney(valThb, '฿');
+
+                if (plUsdCell) {
+                    plUsdCell.textContent = fmtMoney(plUsd, '$', true);
+                    plUsdCell.style.color = color;
+                }
+                if (plThbCell) {
+                    plThbCell.textContent = fmtMoney(plThb, '฿', true);
+                    plThbCell.style.color = color;
+                }
+                if (plPctCell) {
+                    plPctCell.textContent = fmtPct(plPct, 2);
+                    plPctCell.style.color = color;
+                }
+
+                r.style.transition = 'background-color 0.4s ease';
+                r.style.backgroundColor = 'rgba(59, 130, 246, 0.12)';
+                setTimeout(() => { r.style.backgroundColor = ''; }, 600);
+            });
+
+            // 5. Update weights
+            rows.forEach(r => {
+                const valUsd = parseFloat(r.dataset.currentValUsd) || 0;
+                const weightPct = totalMarketValUsd > 0 ? (valUsd / totalMarketValUsd * 100) : 0;
+                const weightCell = r.querySelector('.cell-weight');
+                if (weightCell) weightCell.textContent = weightPct.toFixed(1) + '%';
+            });
+
+            // 6. Update KPIs
+            const totalMarketValThb = totalMarketValUsd * currentFx;
+            const totalPlUsd = totalMarketValUsd - totalCostUsd;
+            const totalPlThb = totalMarketValUsd * currentFx - totalCostThb;
+            const totalPlPct = totalCostUsd > 0 ? (totalPlUsd / totalCostUsd * 100) : 0;
+
+            const totalCashThb = PORTFOLIO_STATIC.dimeSaveCashThb + (PORTFOLIO_STATIC.dimeUsdCash * currentFx);
+            const totalNetWorthThb = totalMarketValThb + totalCashThb;
+            const totalNetWorthUsd = currentFx > 0 ? (totalNetWorthThb / currentFx) : 0;
+
+            const allTimeProfitThb = totalNetWorthThb - PORTFOLIO_STATIC.netInjectedCapitalThb;
+            const allTimeRoiPct = PORTFOLIO_STATIC.netInjectedCapitalThb > 0 ? (allTimeProfitThb / PORTFOLIO_STATIC.netInjectedCapitalThb * 100) : 0;
+
+            // DOM updates
+            const kpiNetWorthThb = document.getElementById('kpi-net-worth-thb');
+            const kpiNetWorthUsdSub = document.getElementById('kpi-net-worth-usd-sub');
+            const kpiAllTimeProfitThb = document.getElementById('kpi-all-time-profit-thb');
+            const kpiAllTimeRoiSub = document.getElementById('kpi-all-time-roi-sub');
+            const kpiStockValUsd = document.getElementById('kpi-stock-market-val-usd');
+            const kpiStockValThb = document.getElementById('kpi-stock-market-val-thb');
+            const kpiStockUnrealizedPl = document.getElementById('kpi-stock-unrealized-pl');
+            const kpiFxPill = document.getElementById('kpi-fx-pill');
+            const kpiTotalCashThb = document.getElementById('kpi-total-cash-thb');
+
+            if (kpiNetWorthThb) kpiNetWorthThb.textContent = fmtMoney(totalNetWorthThb, '฿');
+            if (kpiNetWorthUsdSub) kpiNetWorthUsdSub.textContent = '~' + fmtMoney(totalNetWorthUsd, '$') + ' USD (หุ้น + เงินสด)';
+
+            const atColor = allTimeProfitThb >= 0 ? '#10b981' : '#f43f5e';
+            if (kpiAllTimeProfitThb) {
+                kpiAllTimeProfitThb.textContent = fmtMoney(allTimeProfitThb, '฿', true);
+                kpiAllTimeProfitThb.style.color = atColor;
+            }
+            if (kpiAllTimeRoiSub) {
+                kpiAllTimeRoiSub.textContent = fmtPct(allTimeRoiPct, 2) + ' All-Time ROI';
+                kpiAllTimeRoiSub.style.color = atColor;
+            }
+
+            if (kpiStockValUsd) kpiStockValUsd.textContent = fmtMoney(totalMarketValUsd, '$');
+            if (kpiStockValThb) kpiStockValThb.textContent = fmtMoney(totalMarketValThb, '฿');
+
+            const unColor = totalPlUsd >= 0 ? '#10b981' : '#f43f5e';
+            if (kpiStockUnrealizedPl) {
+                kpiStockUnrealizedPl.textContent = fmtMoney(totalPlUsd, '$', true) + ' (' + fmtPct(totalPlPct, 2) + ')';
+                kpiStockUnrealizedPl.style.color = unColor;
+            }
+
+            if (kpiTotalCashThb) kpiTotalCashThb.textContent = fmtMoney(totalCashThb, '฿');
+            if (kpiFxPill) kpiFxPill.textContent = '⚡ 1 USD = ' + currentFx.toFixed(2) + ' THB';
+
+            if (typeof window.__WEALTH_CHART_UPDATE__ === 'function') {
+                window.__WEALTH_CHART_UPDATE__({
+                    total_net_worth_thb: totalNetWorthThb,
+                    total_net_worth_usd: totalNetWorthUsd,
+                    stock_market_val_thb: totalMarketValThb,
+                    stock_market_val_usd: totalMarketValUsd,
+                    total_cash_thb: totalCashThb,
+                    all_time_profit_thb: allTimeProfitThb,
+                    all_time_roi_pct: allTimeRoiPct
+                });
+            }
+
+            const now = new Date();
+            const timeStr = now.toLocaleTimeString('th-TH', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+            lastSyncTimeStr = timeStr;
+            if (liveIntervalSec > 0) {
+                updateLiveCountdownStatus();
+            } else {
+                if (ts) ts.innerHTML = '🟢 ราคาเรียลไทม์ล่าสุด: <strong style="color: #60a5fa;">' + timeStr + ' น.</strong>';
+            }
+
+            // Broadcast to other open tabs
+            const livePayload = {
+                quotes: quotes,
+                currentFx: currentFx,
+                timeStr: timeStr,
+                timestamp: Date.now()
+            };
+            try {
+                localStorage.setItem('portfolio_live_bus', JSON.stringify(livePayload));
+            } catch (e) {}
+            try {
+                if (!window.__LIVE_BC__) window.__LIVE_BC__ = new BroadcastChannel('stock_portfolio_live_channel');
+                window.__LIVE_BC__.postMessage(livePayload);
+            } catch (e) {}
+
+        } catch (err) {
+            console.warn('Direct TradingView fetch blocked (common on mobile iOS/WebKit ITP), syncing from Cloud data:', err);
+            try {
+                const cloudRes = await fetch('../data/account_summary.json?t=' + Date.now());
+                if (cloudRes.ok) {
+                    const cData = await cloudRes.json();
+                    const cPositions = cData.positions || [];
+                    const cMap = {};
+                    cPositions.forEach(p => { cMap[p.ticker] = p; });
+
+                    const rows = document.querySelectorAll('tr.holding-row');
+                    rows.forEach(r => {
+                        const ticker = r.dataset.ticker;
+                        const p = cMap[ticker];
+                        if (p) {
+                            const close = p.close_price;
+                            const valUsd = p.current_val_usd;
+                            const valThb = p.current_val_thb;
+                            const plUsd = p.unrealized_pl_usd;
+                            const plThb = p.unrealized_pl_thb;
+                            const plPct = p.unrealized_pl_pct;
+                            const weightPct = p.weight_pct;
+
+                            const priceCell = r.querySelector('.cell-price');
+                            const valUsdCell = r.querySelector('.cell-val-usd');
+                            const valThbCell = r.querySelector('.cell-val-thb');
+                            const plUsdCell = r.querySelector('.cell-pl-usd');
+                            const plThbCell = r.querySelector('.cell-pl-thb');
+                            const plPctCell = r.querySelector('.cell-pl-pct');
+                            const weightCell = r.querySelector('.cell-weight');
+
+                            const color = plUsd >= 0 ? '#10b981' : '#f43f5e';
+
+                            if (priceCell) priceCell.textContent = fmtMoney(close, '$');
+                            if (valUsdCell) valUsdCell.textContent = fmtMoney(valUsd, '$');
+                            if (valThbCell) valThbCell.textContent = fmtMoney(valThb, '฿');
+                            if (plUsdCell) {
+                                plUsdCell.textContent = fmtMoney(plUsd, '$', true);
+                                plUsdCell.style.color = color;
+                            }
+                            if (plThbCell) {
+                                plThbCell.textContent = fmtMoney(plThb, '฿', true);
+                                plThbCell.style.color = color;
+                            }
+                            if (plPctCell) {
+                                plPctCell.textContent = fmtPct(plPct, 2) + '';
+                                plPctCell.style.color = color;
+                            }
+                            if (weightCell) weightCell.textContent = (weightPct === null || weightPct === undefined) ? '-' : weightPct.toFixed(1) + '%';
+
+                            r.style.transition = 'background-color 0.4s ease';
+                            r.style.backgroundColor = 'rgba(16, 185, 129, 0.12)';
+                            setTimeout(() => { r.style.backgroundColor = ''; }, 600);
+                        }
+                    });
+
+                    const kpiNetWorthThb = document.getElementById('kpi-net-worth-thb');
+                    const kpiNetWorthUsdSub = document.getElementById('kpi-net-worth-usd-sub');
+                    const kpiAllTimeProfitThb = document.getElementById('kpi-all-time-profit-thb');
+                    const kpiAllTimeRoiSub = document.getElementById('kpi-all-time-roi-sub');
+                    const kpiStockValUsd = document.getElementById('kpi-stock-market-val-usd');
+                    const kpiStockValThb = document.getElementById('kpi-stock-market-val-thb');
+                    const kpiStockUnrealizedPl = document.getElementById('kpi-stock-unrealized-pl');
+                    const kpiFxPill = document.getElementById('kpi-fx-pill');
+                    const kpiTotalCashThb = document.getElementById('kpi-total-cash-thb');
+
+                    if (kpiNetWorthThb) kpiNetWorthThb.textContent = fmtMoney((cData.total_net_worth_thb || 0), '฿');
+                    if (kpiNetWorthUsdSub) kpiNetWorthUsdSub.textContent = '~' + fmtMoney((cData.total_net_worth_usd || 0), '$') + ' USD (หุ้น + เงินสด)';
+
+                    const atProfit = cData.all_time_profit_thb || 0;
+                    const atRoi = cData.all_time_roi_pct || 0;
+                    const atColor = atProfit >= 0 ? '#10b981' : '#f43f5e';
+                    if (kpiAllTimeProfitThb) {
+                        kpiAllTimeProfitThb.textContent = fmtMoney(atProfit, '฿', true);
+                        kpiAllTimeProfitThb.style.color = atColor;
+                    }
+                    if (kpiAllTimeRoiSub) {
+                        kpiAllTimeRoiSub.textContent = fmtPct(atRoi, 2) + ' All-Time ROI';
+                        kpiAllTimeRoiSub.style.color = atColor;
+                    }
+
+                    if (kpiStockValUsd) kpiStockValUsd.textContent = fmtMoney((cData.stock_market_val_usd || 0), '$');
+                    if (kpiStockValThb) kpiStockValThb.textContent = fmtMoney((cData.stock_market_val_thb || 0), '฿');
+
+                    const unPlUsd = cData.stock_unrealized_pl_usd || 0;
+                    const unPlPct = cData.stock_unrealized_pl_pct || 0;
+                    const unColor = unPlUsd >= 0 ? '#10b981' : '#f43f5e';
+                    if (kpiStockUnrealizedPl) {
+                        kpiStockUnrealizedPl.textContent = fmtMoney(unPlUsd, '$', true) + ' (' + fmtPct(unPlPct, 2) + ')';
+                        kpiStockUnrealizedPl.style.color = unColor;
+                    }
+
+                    if (kpiTotalCashThb) kpiTotalCashThb.textContent = fmtMoney((cData.total_cash_thb || 0), '฿');
+                    if (kpiFxPill) kpiFxPill.textContent = '⚡ 1 USD = ' + (cData.fx_rate || PORTFOLIO_STATIC.fxRate).toFixed(2) + ' THB';
+
+                    if (typeof window.__WEALTH_CHART_UPDATE__ === 'function') {
+                        window.__WEALTH_CHART_UPDATE__(cData);
+                    }
+
+                    lastSyncTimeStr = cData.updated_at || '';
+                    if (liveIntervalSec > 0) {
+                        updateLiveCountdownStatus();
+                    } else {
+                        if (ts) ts.innerHTML = '☁️ ซิงค์ข้อมูลล่าสุดจาก Cloud: <strong style="color: #60a5fa;">' + (cData.updated_at || '') + ' น.</strong>';
+                    }
+                }
+            } catch (fallbackErr) {
+                console.error('Cloud sync fallback error:', fallbackErr);
+                if (ts) ts.innerHTML = '⚠️ ซิงค์ขัดข้อง กรุณาลองใหม่อีกครั้ง';
+            }
+        } finally {
+            if (btn) {
+                btn.disabled = false;
+                btn.style.opacity = '1';
+            }
+            if (text) text.textContent = 'รีเฟรชราคา';
+            if (icon) icon.style.transform = '';
+        }
+    }
+    </script>
+    
+    
+<!-- Stock Chart Dedicated Navigation Handler -->
+<script>
+function openChartModal(ticker, exchange, name, sector, cost, price, support, resistance, sl, tp, targetAvg) {
+    const params = new URLSearchParams();
+    if (ticker) params.set('ticker', ticker);
+    if (exchange) params.set('exchange', exchange);
+    if (name) params.set('name', name);
+    if (sector) params.set('sector', sector);
+    if (cost) params.set('cost', cost);
+    if (price) params.set('price', price);
+    if (support) params.set('support', support);
+    if (resistance) params.set('resistance', resistance);
+    if (sl) params.set('sl', sl);
+    if (tp) params.set('tp', tp);
+    if (targetAvg) params.set('target', targetAvg);
+    window.location.href = 'stock_chart.html?' + params.toString() + '#' + encodeURIComponent(ticker || '');
+}
+</script>
+
+</body>
+</html>

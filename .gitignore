@@ -1,0 +1,27 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Cpython & IDEs
+.DS_Store
+.idea/
+.vscode/
+.claude/*
+# Track the skills symlink (points at .agents/skills) so slash commands work after clone
+!.claude/skills
+
+# Virtual Environments
+venv/
+.venv/
+env/
+
+# Temporary analysis cache
+data/.port_analysis.json
+
+# Regenerable caches
+data/.news_cache.json
+data/candles_cache.json
+data/financials_cache.json
+data/.backtest_candles.json
+data/.backups/

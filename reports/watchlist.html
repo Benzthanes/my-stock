@@ -175,7 +175,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
   .rnav-int-btn { padding: 3px 6px; }
 }
 </style>
-<nav class="rnav" aria-label="รายงาน"><div class="rnav-top-row"><div class="rnav-links"><a href="portfolio_master.html" class="rnav-link">ภาพรวม</a><a href="portfolio_review.html" class="rnav-link">สุขภาพพอร์ต</a><a href="portfolio_recovery.html" class="rnav-link">แก้ดอย</a><a href="portfolio_dip_sim.html" class="rnav-link">Dip จำลอง</a><a href="trades_ledger.html" class="rnav-link">รายการซื้อขายทั้งหมด</a><a href="stock_chart.html" class="rnav-link">กราฟ</a><a href="watchlist.html" class="rnav-link active" aria-current="page">หุ้นที่สนใจ</a><a href="advisor.html" class="rnav-link">คำแนะนำ</a></div></div><div class="rnav-live-bar"><div class="rnav-live-left"><button id="rnav-btn-refresh" class="rnav-refresh-btn" onclick="triggerGlobalRefresh()" title="กดเพื่อดึงราคาตลาดสดทันที"><span id="rnav-refresh-icon" style="display:inline-block; transition:transform 0.6s ease;">🔄</span> <span id="rnav-refresh-text">รีเฟรชราคา</span> <span class="rnav-live-badge">Live</span></button><div class="rnav-int-group" title="อัปเดตราคาหุ้นอัตโนมัติ (5วิ - 60วิ)"><span class="rnav-int-label">⏱️<span class="rnav-int-word"> อัปเดตสด:</span></span><button id="rnav-live-0" class="rnav-int-btn active" onclick="setGlobalLiveInterval(0)">ปิด</button><button id="rnav-live-5" class="rnav-int-btn" onclick="setGlobalLiveInterval(5)">5s</button><button id="rnav-live-15" class="rnav-int-btn" onclick="setGlobalLiveInterval(15)">15s</button><button id="rnav-live-30" class="rnav-int-btn" onclick="setGlobalLiveInterval(30)">30s</button><button id="rnav-live-60" class="rnav-int-btn" onclick="setGlobalLiveInterval(60)">60s</button></div></div><div class="rnav-live-right"><span id="rnav-live-status" class="rnav-status">⚪ อัปเดตด้วยตนเอง</span><span class="rnav-time">อัปเดต: 2026-11-06 22:41</span></div></div></nav>
+<nav class="rnav" aria-label="รายงาน"><div class="rnav-top-row"><div class="rnav-links"><a href="portfolio_master.html" class="rnav-link">ภาพรวม</a><a href="portfolio_review.html" class="rnav-link">สุขภาพพอร์ต</a><a href="portfolio_recovery.html" class="rnav-link">แก้ดอย</a><a href="portfolio_dip_sim.html" class="rnav-link">Dip จำลอง</a><a href="trades_ledger.html" class="rnav-link">รายการซื้อขายทั้งหมด</a><a href="stock_chart.html" class="rnav-link">กราฟ</a><a href="watchlist.html" class="rnav-link active" aria-current="page">หุ้นที่สนใจ</a><a href="advisor.html" class="rnav-link">คำแนะนำ</a></div></div><div class="rnav-live-bar"><div class="rnav-live-left"><button id="rnav-btn-refresh" class="rnav-refresh-btn" onclick="triggerGlobalRefresh()" title="กดเพื่อดึงราคาตลาดสดทันที"><span id="rnav-refresh-icon" style="display:inline-block; transition:transform 0.6s ease;">🔄</span> <span id="rnav-refresh-text">รีเฟรชราคา</span> <span class="rnav-live-badge">Live</span></button><div class="rnav-int-group" title="อัปเดตราคาหุ้นอัตโนมัติ (5วิ - 60วิ)"><span class="rnav-int-label">⏱️<span class="rnav-int-word"> อัปเดตสด:</span></span><button id="rnav-live-0" class="rnav-int-btn active" onclick="setGlobalLiveInterval(0)">ปิด</button><button id="rnav-live-5" class="rnav-int-btn" onclick="setGlobalLiveInterval(5)">5s</button><button id="rnav-live-15" class="rnav-int-btn" onclick="setGlobalLiveInterval(15)">15s</button><button id="rnav-live-30" class="rnav-int-btn" onclick="setGlobalLiveInterval(30)">30s</button><button id="rnav-live-60" class="rnav-int-btn" onclick="setGlobalLiveInterval(60)">60s</button></div></div><div class="rnav-live-right"><span id="rnav-live-status" class="rnav-status">⚪ อัปเดตด้วยตนเอง</span><span class="rnav-time">อัปเดต: 2026-11-07 06:44</span></div></div></nav>
 <script>
 (function() {
   var activeLink = document.querySelector(".rnav-link.active");
@@ -420,7 +420,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
 <div class="container">
     <h1>📋 หุ้นที่สนใจ</h1>
     <p class="lead">หุ้นที่รอซื้อ 46 ตัว. หน้านี้บอกว่าแต่ละตัวอยู่ใกล้ "แนวรับ" (ราคาที่ตั้งใจรอซื้อ) แค่ไหน.</p>
-    <p class="meta">ราคาเมื่อ <strong>2026-11-06 22:41:49</strong>. ใช้ราคา Premarket ถ้ามี ไม่มีจึงใช้ราคาปิด. มีในพอร์ตจริง 1 ตัว.</p>
+    <p class="meta">ราคาเมื่อ <strong>2026-11-07 06:44:16</strong>. ใช้ราคา Premarket ถ้ามี ไม่มีจึงใช้ราคาปิด. มีในพอร์ตจริง 1 ตัว.</p>
     
 
     <div class="howto">
@@ -474,7 +474,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
                     <div class="big">$104.60</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="down">-4.9%</span> จากปิด $109.94</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="down">-7.2%</span> จากปิด $112.76</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
@@ -495,7 +495,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
                     <div class="big">$8.38</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+1.1%</span> จากปิด $8.29</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="down">-2.7%</span> จากปิด $8.61</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
@@ -522,16 +522,16 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 </div>
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
-                    <div class="big">$180.57</div>
-                    <div class="sub">ราคาปิด</div>
+                    <div class="big">$181.08</div>
+                    <div class="sub"><span class="ptag">Post</span> <span class="up">+0.0%</span> จากปิด $181.08</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
                     <div class="big gold">$181.68</div>
                 </div>
                 <div class="col-dist">
-                    <div class="dist dist-rose">ต่ำกว่าแนวรับ 0.6%</div>
-                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:48.8%"></span></div>
+                    <div class="dist dist-rose">ต่ำกว่าแนวรับ 0.3%</div>
+                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:49.3%"></span></div>
                 </div>
             </div>
             <div class="row stock-row" data-group="AI Applications" data-status="A"
@@ -544,7 +544,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
                     <div class="big">$280.95</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+4.7%</span> จากปิด $268.24</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+1.8%</span> จากปิด $275.88</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
@@ -565,7 +565,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
                     <div class="big">$349.12</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="down">-3.4%</span> จากปิด $361.39</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="down">-2.5%</span> จากปิด $358.22</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
@@ -586,7 +586,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
                     <div class="big">$7.84</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="down">-4.7%</span> จากปิด $8.23</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="down">-11.8%</span> จากปิด $8.89</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
@@ -607,7 +607,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
                     <div class="big">$190.39</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+3.8%</span> จากปิด $183.48</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+4.1%</span> จากปิด $182.86</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
@@ -628,7 +628,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
                     <div class="big">$48.31</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="down">-2.5%</span> จากปิด $49.54</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="down">-9.0%</span> จากปิด $53.07</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
@@ -649,7 +649,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
                     <div class="big">$311.41</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+4.0%</span> จากปิด $299.52</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+6.0%</span> จากปิด $293.69</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
@@ -670,7 +670,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
                     <div class="big">$54.65</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+3.9%</span> จากปิด $52.61</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+2.0%</span> จากปิด $53.57</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
@@ -691,7 +691,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
                     <div class="big">$380.85</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+1.9%</span> จากปิด $373.69</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+1.4%</span> จากปิด $375.44</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
@@ -712,7 +712,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
                     <div class="big">$183.30</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+2.5%</span> จากปิด $178.90</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+5.8%</span> จากปิด $173.24</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
@@ -733,7 +733,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
                     <div class="big">$9.53</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="down">-2.6%</span> จากปิด $9.79</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="down">-10.8%</span> จากปิด $10.68</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
@@ -754,7 +754,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
                     <div class="big">$28.00</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="down">-4.9%</span> จากปิด $29.43</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="down">-14.2%</span> จากปิด $32.62</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
@@ -775,7 +775,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
                     <div class="big">$10.23</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="down">-5.8%</span> จากปิด $10.86</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="down">-12.9%</span> จากปิด $11.75</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
@@ -796,7 +796,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
                     <div class="big">$284.80</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="down">-1.3%</span> จากปิด $288.41</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+0.0%</span> จากปิด $284.78</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
@@ -817,7 +817,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
                     <div class="big">$6.49</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="down">-2.8%</span> จากปิด $6.67</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="down">-10.0%</span> จากปิด $7.21</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
@@ -838,7 +838,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
                     <div class="big">$443.67</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="down">-0.4%</span> จากปิด $445.43</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="down">-1.2%</span> จากปิด $449.04</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
@@ -859,7 +859,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
                     <div class="big">$66.48</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+5.3%</span> จากปิด $63.16</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+5.0%</span> จากปิด $63.31</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
@@ -880,7 +880,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
                     <div class="big">$158.69</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="down">-1.9%</span> จากปิด $161.69</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="down">-1.1%</span> จากปิด $160.38</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
@@ -901,7 +901,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
                     <div class="big">$191.18</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="down">-0.1%</span> จากปิด $191.46</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+2.4%</span> จากปิด $186.64</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
@@ -922,7 +922,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
                     <div class="big">$1,446.28</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+1.4%</span> จากปิด $1,425.86</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+1.5%</span> จากปิด $1,424.75</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
@@ -943,7 +943,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
                     <div class="big">$33.40</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+3.1%</span> จากปิด $32.40</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+1.8%</span> จากปิด $32.82</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
@@ -964,7 +964,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
                     <div class="big">$78.00</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+6.5%</span> จากปิด $73.27</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+7.6%</span> จากปิด $72.48</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
@@ -985,7 +985,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
                     <div class="big">$33.51</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="down">-2.8%</span> จากปิด $34.49</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="down">-4.5%</span> จากปิด $35.10</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
@@ -1006,7 +1006,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
                     <div class="big">$189.50</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="down">-0.1%</span> จากปิด $189.77</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="down">-1.7%</span> จากปิด $192.81</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
@@ -1027,7 +1027,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
                     <div class="big">$709.00</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+1.7%</span> จากปิด $696.82</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+2.8%</span> จากปิด $690.00</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
@@ -1048,7 +1048,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
                     <div class="big">$102.54</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+1.1%</span> จากปิด $101.43</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+0.6%</span> จากปิด $101.97</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
@@ -1069,7 +1069,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
                     <div class="big">$177.34</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+1.7%</span> จากปิด $174.41</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+1.6%</span> จากปิด $174.62</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
@@ -1090,7 +1090,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
                     <div class="big">$194.00</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+4.7%</span> จากปิด $185.22</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+1.7%</span> จากปิด $190.71</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
@@ -1111,7 +1111,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
                     <div class="big">$124.34</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+5.3%</span> จากปิด $118.07</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+3.2%</span> จากปิด $120.51</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
@@ -1132,7 +1132,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
                     <div class="big">$145.38</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+4.2%</span> จากปิด $139.48</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+3.0%</span> จากปิด $141.20</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
@@ -1151,27 +1151,6 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             </div>
             <div class="rows">
             <div class="row stock-row" data-group="Midterm 2026" data-status="C"
-                 data-portfolio="false" data-ticker="DVA">
-                <div class="col-name">
-                    <div class="name-line"><span class="tk">DVA</span></div>
-                    <div class="grp">Midterm 2026</div>
-                    <div class="src" title="แนวรับไม่ได้มาจากภาพ Shay Boloor">แนวรับจาก เทรนเลือกตั้ง 2026-11-05 แนวรับ SMA200</div>
-                </div>
-                <div class="col-price">
-                    <div class="lbl">ราคาตอนนี้</div>
-                    <div class="big">$190.21</div>
-                    <div class="sub">ราคาปิด</div>
-                </div>
-                <div class="col-supp">
-                    <div class="lbl">แนวรับ</div>
-                    <div class="big gold">$178.24</div>
-                </div>
-                <div class="col-dist">
-                    <div class="dist dist-slate">เหนือแนวรับ 6.7%</div>
-                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-slate " style="left:63.4%"></span></div>
-                </div>
-            </div>
-            <div class="row stock-row" data-group="Midterm 2026" data-status="C"
                  data-portfolio="false" data-ticker="OLLI">
                 <div class="col-name">
                     <div class="name-line"><span class="tk">OLLI</span></div>
@@ -1181,7 +1160,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
                     <div class="big">$92.57</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+0.2%</span> จากปิด $92.39</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+2.4%</span> จากปิด $90.40</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
@@ -1202,7 +1181,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
                     <div class="big">$63.80</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="down">-0.4%</span> จากปิด $64.05</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+0.6%</span> จากปิด $63.41</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
@@ -1223,7 +1202,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
                     <div class="big">$51.44</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="down">-0.2%</span> จากปิด $51.54</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+0.4%</span> จากปิด $51.26</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
@@ -1232,6 +1211,27 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="col-dist">
                     <div class="dist dist-slate">เหนือแนวรับ 7.2%</div>
                     <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-slate " style="left:64.3%"></span></div>
+                </div>
+            </div>
+            <div class="row stock-row" data-group="Midterm 2026" data-status="C"
+                 data-portfolio="false" data-ticker="DVA">
+                <div class="col-name">
+                    <div class="name-line"><span class="tk">DVA</span></div>
+                    <div class="grp">Midterm 2026</div>
+                    <div class="src" title="แนวรับไม่ได้มาจากภาพ Shay Boloor">แนวรับจาก เทรนเลือกตั้ง 2026-11-05 แนวรับ SMA200</div>
+                </div>
+                <div class="col-price">
+                    <div class="lbl">ราคาตอนนี้</div>
+                    <div class="big">$191.35</div>
+                    <div class="sub"><span class="ptag">Post</span> <span class="up">+0.0%</span> จากปิด $191.35</div>
+                </div>
+                <div class="col-supp">
+                    <div class="lbl">แนวรับ</div>
+                    <div class="big gold">$178.24</div>
+                </div>
+                <div class="col-dist">
+                    <div class="dist dist-slate">เหนือแนวรับ 7.4%</div>
+                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-slate " style="left:64.7%"></span></div>
                 </div>
             </div>
             <div class="row stock-row" data-group="ETF Plan 2026-11" data-status="C"
@@ -1244,7 +1244,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
                     <div class="big">$270.97</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="down">-0.4%</span> จากปิด $272.10</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+0.3%</span> จากปิด $270.22</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
@@ -1265,7 +1265,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
                     <div class="big">$230.90</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+4.3%</span> จากปิด $221.40</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+6.5%</span> จากปิด $216.90</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
@@ -1286,7 +1286,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
                     <div class="big">$259.92</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="down">-1.1%</span> จากปิด $262.86</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+0.2%</span> จากปิด $259.30</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
@@ -1307,7 +1307,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
                     <div class="big">$131.00</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="down">-0.4%</span> จากปิด $131.53</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="down">-2.4%</span> จากปิด $134.27</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
@@ -1328,7 +1328,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
                     <div class="big">$793.51</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+0.9%</span> จากปิด $786.20</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+2.5%</span> จากปิด $774.11</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
@@ -1349,7 +1349,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
                     <div class="big">$241.29</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+0.0%</span> จากปิด $241.27</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+0.4%</span> จากปิด $240.30</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
@@ -1370,7 +1370,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
                     <div class="big">$11.82</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="down">-2.6%</span> จากปิด $12.14</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="down">-5.8%</span> จากปิด $12.55</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
@@ -1391,7 +1391,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
                     <div class="big">$196.95</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="down">-4.7%</span> จากปิด $206.66</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="down">-2.1%</span> จากปิด $201.14</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
@@ -1412,7 +1412,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
                     <div class="big">$75.60</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+1.9%</span> จากปิด $74.16</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+2.4%</span> จากปิด $73.82</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
@@ -1433,7 +1433,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
                     <div class="big">$208.64</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+3.0%</span> จากปิด $202.59</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+4.1%</span> จากปิด $200.44</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>

@@ -57,26 +57,8 @@
       "avg_cost_usd": 42.935,
       "total_cost_usd": 744.68,
       "cost_thb": 25036.14
-    },
-    {
-      "ticker": "APP",
-      "exchange": "NASDAQ",
-      "name": "AppLovin Corp",
-      "shares": 2.9770995,
-      "avg_cost_usd": 285.3213,
-      "total_cost_usd": 849.43,
-      "cost_thb": 28557.84
-    },
-    {
-      "ticker": "VOO",
-      "exchange": "AMEX",
-      "name": "Vanguard S&P 500 ETF",
-      "shares": 0.4951753,
-      "avg_cost_usd": 640.46,
-      "total_cost_usd": 317.14,
-      "cost_thb": 10662.25
     }
   ],
-  "total_cost_usd": 39162.52,
-  "total_cost_thb": 1316762.44
+  "total_cost_usd": 37995.95,
+  "total_cost_thb": 1277542.35
 }

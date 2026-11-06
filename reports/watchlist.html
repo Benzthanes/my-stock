@@ -175,7 +175,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
   .rnav-int-btn { padding: 3px 6px; }
 }
 </style>
-<nav class="rnav" aria-label="รายงาน"><div class="rnav-top-row"><div class="rnav-links"><a href="portfolio_master.html" class="rnav-link">ภาพรวม</a><a href="portfolio_review.html" class="rnav-link">สุขภาพพอร์ต</a><a href="portfolio_recovery.html" class="rnav-link">แก้ดอย</a><a href="portfolio_dip_sim.html" class="rnav-link">Dip จำลอง</a><a href="trades_ledger.html" class="rnav-link">รายการซื้อขายทั้งหมด</a><a href="stock_chart.html" class="rnav-link">กราฟ</a><a href="watchlist.html" class="rnav-link active" aria-current="page">หุ้นที่สนใจ</a><a href="advisor.html" class="rnav-link">คำแนะนำ</a></div></div><div class="rnav-live-bar"><div class="rnav-live-left"><button id="rnav-btn-refresh" class="rnav-refresh-btn" onclick="triggerGlobalRefresh()" title="กดเพื่อดึงราคาตลาดสดทันที"><span id="rnav-refresh-icon" style="display:inline-block; transition:transform 0.6s ease;">🔄</span> <span id="rnav-refresh-text">รีเฟรชราคา</span> <span class="rnav-live-badge">Live</span></button><div class="rnav-int-group" title="อัปเดตราคาหุ้นอัตโนมัติ (5วิ - 60วิ)"><span class="rnav-int-label">⏱️<span class="rnav-int-word"> อัปเดตสด:</span></span><button id="rnav-live-0" class="rnav-int-btn active" onclick="setGlobalLiveInterval(0)">ปิด</button><button id="rnav-live-5" class="rnav-int-btn" onclick="setGlobalLiveInterval(5)">5s</button><button id="rnav-live-15" class="rnav-int-btn" onclick="setGlobalLiveInterval(15)">15s</button><button id="rnav-live-30" class="rnav-int-btn" onclick="setGlobalLiveInterval(30)">30s</button><button id="rnav-live-60" class="rnav-int-btn" onclick="setGlobalLiveInterval(60)">60s</button></div></div><div class="rnav-live-right"><span id="rnav-live-status" class="rnav-status">⚪ อัปเดตด้วยตนเอง</span><span class="rnav-time">อัปเดต: 2026-11-06 16:56</span></div></div></nav>
+<nav class="rnav" aria-label="รายงาน"><div class="rnav-top-row"><div class="rnav-links"><a href="portfolio_master.html" class="rnav-link">ภาพรวม</a><a href="portfolio_review.html" class="rnav-link">สุขภาพพอร์ต</a><a href="portfolio_recovery.html" class="rnav-link">แก้ดอย</a><a href="portfolio_dip_sim.html" class="rnav-link">Dip จำลอง</a><a href="trades_ledger.html" class="rnav-link">รายการซื้อขายทั้งหมด</a><a href="stock_chart.html" class="rnav-link">กราฟ</a><a href="watchlist.html" class="rnav-link active" aria-current="page">หุ้นที่สนใจ</a><a href="advisor.html" class="rnav-link">คำแนะนำ</a></div></div><div class="rnav-live-bar"><div class="rnav-live-left"><button id="rnav-btn-refresh" class="rnav-refresh-btn" onclick="triggerGlobalRefresh()" title="กดเพื่อดึงราคาตลาดสดทันที"><span id="rnav-refresh-icon" style="display:inline-block; transition:transform 0.6s ease;">🔄</span> <span id="rnav-refresh-text">รีเฟรชราคา</span> <span class="rnav-live-badge">Live</span></button><div class="rnav-int-group" title="อัปเดตราคาหุ้นอัตโนมัติ (5วิ - 60วิ)"><span class="rnav-int-label">⏱️<span class="rnav-int-word"> อัปเดตสด:</span></span><button id="rnav-live-0" class="rnav-int-btn active" onclick="setGlobalLiveInterval(0)">ปิด</button><button id="rnav-live-5" class="rnav-int-btn" onclick="setGlobalLiveInterval(5)">5s</button><button id="rnav-live-15" class="rnav-int-btn" onclick="setGlobalLiveInterval(15)">15s</button><button id="rnav-live-30" class="rnav-int-btn" onclick="setGlobalLiveInterval(30)">30s</button><button id="rnav-live-60" class="rnav-int-btn" onclick="setGlobalLiveInterval(60)">60s</button></div></div><div class="rnav-live-right"><span id="rnav-live-status" class="rnav-status">⚪ อัปเดตด้วยตนเอง</span><span class="rnav-time">อัปเดต: 2026-11-06 21:24</span></div></div></nav>
 <script>
 (function() {
   var activeLink = document.querySelector(".rnav-link.active");
@@ -420,7 +420,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
 <div class="container">
     <h1>📋 หุ้นที่สนใจ</h1>
     <p class="lead">หุ้นที่รอซื้อ 46 ตัว. หน้านี้บอกว่าแต่ละตัวอยู่ใกล้ "แนวรับ" (ราคาที่ตั้งใจรอซื้อ) แค่ไหน.</p>
-    <p class="meta">ราคาเมื่อ <strong>2026-11-06 16:56:00</strong>. ใช้ราคา Premarket ถ้ามี ไม่มีจึงใช้ราคาปิด. มีในพอร์ตจริง 1 ตัว.</p>
+    <p class="meta">ราคาเมื่อ <strong>2026-11-06 21:24:40</strong>. ใช้ราคา Premarket ถ้ามี ไม่มีจึงใช้ราคาปิด. มีในพอร์ตจริง 1 ตัว.</p>
     
 
     <div class="howto">
@@ -431,17 +431,17 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
 
     <div class="sums">
         <button class="sum-card sum-emerald" id="card-B" onclick="filterByStatus('B')">
-            <div class="sum-top"><span class="sum-icon">🎯</span><span class="sum-num">4</span></div>
+            <div class="sum-top"><span class="sum-icon">🎯</span><span class="sum-num">2</span></div>
             <div class="sum-title">อยู่ในโซนซื้อ</div>
             <div class="sum-range">ราคาอยู่เหนือแนวรับ 0-5%</div>
         </button>
         <button class="sum-card sum-rose" id="card-A" onclick="filterByStatus('A')">
-            <div class="sum-top"><span class="sum-icon">🔻</span><span class="sum-num">28</span></div>
+            <div class="sum-top"><span class="sum-icon">🔻</span><span class="sum-num">29</span></div>
             <div class="sum-title">หลุดแนวรับแล้ว</div>
             <div class="sum-range">ราคาต่ำกว่าแนวรับ</div>
         </button>
         <button class="sum-card sum-slate" id="card-C" onclick="filterByStatus('C')">
-            <div class="sum-top"><span class="sum-icon">⏳</span><span class="sum-num">14</span></div>
+            <div class="sum-top"><span class="sum-icon">⏳</span><span class="sum-num">15</span></div>
             <div class="sum-title">ยังไกลจากแนวรับ</div>
             <div class="sum-range">ราคาอยู่เหนือแนวรับเกิน 5%</div>
         </button></div>
@@ -460,31 +460,10 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
     
         <section class="sec sec-emerald" data-section="B">
             <div class="sec-head">
-                <h2>🎯 อยู่ในโซนซื้อ <span class="sec-count">4 ตัว</span></h2>
+                <h2>🎯 อยู่ในโซนซื้อ <span class="sec-count">2 ตัว</span></h2>
                 <p>ราคาอยู่เหนือแนวรับ 0-5%. <strong>ควรทำ:</strong> ใกล้จุดซื้อแล้ว ตั้ง Limit ที่แนวรับได้.</p>
             </div>
             <div class="rows">
-            <div class="row stock-row" data-group="Physical AI" data-status="B"
-                 data-portfolio="false" data-ticker="TSLA">
-                <div class="col-name">
-                    <div class="name-line"><span class="tk">TSLA</span></div>
-                    <div class="grp">Physical AI</div>
-                    <div class="src">แนวรับ Fibo จาก Shay Boloor</div>
-                </div>
-                <div class="col-price">
-                    <div class="lbl">ราคาตอนนี้</div>
-                    <div class="big">$353.19</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+2.8%</span> จากปิด $343.69</div>
-                </div>
-                <div class="col-supp">
-                    <div class="lbl">แนวรับ</div>
-                    <div class="big gold">$353</div>
-                </div>
-                <div class="col-dist">
-                    <div class="dist dist-emerald">เหนือแนวรับ 0.1%</div>
-                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-emerald " style="left:50.1%"></span></div>
-                </div>
-            </div>
             <div class="row stock-row" data-group="Midterm 2026" data-status="B"
                  data-portfolio="false" data-ticker="ENSG">
                 <div class="col-name">
@@ -515,43 +494,22 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 </div>
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
-                    <div class="big">$105.00</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+2.9%</span> จากปิด $102.08</div>
+                    <div class="big">$104.62</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+2.5%</span> จากปิด $102.08</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
                     <div class="big gold">$102</div>
                 </div>
                 <div class="col-dist">
-                    <div class="dist dist-emerald">เหนือแนวรับ 2.9%</div>
-                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-emerald " style="left:55.9%"></span></div>
-                </div>
-            </div>
-            <div class="row stock-row" data-group="AI Power" data-status="B"
-                 data-portfolio="false" data-ticker="NVTS">
-                <div class="col-name">
-                    <div class="name-line"><span class="tk">NVTS</span></div>
-                    <div class="grp">AI Power</div>
-                    <div class="src">แนวรับ Fibo จาก Shay Boloor</div>
-                </div>
-                <div class="col-price">
-                    <div class="lbl">ราคาตอนนี้</div>
-                    <div class="big">$8.38</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+6.6%</span> จากปิด $7.86</div>
-                </div>
-                <div class="col-supp">
-                    <div class="lbl">แนวรับ</div>
-                    <div class="big gold">$8</div>
-                </div>
-                <div class="col-dist">
-                    <div class="dist dist-emerald">เหนือแนวรับ 4.8%</div>
-                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-emerald " style="left:59.5%"></span></div>
+                    <div class="dist dist-emerald">เหนือแนวรับ 2.6%</div>
+                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-emerald " style="left:55.1%"></span></div>
                 </div>
             </div></div>
         </section>
         <section class="sec sec-rose" data-section="A">
             <div class="sec-head">
-                <h2>🔻 หลุดแนวรับแล้ว <span class="sec-count">28 ตัว</span></h2>
+                <h2>🔻 หลุดแนวรับแล้ว <span class="sec-count">29 ตัว</span></h2>
                 <p>ราคาต่ำกว่าแนวรับ. <strong>ควรทำ:</strong> แนวรับเดิมแตกแล้ว รอราคายืนกลับเหนือแนวรับก่อน อย่ารีบรับมีด.</p>
             </div>
             <div class="rows">
@@ -564,16 +522,37 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 </div>
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
-                    <div class="big">$278.66</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+3.4%</span> จากปิด $269.54</div>
+                    <div class="big">$282.01</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+4.6%</span> จากปิด $269.54</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
                     <div class="big gold">$283</div>
                 </div>
                 <div class="col-dist">
-                    <div class="dist dist-rose">ต่ำกว่าแนวรับ 1.5%</div>
-                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:46.9%"></span></div>
+                    <div class="dist dist-rose">ต่ำกว่าแนวรับ 0.3%</div>
+                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:49.3%"></span></div>
+                </div>
+            </div>
+            <div class="row stock-row" data-group="Physical AI" data-status="A"
+                 data-portfolio="false" data-ticker="TSLA">
+                <div class="col-name">
+                    <div class="name-line"><span class="tk">TSLA</span></div>
+                    <div class="grp">Physical AI</div>
+                    <div class="src">แนวรับ Fibo จาก Shay Boloor</div>
+                </div>
+                <div class="col-price">
+                    <div class="lbl">ราคาตอนนี้</div>
+                    <div class="big">$350.92</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+2.1%</span> จากปิด $343.69</div>
+                </div>
+                <div class="col-supp">
+                    <div class="lbl">แนวรับ</div>
+                    <div class="big gold">$353</div>
+                </div>
+                <div class="col-dist">
+                    <div class="dist dist-rose">ต่ำกว่าแนวรับ 0.6%</div>
+                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:48.8%"></span></div>
                 </div>
             </div>
             <div class="row stock-row" data-group="Quantum" data-status="A"
@@ -585,16 +564,16 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 </div>
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
-                    <div class="big">$7.85</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+5.5%</span> จากปิด $7.44</div>
+                    <div class="big">$7.82</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+5.1%</span> จากปิด $7.44</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
                     <div class="big gold">$8</div>
                 </div>
                 <div class="col-dist">
-                    <div class="dist dist-rose">ต่ำกว่าแนวรับ 1.9%</div>
-                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:46.2%"></span></div>
+                    <div class="dist dist-rose">ต่ำกว่าแนวรับ 2.3%</div>
+                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:45.5%"></span></div>
                 </div>
             </div>
             <div class="row stock-row" data-group="AI Power" data-status="A"
@@ -606,16 +585,16 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 </div>
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
-                    <div class="big">$190.50</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+7.8%</span> จากปิด $176.73</div>
+                    <div class="big">$189.50</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+7.2%</span> จากปิด $176.73</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
                     <div class="big gold">$195</div>
                 </div>
                 <div class="col-dist">
-                    <div class="dist dist-rose">ต่ำกว่าแนวรับ 2.3%</div>
-                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:45.4%"></span></div>
+                    <div class="dist dist-rose">ต่ำกว่าแนวรับ 2.8%</div>
+                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:44.4%"></span></div>
                 </div>
             </div>
             <div class="row stock-row" data-group="Space" data-status="A"
@@ -627,79 +606,16 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 </div>
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
-                    <div class="big">$48.76</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+6.0%</span> จากปิด $45.99</div>
+                    <div class="big">$48.45</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+5.3%</span> จากปิด $45.99</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
                     <div class="big gold">$50</div>
                 </div>
                 <div class="col-dist">
-                    <div class="dist dist-rose">ต่ำกว่าแนวรับ 2.5%</div>
-                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:45.0%"></span></div>
-                </div>
-            </div>
-            <div class="row stock-row" data-group="Quantum" data-status="A"
-                 data-portfolio="false" data-ticker="QBTS">
-                <div class="col-name">
-                    <div class="name-line"><span class="tk">QBTS</span></div>
-                    <div class="grp">Quantum</div>
-                    <div class="src">แนวรับ Fibo จาก Shay Boloor</div>
-                </div>
-                <div class="col-price">
-                    <div class="lbl">ราคาตอนนี้</div>
-                    <div class="big">$9.58</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+5.9%</span> จากปิด $9.05</div>
-                </div>
-                <div class="col-supp">
-                    <div class="lbl">แนวรับ</div>
-                    <div class="big gold">$10</div>
-                </div>
-                <div class="col-dist">
-                    <div class="dist dist-rose">ต่ำกว่าแนวรับ 4.2%</div>
-                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:41.6%"></span></div>
-                </div>
-            </div>
-            <div class="row stock-row" data-group="Quantum" data-status="A"
-                 data-portfolio="false" data-ticker="IONQ">
-                <div class="col-name">
-                    <div class="name-line"><span class="tk">IONQ</span></div>
-                    <div class="grp">Quantum</div>
-                    <div class="src">แนวรับ Fibo จาก Shay Boloor</div>
-                </div>
-                <div class="col-price">
-                    <div class="lbl">ราคาตอนนี้</div>
-                    <div class="big">$28.69</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+8.5%</span> จากปิด $26.43</div>
-                </div>
-                <div class="col-supp">
-                    <div class="lbl">แนวรับ</div>
-                    <div class="big gold">$30</div>
-                </div>
-                <div class="col-dist">
-                    <div class="dist dist-rose">ต่ำกว่าแนวรับ 4.4%</div>
-                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:41.2%"></span></div>
-                </div>
-            </div>
-            <div class="row stock-row" data-group="Photonics" data-status="A"
-                 data-portfolio="false" data-ticker="AEHR">
-                <div class="col-name">
-                    <div class="name-line"><span class="tk">AEHR</span></div>
-                    <div class="grp">Photonics</div>
-                    <div class="src">แนวรับ Fibo จาก Shay Boloor</div>
-                </div>
-                <div class="col-price">
-                    <div class="lbl">ราคาตอนนี้</div>
-                    <div class="big">$54.20</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+10.3%</span> จากปิด $49.16</div>
-                </div>
-                <div class="col-supp">
-                    <div class="lbl">แนวรับ</div>
-                    <div class="big gold">$57</div>
-                </div>
-                <div class="col-dist">
-                    <div class="dist dist-rose">ต่ำกว่าแนวรับ 4.9%</div>
-                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:40.2%"></span></div>
+                    <div class="dist dist-rose">ต่ำกว่าแนวรับ 3.1%</div>
+                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:43.8%"></span></div>
                 </div>
             </div>
             <div class="row stock-row" data-group="AI Power" data-status="A"
@@ -711,16 +627,16 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 </div>
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
-                    <div class="big">$182.26</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+8.8%</span> จากปิด $167.52</div>
+                    <div class="big">$183.00</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+9.2%</span> จากปิด $167.52</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
                     <div class="big gold">$192</div>
                 </div>
                 <div class="col-dist">
-                    <div class="dist dist-rose">ต่ำกว่าแนวรับ 5.1%</div>
-                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:39.9%"></span></div>
+                    <div class="dist dist-rose">ต่ำกว่าแนวรับ 4.7%</div>
+                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:40.6%"></span></div>
                 </div>
             </div>
             <div class="row stock-row" data-group="AI Silicon" data-status="A"
@@ -732,16 +648,16 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 </div>
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
-                    <div class="big">$377.00</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+6.8%</span> จากปิด $353.10</div>
+                    <div class="big">$379.09</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+7.4%</span> จากปิด $353.10</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
                     <div class="big gold">$398</div>
                 </div>
                 <div class="col-dist">
-                    <div class="dist dist-rose">ต่ำกว่าแนวรับ 5.3%</div>
-                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:39.4%"></span></div>
+                    <div class="dist dist-rose">ต่ำกว่าแนวรับ 4.8%</div>
+                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:40.5%"></span></div>
                 </div>
             </div>
             <div class="row stock-row" data-group="AI Connectivity" data-status="A"
@@ -753,16 +669,79 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 </div>
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
-                    <div class="big">$306.66</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+5.2%</span> จากปิด $291.53</div>
+                    <div class="big">$308.16</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+5.7%</span> จากปิด $291.53</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
                     <div class="big gold">$324</div>
                 </div>
                 <div class="col-dist">
-                    <div class="dist dist-rose">ต่ำกว่าแนวรับ 5.4%</div>
-                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:39.3%"></span></div>
+                    <div class="dist dist-rose">ต่ำกว่าแนวรับ 4.9%</div>
+                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:40.2%"></span></div>
+                </div>
+            </div>
+            <div class="row stock-row" data-group="Quantum" data-status="A"
+                 data-portfolio="false" data-ticker="IONQ">
+                <div class="col-name">
+                    <div class="name-line"><span class="tk">IONQ</span></div>
+                    <div class="grp">Quantum</div>
+                    <div class="src">แนวรับ Fibo จาก Shay Boloor</div>
+                </div>
+                <div class="col-price">
+                    <div class="lbl">ราคาตอนนี้</div>
+                    <div class="big">$28.35</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+7.3%</span> จากปิด $26.43</div>
+                </div>
+                <div class="col-supp">
+                    <div class="lbl">แนวรับ</div>
+                    <div class="big gold">$30</div>
+                </div>
+                <div class="col-dist">
+                    <div class="dist dist-rose">ต่ำกว่าแนวรับ 5.5%</div>
+                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:39.0%"></span></div>
+                </div>
+            </div>
+            <div class="row stock-row" data-group="Photonics" data-status="A"
+                 data-portfolio="false" data-ticker="AEHR">
+                <div class="col-name">
+                    <div class="name-line"><span class="tk">AEHR</span></div>
+                    <div class="grp">Photonics</div>
+                    <div class="src">แนวรับ Fibo จาก Shay Boloor</div>
+                </div>
+                <div class="col-price">
+                    <div class="lbl">ราคาตอนนี้</div>
+                    <div class="big">$53.84</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+9.5%</span> จากปิด $49.16</div>
+                </div>
+                <div class="col-supp">
+                    <div class="lbl">แนวรับ</div>
+                    <div class="big gold">$57</div>
+                </div>
+                <div class="col-dist">
+                    <div class="dist dist-rose">ต่ำกว่าแนวรับ 5.5%</div>
+                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:38.9%"></span></div>
+                </div>
+            </div>
+            <div class="row stock-row" data-group="Quantum" data-status="A"
+                 data-portfolio="false" data-ticker="QBTS">
+                <div class="col-name">
+                    <div class="name-line"><span class="tk">QBTS</span></div>
+                    <div class="grp">Quantum</div>
+                    <div class="src">แนวรับ Fibo จาก Shay Boloor</div>
+                </div>
+                <div class="col-price">
+                    <div class="lbl">ราคาตอนนี้</div>
+                    <div class="big">$9.44</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+4.3%</span> จากปิด $9.05</div>
+                </div>
+                <div class="col-supp">
+                    <div class="lbl">แนวรับ</div>
+                    <div class="big gold">$10</div>
+                </div>
+                <div class="col-dist">
+                    <div class="dist dist-rose">ต่ำกว่าแนวรับ 5.6%</div>
+                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:38.8%"></span></div>
                 </div>
             </div>
             <div class="row stock-row" data-group="Quantum" data-status="A"
@@ -774,58 +753,16 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 </div>
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
-                    <div class="big">$10.36</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+5.2%</span> จากปิด $9.85</div>
+                    <div class="big">$10.25</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+4.0%</span> จากปิด $9.85</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
                     <div class="big gold">$11</div>
                 </div>
                 <div class="col-dist">
-                    <div class="dist dist-rose">ต่ำกว่าแนวรับ 5.8%</div>
-                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:38.4%"></span></div>
-                </div>
-            </div>
-            <div class="row stock-row" data-group="AI Applications" data-status="A"
-                 data-portfolio="false" data-ticker="PLTR">
-                <div class="col-name">
-                    <div class="name-line"><span class="tk">PLTR</span></div>
-                    <div class="grp">AI Applications</div>
-                    <div class="src">แนวรับ Fibo จาก Shay Boloor</div>
-                </div>
-                <div class="col-price">
-                    <div class="lbl">ราคาตอนนี้</div>
-                    <div class="big">$160.94</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+3.8%</span> จากปิด $154.99</div>
-                </div>
-                <div class="col-supp">
-                    <div class="lbl">แนวรับ</div>
-                    <div class="big gold">$172</div>
-                </div>
-                <div class="col-dist">
-                    <div class="dist dist-rose">ต่ำกว่าแนวรับ 6.4%</div>
-                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:37.1%"></span></div>
-                </div>
-            </div>
-            <div class="row stock-row" data-group="Physical AI" data-status="A"
-                 data-portfolio="true" data-ticker="GOOGL">
-                <div class="col-name">
-                    <div class="name-line"><span class="tk">GOOGL</span><span class="port-badge" title="มีหุ้นนี้ในพอร์ตจริง (data/portfolio.json)">⭐ มีในพอร์ต</span></div>
-                    <div class="grp">Physical AI</div>
-                    <div class="src">แนวรับ Fibo จาก Shay Boloor</div>
-                </div>
-                <div class="col-price">
-                    <div class="lbl">ราคาตอนนี้</div>
-                    <div class="big">$286.50</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+1.4%</span> จากปิด $282.57</div>
-                </div>
-                <div class="col-supp">
-                    <div class="lbl">แนวรับ</div>
-                    <div class="big gold">$307</div>
-                </div>
-                <div class="col-dist">
-                    <div class="dist dist-rose">ต่ำกว่าแนวรับ 6.7%</div>
-                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:36.6%"></span></div>
+                    <div class="dist dist-rose">ต่ำกว่าแนวรับ 6.8%</div>
+                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:36.3%"></span></div>
                 </div>
             </div>
             <div class="row stock-row" data-group="Space" data-status="A"
@@ -837,37 +774,58 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 </div>
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
-                    <div class="big">$6.52</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+5.3%</span> จากปิด $6.19</div>
+                    <div class="big">$6.49</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+4.8%</span> จากปิด $6.19</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
                     <div class="big gold">$7</div>
                 </div>
                 <div class="col-dist">
-                    <div class="dist dist-rose">ต่ำกว่าแนวรับ 6.9%</div>
-                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:36.3%"></span></div>
+                    <div class="dist dist-rose">ต่ำกว่าแนวรับ 7.3%</div>
+                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:35.4%"></span></div>
                 </div>
             </div>
-            <div class="row stock-row" data-group="AI Power" data-status="A"
-                 data-portfolio="false" data-ticker="ON">
+            <div class="row stock-row" data-group="Physical AI" data-status="A"
+                 data-portfolio="true" data-ticker="GOOGL">
                 <div class="col-name">
-                    <div class="name-line"><span class="tk">ON</span></div>
-                    <div class="grp">AI Power</div>
+                    <div class="name-line"><span class="tk">GOOGL</span><span class="port-badge" title="มีหุ้นนี้ในพอร์ตจริง (data/portfolio.json)">⭐ มีในพอร์ต</span></div>
+                    <div class="grp">Physical AI</div>
                     <div class="src">แนวรับ Fibo จาก Shay Boloor</div>
                 </div>
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
-                    <div class="big">$66.04</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+4.8%</span> จากปิด $63.01</div>
+                    <div class="big">$282.26</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="down">-0.1%</span> จากปิด $282.57</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
-                    <div class="big gold">$72</div>
+                    <div class="big gold">$307</div>
                 </div>
                 <div class="col-dist">
-                    <div class="dist dist-rose">ต่ำกว่าแนวรับ 8.3%</div>
-                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:33.4%"></span></div>
+                    <div class="dist dist-rose">ต่ำกว่าแนวรับ 8.1%</div>
+                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:33.9%"></span></div>
+                </div>
+            </div>
+            <div class="row stock-row" data-group="AI Applications" data-status="A"
+                 data-portfolio="false" data-ticker="PLTR">
+                <div class="col-name">
+                    <div class="name-line"><span class="tk">PLTR</span></div>
+                    <div class="grp">AI Applications</div>
+                    <div class="src">แนวรับ Fibo จาก Shay Boloor</div>
+                </div>
+                <div class="col-price">
+                    <div class="lbl">ราคาตอนนี้</div>
+                    <div class="big">$158.03</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+2.0%</span> จากปิด $154.99</div>
+                </div>
+                <div class="col-supp">
+                    <div class="lbl">แนวรับ</div>
+                    <div class="big gold">$172</div>
+                </div>
+                <div class="col-dist">
+                    <div class="dist dist-rose">ต่ำกว่าแนวรับ 8.1%</div>
+                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:33.8%"></span></div>
                 </div>
             </div>
             <div class="row stock-row" data-group="CPU Bottleneck" data-status="A"
@@ -879,16 +837,37 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 </div>
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
-                    <div class="big">$436.39</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+7.9%</span> จากปิด $404.40</div>
+                    <div class="big">$437.96</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+8.3%</span> จากปิด $404.40</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
                     <div class="big gold">$479</div>
                 </div>
                 <div class="col-dist">
-                    <div class="dist dist-rose">ต่ำกว่าแนวรับ 8.9%</div>
-                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:32.2%"></span></div>
+                    <div class="dist dist-rose">ต่ำกว่าแนวรับ 8.6%</div>
+                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:32.9%"></span></div>
+                </div>
+            </div>
+            <div class="row stock-row" data-group="AI Power" data-status="A"
+                 data-portfolio="false" data-ticker="ON">
+                <div class="col-name">
+                    <div class="name-line"><span class="tk">ON</span></div>
+                    <div class="grp">AI Power</div>
+                    <div class="src">แนวรับ Fibo จาก Shay Boloor</div>
+                </div>
+                <div class="col-price">
+                    <div class="lbl">ราคาตอนนี้</div>
+                    <div class="big">$65.50</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+4.0%</span> จากปิด $63.01</div>
+                </div>
+                <div class="col-supp">
+                    <div class="lbl">แนวรับ</div>
+                    <div class="big gold">$72</div>
+                </div>
+                <div class="col-dist">
+                    <div class="dist dist-rose">ต่ำกว่าแนวรับ 9.0%</div>
+                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:31.9%"></span></div>
                 </div>
             </div>
             <div class="row stock-row" data-group="AI Silicon" data-status="A"
@@ -900,16 +879,16 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 </div>
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
-                    <div class="big">$189.39</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+4.3%</span> จากปิด $181.60</div>
+                    <div class="big">$188.96</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+4.1%</span> จากปิด $181.60</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
                     <div class="big gold">$210</div>
                 </div>
                 <div class="col-dist">
-                    <div class="dist dist-rose">ต่ำกว่าแนวรับ 9.8%</div>
-                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:30.4%"></span></div>
+                    <div class="dist dist-rose">ต่ำกว่าแนวรับ 10.0%</div>
+                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:30.0%"></span></div>
                 </div>
             </div>
             <div class="row stock-row" data-group="AI Silicon" data-status="A"
@@ -921,37 +900,16 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 </div>
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
-                    <div class="big">$1,442.09</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+6.3%</span> จากปิด $1,356.65</div>
+                    <div class="big">$1,450.22</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+6.9%</span> จากปิด $1,356.65</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
                     <div class="big gold">$1,637</div>
                 </div>
                 <div class="col-dist">
-                    <div class="dist dist-rose">ต่ำกว่าแนวรับ 11.9%</div>
-                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:26.2%"></span></div>
-                </div>
-            </div>
-            <div class="row stock-row" data-group="Drones" data-status="A"
-                 data-portfolio="false" data-ticker="KTOS">
-                <div class="col-name">
-                    <div class="name-line"><span class="tk">KTOS</span></div>
-                    <div class="grp">Drones</div>
-                    <div class="src">แนวรับ Fibo จาก Shay Boloor</div>
-                </div>
-                <div class="col-price">
-                    <div class="lbl">ราคาตอนนี้</div>
-                    <div class="big">$34.30</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+2.7%</span> จากปิด $33.39</div>
-                </div>
-                <div class="col-supp">
-                    <div class="lbl">แนวรับ</div>
-                    <div class="big gold">$39</div>
-                </div>
-                <div class="col-dist">
-                    <div class="dist dist-rose">ต่ำกว่าแนวรับ 12.1%</div>
-                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:25.9%"></span></div>
+                    <div class="dist dist-rose">ต่ำกว่าแนวรับ 11.4%</div>
+                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:27.2%"></span></div>
                 </div>
             </div>
             <div class="row stock-row" data-group="CPU Bottleneck" data-status="A"
@@ -963,58 +921,37 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 </div>
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
-                    <div class="big">$32.56</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+6.8%</span> จากปิด $30.49</div>
+                    <div class="big">$33.13</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+8.6%</span> จากปิด $30.49</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
                     <div class="big gold">$38</div>
                 </div>
                 <div class="col-dist">
-                    <div class="dist dist-rose">ต่ำกว่าแนวรับ 14.3%</div>
-                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:21.4%"></span></div>
+                    <div class="dist dist-rose">ต่ำกว่าแนวรับ 12.8%</div>
+                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:24.3%"></span></div>
                 </div>
             </div>
-            <div class="row stock-row" data-group="AI Silicon" data-status="A"
-                 data-portfolio="false" data-ticker="MU">
+            <div class="row stock-row" data-group="Drones" data-status="A"
+                 data-portfolio="false" data-ticker="KTOS">
                 <div class="col-name">
-                    <div class="name-line"><span class="tk">MU</span></div>
-                    <div class="grp">AI Silicon</div>
+                    <div class="name-line"><span class="tk">KTOS</span></div>
+                    <div class="grp">Drones</div>
                     <div class="src">แนวรับ Fibo จาก Shay Boloor</div>
                 </div>
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
-                    <div class="big">$710.00</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+8.2%</span> จากปิด $656.39</div>
+                    <div class="big">$33.93</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+1.6%</span> จากปิด $33.39</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
-                    <div class="big gold">$849</div>
+                    <div class="big gold">$39</div>
                 </div>
                 <div class="col-dist">
-                    <div class="dist dist-rose">ต่ำกว่าแนวรับ 16.4%</div>
-                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:17.3%"></span></div>
-                </div>
-            </div>
-            <div class="row stock-row" data-group="AI Applications" data-status="A"
-                 data-portfolio="false" data-ticker="NOW">
-                <div class="col-name">
-                    <div class="name-line"><span class="tk">NOW</span></div>
-                    <div class="grp">AI Applications</div>
-                    <div class="src">แนวรับ Fibo จาก Shay Boloor</div>
-                </div>
-                <div class="col-price">
-                    <div class="lbl">ราคาตอนนี้</div>
-                    <div class="big">$102.82</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+0.4%</span> จากปิด $102.36</div>
-                </div>
-                <div class="col-supp">
-                    <div class="lbl">แนวรับ</div>
-                    <div class="big gold">$124</div>
-                </div>
-                <div class="col-dist">
-                    <div class="dist dist-rose">ต่ำกว่าแนวรับ 17.1%</div>
-                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:15.8%"></span></div>
+                    <div class="dist dist-rose">ต่ำกว่าแนวรับ 13.0%</div>
+                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:24.0%"></span></div>
                 </div>
             </div>
             <div class="row stock-row" data-group="AI Utilities" data-status="A"
@@ -1026,16 +963,16 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 </div>
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
-                    <div class="big">$73.82</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+4.4%</span> จากปิด $70.70</div>
+                    <div class="big">$75.50</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+6.8%</span> จากปิด $70.70</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
                     <div class="big gold">$90</div>
                 </div>
                 <div class="col-dist">
-                    <div class="dist dist-rose">ต่ำกว่าแนวรับ 18.0%</div>
-                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:14.0%"></span></div>
+                    <div class="dist dist-rose">ต่ำกว่าแนวรับ 16.1%</div>
+                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:17.8%"></span></div>
                 </div>
             </div>
             <div class="row stock-row" data-group="Photonics" data-status="A"
@@ -1047,16 +984,58 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 </div>
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
-                    <div class="big">$182.00</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+7.2%</span> จากปิด $169.76</div>
+                    <div class="big">$187.19</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+10.3%</span> จากปิด $169.76</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
                     <div class="big gold">$224</div>
                 </div>
                 <div class="col-dist">
-                    <div class="dist dist-rose">ต่ำกว่าแนวรับ 18.8%</div>
-                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:12.5%"></span></div>
+                    <div class="dist dist-rose">ต่ำกว่าแนวรับ 16.4%</div>
+                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:17.1%"></span></div>
+                </div>
+            </div>
+            <div class="row stock-row" data-group="AI Applications" data-status="A"
+                 data-portfolio="false" data-ticker="NOW">
+                <div class="col-name">
+                    <div class="name-line"><span class="tk">NOW</span></div>
+                    <div class="grp">AI Applications</div>
+                    <div class="src">แนวรับ Fibo จาก Shay Boloor</div>
+                </div>
+                <div class="col-price">
+                    <div class="lbl">ราคาตอนนี้</div>
+                    <div class="big">$102.12</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="down">-0.2%</span> จากปิด $102.36</div>
+                </div>
+                <div class="col-supp">
+                    <div class="lbl">แนวรับ</div>
+                    <div class="big gold">$124</div>
+                </div>
+                <div class="col-dist">
+                    <div class="dist dist-rose">ต่ำกว่าแนวรับ 17.6%</div>
+                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:14.7%"></span></div>
+                </div>
+            </div>
+            <div class="row stock-row" data-group="AI Silicon" data-status="A"
+                 data-portfolio="false" data-ticker="MU">
+                <div class="col-name">
+                    <div class="name-line"><span class="tk">MU</span></div>
+                    <div class="grp">AI Silicon</div>
+                    <div class="src">แนวรับ Fibo จาก Shay Boloor</div>
+                </div>
+                <div class="col-price">
+                    <div class="lbl">ราคาตอนนี้</div>
+                    <div class="big">$695.00</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+5.9%</span> จากปิด $656.39</div>
+                </div>
+                <div class="col-supp">
+                    <div class="lbl">แนวรับ</div>
+                    <div class="big gold">$849</div>
+                </div>
+                <div class="col-dist">
+                    <div class="dist dist-rose">ต่ำกว่าแนวรับ 18.1%</div>
+                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:13.7%"></span></div>
                 </div>
             </div>
             <div class="row stock-row" data-group="CPU Bottleneck" data-status="A"
@@ -1068,16 +1047,16 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 </div>
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
-                    <div class="big">$178.56</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+7.1%</span> จากปิด $166.72</div>
+                    <div class="big">$179.68</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+7.8%</span> จากปิด $166.72</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
                     <div class="big gold">$225</div>
                 </div>
                 <div class="col-dist">
-                    <div class="dist dist-rose">ต่ำกว่าแนวรับ 20.6%</div>
-                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:8.7%"></span></div>
+                    <div class="dist dist-rose">ต่ำกว่าแนวรับ 20.1%</div>
+                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:9.7%"></span></div>
                 </div>
             </div>
             <div class="row stock-row" data-group="AI Connectivity" data-status="A"
@@ -1089,16 +1068,16 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 </div>
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
-                    <div class="big">$195.42</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+8.9%</span> จากปิด $179.47</div>
+                    <div class="big">$195.03</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+8.7%</span> จากปิด $179.47</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
                     <div class="big gold">$251</div>
                 </div>
                 <div class="col-dist">
-                    <div class="dist dist-rose">ต่ำกว่าแนวรับ 22.1%</div>
-                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:5.7%"></span></div>
+                    <div class="dist dist-rose">ต่ำกว่าแนวรับ 22.3%</div>
+                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:5.4%"></span></div>
                 </div>
             </div>
             <div class="row stock-row" data-group="AI Connectivity" data-status="A"
@@ -1110,15 +1089,15 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 </div>
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
-                    <div class="big">$124.48</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+10.8%</span> จากปิด $112.33</div>
+                    <div class="big">$124.00</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+10.4%</span> จากปิด $112.33</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
                     <div class="big gold">$167</div>
                 </div>
                 <div class="col-dist">
-                    <div class="dist dist-rose">ต่ำกว่าแนวรับ 25.5%</div>
+                    <div class="dist dist-rose">ต่ำกว่าแนวรับ 25.7%</div>
                     <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose gauge-dot-edge" style="left:0.0%"></span></div>
                 </div>
             </div>
@@ -1131,25 +1110,46 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 </div>
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
-                    <div class="big">$144.29</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+8.0%</span> จากปิด $133.55</div>
+                    <div class="big">$145.43</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+8.9%</span> จากปิด $133.55</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
                     <div class="big gold">$222</div>
                 </div>
                 <div class="col-dist">
-                    <div class="dist dist-rose">ต่ำกว่าแนวรับ 35.0%</div>
+                    <div class="dist dist-rose">ต่ำกว่าแนวรับ 34.5%</div>
                     <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose gauge-dot-edge" style="left:0.0%"></span></div>
                 </div>
             </div></div>
         </section>
         <section class="sec sec-slate" data-section="C">
             <div class="sec-head">
-                <h2>⏳ ยังไกลจากแนวรับ <span class="sec-count">14 ตัว</span></h2>
+                <h2>⏳ ยังไกลจากแนวรับ <span class="sec-count">15 ตัว</span></h2>
                 <p>ราคาอยู่เหนือแนวรับเกิน 5%. <strong>ควรทำ:</strong> ยังไม่ถึงจุดซื้อ รอราคาย่อลงมา.</p>
             </div>
             <div class="rows">
+            <div class="row stock-row" data-group="AI Power" data-status="C"
+                 data-portfolio="false" data-ticker="NVTS">
+                <div class="col-name">
+                    <div class="name-line"><span class="tk">NVTS</span></div>
+                    <div class="grp">AI Power</div>
+                    <div class="src">แนวรับ Fibo จาก Shay Boloor</div>
+                </div>
+                <div class="col-price">
+                    <div class="lbl">ราคาตอนนี้</div>
+                    <div class="big">$8.41</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+7.0%</span> จากปิด $7.86</div>
+                </div>
+                <div class="col-supp">
+                    <div class="lbl">แนวรับ</div>
+                    <div class="big gold">$8</div>
+                </div>
+                <div class="col-dist">
+                    <div class="dist dist-slate">เหนือแนวรับ 5.1%</div>
+                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-slate " style="left:60.2%"></span></div>
+                </div>
+            </div>
             <div class="row stock-row" data-group="Midterm 2026" data-status="C"
                  data-portfolio="false" data-ticker="OLLI">
                 <div class="col-name">
@@ -1159,16 +1159,16 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 </div>
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
-                    <div class="big">$93.00</div>
-                    <div class="sub">ราคาปิด</div>
+                    <div class="big">$92.57</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="down">-0.5%</span> จากปิด $93.00</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
                     <div class="big gold">$86.69</div>
                 </div>
                 <div class="col-dist">
-                    <div class="dist dist-slate">เหนือแนวรับ 7.3%</div>
-                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-slate " style="left:64.6%"></span></div>
+                    <div class="dist dist-slate">เหนือแนวรับ 6.8%</div>
+                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-slate " style="left:63.6%"></span></div>
                 </div>
             </div>
             <div class="row stock-row" data-group="ETF Plan 2026-11" data-status="C"
@@ -1180,58 +1180,16 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 </div>
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
-                    <div class="big">$51.59</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+2.0%</span> จากปิด $50.58</div>
+                    <div class="big">$51.40</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+1.6%</span> จากปิด $50.58</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
                     <div class="big gold">$48</div>
                 </div>
                 <div class="col-dist">
-                    <div class="dist dist-slate">เหนือแนวรับ 7.5%</div>
-                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-slate " style="left:65.0%"></span></div>
-                </div>
-            </div>
-            <div class="row stock-row" data-group="ETF Plan 2026-11" data-status="C"
-                 data-portfolio="false" data-ticker="QQQM">
-                <div class="col-name">
-                    <div class="name-line"><span class="tk">QQQM</span></div>
-                    <div class="grp">ETF Plan 2026-11</div>
-                    <div class="src" title="แนวรับไม่ได้มาจากภาพ Shay Boloor">แนวรับจาก แผน ETF $10k 2026-11-06 ไม้ 2</div>
-                </div>
-                <div class="col-price">
-                    <div class="lbl">ราคาตอนนี้</div>
-                    <div class="big">$271.70</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+1.8%</span> จากปิด $266.85</div>
-                </div>
-                <div class="col-supp">
-                    <div class="lbl">แนวรับ</div>
-                    <div class="big gold">$251</div>
-                </div>
-                <div class="col-dist">
-                    <div class="dist dist-slate">เหนือแนวรับ 8.2%</div>
-                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-slate " style="left:66.5%"></span></div>
-                </div>
-            </div>
-            <div class="row stock-row" data-group="AI Applications" data-status="C"
-                 data-portfolio="false" data-ticker="CRWD">
-                <div class="col-name">
-                    <div class="name-line"><span class="tk">CRWD</span></div>
-                    <div class="grp">AI Applications</div>
-                    <div class="src">แนวรับ Fibo จาก Shay Boloor</div>
-                </div>
-                <div class="col-price">
-                    <div class="lbl">ราคาตอนนี้</div>
-                    <div class="big">$227.51</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+4.7%</span> จากปิด $217.20</div>
-                </div>
-                <div class="col-supp">
-                    <div class="lbl">แนวรับ</div>
-                    <div class="big gold">$210</div>
-                </div>
-                <div class="col-dist">
-                    <div class="dist dist-slate">เหนือแนวรับ 8.3%</div>
-                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-slate " style="left:66.7%"></span></div>
+                    <div class="dist dist-slate">เหนือแนวรับ 7.1%</div>
+                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-slate " style="left:64.2%"></span></div>
                 </div>
             </div>
             <div class="row stock-row" data-group="Bigtech Dip 2026-11" data-status="C"
@@ -1243,16 +1201,58 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 </div>
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
-                    <div class="big">$64.91</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="down">-1.0%</span> จากปิด $65.56</div>
+                    <div class="big">$63.95</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="down">-2.5%</span> จากปิด $65.56</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
                     <div class="big gold">$59.58</div>
                 </div>
                 <div class="col-dist">
-                    <div class="dist dist-slate">เหนือแนวรับ 8.9%</div>
-                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-slate " style="left:67.9%"></span></div>
+                    <div class="dist dist-slate">เหนือแนวรับ 7.3%</div>
+                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-slate " style="left:64.7%"></span></div>
+                </div>
+            </div>
+            <div class="row stock-row" data-group="ETF Plan 2026-11" data-status="C"
+                 data-portfolio="false" data-ticker="QQQM">
+                <div class="col-name">
+                    <div class="name-line"><span class="tk">QQQM</span></div>
+                    <div class="grp">ETF Plan 2026-11</div>
+                    <div class="src" title="แนวรับไม่ได้มาจากภาพ Shay Boloor">แนวรับจาก แผน ETF $10k 2026-11-06 ไม้ 2</div>
+                </div>
+                <div class="col-price">
+                    <div class="lbl">ราคาตอนนี้</div>
+                    <div class="big">$270.52</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+1.4%</span> จากปิด $266.85</div>
+                </div>
+                <div class="col-supp">
+                    <div class="lbl">แนวรับ</div>
+                    <div class="big gold">$251</div>
+                </div>
+                <div class="col-dist">
+                    <div class="dist dist-slate">เหนือแนวรับ 7.8%</div>
+                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-slate " style="left:65.6%"></span></div>
+                </div>
+            </div>
+            <div class="row stock-row" data-group="AI Applications" data-status="C"
+                 data-portfolio="false" data-ticker="CRWD">
+                <div class="col-name">
+                    <div class="name-line"><span class="tk">CRWD</span></div>
+                    <div class="grp">AI Applications</div>
+                    <div class="src">แนวรับ Fibo จาก Shay Boloor</div>
+                </div>
+                <div class="col-price">
+                    <div class="lbl">ราคาตอนนี้</div>
+                    <div class="big">$229.05</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+5.5%</span> จากปิด $217.20</div>
+                </div>
+                <div class="col-supp">
+                    <div class="lbl">แนวรับ</div>
+                    <div class="big gold">$210</div>
+                </div>
+                <div class="col-dist">
+                    <div class="dist dist-slate">เหนือแนวรับ 9.1%</div>
+                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-slate " style="left:68.1%"></span></div>
                 </div>
             </div>
             <div class="row stock-row" data-group="Midterm 2026" data-status="C"
@@ -1285,16 +1285,16 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 </div>
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
-                    <div class="big">$128.78</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+4.2%</span> จากปิด $123.62</div>
+                    <div class="big">$129.80</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+5.0%</span> จากปิด $123.62</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
                     <div class="big gold">$115</div>
                 </div>
                 <div class="col-dist">
-                    <div class="dist dist-slate">เหนือแนวรับ 12.0%</div>
-                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-slate " style="left:74.0%"></span></div>
+                    <div class="dist dist-slate">เหนือแนวรับ 12.9%</div>
+                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-slate " style="left:75.7%"></span></div>
                 </div>
             </div>
             <div class="row stock-row" data-group="Physical AI" data-status="C"
@@ -1306,37 +1306,16 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 </div>
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
-                    <div class="big">$258.99</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="down">-0.5%</span> จากปิด $260.21</div>
+                    <div class="big">$260.90</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+0.3%</span> จากปิด $260.21</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
                     <div class="big gold">$231</div>
                 </div>
                 <div class="col-dist">
-                    <div class="dist dist-slate">เหนือแนวรับ 12.1%</div>
-                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-slate " style="left:74.2%"></span></div>
-                </div>
-            </div>
-            <div class="row stock-row" data-group="Midterm 2026" data-status="C"
-                 data-portfolio="false" data-ticker="FIVE">
-                <div class="col-name">
-                    <div class="name-line"><span class="tk">FIVE</span></div>
-                    <div class="grp">Midterm 2026</div>
-                    <div class="src" title="แนวรับไม่ได้มาจากภาพ Shay Boloor">แนวรับจาก เทรนเลือกตั้ง 2026-11-05 แนวรับ BB ล่าง</div>
-                </div>
-                <div class="col-price">
-                    <div class="lbl">ราคาตอนนี้</div>
-                    <div class="big">$241.26</div>
-                    <div class="sub">ราคาปิด</div>
-                </div>
-                <div class="col-supp">
-                    <div class="lbl">แนวรับ</div>
-                    <div class="big gold">$205.42</div>
-                </div>
-                <div class="col-dist">
-                    <div class="dist dist-slate">เหนือแนวรับ 17.4%</div>
-                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-slate " style="left:84.9%"></span></div>
+                    <div class="dist dist-slate">เหนือแนวรับ 12.9%</div>
+                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-slate " style="left:75.9%"></span></div>
                 </div>
             </div>
             <div class="row stock-row" data-group="Nuclear" data-status="C"
@@ -1348,37 +1327,37 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 </div>
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
-                    <div class="big">$800.96</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+4.0%</span> จากปิด $770.51</div>
+                    <div class="big">$794.99</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+3.2%</span> จากปิด $770.51</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
                     <div class="big gold">$678</div>
                 </div>
                 <div class="col-dist">
-                    <div class="dist dist-slate">เหนือแนวรับ 18.1%</div>
-                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-slate " style="left:86.3%"></span></div>
+                    <div class="dist dist-slate">เหนือแนวรับ 17.3%</div>
+                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-slate " style="left:84.5%"></span></div>
                 </div>
             </div>
-            <div class="row stock-row" data-group="ETF Plan 2026-11" data-status="C"
-                 data-portfolio="false" data-ticker="SOXQ">
+            <div class="row stock-row" data-group="Midterm 2026" data-status="C"
+                 data-portfolio="false" data-ticker="FIVE">
                 <div class="col-name">
-                    <div class="name-line"><span class="tk">SOXQ</span></div>
-                    <div class="grp">ETF Plan 2026-11</div>
-                    <div class="src" title="แนวรับไม่ได้มาจากภาพ Shay Boloor">แนวรับจาก แผน ETF $10k 2026-11-06 ไม้ 2</div>
+                    <div class="name-line"><span class="tk">FIVE</span></div>
+                    <div class="grp">Midterm 2026</div>
+                    <div class="src" title="แนวรับไม่ได้มาจากภาพ Shay Boloor">แนวรับจาก เทรนเลือกตั้ง 2026-11-05 แนวรับ BB ล่าง</div>
                 </div>
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
-                    <div class="big">$75.30</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+6.0%</span> จากปิด $71.04</div>
+                    <div class="big">$241.29</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+0.0%</span> จากปิด $241.26</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
-                    <div class="big gold">$63</div>
+                    <div class="big gold">$205.42</div>
                 </div>
                 <div class="col-dist">
-                    <div class="dist dist-slate">เหนือแนวรับ 19.5%</div>
-                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-slate " style="left:89.0%"></span></div>
+                    <div class="dist dist-slate">เหนือแนวรับ 17.5%</div>
+                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-slate " style="left:84.9%"></span></div>
                 </div>
             </div>
             <div class="row stock-row" data-group="Midterm 2026" data-status="C"
@@ -1390,16 +1369,16 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 </div>
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
-                    <div class="big">$198.30</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+1.3%</span> จากปิด $195.76</div>
+                    <div class="big">$195.00</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="down">-0.4%</span> จากปิด $195.76</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
                     <div class="big gold">$165.61</div>
                 </div>
                 <div class="col-dist">
-                    <div class="dist dist-slate">เหนือแนวรับ 19.7%</div>
-                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-slate " style="left:89.5%"></span></div>
+                    <div class="dist dist-slate">เหนือแนวรับ 17.7%</div>
+                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-slate " style="left:85.5%"></span></div>
                 </div>
             </div>
             <div class="row stock-row" data-group="Space" data-status="C"
@@ -1411,16 +1390,37 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 </div>
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
-                    <div class="big">$11.99</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+5.5%</span> จากปิด $11.37</div>
+                    <div class="big">$11.78</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+3.6%</span> จากปิด $11.37</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
                     <div class="big gold">$10</div>
                 </div>
                 <div class="col-dist">
-                    <div class="dist dist-slate">เหนือแนวรับ 19.9%</div>
-                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-slate " style="left:89.8%"></span></div>
+                    <div class="dist dist-slate">เหนือแนวรับ 17.8%</div>
+                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-slate " style="left:85.6%"></span></div>
+                </div>
+            </div>
+            <div class="row stock-row" data-group="ETF Plan 2026-11" data-status="C"
+                 data-portfolio="false" data-ticker="SOXQ">
+                <div class="col-name">
+                    <div class="name-line"><span class="tk">SOXQ</span></div>
+                    <div class="grp">ETF Plan 2026-11</div>
+                    <div class="src" title="แนวรับไม่ได้มาจากภาพ Shay Boloor">แนวรับจาก แผน ETF $10k 2026-11-06 ไม้ 2</div>
+                </div>
+                <div class="col-price">
+                    <div class="lbl">ราคาตอนนี้</div>
+                    <div class="big">$75.10</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+5.7%</span> จากปิด $71.04</div>
+                </div>
+                <div class="col-supp">
+                    <div class="lbl">แนวรับ</div>
+                    <div class="big gold">$63</div>
+                </div>
+                <div class="col-dist">
+                    <div class="dist dist-slate">เหนือแนวรับ 19.2%</div>
+                    <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-slate " style="left:88.4%"></span></div>
                 </div>
             </div>
             <div class="row stock-row" data-group="Bigtech Dip 2026-11" data-status="C"
@@ -1432,15 +1432,15 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 </div>
                 <div class="col-price">
                     <div class="lbl">ราคาตอนนี้</div>
-                    <div class="big">$205.79</div>
-                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+11.1%</span> จากปิด $185.20</div>
+                    <div class="big">$210.02</div>
+                    <div class="sub"><span class="ptag">Pre</span> <span class="up">+13.4%</span> จากปิด $185.20</div>
                 </div>
                 <div class="col-supp">
                     <div class="lbl">แนวรับ</div>
                     <div class="big gold">$161.03</div>
                 </div>
                 <div class="col-dist">
-                    <div class="dist dist-slate">เหนือแนวรับ 27.8%</div>
+                    <div class="dist dist-slate">เหนือแนวรับ 30.4%</div>
                     <div class="gauge" title="เส้นกลาง = แนวรับ, แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-slate gauge-dot-edge" style="left:100.0%"></span></div>
                 </div>
             </div></div>

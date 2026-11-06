@@ -2127,7 +2127,10 @@ def generate_master_ledger_html(data):
             <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">{idx+1:02d}</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">{escape(str(b.get('date', '-')))}</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">{escape(str(b.get('ticker', '-')))}</td>
-            <td style="text-align: center; white-space: nowrap;">{type_badge}</td>
+            <td style="text-align: center; white-space: nowrap;">
+                <span class="badge" style="background: rgba(16, 185, 129, 0.18); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.4); font-weight: 700; padding: 2px 8px; border-radius: 6px; font-size: 0.8rem; display: inline-block;">🟢 ซื้อ (BUY)</span>
+                <div style="margin-top: 3px;">{type_badge}</div>
+            </td>
             <td style="text-align: center; white-space: nowrap;">{acc_badge}</td>
             <td style="text-align: right; font-family: 'Inter', sans-serif; font-weight: 600; white-space: nowrap;">{b.get('shares', 0):.4f}</td>
             <td style="text-align: right; font-family: 'Inter', sans-serif; white-space: nowrap;">{money(b.get('price_usd', 0))}</td>
@@ -2151,15 +2154,34 @@ def generate_master_ledger_html(data):
         days = t.get("holding_days", "-")
         days_str = f"{days} วัน" if isinstance(days, (int, float)) else str(days)
 
-        sell_fn = t.get('sell_slip')
-        sell_path = resolve_slip_relative_path(sell_fn) if sell_fn else ""
-        if sell_path:
-            s_tk = t.get("ticker", "")
-            s_sh = t.get("shares", 0.0)
-            s_pr = t.get("sell_price_usd", 0.0)
-            s_dt = str(t.get("date", "-"))
-            s_info = f"ขาย {s_sh:.4f} หุ้น @ {money(s_pr)} • รับเงิน {money(t.get('net_revenue_usd', 0))}"
-            sell_date_html = f'{escape(s_dt)}<div style="margin-top: 4px;"><button type="button" onclick="{_slip_onclick(sell_path, sell_fn, s_tk, s_dt, s_info)}" class="slip-badge-btn" style="padding: 2px 7px; font-size: 0.74rem;" title="คลิกดูภาพสลิปคำสั่งขาย">🧾 สลิปขาย</button></div>'
+        sell_slips = t.get('sell_slips')
+        sell_btns = []
+        if sell_slips and isinstance(sell_slips, list):
+            for s_idx, sl in enumerate(sell_slips):
+                sl_fn = sl.get('file', '') if isinstance(sl, dict) else str(sl)
+                sl_path = resolve_slip_relative_path(sl_fn)
+                if sl_path:
+                    s_tk = t.get("ticker", "")
+                    s_sh = sl.get("shares", 0.0) if isinstance(sl, dict) else 0.0
+                    s_pr = sl.get("price_usd", 0.0) if isinstance(sl, dict) else 0.0
+                    s_net = sl.get("net_usd", 0.0) if isinstance(sl, dict) else 0.0
+                    s_dt = str(sl.get("date", t.get("date", "-")) if isinstance(sl, dict) else t.get("date", "-"))
+                    s_label = f"สลิป {s_sh:.2f} หุ้น" if s_sh else f"สลิปขาย #{s_idx+1}"
+                    s_info = f"ขาย {s_sh:.4f} หุ้น @ {money(s_pr)} • รับเงิน {money(s_net)}" if s_sh else f"ขาย @ {money(s_pr)}"
+                    sell_btns.append(f'<button type="button" onclick="{_slip_onclick(sl_path, sl_fn, s_tk, s_dt, s_info)}" class="slip-badge-btn" style="padding: 2px 7px; font-size: 0.74rem;" title="คลิกดูภาพสลิปคำสั่งขาย">🧾 {s_label}</button>')
+        elif t.get('sell_slip'):
+            sell_fn = t.get('sell_slip')
+            sell_path = resolve_slip_relative_path(sell_fn) if sell_fn else ""
+            if sell_path:
+                s_tk = t.get("ticker", "")
+                s_sh = t.get("shares", 0.0)
+                s_pr = t.get("sell_price_usd", 0.0)
+                s_dt = str(t.get("date", "-"))
+                s_info = f"ขาย {s_sh:.4f} หุ้น @ {money(s_pr)} • รับเงิน {money(t.get('net_revenue_usd', 0))}"
+                sell_btns.append(f'<button type="button" onclick="{_slip_onclick(sell_path, sell_fn, s_tk, s_dt, s_info)}" class="slip-badge-btn" style="padding: 2px 7px; font-size: 0.74rem;" title="คลิกดูภาพสลิปคำสั่งขาย">🧾 สลิปขาย</button>')
+
+        if sell_btns:
+            sell_date_html = f'{escape(str(t.get("date", "-")))}<div style="margin-top: 4px; display: flex; flex-direction: column; gap: 4px; align-items: center;">{" ".join(sell_btns)}</div>'
         else:
             sell_date_html = escape(str(t.get('date', '-')))
 
@@ -2180,6 +2202,9 @@ def generate_master_ledger_html(data):
         closed_rows += f"""
         <tr style="border-bottom: 1px solid var(--border-subtle);">
             <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">{idx+1:02d}</td>
+            <td style="text-align: center; white-space: nowrap;">
+                <span class="badge" style="background: rgba(244, 63, 94, 0.18); color: #f43f5e; border: 1px solid rgba(244, 63, 94, 0.4); font-weight: 700; padding: 2px 8px; border-radius: 6px; font-size: 0.8rem; display: inline-block;">🔴 ขาย (SELL)</span>
+            </td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: #60a5fa; font-weight: 500;">{escape(buy_date_str)}</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary); text-align: center;">{sell_date_html}</td>
             <td style="text-align: center; font-size: 0.82rem; color: var(--text-muted); white-space: nowrap;">{days_str}</td>
@@ -2231,7 +2256,7 @@ def generate_master_ledger_html(data):
 
             closed_rows += f"""
             <tr id="details-{trade_id}" class="tranche-detail-row" style="display: none; background: rgba(139, 92, 246, 0.05);">
-                <td colspan="14" style="padding: 12px 18px;">
+                <td colspan="15" style="padding: 12px 18px;">
                     <div style="background: #090e1a; border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 8px; padding: 14px 18px;">
                         <div style="font-size: 0.85rem; font-weight: 700; color: #c084fc; margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
                             <span>🔍</span> รายละเอียดการเข้าซื้อทีละไม้ของ {t_ticker} (ทั้งหมด {tranche_count} ไม้ | ต้นทุนเฉลี่ย {money(t.get('buy_price_usd', 0))}):
@@ -2277,16 +2302,19 @@ def generate_master_ledger_html(data):
     for idx, c in enumerate(cash_movements):
         c_type = c.get("type", "")
         if "ฝากเงิน" in c_type:
-            badge = '<span class="badge badge-success">ฝากเงินเข้าพอร์ต</span>'
+            badge = '<span class="badge badge-success" style="font-weight: 600;">💵 ฝากเงินเข้าพอร์ต</span>'
             amt_color = "#10b981"
         elif "ดอกเบี้ย" in c_type:
-            badge = '<span class="badge badge-info">ดอกเบี้ยรับเงินฝาก</span>'
+            badge = '<span class="badge badge-info" style="font-weight: 600;">💰 ดอกเบี้ยรับ</span>'
             amt_color = "#60a5fa"
         elif "โอนเงินออก" in c_type:
-            badge = '<span class="badge badge-rose">โอนเงินออกไปต่างธนาคาร</span>'
+            badge = '<span class="badge badge-rose" style="font-weight: 600;">📤 โอนเงินออก</span>'
             amt_color = "#f43f5e"
+        elif "แลกเงิน" in c_type:
+            badge = '<span class="badge badge-purple" style="font-weight: 600;">💱 แลกเงิน USD</span>'
+            amt_color = "#a855f7"
         else:
-            badge = '<span class="badge badge-rose">ตัดชำระค่าซื้อหุ้น</span>'
+            badge = '<span class="badge" style="background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.35); font-weight: 600;">🟢 ชำระค่าซื้อหุ้น</span>'
             amt_color = "#f43f5e"
 
         bal_str = money(c['balance_thb'], 'THB') if "balance_thb" in c else "-"
@@ -2479,8 +2507,8 @@ def generate_master_ledger_html(data):
         <!-- SUB-TAB BAR -->
         <div class="sub-tab-bar">
             <button id="btn-sub-all" class="sub-tab-btn active" onclick="switchSubTab('all')">ทั้งหมด ({total_records})</button>
-            <button id="btn-sub-buys" class="sub-tab-btn" onclick="switchSubTab('buys')">🛒 คำสั่งซื้อหุ้น ({len(buy_orders)})</button>
-            <button id="btn-sub-sells" class="sub-tab-btn" onclick="switchSubTab('sells')">🏆 ปิดขายทำกำไร ({len(closed_trades)})</button>
+            <button id="btn-sub-buys" class="sub-tab-btn" onclick="switchSubTab('buys')">🟢 คำสั่งซื้อหุ้น ({len(buy_orders)})</button>
+            <button id="btn-sub-sells" class="sub-tab-btn" onclick="switchSubTab('sells')">🔴 ปิดขายทำกำไร ({len(closed_trades)})</button>
             <button id="btn-sub-divs" class="sub-tab-btn" onclick="switchSubTab('divs')">💵 เงินปันผล ({len(dividends_list)})</button>
             <button id="btn-sub-cash" class="sub-tab-btn" onclick="switchSubTab('cash')">🏦 เติมเงิน & เดินบัญชี ({len(cash_movements)})</button>
         </div>
@@ -2488,7 +2516,8 @@ def generate_master_ledger_html(data):
         <!-- SECTION 1: COMPLETE BUY ORDERS HISTORY -->
         <div id="section-buys" class="sub-section" style="margin-bottom: 36px;">
             <div class="section-title">
-                <span>🛒</span> 1. ประวัติคำสั่งซื้อหุ้นทั้งหมดอย่างละเอียด (Complete Buy Orders History: {len(buy_orders)} ไม้)
+                <span>🟢</span> 1. ประวัติคำสั่งซื้อหุ้นทั้งหมดอย่างละเอียด (Complete Buy Orders History: {len(buy_orders)} ไม้)
+                <span class="badge" style="background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.4); font-weight: 700;">🟢 คำสั่งฝั่งซื้อ (BUY)</span>
                 <span class="badge badge-info">สกัดจากสลิปคำสั่งซื้อ Dime! 100% เรียงตามวันเวลาสำเร็จจริง</span>
             </div>
             <div class="table-container">
@@ -2498,7 +2527,7 @@ def generate_master_ledger_html(data):
                             <th style="text-align: center; width: 45px;">#</th>
                             <th>วัน-เวลาสำเร็จ</th>
                             <th>Ticker</th>
-                            <th style="text-align: center;">ประเภท</th>
+                            <th style="text-align: center; width: 130px;">คำสั่ง / ประเภท</th>
                             <th style="text-align: center;">บัญชีที่ชำระ</th>
                             <th style="text-align: right;">จำนวนหุ้น</th>
                             <th style="text-align: right;">ราคาที่ได้จริง ($)</th>
@@ -2519,7 +2548,8 @@ def generate_master_ledger_html(data):
         <div id="section-sells" class="sub-section" style="margin-bottom: 36px;">
             <div class="section-title" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
                 <div>
-                    <span>🏆</span> 2. รายการหุ้นที่ขายทำกำไรปิดรอบสำเร็จ (Closed Trades: {len(closed_trades)} ไม้)
+                    <span>🔴</span> 2. ประวัติคำสั่งขายปิดรอบทำกำไร (Closed Sell Trades: {len(closed_trades)} ไม้)
+                    <span class="badge" style="background: rgba(244, 63, 94, 0.2); color: #fb7185; border: 1px solid rgba(244, 63, 94, 0.4); font-weight: 700;">🔴 คำสั่งฝั่งขาย (SELL)</span>
                     <span class="badge badge-success">{format_win_rate_text(trades_summary.get('winning_trades', 0), trades_summary.get('total_trades', 0), trades_summary.get('win_rate_pct', 0))} (กำไรสะสม {money(trades_summary.get('total_realized_pl_thb', 0), 'THB', signed=True)})</span>
                 </div>
             </div>
@@ -2528,6 +2558,7 @@ def generate_master_ledger_html(data):
                     <thead>
                         <tr>
                             <th style="text-align: center; width: 45px;">#</th>
+                            <th style="text-align: center; width: 110px;">คำสั่ง</th>
                             <th>วันที่ซื้อ (Buy Date)</th>
                             <th style="text-align: center;">วันที่ขาย</th>
                             <th style="text-align: center;">ระยะถือ</th>

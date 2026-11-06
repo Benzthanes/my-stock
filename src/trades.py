@@ -164,8 +164,8 @@ def get_slip_modal_component() -> str:
             <div class="slip-modal-title-wrap">
                 <span style="font-size: 1.3rem;">🧾</span>
                 <div>
-                    <h3 id="slipModalTitle" class="slip-modal-title">สลิปคำสั่งซื้อ</h3>
-                    <div id="slipModalSub" class="slip-modal-sub">รายละเอียดคำสั่งซื้อ</div>
+                    <h3 id="slipModalTitle" class="slip-modal-title">สลิปคำสั่ง</h3>
+                    <div id="slipModalSub" class="slip-modal-sub">รายละเอียดคำสั่ง</div>
                 </div>
             </div>
             <div class="slip-modal-actions">
@@ -374,7 +374,9 @@ function openSlipModal(imagePath, filename, ticker, dateStr, extraInfo) {
 
     if (!modal || !img) return;
 
-    title.innerText = ticker ? ('สลิปคำสั่งซื้อ: ' + ticker) : 'สลิปคำสั่งซื้อ';
+    const isSell = (extraInfo && extraInfo.indexOf('ขาย') !== -1) || (filename && filename.toLowerCase().indexOf('sell') !== -1);
+    const actionLabel = isSell ? 'สลิปคำสั่งขาย' : 'สลิปคำสั่งซื้อ';
+    title.innerText = ticker ? (actionLabel + ': ' + ticker) : actionLabel;
     sub.innerText = (dateStr || '') + (extraInfo ? (' • ' + extraInfo) : '');
     fnEl.innerText = filename || 'slip.webp';
     extLink.href = imagePath;

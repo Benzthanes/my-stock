@@ -420,6 +420,120 @@
       ],
       "sell_slip": "IMG_5873.webp",
       "notes": "ขายทำกำไรปิดสถานะ VRT 5.7437247 หุ้น รับเงิน $1,244.50 เข้า Dime! USD (สลิป IMG_5873.webp)"
+    },
+    {
+      "id": "TRD-20261105-APP",
+      "ticker": "APP",
+      "exchange": "NASDAQ",
+      "name": "AppLovin Corp",
+      "action": "SELL",
+      "date": "5 พ.ย. 69",
+      "buy_date": "23 ก.ย. - 14 ต.ค. 69",
+      "holding_days": 43,
+      "shares": 2.9770994,
+      "buy_price_usd": 285.32,
+      "sell_price_usd": 358.55,
+      "total_cost_usd": 849.43,
+      "cost_thb": 28557.84,
+      "gross_revenue_usd": 1067.45,
+      "fees_usd": 1.75,
+      "net_revenue_usd": 1065.7,
+      "revenue_thb": 35828.83,
+      "realized_pl_usd": 216.27,
+      "realized_pl_thb": 7270.99,
+      "realized_pl_pct": 25.46,
+      "fx_rate": 33.62,
+      "buy_tranches_count": 3,
+      "buy_tranches": [
+        {
+          "tranche": 1,
+          "date": "23 ก.ย. 69 - 21:25 น.",
+          "shares": 1.3167302,
+          "price_usd": 308.25,
+          "amt_usd": 406.54,
+          "amt_thb": 0.0,
+          "file": "IMG_5573.webp",
+          "note": "ไม้ที่ 1 ซื้อสะสมโซนเปิด"
+        },
+        {
+          "tranche": 2,
+          "date": "3 ต.ค. 69 - 00:13 น.",
+          "shares": 0.5464124,
+          "price_usd": 271.24,
+          "amt_usd": 148.45,
+          "amt_thb": 4999.8,
+          "file": "IMG_5580.webp",
+          "note": "ไม้ที่ 2 ซื้อเพิ่มผ่าน Dime! Save"
+        },
+        {
+          "tranche": 3,
+          "date": "14 ต.ค. 69 - 21:03 น.",
+          "shares": 1.1139568,
+          "price_usd": 265.11,
+          "amt_usd": 295.8,
+          "amt_thb": 10001.0,
+          "file": "IMG_5682.webp",
+          "note": "ไม้ที่ 3 ซื้อ Dip ราคา 265.11"
+        }
+      ],
+      "sell_slip": "IMG_5874.webp",
+      "sell_slips": [
+        {
+          "file": "IMG_5874.webp",
+          "shares": 2.0,
+          "price_usd": 360.06,
+          "net_usd": 718.95,
+          "date": "5 พ.ย. 69 - 21:52 น.",
+          "order_type": "Limit"
+        },
+        {
+          "file": "IMG_5875.webp",
+          "shares": 0.9770994,
+          "price_usd": 355.46,
+          "net_usd": 346.75,
+          "date": "5 พ.ย. 69 - 21:42 น.",
+          "order_type": "Market"
+        }
+      ],
+      "notes": "ขายทำกำไรปิดสถานะ APP 2.9770994 หุ้น 2 คำสั่ง (Limit 2 หุ้น @ $360.06 และ Market 0.9770994 หุ้น @ $355.46) รับเงินรวม $1,065.70 เข้า Dime! USD (สลิป IMG_5874.webp, IMG_5875.webp)"
+    },
+    {
+      "id": "TRD-20261106-VOO",
+      "ticker": "VOO",
+      "exchange": "AMEX",
+      "name": "Vanguard S&P 500 ETF",
+      "action": "SELL",
+      "date": "6 พ.ย. 69",
+      "buy_date": "3 ก.พ. 69 - 21:30 น.",
+      "holding_days": 276,
+      "shares": 0.4951753,
+      "buy_price_usd": 640.46,
+      "sell_price_usd": 678.1,
+      "total_cost_usd": 317.14,
+      "cost_thb": 10662.25,
+      "gross_revenue_usd": 335.78,
+      "fees_usd": 0.55,
+      "net_revenue_usd": 335.23,
+      "revenue_thb": 11270.43,
+      "realized_pl_usd": 18.09,
+      "realized_pl_thb": 608.18,
+      "realized_pl_pct": 5.7,
+      "fx_rate": 33.62,
+      "buy_tranches_count": 1,
+      "buy_tranches": [
+        {
+          "tranche": 1,
+          "date": "3 ก.พ. 69 - 21:30 น.",
+          "shares": 0.4951753,
+          "price_usd": 640.46,
+          "amt_usd": 317.15,
+          "amt_thb": 0.0,
+          "file": "IMG_5527.webp",
+          "note": "ไม้เจิมพอร์ต ซื้อสะสม VOO ETF เปิดบัญชี"
+        }
+      ],
+      "sell_slip": "IMG_5876.webp",
+      "notes": "ขายทำกำไรปิดสถานะ VOO 0.4951753 หุ้น รับเงิน $335.23 เข้า Dime! USD (สลิป IMG_5876.webp)"
     }
   ]
 }

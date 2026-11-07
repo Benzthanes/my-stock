@@ -2271,10 +2271,29 @@ def generate_master_ledger_html(data):
         </div>
         """
 
-    # 2. Closed Trades Rows (Multi-tranche expand, sorted newest first)
+    # 2. Closed Trades Rows (Multi-tranche expand, sorted newest first by sell datetime)
+    def _trade_sell_datetime_key(t):
+        s_date = t.get("sell_date")
+        if not s_date:
+            slips = t.get("sell_slips")
+            if slips and isinstance(slips, list) and len(slips) > 0 and slips[0].get("date"):
+                s_date = slips[0].get("date")
+        if not s_date:
+            s_fn = t.get("sell_slip") or ""
+            for ocr_k, ocr_v in OCR_SELL_SLIPS.items():
+                if ocr_v.get("fn") == s_fn:
+                    s_date = ocr_v.get("date")
+                    break
+        if not s_date:
+            s_date = t.get("date", "")
+
+        fn_str = str(t.get("sell_slip") or "")
+        fn_num = int(re.sub(r"\D", "", fn_str)) if re.sub(r"\D", "", fn_str) else 0
+        return (parse_thai_date(s_date), fn_num)
+
     sorted_closed_trades = sorted(
         closed_trades,
-        key=lambda t: parse_thai_date(t.get("date", "")),
+        key=_trade_sell_datetime_key,
         reverse=True
     )
     closed_rows = ""
@@ -2290,6 +2309,20 @@ def generate_master_ledger_html(data):
         days = t.get("holding_days", "-")
         days_str = f"{days} วัน" if isinstance(days, (int, float)) else str(days)
 
+        display_sell_date = t.get("sell_date")
+        if not display_sell_date:
+            slips = t.get("sell_slips")
+            if slips and isinstance(slips, list) and len(slips) > 0 and slips[0].get("date"):
+                display_sell_date = slips[0].get("date")
+        if not display_sell_date:
+            s_fn = t.get("sell_slip") or ""
+            for ocr_k, ocr_v in OCR_SELL_SLIPS.items():
+                if ocr_v.get("fn") == s_fn:
+                    display_sell_date = ocr_v.get("date")
+                    break
+        if not display_sell_date:
+            display_sell_date = t.get("date", "-")
+
         sell_slips = t.get('sell_slips')
         sell_btns = []
         if sell_slips and isinstance(sell_slips, list):
@@ -2301,7 +2334,7 @@ def generate_master_ledger_html(data):
                     s_sh = sl.get("shares", 0.0) if isinstance(sl, dict) else 0.0
                     s_pr = sl.get("price_usd", 0.0) if isinstance(sl, dict) else 0.0
                     s_net = sl.get("net_usd", 0.0) if isinstance(sl, dict) else 0.0
-                    s_dt = str(sl.get("date", t.get("date", "-")) if isinstance(sl, dict) else t.get("date", "-"))
+                    s_dt = str(sl.get("date", display_sell_date) if isinstance(sl, dict) else display_sell_date)
                     s_label = f"สลิป {s_sh:.2f} หุ้น" if s_sh else f"สลิปขาย #{s_idx+1}"
                     s_info = f"ขาย {s_sh:.4f} หุ้น @ {money(s_pr)} • รับเงิน {money(s_net)}" if s_sh else f"ขาย @ {money(s_pr)}"
                     sell_btns.append(f'<button type="button" onclick="{_slip_onclick(sl_path, sl_fn, s_tk, s_dt, s_info)}" class="slip-badge-btn" style="padding: 2px 7px; font-size: 0.74rem;" title="คลิกดูภาพสลิปคำสั่งขาย">🧾 {s_label}</button>')
@@ -2312,14 +2345,14 @@ def generate_master_ledger_html(data):
                 s_tk = t.get("ticker", "")
                 s_sh = t.get("shares", 0.0)
                 s_pr = t.get("sell_price_usd", 0.0)
-                s_dt = str(t.get("date", "-"))
+                s_dt = str(display_sell_date)
                 s_info = f"ขาย {s_sh:.4f} หุ้น @ {money(s_pr)} • รับเงิน {money(t.get('net_revenue_usd', 0))}"
                 sell_btns.append(f'<button type="button" onclick="{_slip_onclick(sell_path, sell_fn, s_tk, s_dt, s_info)}" class="slip-badge-btn" style="padding: 2px 7px; font-size: 0.74rem;" title="คลิกดูภาพสลิปคำสั่งขาย">🧾 สลิปขาย</button>')
 
         if sell_btns:
-            sell_date_html = f'{escape(str(t.get("date", "-")))}<div style="margin-top: 4px; display: flex; flex-direction: column; gap: 4px; align-items: center;">{" ".join(sell_btns)}</div>'
+            sell_date_html = f'{escape(str(display_sell_date))}<div style="margin-top: 4px; display: flex; flex-direction: column; gap: 4px; align-items: center;">{" ".join(sell_btns)}</div>'
         else:
-            sell_date_html = escape(str(t.get('date', '-')))
+            sell_date_html = escape(str(display_sell_date))
 
         if tranche_count > 1:
             tranche_btn = f'<button onclick="toggleTranche(\'{trade_id}\')" style="background: rgba(139, 92, 246, 0.15); color: #c084fc; border: 1px solid rgba(139, 92, 246, 0.4); border-radius: 6px; padding: 2px 8px; font-size: 0.78rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;">สะสม {tranche_count} ไม้ <span id="icon-{trade_id}">▼</span></button>'
@@ -2473,7 +2506,7 @@ def generate_master_ledger_html(data):
             <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.74rem; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 6px;">
                 <div>
                     <div><span style="color: var(--text-muted);">ซื้อ:</span> <span style="color: #60a5fa;">{escape(buy_date_str)}</span></div>
-                    <div><span style="color: var(--text-muted);">ขาย:</span> <span style="color: var(--text-secondary);">{escape(str(t.get('date', '-')))}</span></div>
+                    <div><span style="color: var(--text-muted);">ขาย:</span> <span style="color: var(--text-secondary);">{escape(str(display_sell_date))}</span></div>
                 </div>
                 <div style="display: flex; gap: 5px; align-items: center; flex-wrap: wrap; justify-content: flex-end;">
                     {m_tranche_btn}

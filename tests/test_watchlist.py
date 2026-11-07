@@ -47,8 +47,8 @@ class TestWatchlist(unittest.TestCase):
         shutil.rmtree(self.temp_dir, ignore_errors=True)
 
     def test_watchlist_stocks_data_integrity(self):
-        """Assert 35 image stocks left after the 2026-11-05 cleanup, SPCX added by the user, and 5 midterm-2026 picks."""
-        self.assertEqual(len(WATCHLIST_STOCKS), 46)
+        """Assert image stocks left after cleanups, SPCX added by user, Physical AI additions, and midterm/ETF/Bigtech picks."""
+        self.assertEqual(len(WATCHLIST_STOCKS), 44)
         self.assertEqual(SOURCE_AUTHOR, "Shay Boloor")
         self.assertEqual(SOURCE_UPDATED, "2026-10-17")
 
@@ -61,11 +61,14 @@ class TestWatchlist(unittest.TestCase):
 
         self.assertEqual(len(groups), 15)
         IMAGE_STOCKS_PER_GROUP = {
-            "Space": 3, "Quantum": 4, "Drones": 2, "Nuclear": 1, "Photonics": 2, "CPU Bottleneck": 3,
-            "Physical AI": 3, "AI Utilities": 1, "AI Power": 4, "AI Silicon": 4, "AI Applications": 4,
+            "Space": 3, "Quantum": 1, "Drones": 2, "Nuclear": 1, "Photonics": 2, "CPU Bottleneck": 3,
+            "Physical AI": 3, "AI Utilities": 1, "AI Power": 2, "AI Silicon": 4, "AI Applications": 4,
             "AI Connectivity": 4, "Midterm 2026": 0, "ETF Plan 2026-11": 0, "Bigtech Dip 2026-11": 0,
         }
-        removed = {"CIFR", "INTC", "LITE", "OKLO", "VPG", "IREN", "LEU", "ONDS", "UUUU", "ASTS", "NBIS", "MRCY", "AAOI"}
+        removed = {
+            "CIFR", "INTC", "LITE", "OKLO", "VPG", "IREN", "LEU", "ONDS", "UUUU", "ASTS", "NBIS", "MRCY", "AAOI",
+            "ON", "NVTS", "QBTS", "RGTI", "INFQ"
+        }
         self.assertFalse(removed & {s["ticker"] for s in WATCHLIST_STOCKS})
         for g, stocks in groups.items():
             from_image = [x for x in stocks if not x.get("source")]
@@ -73,16 +76,19 @@ class TestWatchlist(unittest.TestCase):
             self.assertEqual(len(from_image), expected, f"Group {g} should have exactly {expected} image stocks")
         self.assertEqual([x["ticker"] for x in groups["Midterm 2026"]], ["ENSG", "FSLR", "DVA", "OLLI", "FIVE"])
 
-        # Spot check specific values from shay_fibo_support_2026-10-17.md
+        # Spot check specific values from shay_fibo_support_2026-10-17.md and additions
         stock_map = {s["ticker"]: s for s in WATCHLIST_STOCKS}
         self.assertEqual(stock_map["RKLB"]["support"], 50.0)
         self.assertEqual(stock_map["COHR"]["support"], 224.0)
         self.assertEqual(stock_map["AEHR"]["support"], 57.0)
+        self.assertEqual(stock_map["ADI"]["support"], 363.0)
+        self.assertEqual(stock_map["MPWR"]["support"], 1100.0)
+        self.assertEqual(stock_map["TXN"]["support"], 262.0)
         self.assertEqual(stock_map["SPCX"]["support"], 115.0)
         self.assertEqual(stock_map["SPCX"]["group"], "Space")
         self.assertEqual(
             [x["ticker"] for x in WATCHLIST_STOCKS if x.get("source")],
-            ["SPCX", "ENSG", "FSLR", "DVA", "OLLI", "FIVE", "QQQM", "SOXQ", "GPIQ", "NFLX", "LRCX"],
+            ["SPCX", "ADI", "MPWR", "TXN", "ENSG", "FSLR", "DVA", "OLLI", "FIVE", "QQQM", "SOXQ", "GPIQ", "NFLX", "LRCX"],
         )
         self.assertEqual(stock_map["ENSG"]["support"], 181.68)
         self.assertEqual(stock_map["FIVE"]["support"], 205.42)
@@ -128,16 +134,16 @@ class TestWatchlist(unittest.TestCase):
         mock_quotes = {
             # COHR: support 224.0, price 222.43 -> diff -1.57 (-0.7%)
             "COHR": {"close": 222.43, "premarket_close": None, "postmarket_close": None, "exchange": "NYSE", "description": "Coherent Corp"},
-            # ON: support 72.0, price 75.24 -> diff +3.24 (+4.5%)
-            "ON": {"close": 75.24, "premarket_close": None, "postmarket_close": None, "exchange": "NASDAQ", "description": "ON Semiconductor"},
-            # AEHR: support 57.0, price 61.218 -> diff +4.218 (+7.4%)
-            "AEHR": {"close": 61.218, "premarket_close": None, "postmarket_close": None, "exchange": "NASDAQ", "description": "Aehr Test Systems"},
+            # ADI: support 363.0, price 379.335 -> diff +16.335 (+4.5%)
+            "ADI": {"close": 379.335, "premarket_close": None, "postmarket_close": None, "exchange": "NASDAQ", "description": "Analog Devices"},
+            # TXN: support 262.0, price 281.388 -> diff +19.388 (+7.4%)
+            "TXN": {"close": 281.388, "premarket_close": None, "postmarket_close": None, "exchange": "NASDAQ", "description": "Texas Instruments"},
             # GOOGL: in portfolio
             "GOOGL": {"close": 283.82, "premarket_close": 281.85, "postmarket_close": None, "exchange": "NASDAQ", "description": "Alphabet Inc"},
         }
 
         result = analyze_watchlist(price_data=mock_quotes)
-        self.assertEqual(result["total_count"], 46)
+        self.assertEqual(result["total_count"], 44)
         self.assertEqual(result["portfolio_count"], 2)  # GOOGL and VRT in portfolio.json
 
         item_map = {it["ticker"]: it for it in result["items"]}
@@ -147,15 +153,15 @@ class TestWatchlist(unittest.TestCase):
         self.assertEqual(cohr["status_code"], "A")
         self.assertAlmostEqual(cohr["pct_diff"], -0.7, places=1)
 
-        # Check ON (+4.5%)
-        on_item = item_map["ON"]
-        self.assertEqual(on_item["status_code"], "B")
-        self.assertAlmostEqual(on_item["pct_diff"], 4.5, places=1)
+        # Check ADI (+4.5%)
+        adi_item = item_map["ADI"]
+        self.assertEqual(adi_item["status_code"], "B")
+        self.assertAlmostEqual(adi_item["pct_diff"], 4.5, places=1)
 
-        # Check AEHR (+7.4%)
-        aehr = item_map["AEHR"]
-        self.assertEqual(aehr["status_code"], "C")
-        self.assertAlmostEqual(aehr["pct_diff"], 7.4, places=1)
+        # Check TXN (+7.4%)
+        txn_item = item_map["TXN"]
+        self.assertEqual(txn_item["status_code"], "C")
+        self.assertAlmostEqual(txn_item["pct_diff"], 7.4, places=1)
 
         # Check GOOGL (in portfolio and premarket priority)
         googl = item_map["GOOGL"]

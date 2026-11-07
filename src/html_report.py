@@ -1192,10 +1192,18 @@ def generate_portfolio_html(summary: Dict[str, Any]) -> str:
             font-weight: 700;
         }}
 
+        @media (max-width: 1024px) {{
+            .grid-4-cols {{ grid-template-columns: repeat(2, 1fr); }}
+            .grid-3-cols {{ grid-template-columns: repeat(2, 1fr); }}
+        }}
         @media (max-width: 768px) {{
-            body {{ padding: 14px; }}
-            .header {{ flex-direction: column; align-items: flex-start; }}
+            body {{ padding: 12px; }}
+            .header {{ flex-direction: column; align-items: flex-start; gap: 10px; }}
+            .header-meta {{ flex-direction: column; align-items: flex-start; gap: 6px; width: 100%; }}
             .grade-box {{ flex-direction: column; align-items: flex-start; }}
+            .grid-4-cols, .grid-3-cols, .grid-2-cols {{ grid-template-columns: 1fr; gap: 12px; }}
+            .card {{ padding: 16px; }}
+            .table-wrap {{ overflow-x: auto; -webkit-overflow-scrolling: touch; }}
         }}
     </style>
 </head>
@@ -1936,6 +1944,18 @@ def generate_recovery_html(summary: Dict[str, Any]) -> str:
         .disclaimer-card {{
             background: rgba(0, 0, 0, 0.4); border: 1px solid var(--border-color); border-radius: var(--radius-md);
             padding: 20px; margin-top: 32px; font-size: 0.82rem; color: var(--text-muted); text-align: center;
+        }}
+
+        @media (max-width: 1024px) {{
+            .grid-3-cols {{ grid-template-columns: repeat(2, 1fr); }}
+            .outlook-grid-2 {{ grid-template-columns: 1fr; }}
+        }}
+        @media (max-width: 768px) {{
+            body {{ padding: 12px; }}
+            .header {{ flex-direction: column; align-items: flex-start; gap: 10px; }}
+            .grid-3-cols, .grid-2-cols, .outlook-grid-2 {{ grid-template-columns: 1fr; gap: 12px; }}
+            .card {{ padding: 16px; }}
+            .table-wrap {{ overflow-x: auto; -webkit-overflow-scrolling: touch; }}
         }}
     </style>
 </head>

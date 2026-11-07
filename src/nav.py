@@ -14,6 +14,17 @@ PAGES = (
     ("advisor", "advisor.html", "คำแนะนำ"),
 )
 
+PAGE_ICONS = {
+    "master": "👑",
+    "review": "🩺",
+    "recovery": "🧗",
+    "dip_sim": "🎯",
+    "ledger": "📜",
+    "chart": "📈",
+    "watchlist": "📋",
+    "advisor": "💡",
+}
+
 ALIASES = {
     "set_review": "review",
     "set_recovery": "recovery",
@@ -21,15 +32,19 @@ ALIASES = {
 
 _STYLE = """<style>
 .rnav { display: flex; flex-direction: column; gap: 10px; box-sizing: border-box; width: 100%; max-width: 100%;
-  padding: 10px 14px; margin: 0 0 16px 0; background: #0f172a; border: 1px solid rgba(255,255,255,0.08); border-radius: 12px;
+  padding: 10px 16px; margin: 0 0 18px 0; background: rgba(15, 23, 42, 0.88);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; box-shadow: 0 4px 20px rgba(0,0,0,0.35);
   font-family: 'Prompt', 'Inter', -apple-system, sans-serif; font-size: 0.86rem; }
 .rnav-top-row { display: flex; align-items: center; justify-content: space-between; gap: 8px 16px; width: 100%; flex-wrap: wrap; }
 .rnav-links { display: flex; gap: 6px; min-width: 0; flex: 1 1 auto; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
 .rnav-links::-webkit-scrollbar { display: none; }
 .rnav-link { flex: 0 0 auto; white-space: nowrap; padding: 6px 12px; border-radius: 8px; text-decoration: none; color: #94a3b8;
-  border: 1px solid transparent; transition: color 0.15s, background 0.15s; }
+  border: 1px solid transparent; transition: color 0.15s, background 0.15s; display: inline-flex; align-items: center; }
+.rnav-link::before { content: attr(data-icon); margin-right: 5px; font-size: 0.92em; display: inline-block; }
 .rnav-link:hover { color: #f8fafc; background: rgba(255,255,255,0.06); }
-.rnav-link.active { color: #60a5fa; background: rgba(59,130,246,0.15); border-color: #3b82f6; font-weight: 600; }
+.rnav-link.active { color: #fff; background: linear-gradient(135deg, rgba(59,130,246,0.25), rgba(37,99,235,0.15));
+  border-color: #3b82f6; box-shadow: 0 0 12px rgba(59,130,246,0.3); font-weight: 600; }
 .rnav-time { white-space: nowrap; color: #64748b; font-size: 0.78rem; }
 
 /* GLOBAL LIVE CONTROLS BAR */
@@ -57,15 +72,15 @@ _STYLE = """<style>
   .rnav-live-right { width: 100%; justify-content: space-between; margin-left: 0; }
   .rnav-time { font-size: 0.72rem; }
   .rnav-status { font-size: 0.74rem; }
-  /* Every tab visible at once: wrap instead of scrolling sideways. */
-  .rnav-links { flex-wrap: wrap; overflow: visible; gap: 4px; }
-  .rnav-link { padding: 6px 9px; font-size: 0.80rem; }
+  /* Smooth horizontal swipe on mobile instead of wrapping 3-4 rows */
+  .rnav-links { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; gap: 6px; padding-bottom: 2px; }
+  .rnav-link { padding: 6px 11px; font-size: 0.82rem; min-height: 38px; }
   /* Live bar: refresh and interval on one row, status underneath. */
   .rnav-live-left { flex-wrap: nowrap; gap: 6px; }
-  .rnav-refresh-btn { padding: 5px 9px; }
+  .rnav-refresh-btn { padding: 5px 10px; min-height: 36px; }
   .rnav-live-badge { display: none; }
   .rnav-int-word { display: none; }
-  .rnav-int-btn { padding: 3px 6px; }
+  .rnav-int-btn { padding: 3px 6px; min-height: 30px; }
 }
 </style>"""
 
@@ -325,8 +340,8 @@ def nav_bar_html(active: str, now: Optional[datetime] = None) -> str:
         raise ValueError(f"unknown nav page: {active!r}")
     stamp = (now or datetime.now()).strftime("%Y-%m-%d %H:%M")
     links = "".join(
-        f'<a href="{href}" class="rnav-link active" aria-current="page">{label}</a>' if key == active
-        else f'<a href="{href}" class="rnav-link">{label}</a>'
+        f'<a href="{href}" class="rnav-link active" aria-current="page" data-icon="{PAGE_ICONS.get(key, "")}">{label}</a>' if key == active
+        else f'<a href="{href}" class="rnav-link" data-icon="{PAGE_ICONS.get(key, "")}">{label}</a>'
         for key, href, label in PAGES
     )
     return (

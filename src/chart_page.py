@@ -38,7 +38,7 @@ WATCHED_STOCKS: Dict[str, Dict[str, Any]] = {
         "name": "Aehr Test Systems",
         "sector": "Semiconductor Equipment",
         "exchange": "NASDAQ",
-        "fibo_support": next(s["support"] for s in WATCHLIST_STOCKS if s["ticker"] == "AEHR"),
+        "fibo_support": next((s["support"] for s in WATCHLIST_STOCKS if s["ticker"] == "AEHR"), 57.0),
     },
 }
 

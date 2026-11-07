@@ -206,15 +206,19 @@
     <div class="container">
         <style>
 .rnav { display: flex; flex-direction: column; gap: 10px; box-sizing: border-box; width: 100%; max-width: 100%;
-  padding: 10px 14px; margin: 0 0 16px 0; background: #0f172a; border: 1px solid rgba(255,255,255,0.08); border-radius: 12px;
+  padding: 10px 16px; margin: 0 0 18px 0; background: rgba(15, 23, 42, 0.88);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; box-shadow: 0 4px 20px rgba(0,0,0,0.35);
   font-family: 'Prompt', 'Inter', -apple-system, sans-serif; font-size: 0.86rem; }
 .rnav-top-row { display: flex; align-items: center; justify-content: space-between; gap: 8px 16px; width: 100%; flex-wrap: wrap; }
 .rnav-links { display: flex; gap: 6px; min-width: 0; flex: 1 1 auto; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
 .rnav-links::-webkit-scrollbar { display: none; }
 .rnav-link { flex: 0 0 auto; white-space: nowrap; padding: 6px 12px; border-radius: 8px; text-decoration: none; color: #94a3b8;
-  border: 1px solid transparent; transition: color 0.15s, background 0.15s; }
+  border: 1px solid transparent; transition: color 0.15s, background 0.15s; display: inline-flex; align-items: center; }
+.rnav-link::before { content: attr(data-icon); margin-right: 5px; font-size: 0.92em; display: inline-block; }
 .rnav-link:hover { color: #f8fafc; background: rgba(255,255,255,0.06); }
-.rnav-link.active { color: #60a5fa; background: rgba(59,130,246,0.15); border-color: #3b82f6; font-weight: 600; }
+.rnav-link.active { color: #fff; background: linear-gradient(135deg, rgba(59,130,246,0.25), rgba(37,99,235,0.15));
+  border-color: #3b82f6; box-shadow: 0 0 12px rgba(59,130,246,0.3); font-weight: 600; }
 .rnav-time { white-space: nowrap; color: #64748b; font-size: 0.78rem; }
 
 /* GLOBAL LIVE CONTROLS BAR */
@@ -242,18 +246,18 @@
   .rnav-live-right { width: 100%; justify-content: space-between; margin-left: 0; }
   .rnav-time { font-size: 0.72rem; }
   .rnav-status { font-size: 0.74rem; }
-  /* Every tab visible at once: wrap instead of scrolling sideways. */
-  .rnav-links { flex-wrap: wrap; overflow: visible; gap: 4px; }
-  .rnav-link { padding: 6px 9px; font-size: 0.80rem; }
+  /* Smooth horizontal swipe on mobile instead of wrapping 3-4 rows */
+  .rnav-links { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; gap: 6px; padding-bottom: 2px; }
+  .rnav-link { padding: 6px 11px; font-size: 0.82rem; min-height: 38px; }
   /* Live bar: refresh and interval on one row, status underneath. */
   .rnav-live-left { flex-wrap: nowrap; gap: 6px; }
-  .rnav-refresh-btn { padding: 5px 9px; }
+  .rnav-refresh-btn { padding: 5px 10px; min-height: 36px; }
   .rnav-live-badge { display: none; }
   .rnav-int-word { display: none; }
-  .rnav-int-btn { padding: 3px 6px; }
+  .rnav-int-btn { padding: 3px 6px; min-height: 30px; }
 }
 </style>
-<nav class="rnav" aria-label="รายงาน"><div class="rnav-top-row"><div class="rnav-links"><a href="portfolio_master.html" class="rnav-link">ภาพรวม</a><a href="portfolio_review.html" class="rnav-link">สุขภาพพอร์ต</a><a href="portfolio_recovery.html" class="rnav-link">แก้ดอย</a><a href="portfolio_dip_sim.html" class="rnav-link">Dip จำลอง</a><a href="trades_ledger.html" class="rnav-link active" aria-current="page">รายการซื้อขายทั้งหมด</a><a href="stock_chart.html" class="rnav-link">กราฟ</a><a href="watchlist.html" class="rnav-link">หุ้นที่สนใจ</a><a href="advisor.html" class="rnav-link">คำแนะนำ</a></div></div><div class="rnav-live-bar"><div class="rnav-live-left"><button id="rnav-btn-refresh" class="rnav-refresh-btn" onclick="triggerGlobalRefresh()" title="กดเพื่อดึงราคาตลาดสดทันที"><span id="rnav-refresh-icon" style="display:inline-block; transition:transform 0.6s ease;">🔄</span> <span id="rnav-refresh-text">รีเฟรชราคา</span> <span class="rnav-live-badge">Live</span></button><div class="rnav-int-group" title="อัปเดตราคาหุ้นอัตโนมัติ (5วิ - 60วิ)"><span class="rnav-int-label">⏱️<span class="rnav-int-word"> อัปเดตสด:</span></span><button id="rnav-live-0" class="rnav-int-btn active" onclick="setGlobalLiveInterval(0)">ปิด</button><button id="rnav-live-5" class="rnav-int-btn" onclick="setGlobalLiveInterval(5)">5s</button><button id="rnav-live-15" class="rnav-int-btn" onclick="setGlobalLiveInterval(15)">15s</button><button id="rnav-live-30" class="rnav-int-btn" onclick="setGlobalLiveInterval(30)">30s</button><button id="rnav-live-60" class="rnav-int-btn" onclick="setGlobalLiveInterval(60)">60s</button></div></div><div class="rnav-live-right"><span id="rnav-live-status" class="rnav-status">⚪ อัปเดตด้วยตนเอง</span><span class="rnav-time">อัปเดต: 2026-11-07 17:27</span></div></div></nav>
+<nav class="rnav" aria-label="รายงาน"><div class="rnav-top-row"><div class="rnav-links"><a href="portfolio_master.html" class="rnav-link" data-icon="👑">ภาพรวม</a><a href="portfolio_review.html" class="rnav-link" data-icon="🩺">สุขภาพพอร์ต</a><a href="portfolio_recovery.html" class="rnav-link" data-icon="🧗">แก้ดอย</a><a href="portfolio_dip_sim.html" class="rnav-link" data-icon="🎯">Dip จำลอง</a><a href="trades_ledger.html" class="rnav-link active" aria-current="page" data-icon="📜">รายการซื้อขายทั้งหมด</a><a href="stock_chart.html" class="rnav-link" data-icon="📈">กราฟ</a><a href="watchlist.html" class="rnav-link" data-icon="📋">หุ้นที่สนใจ</a><a href="advisor.html" class="rnav-link" data-icon="💡">คำแนะนำ</a></div></div><div class="rnav-live-bar"><div class="rnav-live-left"><button id="rnav-btn-refresh" class="rnav-refresh-btn" onclick="triggerGlobalRefresh()" title="กดเพื่อดึงราคาตลาดสดทันที"><span id="rnav-refresh-icon" style="display:inline-block; transition:transform 0.6s ease;">🔄</span> <span id="rnav-refresh-text">รีเฟรชราคา</span> <span class="rnav-live-badge">Live</span></button><div class="rnav-int-group" title="อัปเดตราคาหุ้นอัตโนมัติ (5วิ - 60วิ)"><span class="rnav-int-label">⏱️<span class="rnav-int-word"> อัปเดตสด:</span></span><button id="rnav-live-0" class="rnav-int-btn active" onclick="setGlobalLiveInterval(0)">ปิด</button><button id="rnav-live-5" class="rnav-int-btn" onclick="setGlobalLiveInterval(5)">5s</button><button id="rnav-live-15" class="rnav-int-btn" onclick="setGlobalLiveInterval(15)">15s</button><button id="rnav-live-30" class="rnav-int-btn" onclick="setGlobalLiveInterval(30)">30s</button><button id="rnav-live-60" class="rnav-int-btn" onclick="setGlobalLiveInterval(60)">60s</button></div></div><div class="rnav-live-right"><span id="rnav-live-status" class="rnav-status">⚪ อัปเดตด้วยตนเอง</span><span class="rnav-time">อัปเดต: 2026-11-07 23:29</span></div></div></nav>
 <script>
 (function() {
   var activeLink = document.querySelector(".rnav-link.active");
@@ -511,7 +515,7 @@
                     <span>🔍</span> <span id="toggleAllBtnText">คลี่ดูรายละเอียดทุกไม้ (Expand All)</span>
                 </button>
                 <span class="meta-pill">⚡ 1 USD = 33.55 THB</span>
-                <span class="meta-pill">🕒 ข้อมูล ณ: 2026-11-07 17:27:29</span>
+                <span class="meta-pill">🕒 ข้อมูล ณ: 2026-11-07 23:29:36</span>
             </div>
         </div>
 

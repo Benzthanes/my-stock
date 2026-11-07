@@ -281,11 +281,17 @@ h2 {{ font-size:1.15rem; margin:30px 0 12px; display:flex; align-items:center; g
 .mix-seg {{ height:100%; }}
 .mix-legend {{ display:flex; flex-wrap:wrap; gap:6px 14px; margin-top:10px; font-size:0.85rem; color:var(--sub); }}
 .mix-key i {{ display:inline-block; width:10px; height:10px; border-radius:3px; margin-right:5px; }}
-.tbl-wrap {{ background:var(--card); border:1px solid var(--line); border-radius:14px; overflow-x:auto; }}
+.tbl-wrap {{ background:var(--card); border:1px solid var(--line); border-radius:14px; overflow-x:auto; -webkit-overflow-scrolling:touch; }}
 table {{ width:100%; border-collapse:collapse; font-size:0.9rem; }}
-th {{ text-align:left; color:var(--sub); font-weight:500; font-size:0.8rem; padding:10px 12px; border-bottom:1px solid var(--line); }}
+th {{ text-align:left; color:var(--sub); font-weight:500; font-size:0.8rem; padding:10px 12px; border-bottom:1px solid var(--line); white-space:nowrap; }}
 td {{ padding:10px 12px; border-bottom:1px solid rgba(255,255,255,0.04); vertical-align:top; font-family:'Inter','Prompt',sans-serif; }}
 tr:last-child td {{ border-bottom:none; }}
+.tbl-wrap th:first-child, .tbl-wrap td:first-child {{
+  position: sticky; left: 0; z-index: 2; background: var(--card);
+  box-shadow: 2px 0 6px rgba(0,0,0,0.3);
+}}
+.tbl-wrap th:first-child {{ z-index: 3; background: #131c31; }}
+tr:hover td:first-child {{ background: rgba(255,255,255,0.02); }}
 .tk-cell {{ font-weight:700; }}
 .tot {{ font-weight:700; color:#6ee7b7; min-width:110px; }}
 .bar {{ height:4px; background:rgba(255,255,255,0.06); border-radius:4px; margin-top:4px; }}

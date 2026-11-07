@@ -5287,6 +5287,7 @@
         const btnTv = document.getElementById('tab_tv');
         const lwWrap = document.getElementById('chart_container_wrap');
         const lwMain = document.getElementById('chart_container');
+        const hoverBar = document.getElementById('chart_hover_bar');
         const stackWrap = document.getElementById('subpanes_stack');
         const botBar = document.querySelector('.chart-botbar');
         const tvBox = document.getElementById('tv_widget_container');
@@ -5296,6 +5297,7 @@
             if (btnTv) btnTv.classList.remove('active');
             if (lwWrap) lwWrap.style.display = 'block';
             if (lwMain) lwMain.style.display = 'block';
+            if (hoverBar) hoverBar.style.display = 'flex';
             if (stackWrap) stackWrap.style.display = (activeSubpaneOscs.length > 0) ? 'flex' : 'none';
             if (botBar) botBar.style.display = 'flex';
             if (tvBox) tvBox.style.display = 'none';
@@ -5305,6 +5307,7 @@
             if (btnTv) btnTv.classList.add('active');
             if (lwWrap) lwWrap.style.display = 'none';
             if (lwMain) lwMain.style.display = 'none';
+            if (hoverBar) hoverBar.style.display = 'none';
             if (stackWrap) stackWrap.style.display = 'none';
             if (botBar) botBar.style.display = 'none';
             if (tvBox) tvBox.style.display = 'block';

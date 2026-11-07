@@ -776,6 +776,42 @@
             color: #ffffff;
         }
 
+        /* Dedicated OHLC & Date Ribbon (Positioned cleanly above chart canvas, no overlap) */
+        .chart-hover-ribbon {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 7px 16px;
+            background: #080d1a;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            font-size: 0.74rem;
+            font-family: 'JetBrains Mono', monospace;
+            flex-wrap: wrap;
+            min-height: 36px;
+            box-sizing: border-box;
+        }
+
+        .chb-date-badge {
+            color: #facc15;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: rgba(250, 204, 21, 0.12);
+            border: 1px solid rgba(250, 204, 21, 0.28);
+            padding: 2px 8px;
+            border-radius: 4px;
+            white-space: nowrap;
+        }
+
+        .chb-ohlc-values {
+            color: #cbd5e1;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
         /* Whale Holdings Card Styling */
         .whale-item {
             background: rgba(255, 255, 255, 0.025);
@@ -2127,6 +2163,11 @@
             body > .rnav {
                 margin: 8px 12px 12px 12px;
                 width: calc(100% - 24px);
+            }
+            .chart-hover-ribbon {
+                padding: 5px 10px;
+                font-size: 0.70rem;
+                gap: 6px;
             }
         }
 

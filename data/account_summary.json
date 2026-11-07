@@ -4,39 +4,39 @@
   "account_no": "2081682995",
   "fx_rate": 33.55,
   "fx_source": "live",
-  "updated_at": "2026-11-07 06:44:11",
+  "updated_at": "2026-11-07 17:11:02",
   "net_injected_capital_thb": 1295000.0,
   "gross_deposits_thb": 1345000.0,
   "transfer_out_thb": 50000.0,
   "dime_save_cash_thb": 0.59,
-  "dime_usd_cash": 2941.02,
-  "dime_usd_cash_thb": 98671.22,
-  "total_cash_thb": 98671.81,
-  "stock_market_val_usd": 46233.88546592501,
-  "stock_market_val_thb": 1551146.857381784,
-  "stock_cost_usd": 37995.95,
-  "stock_cost_thb": 1277542.35,
-  "stock_unrealized_pl_usd": 8237.93546592501,
-  "stock_unrealized_pl_thb": 273604.5073817838,
-  "stock_unrealized_pl_pct": 21.681088289475614,
-  "total_net_worth_thb": 1649818.67,
-  "total_net_worth_usd": 49174.92,
-  "all_time_profit_thb": 354818.67,
-  "all_time_roi_pct": 27.4,
+  "dime_usd_cash": 5561.05,
+  "dime_usd_cash_thb": 186573.23,
+  "total_cash_thb": 186573.82,
+  "stock_market_val_usd": 43574.276978872,
+  "stock_market_val_thb": 1461916.9926411556,
+  "stock_cost_usd": 35759.96,
+  "stock_cost_thb": 1202368.37,
+  "stock_unrealized_pl_usd": 7814.316978872004,
+  "stock_unrealized_pl_thb": 259548.6226411555,
+  "stock_unrealized_pl_pct": 21.852141274408595,
+  "total_net_worth_thb": 1648490.81,
+  "total_net_worth_usd": 49135.34,
+  "all_time_profit_thb": 353490.81,
+  "all_time_roi_pct": 27.3,
   "trades_summary": {
-    "total_trades": 10,
-    "winning_trades": 10,
+    "total_trades": 12,
+    "winning_trades": 12,
     "losing_trades": 0,
     "breakeven_trades": 0,
     "win_rate_pct": 100.0,
-    "total_cost_usd": 6436.57,
-    "total_cost_thb": 216515.76,
-    "total_revenue_usd": 7492.32,
-    "total_revenue_thb": 251891.81,
-    "total_realized_pl_usd": 1055.75,
-    "total_realized_pl_thb": 35376.01,
-    "total_fees_usd": 9.8,
-    "roi_pct": 16.4,
+    "total_cost_usd": 8672.56,
+    "total_cost_thb": 291689.74,
+    "total_revenue_usd": 10112.35,
+    "total_revenue_thb": 339977.22,
+    "total_realized_pl_usd": 1439.79,
+    "total_realized_pl_thb": 48287.44,
+    "total_fees_usd": 14.07,
+    "roi_pct": 16.6,
     "profit_factor": null,
     "profit_factor_display": "∞",
     "best_trade": {
@@ -714,6 +714,106 @@
       ],
       "sell_slip": "IMG_5876.webp",
       "notes": "ขายทำกำไรปิดสถานะ VOO 0.4951753 หุ้น รับเงิน $335.23 เข้า Dime! USD (สลิป IMG_5876.webp)"
+    },
+    {
+      "id": "TRD-20261106-ABNB",
+      "ticker": "ABNB",
+      "exchange": "NASDAQ",
+      "name": "Airbnb, Inc.",
+      "action": "SELL",
+      "date": "6 พ.ย. 69",
+      "sell_date": "6 พ.ย. 69 - 21:34 น.",
+      "order_type": "Market",
+      "buy_date": "23 - 25 ก.ย. 69",
+      "holding_days": 44,
+      "shares": 9.8248563,
+      "buy_price_usd": 151.79,
+      "sell_price_usd": 187.11,
+      "total_cost_usd": 1491.31,
+      "cost_thb": 50137.84,
+      "gross_revenue_usd": 1838.41,
+      "fees_usd": 2.99,
+      "net_revenue_usd": 1835.42,
+      "revenue_thb": 61706.82,
+      "realized_pl_usd": 344.11,
+      "realized_pl_thb": 11568.98,
+      "realized_pl_pct": 23.07,
+      "fx_rate": 33.62,
+      "buy_tranches_count": 3,
+      "buy_tranches": [
+        {
+          "tranche": 1,
+          "date": "23 ก.ย. 69 - 21:47 น.",
+          "shares": 2.915974,
+          "price_usd": 154.0,
+          "amt_usd": 449.78,
+          "amt_thb": 0.0,
+          "file": "IMG_5572.webp",
+          "note": "ไม้ที่ 1 ซื้อสะสมโซนเปิด"
+        },
+        {
+          "tranche": 2,
+          "date": "24 ก.ย. 69 - 02:25 น.",
+          "shares": 1.9724764,
+          "price_usd": 150.99,
+          "amt_usd": 298.32,
+          "amt_thb": 9999.69,
+          "file": "IMG_5574.webp",
+          "note": "ไม้ที่ 2 ซื้อเพิ่มผ่าน Dime! Save"
+        },
+        {
+          "tranche": 3,
+          "date": "25 ก.ย. 69 - 00:24 น.",
+          "shares": 4.9364058,
+          "price_usd": 150.8,
+          "amt_usd": 745.6,
+          "amt_thb": 0.0,
+          "file": "IMG_5577.webp",
+          "note": "ไม้ที่ 3 ซื้อสะสมไม้ใหญ่"
+        }
+      ],
+      "sell_slip": "IMG_5877.webp",
+      "notes": "ขายทำกำไรปิดสถานะ ABNB 9.8248563 หุ้น @ $187.11 รับเงิน $1,835.42 เข้า Dime! USD (สลิป IMG_5877.webp)"
+    },
+    {
+      "id": "TRD-20261106-MNST",
+      "ticker": "MNST",
+      "exchange": "NASDAQ",
+      "name": "Monster Beverage Corp",
+      "action": "SELL",
+      "date": "6 พ.ย. 69",
+      "sell_date": "6 พ.ย. 69 - 21:35 น.",
+      "order_type": "Market",
+      "buy_date": "24 ก.ย. 69 - 23:34 น.",
+      "holding_days": 43,
+      "shares": 17.3443577,
+      "buy_price_usd": 42.935,
+      "sell_price_usd": 45.31,
+      "total_cost_usd": 744.68,
+      "cost_thb": 25036.14,
+      "gross_revenue_usd": 785.89,
+      "fees_usd": 1.28,
+      "net_revenue_usd": 784.61,
+      "revenue_thb": 26378.59,
+      "realized_pl_usd": 39.93,
+      "realized_pl_thb": 1342.45,
+      "realized_pl_pct": 5.36,
+      "fx_rate": 33.62,
+      "buy_tranches_count": 1,
+      "buy_tranches": [
+        {
+          "tranche": 1,
+          "date": "24 ก.ย. 69 - 23:34 น.",
+          "shares": 17.3443577,
+          "price_usd": 42.93,
+          "amt_usd": 744.68,
+          "amt_thb": 24961.67,
+          "file": "IMG_5575.webp",
+          "note": "ไม้ซื้อรอบสอง ผ่าน Dime! Save"
+        }
+      ],
+      "sell_slip": "IMG_5878.webp",
+      "notes": "ขายทำกำไรปิดสถานะ MNST 17.3443577 หุ้น @ $45.31 รับเงิน $784.61 เข้า Dime! USD (สลิป IMG_5878.webp)"
     }
   ],
   "dividends_list": [
@@ -798,7 +898,7 @@
   ],
   "total_dividends_usd": 141.74,
   "total_dividends_thb": 4755.38,
-  "total_realized_and_div_thb": 40162.3,
+  "total_realized_and_div_thb": 53073.73,
   "positions": [
     {
       "ticker": "LLY",
@@ -940,7 +1040,7 @@
         "Wall St Strong Buy 🌟",
         "⚠️ High ADX Falling Knife"
       ],
-      "days_to_earnings": 96,
+      "days_to_earnings": 95,
       "earnings_date": "10 Feb 2027",
       "is_earnings_near": false,
       "key_support": 1150.35,
@@ -1032,8 +1132,8 @@
             "published": "06 Nov 2026",
             "raw_date": "Fri, 06 Nov 2026 21:11:00 GMT",
             "sentiment": "bullish",
-            "title_th": "Hims & Hers Surges On 'Surprising And Inevitable' Deal With Eli Lilly",
-            "summary_th": "• สำนักข่าว Investor's Business Daily รายงานข่าวเชิงบวกต่อ LLY ในประเด็น 'Hims & Hers Surges On 'Surprising And Inevitable' Deal With Eli Lilly'.\n• บริบทและเนื้อหาสำคัญ: ข่าวนี้เกี่ยวข้องกับ การดำเนินงานตามแผนยุทธศาสตร์และการแข่งขันในอุตสาหกรรม ซึ่งสะท้อนโมเมนตัมธุรกิจที่ขยายตัวได้ดีกว่าค่าเฉลี่ยอุตสาหกรรม.\n• นัยต่อปัจจัยพื้นฐาน: สนับสนุนการเติบโตของรายได้ (Top-line Growth) และช่วยรักษาอัตรากำไรขั้นต้นให้อยู่ในระดับสูง.\n• พฤติกรรมเม็ดเงินสถาบัน: เพิ่มความน่าสนใจให้แก่กองทุนสถาบันในการพิจารณาเพิ่มน้ำหนักการลงทุน (Accumulation) ในช่วงที่ราคาพักตัว.",
+            "title_th": "Hims & Hers เร่งทำข้อตกลงที่ 'น่าประหลาดใจและหลีกเลี่ยงไม่ได้' กับ Eli Lilly",
+            "summary_th": "• สำนักข่าว Investor's Business Daily รายงานข่าวเชิงบวกต่อ LLY ในประเด็น 'Hims & Hers เร่งทำข้อตกลงที่ 'น่าประหลาดใจและหลีกเลี่ยงไม่ได้' กับ Eli Lilly'.\n• บริบทและเนื้อหาสำคัญ: ข่าวนี้เกี่ยวข้องกับ การดำเนินงานตามแผนยุทธศาสตร์และการแข่งขันในอุตสาหกรรม ซึ่งสะท้อนโมเมนตัมธุรกิจที่ขยายตัวได้ดีกว่าค่าเฉลี่ยอุตสาหกรรม.\n• นัยต่อปัจจัยพื้นฐาน: สนับสนุนการเติบโตของรายได้ (Top-line Growth) และช่วยรักษาอัตรากำไรขั้นต้นให้อยู่ในระดับสูง.\n• พฤติกรรมเม็ดเงินสถาบัน: เพิ่มความน่าสนใจให้แก่กองทุนสถาบันในการพิจารณาเพิ่มน้ำหนักการลงทุน (Accumulation) ในช่วงที่ราคาพักตัว.",
             "impact_th": "🟢 เชิงบวกต่อราคาหุ้น (Bullish Catalyst): ข่าวนี้เป็นปัจจัยขับเคลื่อนเชิงจิตวิทยาและปัจจัยพื้นฐาน ช่วยหนุนโมเมนตัมราคาให้มีโอกาสทดสอบแนวต้านถัดไป และลดโอกาสการปรับฐานลึกในระยะสั้น.",
             "action_th": "💡 แผนกลยุทธ์การเทรด: หากราคาหุ้นย่อตัวลงมาทดสอบแนวรับสำคัญ เช่น เส้นค่าเฉลี่ย EMA 21/50 หรือแนวรับ Fibo 61.8% ถือเป็นจังหวะทยอยสะสม (DCA) ไม่แนะนำให้ไล่ราคาเมื่อแท่งเทียนอยู่ห่างจากแนวรับเกิน 1.5 ATR.",
             "topic": "ผลการดำเนินงานและทิศทางธุรกิจ",
@@ -1046,8 +1146,8 @@
             "published": "06 Nov 2026",
             "raw_date": "Fri, 06 Nov 2026 17:29:02 GMT",
             "sentiment": "bullish",
-            "title_th": "Hims & Hers stock climbs on direct partnership with Eli Lilly for obesity drugs",
-            "summary_th": "• สำนักข่าว Investing.com รายงานข่าวเชิงบวกต่อ LLY ในประเด็น 'Hims & Hers stock climbs on direct partnership with Eli Lilly for obesity drugs'.\n• บริบทและเนื้อหาสำคัญ: ข่าวนี้เกี่ยวข้องกับ ความคืบหน้าของยารักษาโรคสำคัญและสิทธิบัตรยาที่มีตลาดรองรับขนาดใหญ่ ซึ่งสะท้อนโมเมนตัมธุรกิจที่ขยายตัวได้ดีกว่าค่าเฉลี่ยอุตสาหกรรม.\n• นัยต่อปัจจัยพื้นฐาน: สนับสนุนการเติบโตของรายได้ (Top-line Growth) และช่วยรักษาอัตรากำไรขั้นต้นให้อยู่ในระดับสูง.\n• พฤติกรรมเม็ดเงินสถาบัน: เพิ่มความน่าสนใจให้แก่กองทุนสถาบันในการพิจารณาเพิ่มน้ำหนักการลงทุน (Accumulation) ในช่วงที่ราคาพักตัว.",
+            "title_th": "หุ้นของ Hims & Hers ก้าวขึ้นจากการเป็นหุ้นส่วนโดยตรงกับ Eli Lilly สำหรับยารักษาโรคอ้วน",
+            "summary_th": "• สำนักข่าว Investing.com รายงานข่าวเชิงบวกต่อ LLY ในประเด็น 'หุ้นของ Hims & Hers ก้าวขึ้นจากการเป็นหุ้นส่วนโดยตรงกับ Eli Lilly สำหรับยารักษาโรคอ้วน'.\n• บริบทและเนื้อหาสำคัญ: ข่าวนี้เกี่ยวข้องกับ ความคืบหน้าของยารักษาโรคสำคัญและสิทธิบัตรยาที่มีตลาดรองรับขนาดใหญ่ ซึ่งสะท้อนโมเมนตัมธุรกิจที่ขยายตัวได้ดีกว่าค่าเฉลี่ยอุตสาหกรรม.\n• นัยต่อปัจจัยพื้นฐาน: สนับสนุนการเติบโตของรายได้ (Top-line Growth) และช่วยรักษาอัตรากำไรขั้นต้นให้อยู่ในระดับสูง.\n• พฤติกรรมเม็ดเงินสถาบัน: เพิ่มความน่าสนใจให้แก่กองทุนสถาบันในการพิจารณาเพิ่มน้ำหนักการลงทุน (Accumulation) ในช่วงที่ราคาพักตัว.",
             "impact_th": "🟢 เชิงบวกต่อราคาหุ้น (Bullish Catalyst): ข่าวนี้เป็นปัจจัยขับเคลื่อนเชิงจิตวิทยาและปัจจัยพื้นฐาน ช่วยหนุนโมเมนตัมราคาให้มีโอกาสทดสอบแนวต้านถัดไป และลดโอกาสการปรับฐานลึกในระยะสั้น.",
             "action_th": "💡 แผนกลยุทธ์การเทรด: หากราคาหุ้นย่อตัวลงมาทดสอบแนวรับสำคัญ เช่น เส้นค่าเฉลี่ย EMA 21/50 หรือแนวรับ Fibo 61.8% ถือเป็นจังหวะทยอยสะสม (DCA) ไม่แนะนำให้ไล่ราคาเมื่อแท่งเทียนอยู่ห่างจากแนวรับเกิน 1.5 ATR.",
             "topic": "การอนุมัติยา นวัตกรรมชีวภาพ และการทดลองทางคลินิก",
@@ -1057,28 +1157,28 @@
         "bearish": [],
         "neutral": [
           {
+            "title": "Eli Lilly Is Much More Than a Weight-Loss Drug Company. Here's the Evidence",
+            "source": "Yahoo Finance",
+            "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPSHZtZUVBOFlmTy1qc01kWjhLRjl2X2hQNi05cm16S2F0SnFqSEY2bDFlcExtZm5nRHhZTWxXQ1BYT3NaYmRBUEo4eGIwemY5d2syb1BDdG1UUWJLbEVXWWJIcnMySzBCa1NPeHBHVW9YOVFsbHd6YTZjTVdzQVlyR21Ud3VVeHktWlJWckJuUUk?oc=5",
+            "published": "07 Nov 2026",
+            "raw_date": "Sat, 07 Nov 2026 00:50:47 GMT",
+            "sentiment": "neutral",
+            "title_th": "Eli Lilly เป็นมากกว่าบริษัทยาลดน้ำหนัก นี่คือหลักฐาน",
+            "summary_th": "• สำนักข่าว Yahoo Finance รายงานสถานการณ์ทั่วไปของ LLY ในประเด็น 'Eli Lilly เป็นมากกว่าบริษัทยาลดน้ำหนัก นี่คือหลักฐาน'.\n• บริบทและเนื้อหาสำคัญ: ติดตามพัฒนาการในหมวด ความคืบหน้าของยารักษาโรคสำคัญและสิทธิบัตรยาที่มีตลาดรองรับขนาดใหญ่ ซึ่งเป็นการดำเนินงานตามแผนธุรกิจปกติ.\n• นัยต่อปัจจัยพื้นฐาน: โครงสร้างพื้นฐานของธุรกิจยังคงดำเนินไปอย่างมีเสถียรภาพ ไม่พบการเปลี่ยนแปลงเชิงโครงสร้างที่มีนัยสำคัญ.\n• พฤติกรรมเม็ดเงินสถาบัน: ปริมาณการซื้อขายยังคงเคลื่อนไหวตามสภาวะตลาดโดยรวม.",
+            "impact_th": "⚪ เป็นกลาง (Neutral Stance): ไม่ได้สร้างแรงกระตุ้นรุนแรงต่อทิศทางราคา ทิศทางยังคงเคลื่อนไหวตามกรอบเทคนิคและเส้นแนวโน้มเดิม.",
+            "action_th": "💡 แผนกลยุทธ์การเทรด: อ้างอิงสัญญาณเทคนิคจากเส้นค่าเฉลี่ย EMA และระดับ Pivot Points ในการตัดสินใจลงทุนตามรอบปกติ.",
+            "topic": "การอนุมัติยา นวัตกรรมชีวภาพ และการทดลองทางคลินิก",
+            "ai_analyzed": false
+          },
+          {
             "title": "Eli Lilly Strikes Surprising Deal With Hims & Hers",
             "source": "Yahoo Finance",
             "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNOVo1RnBDeGpNcXFSZmZyVVFEODhRdl9Cb2g5OTZ0RHB0RHhUMHVXeFhXWnhNTnU5WEdxNnpvbmVJX1F0YUljRUFZV0NSX1kwWTl5V0JQSjJncGtPd0JJYldSSmg4c1REU0ZHekZOWEtxRndObDNsa1BYM29CU2tialhPbXBsQ0hRR2doT1BGckF4TnllOTZ3ZnBn?oc=5",
             "published": "06 Nov 2026",
             "raw_date": "Fri, 06 Nov 2026 19:25:31 GMT",
             "sentiment": "neutral",
-            "title_th": "Eli Lilly Strikes Surprising Deal With Hims & Hers",
-            "summary_th": "• สำนักข่าว Yahoo Finance รายงานสถานการณ์ทั่วไปของ LLY ในประเด็น 'Eli Lilly Strikes Surprising Deal With Hims & Hers'.\n• บริบทและเนื้อหาสำคัญ: ติดตามพัฒนาการในหมวด การดำเนินงานตามแผนยุทธศาสตร์และการแข่งขันในอุตสาหกรรม ซึ่งเป็นการดำเนินงานตามแผนธุรกิจปกติ.\n• นัยต่อปัจจัยพื้นฐาน: โครงสร้างพื้นฐานของธุรกิจยังคงดำเนินไปอย่างมีเสถียรภาพ ไม่พบการเปลี่ยนแปลงเชิงโครงสร้างที่มีนัยสำคัญ.\n• พฤติกรรมเม็ดเงินสถาบัน: ปริมาณการซื้อขายยังคงเคลื่อนไหวตามสภาวะตลาดโดยรวม.",
-            "impact_th": "⚪ เป็นกลาง (Neutral Stance): ไม่ได้สร้างแรงกระตุ้นรุนแรงต่อทิศทางราคา ทิศทางยังคงเคลื่อนไหวตามกรอบเทคนิคและเส้นแนวโน้มเดิม.",
-            "action_th": "💡 แผนกลยุทธ์การเทรด: อ้างอิงสัญญาณเทคนิคจากเส้นค่าเฉลี่ย EMA และระดับ Pivot Points ในการตัดสินใจลงทุนตามรอบปกติ.",
-            "topic": "ผลการดำเนินงานและทิศทางธุรกิจ",
-            "ai_analyzed": false
-          },
-          {
-            "title": "Hims & Hers struck a GLP-1 deal with Lilly. Its stock is rallying.",
-            "source": "MarketWatch",
-            "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQX0xEdUpCSUEzOG5jcmN5cVY0dkZMU3FhQzgxNVZ1ZDVMZkpzeDNXOWxlZXFvOEplS3puck1mYW1FeFlDQl9pN2dXdTFWb0FSUkw0VnJycXFtb1E0MDBQZ3RVdFhZMmFkeW1nVmFBeHdIZ3VybnBxQTJ6Yjl5SG1HUjBFMk9ncENQeTZJNUxab3NFR192ZUdGdUJINlVfYXI0VEVZbVNGdDg?oc=5",
-            "published": "06 Nov 2026",
-            "raw_date": "Fri, 06 Nov 2026 16:29:00 GMT",
-            "sentiment": "neutral",
-            "title_th": "Hims & Hers struck a GLP-1 deal with Lilly. Its stock is rallying.",
-            "summary_th": "• สำนักข่าว MarketWatch รายงานสถานการณ์ทั่วไปของ LLY ในประเด็น 'Hims & Hers struck a GLP-1 deal with Lilly. Its stock is rallying.'.\n• บริบทและเนื้อหาสำคัญ: ติดตามพัฒนาการในหมวด การดำเนินงานตามแผนยุทธศาสตร์และการแข่งขันในอุตสาหกรรม ซึ่งเป็นการดำเนินงานตามแผนธุรกิจปกติ.\n• นัยต่อปัจจัยพื้นฐาน: โครงสร้างพื้นฐานของธุรกิจยังคงดำเนินไปอย่างมีเสถียรภาพ ไม่พบการเปลี่ยนแปลงเชิงโครงสร้างที่มีนัยสำคัญ.\n• พฤติกรรมเม็ดเงินสถาบัน: ปริมาณการซื้อขายยังคงเคลื่อนไหวตามสภาวะตลาดโดยรวม.",
+            "title_th": "Eli Lilly ทำข้อตกลงสุดเซอร์ไพรส์กับ Hims & Hers",
+            "summary_th": "• สำนักข่าว Yahoo Finance รายงานสถานการณ์ทั่วไปของ LLY ในประเด็น 'Eli Lilly ทำข้อตกลงสุดเซอร์ไพรส์กับ Hims & Hers'.\n• บริบทและเนื้อหาสำคัญ: ติดตามพัฒนาการในหมวด การดำเนินงานตามแผนยุทธศาสตร์และการแข่งขันในอุตสาหกรรม ซึ่งเป็นการดำเนินงานตามแผนธุรกิจปกติ.\n• นัยต่อปัจจัยพื้นฐาน: โครงสร้างพื้นฐานของธุรกิจยังคงดำเนินไปอย่างมีเสถียรภาพ ไม่พบการเปลี่ยนแปลงเชิงโครงสร้างที่มีนัยสำคัญ.\n• พฤติกรรมเม็ดเงินสถาบัน: ปริมาณการซื้อขายยังคงเคลื่อนไหวตามสภาวะตลาดโดยรวม.",
             "impact_th": "⚪ เป็นกลาง (Neutral Stance): ไม่ได้สร้างแรงกระตุ้นรุนแรงต่อทิศทางราคา ทิศทางยังคงเคลื่อนไหวตามกรอบเทคนิคและเส้นแนวโน้มเดิม.",
             "action_th": "💡 แผนกลยุทธ์การเทรด: อ้างอิงสัญญาณเทคนิคจากเส้นค่าเฉลี่ย EMA และระดับ Pivot Points ในการตัดสินใจลงทุนตามรอบปกติ.",
             "topic": "ผลการดำเนินงานและทิศทางธุรกิจ",
@@ -1087,14 +1187,28 @@
         ],
         "all": [
           {
+            "title": "Eli Lilly Is Much More Than a Weight-Loss Drug Company. Here's the Evidence",
+            "source": "Yahoo Finance",
+            "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPSHZtZUVBOFlmTy1qc01kWjhLRjl2X2hQNi05cm16S2F0SnFqSEY2bDFlcExtZm5nRHhZTWxXQ1BYT3NaYmRBUEo4eGIwemY5d2syb1BDdG1UUWJLbEVXWWJIcnMySzBCa1NPeHBHVW9YOVFsbHd6YTZjTVdzQVlyR21Ud3VVeHktWlJWckJuUUk?oc=5",
+            "published": "07 Nov 2026",
+            "raw_date": "Sat, 07 Nov 2026 00:50:47 GMT",
+            "sentiment": "neutral",
+            "title_th": "Eli Lilly เป็นมากกว่าบริษัทยาลดน้ำหนัก นี่คือหลักฐาน",
+            "summary_th": "• สำนักข่าว Yahoo Finance รายงานสถานการณ์ทั่วไปของ LLY ในประเด็น 'Eli Lilly เป็นมากกว่าบริษัทยาลดน้ำหนัก นี่คือหลักฐาน'.\n• บริบทและเนื้อหาสำคัญ: ติดตามพัฒนาการในหมวด ความคืบหน้าของยารักษาโรคสำคัญและสิทธิบัตรยาที่มีตลาดรองรับขนาดใหญ่ ซึ่งเป็นการดำเนินงานตามแผนธุรกิจปกติ.\n• นัยต่อปัจจัยพื้นฐาน: โครงสร้างพื้นฐานของธุรกิจยังคงดำเนินไปอย่างมีเสถียรภาพ ไม่พบการเปลี่ยนแปลงเชิงโครงสร้างที่มีนัยสำคัญ.\n• พฤติกรรมเม็ดเงินสถาบัน: ปริมาณการซื้อขายยังคงเคลื่อนไหวตามสภาวะตลาดโดยรวม.",
+            "impact_th": "⚪ เป็นกลาง (Neutral Stance): ไม่ได้สร้างแรงกระตุ้นรุนแรงต่อทิศทางราคา ทิศทางยังคงเคลื่อนไหวตามกรอบเทคนิคและเส้นแนวโน้มเดิม.",
+            "action_th": "💡 แผนกลยุทธ์การเทรด: อ้างอิงสัญญาณเทคนิคจากเส้นค่าเฉลี่ย EMA และระดับ Pivot Points ในการตัดสินใจลงทุนตามรอบปกติ.",
+            "topic": "การอนุมัติยา นวัตกรรมชีวภาพ และการทดลองทางคลินิก",
+            "ai_analyzed": false
+          },
+          {
             "title": "Hims & Hers Surges On 'Surprising And Inevitable' Deal With Eli Lilly",
             "source": "Investor's Business Daily",
             "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQdzRRQ3d0blNWZmNRZ2QycWFQaVVhME8tVG9fLXVrOTFQSFFGNjl4aHFuVmxBWlE2bk1MMFZ2Ym5VNlQ0TjU5WU95eHhMYlU4NHVsd0hPdGJ6Y2JiMFlhS0NnSERzRVJreVpTSGw0WFVHVHJBcUV6VWh5QXRPaURyUXQ1ZkpaTWtFc2hUMm5yd0U5RU1mUnVxemZUWG13dXVxOHdr?oc=5",
             "published": "06 Nov 2026",
             "raw_date": "Fri, 06 Nov 2026 21:11:00 GMT",
             "sentiment": "bullish",
-            "title_th": "Hims & Hers Surges On 'Surprising And Inevitable' Deal With Eli Lilly",
-            "summary_th": "• สำนักข่าว Investor's Business Daily รายงานข่าวเชิงบวกต่อ LLY ในประเด็น 'Hims & Hers Surges On 'Surprising And Inevitable' Deal With Eli Lilly'.\n• บริบทและเนื้อหาสำคัญ: ข่าวนี้เกี่ยวข้องกับ การดำเนินงานตามแผนยุทธศาสตร์และการแข่งขันในอุตสาหกรรม ซึ่งสะท้อนโมเมนตัมธุรกิจที่ขยายตัวได้ดีกว่าค่าเฉลี่ยอุตสาหกรรม.\n• นัยต่อปัจจัยพื้นฐาน: สนับสนุนการเติบโตของรายได้ (Top-line Growth) และช่วยรักษาอัตรากำไรขั้นต้นให้อยู่ในระดับสูง.\n• พฤติกรรมเม็ดเงินสถาบัน: เพิ่มความน่าสนใจให้แก่กองทุนสถาบันในการพิจารณาเพิ่มน้ำหนักการลงทุน (Accumulation) ในช่วงที่ราคาพักตัว.",
+            "title_th": "Hims & Hers เร่งทำข้อตกลงที่ 'น่าประหลาดใจและหลีกเลี่ยงไม่ได้' กับ Eli Lilly",
+            "summary_th": "• สำนักข่าว Investor's Business Daily รายงานข่าวเชิงบวกต่อ LLY ในประเด็น 'Hims & Hers เร่งทำข้อตกลงที่ 'น่าประหลาดใจและหลีกเลี่ยงไม่ได้' กับ Eli Lilly'.\n• บริบทและเนื้อหาสำคัญ: ข่าวนี้เกี่ยวข้องกับ การดำเนินงานตามแผนยุทธศาสตร์และการแข่งขันในอุตสาหกรรม ซึ่งสะท้อนโมเมนตัมธุรกิจที่ขยายตัวได้ดีกว่าค่าเฉลี่ยอุตสาหกรรม.\n• นัยต่อปัจจัยพื้นฐาน: สนับสนุนการเติบโตของรายได้ (Top-line Growth) และช่วยรักษาอัตรากำไรขั้นต้นให้อยู่ในระดับสูง.\n• พฤติกรรมเม็ดเงินสถาบัน: เพิ่มความน่าสนใจให้แก่กองทุนสถาบันในการพิจารณาเพิ่มน้ำหนักการลงทุน (Accumulation) ในช่วงที่ราคาพักตัว.",
             "impact_th": "🟢 เชิงบวกต่อราคาหุ้น (Bullish Catalyst): ข่าวนี้เป็นปัจจัยขับเคลื่อนเชิงจิตวิทยาและปัจจัยพื้นฐาน ช่วยหนุนโมเมนตัมราคาให้มีโอกาสทดสอบแนวต้านถัดไป และลดโอกาสการปรับฐานลึกในระยะสั้น.",
             "action_th": "💡 แผนกลยุทธ์การเทรด: หากราคาหุ้นย่อตัวลงมาทดสอบแนวรับสำคัญ เช่น เส้นค่าเฉลี่ย EMA 21/50 หรือแนวรับ Fibo 61.8% ถือเป็นจังหวะทยอยสะสม (DCA) ไม่แนะนำให้ไล่ราคาเมื่อแท่งเทียนอยู่ห่างจากแนวรับเกิน 1.5 ATR.",
             "topic": "ผลการดำเนินงานและทิศทางธุรกิจ",
@@ -1107,8 +1221,8 @@
             "published": "06 Nov 2026",
             "raw_date": "Fri, 06 Nov 2026 19:25:31 GMT",
             "sentiment": "neutral",
-            "title_th": "Eli Lilly Strikes Surprising Deal With Hims & Hers",
-            "summary_th": "• สำนักข่าว Yahoo Finance รายงานสถานการณ์ทั่วไปของ LLY ในประเด็น 'Eli Lilly Strikes Surprising Deal With Hims & Hers'.\n• บริบทและเนื้อหาสำคัญ: ติดตามพัฒนาการในหมวด การดำเนินงานตามแผนยุทธศาสตร์และการแข่งขันในอุตสาหกรรม ซึ่งเป็นการดำเนินงานตามแผนธุรกิจปกติ.\n• นัยต่อปัจจัยพื้นฐาน: โครงสร้างพื้นฐานของธุรกิจยังคงดำเนินไปอย่างมีเสถียรภาพ ไม่พบการเปลี่ยนแปลงเชิงโครงสร้างที่มีนัยสำคัญ.\n• พฤติกรรมเม็ดเงินสถาบัน: ปริมาณการซื้อขายยังคงเคลื่อนไหวตามสภาวะตลาดโดยรวม.",
+            "title_th": "Eli Lilly ทำข้อตกลงสุดเซอร์ไพรส์กับ Hims & Hers",
+            "summary_th": "• สำนักข่าว Yahoo Finance รายงานสถานการณ์ทั่วไปของ LLY ในประเด็น 'Eli Lilly ทำข้อตกลงสุดเซอร์ไพรส์กับ Hims & Hers'.\n• บริบทและเนื้อหาสำคัญ: ติดตามพัฒนาการในหมวด การดำเนินงานตามแผนยุทธศาสตร์และการแข่งขันในอุตสาหกรรม ซึ่งเป็นการดำเนินงานตามแผนธุรกิจปกติ.\n• นัยต่อปัจจัยพื้นฐาน: โครงสร้างพื้นฐานของธุรกิจยังคงดำเนินไปอย่างมีเสถียรภาพ ไม่พบการเปลี่ยนแปลงเชิงโครงสร้างที่มีนัยสำคัญ.\n• พฤติกรรมเม็ดเงินสถาบัน: ปริมาณการซื้อขายยังคงเคลื่อนไหวตามสภาวะตลาดโดยรวม.",
             "impact_th": "⚪ เป็นกลาง (Neutral Stance): ไม่ได้สร้างแรงกระตุ้นรุนแรงต่อทิศทางราคา ทิศทางยังคงเคลื่อนไหวตามกรอบเทคนิคและเส้นแนวโน้มเดิม.",
             "action_th": "💡 แผนกลยุทธ์การเทรด: อ้างอิงสัญญาณเทคนิคจากเส้นค่าเฉลี่ย EMA และระดับ Pivot Points ในการตัดสินใจลงทุนตามรอบปกติ.",
             "topic": "ผลการดำเนินงานและทิศทางธุรกิจ",
@@ -1121,25 +1235,11 @@
             "published": "06 Nov 2026",
             "raw_date": "Fri, 06 Nov 2026 17:29:02 GMT",
             "sentiment": "bullish",
-            "title_th": "Hims & Hers stock climbs on direct partnership with Eli Lilly for obesity drugs",
-            "summary_th": "• สำนักข่าว Investing.com รายงานข่าวเชิงบวกต่อ LLY ในประเด็น 'Hims & Hers stock climbs on direct partnership with Eli Lilly for obesity drugs'.\n• บริบทและเนื้อหาสำคัญ: ข่าวนี้เกี่ยวข้องกับ ความคืบหน้าของยารักษาโรคสำคัญและสิทธิบัตรยาที่มีตลาดรองรับขนาดใหญ่ ซึ่งสะท้อนโมเมนตัมธุรกิจที่ขยายตัวได้ดีกว่าค่าเฉลี่ยอุตสาหกรรม.\n• นัยต่อปัจจัยพื้นฐาน: สนับสนุนการเติบโตของรายได้ (Top-line Growth) และช่วยรักษาอัตรากำไรขั้นต้นให้อยู่ในระดับสูง.\n• พฤติกรรมเม็ดเงินสถาบัน: เพิ่มความน่าสนใจให้แก่กองทุนสถาบันในการพิจารณาเพิ่มน้ำหนักการลงทุน (Accumulation) ในช่วงที่ราคาพักตัว.",
+            "title_th": "หุ้นของ Hims & Hers ก้าวขึ้นจากการเป็นหุ้นส่วนโดยตรงกับ Eli Lilly สำหรับยารักษาโรคอ้วน",
+            "summary_th": "• สำนักข่าว Investing.com รายงานข่าวเชิงบวกต่อ LLY ในประเด็น 'หุ้นของ Hims & Hers ก้าวขึ้นจากการเป็นหุ้นส่วนโดยตรงกับ Eli Lilly สำหรับยารักษาโรคอ้วน'.\n• บริบทและเนื้อหาสำคัญ: ข่าวนี้เกี่ยวข้องกับ ความคืบหน้าของยารักษาโรคสำคัญและสิทธิบัตรยาที่มีตลาดรองรับขนาดใหญ่ ซึ่งสะท้อนโมเมนตัมธุรกิจที่ขยายตัวได้ดีกว่าค่าเฉลี่ยอุตสาหกรรม.\n• นัยต่อปัจจัยพื้นฐาน: สนับสนุนการเติบโตของรายได้ (Top-line Growth) และช่วยรักษาอัตรากำไรขั้นต้นให้อยู่ในระดับสูง.\n• พฤติกรรมเม็ดเงินสถาบัน: เพิ่มความน่าสนใจให้แก่กองทุนสถาบันในการพิจารณาเพิ่มน้ำหนักการลงทุน (Accumulation) ในช่วงที่ราคาพักตัว.",
             "impact_th": "🟢 เชิงบวกต่อราคาหุ้น (Bullish Catalyst): ข่าวนี้เป็นปัจจัยขับเคลื่อนเชิงจิตวิทยาและปัจจัยพื้นฐาน ช่วยหนุนโมเมนตัมราคาให้มีโอกาสทดสอบแนวต้านถัดไป และลดโอกาสการปรับฐานลึกในระยะสั้น.",
             "action_th": "💡 แผนกลยุทธ์การเทรด: หากราคาหุ้นย่อตัวลงมาทดสอบแนวรับสำคัญ เช่น เส้นค่าเฉลี่ย EMA 21/50 หรือแนวรับ Fibo 61.8% ถือเป็นจังหวะทยอยสะสม (DCA) ไม่แนะนำให้ไล่ราคาเมื่อแท่งเทียนอยู่ห่างจากแนวรับเกิน 1.5 ATR.",
             "topic": "การอนุมัติยา นวัตกรรมชีวภาพ และการทดลองทางคลินิก",
-            "ai_analyzed": false
-          },
-          {
-            "title": "Hims & Hers struck a GLP-1 deal with Lilly. Its stock is rallying.",
-            "source": "MarketWatch",
-            "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQX0xEdUpCSUEzOG5jcmN5cVY0dkZMU3FhQzgxNVZ1ZDVMZkpzeDNXOWxlZXFvOEplS3puck1mYW1FeFlDQl9pN2dXdTFWb0FSUkw0VnJycXFtb1E0MDBQZ3RVdFhZMmFkeW1nVmFBeHdIZ3VybnBxQTJ6Yjl5SG1HUjBFMk9ncENQeTZJNUxab3NFR192ZUdGdUJINlVfYXI0VEVZbVNGdDg?oc=5",
-            "published": "06 Nov 2026",
-            "raw_date": "Fri, 06 Nov 2026 16:29:00 GMT",
-            "sentiment": "neutral",
-            "title_th": "Hims & Hers struck a GLP-1 deal with Lilly. Its stock is rallying.",
-            "summary_th": "• สำนักข่าว MarketWatch รายงานสถานการณ์ทั่วไปของ LLY ในประเด็น 'Hims & Hers struck a GLP-1 deal with Lilly. Its stock is rallying.'.\n• บริบทและเนื้อหาสำคัญ: ติดตามพัฒนาการในหมวด การดำเนินงานตามแผนยุทธศาสตร์และการแข่งขันในอุตสาหกรรม ซึ่งเป็นการดำเนินงานตามแผนธุรกิจปกติ.\n• นัยต่อปัจจัยพื้นฐาน: โครงสร้างพื้นฐานของธุรกิจยังคงดำเนินไปอย่างมีเสถียรภาพ ไม่พบการเปลี่ยนแปลงเชิงโครงสร้างที่มีนัยสำคัญ.\n• พฤติกรรมเม็ดเงินสถาบัน: ปริมาณการซื้อขายยังคงเคลื่อนไหวตามสภาวะตลาดโดยรวม.",
-            "impact_th": "⚪ เป็นกลาง (Neutral Stance): ไม่ได้สร้างแรงกระตุ้นรุนแรงต่อทิศทางราคา ทิศทางยังคงเคลื่อนไหวตามกรอบเทคนิคและเส้นแนวโน้มเดิม.",
-            "action_th": "💡 แผนกลยุทธ์การเทรด: อ้างอิงสัญญาณเทคนิคจากเส้นค่าเฉลี่ย EMA และระดับ Pivot Points ในการตัดสินใจลงทุนตามรอบปกติ.",
-            "topic": "ผลการดำเนินงานและทิศทางธุรกิจ",
             "ai_analyzed": false
           }
         ],
@@ -1147,37 +1247,37 @@
       },
       "news": [
         {
+          "title": "Eli Lilly Is Much More Than a Weight-Loss Drug Company. Here's the Evidence",
+          "source": "Yahoo Finance",
+          "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPSHZtZUVBOFlmTy1qc01kWjhLRjl2X2hQNi05cm16S2F0SnFqSEY2bDFlcExtZm5nRHhZTWxXQ1BYT3NaYmRBUEo4eGIwemY5d2syb1BDdG1UUWJLbEVXWWJIcnMySzBCa1NPeHBHVW9YOVFsbHd6YTZjTVdzQVlyR21Ud3VVeHktWlJWckJuUUk?oc=5",
+          "published": "07 Nov 2026",
+          "raw_date": "Sat, 07 Nov 2026 00:50:47 GMT",
+          "sentiment": "neutral",
+          "title_th": "Eli Lilly เป็นมากกว่าบริษัทยาลดน้ำหนัก นี่คือหลักฐาน",
+          "summary_th": "• สำนักข่าว Yahoo Finance รายงานสถานการณ์ทั่วไปของ LLY ในประเด็น 'Eli Lilly เป็นมากกว่าบริษัทยาลดน้ำหนัก นี่คือหลักฐาน'.\n• บริบทและเนื้อหาสำคัญ: ติดตามพัฒนาการในหมวด ความคืบหน้าของยารักษาโรคสำคัญและสิทธิบัตรยาที่มีตลาดรองรับขนาดใหญ่ ซึ่งเป็นการดำเนินงานตามแผนธุรกิจปกติ.\n• นัยต่อปัจจัยพื้นฐาน: โครงสร้างพื้นฐานของธุรกิจยังคงดำเนินไปอย่างมีเสถียรภาพ ไม่พบการเปลี่ยนแปลงเชิงโครงสร้างที่มีนัยสำคัญ.\n• พฤติกรรมเม็ดเงินสถาบัน: ปริมาณการซื้อขายยังคงเคลื่อนไหวตามสภาวะตลาดโดยรวม.",
+          "impact_th": "⚪ เป็นกลาง (Neutral Stance): ไม่ได้สร้างแรงกระตุ้นรุนแรงต่อทิศทางราคา ทิศทางยังคงเคลื่อนไหวตามกรอบเทคนิคและเส้นแนวโน้มเดิม.",
+          "action_th": "💡 แผนกลยุทธ์การเทรด: อ้างอิงสัญญาณเทคนิคจากเส้นค่าเฉลี่ย EMA และระดับ Pivot Points ในการตัดสินใจลงทุนตามรอบปกติ.",
+          "topic": "การอนุมัติยา นวัตกรรมชีวภาพ และการทดลองทางคลินิก",
+          "ai_analyzed": false
+        },
+        {
           "title": "Hims & Hers Surges On 'Surprising And Inevitable' Deal With Eli Lilly",
           "source": "Investor's Business Daily",
           "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQdzRRQ3d0blNWZmNRZ2QycWFQaVVhME8tVG9fLXVrOTFQSFFGNjl4aHFuVmxBWlE2bk1MMFZ2Ym5VNlQ0TjU5WU95eHhMYlU4NHVsd0hPdGJ6Y2JiMFlhS0NnSERzRVJreVpTSGw0WFVHVHJBcUV6VWh5QXRPaURyUXQ1ZkpaTWtFc2hUMm5yd0U5RU1mUnVxemZUWG13dXVxOHdr?oc=5",
           "published": "06 Nov 2026",
           "raw_date": "Fri, 06 Nov 2026 21:11:00 GMT",
           "sentiment": "bullish",
-          "title_th": "Hims & Hers Surges On 'Surprising And Inevitable' Deal With Eli Lilly",
-          "summary_th": "• สำนักข่าว Investor's Business Daily รายงานข่าวเชิงบวกต่อ LLY ในประเด็น 'Hims & Hers Surges On 'Surprising And Inevitable' Deal With Eli Lilly'.\n• บริบทและเนื้อหาสำคัญ: ข่าวนี้เกี่ยวข้องกับ การดำเนินงานตามแผนยุทธศาสตร์และการแข่งขันในอุตสาหกรรม ซึ่งสะท้อนโมเมนตัมธุรกิจที่ขยายตัวได้ดีกว่าค่าเฉลี่ยอุตสาหกรรม.\n• นัยต่อปัจจัยพื้นฐาน: สนับสนุนการเติบโตของรายได้ (Top-line Growth) และช่วยรักษาอัตรากำไรขั้นต้นให้อยู่ในระดับสูง.\n• พฤติกรรมเม็ดเงินสถาบัน: เพิ่มความน่าสนใจให้แก่กองทุนสถาบันในการพิจารณาเพิ่มน้ำหนักการลงทุน (Accumulation) ในช่วงที่ราคาพักตัว.",
+          "title_th": "Hims & Hers เร่งทำข้อตกลงที่ 'น่าประหลาดใจและหลีกเลี่ยงไม่ได้' กับ Eli Lilly",
+          "summary_th": "• สำนักข่าว Investor's Business Daily รายงานข่าวเชิงบวกต่อ LLY ในประเด็น 'Hims & Hers เร่งทำข้อตกลงที่ 'น่าประหลาดใจและหลีกเลี่ยงไม่ได้' กับ Eli Lilly'.\n• บริบทและเนื้อหาสำคัญ: ข่าวนี้เกี่ยวข้องกับ การดำเนินงานตามแผนยุทธศาสตร์และการแข่งขันในอุตสาหกรรม ซึ่งสะท้อนโมเมนตัมธุรกิจที่ขยายตัวได้ดีกว่าค่าเฉลี่ยอุตสาหกรรม.\n• นัยต่อปัจจัยพื้นฐาน: สนับสนุนการเติบโตของรายได้ (Top-line Growth) และช่วยรักษาอัตรากำไรขั้นต้นให้อยู่ในระดับสูง.\n• พฤติกรรมเม็ดเงินสถาบัน: เพิ่มความน่าสนใจให้แก่กองทุนสถาบันในการพิจารณาเพิ่มน้ำหนักการลงทุน (Accumulation) ในช่วงที่ราคาพักตัว.",
           "impact_th": "🟢 เชิงบวกต่อราคาหุ้น (Bullish Catalyst): ข่าวนี้เป็นปัจจัยขับเคลื่อนเชิงจิตวิทยาและปัจจัยพื้นฐาน ช่วยหนุนโมเมนตัมราคาให้มีโอกาสทดสอบแนวต้านถัดไป และลดโอกาสการปรับฐานลึกในระยะสั้น.",
           "action_th": "💡 แผนกลยุทธ์การเทรด: หากราคาหุ้นย่อตัวลงมาทดสอบแนวรับสำคัญ เช่น เส้นค่าเฉลี่ย EMA 21/50 หรือแนวรับ Fibo 61.8% ถือเป็นจังหวะทยอยสะสม (DCA) ไม่แนะนำให้ไล่ราคาเมื่อแท่งเทียนอยู่ห่างจากแนวรับเกิน 1.5 ATR.",
           "topic": "ผลการดำเนินงานและทิศทางธุรกิจ",
           "ai_analyzed": false
-        },
-        {
-          "title": "Eli Lilly Strikes Surprising Deal With Hims & Hers",
-          "source": "Yahoo Finance",
-          "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNOVo1RnBDeGpNcXFSZmZyVVFEODhRdl9Cb2g5OTZ0RHB0RHhUMHVXeFhXWnhNTnU5WEdxNnpvbmVJX1F0YUljRUFZV0NSX1kwWTl5V0JQSjJncGtPd0JJYldSSmg4c1REU0ZHekZOWEtxRndObDNsa1BYM29CU2tialhPbXBsQ0hRR2doT1BGckF4TnllOTZ3ZnBn?oc=5",
-          "published": "06 Nov 2026",
-          "raw_date": "Fri, 06 Nov 2026 19:25:31 GMT",
-          "sentiment": "neutral",
-          "title_th": "Eli Lilly Strikes Surprising Deal With Hims & Hers",
-          "summary_th": "• สำนักข่าว Yahoo Finance รายงานสถานการณ์ทั่วไปของ LLY ในประเด็น 'Eli Lilly Strikes Surprising Deal With Hims & Hers'.\n• บริบทและเนื้อหาสำคัญ: ติดตามพัฒนาการในหมวด การดำเนินงานตามแผนยุทธศาสตร์และการแข่งขันในอุตสาหกรรม ซึ่งเป็นการดำเนินงานตามแผนธุรกิจปกติ.\n• นัยต่อปัจจัยพื้นฐาน: โครงสร้างพื้นฐานของธุรกิจยังคงดำเนินไปอย่างมีเสถียรภาพ ไม่พบการเปลี่ยนแปลงเชิงโครงสร้างที่มีนัยสำคัญ.\n• พฤติกรรมเม็ดเงินสถาบัน: ปริมาณการซื้อขายยังคงเคลื่อนไหวตามสภาวะตลาดโดยรวม.",
-          "impact_th": "⚪ เป็นกลาง (Neutral Stance): ไม่ได้สร้างแรงกระตุ้นรุนแรงต่อทิศทางราคา ทิศทางยังคงเคลื่อนไหวตามกรอบเทคนิคและเส้นแนวโน้มเดิม.",
-          "action_th": "💡 แผนกลยุทธ์การเทรด: อ้างอิงสัญญาณเทคนิคจากเส้นค่าเฉลี่ย EMA และระดับ Pivot Points ในการตัดสินใจลงทุนตามรอบปกติ.",
-          "topic": "ผลการดำเนินงานและทิศทางธุรกิจ",
-          "ai_analyzed": false
         }
       ],
-      "weight_pct": 80.96890594451584,
+      "weight_pct": 85.9109406578364,
       "alerts": [
-        "🚨 Extreme Concentration (81.0%)"
+        "🚨 Extreme Concentration (85.9%)"
       ],
       "rating": {
         "stars_count": 4,
@@ -1185,7 +1285,7 @@
         "grade": "เกรด A (สุขภาพดี แข็งแกร่ง)",
         "summary": "สถานะ กำไร +32.6%, กราฟ ยืนเหนือเส้น 200 วัน +23.1%.",
         "strength": "เทรนด์ขาขึ้นเหนือเส้น 200 วัน (+23.1%), Rev Growth +46% 🚀, Net Income +50% 🚀, Elite ROE (86%) 🏆, Attractive PEG 0.92 💎, FCF Cash Cow 💵, ฉันทามติตลาด Strong Buy",
-        "risk": "สัดส่วนกระจุกตัวสูง (81.0%)",
+        "risk": "สัดส่วนกระจุกตัวสูง (85.9%)",
         "action": "สถานะแข็งแกร่ง ถือต่อตามแผนเทรดได้อย่างมั่นใจ.",
         "grade_code": "A",
         "total": 77.6,
@@ -1220,7 +1320,7 @@
         "drawdown_root_cause": [],
         "catalyst_timeline": [
           {
-            "period": "ปฏิทินงบ (96 วัน)",
+            "period": "ปฏิทินงบ (95 วัน)",
             "event": "การแถลงงบการเงินและทิศทางคำสั่งซื้อในอนาคต"
           },
           {
@@ -1233,7 +1333,7 @@
           }
         ],
         "wall_street_verdict": "โบรกเกอร์ 29 แห่ง (Buy 25 / Hold 3 / Sell 1) ราคาเป้าหมายเฉลี่ยสถาบันอยู่ที่ $1,490.71 (Upside +10.1%)",
-        "tailored_roadmap": "วันงบถัดไปอยู่ห่างอีก 96 วัน ไม่มีความเสี่ยงเรื่องงบตกใจในระยะสั้น. ติดตามกรอบแนวรับแนวต้านสำคัญทางเทคนิค และปฏิบัติตามวินัย Stop-Loss อย่างเคร่งครัด",
+        "tailored_roadmap": "วันงบถัดไปอยู่ห่างอีก 95 วัน ไม่มีความเสี่ยงเรื่องงบตกใจในระยะสั้น. ติดตามกรอบแนวรับแนวต้านสำคัญทางเทคนิค และปฏิบัติตามวินัย Stop-Loss อย่างเคร่งครัด",
         "invalidation_risk": "การปิดหลุดแนวรับโครงสร้างหลัก หรือตัวเลขอัตรากำไรสุทธิชะลอตัวลงเกิน 20%"
       }
     },
@@ -1379,7 +1479,7 @@
         "FCF Cash Cow 💵",
         "Wall St Strong Buy 🌟"
       ],
-      "days_to_earnings": 88,
+      "days_to_earnings": 87,
       "earnings_date": "02 Feb 2027",
       "is_earnings_near": false,
       "key_support": 262.31,
@@ -1465,42 +1565,14 @@
         "ticker": "GOOGL",
         "bullish": [
           {
-            "title": "Not Alphabet. Not Meta. This Is the Digital Advertising Stock I'd Buy Right Now.",
-            "source": "The Motley Fool",
-            "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQdUhGbHJrdU1sYmdOYks2R0hwa2ozSnlRcjgwU21pdC0zbjVLR3otQlVFQ3ZwbVc0QXBnX2hNVl9FSWZieVRxUGx5a1hRNDZFN0JudFM2U1VUU0lJMWR4SjFPYUFRaWdmQWY1TTVsYzVyYy1sYlBDMWc4VndEZGY1dFNub0VFeEI5RjN1QUIxZWJTNmZsUmhGVw?oc=5",
-            "published": "06 Nov 2026",
-            "raw_date": "Fri, 06 Nov 2026 22:30:55 GMT",
-            "sentiment": "bullish",
-            "title_th": "Not Alphabet. Not Meta. This Is the Digital Advertising Stock I'd Buy Right Now.",
-            "summary_th": "• สำนักข่าว The Motley Fool รายงานข่าวเชิงบวกต่อ GOOGL ในประเด็น 'Not Alphabet. Not Meta. This Is the Digital Advertising Stock I'd Buy Right Now.'.\n• บริบทและเนื้อหาสำคัญ: ข่าวนี้เกี่ยวข้องกับ การดำเนินงานตามแผนยุทธศาสตร์และการแข่งขันในอุตสาหกรรม ซึ่งสะท้อนโมเมนตัมธุรกิจที่ขยายตัวได้ดีกว่าค่าเฉลี่ยอุตสาหกรรม.\n• นัยต่อปัจจัยพื้นฐาน: สนับสนุนการเติบโตของรายได้ (Top-line Growth) และช่วยรักษาอัตรากำไรขั้นต้นให้อยู่ในระดับสูง.\n• พฤติกรรมเม็ดเงินสถาบัน: เพิ่มความน่าสนใจให้แก่กองทุนสถาบันในการพิจารณาเพิ่มน้ำหนักการลงทุน (Accumulation) ในช่วงที่ราคาพักตัว.",
-            "impact_th": "🟢 เชิงบวกต่อราคาหุ้น (Bullish Catalyst): ข่าวนี้เป็นปัจจัยขับเคลื่อนเชิงจิตวิทยาและปัจจัยพื้นฐาน ช่วยหนุนโมเมนตัมราคาให้มีโอกาสทดสอบแนวต้านถัดไป และลดโอกาสการปรับฐานลึกในระยะสั้น.",
-            "action_th": "💡 แผนกลยุทธ์การเทรด: หากราคาหุ้นย่อตัวลงมาทดสอบแนวรับสำคัญ เช่น เส้นค่าเฉลี่ย EMA 21/50 หรือแนวรับ Fibo 61.8% ถือเป็นจังหวะทยอยสะสม (DCA) ไม่แนะนำให้ไล่ราคาเมื่อแท่งเทียนอยู่ห่างจากแนวรับเกิน 1.5 ATR.",
-            "topic": "ผลการดำเนินงานและทิศทางธุรกิจ",
-            "ai_analyzed": false
-          },
-          {
             "title": "Alphabet’s drone unit to invest up to $125M in new manufacturing facility (GOOG:NASDAQ)",
             "source": "Seeking Alpha",
             "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPVzBOdjM3UF9HNko3dDdLNERnSW9ZSHl5OFA2NzZKWlRxUFpmZmYyQkhPcXJiUUJxZ2RFQlBJMlMxSTIwM0ZaY1N4N0RfOVYzWE11VUc0WkF5NkFMakQtTjlfeXRBYWpaZmFGdXV5Z3l1VkNyTFE5bXpkN1Y2SWdSV3BwUGFzNy1rNWpuWUFkRUVGU1NGaWhGQnZfaC12NVZ6ckRVMWdZemx0M0FlR0hld0RTRFFwSUhRR1E?oc=5",
             "published": "06 Nov 2026",
             "raw_date": "Fri, 06 Nov 2026 21:27:00 GMT",
             "sentiment": "bullish",
-            "title_th": "Alphabet’s drone unit to invest up to $125M in new manufacturing facility (GOOG:NASDAQ)",
-            "summary_th": "• สำนักข่าว Seeking Alpha รายงานข่าวเชิงบวกต่อ GOOGL ในประเด็น 'Alphabet’s drone unit to invest up to $125M in new manufacturing facility (GOOG:NASDAQ)'.\n• บริบทและเนื้อหาสำคัญ: ข่าวนี้เกี่ยวข้องกับ การดำเนินงานตามแผนยุทธศาสตร์และการแข่งขันในอุตสาหกรรม ซึ่งสะท้อนโมเมนตัมธุรกิจที่ขยายตัวได้ดีกว่าค่าเฉลี่ยอุตสาหกรรม.\n• นัยต่อปัจจัยพื้นฐาน: สนับสนุนการเติบโตของรายได้ (Top-line Growth) และช่วยรักษาอัตรากำไรขั้นต้นให้อยู่ในระดับสูง.\n• พฤติกรรมเม็ดเงินสถาบัน: เพิ่มความน่าสนใจให้แก่กองทุนสถาบันในการพิจารณาเพิ่มน้ำหนักการลงทุน (Accumulation) ในช่วงที่ราคาพักตัว.",
-            "impact_th": "🟢 เชิงบวกต่อราคาหุ้น (Bullish Catalyst): ข่าวนี้เป็นปัจจัยขับเคลื่อนเชิงจิตวิทยาและปัจจัยพื้นฐาน ช่วยหนุนโมเมนตัมราคาให้มีโอกาสทดสอบแนวต้านถัดไป และลดโอกาสการปรับฐานลึกในระยะสั้น.",
-            "action_th": "💡 แผนกลยุทธ์การเทรด: หากราคาหุ้นย่อตัวลงมาทดสอบแนวรับสำคัญ เช่น เส้นค่าเฉลี่ย EMA 21/50 หรือแนวรับ Fibo 61.8% ถือเป็นจังหวะทยอยสะสม (DCA) ไม่แนะนำให้ไล่ราคาเมื่อแท่งเทียนอยู่ห่างจากแนวรับเกิน 1.5 ATR.",
-            "topic": "ผลการดำเนินงานและทิศทางธุรกิจ",
-            "ai_analyzed": false
-          },
-          {
-            "title": "Not Alphabet. Not Meta. This Is the Digital Advertising Stock I'd Buy Right Now.",
-            "source": "The Globe and Mail",
-            "link": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxOZVFKYU54V09COFVKWWNXQlZrU09ncjd4c2wzdTNuLXlGV1FDUHh1R0VEbF9VSldXZzNPLU1uWmF6dEtaOWRyWnc1ZzJZUE96eDBDNHVpTzMzWVRaZHRrcjdLbVFpZVdiQ1BEdHlOVWw2YjR5M2syWjFXc2MxbkF5V3lDZVdTT1hEOFluWGwtN1RVMTk3MGtTaFQ0QWhOZUwwMEhfZHRZcWRQNXo5Smp0dUxGSjlBb0llU2tkdFdnd0pqNnE3azVGWlJOb0Zua2NyZUpIbHR2YVp1TWxFcnVtVWpJbGd4TGwweU1SdVFDN05KSDg?oc=5",
-            "published": "06 Nov 2026",
-            "raw_date": "Fri, 06 Nov 2026 19:25:44 GMT",
-            "sentiment": "bullish",
-            "title_th": "Not Alphabet. Not Meta. This Is the Digital Advertising Stock I'd Buy Right Now.",
-            "summary_th": "• สำนักข่าว The Globe and Mail รายงานข่าวเชิงบวกต่อ GOOGL ในประเด็น 'Not Alphabet. Not Meta. This Is the Digital Advertising Stock I'd Buy Right Now.'.\n• บริบทและเนื้อหาสำคัญ: ข่าวนี้เกี่ยวข้องกับ การดำเนินงานตามแผนยุทธศาสตร์และการแข่งขันในอุตสาหกรรม ซึ่งสะท้อนโมเมนตัมธุรกิจที่ขยายตัวได้ดีกว่าค่าเฉลี่ยอุตสาหกรรม.\n• นัยต่อปัจจัยพื้นฐาน: สนับสนุนการเติบโตของรายได้ (Top-line Growth) และช่วยรักษาอัตรากำไรขั้นต้นให้อยู่ในระดับสูง.\n• พฤติกรรมเม็ดเงินสถาบัน: เพิ่มความน่าสนใจให้แก่กองทุนสถาบันในการพิจารณาเพิ่มน้ำหนักการลงทุน (Accumulation) ในช่วงที่ราคาพักตัว.",
+            "title_th": "หน่วยโดรนของ Alphabet ลงทุนสูงถึง 125 ล้านเหรียญสหรัฐในโรงงานผลิตแห่งใหม่ (GOOG: NASDAQ)",
+            "summary_th": "• สำนักข่าว Seeking Alpha รายงานข่าวเชิงบวกต่อ GOOGL ในประเด็น 'หน่วยโดรนของ Alphabet ลงทุนสูงถึง 125 ล้านเหรียญสหรัฐในโรงงานผลิตแห่งใหม่ (GOOG: NASDAQ)'.\n• บริบทและเนื้อหาสำคัญ: ข่าวนี้เกี่ยวข้องกับ การดำเนินงานตามแผนยุทธศาสตร์และการแข่งขันในอุตสาหกรรม ซึ่งสะท้อนโมเมนตัมธุรกิจที่ขยายตัวได้ดีกว่าค่าเฉลี่ยอุตสาหกรรม.\n• นัยต่อปัจจัยพื้นฐาน: สนับสนุนการเติบโตของรายได้ (Top-line Growth) และช่วยรักษาอัตรากำไรขั้นต้นให้อยู่ในระดับสูง.\n• พฤติกรรมเม็ดเงินสถาบัน: เพิ่มความน่าสนใจให้แก่กองทุนสถาบันในการพิจารณาเพิ่มน้ำหนักการลงทุน (Accumulation) ในช่วงที่ราคาพักตัว.",
             "impact_th": "🟢 เชิงบวกต่อราคาหุ้น (Bullish Catalyst): ข่าวนี้เป็นปัจจัยขับเคลื่อนเชิงจิตวิทยาและปัจจัยพื้นฐาน ช่วยหนุนโมเมนตัมราคาให้มีโอกาสทดสอบแนวต้านถัดไป และลดโอกาสการปรับฐานลึกในระยะสั้น.",
             "action_th": "💡 แผนกลยุทธ์การเทรด: หากราคาหุ้นย่อตัวลงมาทดสอบแนวรับสำคัญ เช่น เส้นค่าเฉลี่ย EMA 21/50 หรือแนวรับ Fibo 61.8% ถือเป็นจังหวะทยอยสะสม (DCA) ไม่แนะนำให้ไล่ราคาเมื่อแท่งเทียนอยู่ห่างจากแนวรับเกิน 1.5 ATR.",
             "topic": "ผลการดำเนินงานและทิศทางธุรกิจ",
@@ -1510,14 +1582,42 @@
         "bearish": [],
         "neutral": [
           {
+            "title": "Is Google's New Cryptocurrency Push a Reason to Buy Alphabet Stock?",
+            "source": "Yahoo Finance",
+            "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPQVhMTUlUQjBId3RNNHJsVmtOU0t3Zy0xb0dodjVtR3FTUVFsRnFWZTI1LUhtRXVjLWJNUnpQTjl4ckhfeDBEMzhOU3ZjRHNHMHpydk80SWd1aXUwY1BnTU5nQnExdDA5SWwyajRJQmJvWW1vMmo5NXV5ZVRDNmdwLTFCYWE0Mkt5empvOW9fV2hQb2Z3U0ZQVmNYdy1ZRlVRVnVCTE1n?oc=5",
+            "published": "07 Nov 2026",
+            "raw_date": "Sat, 07 Nov 2026 07:20:00 GMT",
+            "sentiment": "neutral",
+            "title_th": "Cryptocurrency ใหม่ของ Google ผลักดันเหตุผลในการซื้อหุ้นตัวอักษรหรือไม่?",
+            "summary_th": "• สำนักข่าว Yahoo Finance รายงานสถานการณ์ทั่วไปของ GOOGL ในประเด็น 'Cryptocurrency ใหม่ของ Google ผลักดันเหตุผลในการซื้อหุ้นตัวอักษรหรือไม่?'.\n• บริบทและเนื้อหาสำคัญ: ติดตามพัฒนาการในหมวด การดำเนินงานตามแผนยุทธศาสตร์และการแข่งขันในอุตสาหกรรม ซึ่งเป็นการดำเนินงานตามแผนธุรกิจปกติ.\n• นัยต่อปัจจัยพื้นฐาน: โครงสร้างพื้นฐานของธุรกิจยังคงดำเนินไปอย่างมีเสถียรภาพ ไม่พบการเปลี่ยนแปลงเชิงโครงสร้างที่มีนัยสำคัญ.\n• พฤติกรรมเม็ดเงินสถาบัน: ปริมาณการซื้อขายยังคงเคลื่อนไหวตามสภาวะตลาดโดยรวม.",
+            "impact_th": "⚪ เป็นกลาง (Neutral Stance): ไม่ได้สร้างแรงกระตุ้นรุนแรงต่อทิศทางราคา ทิศทางยังคงเคลื่อนไหวตามกรอบเทคนิคและเส้นแนวโน้มเดิม.",
+            "action_th": "💡 แผนกลยุทธ์การเทรด: อ้างอิงสัญญาณเทคนิคจากเส้นค่าเฉลี่ย EMA และระดับ Pivot Points ในการตัดสินใจลงทุนตามรอบปกติ.",
+            "topic": "ผลการดำเนินงานและทิศทางธุรกิจ",
+            "ai_analyzed": false
+          },
+          {
+            "title": "Is Google's New Cryptocurrency Push a Reason to Buy Alphabet Stock?",
+            "source": "The Motley Fool",
+            "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQUTBuUE5aVkRGaXZEVWFYMTk0bEhGVmNLVjNGWXBaQzEzQVdfX1JsaEJrZmVLT0wxRkh2emtuZHQ1ZGJtaDI3R202eXk2UjFhQ1VNU0RyMGRBNzIySjI5RTY4SGU3MzlBY2hGZzlrOTRzbXVmLS11TTVRU1Vxc1o2SFVxbzExLUFnRmxyV0pJMkozX2xHa0Q2RA?oc=5",
+            "published": "07 Nov 2026",
+            "raw_date": "Sat, 07 Nov 2026 07:00:00 GMT",
+            "sentiment": "neutral",
+            "title_th": "Cryptocurrency ใหม่ของ Google ผลักดันเหตุผลในการซื้อหุ้นตัวอักษรหรือไม่?",
+            "summary_th": "• สำนักข่าว The Motley Fool รายงานสถานการณ์ทั่วไปของ GOOGL ในประเด็น 'Cryptocurrency ใหม่ของ Google ผลักดันเหตุผลในการซื้อหุ้นตัวอักษรหรือไม่?'.\n• บริบทและเนื้อหาสำคัญ: ติดตามพัฒนาการในหมวด การดำเนินงานตามแผนยุทธศาสตร์และการแข่งขันในอุตสาหกรรม ซึ่งเป็นการดำเนินงานตามแผนธุรกิจปกติ.\n• นัยต่อปัจจัยพื้นฐาน: โครงสร้างพื้นฐานของธุรกิจยังคงดำเนินไปอย่างมีเสถียรภาพ ไม่พบการเปลี่ยนแปลงเชิงโครงสร้างที่มีนัยสำคัญ.\n• พฤติกรรมเม็ดเงินสถาบัน: ปริมาณการซื้อขายยังคงเคลื่อนไหวตามสภาวะตลาดโดยรวม.",
+            "impact_th": "⚪ เป็นกลาง (Neutral Stance): ไม่ได้สร้างแรงกระตุ้นรุนแรงต่อทิศทางราคา ทิศทางยังคงเคลื่อนไหวตามกรอบเทคนิคและเส้นแนวโน้มเดิม.",
+            "action_th": "💡 แผนกลยุทธ์การเทรด: อ้างอิงสัญญาณเทคนิคจากเส้นค่าเฉลี่ย EMA และระดับ Pivot Points ในการตัดสินใจลงทุนตามรอบปกติ.",
+            "topic": "ผลการดำเนินงานและทิศทางธุรกิจ",
+            "ai_analyzed": false
+          },
+          {
             "title": "Why The Blue Tsunami Rattled AI Stocks",
             "source": "Investor's Business Daily",
             "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQR3I4UU9QU2JrM2NTakhrNVFBVGFuU2p2RlhnWjR1VUZYb01NYXdSN0JzVGhycjdKb1ZBeXJtRlppWlJ0aWxYcEczLW1Nb3dqVUp3WFExRGE3VlRYdld1b0xjd0FKTHg1N3ZpSy0tUkZsVWRjQnlWU1dHaHlUZXlRbHk2OVBZYWNDbTdmRG9XdXVRR19EeklsekNRM3hsSUdBWWpPTGl3RkZCX19FOEx4WDN2MA?oc=5",
             "published": "06 Nov 2026",
             "raw_date": "Fri, 06 Nov 2026 18:04:00 GMT",
             "sentiment": "neutral",
-            "title_th": "Why The Blue Tsunami Rattled AI Stocks",
-            "summary_th": "• สำนักข่าว Investor's Business Daily รายงานสถานการณ์ทั่วไปของ GOOGL ในประเด็น 'Why The Blue Tsunami Rattled AI Stocks'.\n• บริบทและเนื้อหาสำคัญ: ติดตามพัฒนาการในหมวด คลื่นการลงทุนโครงสร้างพื้นฐานระบบประมวลผล AI และชิปประมวลผลยุคใหม่ ซึ่งเป็นการดำเนินงานตามแผนธุรกิจปกติ.\n• นัยต่อปัจจัยพื้นฐาน: โครงสร้างพื้นฐานของธุรกิจยังคงดำเนินไปอย่างมีเสถียรภาพ ไม่พบการเปลี่ยนแปลงเชิงโครงสร้างที่มีนัยสำคัญ.\n• พฤติกรรมเม็ดเงินสถาบัน: ปริมาณการซื้อขายยังคงเคลื่อนไหวตามสภาวะตลาดโดยรวม.",
+            "title_th": "เหตุใดสึนามิสีน้ำเงินจึงเขย่าหุ้น AI",
+            "summary_th": "• สำนักข่าว Investor's Business Daily รายงานสถานการณ์ทั่วไปของ GOOGL ในประเด็น 'เหตุใดสึนามิสีน้ำเงินจึงเขย่าหุ้น AI'.\n• บริบทและเนื้อหาสำคัญ: ติดตามพัฒนาการในหมวด คลื่นการลงทุนโครงสร้างพื้นฐานระบบประมวลผล AI และชิปประมวลผลยุคใหม่ ซึ่งเป็นการดำเนินงานตามแผนธุรกิจปกติ.\n• นัยต่อปัจจัยพื้นฐาน: โครงสร้างพื้นฐานของธุรกิจยังคงดำเนินไปอย่างมีเสถียรภาพ ไม่พบการเปลี่ยนแปลงเชิงโครงสร้างที่มีนัยสำคัญ.\n• พฤติกรรมเม็ดเงินสถาบัน: ปริมาณการซื้อขายยังคงเคลื่อนไหวตามสภาวะตลาดโดยรวม.",
             "impact_th": "⚪ เป็นกลาง (Neutral Stance): ไม่ได้สร้างแรงกระตุ้นรุนแรงต่อทิศทางราคา ทิศทางยังคงเคลื่อนไหวตามกรอบเทคนิคและเส้นแนวโน้มเดิม.",
             "action_th": "💡 แผนกลยุทธ์การเทรด: อ้างอิงสัญญาณเทคนิคจากเส้นค่าเฉลี่ย EMA และระดับ Pivot Points ในการตัดสินใจลงทุนตามรอบปกติ.",
             "topic": "เทคโนโลยี AI และการขยายโครงสร้างพื้นฐานดาต้าเซ็นเตอร์",
@@ -1526,16 +1626,30 @@
         ],
         "all": [
           {
-            "title": "Not Alphabet. Not Meta. This Is the Digital Advertising Stock I'd Buy Right Now.",
+            "title": "Is Google's New Cryptocurrency Push a Reason to Buy Alphabet Stock?",
+            "source": "Yahoo Finance",
+            "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPQVhMTUlUQjBId3RNNHJsVmtOU0t3Zy0xb0dodjVtR3FTUVFsRnFWZTI1LUhtRXVjLWJNUnpQTjl4ckhfeDBEMzhOU3ZjRHNHMHpydk80SWd1aXUwY1BnTU5nQnExdDA5SWwyajRJQmJvWW1vMmo5NXV5ZVRDNmdwLTFCYWE0Mkt5empvOW9fV2hQb2Z3U0ZQVmNYdy1ZRlVRVnVCTE1n?oc=5",
+            "published": "07 Nov 2026",
+            "raw_date": "Sat, 07 Nov 2026 07:20:00 GMT",
+            "sentiment": "neutral",
+            "title_th": "Cryptocurrency ใหม่ของ Google ผลักดันเหตุผลในการซื้อหุ้นตัวอักษรหรือไม่?",
+            "summary_th": "• สำนักข่าว Yahoo Finance รายงานสถานการณ์ทั่วไปของ GOOGL ในประเด็น 'Cryptocurrency ใหม่ของ Google ผลักดันเหตุผลในการซื้อหุ้นตัวอักษรหรือไม่?'.\n• บริบทและเนื้อหาสำคัญ: ติดตามพัฒนาการในหมวด การดำเนินงานตามแผนยุทธศาสตร์และการแข่งขันในอุตสาหกรรม ซึ่งเป็นการดำเนินงานตามแผนธุรกิจปกติ.\n• นัยต่อปัจจัยพื้นฐาน: โครงสร้างพื้นฐานของธุรกิจยังคงดำเนินไปอย่างมีเสถียรภาพ ไม่พบการเปลี่ยนแปลงเชิงโครงสร้างที่มีนัยสำคัญ.\n• พฤติกรรมเม็ดเงินสถาบัน: ปริมาณการซื้อขายยังคงเคลื่อนไหวตามสภาวะตลาดโดยรวม.",
+            "impact_th": "⚪ เป็นกลาง (Neutral Stance): ไม่ได้สร้างแรงกระตุ้นรุนแรงต่อทิศทางราคา ทิศทางยังคงเคลื่อนไหวตามกรอบเทคนิคและเส้นแนวโน้มเดิม.",
+            "action_th": "💡 แผนกลยุทธ์การเทรด: อ้างอิงสัญญาณเทคนิคจากเส้นค่าเฉลี่ย EMA และระดับ Pivot Points ในการตัดสินใจลงทุนตามรอบปกติ.",
+            "topic": "ผลการดำเนินงานและทิศทางธุรกิจ",
+            "ai_analyzed": false
+          },
+          {
+            "title": "Is Google's New Cryptocurrency Push a Reason to Buy Alphabet Stock?",
             "source": "The Motley Fool",
-            "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQdUhGbHJrdU1sYmdOYks2R0hwa2ozSnlRcjgwU21pdC0zbjVLR3otQlVFQ3ZwbVc0QXBnX2hNVl9FSWZieVRxUGx5a1hRNDZFN0JudFM2U1VUU0lJMWR4SjFPYUFRaWdmQWY1TTVsYzVyYy1sYlBDMWc4VndEZGY1dFNub0VFeEI5RjN1QUIxZWJTNmZsUmhGVw?oc=5",
-            "published": "06 Nov 2026",
-            "raw_date": "Fri, 06 Nov 2026 22:30:55 GMT",
-            "sentiment": "bullish",
-            "title_th": "Not Alphabet. Not Meta. This Is the Digital Advertising Stock I'd Buy Right Now.",
-            "summary_th": "• สำนักข่าว The Motley Fool รายงานข่าวเชิงบวกต่อ GOOGL ในประเด็น 'Not Alphabet. Not Meta. This Is the Digital Advertising Stock I'd Buy Right Now.'.\n• บริบทและเนื้อหาสำคัญ: ข่าวนี้เกี่ยวข้องกับ การดำเนินงานตามแผนยุทธศาสตร์และการแข่งขันในอุตสาหกรรม ซึ่งสะท้อนโมเมนตัมธุรกิจที่ขยายตัวได้ดีกว่าค่าเฉลี่ยอุตสาหกรรม.\n• นัยต่อปัจจัยพื้นฐาน: สนับสนุนการเติบโตของรายได้ (Top-line Growth) และช่วยรักษาอัตรากำไรขั้นต้นให้อยู่ในระดับสูง.\n• พฤติกรรมเม็ดเงินสถาบัน: เพิ่มความน่าสนใจให้แก่กองทุนสถาบันในการพิจารณาเพิ่มน้ำหนักการลงทุน (Accumulation) ในช่วงที่ราคาพักตัว.",
-            "impact_th": "🟢 เชิงบวกต่อราคาหุ้น (Bullish Catalyst): ข่าวนี้เป็นปัจจัยขับเคลื่อนเชิงจิตวิทยาและปัจจัยพื้นฐาน ช่วยหนุนโมเมนตัมราคาให้มีโอกาสทดสอบแนวต้านถัดไป และลดโอกาสการปรับฐานลึกในระยะสั้น.",
-            "action_th": "💡 แผนกลยุทธ์การเทรด: หากราคาหุ้นย่อตัวลงมาทดสอบแนวรับสำคัญ เช่น เส้นค่าเฉลี่ย EMA 21/50 หรือแนวรับ Fibo 61.8% ถือเป็นจังหวะทยอยสะสม (DCA) ไม่แนะนำให้ไล่ราคาเมื่อแท่งเทียนอยู่ห่างจากแนวรับเกิน 1.5 ATR.",
+            "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQUTBuUE5aVkRGaXZEVWFYMTk0bEhGVmNLVjNGWXBaQzEzQVdfX1JsaEJrZmVLT0wxRkh2emtuZHQ1ZGJtaDI3R202eXk2UjFhQ1VNU0RyMGRBNzIySjI5RTY4SGU3MzlBY2hGZzlrOTRzbXVmLS11TTVRU1Vxc1o2SFVxbzExLUFnRmxyV0pJMkozX2xHa0Q2RA?oc=5",
+            "published": "07 Nov 2026",
+            "raw_date": "Sat, 07 Nov 2026 07:00:00 GMT",
+            "sentiment": "neutral",
+            "title_th": "Cryptocurrency ใหม่ของ Google ผลักดันเหตุผลในการซื้อหุ้นตัวอักษรหรือไม่?",
+            "summary_th": "• สำนักข่าว The Motley Fool รายงานสถานการณ์ทั่วไปของ GOOGL ในประเด็น 'Cryptocurrency ใหม่ของ Google ผลักดันเหตุผลในการซื้อหุ้นตัวอักษรหรือไม่?'.\n• บริบทและเนื้อหาสำคัญ: ติดตามพัฒนาการในหมวด การดำเนินงานตามแผนยุทธศาสตร์และการแข่งขันในอุตสาหกรรม ซึ่งเป็นการดำเนินงานตามแผนธุรกิจปกติ.\n• นัยต่อปัจจัยพื้นฐาน: โครงสร้างพื้นฐานของธุรกิจยังคงดำเนินไปอย่างมีเสถียรภาพ ไม่พบการเปลี่ยนแปลงเชิงโครงสร้างที่มีนัยสำคัญ.\n• พฤติกรรมเม็ดเงินสถาบัน: ปริมาณการซื้อขายยังคงเคลื่อนไหวตามสภาวะตลาดโดยรวม.",
+            "impact_th": "⚪ เป็นกลาง (Neutral Stance): ไม่ได้สร้างแรงกระตุ้นรุนแรงต่อทิศทางราคา ทิศทางยังคงเคลื่อนไหวตามกรอบเทคนิคและเส้นแนวโน้มเดิม.",
+            "action_th": "💡 แผนกลยุทธ์การเทรด: อ้างอิงสัญญาณเทคนิคจากเส้นค่าเฉลี่ย EMA และระดับ Pivot Points ในการตัดสินใจลงทุนตามรอบปกติ.",
             "topic": "ผลการดำเนินงานและทิศทางธุรกิจ",
             "ai_analyzed": false
           },
@@ -1546,22 +1660,8 @@
             "published": "06 Nov 2026",
             "raw_date": "Fri, 06 Nov 2026 21:27:00 GMT",
             "sentiment": "bullish",
-            "title_th": "Alphabet’s drone unit to invest up to $125M in new manufacturing facility (GOOG:NASDAQ)",
-            "summary_th": "• สำนักข่าว Seeking Alpha รายงานข่าวเชิงบวกต่อ GOOGL ในประเด็น 'Alphabet’s drone unit to invest up to $125M in new manufacturing facility (GOOG:NASDAQ)'.\n• บริบทและเนื้อหาสำคัญ: ข่าวนี้เกี่ยวข้องกับ การดำเนินงานตามแผนยุทธศาสตร์และการแข่งขันในอุตสาหกรรม ซึ่งสะท้อนโมเมนตัมธุรกิจที่ขยายตัวได้ดีกว่าค่าเฉลี่ยอุตสาหกรรม.\n• นัยต่อปัจจัยพื้นฐาน: สนับสนุนการเติบโตของรายได้ (Top-line Growth) และช่วยรักษาอัตรากำไรขั้นต้นให้อยู่ในระดับสูง.\n• พฤติกรรมเม็ดเงินสถาบัน: เพิ่มความน่าสนใจให้แก่กองทุนสถาบันในการพิจารณาเพิ่มน้ำหนักการลงทุน (Accumulation) ในช่วงที่ราคาพักตัว.",
-            "impact_th": "🟢 เชิงบวกต่อราคาหุ้น (Bullish Catalyst): ข่าวนี้เป็นปัจจัยขับเคลื่อนเชิงจิตวิทยาและปัจจัยพื้นฐาน ช่วยหนุนโมเมนตัมราคาให้มีโอกาสทดสอบแนวต้านถัดไป และลดโอกาสการปรับฐานลึกในระยะสั้น.",
-            "action_th": "💡 แผนกลยุทธ์การเทรด: หากราคาหุ้นย่อตัวลงมาทดสอบแนวรับสำคัญ เช่น เส้นค่าเฉลี่ย EMA 21/50 หรือแนวรับ Fibo 61.8% ถือเป็นจังหวะทยอยสะสม (DCA) ไม่แนะนำให้ไล่ราคาเมื่อแท่งเทียนอยู่ห่างจากแนวรับเกิน 1.5 ATR.",
-            "topic": "ผลการดำเนินงานและทิศทางธุรกิจ",
-            "ai_analyzed": false
-          },
-          {
-            "title": "Not Alphabet. Not Meta. This Is the Digital Advertising Stock I'd Buy Right Now.",
-            "source": "The Globe and Mail",
-            "link": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxOZVFKYU54V09COFVKWWNXQlZrU09ncjd4c2wzdTNuLXlGV1FDUHh1R0VEbF9VSldXZzNPLU1uWmF6dEtaOWRyWnc1ZzJZUE96eDBDNHVpTzMzWVRaZHRrcjdLbVFpZVdiQ1BEdHlOVWw2YjR5M2syWjFXc2MxbkF5V3lDZVdTT1hEOFluWGwtN1RVMTk3MGtTaFQ0QWhOZUwwMEhfZHRZcWRQNXo5Smp0dUxGSjlBb0llU2tkdFdnd0pqNnE3azVGWlJOb0Zua2NyZUpIbHR2YVp1TWxFcnVtVWpJbGd4TGwweU1SdVFDN05KSDg?oc=5",
-            "published": "06 Nov 2026",
-            "raw_date": "Fri, 06 Nov 2026 19:25:44 GMT",
-            "sentiment": "bullish",
-            "title_th": "Not Alphabet. Not Meta. This Is the Digital Advertising Stock I'd Buy Right Now.",
-            "summary_th": "• สำนักข่าว The Globe and Mail รายงานข่าวเชิงบวกต่อ GOOGL ในประเด็น 'Not Alphabet. Not Meta. This Is the Digital Advertising Stock I'd Buy Right Now.'.\n• บริบทและเนื้อหาสำคัญ: ข่าวนี้เกี่ยวข้องกับ การดำเนินงานตามแผนยุทธศาสตร์และการแข่งขันในอุตสาหกรรม ซึ่งสะท้อนโมเมนตัมธุรกิจที่ขยายตัวได้ดีกว่าค่าเฉลี่ยอุตสาหกรรม.\n• นัยต่อปัจจัยพื้นฐาน: สนับสนุนการเติบโตของรายได้ (Top-line Growth) และช่วยรักษาอัตรากำไรขั้นต้นให้อยู่ในระดับสูง.\n• พฤติกรรมเม็ดเงินสถาบัน: เพิ่มความน่าสนใจให้แก่กองทุนสถาบันในการพิจารณาเพิ่มน้ำหนักการลงทุน (Accumulation) ในช่วงที่ราคาพักตัว.",
+            "title_th": "หน่วยโดรนของ Alphabet ลงทุนสูงถึง 125 ล้านเหรียญสหรัฐในโรงงานผลิตแห่งใหม่ (GOOG: NASDAQ)",
+            "summary_th": "• สำนักข่าว Seeking Alpha รายงานข่าวเชิงบวกต่อ GOOGL ในประเด็น 'หน่วยโดรนของ Alphabet ลงทุนสูงถึง 125 ล้านเหรียญสหรัฐในโรงงานผลิตแห่งใหม่ (GOOG: NASDAQ)'.\n• บริบทและเนื้อหาสำคัญ: ข่าวนี้เกี่ยวข้องกับ การดำเนินงานตามแผนยุทธศาสตร์และการแข่งขันในอุตสาหกรรม ซึ่งสะท้อนโมเมนตัมธุรกิจที่ขยายตัวได้ดีกว่าค่าเฉลี่ยอุตสาหกรรม.\n• นัยต่อปัจจัยพื้นฐาน: สนับสนุนการเติบโตของรายได้ (Top-line Growth) และช่วยรักษาอัตรากำไรขั้นต้นให้อยู่ในระดับสูง.\n• พฤติกรรมเม็ดเงินสถาบัน: เพิ่มความน่าสนใจให้แก่กองทุนสถาบันในการพิจารณาเพิ่มน้ำหนักการลงทุน (Accumulation) ในช่วงที่ราคาพักตัว.",
             "impact_th": "🟢 เชิงบวกต่อราคาหุ้น (Bullish Catalyst): ข่าวนี้เป็นปัจจัยขับเคลื่อนเชิงจิตวิทยาและปัจจัยพื้นฐาน ช่วยหนุนโมเมนตัมราคาให้มีโอกาสทดสอบแนวต้านถัดไป และลดโอกาสการปรับฐานลึกในระยะสั้น.",
             "action_th": "💡 แผนกลยุทธ์การเทรด: หากราคาหุ้นย่อตัวลงมาทดสอบแนวรับสำคัญ เช่น เส้นค่าเฉลี่ย EMA 21/50 หรือแนวรับ Fibo 61.8% ถือเป็นจังหวะทยอยสะสม (DCA) ไม่แนะนำให้ไล่ราคาเมื่อแท่งเทียนอยู่ห่างจากแนวรับเกิน 1.5 ATR.",
             "topic": "ผลการดำเนินงานและทิศทางธุรกิจ",
@@ -1574,8 +1674,8 @@
             "published": "06 Nov 2026",
             "raw_date": "Fri, 06 Nov 2026 18:04:00 GMT",
             "sentiment": "neutral",
-            "title_th": "Why The Blue Tsunami Rattled AI Stocks",
-            "summary_th": "• สำนักข่าว Investor's Business Daily รายงานสถานการณ์ทั่วไปของ GOOGL ในประเด็น 'Why The Blue Tsunami Rattled AI Stocks'.\n• บริบทและเนื้อหาสำคัญ: ติดตามพัฒนาการในหมวด คลื่นการลงทุนโครงสร้างพื้นฐานระบบประมวลผล AI และชิปประมวลผลยุคใหม่ ซึ่งเป็นการดำเนินงานตามแผนธุรกิจปกติ.\n• นัยต่อปัจจัยพื้นฐาน: โครงสร้างพื้นฐานของธุรกิจยังคงดำเนินไปอย่างมีเสถียรภาพ ไม่พบการเปลี่ยนแปลงเชิงโครงสร้างที่มีนัยสำคัญ.\n• พฤติกรรมเม็ดเงินสถาบัน: ปริมาณการซื้อขายยังคงเคลื่อนไหวตามสภาวะตลาดโดยรวม.",
+            "title_th": "เหตุใดสึนามิสีน้ำเงินจึงเขย่าหุ้น AI",
+            "summary_th": "• สำนักข่าว Investor's Business Daily รายงานสถานการณ์ทั่วไปของ GOOGL ในประเด็น 'เหตุใดสึนามิสีน้ำเงินจึงเขย่าหุ้น AI'.\n• บริบทและเนื้อหาสำคัญ: ติดตามพัฒนาการในหมวด คลื่นการลงทุนโครงสร้างพื้นฐานระบบประมวลผล AI และชิปประมวลผลยุคใหม่ ซึ่งเป็นการดำเนินงานตามแผนธุรกิจปกติ.\n• นัยต่อปัจจัยพื้นฐาน: โครงสร้างพื้นฐานของธุรกิจยังคงดำเนินไปอย่างมีเสถียรภาพ ไม่พบการเปลี่ยนแปลงเชิงโครงสร้างที่มีนัยสำคัญ.\n• พฤติกรรมเม็ดเงินสถาบัน: ปริมาณการซื้อขายยังคงเคลื่อนไหวตามสภาวะตลาดโดยรวม.",
             "impact_th": "⚪ เป็นกลาง (Neutral Stance): ไม่ได้สร้างแรงกระตุ้นรุนแรงต่อทิศทางราคา ทิศทางยังคงเคลื่อนไหวตามกรอบเทคนิคและเส้นแนวโน้มเดิม.",
             "action_th": "💡 แผนกลยุทธ์การเทรด: อ้างอิงสัญญาณเทคนิคจากเส้นค่าเฉลี่ย EMA และระดับ Pivot Points ในการตัดสินใจลงทุนตามรอบปกติ.",
             "topic": "เทคโนโลยี AI และการขยายโครงสร้างพื้นฐานดาต้าเซ็นเตอร์",
@@ -1586,35 +1686,35 @@
       },
       "news": [
         {
-          "title": "Not Alphabet. Not Meta. This Is the Digital Advertising Stock I'd Buy Right Now.",
-          "source": "The Motley Fool",
-          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQdUhGbHJrdU1sYmdOYks2R0hwa2ozSnlRcjgwU21pdC0zbjVLR3otQlVFQ3ZwbVc0QXBnX2hNVl9FSWZieVRxUGx5a1hRNDZFN0JudFM2U1VUU0lJMWR4SjFPYUFRaWdmQWY1TTVsYzVyYy1sYlBDMWc4VndEZGY1dFNub0VFeEI5RjN1QUIxZWJTNmZsUmhGVw?oc=5",
-          "published": "06 Nov 2026",
-          "raw_date": "Fri, 06 Nov 2026 22:30:55 GMT",
-          "sentiment": "bullish",
-          "title_th": "Not Alphabet. Not Meta. This Is the Digital Advertising Stock I'd Buy Right Now.",
-          "summary_th": "• สำนักข่าว The Motley Fool รายงานข่าวเชิงบวกต่อ GOOGL ในประเด็น 'Not Alphabet. Not Meta. This Is the Digital Advertising Stock I'd Buy Right Now.'.\n• บริบทและเนื้อหาสำคัญ: ข่าวนี้เกี่ยวข้องกับ การดำเนินงานตามแผนยุทธศาสตร์และการแข่งขันในอุตสาหกรรม ซึ่งสะท้อนโมเมนตัมธุรกิจที่ขยายตัวได้ดีกว่าค่าเฉลี่ยอุตสาหกรรม.\n• นัยต่อปัจจัยพื้นฐาน: สนับสนุนการเติบโตของรายได้ (Top-line Growth) และช่วยรักษาอัตรากำไรขั้นต้นให้อยู่ในระดับสูง.\n• พฤติกรรมเม็ดเงินสถาบัน: เพิ่มความน่าสนใจให้แก่กองทุนสถาบันในการพิจารณาเพิ่มน้ำหนักการลงทุน (Accumulation) ในช่วงที่ราคาพักตัว.",
-          "impact_th": "🟢 เชิงบวกต่อราคาหุ้น (Bullish Catalyst): ข่าวนี้เป็นปัจจัยขับเคลื่อนเชิงจิตวิทยาและปัจจัยพื้นฐาน ช่วยหนุนโมเมนตัมราคาให้มีโอกาสทดสอบแนวต้านถัดไป และลดโอกาสการปรับฐานลึกในระยะสั้น.",
-          "action_th": "💡 แผนกลยุทธ์การเทรด: หากราคาหุ้นย่อตัวลงมาทดสอบแนวรับสำคัญ เช่น เส้นค่าเฉลี่ย EMA 21/50 หรือแนวรับ Fibo 61.8% ถือเป็นจังหวะทยอยสะสม (DCA) ไม่แนะนำให้ไล่ราคาเมื่อแท่งเทียนอยู่ห่างจากแนวรับเกิน 1.5 ATR.",
+          "title": "Is Google's New Cryptocurrency Push a Reason to Buy Alphabet Stock?",
+          "source": "Yahoo Finance",
+          "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPQVhMTUlUQjBId3RNNHJsVmtOU0t3Zy0xb0dodjVtR3FTUVFsRnFWZTI1LUhtRXVjLWJNUnpQTjl4ckhfeDBEMzhOU3ZjRHNHMHpydk80SWd1aXUwY1BnTU5nQnExdDA5SWwyajRJQmJvWW1vMmo5NXV5ZVRDNmdwLTFCYWE0Mkt5empvOW9fV2hQb2Z3U0ZQVmNYdy1ZRlVRVnVCTE1n?oc=5",
+          "published": "07 Nov 2026",
+          "raw_date": "Sat, 07 Nov 2026 07:20:00 GMT",
+          "sentiment": "neutral",
+          "title_th": "Cryptocurrency ใหม่ของ Google ผลักดันเหตุผลในการซื้อหุ้นตัวอักษรหรือไม่?",
+          "summary_th": "• สำนักข่าว Yahoo Finance รายงานสถานการณ์ทั่วไปของ GOOGL ในประเด็น 'Cryptocurrency ใหม่ของ Google ผลักดันเหตุผลในการซื้อหุ้นตัวอักษรหรือไม่?'.\n• บริบทและเนื้อหาสำคัญ: ติดตามพัฒนาการในหมวด การดำเนินงานตามแผนยุทธศาสตร์และการแข่งขันในอุตสาหกรรม ซึ่งเป็นการดำเนินงานตามแผนธุรกิจปกติ.\n• นัยต่อปัจจัยพื้นฐาน: โครงสร้างพื้นฐานของธุรกิจยังคงดำเนินไปอย่างมีเสถียรภาพ ไม่พบการเปลี่ยนแปลงเชิงโครงสร้างที่มีนัยสำคัญ.\n• พฤติกรรมเม็ดเงินสถาบัน: ปริมาณการซื้อขายยังคงเคลื่อนไหวตามสภาวะตลาดโดยรวม.",
+          "impact_th": "⚪ เป็นกลาง (Neutral Stance): ไม่ได้สร้างแรงกระตุ้นรุนแรงต่อทิศทางราคา ทิศทางยังคงเคลื่อนไหวตามกรอบเทคนิคและเส้นแนวโน้มเดิม.",
+          "action_th": "💡 แผนกลยุทธ์การเทรด: อ้างอิงสัญญาณเทคนิคจากเส้นค่าเฉลี่ย EMA และระดับ Pivot Points ในการตัดสินใจลงทุนตามรอบปกติ.",
           "topic": "ผลการดำเนินงานและทิศทางธุรกิจ",
           "ai_analyzed": false
         },
         {
-          "title": "Alphabet’s drone unit to invest up to $125M in new manufacturing facility (GOOG:NASDAQ)",
-          "source": "Seeking Alpha",
-          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPVzBOdjM3UF9HNko3dDdLNERnSW9ZSHl5OFA2NzZKWlRxUFpmZmYyQkhPcXJiUUJxZ2RFQlBJMlMxSTIwM0ZaY1N4N0RfOVYzWE11VUc0WkF5NkFMakQtTjlfeXRBYWpaZmFGdXV5Z3l1VkNyTFE5bXpkN1Y2SWdSV3BwUGFzNy1rNWpuWUFkRUVGU1NGaWhGQnZfaC12NVZ6ckRVMWdZemx0M0FlR0hld0RTRFFwSUhRR1E?oc=5",
-          "published": "06 Nov 2026",
-          "raw_date": "Fri, 06 Nov 2026 21:27:00 GMT",
-          "sentiment": "bullish",
-          "title_th": "Alphabet’s drone unit to invest up to $125M in new manufacturing facility (GOOG:NASDAQ)",
-          "summary_th": "• สำนักข่าว Seeking Alpha รายงานข่าวเชิงบวกต่อ GOOGL ในประเด็น 'Alphabet’s drone unit to invest up to $125M in new manufacturing facility (GOOG:NASDAQ)'.\n• บริบทและเนื้อหาสำคัญ: ข่าวนี้เกี่ยวข้องกับ การดำเนินงานตามแผนยุทธศาสตร์และการแข่งขันในอุตสาหกรรม ซึ่งสะท้อนโมเมนตัมธุรกิจที่ขยายตัวได้ดีกว่าค่าเฉลี่ยอุตสาหกรรม.\n• นัยต่อปัจจัยพื้นฐาน: สนับสนุนการเติบโตของรายได้ (Top-line Growth) และช่วยรักษาอัตรากำไรขั้นต้นให้อยู่ในระดับสูง.\n• พฤติกรรมเม็ดเงินสถาบัน: เพิ่มความน่าสนใจให้แก่กองทุนสถาบันในการพิจารณาเพิ่มน้ำหนักการลงทุน (Accumulation) ในช่วงที่ราคาพักตัว.",
-          "impact_th": "🟢 เชิงบวกต่อราคาหุ้น (Bullish Catalyst): ข่าวนี้เป็นปัจจัยขับเคลื่อนเชิงจิตวิทยาและปัจจัยพื้นฐาน ช่วยหนุนโมเมนตัมราคาให้มีโอกาสทดสอบแนวต้านถัดไป และลดโอกาสการปรับฐานลึกในระยะสั้น.",
-          "action_th": "💡 แผนกลยุทธ์การเทรด: หากราคาหุ้นย่อตัวลงมาทดสอบแนวรับสำคัญ เช่น เส้นค่าเฉลี่ย EMA 21/50 หรือแนวรับ Fibo 61.8% ถือเป็นจังหวะทยอยสะสม (DCA) ไม่แนะนำให้ไล่ราคาเมื่อแท่งเทียนอยู่ห่างจากแนวรับเกิน 1.5 ATR.",
+          "title": "Is Google's New Cryptocurrency Push a Reason to Buy Alphabet Stock?",
+          "source": "The Motley Fool",
+          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQUTBuUE5aVkRGaXZEVWFYMTk0bEhGVmNLVjNGWXBaQzEzQVdfX1JsaEJrZmVLT0wxRkh2emtuZHQ1ZGJtaDI3R202eXk2UjFhQ1VNU0RyMGRBNzIySjI5RTY4SGU3MzlBY2hGZzlrOTRzbXVmLS11TTVRU1Vxc1o2SFVxbzExLUFnRmxyV0pJMkozX2xHa0Q2RA?oc=5",
+          "published": "07 Nov 2026",
+          "raw_date": "Sat, 07 Nov 2026 07:00:00 GMT",
+          "sentiment": "neutral",
+          "title_th": "Cryptocurrency ใหม่ของ Google ผลักดันเหตุผลในการซื้อหุ้นตัวอักษรหรือไม่?",
+          "summary_th": "• สำนักข่าว The Motley Fool รายงานสถานการณ์ทั่วไปของ GOOGL ในประเด็น 'Cryptocurrency ใหม่ของ Google ผลักดันเหตุผลในการซื้อหุ้นตัวอักษรหรือไม่?'.\n• บริบทและเนื้อหาสำคัญ: ติดตามพัฒนาการในหมวด การดำเนินงานตามแผนยุทธศาสตร์และการแข่งขันในอุตสาหกรรม ซึ่งเป็นการดำเนินงานตามแผนธุรกิจปกติ.\n• นัยต่อปัจจัยพื้นฐาน: โครงสร้างพื้นฐานของธุรกิจยังคงดำเนินไปอย่างมีเสถียรภาพ ไม่พบการเปลี่ยนแปลงเชิงโครงสร้างที่มีนัยสำคัญ.\n• พฤติกรรมเม็ดเงินสถาบัน: ปริมาณการซื้อขายยังคงเคลื่อนไหวตามสภาวะตลาดโดยรวม.",
+          "impact_th": "⚪ เป็นกลาง (Neutral Stance): ไม่ได้สร้างแรงกระตุ้นรุนแรงต่อทิศทางราคา ทิศทางยังคงเคลื่อนไหวตามกรอบเทคนิคและเส้นแนวโน้มเดิม.",
+          "action_th": "💡 แผนกลยุทธ์การเทรด: อ้างอิงสัญญาณเทคนิคจากเส้นค่าเฉลี่ย EMA และระดับ Pivot Points ในการตัดสินใจลงทุนตามรอบปกติ.",
           "topic": "ผลการดำเนินงานและทิศทางธุรกิจ",
           "ai_analyzed": false
         }
       ],
-      "weight_pct": 6.892355347561193,
+      "weight_pct": 7.3130385590588185,
       "alerts": [
         "🔻 Drawdown (-16.7%)"
       ],
@@ -1663,7 +1763,7 @@
         ],
         "catalyst_timeline": [
           {
-            "period": "ปฏิทินงบ (88 วัน)",
+            "period": "ปฏิทินงบ (87 วัน)",
             "event": "การแถลงงบการเงินและทิศทางคำสั่งซื้อในอนาคต"
           },
           {
@@ -1676,441 +1776,7 @@
           }
         ],
         "wall_street_verdict": "โบรกเกอร์ 65 แห่ง (Buy 58 / Hold 7 / Sell 0) ราคาเป้าหมายเฉลี่ยสถาบันอยู่ที่ $396.11 (Upside +39.1%)",
-        "tailored_roadmap": "วันงบถัดไปอยู่ห่างอีก 88 วัน ไม่มีความเสี่ยงเรื่องงบตกใจในระยะสั้น. ติดตามกรอบแนวรับแนวต้านสำคัญทางเทคนิค และปฏิบัติตามวินัย Stop-Loss อย่างเคร่งครัด",
-        "invalidation_risk": "การปิดหลุดแนวรับโครงสร้างหลัก หรือตัวเลขอัตรากำไรสุทธิชะลอตัวลงเกิน 20%"
-      }
-    },
-    {
-      "ticker": "ABNB",
-      "data_missing": false,
-      "price_missing": false,
-      "name": "Airbnb, Inc.",
-      "business_summary": "แพลตฟอร์มตัวกลางจองที่พัก ที่พักตากอากาศ และประสบการณ์การท่องเที่ยวทั่วโลก",
-      "exchange": "NASDAQ",
-      "shares": 9.8248563,
-      "avg_cost_usd": 151.7895,
-      "avg_cost_thb": 5103.162679336083,
-      "total_cost_usd": 1491.31,
-      "cost_thb": 50137.84,
-      "close_price": 189.99,
-      "change_pct": 11.673426203491456,
-      "current_val_usd": 1866.6244484370002,
-      "current_val_thb": 62625.250245061354,
-      "unrealized_pl_usd": 375.31444843700024,
-      "unrealized_pl_thb": 12487.410245061357,
-      "unrealized_pl_pct": 25.166762674226035,
-      "daily_diff_usd": 195.12164611800017,
-      "daily_diff_thb": 6546.331227258903,
-      "rsi": 66.21,
-      "rsi_weekly": 65.59,
-      "stoch_k": 70.01,
-      "stoch_d": 53.91,
-      "mfi": 53.3,
-      "sma200": 147.78,
-      "ema200": 153.05,
-      "dist_sma200_pct": 28.56,
-      "dist_ema200_pct": 24.14,
-      "in_value_zone": false,
-      "is_plunge_day": false,
-      "score": 3.6,
-      "stock_score": {
-        "total": 60.8,
-        "grade": "B",
-        "stars": 3,
-        "pillars": {
-          "fundamental": 68.0,
-          "timing": 50.0
-        },
-        "coverage": 1.0,
-        "earnings_guard": false,
-        "reasons": [
-          "Rev Growth +14%",
-          "Slow Net Income +2.5%",
-          "Elite ROE (35%) 🏆",
-          "⚠️ High PEG Overvalued 6.33",
-          "Safe Debt (D/E 0.32) 🛡️",
-          "FCF Cash Cow 💵",
-          "ยืดเหนือ EMA200 (+24.1%) รอย่อ"
-        ],
-        "fundamental": {
-          "applicable": true,
-          "points": 17.0,
-          "max_points": 25,
-          "pct": 68.0,
-          "coverage": 1.0,
-          "grade": "B",
-          "metrics": {
-            "rev_growth_yoy": {
-              "value": 14.196891191709845,
-              "points": 4,
-              "max": 5,
-              "label": "Rev Growth +14%"
-            },
-            "net_inc_growth_yoy": {
-              "value": 2.5142857142857142,
-              "points": 2,
-              "max": 5,
-              "label": "Slow Net Income +2.5%"
-            },
-            "roe": {
-              "value": 34.5420704704448,
-              "points": 5,
-              "max": 5,
-              "label": "Elite ROE (35%) 🏆"
-            },
-            "peg": {
-              "value": 6.329169164875932,
-              "points": 0,
-              "max": 4,
-              "label": "⚠️ High PEG Overvalued 6.33"
-            },
-            "debt_to_equity": {
-              "value": 0.320041030901398,
-              "points": 3,
-              "max": 3,
-              "label": "Safe Debt (D/E 0.32) 🛡️"
-            },
-            "fcf": {
-              "value": 4858000000,
-              "points": 3,
-              "max": 3,
-              "label": "FCF Cash Cow 💵"
-            }
-          },
-          "reasons": [
-            "Rev Growth +14%",
-            "Slow Net Income +2.5%",
-            "Elite ROE (35%) 🏆",
-            "⚠️ High PEG Overvalued 6.33",
-            "Safe Debt (D/E 0.32) 🛡️",
-            "FCF Cash Cow 💵"
-          ]
-        },
-        "timing": {
-          "entry_signal": false,
-          "points": 3.0,
-          "max_points": 6,
-          "pct": 50.0,
-          "coverage": 1.0,
-          "metrics": {
-            "ema200_dist": {
-              "value": 24.135124031812964,
-              "points": 3,
-              "max": 6,
-              "label": "ยืดเหนือ EMA200 (+24.1%) รอย่อ"
-            }
-          },
-          "reasons": [
-            "ยืดเหนือ EMA200 (+24.1%) รอย่อ"
-          ]
-        }
-      },
-      "tier": "⭐ Watchlist (รอแท่งกลับตัว)",
-      "signal_tags": [
-        "Above SMA200",
-        "Weekly Bullish (RSI≥45)",
-        "RSI Hook Up ⤴",
-        "MACD Hist Tick 📈",
-        "High Vol (3.1x)",
-        "Rev Growth +14%",
-        "Slow Net Income +2.5%",
-        "Elite ROE (35%) 🏆",
-        "⚠️ High PEG Overvalued 6.33",
-        "Safe Debt (D/E 0.32) 🛡️",
-        "FCF Cash Cow 💵"
-      ],
-      "days_to_earnings": 102,
-      "earnings_date": "16 Feb 2027",
-      "is_earnings_near": false,
-      "key_support": 159.62,
-      "support_desc": "ขอบล่าง Bollinger Band",
-      "key_resistance": 205.19,
-      "resistance_desc": "เป้าหมายทำกำไร +8%",
-      "stop_loss": 179.78,
-      "take_profit": 205.19,
-      "rr_ratio": 1.5,
-      "tv_url": "https://www.tradingview.com/chart/?symbol=NASDAQ:ABNB",
-      "rev_growth_yoy": 14.2,
-      "net_inc_growth_yoy": 2.51,
-      "roe": 34.54,
-      "debt_to_equity": 0.32,
-      "peg": 6.33,
-      "pe": 43.18,
-      "rec_mark": 1.52,
-      "fcf": 4858000000,
-      "price_target_average": 185.53,
-      "price_target_high": 220,
-      "price_target_low": 135,
-      "target_upside_pct": -2.3,
-      "rec_buy": 22,
-      "rec_hold": 17,
-      "rec_sell": 1,
-      "sector": "Consumer Services",
-      "industry": "Hotels/Resorts/Cruise lines",
-      "fundamental": {
-        "applicable": true,
-        "points": 17.0,
-        "max_points": 25,
-        "pct": 68.0,
-        "coverage": 1.0,
-        "grade": "B",
-        "metrics": {
-          "rev_growth_yoy": {
-            "value": 14.196891191709845,
-            "points": 4,
-            "max": 5,
-            "label": "Rev Growth +14%"
-          },
-          "net_inc_growth_yoy": {
-            "value": 2.5142857142857142,
-            "points": 2,
-            "max": 5,
-            "label": "Slow Net Income +2.5%"
-          },
-          "roe": {
-            "value": 34.5420704704448,
-            "points": 5,
-            "max": 5,
-            "label": "Elite ROE (35%) 🏆"
-          },
-          "peg": {
-            "value": 6.329169164875932,
-            "points": 0,
-            "max": 4,
-            "label": "⚠️ High PEG Overvalued 6.33"
-          },
-          "debt_to_equity": {
-            "value": 0.320041030901398,
-            "points": 3,
-            "max": 3,
-            "label": "Safe Debt (D/E 0.32) 🛡️"
-          },
-          "fcf": {
-            "value": 4858000000,
-            "points": 3,
-            "max": 3,
-            "label": "FCF Cash Cow 💵"
-          }
-        },
-        "reasons": [
-          "Rev Growth +14%",
-          "Slow Net Income +2.5%",
-          "Elite ROE (35%) 🏆",
-          "⚠️ High PEG Overvalued 6.33",
-          "Safe Debt (D/E 0.32) 🛡️",
-          "FCF Cash Cow 💵"
-        ]
-      },
-      "catalysts": {
-        "ticker": "ABNB",
-        "bullish": [
-          {
-            "title": "Airbnb (NASDAQ:ABNB) Stock Price Expected to Rise, JPMorgan Chase & Co. Analyst Says",
-            "source": "MarketBeat",
-            "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNckVHT0FXSGpRYlVyWks3RjZ0a0l6dHY3TndLU211a094ZzVKOVN5ZDFzVUJHTGRmdGFrQUVRb1pndzF3d1gtR0lUZ1pYOVNxeW1LX2JDMXh1UU5VdXQ0QUhQNGozUXYwZVhhNXNaMzRVbnNpcjhfdzBTQ2k1TFBUMG92ZlJGdmdfdXp0UXZKeFFLYWp3aV9MdVRRNW1fRXdtT0tTMl9jMlUwa3lVLThTMkg0V1d6UmdLT1c1YmNoMUZSNU5hTHJCWFJibHpJd3lUM3dkUXpfZw?oc=5",
-            "published": "06 Nov 2026",
-            "raw_date": "Fri, 06 Nov 2026 23:16:49 GMT",
-            "sentiment": "bullish",
-            "title_th": "Airbnb (NASDAQ:ABNB) Stock Price Expected to Rise, JPMorgan Chase & Co. Analyst Says",
-            "summary_th": "• สำนักข่าว MarketBeat รายงานข่าวเชิงบวกต่อ ABNB ในประเด็น 'Airbnb (NASDAQ:ABNB) Stock Price Expected to Rise, JPMorgan Chase & Co. Analyst Says'.\n• บริบทและเนื้อหาสำคัญ: ข่าวนี้เกี่ยวข้องกับ การปรับเป้าหมายราคาและคำแนะนำการลงทุนของสถาบันการเงินชั้นนำ ซึ่งสะท้อนโมเมนตัมธุรกิจที่ขยายตัวได้ดีกว่าค่าเฉลี่ยอุตสาหกรรม.\n• นัยต่อปัจจัยพื้นฐาน: สนับสนุนการเติบโตของรายได้ (Top-line Growth) และช่วยรักษาอัตรากำไรขั้นต้นให้อยู่ในระดับสูง.\n• พฤติกรรมเม็ดเงินสถาบัน: เพิ่มความน่าสนใจให้แก่กองทุนสถาบันในการพิจารณาเพิ่มน้ำหนักการลงทุน (Accumulation) ในช่วงที่ราคาพักตัว.",
-            "impact_th": "🟢 เชิงบวกต่อราคาหุ้น (Bullish Catalyst): ข่าวนี้เป็นปัจจัยขับเคลื่อนเชิงจิตวิทยาและปัจจัยพื้นฐาน ช่วยหนุนโมเมนตัมราคาให้มีโอกาสทดสอบแนวต้านถัดไป และลดโอกาสการปรับฐานลึกในระยะสั้น.",
-            "action_th": "💡 แผนกลยุทธ์การเทรด: หากราคาหุ้นย่อตัวลงมาทดสอบแนวรับสำคัญ เช่น เส้นค่าเฉลี่ย EMA 21/50 หรือแนวรับ Fibo 61.8% ถือเป็นจังหวะทยอยสะสม (DCA) ไม่แนะนำให้ไล่ราคาเมื่อแท่งเทียนอยู่ห่างจากแนวรับเกิน 1.5 ATR.",
-            "topic": "มุมมองและอันดับความน่าเชื่อถือจากนักวิเคราะห์ Wall Street",
-            "ai_analyzed": false
-          }
-        ],
-        "bearish": [],
-        "neutral": [
-          {
-            "title": "Why Airbnb Stock Popped Today",
-            "source": "The Globe and Mail",
-            "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOMU1FcTBrR1NfVnAyaGhESUpSZEtFNWJNa2J4Rl9qUF9UR2pMbUJ6RVBpSmVPS2E0UGNBMUMyS1ZPWnl6Y1JtYXlIb1VBSzFuMFVQNmtuRFhUazNEZmhDX2IyYzRfUEUwdWRYa1pRakJjSVlwdVhrMi0tenhGNFpBckVrV0RKYUNabjlaRENLYzEtUmtFaGlhNjhpTzFadmF4X050TGQzbXNReXhfajhXZnFLenc?oc=5",
-            "published": "06 Nov 2026",
-            "raw_date": "Fri, 06 Nov 2026 22:00:53 GMT",
-            "sentiment": "neutral",
-            "title_th": "Why Airbnb Stock Popped Today",
-            "summary_th": "• สำนักข่าว The Globe and Mail รายงานสถานการณ์ทั่วไปของ ABNB ในประเด็น 'Why Airbnb Stock Popped Today'.\n• บริบทและเนื้อหาสำคัญ: ติดตามพัฒนาการในหมวด การดำเนินงานตามแผนยุทธศาสตร์และการแข่งขันในอุตสาหกรรม ซึ่งเป็นการดำเนินงานตามแผนธุรกิจปกติ.\n• นัยต่อปัจจัยพื้นฐาน: โครงสร้างพื้นฐานของธุรกิจยังคงดำเนินไปอย่างมีเสถียรภาพ ไม่พบการเปลี่ยนแปลงเชิงโครงสร้างที่มีนัยสำคัญ.\n• พฤติกรรมเม็ดเงินสถาบัน: ปริมาณการซื้อขายยังคงเคลื่อนไหวตามสภาวะตลาดโดยรวม.",
-            "impact_th": "⚪ เป็นกลาง (Neutral Stance): ไม่ได้สร้างแรงกระตุ้นรุนแรงต่อทิศทางราคา ทิศทางยังคงเคลื่อนไหวตามกรอบเทคนิคและเส้นแนวโน้มเดิม.",
-            "action_th": "💡 แผนกลยุทธ์การเทรด: อ้างอิงสัญญาณเทคนิคจากเส้นค่าเฉลี่ย EMA และระดับ Pivot Points ในการตัดสินใจลงทุนตามรอบปกติ.",
-            "topic": "ผลการดำเนินงานและทิศทางธุรกิจ",
-            "ai_analyzed": false
-          },
-          {
-            "title": "Why Airbnb Stock Popped Today",
-            "source": "Yahoo Finance",
-            "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQYTU5cTFWbE9MalFmSUVuWUtUbDNhczBGT1lYOW12ZmdwUHROUVk4OU54a0k0OHF0MnV4d3lqSVJnYUw4UldHUDBuQndmUEtNZ0M0OEx5UDFIekdnUlRHSG5FcVFtem5hby1WYmMzREgtVVNxU1lDRWI3NEZRZjJHLWVTVzl5UFpucmZDWVlyLUxMYzZUWnZqVlln?oc=5",
-            "published": "06 Nov 2026",
-            "raw_date": "Fri, 06 Nov 2026 22:00:32 GMT",
-            "sentiment": "neutral",
-            "title_th": "Why Airbnb Stock Popped Today",
-            "summary_th": "• สำนักข่าว Yahoo Finance รายงานสถานการณ์ทั่วไปของ ABNB ในประเด็น 'Why Airbnb Stock Popped Today'.\n• บริบทและเนื้อหาสำคัญ: ติดตามพัฒนาการในหมวด การดำเนินงานตามแผนยุทธศาสตร์และการแข่งขันในอุตสาหกรรม ซึ่งเป็นการดำเนินงานตามแผนธุรกิจปกติ.\n• นัยต่อปัจจัยพื้นฐาน: โครงสร้างพื้นฐานของธุรกิจยังคงดำเนินไปอย่างมีเสถียรภาพ ไม่พบการเปลี่ยนแปลงเชิงโครงสร้างที่มีนัยสำคัญ.\n• พฤติกรรมเม็ดเงินสถาบัน: ปริมาณการซื้อขายยังคงเคลื่อนไหวตามสภาวะตลาดโดยรวม.",
-            "impact_th": "⚪ เป็นกลาง (Neutral Stance): ไม่ได้สร้างแรงกระตุ้นรุนแรงต่อทิศทางราคา ทิศทางยังคงเคลื่อนไหวตามกรอบเทคนิคและเส้นแนวโน้มเดิม.",
-            "action_th": "💡 แผนกลยุทธ์การเทรด: อ้างอิงสัญญาณเทคนิคจากเส้นค่าเฉลี่ย EMA และระดับ Pivot Points ในการตัดสินใจลงทุนตามรอบปกติ.",
-            "topic": "ผลการดำเนินงานและทิศทางธุรกิจ",
-            "ai_analyzed": false
-          },
-          {
-            "title": "Airbnb price target raised to $230 from $210 at Oppenheimer",
-            "source": "Yahoo Finance",
-            "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNdE0tQ0RqY3ZTOUszUkJIQ3A1b0pYUUkzbW1QX3lxaVpMNC1FWGdsNnhKdHFJY0JDVm1KbS1yYUV5SF9lN3dVYUp2dXppcVNXYUMyN1ZyVC1BVHZaUUQwSmM4bWZxNTVmZTFjTXVydHNVRmdCVHQyTnhpZVp3SHF3UGh0WFNreU5jTDRYblI1WXdWRUZ2Sm9HbC1sQQ?oc=5",
-            "published": "06 Nov 2026",
-            "raw_date": "Fri, 06 Nov 2026 21:45:40 GMT",
-            "sentiment": "neutral",
-            "title_th": "Airbnb price target raised to $230 from $210 at Oppenheimer",
-            "summary_th": "• สำนักข่าว Yahoo Finance รายงานสถานการณ์ทั่วไปของ ABNB ในประเด็น 'Airbnb price target raised to $230 from $210 at Oppenheimer'.\n• บริบทและเนื้อหาสำคัญ: ติดตามพัฒนาการในหมวด การปรับเป้าหมายราคาและคำแนะนำการลงทุนของสถาบันการเงินชั้นนำ ซึ่งเป็นการดำเนินงานตามแผนธุรกิจปกติ.\n• นัยต่อปัจจัยพื้นฐาน: โครงสร้างพื้นฐานของธุรกิจยังคงดำเนินไปอย่างมีเสถียรภาพ ไม่พบการเปลี่ยนแปลงเชิงโครงสร้างที่มีนัยสำคัญ.\n• พฤติกรรมเม็ดเงินสถาบัน: ปริมาณการซื้อขายยังคงเคลื่อนไหวตามสภาวะตลาดโดยรวม.",
-            "impact_th": "⚪ เป็นกลาง (Neutral Stance): ไม่ได้สร้างแรงกระตุ้นรุนแรงต่อทิศทางราคา ทิศทางยังคงเคลื่อนไหวตามกรอบเทคนิคและเส้นแนวโน้มเดิม.",
-            "action_th": "💡 แผนกลยุทธ์การเทรด: อ้างอิงสัญญาณเทคนิคจากเส้นค่าเฉลี่ย EMA และระดับ Pivot Points ในการตัดสินใจลงทุนตามรอบปกติ.",
-            "topic": "มุมมองและอันดับความน่าเชื่อถือจากนักวิเคราะห์ Wall Street",
-            "ai_analyzed": false
-          }
-        ],
-        "all": [
-          {
-            "title": "Airbnb (NASDAQ:ABNB) Stock Price Expected to Rise, JPMorgan Chase & Co. Analyst Says",
-            "source": "MarketBeat",
-            "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNckVHT0FXSGpRYlVyWks3RjZ0a0l6dHY3TndLU211a094ZzVKOVN5ZDFzVUJHTGRmdGFrQUVRb1pndzF3d1gtR0lUZ1pYOVNxeW1LX2JDMXh1UU5VdXQ0QUhQNGozUXYwZVhhNXNaMzRVbnNpcjhfdzBTQ2k1TFBUMG92ZlJGdmdfdXp0UXZKeFFLYWp3aV9MdVRRNW1fRXdtT0tTMl9jMlUwa3lVLThTMkg0V1d6UmdLT1c1YmNoMUZSNU5hTHJCWFJibHpJd3lUM3dkUXpfZw?oc=5",
-            "published": "06 Nov 2026",
-            "raw_date": "Fri, 06 Nov 2026 23:16:49 GMT",
-            "sentiment": "bullish",
-            "title_th": "Airbnb (NASDAQ:ABNB) Stock Price Expected to Rise, JPMorgan Chase & Co. Analyst Says",
-            "summary_th": "• สำนักข่าว MarketBeat รายงานข่าวเชิงบวกต่อ ABNB ในประเด็น 'Airbnb (NASDAQ:ABNB) Stock Price Expected to Rise, JPMorgan Chase & Co. Analyst Says'.\n• บริบทและเนื้อหาสำคัญ: ข่าวนี้เกี่ยวข้องกับ การปรับเป้าหมายราคาและคำแนะนำการลงทุนของสถาบันการเงินชั้นนำ ซึ่งสะท้อนโมเมนตัมธุรกิจที่ขยายตัวได้ดีกว่าค่าเฉลี่ยอุตสาหกรรม.\n• นัยต่อปัจจัยพื้นฐาน: สนับสนุนการเติบโตของรายได้ (Top-line Growth) และช่วยรักษาอัตรากำไรขั้นต้นให้อยู่ในระดับสูง.\n• พฤติกรรมเม็ดเงินสถาบัน: เพิ่มความน่าสนใจให้แก่กองทุนสถาบันในการพิจารณาเพิ่มน้ำหนักการลงทุน (Accumulation) ในช่วงที่ราคาพักตัว.",
-            "impact_th": "🟢 เชิงบวกต่อราคาหุ้น (Bullish Catalyst): ข่าวนี้เป็นปัจจัยขับเคลื่อนเชิงจิตวิทยาและปัจจัยพื้นฐาน ช่วยหนุนโมเมนตัมราคาให้มีโอกาสทดสอบแนวต้านถัดไป และลดโอกาสการปรับฐานลึกในระยะสั้น.",
-            "action_th": "💡 แผนกลยุทธ์การเทรด: หากราคาหุ้นย่อตัวลงมาทดสอบแนวรับสำคัญ เช่น เส้นค่าเฉลี่ย EMA 21/50 หรือแนวรับ Fibo 61.8% ถือเป็นจังหวะทยอยสะสม (DCA) ไม่แนะนำให้ไล่ราคาเมื่อแท่งเทียนอยู่ห่างจากแนวรับเกิน 1.5 ATR.",
-            "topic": "มุมมองและอันดับความน่าเชื่อถือจากนักวิเคราะห์ Wall Street",
-            "ai_analyzed": false
-          },
-          {
-            "title": "Why Airbnb Stock Popped Today",
-            "source": "The Globe and Mail",
-            "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOMU1FcTBrR1NfVnAyaGhESUpSZEtFNWJNa2J4Rl9qUF9UR2pMbUJ6RVBpSmVPS2E0UGNBMUMyS1ZPWnl6Y1JtYXlIb1VBSzFuMFVQNmtuRFhUazNEZmhDX2IyYzRfUEUwdWRYa1pRakJjSVlwdVhrMi0tenhGNFpBckVrV0RKYUNabjlaRENLYzEtUmtFaGlhNjhpTzFadmF4X050TGQzbXNReXhfajhXZnFLenc?oc=5",
-            "published": "06 Nov 2026",
-            "raw_date": "Fri, 06 Nov 2026 22:00:53 GMT",
-            "sentiment": "neutral",
-            "title_th": "Why Airbnb Stock Popped Today",
-            "summary_th": "• สำนักข่าว The Globe and Mail รายงานสถานการณ์ทั่วไปของ ABNB ในประเด็น 'Why Airbnb Stock Popped Today'.\n• บริบทและเนื้อหาสำคัญ: ติดตามพัฒนาการในหมวด การดำเนินงานตามแผนยุทธศาสตร์และการแข่งขันในอุตสาหกรรม ซึ่งเป็นการดำเนินงานตามแผนธุรกิจปกติ.\n• นัยต่อปัจจัยพื้นฐาน: โครงสร้างพื้นฐานของธุรกิจยังคงดำเนินไปอย่างมีเสถียรภาพ ไม่พบการเปลี่ยนแปลงเชิงโครงสร้างที่มีนัยสำคัญ.\n• พฤติกรรมเม็ดเงินสถาบัน: ปริมาณการซื้อขายยังคงเคลื่อนไหวตามสภาวะตลาดโดยรวม.",
-            "impact_th": "⚪ เป็นกลาง (Neutral Stance): ไม่ได้สร้างแรงกระตุ้นรุนแรงต่อทิศทางราคา ทิศทางยังคงเคลื่อนไหวตามกรอบเทคนิคและเส้นแนวโน้มเดิม.",
-            "action_th": "💡 แผนกลยุทธ์การเทรด: อ้างอิงสัญญาณเทคนิคจากเส้นค่าเฉลี่ย EMA และระดับ Pivot Points ในการตัดสินใจลงทุนตามรอบปกติ.",
-            "topic": "ผลการดำเนินงานและทิศทางธุรกิจ",
-            "ai_analyzed": false
-          },
-          {
-            "title": "Why Airbnb Stock Popped Today",
-            "source": "Yahoo Finance",
-            "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQYTU5cTFWbE9MalFmSUVuWUtUbDNhczBGT1lYOW12ZmdwUHROUVk4OU54a0k0OHF0MnV4d3lqSVJnYUw4UldHUDBuQndmUEtNZ0M0OEx5UDFIekdnUlRHSG5FcVFtem5hby1WYmMzREgtVVNxU1lDRWI3NEZRZjJHLWVTVzl5UFpucmZDWVlyLUxMYzZUWnZqVlln?oc=5",
-            "published": "06 Nov 2026",
-            "raw_date": "Fri, 06 Nov 2026 22:00:32 GMT",
-            "sentiment": "neutral",
-            "title_th": "Why Airbnb Stock Popped Today",
-            "summary_th": "• สำนักข่าว Yahoo Finance รายงานสถานการณ์ทั่วไปของ ABNB ในประเด็น 'Why Airbnb Stock Popped Today'.\n• บริบทและเนื้อหาสำคัญ: ติดตามพัฒนาการในหมวด การดำเนินงานตามแผนยุทธศาสตร์และการแข่งขันในอุตสาหกรรม ซึ่งเป็นการดำเนินงานตามแผนธุรกิจปกติ.\n• นัยต่อปัจจัยพื้นฐาน: โครงสร้างพื้นฐานของธุรกิจยังคงดำเนินไปอย่างมีเสถียรภาพ ไม่พบการเปลี่ยนแปลงเชิงโครงสร้างที่มีนัยสำคัญ.\n• พฤติกรรมเม็ดเงินสถาบัน: ปริมาณการซื้อขายยังคงเคลื่อนไหวตามสภาวะตลาดโดยรวม.",
-            "impact_th": "⚪ เป็นกลาง (Neutral Stance): ไม่ได้สร้างแรงกระตุ้นรุนแรงต่อทิศทางราคา ทิศทางยังคงเคลื่อนไหวตามกรอบเทคนิคและเส้นแนวโน้มเดิม.",
-            "action_th": "💡 แผนกลยุทธ์การเทรด: อ้างอิงสัญญาณเทคนิคจากเส้นค่าเฉลี่ย EMA และระดับ Pivot Points ในการตัดสินใจลงทุนตามรอบปกติ.",
-            "topic": "ผลการดำเนินงานและทิศทางธุรกิจ",
-            "ai_analyzed": false
-          },
-          {
-            "title": "Airbnb price target raised to $230 from $210 at Oppenheimer",
-            "source": "Yahoo Finance",
-            "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNdE0tQ0RqY3ZTOUszUkJIQ3A1b0pYUUkzbW1QX3lxaVpMNC1FWGdsNnhKdHFJY0JDVm1KbS1yYUV5SF9lN3dVYUp2dXppcVNXYUMyN1ZyVC1BVHZaUUQwSmM4bWZxNTVmZTFjTXVydHNVRmdCVHQyTnhpZVp3SHF3UGh0WFNreU5jTDRYblI1WXdWRUZ2Sm9HbC1sQQ?oc=5",
-            "published": "06 Nov 2026",
-            "raw_date": "Fri, 06 Nov 2026 21:45:40 GMT",
-            "sentiment": "neutral",
-            "title_th": "Airbnb price target raised to $230 from $210 at Oppenheimer",
-            "summary_th": "• สำนักข่าว Yahoo Finance รายงานสถานการณ์ทั่วไปของ ABNB ในประเด็น 'Airbnb price target raised to $230 from $210 at Oppenheimer'.\n• บริบทและเนื้อหาสำคัญ: ติดตามพัฒนาการในหมวด การปรับเป้าหมายราคาและคำแนะนำการลงทุนของสถาบันการเงินชั้นนำ ซึ่งเป็นการดำเนินงานตามแผนธุรกิจปกติ.\n• นัยต่อปัจจัยพื้นฐาน: โครงสร้างพื้นฐานของธุรกิจยังคงดำเนินไปอย่างมีเสถียรภาพ ไม่พบการเปลี่ยนแปลงเชิงโครงสร้างที่มีนัยสำคัญ.\n• พฤติกรรมเม็ดเงินสถาบัน: ปริมาณการซื้อขายยังคงเคลื่อนไหวตามสภาวะตลาดโดยรวม.",
-            "impact_th": "⚪ เป็นกลาง (Neutral Stance): ไม่ได้สร้างแรงกระตุ้นรุนแรงต่อทิศทางราคา ทิศทางยังคงเคลื่อนไหวตามกรอบเทคนิคและเส้นแนวโน้มเดิม.",
-            "action_th": "💡 แผนกลยุทธ์การเทรด: อ้างอิงสัญญาณเทคนิคจากเส้นค่าเฉลี่ย EMA และระดับ Pivot Points ในการตัดสินใจลงทุนตามรอบปกติ.",
-            "topic": "มุมมองและอันดับความน่าเชื่อถือจากนักวิเคราะห์ Wall Street",
-            "ai_analyzed": false
-          }
-        ],
-        "fetch_ok": true
-      },
-      "news": [
-        {
-          "title": "Airbnb (NASDAQ:ABNB) Stock Price Expected to Rise, JPMorgan Chase & Co. Analyst Says",
-          "source": "MarketBeat",
-          "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNckVHT0FXSGpRYlVyWks3RjZ0a0l6dHY3TndLU211a094ZzVKOVN5ZDFzVUJHTGRmdGFrQUVRb1pndzF3d1gtR0lUZ1pYOVNxeW1LX2JDMXh1UU5VdXQ0QUhQNGozUXYwZVhhNXNaMzRVbnNpcjhfdzBTQ2k1TFBUMG92ZlJGdmdfdXp0UXZKeFFLYWp3aV9MdVRRNW1fRXdtT0tTMl9jMlUwa3lVLThTMkg0V1d6UmdLT1c1YmNoMUZSNU5hTHJCWFJibHpJd3lUM3dkUXpfZw?oc=5",
-          "published": "06 Nov 2026",
-          "raw_date": "Fri, 06 Nov 2026 23:16:49 GMT",
-          "sentiment": "bullish",
-          "title_th": "Airbnb (NASDAQ:ABNB) Stock Price Expected to Rise, JPMorgan Chase & Co. Analyst Says",
-          "summary_th": "• สำนักข่าว MarketBeat รายงานข่าวเชิงบวกต่อ ABNB ในประเด็น 'Airbnb (NASDAQ:ABNB) Stock Price Expected to Rise, JPMorgan Chase & Co. Analyst Says'.\n• บริบทและเนื้อหาสำคัญ: ข่าวนี้เกี่ยวข้องกับ การปรับเป้าหมายราคาและคำแนะนำการลงทุนของสถาบันการเงินชั้นนำ ซึ่งสะท้อนโมเมนตัมธุรกิจที่ขยายตัวได้ดีกว่าค่าเฉลี่ยอุตสาหกรรม.\n• นัยต่อปัจจัยพื้นฐาน: สนับสนุนการเติบโตของรายได้ (Top-line Growth) และช่วยรักษาอัตรากำไรขั้นต้นให้อยู่ในระดับสูง.\n• พฤติกรรมเม็ดเงินสถาบัน: เพิ่มความน่าสนใจให้แก่กองทุนสถาบันในการพิจารณาเพิ่มน้ำหนักการลงทุน (Accumulation) ในช่วงที่ราคาพักตัว.",
-          "impact_th": "🟢 เชิงบวกต่อราคาหุ้น (Bullish Catalyst): ข่าวนี้เป็นปัจจัยขับเคลื่อนเชิงจิตวิทยาและปัจจัยพื้นฐาน ช่วยหนุนโมเมนตัมราคาให้มีโอกาสทดสอบแนวต้านถัดไป และลดโอกาสการปรับฐานลึกในระยะสั้น.",
-          "action_th": "💡 แผนกลยุทธ์การเทรด: หากราคาหุ้นย่อตัวลงมาทดสอบแนวรับสำคัญ เช่น เส้นค่าเฉลี่ย EMA 21/50 หรือแนวรับ Fibo 61.8% ถือเป็นจังหวะทยอยสะสม (DCA) ไม่แนะนำให้ไล่ราคาเมื่อแท่งเทียนอยู่ห่างจากแนวรับเกิน 1.5 ATR.",
-          "topic": "มุมมองและอันดับความน่าเชื่อถือจากนักวิเคราะห์ Wall Street",
-          "ai_analyzed": false
-        },
-        {
-          "title": "Why Airbnb Stock Popped Today",
-          "source": "The Globe and Mail",
-          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOMU1FcTBrR1NfVnAyaGhESUpSZEtFNWJNa2J4Rl9qUF9UR2pMbUJ6RVBpSmVPS2E0UGNBMUMyS1ZPWnl6Y1JtYXlIb1VBSzFuMFVQNmtuRFhUazNEZmhDX2IyYzRfUEUwdWRYa1pRakJjSVlwdVhrMi0tenhGNFpBckVrV0RKYUNabjlaRENLYzEtUmtFaGlhNjhpTzFadmF4X050TGQzbXNReXhfajhXZnFLenc?oc=5",
-          "published": "06 Nov 2026",
-          "raw_date": "Fri, 06 Nov 2026 22:00:53 GMT",
-          "sentiment": "neutral",
-          "title_th": "Why Airbnb Stock Popped Today",
-          "summary_th": "• สำนักข่าว The Globe and Mail รายงานสถานการณ์ทั่วไปของ ABNB ในประเด็น 'Why Airbnb Stock Popped Today'.\n• บริบทและเนื้อหาสำคัญ: ติดตามพัฒนาการในหมวด การดำเนินงานตามแผนยุทธศาสตร์และการแข่งขันในอุตสาหกรรม ซึ่งเป็นการดำเนินงานตามแผนธุรกิจปกติ.\n• นัยต่อปัจจัยพื้นฐาน: โครงสร้างพื้นฐานของธุรกิจยังคงดำเนินไปอย่างมีเสถียรภาพ ไม่พบการเปลี่ยนแปลงเชิงโครงสร้างที่มีนัยสำคัญ.\n• พฤติกรรมเม็ดเงินสถาบัน: ปริมาณการซื้อขายยังคงเคลื่อนไหวตามสภาวะตลาดโดยรวม.",
-          "impact_th": "⚪ เป็นกลาง (Neutral Stance): ไม่ได้สร้างแรงกระตุ้นรุนแรงต่อทิศทางราคา ทิศทางยังคงเคลื่อนไหวตามกรอบเทคนิคและเส้นแนวโน้มเดิม.",
-          "action_th": "💡 แผนกลยุทธ์การเทรด: อ้างอิงสัญญาณเทคนิคจากเส้นค่าเฉลี่ย EMA และระดับ Pivot Points ในการตัดสินใจลงทุนตามรอบปกติ.",
-          "topic": "ผลการดำเนินงานและทิศทางธุรกิจ",
-          "ai_analyzed": false
-        }
-      ],
-      "weight_pct": 4.037351456893511,
-      "alerts": [],
-      "rating": {
-        "stars_count": 3,
-        "stars_str": "⭐⭐⭐",
-        "grade": "เกรด B (ปานกลาง / พักฐาน)",
-        "summary": "สถานะ กำไร +25.2%, กราฟ ยืนเหนือเส้น 200 วัน +28.6%.",
-        "strength": "เทรนด์ขาขึ้นเหนือเส้น 200 วัน (+28.6%), Elite ROE (35%) 🏆, Safe Debt (D/E 0.32) 🛡️, FCF Cash Cow 💵",
-        "risk": "⚠️ High PEG Overvalued 6.33",
-        "action": "ถือครองสถานะเดิม ไม่เพิ่มเงินลงทุนใหม่จนกว่าพื้นฐานหรือจังหวะจะดีขึ้น.",
-        "grade_code": "B",
-        "total": 60.8,
-        "pillars": {
-          "fundamental": 68.0,
-          "timing": 50.0
-        },
-        "coverage": 1.0
-      },
-      "financial_health": {
-        "health_grade": "เกรด B (ปานกลาง 🟡)",
-        "health_badge": "🟡 ปานกลาง",
-        "peg_verdict": "ราคาตึงตัวสูง (6.33 🚨)",
-        "fcf_str": "$4.9B",
-        "roe_str": "+34.5%",
-        "de_str": "0.32",
-        "summary": "งบการเงินผ่านเกณฑ์ แต่การเติบโตเริ่มทรงตัว หรือราคาเทรดด้วย Valuation ค่อนข้างตึงตัว.",
-        "score": 17.0,
-        "pct": 68.0,
-        "coverage": 1.0,
-        "grade_code": "B"
-      },
-      "forward_outlook": {
-        "thesis_title": "การวิเคราะห์เจาะลึกศักยภาพการเติบโต ABNB ในกลุ่ม Consumer Services (Hotels/Resorts/Cruise lines)",
-        "quality_badge": "🟡 Market Leader",
-        "future_growth_drivers": [
-          "การขยายตัวของรายได้ระดับ +14.2% YoY และความสามารถในการทำกำไรสุทธิ +2.5% YoY",
-          "อัตราการประเมินมูลค่า P/E 43.2x และค่า PEG 6.33 เท่า สะท้อนระดับราคาต่อการเติบโต",
-          "ส่วนแบ่งการตลาดและความแข็งแกร่งของตราสินค้าในกลุ่มอุตสาหกรรม Hotels/Resorts/Cruise lines",
-          "การเพิ่มประสิทธิภาพการดำเนินงานและการบริหารจัดการต้นทุนเพื่อผลักดันกระแสเงินสดอิสระ"
-        ],
-        "drawdown_root_cause": [],
-        "catalyst_timeline": [
-          {
-            "period": "ปฏิทินงบ (102 วัน)",
-            "event": "การแถลงงบการเงินและทิศทางคำสั่งซื้อในอนาคต"
-          },
-          {
-            "period": "ระยะ 1-3 เดือน",
-            "event": "การปรับบทวิเคราะห์และประมาณการกำไรจากนักวิเคราะห์วอลล์สตรีท"
-          },
-          {
-            "period": "ระยะ 6-12 เดือน",
-            "event": "การเปิดตัวผลิตภัณฑ์ใหม่และการขยายตลาดสู่กลุ่มเป้าหมายใหม่"
-          }
-        ],
-        "wall_street_verdict": "โบรกเกอร์ 40 แห่ง (Buy 22 / Hold 17 / Sell 1) ราคาเป้าหมายเฉลี่ยสถาบันอยู่ที่ $185.53 (Upside -2.3%)",
-        "tailored_roadmap": "วันงบถัดไปอยู่ห่างอีก 102 วัน ไม่มีความเสี่ยงเรื่องงบตกใจในระยะสั้น. ติดตามกรอบแนวรับแนวต้านสำคัญทางเทคนิค และปฏิบัติตามวินัย Stop-Loss อย่างเคร่งครัด",
+        "tailored_roadmap": "วันงบถัดไปอยู่ห่างอีก 87 วัน ไม่มีความเสี่ยงเรื่องงบตกใจในระยะสั้น. ติดตามกรอบแนวรับแนวต้านสำคัญทางเทคนิค และปฏิบัติตามวินัย Stop-Loss อย่างเคร่งครัด",
         "invalidation_risk": "การปิดหลุดแนวรับโครงสร้างหลัก หรือตัวเลขอัตรากำไรสุทธิชะลอตัวลงเกิน 20%"
       }
     },
@@ -2244,7 +1910,7 @@
         "FCF Cash Cow 💵",
         "Wall St Strong Buy 🌟"
       ],
-      "days_to_earnings": 83,
+      "days_to_earnings": 82,
       "earnings_date": "28 Jan 2027",
       "is_earnings_near": false,
       "key_support": 7.44,
@@ -2323,14 +1989,28 @@
         "ticker": "NOK",
         "bullish": [
           {
+            "title": "Nokia's Satellite Pact With ICEYE Eyes Ukraine as AI Networking Orders Surge",
+            "source": "ad-hoc-news.de",
+            "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOWDZ0MnBaeWJEX25KbDJDdFF0MHZPY2pkdWV1TGwyOUNKSVJqQkpDa0FJcVljcVlYWm93VkM2Z09nTUczLS1id0huemxabFA1eUNkdUtmSXdjQldkaHRrYXl2eklSWWNlNFRqempyWmhNY01hdFJ2RlBoQ0QxbTIwLVIzQ2hLRzBjN01xRnhxbnpWc29BR3N3QVVXSXlJbmUwVHNHYkZFeDNpUlRwUnhNZWozX3RjMWpHUlBJdGx3eXVtU2kzdTBKYjVxQlpaMGR5MzBTTTR6TG1kTi1yZi04STBB?oc=5",
+            "published": "07 Nov 2026",
+            "raw_date": "Sat, 07 Nov 2026 05:41:06 GMT",
+            "sentiment": "bullish",
+            "title_th": "ข้อตกลงดาวเทียมของ Nokia กับ ICEYE จับตามองประเทศยูเครนเนื่องจากคำสั่งซื้อเครือข่าย AI พุ่งสูงขึ้น",
+            "summary_th": "• สำนักข่าว ad-hoc-news.de รายงานข่าวเชิงบวกต่อ NOK ในประเด็น 'ข้อตกลงดาวเทียมของ Nokia กับ ICEYE จับตามองประเทศยูเครนเนื่องจากคำสั่งซื้อเครือข่าย AI พุ่งสูงขึ้น'.\n• บริบทและเนื้อหาสำคัญ: ข่าวนี้เกี่ยวข้องกับ คลื่นการลงทุนโครงสร้างพื้นฐานระบบประมวลผล AI และชิปประมวลผลยุคใหม่ ซึ่งสะท้อนโมเมนตัมธุรกิจที่ขยายตัวได้ดีกว่าค่าเฉลี่ยอุตสาหกรรม.\n• นัยต่อปัจจัยพื้นฐาน: สนับสนุนการเติบโตของรายได้ (Top-line Growth) และช่วยรักษาอัตรากำไรขั้นต้นให้อยู่ในระดับสูง.\n• พฤติกรรมเม็ดเงินสถาบัน: เพิ่มความน่าสนใจให้แก่กองทุนสถาบันในการพิจารณาเพิ่มน้ำหนักการลงทุน (Accumulation) ในช่วงที่ราคาพักตัว.",
+            "impact_th": "🟢 เชิงบวกต่อราคาหุ้น (Bullish Catalyst): ข่าวนี้เป็นปัจจัยขับเคลื่อนเชิงจิตวิทยาและปัจจัยพื้นฐาน ช่วยหนุนโมเมนตัมราคาให้มีโอกาสทดสอบแนวต้านถัดไป และลดโอกาสการปรับฐานลึกในระยะสั้น.",
+            "action_th": "💡 แผนกลยุทธ์การเทรด: หากราคาหุ้นย่อตัวลงมาทดสอบแนวรับสำคัญ เช่น เส้นค่าเฉลี่ย EMA 21/50 หรือแนวรับ Fibo 61.8% ถือเป็นจังหวะทยอยสะสม (DCA) ไม่แนะนำให้ไล่ราคาเมื่อแท่งเทียนอยู่ห่างจากแนวรับเกิน 1.5 ATR.",
+            "topic": "เทคโนโลยี AI และการขยายโครงสร้างพื้นฐานดาต้าเซ็นเตอร์",
+            "ai_analyzed": false
+          },
+          {
             "title": "Nokia stock advances AI-RAN partnership toward commercial deployment",
             "source": "ad-hoc-news.de",
             "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNSVZFczdHWHE2LThlUEJlbnFxU0RaSHpCYmZ0R0ZjbHJUQUtpMF93QXhYbUQ2c0NjZVdsVnJ2bk5ZYUl1dWZaalRoYUtENUp1Ql9DekxIbmhHMzdxOXRuZUVCZDZQOHFZQ1huX2VuNUpWalk1R0hiRVg0MHJuS19ocGR1ajViRGNkZENWUWdLbUl3VjVzWFA0NFZKNkJ0X2VVYU9sY0FxalZWOEZqcnNXbTNmOEZpcmJJTlhFcTRPMktRX2hvdmwzTC1mYw?oc=5",
             "published": "06 Nov 2026",
             "raw_date": "Fri, 06 Nov 2026 16:59:12 GMT",
             "sentiment": "bullish",
-            "title_th": "Nokia stock advances AI-RAN partnership toward commercial deployment",
-            "summary_th": "• สำนักข่าว ad-hoc-news.de รายงานข่าวเชิงบวกต่อ NOK ในประเด็น 'Nokia stock advances AI-RAN partnership toward commercial deployment'.\n• บริบทและเนื้อหาสำคัญ: ข่าวนี้เกี่ยวข้องกับ คลื่นการลงทุนโครงสร้างพื้นฐานระบบประมวลผล AI และชิปประมวลผลยุคใหม่ ซึ่งสะท้อนโมเมนตัมธุรกิจที่ขยายตัวได้ดีกว่าค่าเฉลี่ยอุตสาหกรรม.\n• นัยต่อปัจจัยพื้นฐาน: สนับสนุนการเติบโตของรายได้ (Top-line Growth) และช่วยรักษาอัตรากำไรขั้นต้นให้อยู่ในระดับสูง.\n• พฤติกรรมเม็ดเงินสถาบัน: เพิ่มความน่าสนใจให้แก่กองทุนสถาบันในการพิจารณาเพิ่มน้ำหนักการลงทุน (Accumulation) ในช่วงที่ราคาพักตัว.",
+            "title_th": "หุ้น Nokia พัฒนาความร่วมมือ AI-RAN ไปสู่การใช้งานเชิงพาณิชย์",
+            "summary_th": "• สำนักข่าว ad-hoc-news.de รายงานข่าวเชิงบวกต่อ NOK ในประเด็น 'หุ้น Nokia พัฒนาความร่วมมือ AI-RAN ไปสู่การใช้งานเชิงพาณิชย์'.\n• บริบทและเนื้อหาสำคัญ: ข่าวนี้เกี่ยวข้องกับ คลื่นการลงทุนโครงสร้างพื้นฐานระบบประมวลผล AI และชิปประมวลผลยุคใหม่ ซึ่งสะท้อนโมเมนตัมธุรกิจที่ขยายตัวได้ดีกว่าค่าเฉลี่ยอุตสาหกรรม.\n• นัยต่อปัจจัยพื้นฐาน: สนับสนุนการเติบโตของรายได้ (Top-line Growth) และช่วยรักษาอัตรากำไรขั้นต้นให้อยู่ในระดับสูง.\n• พฤติกรรมเม็ดเงินสถาบัน: เพิ่มความน่าสนใจให้แก่กองทุนสถาบันในการพิจารณาเพิ่มน้ำหนักการลงทุน (Accumulation) ในช่วงที่ราคาพักตัว.",
             "impact_th": "🟢 เชิงบวกต่อราคาหุ้น (Bullish Catalyst): ข่าวนี้เป็นปัจจัยขับเคลื่อนเชิงจิตวิทยาและปัจจัยพื้นฐาน ช่วยหนุนโมเมนตัมราคาให้มีโอกาสทดสอบแนวต้านถัดไป และลดโอกาสการปรับฐานลึกในระยะสั้น.",
             "action_th": "💡 แผนกลยุทธ์การเทรด: หากราคาหุ้นย่อตัวลงมาทดสอบแนวรับสำคัญ เช่น เส้นค่าเฉลี่ย EMA 21/50 หรือแนวรับ Fibo 61.8% ถือเป็นจังหวะทยอยสะสม (DCA) ไม่แนะนำให้ไล่ราคาเมื่อแท่งเทียนอยู่ห่างจากแนวรับเกิน 1.5 ATR.",
             "topic": "เทคโนโลยี AI และการขยายโครงสร้างพื้นฐานดาต้าเซ็นเตอร์",
@@ -2343,8 +2023,8 @@
             "published": "06 Nov 2026",
             "raw_date": "Fri, 06 Nov 2026 10:48:03 GMT",
             "sentiment": "bullish",
-            "title_th": "Nokia stock advances AI-RAN partnership with NVIDIA",
-            "summary_th": "• สำนักข่าว ad-hoc-news.de รายงานข่าวเชิงบวกต่อ NOK ในประเด็น 'Nokia stock advances AI-RAN partnership with NVIDIA'.\n• บริบทและเนื้อหาสำคัญ: ข่าวนี้เกี่ยวข้องกับ คลื่นการลงทุนโครงสร้างพื้นฐานระบบประมวลผล AI และชิปประมวลผลยุคใหม่ ซึ่งสะท้อนโมเมนตัมธุรกิจที่ขยายตัวได้ดีกว่าค่าเฉลี่ยอุตสาหกรรม.\n• นัยต่อปัจจัยพื้นฐาน: สนับสนุนการเติบโตของรายได้ (Top-line Growth) และช่วยรักษาอัตรากำไรขั้นต้นให้อยู่ในระดับสูง.\n• พฤติกรรมเม็ดเงินสถาบัน: เพิ่มความน่าสนใจให้แก่กองทุนสถาบันในการพิจารณาเพิ่มน้ำหนักการลงทุน (Accumulation) ในช่วงที่ราคาพักตัว.",
+            "title_th": "หุ้น Nokia พัฒนาความร่วมมือ AI-RAN กับ NVIDIA",
+            "summary_th": "• สำนักข่าว ad-hoc-news.de รายงานข่าวเชิงบวกต่อ NOK ในประเด็น 'หุ้น Nokia พัฒนาความร่วมมือ AI-RAN กับ NVIDIA'.\n• บริบทและเนื้อหาสำคัญ: ข่าวนี้เกี่ยวข้องกับ คลื่นการลงทุนโครงสร้างพื้นฐานระบบประมวลผล AI และชิปประมวลผลยุคใหม่ ซึ่งสะท้อนโมเมนตัมธุรกิจที่ขยายตัวได้ดีกว่าค่าเฉลี่ยอุตสาหกรรม.\n• นัยต่อปัจจัยพื้นฐาน: สนับสนุนการเติบโตของรายได้ (Top-line Growth) และช่วยรักษาอัตรากำไรขั้นต้นให้อยู่ในระดับสูง.\n• พฤติกรรมเม็ดเงินสถาบัน: เพิ่มความน่าสนใจให้แก่กองทุนสถาบันในการพิจารณาเพิ่มน้ำหนักการลงทุน (Accumulation) ในช่วงที่ราคาพักตัว.",
             "impact_th": "🟢 เชิงบวกต่อราคาหุ้น (Bullish Catalyst): ข่าวนี้เป็นปัจจัยขับเคลื่อนเชิงจิตวิทยาและปัจจัยพื้นฐาน ช่วยหนุนโมเมนตัมราคาให้มีโอกาสทดสอบแนวต้านถัดไป และลดโอกาสการปรับฐานลึกในระยะสั้น.",
             "action_th": "💡 แผนกลยุทธ์การเทรด: หากราคาหุ้นย่อตัวลงมาทดสอบแนวรับสำคัญ เช่น เส้นค่าเฉลี่ย EMA 21/50 หรือแนวรับ Fibo 61.8% ถือเป็นจังหวะทยอยสะสม (DCA) ไม่แนะนำให้ไล่ราคาเมื่อแท่งเทียนอยู่ห่างจากแนวรับเกิน 1.5 ATR.",
             "topic": "เทคโนโลยี AI และการขยายโครงสร้างพื้นฐานดาต้าเซ็นเตอร์",
@@ -2354,28 +2034,14 @@
         "bearish": [],
         "neutral": [
           {
-            "title": "A $25 Billion Fund Just Bought These 3 Stocks",
-            "source": "TIKR.com",
-            "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPbXlmYWx3TTlpUWd6MEUxRnBaNWpGTGpTOFlIWG1PRHhBby1FUFNLVjY5NXhzWkF4QWQzWFh0aDNmd2ZTbEtCbG13TTNhbEN3Tl96NWZHVXplZlVHQ3NFNTZudXdZQUtXRGJvVGppUURDQjl5LTd2TEt6QVNNUUY4b0xaT0NoeGVIa2VLeDVka0dNTXVkTGg2cnRCV3NLWlNJWnR5bVhTd3JxMDFrYzBPYXl5b3Y5dk5QNUxtd19sWHM2Zw?oc=5",
-            "published": "06 Nov 2026",
-            "raw_date": "Fri, 06 Nov 2026 15:31:32 GMT",
-            "sentiment": "neutral",
-            "title_th": "A $25 Billion Fund Just Bought These 3 Stocks",
-            "summary_th": "• สำนักข่าว TIKR.com รายงานสถานการณ์ทั่วไปของ NOK ในประเด็น 'A $25 Billion Fund Just Bought These 3 Stocks'.\n• บริบทและเนื้อหาสำคัญ: ติดตามพัฒนาการในหมวด การไหลเข้าออกของเม็ดเงินกองทุนดัชนี Passive และการปรับสมดุลพอร์ตของสถาบัน ซึ่งเป็นการดำเนินงานตามแผนธุรกิจปกติ.\n• นัยต่อปัจจัยพื้นฐาน: โครงสร้างพื้นฐานของธุรกิจยังคงดำเนินไปอย่างมีเสถียรภาพ ไม่พบการเปลี่ยนแปลงเชิงโครงสร้างที่มีนัยสำคัญ.\n• พฤติกรรมเม็ดเงินสถาบัน: ปริมาณการซื้อขายยังคงเคลื่อนไหวตามสภาวะตลาดโดยรวม.",
-            "impact_th": "⚪ เป็นกลาง (Neutral Stance): ไม่ได้สร้างแรงกระตุ้นรุนแรงต่อทิศทางราคา ทิศทางยังคงเคลื่อนไหวตามกรอบเทคนิคและเส้นแนวโน้มเดิม.",
-            "action_th": "💡 แผนกลยุทธ์การเทรด: อ้างอิงสัญญาณเทคนิคจากเส้นค่าเฉลี่ย EMA และระดับ Pivot Points ในการตัดสินใจลงทุนตามรอบปกติ.",
-            "topic": "กระแสเงินทุนดัชนีและการลงทุนสถาบัน",
-            "ai_analyzed": false
-          },
-          {
-            "title": "ColorOS 17 November Rollout: Oppo and Realme Update Dates",
+            "title": "These Oppo and Realme Phones Will Get ColorOS 17 in November",
             "source": "Nokiamob",
             "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQY0pjcHRYTlFzZFhoa09PNU1BVm5TTjdCem4tNW9GSnF2cXNlc3hPVTVBbFVSbkVXV0FKTmRncl80M2t5SFU4ODJ1czZBYWgxTkI1bXhPRXRPcV9kYkEzdm82ZG5BTWFwOS1VbzlJRFZnRUk2bllhWE5aVVVKdmk5TkxuM2FqRlVIUVk1bXFUckFHOUs1eDMwOQ?oc=5",
             "published": "06 Nov 2026",
             "raw_date": "Fri, 06 Nov 2026 07:13:17 GMT",
             "sentiment": "neutral",
-            "title_th": "ColorOS 17 November Rollout: Oppo and Realme Update Dates",
-            "summary_th": "• สำนักข่าว Nokiamob รายงานสถานการณ์ทั่วไปของ NOK ในประเด็น 'ColorOS 17 November Rollout: Oppo and Realme Update Dates'.\n• บริบทและเนื้อหาสำคัญ: ติดตามพัฒนาการในหมวด การดำเนินงานตามแผนยุทธศาสตร์และการแข่งขันในอุตสาหกรรม ซึ่งเป็นการดำเนินงานตามแผนธุรกิจปกติ.\n• นัยต่อปัจจัยพื้นฐาน: โครงสร้างพื้นฐานของธุรกิจยังคงดำเนินไปอย่างมีเสถียรภาพ ไม่พบการเปลี่ยนแปลงเชิงโครงสร้างที่มีนัยสำคัญ.\n• พฤติกรรมเม็ดเงินสถาบัน: ปริมาณการซื้อขายยังคงเคลื่อนไหวตามสภาวะตลาดโดยรวม.",
+            "title_th": "โทรศัพท์ Oppo และ Realme เหล่านี้จะได้รับ ColorOS 17 ในเดือนพฤศจิกายน",
+            "summary_th": "• สำนักข่าว Nokiamob รายงานสถานการณ์ทั่วไปของ NOK ในประเด็น 'โทรศัพท์ Oppo และ Realme เหล่านี้จะได้รับ ColorOS 17 ในเดือนพฤศจิกายน'.\n• บริบทและเนื้อหาสำคัญ: ติดตามพัฒนาการในหมวด การดำเนินงานตามแผนยุทธศาสตร์และการแข่งขันในอุตสาหกรรม ซึ่งเป็นการดำเนินงานตามแผนธุรกิจปกติ.\n• นัยต่อปัจจัยพื้นฐาน: โครงสร้างพื้นฐานของธุรกิจยังคงดำเนินไปอย่างมีเสถียรภาพ ไม่พบการเปลี่ยนแปลงเชิงโครงสร้างที่มีนัยสำคัญ.\n• พฤติกรรมเม็ดเงินสถาบัน: ปริมาณการซื้อขายยังคงเคลื่อนไหวตามสภาวะตลาดโดยรวม.",
             "impact_th": "⚪ เป็นกลาง (Neutral Stance): ไม่ได้สร้างแรงกระตุ้นรุนแรงต่อทิศทางราคา ทิศทางยังคงเคลื่อนไหวตามกรอบเทคนิคและเส้นแนวโน้มเดิม.",
             "action_th": "💡 แผนกลยุทธ์การเทรด: อ้างอิงสัญญาณเทคนิคจากเส้นค่าเฉลี่ย EMA และระดับ Pivot Points ในการตัดสินใจลงทุนตามรอบปกติ.",
             "topic": "ผลการดำเนินงานและทิศทางธุรกิจ",
@@ -2384,31 +2050,31 @@
         ],
         "all": [
           {
-            "title": "Nokia stock advances AI-RAN partnership toward commercial deployment",
+            "title": "Nokia's Satellite Pact With ICEYE Eyes Ukraine as AI Networking Orders Surge",
             "source": "ad-hoc-news.de",
-            "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNSVZFczdHWHE2LThlUEJlbnFxU0RaSHpCYmZ0R0ZjbHJUQUtpMF93QXhYbUQ2c0NjZVdsVnJ2bk5ZYUl1dWZaalRoYUtENUp1Ql9DekxIbmhHMzdxOXRuZUVCZDZQOHFZQ1huX2VuNUpWalk1R0hiRVg0MHJuS19ocGR1ajViRGNkZENWUWdLbUl3VjVzWFA0NFZKNkJ0X2VVYU9sY0FxalZWOEZqcnNXbTNmOEZpcmJJTlhFcTRPMktRX2hvdmwzTC1mYw?oc=5",
-            "published": "06 Nov 2026",
-            "raw_date": "Fri, 06 Nov 2026 16:59:12 GMT",
+            "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOWDZ0MnBaeWJEX25KbDJDdFF0MHZPY2pkdWV1TGwyOUNKSVJqQkpDa0FJcVljcVlYWm93VkM2Z09nTUczLS1id0huemxabFA1eUNkdUtmSXdjQldkaHRrYXl2eklSWWNlNFRqempyWmhNY01hdFJ2RlBoQ0QxbTIwLVIzQ2hLRzBjN01xRnhxbnpWc29BR3N3QVVXSXlJbmUwVHNHYkZFeDNpUlRwUnhNZWozX3RjMWpHUlBJdGx3eXVtU2kzdTBKYjVxQlpaMGR5MzBTTTR6TG1kTi1yZi04STBB?oc=5",
+            "published": "07 Nov 2026",
+            "raw_date": "Sat, 07 Nov 2026 05:41:06 GMT",
             "sentiment": "bullish",
-            "title_th": "Nokia stock advances AI-RAN partnership toward commercial deployment",
-            "summary_th": "• สำนักข่าว ad-hoc-news.de รายงานข่าวเชิงบวกต่อ NOK ในประเด็น 'Nokia stock advances AI-RAN partnership toward commercial deployment'.\n• บริบทและเนื้อหาสำคัญ: ข่าวนี้เกี่ยวข้องกับ คลื่นการลงทุนโครงสร้างพื้นฐานระบบประมวลผล AI และชิปประมวลผลยุคใหม่ ซึ่งสะท้อนโมเมนตัมธุรกิจที่ขยายตัวได้ดีกว่าค่าเฉลี่ยอุตสาหกรรม.\n• นัยต่อปัจจัยพื้นฐาน: สนับสนุนการเติบโตของรายได้ (Top-line Growth) และช่วยรักษาอัตรากำไรขั้นต้นให้อยู่ในระดับสูง.\n• พฤติกรรมเม็ดเงินสถาบัน: เพิ่มความน่าสนใจให้แก่กองทุนสถาบันในการพิจารณาเพิ่มน้ำหนักการลงทุน (Accumulation) ในช่วงที่ราคาพักตัว.",
+            "title_th": "ข้อตกลงดาวเทียมของ Nokia กับ ICEYE จับตามองประเทศยูเครนเนื่องจากคำสั่งซื้อเครือข่าย AI พุ่งสูงขึ้น",
+            "summary_th": "• สำนักข่าว ad-hoc-news.de รายงานข่าวเชิงบวกต่อ NOK ในประเด็น 'ข้อตกลงดาวเทียมของ Nokia กับ ICEYE จับตามองประเทศยูเครนเนื่องจากคำสั่งซื้อเครือข่าย AI พุ่งสูงขึ้น'.\n• บริบทและเนื้อหาสำคัญ: ข่าวนี้เกี่ยวข้องกับ คลื่นการลงทุนโครงสร้างพื้นฐานระบบประมวลผล AI และชิปประมวลผลยุคใหม่ ซึ่งสะท้อนโมเมนตัมธุรกิจที่ขยายตัวได้ดีกว่าค่าเฉลี่ยอุตสาหกรรม.\n• นัยต่อปัจจัยพื้นฐาน: สนับสนุนการเติบโตของรายได้ (Top-line Growth) และช่วยรักษาอัตรากำไรขั้นต้นให้อยู่ในระดับสูง.\n• พฤติกรรมเม็ดเงินสถาบัน: เพิ่มความน่าสนใจให้แก่กองทุนสถาบันในการพิจารณาเพิ่มน้ำหนักการลงทุน (Accumulation) ในช่วงที่ราคาพักตัว.",
             "impact_th": "🟢 เชิงบวกต่อราคาหุ้น (Bullish Catalyst): ข่าวนี้เป็นปัจจัยขับเคลื่อนเชิงจิตวิทยาและปัจจัยพื้นฐาน ช่วยหนุนโมเมนตัมราคาให้มีโอกาสทดสอบแนวต้านถัดไป และลดโอกาสการปรับฐานลึกในระยะสั้น.",
             "action_th": "💡 แผนกลยุทธ์การเทรด: หากราคาหุ้นย่อตัวลงมาทดสอบแนวรับสำคัญ เช่น เส้นค่าเฉลี่ย EMA 21/50 หรือแนวรับ Fibo 61.8% ถือเป็นจังหวะทยอยสะสม (DCA) ไม่แนะนำให้ไล่ราคาเมื่อแท่งเทียนอยู่ห่างจากแนวรับเกิน 1.5 ATR.",
             "topic": "เทคโนโลยี AI และการขยายโครงสร้างพื้นฐานดาต้าเซ็นเตอร์",
             "ai_analyzed": false
           },
           {
-            "title": "A $25 Billion Fund Just Bought These 3 Stocks",
-            "source": "TIKR.com",
-            "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPbXlmYWx3TTlpUWd6MEUxRnBaNWpGTGpTOFlIWG1PRHhBby1FUFNLVjY5NXhzWkF4QWQzWFh0aDNmd2ZTbEtCbG13TTNhbEN3Tl96NWZHVXplZlVHQ3NFNTZudXdZQUtXRGJvVGppUURDQjl5LTd2TEt6QVNNUUY4b0xaT0NoeGVIa2VLeDVka0dNTXVkTGg2cnRCV3NLWlNJWnR5bVhTd3JxMDFrYzBPYXl5b3Y5dk5QNUxtd19sWHM2Zw?oc=5",
+            "title": "Nokia stock advances AI-RAN partnership toward commercial deployment",
+            "source": "ad-hoc-news.de",
+            "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNSVZFczdHWHE2LThlUEJlbnFxU0RaSHpCYmZ0R0ZjbHJUQUtpMF93QXhYbUQ2c0NjZVdsVnJ2bk5ZYUl1dWZaalRoYUtENUp1Ql9DekxIbmhHMzdxOXRuZUVCZDZQOHFZQ1huX2VuNUpWalk1R0hiRVg0MHJuS19ocGR1ajViRGNkZENWUWdLbUl3VjVzWFA0NFZKNkJ0X2VVYU9sY0FxalZWOEZqcnNXbTNmOEZpcmJJTlhFcTRPMktRX2hvdmwzTC1mYw?oc=5",
             "published": "06 Nov 2026",
-            "raw_date": "Fri, 06 Nov 2026 15:31:32 GMT",
-            "sentiment": "neutral",
-            "title_th": "A $25 Billion Fund Just Bought These 3 Stocks",
-            "summary_th": "• สำนักข่าว TIKR.com รายงานสถานการณ์ทั่วไปของ NOK ในประเด็น 'A $25 Billion Fund Just Bought These 3 Stocks'.\n• บริบทและเนื้อหาสำคัญ: ติดตามพัฒนาการในหมวด การไหลเข้าออกของเม็ดเงินกองทุนดัชนี Passive และการปรับสมดุลพอร์ตของสถาบัน ซึ่งเป็นการดำเนินงานตามแผนธุรกิจปกติ.\n• นัยต่อปัจจัยพื้นฐาน: โครงสร้างพื้นฐานของธุรกิจยังคงดำเนินไปอย่างมีเสถียรภาพ ไม่พบการเปลี่ยนแปลงเชิงโครงสร้างที่มีนัยสำคัญ.\n• พฤติกรรมเม็ดเงินสถาบัน: ปริมาณการซื้อขายยังคงเคลื่อนไหวตามสภาวะตลาดโดยรวม.",
-            "impact_th": "⚪ เป็นกลาง (Neutral Stance): ไม่ได้สร้างแรงกระตุ้นรุนแรงต่อทิศทางราคา ทิศทางยังคงเคลื่อนไหวตามกรอบเทคนิคและเส้นแนวโน้มเดิม.",
-            "action_th": "💡 แผนกลยุทธ์การเทรด: อ้างอิงสัญญาณเทคนิคจากเส้นค่าเฉลี่ย EMA และระดับ Pivot Points ในการตัดสินใจลงทุนตามรอบปกติ.",
-            "topic": "กระแสเงินทุนดัชนีและการลงทุนสถาบัน",
+            "raw_date": "Fri, 06 Nov 2026 16:59:12 GMT",
+            "sentiment": "bullish",
+            "title_th": "หุ้น Nokia พัฒนาความร่วมมือ AI-RAN ไปสู่การใช้งานเชิงพาณิชย์",
+            "summary_th": "• สำนักข่าว ad-hoc-news.de รายงานข่าวเชิงบวกต่อ NOK ในประเด็น 'หุ้น Nokia พัฒนาความร่วมมือ AI-RAN ไปสู่การใช้งานเชิงพาณิชย์'.\n• บริบทและเนื้อหาสำคัญ: ข่าวนี้เกี่ยวข้องกับ คลื่นการลงทุนโครงสร้างพื้นฐานระบบประมวลผล AI และชิปประมวลผลยุคใหม่ ซึ่งสะท้อนโมเมนตัมธุรกิจที่ขยายตัวได้ดีกว่าค่าเฉลี่ยอุตสาหกรรม.\n• นัยต่อปัจจัยพื้นฐาน: สนับสนุนการเติบโตของรายได้ (Top-line Growth) และช่วยรักษาอัตรากำไรขั้นต้นให้อยู่ในระดับสูง.\n• พฤติกรรมเม็ดเงินสถาบัน: เพิ่มความน่าสนใจให้แก่กองทุนสถาบันในการพิจารณาเพิ่มน้ำหนักการลงทุน (Accumulation) ในช่วงที่ราคาพักตัว.",
+            "impact_th": "🟢 เชิงบวกต่อราคาหุ้น (Bullish Catalyst): ข่าวนี้เป็นปัจจัยขับเคลื่อนเชิงจิตวิทยาและปัจจัยพื้นฐาน ช่วยหนุนโมเมนตัมราคาให้มีโอกาสทดสอบแนวต้านถัดไป และลดโอกาสการปรับฐานลึกในระยะสั้น.",
+            "action_th": "💡 แผนกลยุทธ์การเทรด: หากราคาหุ้นย่อตัวลงมาทดสอบแนวรับสำคัญ เช่น เส้นค่าเฉลี่ย EMA 21/50 หรือแนวรับ Fibo 61.8% ถือเป็นจังหวะทยอยสะสม (DCA) ไม่แนะนำให้ไล่ราคาเมื่อแท่งเทียนอยู่ห่างจากแนวรับเกิน 1.5 ATR.",
+            "topic": "เทคโนโลยี AI และการขยายโครงสร้างพื้นฐานดาต้าเซ็นเตอร์",
             "ai_analyzed": false
           },
           {
@@ -2418,22 +2084,22 @@
             "published": "06 Nov 2026",
             "raw_date": "Fri, 06 Nov 2026 10:48:03 GMT",
             "sentiment": "bullish",
-            "title_th": "Nokia stock advances AI-RAN partnership with NVIDIA",
-            "summary_th": "• สำนักข่าว ad-hoc-news.de รายงานข่าวเชิงบวกต่อ NOK ในประเด็น 'Nokia stock advances AI-RAN partnership with NVIDIA'.\n• บริบทและเนื้อหาสำคัญ: ข่าวนี้เกี่ยวข้องกับ คลื่นการลงทุนโครงสร้างพื้นฐานระบบประมวลผล AI และชิปประมวลผลยุคใหม่ ซึ่งสะท้อนโมเมนตัมธุรกิจที่ขยายตัวได้ดีกว่าค่าเฉลี่ยอุตสาหกรรม.\n• นัยต่อปัจจัยพื้นฐาน: สนับสนุนการเติบโตของรายได้ (Top-line Growth) และช่วยรักษาอัตรากำไรขั้นต้นให้อยู่ในระดับสูง.\n• พฤติกรรมเม็ดเงินสถาบัน: เพิ่มความน่าสนใจให้แก่กองทุนสถาบันในการพิจารณาเพิ่มน้ำหนักการลงทุน (Accumulation) ในช่วงที่ราคาพักตัว.",
+            "title_th": "หุ้น Nokia พัฒนาความร่วมมือ AI-RAN กับ NVIDIA",
+            "summary_th": "• สำนักข่าว ad-hoc-news.de รายงานข่าวเชิงบวกต่อ NOK ในประเด็น 'หุ้น Nokia พัฒนาความร่วมมือ AI-RAN กับ NVIDIA'.\n• บริบทและเนื้อหาสำคัญ: ข่าวนี้เกี่ยวข้องกับ คลื่นการลงทุนโครงสร้างพื้นฐานระบบประมวลผล AI และชิปประมวลผลยุคใหม่ ซึ่งสะท้อนโมเมนตัมธุรกิจที่ขยายตัวได้ดีกว่าค่าเฉลี่ยอุตสาหกรรม.\n• นัยต่อปัจจัยพื้นฐาน: สนับสนุนการเติบโตของรายได้ (Top-line Growth) และช่วยรักษาอัตรากำไรขั้นต้นให้อยู่ในระดับสูง.\n• พฤติกรรมเม็ดเงินสถาบัน: เพิ่มความน่าสนใจให้แก่กองทุนสถาบันในการพิจารณาเพิ่มน้ำหนักการลงทุน (Accumulation) ในช่วงที่ราคาพักตัว.",
             "impact_th": "🟢 เชิงบวกต่อราคาหุ้น (Bullish Catalyst): ข่าวนี้เป็นปัจจัยขับเคลื่อนเชิงจิตวิทยาและปัจจัยพื้นฐาน ช่วยหนุนโมเมนตัมราคาให้มีโอกาสทดสอบแนวต้านถัดไป และลดโอกาสการปรับฐานลึกในระยะสั้น.",
             "action_th": "💡 แผนกลยุทธ์การเทรด: หากราคาหุ้นย่อตัวลงมาทดสอบแนวรับสำคัญ เช่น เส้นค่าเฉลี่ย EMA 21/50 หรือแนวรับ Fibo 61.8% ถือเป็นจังหวะทยอยสะสม (DCA) ไม่แนะนำให้ไล่ราคาเมื่อแท่งเทียนอยู่ห่างจากแนวรับเกิน 1.5 ATR.",
             "topic": "เทคโนโลยี AI และการขยายโครงสร้างพื้นฐานดาต้าเซ็นเตอร์",
             "ai_analyzed": false
           },
           {
-            "title": "ColorOS 17 November Rollout: Oppo and Realme Update Dates",
+            "title": "These Oppo and Realme Phones Will Get ColorOS 17 in November",
             "source": "Nokiamob",
             "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQY0pjcHRYTlFzZFhoa09PNU1BVm5TTjdCem4tNW9GSnF2cXNlc3hPVTVBbFVSbkVXV0FKTmRncl80M2t5SFU4ODJ1czZBYWgxTkI1bXhPRXRPcV9kYkEzdm82ZG5BTWFwOS1VbzlJRFZnRUk2bllhWE5aVVVKdmk5TkxuM2FqRlVIUVk1bXFUckFHOUs1eDMwOQ?oc=5",
             "published": "06 Nov 2026",
             "raw_date": "Fri, 06 Nov 2026 07:13:17 GMT",
             "sentiment": "neutral",
-            "title_th": "ColorOS 17 November Rollout: Oppo and Realme Update Dates",
-            "summary_th": "• สำนักข่าว Nokiamob รายงานสถานการณ์ทั่วไปของ NOK ในประเด็น 'ColorOS 17 November Rollout: Oppo and Realme Update Dates'.\n• บริบทและเนื้อหาสำคัญ: ติดตามพัฒนาการในหมวด การดำเนินงานตามแผนยุทธศาสตร์และการแข่งขันในอุตสาหกรรม ซึ่งเป็นการดำเนินงานตามแผนธุรกิจปกติ.\n• นัยต่อปัจจัยพื้นฐาน: โครงสร้างพื้นฐานของธุรกิจยังคงดำเนินไปอย่างมีเสถียรภาพ ไม่พบการเปลี่ยนแปลงเชิงโครงสร้างที่มีนัยสำคัญ.\n• พฤติกรรมเม็ดเงินสถาบัน: ปริมาณการซื้อขายยังคงเคลื่อนไหวตามสภาวะตลาดโดยรวม.",
+            "title_th": "โทรศัพท์ Oppo และ Realme เหล่านี้จะได้รับ ColorOS 17 ในเดือนพฤศจิกายน",
+            "summary_th": "• สำนักข่าว Nokiamob รายงานสถานการณ์ทั่วไปของ NOK ในประเด็น 'โทรศัพท์ Oppo และ Realme เหล่านี้จะได้รับ ColorOS 17 ในเดือนพฤศจิกายน'.\n• บริบทและเนื้อหาสำคัญ: ติดตามพัฒนาการในหมวด การดำเนินงานตามแผนยุทธศาสตร์และการแข่งขันในอุตสาหกรรม ซึ่งเป็นการดำเนินงานตามแผนธุรกิจปกติ.\n• นัยต่อปัจจัยพื้นฐาน: โครงสร้างพื้นฐานของธุรกิจยังคงดำเนินไปอย่างมีเสถียรภาพ ไม่พบการเปลี่ยนแปลงเชิงโครงสร้างที่มีนัยสำคัญ.\n• พฤติกรรมเม็ดเงินสถาบัน: ปริมาณการซื้อขายยังคงเคลื่อนไหวตามสภาวะตลาดโดยรวม.",
             "impact_th": "⚪ เป็นกลาง (Neutral Stance): ไม่ได้สร้างแรงกระตุ้นรุนแรงต่อทิศทางราคา ทิศทางยังคงเคลื่อนไหวตามกรอบเทคนิคและเส้นแนวโน้มเดิม.",
             "action_th": "💡 แผนกลยุทธ์การเทรด: อ้างอิงสัญญาณเทคนิคจากเส้นค่าเฉลี่ย EMA และระดับ Pivot Points ในการตัดสินใจลงทุนตามรอบปกติ.",
             "topic": "ผลการดำเนินงานและทิศทางธุรกิจ",
@@ -2444,35 +2110,35 @@
       },
       "news": [
         {
-          "title": "Nokia stock advances AI-RAN partnership toward commercial deployment",
+          "title": "Nokia's Satellite Pact With ICEYE Eyes Ukraine as AI Networking Orders Surge",
           "source": "ad-hoc-news.de",
-          "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNSVZFczdHWHE2LThlUEJlbnFxU0RaSHpCYmZ0R0ZjbHJUQUtpMF93QXhYbUQ2c0NjZVdsVnJ2bk5ZYUl1dWZaalRoYUtENUp1Ql9DekxIbmhHMzdxOXRuZUVCZDZQOHFZQ1huX2VuNUpWalk1R0hiRVg0MHJuS19ocGR1ajViRGNkZENWUWdLbUl3VjVzWFA0NFZKNkJ0X2VVYU9sY0FxalZWOEZqcnNXbTNmOEZpcmJJTlhFcTRPMktRX2hvdmwzTC1mYw?oc=5",
-          "published": "06 Nov 2026",
-          "raw_date": "Fri, 06 Nov 2026 16:59:12 GMT",
+          "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOWDZ0MnBaeWJEX25KbDJDdFF0MHZPY2pkdWV1TGwyOUNKSVJqQkpDa0FJcVljcVlYWm93VkM2Z09nTUczLS1id0huemxabFA1eUNkdUtmSXdjQldkaHRrYXl2eklSWWNlNFRqempyWmhNY01hdFJ2RlBoQ0QxbTIwLVIzQ2hLRzBjN01xRnhxbnpWc29BR3N3QVVXSXlJbmUwVHNHYkZFeDNpUlRwUnhNZWozX3RjMWpHUlBJdGx3eXVtU2kzdTBKYjVxQlpaMGR5MzBTTTR6TG1kTi1yZi04STBB?oc=5",
+          "published": "07 Nov 2026",
+          "raw_date": "Sat, 07 Nov 2026 05:41:06 GMT",
           "sentiment": "bullish",
-          "title_th": "Nokia stock advances AI-RAN partnership toward commercial deployment",
-          "summary_th": "• สำนักข่าว ad-hoc-news.de รายงานข่าวเชิงบวกต่อ NOK ในประเด็น 'Nokia stock advances AI-RAN partnership toward commercial deployment'.\n• บริบทและเนื้อหาสำคัญ: ข่าวนี้เกี่ยวข้องกับ คลื่นการลงทุนโครงสร้างพื้นฐานระบบประมวลผล AI และชิปประมวลผลยุคใหม่ ซึ่งสะท้อนโมเมนตัมธุรกิจที่ขยายตัวได้ดีกว่าค่าเฉลี่ยอุตสาหกรรม.\n• นัยต่อปัจจัยพื้นฐาน: สนับสนุนการเติบโตของรายได้ (Top-line Growth) และช่วยรักษาอัตรากำไรขั้นต้นให้อยู่ในระดับสูง.\n• พฤติกรรมเม็ดเงินสถาบัน: เพิ่มความน่าสนใจให้แก่กองทุนสถาบันในการพิจารณาเพิ่มน้ำหนักการลงทุน (Accumulation) ในช่วงที่ราคาพักตัว.",
+          "title_th": "ข้อตกลงดาวเทียมของ Nokia กับ ICEYE จับตามองประเทศยูเครนเนื่องจากคำสั่งซื้อเครือข่าย AI พุ่งสูงขึ้น",
+          "summary_th": "• สำนักข่าว ad-hoc-news.de รายงานข่าวเชิงบวกต่อ NOK ในประเด็น 'ข้อตกลงดาวเทียมของ Nokia กับ ICEYE จับตามองประเทศยูเครนเนื่องจากคำสั่งซื้อเครือข่าย AI พุ่งสูงขึ้น'.\n• บริบทและเนื้อหาสำคัญ: ข่าวนี้เกี่ยวข้องกับ คลื่นการลงทุนโครงสร้างพื้นฐานระบบประมวลผล AI และชิปประมวลผลยุคใหม่ ซึ่งสะท้อนโมเมนตัมธุรกิจที่ขยายตัวได้ดีกว่าค่าเฉลี่ยอุตสาหกรรม.\n• นัยต่อปัจจัยพื้นฐาน: สนับสนุนการเติบโตของรายได้ (Top-line Growth) และช่วยรักษาอัตรากำไรขั้นต้นให้อยู่ในระดับสูง.\n• พฤติกรรมเม็ดเงินสถาบัน: เพิ่มความน่าสนใจให้แก่กองทุนสถาบันในการพิจารณาเพิ่มน้ำหนักการลงทุน (Accumulation) ในช่วงที่ราคาพักตัว.",
           "impact_th": "🟢 เชิงบวกต่อราคาหุ้น (Bullish Catalyst): ข่าวนี้เป็นปัจจัยขับเคลื่อนเชิงจิตวิทยาและปัจจัยพื้นฐาน ช่วยหนุนโมเมนตัมราคาให้มีโอกาสทดสอบแนวต้านถัดไป และลดโอกาสการปรับฐานลึกในระยะสั้น.",
           "action_th": "💡 แผนกลยุทธ์การเทรด: หากราคาหุ้นย่อตัวลงมาทดสอบแนวรับสำคัญ เช่น เส้นค่าเฉลี่ย EMA 21/50 หรือแนวรับ Fibo 61.8% ถือเป็นจังหวะทยอยสะสม (DCA) ไม่แนะนำให้ไล่ราคาเมื่อแท่งเทียนอยู่ห่างจากแนวรับเกิน 1.5 ATR.",
           "topic": "เทคโนโลยี AI และการขยายโครงสร้างพื้นฐานดาต้าเซ็นเตอร์",
           "ai_analyzed": false
         },
         {
-          "title": "A $25 Billion Fund Just Bought These 3 Stocks",
-          "source": "TIKR.com",
-          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPbXlmYWx3TTlpUWd6MEUxRnBaNWpGTGpTOFlIWG1PRHhBby1FUFNLVjY5NXhzWkF4QWQzWFh0aDNmd2ZTbEtCbG13TTNhbEN3Tl96NWZHVXplZlVHQ3NFNTZudXdZQUtXRGJvVGppUURDQjl5LTd2TEt6QVNNUUY4b0xaT0NoeGVIa2VLeDVka0dNTXVkTGg2cnRCV3NLWlNJWnR5bVhTd3JxMDFrYzBPYXl5b3Y5dk5QNUxtd19sWHM2Zw?oc=5",
+          "title": "Nokia stock advances AI-RAN partnership toward commercial deployment",
+          "source": "ad-hoc-news.de",
+          "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNSVZFczdHWHE2LThlUEJlbnFxU0RaSHpCYmZ0R0ZjbHJUQUtpMF93QXhYbUQ2c0NjZVdsVnJ2bk5ZYUl1dWZaalRoYUtENUp1Ql9DekxIbmhHMzdxOXRuZUVCZDZQOHFZQ1huX2VuNUpWalk1R0hiRVg0MHJuS19ocGR1ajViRGNkZENWUWdLbUl3VjVzWFA0NFZKNkJ0X2VVYU9sY0FxalZWOEZqcnNXbTNmOEZpcmJJTlhFcTRPMktRX2hvdmwzTC1mYw?oc=5",
           "published": "06 Nov 2026",
-          "raw_date": "Fri, 06 Nov 2026 15:31:32 GMT",
-          "sentiment": "neutral",
-          "title_th": "A $25 Billion Fund Just Bought These 3 Stocks",
-          "summary_th": "• สำนักข่าว TIKR.com รายงานสถานการณ์ทั่วไปของ NOK ในประเด็น 'A $25 Billion Fund Just Bought These 3 Stocks'.\n• บริบทและเนื้อหาสำคัญ: ติดตามพัฒนาการในหมวด การไหลเข้าออกของเม็ดเงินกองทุนดัชนี Passive และการปรับสมดุลพอร์ตของสถาบัน ซึ่งเป็นการดำเนินงานตามแผนธุรกิจปกติ.\n• นัยต่อปัจจัยพื้นฐาน: โครงสร้างพื้นฐานของธุรกิจยังคงดำเนินไปอย่างมีเสถียรภาพ ไม่พบการเปลี่ยนแปลงเชิงโครงสร้างที่มีนัยสำคัญ.\n• พฤติกรรมเม็ดเงินสถาบัน: ปริมาณการซื้อขายยังคงเคลื่อนไหวตามสภาวะตลาดโดยรวม.",
-          "impact_th": "⚪ เป็นกลาง (Neutral Stance): ไม่ได้สร้างแรงกระตุ้นรุนแรงต่อทิศทางราคา ทิศทางยังคงเคลื่อนไหวตามกรอบเทคนิคและเส้นแนวโน้มเดิม.",
-          "action_th": "💡 แผนกลยุทธ์การเทรด: อ้างอิงสัญญาณเทคนิคจากเส้นค่าเฉลี่ย EMA และระดับ Pivot Points ในการตัดสินใจลงทุนตามรอบปกติ.",
-          "topic": "กระแสเงินทุนดัชนีและการลงทุนสถาบัน",
+          "raw_date": "Fri, 06 Nov 2026 16:59:12 GMT",
+          "sentiment": "bullish",
+          "title_th": "หุ้น Nokia พัฒนาความร่วมมือ AI-RAN ไปสู่การใช้งานเชิงพาณิชย์",
+          "summary_th": "• สำนักข่าว ad-hoc-news.de รายงานข่าวเชิงบวกต่อ NOK ในประเด็น 'หุ้น Nokia พัฒนาความร่วมมือ AI-RAN ไปสู่การใช้งานเชิงพาณิชย์'.\n• บริบทและเนื้อหาสำคัญ: ข่าวนี้เกี่ยวข้องกับ คลื่นการลงทุนโครงสร้างพื้นฐานระบบประมวลผล AI และชิปประมวลผลยุคใหม่ ซึ่งสะท้อนโมเมนตัมธุรกิจที่ขยายตัวได้ดีกว่าค่าเฉลี่ยอุตสาหกรรม.\n• นัยต่อปัจจัยพื้นฐาน: สนับสนุนการเติบโตของรายได้ (Top-line Growth) และช่วยรักษาอัตรากำไรขั้นต้นให้อยู่ในระดับสูง.\n• พฤติกรรมเม็ดเงินสถาบัน: เพิ่มความน่าสนใจให้แก่กองทุนสถาบันในการพิจารณาเพิ่มน้ำหนักการลงทุน (Accumulation) ในช่วงที่ราคาพักตัว.",
+          "impact_th": "🟢 เชิงบวกต่อราคาหุ้น (Bullish Catalyst): ข่าวนี้เป็นปัจจัยขับเคลื่อนเชิงจิตวิทยาและปัจจัยพื้นฐาน ช่วยหนุนโมเมนตัมราคาให้มีโอกาสทดสอบแนวต้านถัดไป และลดโอกาสการปรับฐานลึกในระยะสั้น.",
+          "action_th": "💡 แผนกลยุทธ์การเทรด: หากราคาหุ้นย่อตัวลงมาทดสอบแนวรับสำคัญ เช่น เส้นค่าเฉลี่ย EMA 21/50 หรือแนวรับ Fibo 61.8% ถือเป็นจังหวะทยอยสะสม (DCA) ไม่แนะนำให้ไล่ราคาเมื่อแท่งเทียนอยู่ห่างจากแนวรับเกิน 1.5 ATR.",
+          "topic": "เทคโนโลยี AI และการขยายโครงสร้างพื้นฐานดาต้าเซ็นเตอร์",
           "ai_analyzed": false
         }
       ],
-      "weight_pct": 3.4604945812939802,
+      "weight_pct": 3.6717100367397,
       "alerts": [
         "🔻 Drawdown (-27.9%)"
       ],
@@ -2521,7 +2187,7 @@
         ],
         "catalyst_timeline": [
           {
-            "period": "รอบประกาศงบถัดไป (83 วัน)",
+            "period": "รอบประกาศงบถัดไป (82 วัน)",
             "event": "ประกาศผลประกอบการไตรมาส 3: ตัวชี้ขาด Gross Margin และคำสั่งซื้อ Network Infrastructure"
           },
           {
@@ -2534,7 +2200,7 @@
           }
         ],
         "wall_street_verdict": "โบรกเกอร์ 28 แห่ง (Buy 21 / Hold 5 / Sell 2) เป้าหมายเฉลี่ย $12.70 (Upside +65.8%) โดยเป้าหมายต่ำสุดอยู่ที่ $7.28 และสูงสุดที่ $20.16",
-        "tailored_roadmap": "กำไรสุทธิ YoY -6.7%. วันงบถัดไปอยู่ห่างอีก 83 วัน ไม่มีความเสี่ยงเรื่องงบตกใจในระยะสั้น. ให้ถือรอประเมินตัวเลขจริง หากกราฟยืนเหนือแนวรับเส้น 200 วัน ($10.34) ได้ จึงรอจังหวะ Rebound Exit ปิดความเสี่ยงที่จุดคุ้มทุน $10.62",
+        "tailored_roadmap": "กำไรสุทธิ YoY -6.7%. วันงบถัดไปอยู่ห่างอีก 82 วัน ไม่มีความเสี่ยงเรื่องงบตกใจในระยะสั้น. ให้ถือรอประเมินตัวเลขจริง หากกราฟยืนเหนือแนวรับเส้น 200 วัน ($10.34) ได้ จึงรอจังหวะ Rebound Exit ปิดความเสี่ยงที่จุดคุ้มทุน $10.62",
         "invalidation_risk": "หากงบ Q3 ชะลอตัวลงเกินคาดและราคาหลุดจุดตัดขาดทุน (หลุดแนวรับโครงสร้างหลัก) ต้องพิจารณา Cut Loss เพื่อปกป้องเงินต้นส่วนใหญ่",
         "curated_as_of": "2026-10-17"
       }
@@ -2668,7 +2334,7 @@
         "Wall St Strong Buy 🌟",
         "⚠️ High ADX Falling Knife"
       ],
-      "days_to_earnings": 70,
+      "days_to_earnings": 69,
       "earnings_date": "15 Jan 2027",
       "is_earnings_near": false,
       "key_support": 48.42,
@@ -2746,23 +2412,22 @@
       "catalysts": {
         "ticker": "BAC",
         "bullish": [],
-        "bearish": [
-          {
-            "title": "What Should Bank Of America Corporation Investors Know After 4.76% Stock Drop? The Law Offices of Frank R. Cruz Outlines Securities Fraud Class Action Lead Plaintiff Deadline",
-            "source": "PR Newswire",
-            "link": "https://news.google.com/rss/articles/CBMiywJBVV95cUxOaFhEY2wxVmRtY1lxM0xqbzhwR29maEt0M3p2N2JNNVJHRDVwZHNpZXlZaVhtMkpiVUEzOVhDNlFvRnVLSi1yTXhuemZJSEVxS2pfa3hXT1Bqd1U1MUFIMTFqTVlhZW1SNHdCUWVYX1o4STAyUXNweU52THdTY3lIMjNRX3J6QjdRR3JkUG5tdm1jU285emJFUFVERHJRbkhfcEVWRHRsYmFTZTY5cTg3YnItMUVmMUVRM3R0UTN0SVNxZFV4Z016ZmFiY0pfWkotZWpjTUEzRDBGM2R1RW9OU1VWLXVSWHBwbXl3TE9tQkQ5Zk9IUmpjc2ljbkt4QW00cFIxSW9DQmZ1UFFndzhpQ0ZvQ0xBMXRZNjJrRnVoZlA1Z3hhbHlmNUVKV1FkcFhsUkp6TFowZzVVMm5RR05RNWtucXdEZVBuelBF?oc=5",
-            "published": "06 Nov 2026",
-            "raw_date": "Fri, 06 Nov 2026 18:30:00 GMT",
-            "sentiment": "bearish",
-            "title_th": "What Should Bank Of America Corporation Investors Know After 4.76% Stock Drop? The Law Offices of Frank R. Cruz Outlines Securities Fraud Class Action Lead Plaintiff Deadline",
-            "summary_th": "• สำนักข่าว PR Newswire รายงานปัจจัยกดดันต่อ BAC ในประเด็น 'What Should Bank Of America Corporation Investors Know After 4.76% Stock Drop? The Law Offices of Frank R. Cruz Outlines Securities Fraud Class Action Lead Plaintiff Deadline'.\n• บริบทและเนื้อหาสำคัญ: ข่าวนี้ระบุถึงประเด็น การดำเนินงานตามแผนยุทธศาสตร์และการแข่งขันในอุตสาหกรรม ที่อาจก่อให้เกิดอุปสรรคชั่วคราวต่อการดำเนินงาน.\n• นัยต่อปัจจัยพื้นฐาน: ตลาดมีความกังวลต่อแรงกดดันด้านต้นทุน การชะลอตัวของคำสั่งซื้อ หรือความเสี่ยงด้านกฎระเบียบที่อาจกระทบต่อผลกำไร.\n• พฤติกรรมเม็ดเงินสถาบัน: มีแนวโน้มที่ผู้จัดการกองทุนจะชะลอการเข้าซื้อเพื่อประเมินสถานการณ์ หรือทยอยขายทำกำไรลดความเสี่ยงบางส่วน.",
-            "impact_th": "🔴 เชิงลบต่อราคาหุ้น (Bearish Risk): อาจสร้างแรงกระเพื่อมเชิงลบในระยะสั้น ส่งผลให้ราคาหุ้นเผชิญแรงขายทำกำไรหรือพักฐานลงมาทดสอบแนวรับล่าง.",
-            "action_th": "💡 แผนกลยุทธ์การเทรด: ชะลอการเข้าซื้อก้อนใหญ่ (Wait & See) ควรรอให้แรงขายชะลอตัวและราคาสร้างฐานแนวรับที่มั่นคง พร้อมตั้งระดับ Stop Loss หรือจุด Invalidation ตามกรอบทางเทคนิคอย่างเคร่งครัด.",
-            "topic": "ผลการดำเนินงานและทิศทางธุรกิจ",
-            "ai_analyzed": false
-          }
-        ],
+        "bearish": [],
         "neutral": [
+          {
+            "title": "Cautious Bank Outlook Weighs on Stocks Despite Strong Earnings",
+            "source": "Global Finance Magazine",
+            "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1uT1JoMy05S256R0J0YWU1TDhuTDJiUWNuVVVZYnh1azNyMDhEZW4tTmc1TXlPNUhWUWdSemZxMVpWaUhobGtYVFM5dnJsTHhwU2hWQ2ZQSFFtLWRRTWR0S1I2WC1Rd1ZEVlg3UDBWWS10YTY1cFJFYg?oc=5",
+            "published": "06 Nov 2026",
+            "raw_date": "Fri, 06 Nov 2026 21:33:39 GMT",
+            "sentiment": "neutral",
+            "title_th": "แนวโน้มของธนาคารที่ระมัดระวังยังส่งผลต่อหุ้นแม้ว่ากำไรจะแข็งแกร่งก็ตาม",
+            "summary_th": "• สำนักข่าว Global Finance Magazine รายงานสถานการณ์ทั่วไปของ BAC ในประเด็น 'แนวโน้มของธนาคารที่ระมัดระวังยังส่งผลต่อหุ้นแม้ว่ากำไรจะแข็งแกร่งก็ตาม'.\n• บริบทและเนื้อหาสำคัญ: ติดตามพัฒนาการในหมวด การรายงานงบการเงินและตัวเลขกำไรต่อหุ้น (EPS) เทียบกับที่นักวิเคราะห์ Wall Street คาดการณ์ ซึ่งเป็นการดำเนินงานตามแผนธุรกิจปกติ.\n• นัยต่อปัจจัยพื้นฐาน: โครงสร้างพื้นฐานของธุรกิจยังคงดำเนินไปอย่างมีเสถียรภาพ ไม่พบการเปลี่ยนแปลงเชิงโครงสร้างที่มีนัยสำคัญ.\n• พฤติกรรมเม็ดเงินสถาบัน: ปริมาณการซื้อขายยังคงเคลื่อนไหวตามสภาวะตลาดโดยรวม.",
+            "impact_th": "⚪ เป็นกลาง (Neutral Stance): ไม่ได้สร้างแรงกระตุ้นรุนแรงต่อทิศทางราคา ทิศทางยังคงเคลื่อนไหวตามกรอบเทคนิคและเส้นแนวโน้มเดิม.",
+            "action_th": "💡 แผนกลยุทธ์การเทรด: อ้างอิงสัญญาณเทคนิคจากเส้นค่าเฉลี่ย EMA และระดับ Pivot Points ในการตัดสินใจลงทุนตามรอบปกติ.",
+            "topic": "รายงานผลประกอบการและตัวเลขทางการเงิน",
+            "ai_analyzed": false
+          },
           {
             "title": "Bank of America Sees New Stock Market Winners After the Midterms",
             "source": "TipRanks",
@@ -2770,8 +2435,8 @@
             "published": "06 Nov 2026",
             "raw_date": "Fri, 06 Nov 2026 20:26:36 GMT",
             "sentiment": "neutral",
-            "title_th": "Bank of America Sees New Stock Market Winners After the Midterms",
-            "summary_th": "• สำนักข่าว TipRanks รายงานสถานการณ์ทั่วไปของ BAC ในประเด็น 'Bank of America Sees New Stock Market Winners After the Midterms'.\n• บริบทและเนื้อหาสำคัญ: ติดตามพัฒนาการในหมวด การดำเนินงานตามแผนยุทธศาสตร์และการแข่งขันในอุตสาหกรรม ซึ่งเป็นการดำเนินงานตามแผนธุรกิจปกติ.\n• นัยต่อปัจจัยพื้นฐาน: โครงสร้างพื้นฐานของธุรกิจยังคงดำเนินไปอย่างมีเสถียรภาพ ไม่พบการเปลี่ยนแปลงเชิงโครงสร้างที่มีนัยสำคัญ.\n• พฤติกรรมเม็ดเงินสถาบัน: ปริมาณการซื้อขายยังคงเคลื่อนไหวตามสภาวะตลาดโดยรวม.",
+            "title_th": "Bank of America มองเห็นผู้ชนะในตลาดหุ้นรายใหม่หลังสอบกลางภาค",
+            "summary_th": "• สำนักข่าว TipRanks รายงานสถานการณ์ทั่วไปของ BAC ในประเด็น 'Bank of America มองเห็นผู้ชนะในตลาดหุ้นรายใหม่หลังสอบกลางภาค'.\n• บริบทและเนื้อหาสำคัญ: ติดตามพัฒนาการในหมวด การดำเนินงานตามแผนยุทธศาสตร์และการแข่งขันในอุตสาหกรรม ซึ่งเป็นการดำเนินงานตามแผนธุรกิจปกติ.\n• นัยต่อปัจจัยพื้นฐาน: โครงสร้างพื้นฐานของธุรกิจยังคงดำเนินไปอย่างมีเสถียรภาพ ไม่พบการเปลี่ยนแปลงเชิงโครงสร้างที่มีนัยสำคัญ.\n• พฤติกรรมเม็ดเงินสถาบัน: ปริมาณการซื้อขายยังคงเคลื่อนไหวตามสภาวะตลาดโดยรวม.",
             "impact_th": "⚪ เป็นกลาง (Neutral Stance): ไม่ได้สร้างแรงกระตุ้นรุนแรงต่อทิศทางราคา ทิศทางยังคงเคลื่อนไหวตามกรอบเทคนิคและเส้นแนวโน้มเดิม.",
             "action_th": "💡 แผนกลยุทธ์การเทรด: อ้างอิงสัญญาณเทคนิคจากเส้นค่าเฉลี่ย EMA และระดับ Pivot Points ในการตัดสินใจลงทุนตามรอบปกติ.",
             "topic": "ผลการดำเนินงานและทิศทางธุรกิจ",
@@ -2784,8 +2449,8 @@
             "published": "06 Nov 2026",
             "raw_date": "Fri, 06 Nov 2026 19:54:57 GMT",
             "sentiment": "neutral",
-            "title_th": "Bank of America reports its TriMas (TRS) stake, with no sole voting power.",
-            "summary_th": "• สำนักข่าว Stock Titan รายงานสถานการณ์ทั่วไปของ BAC ในประเด็น 'Bank of America reports its TriMas (TRS) stake, with no sole voting power.'.\n• บริบทและเนื้อหาสำคัญ: ติดตามพัฒนาการในหมวด การดำเนินงานตามแผนยุทธศาสตร์และการแข่งขันในอุตสาหกรรม ซึ่งเป็นการดำเนินงานตามแผนธุรกิจปกติ.\n• นัยต่อปัจจัยพื้นฐาน: โครงสร้างพื้นฐานของธุรกิจยังคงดำเนินไปอย่างมีเสถียรภาพ ไม่พบการเปลี่ยนแปลงเชิงโครงสร้างที่มีนัยสำคัญ.\n• พฤติกรรมเม็ดเงินสถาบัน: ปริมาณการซื้อขายยังคงเคลื่อนไหวตามสภาวะตลาดโดยรวม.",
+            "title_th": "Bank of America รายงานสัดส่วนการถือหุ้นของ TriMas (TRS) โดยไม่มีอำนาจในการลงคะแนนเสียงเพียงอย่างเดียว",
+            "summary_th": "• สำนักข่าว Stock Titan รายงานสถานการณ์ทั่วไปของ BAC ในประเด็น 'Bank of America รายงานสัดส่วนการถือหุ้นของ TriMas (TRS) โดยไม่มีอำนาจในการลงคะแนนเสียงเพียงอย่างเดียว'.\n• บริบทและเนื้อหาสำคัญ: ติดตามพัฒนาการในหมวด การดำเนินงานตามแผนยุทธศาสตร์และการแข่งขันในอุตสาหกรรม ซึ่งเป็นการดำเนินงานตามแผนธุรกิจปกติ.\n• นัยต่อปัจจัยพื้นฐาน: โครงสร้างพื้นฐานของธุรกิจยังคงดำเนินไปอย่างมีเสถียรภาพ ไม่พบการเปลี่ยนแปลงเชิงโครงสร้างที่มีนัยสำคัญ.\n• พฤติกรรมเม็ดเงินสถาบัน: ปริมาณการซื้อขายยังคงเคลื่อนไหวตามสภาวะตลาดโดยรวม.",
             "impact_th": "⚪ เป็นกลาง (Neutral Stance): ไม่ได้สร้างแรงกระตุ้นรุนแรงต่อทิศทางราคา ทิศทางยังคงเคลื่อนไหวตามกรอบเทคนิคและเส้นแนวโน้มเดิม.",
             "action_th": "💡 แผนกลยุทธ์การเทรด: อ้างอิงสัญญาณเทคนิคจากเส้นค่าเฉลี่ย EMA และระดับ Pivot Points ในการตัดสินใจลงทุนตามรอบปกติ.",
             "topic": "ผลการดำเนินงานและทิศทางธุรกิจ",
@@ -2793,13 +2458,13 @@
           },
           {
             "title": "Bank of America revamps Uber stock target amid rider-price paradox",
-            "source": "Yahoo Finance",
-            "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPa3dJWUJOWlF1Z05CQ0x4RVl4aTU0RUVRQ2FJdldlWDBSdmZJOFVQaFZVTFJuMkFJZDgtX1N5VHBGdUdZUGJjb2s3RFBfNWNUeTI3QUxmbkZtSXktQVJlY3ZDTXdSamtCOGlZNmxydFVDMjB1STk3Q1NrYUEwa3dEQjhlM2phbHJKeThhVV9WTzRRTENNMmM4akFwYzE?oc=5",
+            "source": "TheStreet",
+            "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9WVDI5S2dOV2QzdVQ1NGp5OEtEcUlrZW9zZmRDOUZmSE1DNzZDN1hENFh6UXFIZE5GdFl3OFg2akM1QS1rLXhGUFpqV1dyRmItOWpmbmNEQ0FtTGNJeF9QMWJKZVdHSTczTjRoWGZ0ajV5eURfOXJSc01uZw?oc=5",
             "published": "06 Nov 2026",
-            "raw_date": "Fri, 06 Nov 2026 19:03:00 GMT",
+            "raw_date": "Fri, 06 Nov 2026 16:03:00 GMT",
             "sentiment": "neutral",
-            "title_th": "Bank of America revamps Uber stock target amid rider-price paradox",
-            "summary_th": "• สำนักข่าว Yahoo Finance รายงานสถานการณ์ทั่วไปของ BAC ในประเด็น 'Bank of America revamps Uber stock target amid rider-price paradox'.\n• บริบทและเนื้อหาสำคัญ: ติดตามพัฒนาการในหมวด การดำเนินงานตามแผนยุทธศาสตร์และการแข่งขันในอุตสาหกรรม ซึ่งเป็นการดำเนินงานตามแผนธุรกิจปกติ.\n• นัยต่อปัจจัยพื้นฐาน: โครงสร้างพื้นฐานของธุรกิจยังคงดำเนินไปอย่างมีเสถียรภาพ ไม่พบการเปลี่ยนแปลงเชิงโครงสร้างที่มีนัยสำคัญ.\n• พฤติกรรมเม็ดเงินสถาบัน: ปริมาณการซื้อขายยังคงเคลื่อนไหวตามสภาวะตลาดโดยรวม.",
+            "title_th": "Bank of America ปรับปรุงเป้าหมายหุ้น Uber ท่ามกลางความขัดแย้งด้านราคาของผู้โดยสาร",
+            "summary_th": "• สำนักข่าว TheStreet รายงานสถานการณ์ทั่วไปของ BAC ในประเด็น 'Bank of America ปรับปรุงเป้าหมายหุ้น Uber ท่ามกลางความขัดแย้งด้านราคาของผู้โดยสาร'.\n• บริบทและเนื้อหาสำคัญ: ติดตามพัฒนาการในหมวด การดำเนินงานตามแผนยุทธศาสตร์และการแข่งขันในอุตสาหกรรม ซึ่งเป็นการดำเนินงานตามแผนธุรกิจปกติ.\n• นัยต่อปัจจัยพื้นฐาน: โครงสร้างพื้นฐานของธุรกิจยังคงดำเนินไปอย่างมีเสถียรภาพ ไม่พบการเปลี่ยนแปลงเชิงโครงสร้างที่มีนัยสำคัญ.\n• พฤติกรรมเม็ดเงินสถาบัน: ปริมาณการซื้อขายยังคงเคลื่อนไหวตามสภาวะตลาดโดยรวม.",
             "impact_th": "⚪ เป็นกลาง (Neutral Stance): ไม่ได้สร้างแรงกระตุ้นรุนแรงต่อทิศทางราคา ทิศทางยังคงเคลื่อนไหวตามกรอบเทคนิคและเส้นแนวโน้มเดิม.",
             "action_th": "💡 แผนกลยุทธ์การเทรด: อ้างอิงสัญญาณเทคนิคจากเส้นค่าเฉลี่ย EMA และระดับ Pivot Points ในการตัดสินใจลงทุนตามรอบปกติ.",
             "topic": "ผลการดำเนินงานและทิศทางธุรกิจ",
@@ -2808,14 +2473,28 @@
         ],
         "all": [
           {
+            "title": "Cautious Bank Outlook Weighs on Stocks Despite Strong Earnings",
+            "source": "Global Finance Magazine",
+            "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1uT1JoMy05S256R0J0YWU1TDhuTDJiUWNuVVVZYnh1azNyMDhEZW4tTmc1TXlPNUhWUWdSemZxMVpWaUhobGtYVFM5dnJsTHhwU2hWQ2ZQSFFtLWRRTWR0S1I2WC1Rd1ZEVlg3UDBWWS10YTY1cFJFYg?oc=5",
+            "published": "06 Nov 2026",
+            "raw_date": "Fri, 06 Nov 2026 21:33:39 GMT",
+            "sentiment": "neutral",
+            "title_th": "แนวโน้มของธนาคารที่ระมัดระวังยังส่งผลต่อหุ้นแม้ว่ากำไรจะแข็งแกร่งก็ตาม",
+            "summary_th": "• สำนักข่าว Global Finance Magazine รายงานสถานการณ์ทั่วไปของ BAC ในประเด็น 'แนวโน้มของธนาคารที่ระมัดระวังยังส่งผลต่อหุ้นแม้ว่ากำไรจะแข็งแกร่งก็ตาม'.\n• บริบทและเนื้อหาสำคัญ: ติดตามพัฒนาการในหมวด การรายงานงบการเงินและตัวเลขกำไรต่อหุ้น (EPS) เทียบกับที่นักวิเคราะห์ Wall Street คาดการณ์ ซึ่งเป็นการดำเนินงานตามแผนธุรกิจปกติ.\n• นัยต่อปัจจัยพื้นฐาน: โครงสร้างพื้นฐานของธุรกิจยังคงดำเนินไปอย่างมีเสถียรภาพ ไม่พบการเปลี่ยนแปลงเชิงโครงสร้างที่มีนัยสำคัญ.\n• พฤติกรรมเม็ดเงินสถาบัน: ปริมาณการซื้อขายยังคงเคลื่อนไหวตามสภาวะตลาดโดยรวม.",
+            "impact_th": "⚪ เป็นกลาง (Neutral Stance): ไม่ได้สร้างแรงกระตุ้นรุนแรงต่อทิศทางราคา ทิศทางยังคงเคลื่อนไหวตามกรอบเทคนิคและเส้นแนวโน้มเดิม.",
+            "action_th": "💡 แผนกลยุทธ์การเทรด: อ้างอิงสัญญาณเทคนิคจากเส้นค่าเฉลี่ย EMA และระดับ Pivot Points ในการตัดสินใจลงทุนตามรอบปกติ.",
+            "topic": "รายงานผลประกอบการและตัวเลขทางการเงิน",
+            "ai_analyzed": false
+          },
+          {
             "title": "Bank of America Sees New Stock Market Winners After the Midterms",
             "source": "TipRanks",
             "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNeWh3MUh6ck9kc0hOcnQ2U1pWcGRINnY5bk1rQ3J6NWttckN0bFA0ZnF3cnFmLWZKaVlJbzBYNmR5amxIdzdaMV9udDRnSjc3aG5MZGgzVVhIRlR5dGZPLTNHMzJweFBzUkxsUFF0R2JsbWlNTnhMeFNvOUtRYXBwanpCU1NuUzNvX21vdVg1ei1fdGJ3eVdmTWN3?oc=5",
             "published": "06 Nov 2026",
             "raw_date": "Fri, 06 Nov 2026 20:26:36 GMT",
             "sentiment": "neutral",
-            "title_th": "Bank of America Sees New Stock Market Winners After the Midterms",
-            "summary_th": "• สำนักข่าว TipRanks รายงานสถานการณ์ทั่วไปของ BAC ในประเด็น 'Bank of America Sees New Stock Market Winners After the Midterms'.\n• บริบทและเนื้อหาสำคัญ: ติดตามพัฒนาการในหมวด การดำเนินงานตามแผนยุทธศาสตร์และการแข่งขันในอุตสาหกรรม ซึ่งเป็นการดำเนินงานตามแผนธุรกิจปกติ.\n• นัยต่อปัจจัยพื้นฐาน: โครงสร้างพื้นฐานของธุรกิจยังคงดำเนินไปอย่างมีเสถียรภาพ ไม่พบการเปลี่ยนแปลงเชิงโครงสร้างที่มีนัยสำคัญ.\n• พฤติกรรมเม็ดเงินสถาบัน: ปริมาณการซื้อขายยังคงเคลื่อนไหวตามสภาวะตลาดโดยรวม.",
+            "title_th": "Bank of America มองเห็นผู้ชนะในตลาดหุ้นรายใหม่หลังสอบกลางภาค",
+            "summary_th": "• สำนักข่าว TipRanks รายงานสถานการณ์ทั่วไปของ BAC ในประเด็น 'Bank of America มองเห็นผู้ชนะในตลาดหุ้นรายใหม่หลังสอบกลางภาค'.\n• บริบทและเนื้อหาสำคัญ: ติดตามพัฒนาการในหมวด การดำเนินงานตามแผนยุทธศาสตร์และการแข่งขันในอุตสาหกรรม ซึ่งเป็นการดำเนินงานตามแผนธุรกิจปกติ.\n• นัยต่อปัจจัยพื้นฐาน: โครงสร้างพื้นฐานของธุรกิจยังคงดำเนินไปอย่างมีเสถียรภาพ ไม่พบการเปลี่ยนแปลงเชิงโครงสร้างที่มีนัยสำคัญ.\n• พฤติกรรมเม็ดเงินสถาบัน: ปริมาณการซื้อขายยังคงเคลื่อนไหวตามสภาวะตลาดโดยรวม.",
             "impact_th": "⚪ เป็นกลาง (Neutral Stance): ไม่ได้สร้างแรงกระตุ้นรุนแรงต่อทิศทางราคา ทิศทางยังคงเคลื่อนไหวตามกรอบเทคนิคและเส้นแนวโน้มเดิม.",
             "action_th": "💡 แผนกลยุทธ์การเทรด: อ้างอิงสัญญาณเทคนิคจากเส้นค่าเฉลี่ย EMA และระดับ Pivot Points ในการตัดสินใจลงทุนตามรอบปกติ.",
             "topic": "ผลการดำเนินงานและทิศทางธุรกิจ",
@@ -2828,8 +2507,8 @@
             "published": "06 Nov 2026",
             "raw_date": "Fri, 06 Nov 2026 19:54:57 GMT",
             "sentiment": "neutral",
-            "title_th": "Bank of America reports its TriMas (TRS) stake, with no sole voting power.",
-            "summary_th": "• สำนักข่าว Stock Titan รายงานสถานการณ์ทั่วไปของ BAC ในประเด็น 'Bank of America reports its TriMas (TRS) stake, with no sole voting power.'.\n• บริบทและเนื้อหาสำคัญ: ติดตามพัฒนาการในหมวด การดำเนินงานตามแผนยุทธศาสตร์และการแข่งขันในอุตสาหกรรม ซึ่งเป็นการดำเนินงานตามแผนธุรกิจปกติ.\n• นัยต่อปัจจัยพื้นฐาน: โครงสร้างพื้นฐานของธุรกิจยังคงดำเนินไปอย่างมีเสถียรภาพ ไม่พบการเปลี่ยนแปลงเชิงโครงสร้างที่มีนัยสำคัญ.\n• พฤติกรรมเม็ดเงินสถาบัน: ปริมาณการซื้อขายยังคงเคลื่อนไหวตามสภาวะตลาดโดยรวม.",
+            "title_th": "Bank of America รายงานสัดส่วนการถือหุ้นของ TriMas (TRS) โดยไม่มีอำนาจในการลงคะแนนเสียงเพียงอย่างเดียว",
+            "summary_th": "• สำนักข่าว Stock Titan รายงานสถานการณ์ทั่วไปของ BAC ในประเด็น 'Bank of America รายงานสัดส่วนการถือหุ้นของ TriMas (TRS) โดยไม่มีอำนาจในการลงคะแนนเสียงเพียงอย่างเดียว'.\n• บริบทและเนื้อหาสำคัญ: ติดตามพัฒนาการในหมวด การดำเนินงานตามแผนยุทธศาสตร์และการแข่งขันในอุตสาหกรรม ซึ่งเป็นการดำเนินงานตามแผนธุรกิจปกติ.\n• นัยต่อปัจจัยพื้นฐาน: โครงสร้างพื้นฐานของธุรกิจยังคงดำเนินไปอย่างมีเสถียรภาพ ไม่พบการเปลี่ยนแปลงเชิงโครงสร้างที่มีนัยสำคัญ.\n• พฤติกรรมเม็ดเงินสถาบัน: ปริมาณการซื้อขายยังคงเคลื่อนไหวตามสภาวะตลาดโดยรวม.",
             "impact_th": "⚪ เป็นกลาง (Neutral Stance): ไม่ได้สร้างแรงกระตุ้นรุนแรงต่อทิศทางราคา ทิศทางยังคงเคลื่อนไหวตามกรอบเทคนิคและเส้นแนวโน้มเดิม.",
             "action_th": "💡 แผนกลยุทธ์การเทรด: อ้างอิงสัญญาณเทคนิคจากเส้นค่าเฉลี่ย EMA และระดับ Pivot Points ในการตัดสินใจลงทุนตามรอบปกติ.",
             "topic": "ผลการดำเนินงานและทิศทางธุรกิจ",
@@ -2837,29 +2516,15 @@
           },
           {
             "title": "Bank of America revamps Uber stock target amid rider-price paradox",
-            "source": "Yahoo Finance",
-            "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPa3dJWUJOWlF1Z05CQ0x4RVl4aTU0RUVRQ2FJdldlWDBSdmZJOFVQaFZVTFJuMkFJZDgtX1N5VHBGdUdZUGJjb2s3RFBfNWNUeTI3QUxmbkZtSXktQVJlY3ZDTXdSamtCOGlZNmxydFVDMjB1STk3Q1NrYUEwa3dEQjhlM2phbHJKeThhVV9WTzRRTENNMmM4akFwYzE?oc=5",
+            "source": "TheStreet",
+            "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9WVDI5S2dOV2QzdVQ1NGp5OEtEcUlrZW9zZmRDOUZmSE1DNzZDN1hENFh6UXFIZE5GdFl3OFg2akM1QS1rLXhGUFpqV1dyRmItOWpmbmNEQ0FtTGNJeF9QMWJKZVdHSTczTjRoWGZ0ajV5eURfOXJSc01uZw?oc=5",
             "published": "06 Nov 2026",
-            "raw_date": "Fri, 06 Nov 2026 19:03:00 GMT",
+            "raw_date": "Fri, 06 Nov 2026 16:03:00 GMT",
             "sentiment": "neutral",
-            "title_th": "Bank of America revamps Uber stock target amid rider-price paradox",
-            "summary_th": "• สำนักข่าว Yahoo Finance รายงานสถานการณ์ทั่วไปของ BAC ในประเด็น 'Bank of America revamps Uber stock target amid rider-price paradox'.\n• บริบทและเนื้อหาสำคัญ: ติดตามพัฒนาการในหมวด การดำเนินงานตามแผนยุทธศาสตร์และการแข่งขันในอุตสาหกรรม ซึ่งเป็นการดำเนินงานตามแผนธุรกิจปกติ.\n• นัยต่อปัจจัยพื้นฐาน: โครงสร้างพื้นฐานของธุรกิจยังคงดำเนินไปอย่างมีเสถียรภาพ ไม่พบการเปลี่ยนแปลงเชิงโครงสร้างที่มีนัยสำคัญ.\n• พฤติกรรมเม็ดเงินสถาบัน: ปริมาณการซื้อขายยังคงเคลื่อนไหวตามสภาวะตลาดโดยรวม.",
+            "title_th": "Bank of America ปรับปรุงเป้าหมายหุ้น Uber ท่ามกลางความขัดแย้งด้านราคาของผู้โดยสาร",
+            "summary_th": "• สำนักข่าว TheStreet รายงานสถานการณ์ทั่วไปของ BAC ในประเด็น 'Bank of America ปรับปรุงเป้าหมายหุ้น Uber ท่ามกลางความขัดแย้งด้านราคาของผู้โดยสาร'.\n• บริบทและเนื้อหาสำคัญ: ติดตามพัฒนาการในหมวด การดำเนินงานตามแผนยุทธศาสตร์และการแข่งขันในอุตสาหกรรม ซึ่งเป็นการดำเนินงานตามแผนธุรกิจปกติ.\n• นัยต่อปัจจัยพื้นฐาน: โครงสร้างพื้นฐานของธุรกิจยังคงดำเนินไปอย่างมีเสถียรภาพ ไม่พบการเปลี่ยนแปลงเชิงโครงสร้างที่มีนัยสำคัญ.\n• พฤติกรรมเม็ดเงินสถาบัน: ปริมาณการซื้อขายยังคงเคลื่อนไหวตามสภาวะตลาดโดยรวม.",
             "impact_th": "⚪ เป็นกลาง (Neutral Stance): ไม่ได้สร้างแรงกระตุ้นรุนแรงต่อทิศทางราคา ทิศทางยังคงเคลื่อนไหวตามกรอบเทคนิคและเส้นแนวโน้มเดิม.",
             "action_th": "💡 แผนกลยุทธ์การเทรด: อ้างอิงสัญญาณเทคนิคจากเส้นค่าเฉลี่ย EMA และระดับ Pivot Points ในการตัดสินใจลงทุนตามรอบปกติ.",
-            "topic": "ผลการดำเนินงานและทิศทางธุรกิจ",
-            "ai_analyzed": false
-          },
-          {
-            "title": "What Should Bank Of America Corporation Investors Know After 4.76% Stock Drop? The Law Offices of Frank R. Cruz Outlines Securities Fraud Class Action Lead Plaintiff Deadline",
-            "source": "PR Newswire",
-            "link": "https://news.google.com/rss/articles/CBMiywJBVV95cUxOaFhEY2wxVmRtY1lxM0xqbzhwR29maEt0M3p2N2JNNVJHRDVwZHNpZXlZaVhtMkpiVUEzOVhDNlFvRnVLSi1yTXhuemZJSEVxS2pfa3hXT1Bqd1U1MUFIMTFqTVlhZW1SNHdCUWVYX1o4STAyUXNweU52THdTY3lIMjNRX3J6QjdRR3JkUG5tdm1jU285emJFUFVERHJRbkhfcEVWRHRsYmFTZTY5cTg3YnItMUVmMUVRM3R0UTN0SVNxZFV4Z016ZmFiY0pfWkotZWpjTUEzRDBGM2R1RW9OU1VWLXVSWHBwbXl3TE9tQkQ5Zk9IUmpjc2ljbkt4QW00cFIxSW9DQmZ1UFFndzhpQ0ZvQ0xBMXRZNjJrRnVoZlA1Z3hhbHlmNUVKV1FkcFhsUkp6TFowZzVVMm5RR05RNWtucXdEZVBuelBF?oc=5",
-            "published": "06 Nov 2026",
-            "raw_date": "Fri, 06 Nov 2026 18:30:00 GMT",
-            "sentiment": "bearish",
-            "title_th": "What Should Bank Of America Corporation Investors Know After 4.76% Stock Drop? The Law Offices of Frank R. Cruz Outlines Securities Fraud Class Action Lead Plaintiff Deadline",
-            "summary_th": "• สำนักข่าว PR Newswire รายงานปัจจัยกดดันต่อ BAC ในประเด็น 'What Should Bank Of America Corporation Investors Know After 4.76% Stock Drop? The Law Offices of Frank R. Cruz Outlines Securities Fraud Class Action Lead Plaintiff Deadline'.\n• บริบทและเนื้อหาสำคัญ: ข่าวนี้ระบุถึงประเด็น การดำเนินงานตามแผนยุทธศาสตร์และการแข่งขันในอุตสาหกรรม ที่อาจก่อให้เกิดอุปสรรคชั่วคราวต่อการดำเนินงาน.\n• นัยต่อปัจจัยพื้นฐาน: ตลาดมีความกังวลต่อแรงกดดันด้านต้นทุน การชะลอตัวของคำสั่งซื้อ หรือความเสี่ยงด้านกฎระเบียบที่อาจกระทบต่อผลกำไร.\n• พฤติกรรมเม็ดเงินสถาบัน: มีแนวโน้มที่ผู้จัดการกองทุนจะชะลอการเข้าซื้อเพื่อประเมินสถานการณ์ หรือทยอยขายทำกำไรลดความเสี่ยงบางส่วน.",
-            "impact_th": "🔴 เชิงลบต่อราคาหุ้น (Bearish Risk): อาจสร้างแรงกระเพื่อมเชิงลบในระยะสั้น ส่งผลให้ราคาหุ้นเผชิญแรงขายทำกำไรหรือพักฐานลงมาทดสอบแนวรับล่าง.",
-            "action_th": "💡 แผนกลยุทธ์การเทรด: ชะลอการเข้าซื้อก้อนใหญ่ (Wait & See) ควรรอให้แรงขายชะลอตัวและราคาสร้างฐานแนวรับที่มั่นคง พร้อมตั้งระดับ Stop Loss หรือจุด Invalidation ตามกรอบทางเทคนิคอย่างเคร่งครัด.",
             "topic": "ผลการดำเนินงานและทิศทางธุรกิจ",
             "ai_analyzed": false
           }
@@ -2868,35 +2533,35 @@
       },
       "news": [
         {
+          "title": "Cautious Bank Outlook Weighs on Stocks Despite Strong Earnings",
+          "source": "Global Finance Magazine",
+          "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1uT1JoMy05S256R0J0YWU1TDhuTDJiUWNuVVVZYnh1azNyMDhEZW4tTmc1TXlPNUhWUWdSemZxMVpWaUhobGtYVFM5dnJsTHhwU2hWQ2ZQSFFtLWRRTWR0S1I2WC1Rd1ZEVlg3UDBWWS10YTY1cFJFYg?oc=5",
+          "published": "06 Nov 2026",
+          "raw_date": "Fri, 06 Nov 2026 21:33:39 GMT",
+          "sentiment": "neutral",
+          "title_th": "แนวโน้มของธนาคารที่ระมัดระวังยังส่งผลต่อหุ้นแม้ว่ากำไรจะแข็งแกร่งก็ตาม",
+          "summary_th": "• สำนักข่าว Global Finance Magazine รายงานสถานการณ์ทั่วไปของ BAC ในประเด็น 'แนวโน้มของธนาคารที่ระมัดระวังยังส่งผลต่อหุ้นแม้ว่ากำไรจะแข็งแกร่งก็ตาม'.\n• บริบทและเนื้อหาสำคัญ: ติดตามพัฒนาการในหมวด การรายงานงบการเงินและตัวเลขกำไรต่อหุ้น (EPS) เทียบกับที่นักวิเคราะห์ Wall Street คาดการณ์ ซึ่งเป็นการดำเนินงานตามแผนธุรกิจปกติ.\n• นัยต่อปัจจัยพื้นฐาน: โครงสร้างพื้นฐานของธุรกิจยังคงดำเนินไปอย่างมีเสถียรภาพ ไม่พบการเปลี่ยนแปลงเชิงโครงสร้างที่มีนัยสำคัญ.\n• พฤติกรรมเม็ดเงินสถาบัน: ปริมาณการซื้อขายยังคงเคลื่อนไหวตามสภาวะตลาดโดยรวม.",
+          "impact_th": "⚪ เป็นกลาง (Neutral Stance): ไม่ได้สร้างแรงกระตุ้นรุนแรงต่อทิศทางราคา ทิศทางยังคงเคลื่อนไหวตามกรอบเทคนิคและเส้นแนวโน้มเดิม.",
+          "action_th": "💡 แผนกลยุทธ์การเทรด: อ้างอิงสัญญาณเทคนิคจากเส้นค่าเฉลี่ย EMA และระดับ Pivot Points ในการตัดสินใจลงทุนตามรอบปกติ.",
+          "topic": "รายงานผลประกอบการและตัวเลขทางการเงิน",
+          "ai_analyzed": false
+        },
+        {
           "title": "Bank of America Sees New Stock Market Winners After the Midterms",
           "source": "TipRanks",
           "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNeWh3MUh6ck9kc0hOcnQ2U1pWcGRINnY5bk1rQ3J6NWttckN0bFA0ZnF3cnFmLWZKaVlJbzBYNmR5amxIdzdaMV9udDRnSjc3aG5MZGgzVVhIRlR5dGZPLTNHMzJweFBzUkxsUFF0R2JsbWlNTnhMeFNvOUtRYXBwanpCU1NuUzNvX21vdVg1ei1fdGJ3eVdmTWN3?oc=5",
           "published": "06 Nov 2026",
           "raw_date": "Fri, 06 Nov 2026 20:26:36 GMT",
           "sentiment": "neutral",
-          "title_th": "Bank of America Sees New Stock Market Winners After the Midterms",
-          "summary_th": "• สำนักข่าว TipRanks รายงานสถานการณ์ทั่วไปของ BAC ในประเด็น 'Bank of America Sees New Stock Market Winners After the Midterms'.\n• บริบทและเนื้อหาสำคัญ: ติดตามพัฒนาการในหมวด การดำเนินงานตามแผนยุทธศาสตร์และการแข่งขันในอุตสาหกรรม ซึ่งเป็นการดำเนินงานตามแผนธุรกิจปกติ.\n• นัยต่อปัจจัยพื้นฐาน: โครงสร้างพื้นฐานของธุรกิจยังคงดำเนินไปอย่างมีเสถียรภาพ ไม่พบการเปลี่ยนแปลงเชิงโครงสร้างที่มีนัยสำคัญ.\n• พฤติกรรมเม็ดเงินสถาบัน: ปริมาณการซื้อขายยังคงเคลื่อนไหวตามสภาวะตลาดโดยรวม.",
-          "impact_th": "⚪ เป็นกลาง (Neutral Stance): ไม่ได้สร้างแรงกระตุ้นรุนแรงต่อทิศทางราคา ทิศทางยังคงเคลื่อนไหวตามกรอบเทคนิคและเส้นแนวโน้มเดิม.",
-          "action_th": "💡 แผนกลยุทธ์การเทรด: อ้างอิงสัญญาณเทคนิคจากเส้นค่าเฉลี่ย EMA และระดับ Pivot Points ในการตัดสินใจลงทุนตามรอบปกติ.",
-          "topic": "ผลการดำเนินงานและทิศทางธุรกิจ",
-          "ai_analyzed": false
-        },
-        {
-          "title": "Bank of America reports its TriMas (TRS) stake, with no sole voting power.",
-          "source": "Stock Titan",
-          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQOGZrUURsWWlHLUp3eXA2bUFrT0x5LThpWmh1djJQSVhYZXJjLVJiUUpvaTREMWFHRWg1bXBCUVJEUE05VDBqZDg5UFJqRk02Ymc3S0JTV3FrLUU2QW0wRlR6V3RnOG5odE82RHNsQ2RWRXpTSUgyaDFYdHBnLVEzS196R1JSSUZvWmpjNF9uUzBKeWFtVlNEWG4wU2NMUmxZdy1CYkxDenYxeUdGMUJoaXBLemdUYlVCT2FtZThTRXpBOVk?oc=5",
-          "published": "06 Nov 2026",
-          "raw_date": "Fri, 06 Nov 2026 19:54:57 GMT",
-          "sentiment": "neutral",
-          "title_th": "Bank of America reports its TriMas (TRS) stake, with no sole voting power.",
-          "summary_th": "• สำนักข่าว Stock Titan รายงานสถานการณ์ทั่วไปของ BAC ในประเด็น 'Bank of America reports its TriMas (TRS) stake, with no sole voting power.'.\n• บริบทและเนื้อหาสำคัญ: ติดตามพัฒนาการในหมวด การดำเนินงานตามแผนยุทธศาสตร์และการแข่งขันในอุตสาหกรรม ซึ่งเป็นการดำเนินงานตามแผนธุรกิจปกติ.\n• นัยต่อปัจจัยพื้นฐาน: โครงสร้างพื้นฐานของธุรกิจยังคงดำเนินไปอย่างมีเสถียรภาพ ไม่พบการเปลี่ยนแปลงเชิงโครงสร้างที่มีนัยสำคัญ.\n• พฤติกรรมเม็ดเงินสถาบัน: ปริมาณการซื้อขายยังคงเคลื่อนไหวตามสภาวะตลาดโดยรวม.",
+          "title_th": "Bank of America มองเห็นผู้ชนะในตลาดหุ้นรายใหม่หลังสอบกลางภาค",
+          "summary_th": "• สำนักข่าว TipRanks รายงานสถานการณ์ทั่วไปของ BAC ในประเด็น 'Bank of America มองเห็นผู้ชนะในตลาดหุ้นรายใหม่หลังสอบกลางภาค'.\n• บริบทและเนื้อหาสำคัญ: ติดตามพัฒนาการในหมวด การดำเนินงานตามแผนยุทธศาสตร์และการแข่งขันในอุตสาหกรรม ซึ่งเป็นการดำเนินงานตามแผนธุรกิจปกติ.\n• นัยต่อปัจจัยพื้นฐาน: โครงสร้างพื้นฐานของธุรกิจยังคงดำเนินไปอย่างมีเสถียรภาพ ไม่พบการเปลี่ยนแปลงเชิงโครงสร้างที่มีนัยสำคัญ.\n• พฤติกรรมเม็ดเงินสถาบัน: ปริมาณการซื้อขายยังคงเคลื่อนไหวตามสภาวะตลาดโดยรวม.",
           "impact_th": "⚪ เป็นกลาง (Neutral Stance): ไม่ได้สร้างแรงกระตุ้นรุนแรงต่อทิศทางราคา ทิศทางยังคงเคลื่อนไหวตามกรอบเทคนิคและเส้นแนวโน้มเดิม.",
           "action_th": "💡 แผนกลยุทธ์การเทรด: อ้างอิงสัญญาณเทคนิคจากเส้นค่าเฉลี่ย EMA และระดับ Pivot Points ในการตัดสินใจลงทุนตามรอบปกติ.",
           "topic": "ผลการดำเนินงานและทิศทางธุรกิจ",
           "ai_analyzed": false
         }
       ],
-      "weight_pct": 2.925734986956578,
+      "weight_pct": 3.10431074636506,
       "alerts": [],
       "rating": {
         "stars_count": 1,
@@ -2956,443 +2621,9 @@
           }
         ],
         "wall_street_verdict": "โบรกเกอร์ 24 แห่ง (Buy 19 / Hold 5 / Sell 0) เป้าหมายต่ำสุดของวอลล์สตรีทอยู่ที่ $55.00 ซึ่งสูงกว่าต้นทุนของคุณ ($54.31) อยู่ $0.69 เป้าหมายเฉลี่ย $62.28 (Upside +26.0%)",
-        "tailored_roadmap": "วันงบถัดไปอยู่ห่างอีก 70 วัน ไม่มีความเสี่ยงเรื่องงบตกใจในระยะสั้น. เนื่องจากราคาซื้อขายต่ำกว่าเป้าหมายต่ำสุดของสถาบัน จึงติดตามจังหวะดีดตัวทางเทคนิคหรือพิจารณาตามแผนแนวรับสำคัญ",
+        "tailored_roadmap": "วันงบถัดไปอยู่ห่างอีก 69 วัน ไม่มีความเสี่ยงเรื่องงบตกใจในระยะสั้น. เนื่องจากราคาซื้อขายต่ำกว่าเป้าหมายต่ำสุดของสถาบัน จึงติดตามจังหวะดีดตัวทางเทคนิคหรือพิจารณาตามแผนแนวรับสำคัญ",
         "invalidation_risk": "หากราคาปิดหลุดแนวรับ Stop-Loss และมีปัจจัยเสี่ยงเศรษฐกิจถดถอยรุนแรง (Hard Landing) จนหนี้เสียพุ่ง ให้ลดขนาดสถานะลงครึ่งหนึ่ง",
         "curated_as_of": "2026-10-17"
-      }
-    },
-    {
-      "ticker": "MNST",
-      "data_missing": false,
-      "price_missing": false,
-      "name": "Monster Beverage Corp",
-      "business_summary": "ผู้ผลิตและจัดจำหน่ายเครื่องดื่มชูกำลังชั้นนำของโลก (Monster Energy)",
-      "exchange": "NASDAQ",
-      "shares": 17.3443578,
-      "avg_cost_usd": 42.935,
-      "avg_cost_thb": 1443.4746035970268,
-      "total_cost_usd": 744.68,
-      "cost_thb": 25036.14,
-      "close_price": 45.72,
-      "change_pct": -4.411457244407275,
-      "current_val_usd": 792.984038616,
-      "current_val_thb": 26604.6144955668,
-      "unrealized_pl_usd": 48.30403861600007,
-      "unrealized_pl_thb": 1568.4744955667993,
-      "unrealized_pl_pct": 6.486549741634,
-      "daily_diff_usd": -36.59659495800008,
-      "daily_diff_thb": -1227.815760840902,
-      "rsi": 48.83,
-      "rsi_weekly": 53.82,
-      "stoch_k": 43.0,
-      "stoch_d": 56.62,
-      "mfi": 44.8,
-      "sma200": 43.27,
-      "ema200": 43.04,
-      "dist_sma200_pct": 5.66,
-      "dist_ema200_pct": 6.23,
-      "in_value_zone": true,
-      "is_plunge_day": true,
-      "score": 5.7,
-      "stock_score": {
-        "total": 97.6,
-        "grade": "A+",
-        "stars": 5,
-        "pillars": {
-          "fundamental": 96.0,
-          "timing": 100.0
-        },
-        "coverage": 1.0,
-        "earnings_guard": false,
-        "reasons": [
-          "Rev Growth +20% 🚀",
-          "Net Income +35% 🚀",
-          "Elite ROE (26%) 🏆",
-          "Fair PEG 1.29",
-          "Safe Debt (D/E 0.00) 🛡️",
-          "FCF Cash Cow 💵",
-          "Value Zone เหนือ EMA200 (+6.2%) 💎"
-        ],
-        "fundamental": {
-          "applicable": true,
-          "points": 24.0,
-          "max_points": 25,
-          "pct": 96.0,
-          "coverage": 1.0,
-          "grade": "A+",
-          "metrics": {
-            "rev_growth_yoy": {
-              "value": 20.365026735943147,
-              "points": 5,
-              "max": 5,
-              "label": "Rev Growth +20% 🚀"
-            },
-            "net_inc_growth_yoy": {
-              "value": 35.22607166440937,
-              "points": 5,
-              "max": 5,
-              "label": "Net Income +35% 🚀"
-            },
-            "roe": {
-              "value": 25.7035567497644,
-              "points": 5,
-              "max": 5,
-              "label": "Elite ROE (26%) 🏆"
-            },
-            "peg": {
-              "value": 1.2885801761629119,
-              "points": 3,
-              "max": 4,
-              "label": "Fair PEG 1.29"
-            },
-            "debt_to_equity": {
-              "value": 0,
-              "points": 3,
-              "max": 3,
-              "label": "Safe Debt (D/E 0.00) 🛡️"
-            },
-            "fcf": {
-              "value": 2097916000.0000002,
-              "points": 3,
-              "max": 3,
-              "label": "FCF Cash Cow 💵"
-            }
-          },
-          "reasons": [
-            "Rev Growth +20% 🚀",
-            "Net Income +35% 🚀",
-            "Elite ROE (26%) 🏆",
-            "Fair PEG 1.29",
-            "Safe Debt (D/E 0.00) 🛡️",
-            "FCF Cash Cow 💵"
-          ]
-        },
-        "timing": {
-          "entry_signal": false,
-          "points": 6.0,
-          "max_points": 6,
-          "pct": 100.0,
-          "coverage": 1.0,
-          "metrics": {
-            "ema200_dist": {
-              "value": 6.232382253351708,
-              "points": 6,
-              "max": 6,
-              "label": "Value Zone เหนือ EMA200 (+6.2%) 💎"
-            }
-          },
-          "reasons": [
-            "Value Zone เหนือ EMA200 (+6.2%) 💎"
-          ]
-        }
-      },
-      "tier": "👀 รอสร้างฐาน (Forming Base - วันทิ้งตัว)",
-      "signal_tags": [
-        "Above SMA200",
-        "Value Zone (0-10% เหนือ EMA200) 💎",
-        "Weekly Bullish (RSI≥45)",
-        "High Vol (1.6x)",
-        "Green Reversal Candle 🕯️🟢",
-        "Rev Growth +20% 🚀",
-        "Net Income +35% 🚀",
-        "Elite ROE (26%) 🏆",
-        "Fair PEG 1.29",
-        "Safe Debt (D/E 0.00) 🛡️",
-        "FCF Cash Cow 💵"
-      ],
-      "days_to_earnings": 118,
-      "earnings_date": "04 Mar 2027",
-      "is_earnings_near": false,
-      "key_support": 43.27,
-      "support_desc": "เส้น 200 วัน (SMA 200)",
-      "key_resistance": 48.99,
-      "resistance_desc": "ขอบบน Bollinger Band",
-      "stop_loss": 43.7,
-      "take_profit": 49.38,
-      "rr_ratio": 1.8,
-      "tv_url": "https://www.tradingview.com/chart/?symbol=NASDAQ:MNST",
-      "rev_growth_yoy": 20.37,
-      "net_inc_growth_yoy": 35.23,
-      "roe": 25.7,
-      "debt_to_equity": 0,
-      "peg": 1.29,
-      "pe": 42.43,
-      "rec_mark": 1.52,
-      "fcf": 2097916000.0000002,
-      "price_target_average": 50.69,
-      "price_target_high": 57,
-      "price_target_low": 42,
-      "target_upside_pct": 10.9,
-      "rec_buy": 14,
-      "rec_hold": 13,
-      "rec_sell": 0,
-      "sector": "Consumer Non-Durables",
-      "industry": "Beverages: Non-Alcoholic",
-      "fundamental": {
-        "applicable": true,
-        "points": 24.0,
-        "max_points": 25,
-        "pct": 96.0,
-        "coverage": 1.0,
-        "grade": "A+",
-        "metrics": {
-          "rev_growth_yoy": {
-            "value": 20.365026735943147,
-            "points": 5,
-            "max": 5,
-            "label": "Rev Growth +20% 🚀"
-          },
-          "net_inc_growth_yoy": {
-            "value": 35.22607166440937,
-            "points": 5,
-            "max": 5,
-            "label": "Net Income +35% 🚀"
-          },
-          "roe": {
-            "value": 25.7035567497644,
-            "points": 5,
-            "max": 5,
-            "label": "Elite ROE (26%) 🏆"
-          },
-          "peg": {
-            "value": 1.2885801761629119,
-            "points": 3,
-            "max": 4,
-            "label": "Fair PEG 1.29"
-          },
-          "debt_to_equity": {
-            "value": 0,
-            "points": 3,
-            "max": 3,
-            "label": "Safe Debt (D/E 0.00) 🛡️"
-          },
-          "fcf": {
-            "value": 2097916000.0000002,
-            "points": 3,
-            "max": 3,
-            "label": "FCF Cash Cow 💵"
-          }
-        },
-        "reasons": [
-          "Rev Growth +20% 🚀",
-          "Net Income +35% 🚀",
-          "Elite ROE (26%) 🏆",
-          "Fair PEG 1.29",
-          "Safe Debt (D/E 0.00) 🛡️",
-          "FCF Cash Cow 💵"
-        ]
-      },
-      "catalysts": {
-        "ticker": "MNST",
-        "bullish": [],
-        "bearish": [
-          {
-            "title": "Why Monster (MNST) shares are trading lower today",
-            "source": "TradingView",
-            "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQNHhlVXQ1SVZnVGI1MFdKYVhXZXRqR2xSd1YxNzVGOXQ3aVlHUjN3QjVKTnBuNE5WdjY0T1d6VjNOVkdmZWVDNUljWG43TnZOclo3ekJkSUNwQThBdURsNl81bUhmRzIxNTRweF9VaUd1SkNjMlBlS1dLc01GNTVjcWVneDJvT29HZzc0X25xZkJfNVRXeGZ3Mm1RdXQ5Wk9vV29CQzhnVjFFSnpG?oc=5",
-            "published": "06 Nov 2026",
-            "raw_date": "Fri, 06 Nov 2026 19:10:42 GMT",
-            "sentiment": "bearish",
-            "title_th": "Why Monster (MNST) shares are trading lower today",
-            "summary_th": "• สำนักข่าว TradingView รายงานปัจจัยกดดันต่อ MNST ในประเด็น 'Why Monster (MNST) shares are trading lower today'.\n• บริบทและเนื้อหาสำคัญ: ข่าวนี้ระบุถึงประเด็น การดำเนินงานตามแผนยุทธศาสตร์และการแข่งขันในอุตสาหกรรม ที่อาจก่อให้เกิดอุปสรรคชั่วคราวต่อการดำเนินงาน.\n• นัยต่อปัจจัยพื้นฐาน: ตลาดมีความกังวลต่อแรงกดดันด้านต้นทุน การชะลอตัวของคำสั่งซื้อ หรือความเสี่ยงด้านกฎระเบียบที่อาจกระทบต่อผลกำไร.\n• พฤติกรรมเม็ดเงินสถาบัน: มีแนวโน้มที่ผู้จัดการกองทุนจะชะลอการเข้าซื้อเพื่อประเมินสถานการณ์ หรือทยอยขายทำกำไรลดความเสี่ยงบางส่วน.",
-            "impact_th": "🔴 เชิงลบต่อราคาหุ้น (Bearish Risk): อาจสร้างแรงกระเพื่อมเชิงลบในระยะสั้น ส่งผลให้ราคาหุ้นเผชิญแรงขายทำกำไรหรือพักฐานลงมาทดสอบแนวรับล่าง.",
-            "action_th": "💡 แผนกลยุทธ์การเทรด: ชะลอการเข้าซื้อก้อนใหญ่ (Wait & See) ควรรอให้แรงขายชะลอตัวและราคาสร้างฐานแนวรับที่มั่นคง พร้อมตั้งระดับ Stop Loss หรือจุด Invalidation ตามกรอบทางเทคนิคอย่างเคร่งครัด.",
-            "topic": "ผลการดำเนินงานและทิศทางธุรกิจ",
-            "ai_analyzed": false
-          }
-        ],
-        "neutral": [
-          {
-            "title": "Monster earnings analysis: questions answered and next catalysts By Investing.com",
-            "source": "Investing.com Canada",
-            "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQd24xUzU3UkI1YVJYQUdiZENRYVBncmJMNU04OG1VS2k2U0RTbjJUZXVRUjNqUWdrSUJEVHZRMkkzSFJzRllYU2RkNXVnOGJBRGVXblppVzZrbjRFcDNpLTRNQXQwcnF4ZmNjNkpId2ptMmg3aGJ1X1ItM0R2cnQ5TzJSbUJJZWZBRU9nczNlNno4YWZ0Tk5NVHgyNFlKY1E0bkRhY2VxSkExZ3M4a1FNNUxmNG9WbGNEU09iRW5JWVJ1UQ?oc=5",
-            "published": "06 Nov 2026",
-            "raw_date": "Fri, 06 Nov 2026 18:22:25 GMT",
-            "sentiment": "neutral",
-            "title_th": "Monster earnings analysis: questions answered and next catalysts By Investing.com",
-            "summary_th": "• สำนักข่าว Investing.com Canada รายงานสถานการณ์ทั่วไปของ MNST ในประเด็น 'Monster earnings analysis: questions answered and next catalysts By Investing.com'.\n• บริบทและเนื้อหาสำคัญ: ติดตามพัฒนาการในหมวด การรายงานงบการเงินและตัวเลขกำไรต่อหุ้น (EPS) เทียบกับที่นักวิเคราะห์ Wall Street คาดการณ์ ซึ่งเป็นการดำเนินงานตามแผนธุรกิจปกติ.\n• นัยต่อปัจจัยพื้นฐาน: โครงสร้างพื้นฐานของธุรกิจยังคงดำเนินไปอย่างมีเสถียรภาพ ไม่พบการเปลี่ยนแปลงเชิงโครงสร้างที่มีนัยสำคัญ.\n• พฤติกรรมเม็ดเงินสถาบัน: ปริมาณการซื้อขายยังคงเคลื่อนไหวตามสภาวะตลาดโดยรวม.",
-            "impact_th": "⚪ เป็นกลาง (Neutral Stance): ไม่ได้สร้างแรงกระตุ้นรุนแรงต่อทิศทางราคา ทิศทางยังคงเคลื่อนไหวตามกรอบเทคนิคและเส้นแนวโน้มเดิม.",
-            "action_th": "💡 แผนกลยุทธ์การเทรด: อ้างอิงสัญญาณเทคนิคจากเส้นค่าเฉลี่ย EMA และระดับ Pivot Points ในการตัดสินใจลงทุนตามรอบปกติ.",
-            "topic": "รายงานผลประกอบการและตัวเลขทางการเงิน",
-            "ai_analyzed": false
-          },
-          {
-            "title": "Monster Beverage (MNST), Why Is Its Latest Update Drawing Attention?",
-            "source": "Simply Wall St",
-            "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNbllNYW8wajM3c3R0ZlN3UmxWV0diMExuckRkbWh0THJrY3FITWo3aXNwMm11UG5UeDA3cjFPU245aDFaanc4bExLVGhxeFRiTzZqQS1sbHZCdDB0bGZfTnVfS3l0RGFBU19Vc2xMMnc4UjFBM29yNHlIREM4QnVjTloyZFNORzNrT0dhWm8xLVZJdExvbWd0blNmeHA2LWQwY1BmY2NyQmhkUG82WGRNek1zNFpMTHZUUEZwbU04Njd2aHV0MEFpRndNRU5NZDlRc1R2aGxnbHNkamZOM1h3ZWZ30gHnAUFVX3lxTE43azAxMld4RmVhY2FUT1RuYWlJQzFxa19MakQ5blR0dWJvQ3VwNE1LbXJlczRaVFd6MWN5TmY1ZDBBcWVwYlM3eldmQmI2YkdCVE5fM2ZoRTdrRzdUV1dmVFlRcEh3cW1EOWRKR1lBNVk3ZnFxT29BYjVnUFJ1a1ZobWJVVG5BMC1WWU9OYndiYnNtWTBHa0JHUkxGWk9rLUlNV0NSMW5CZGhSQ0JrTlQ1enUyQmpJSV9TcDRsd2dVUnlhM08zQlpFaGtkUXZvVFFCQ3BzbDdsdkxlOERlS3JXUU9uLTBKUQ?oc=5",
-            "published": "06 Nov 2026",
-            "raw_date": "Fri, 06 Nov 2026 18:20:50 GMT",
-            "sentiment": "neutral",
-            "title_th": "Monster Beverage (MNST), Why Is Its Latest Update Drawing Attention?",
-            "summary_th": "• สำนักข่าว Simply Wall St รายงานสถานการณ์ทั่วไปของ MNST ในประเด็น 'Monster Beverage (MNST), Why Is Its Latest Update Drawing Attention?'.\n• บริบทและเนื้อหาสำคัญ: ติดตามพัฒนาการในหมวด การดำเนินงานตามแผนยุทธศาสตร์และการแข่งขันในอุตสาหกรรม ซึ่งเป็นการดำเนินงานตามแผนธุรกิจปกติ.\n• นัยต่อปัจจัยพื้นฐาน: โครงสร้างพื้นฐานของธุรกิจยังคงดำเนินไปอย่างมีเสถียรภาพ ไม่พบการเปลี่ยนแปลงเชิงโครงสร้างที่มีนัยสำคัญ.\n• พฤติกรรมเม็ดเงินสถาบัน: ปริมาณการซื้อขายยังคงเคลื่อนไหวตามสภาวะตลาดโดยรวม.",
-            "impact_th": "⚪ เป็นกลาง (Neutral Stance): ไม่ได้สร้างแรงกระตุ้นรุนแรงต่อทิศทางราคา ทิศทางยังคงเคลื่อนไหวตามกรอบเทคนิคและเส้นแนวโน้มเดิม.",
-            "action_th": "💡 แผนกลยุทธ์การเทรด: อ้างอิงสัญญาณเทคนิคจากเส้นค่าเฉลี่ย EMA และระดับ Pivot Points ในการตัดสินใจลงทุนตามรอบปกติ.",
-            "topic": "ผลการดำเนินงานและทิศทางธุรกิจ",
-            "ai_analyzed": false
-          },
-          {
-            "title": "Why is Monster Beverage stock sliding today?",
-            "source": "Investing.com",
-            "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNd1Y4SXN5WmZtZS1fakdlalFEazg0aUxZek9aWEdZeUh0ZTNoY2prOHBzN3ZuUXFDTzNpbFBTMU9DSE5FSDlWYmR1aFpjQ2JEZjZoazdFVDNKcF9lUVBpLTR2dzNpcHFWTlNPZG1lWlptRUpURnhyZzN1czZaemdZSkowUzhUU0tmTm5OSnEzVXB3ZjNPZ0tvdTBoS3FScWFGa0g5ZVpMbE4?oc=5",
-            "published": "06 Nov 2026",
-            "raw_date": "Fri, 06 Nov 2026 17:08:31 GMT",
-            "sentiment": "neutral",
-            "title_th": "Why is Monster Beverage stock sliding today?",
-            "summary_th": "• สำนักข่าว Investing.com รายงานสถานการณ์ทั่วไปของ MNST ในประเด็น 'Why is Monster Beverage stock sliding today?'.\n• บริบทและเนื้อหาสำคัญ: ติดตามพัฒนาการในหมวด การดำเนินงานตามแผนยุทธศาสตร์และการแข่งขันในอุตสาหกรรม ซึ่งเป็นการดำเนินงานตามแผนธุรกิจปกติ.\n• นัยต่อปัจจัยพื้นฐาน: โครงสร้างพื้นฐานของธุรกิจยังคงดำเนินไปอย่างมีเสถียรภาพ ไม่พบการเปลี่ยนแปลงเชิงโครงสร้างที่มีนัยสำคัญ.\n• พฤติกรรมเม็ดเงินสถาบัน: ปริมาณการซื้อขายยังคงเคลื่อนไหวตามสภาวะตลาดโดยรวม.",
-            "impact_th": "⚪ เป็นกลาง (Neutral Stance): ไม่ได้สร้างแรงกระตุ้นรุนแรงต่อทิศทางราคา ทิศทางยังคงเคลื่อนไหวตามกรอบเทคนิคและเส้นแนวโน้มเดิม.",
-            "action_th": "💡 แผนกลยุทธ์การเทรด: อ้างอิงสัญญาณเทคนิคจากเส้นค่าเฉลี่ย EMA และระดับ Pivot Points ในการตัดสินใจลงทุนตามรอบปกติ.",
-            "topic": "ผลการดำเนินงานและทิศทางธุรกิจ",
-            "ai_analyzed": false
-          }
-        ],
-        "all": [
-          {
-            "title": "Why Monster (MNST) shares are trading lower today",
-            "source": "TradingView",
-            "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQNHhlVXQ1SVZnVGI1MFdKYVhXZXRqR2xSd1YxNzVGOXQ3aVlHUjN3QjVKTnBuNE5WdjY0T1d6VjNOVkdmZWVDNUljWG43TnZOclo3ekJkSUNwQThBdURsNl81bUhmRzIxNTRweF9VaUd1SkNjMlBlS1dLc01GNTVjcWVneDJvT29HZzc0X25xZkJfNVRXeGZ3Mm1RdXQ5Wk9vV29CQzhnVjFFSnpG?oc=5",
-            "published": "06 Nov 2026",
-            "raw_date": "Fri, 06 Nov 2026 19:10:42 GMT",
-            "sentiment": "bearish",
-            "title_th": "Why Monster (MNST) shares are trading lower today",
-            "summary_th": "• สำนักข่าว TradingView รายงานปัจจัยกดดันต่อ MNST ในประเด็น 'Why Monster (MNST) shares are trading lower today'.\n• บริบทและเนื้อหาสำคัญ: ข่าวนี้ระบุถึงประเด็น การดำเนินงานตามแผนยุทธศาสตร์และการแข่งขันในอุตสาหกรรม ที่อาจก่อให้เกิดอุปสรรคชั่วคราวต่อการดำเนินงาน.\n• นัยต่อปัจจัยพื้นฐาน: ตลาดมีความกังวลต่อแรงกดดันด้านต้นทุน การชะลอตัวของคำสั่งซื้อ หรือความเสี่ยงด้านกฎระเบียบที่อาจกระทบต่อผลกำไร.\n• พฤติกรรมเม็ดเงินสถาบัน: มีแนวโน้มที่ผู้จัดการกองทุนจะชะลอการเข้าซื้อเพื่อประเมินสถานการณ์ หรือทยอยขายทำกำไรลดความเสี่ยงบางส่วน.",
-            "impact_th": "🔴 เชิงลบต่อราคาหุ้น (Bearish Risk): อาจสร้างแรงกระเพื่อมเชิงลบในระยะสั้น ส่งผลให้ราคาหุ้นเผชิญแรงขายทำกำไรหรือพักฐานลงมาทดสอบแนวรับล่าง.",
-            "action_th": "💡 แผนกลยุทธ์การเทรด: ชะลอการเข้าซื้อก้อนใหญ่ (Wait & See) ควรรอให้แรงขายชะลอตัวและราคาสร้างฐานแนวรับที่มั่นคง พร้อมตั้งระดับ Stop Loss หรือจุด Invalidation ตามกรอบทางเทคนิคอย่างเคร่งครัด.",
-            "topic": "ผลการดำเนินงานและทิศทางธุรกิจ",
-            "ai_analyzed": false
-          },
-          {
-            "title": "Monster earnings analysis: questions answered and next catalysts By Investing.com",
-            "source": "Investing.com Canada",
-            "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQd24xUzU3UkI1YVJYQUdiZENRYVBncmJMNU04OG1VS2k2U0RTbjJUZXVRUjNqUWdrSUJEVHZRMkkzSFJzRllYU2RkNXVnOGJBRGVXblppVzZrbjRFcDNpLTRNQXQwcnF4ZmNjNkpId2ptMmg3aGJ1X1ItM0R2cnQ5TzJSbUJJZWZBRU9nczNlNno4YWZ0Tk5NVHgyNFlKY1E0bkRhY2VxSkExZ3M4a1FNNUxmNG9WbGNEU09iRW5JWVJ1UQ?oc=5",
-            "published": "06 Nov 2026",
-            "raw_date": "Fri, 06 Nov 2026 18:22:25 GMT",
-            "sentiment": "neutral",
-            "title_th": "Monster earnings analysis: questions answered and next catalysts By Investing.com",
-            "summary_th": "• สำนักข่าว Investing.com Canada รายงานสถานการณ์ทั่วไปของ MNST ในประเด็น 'Monster earnings analysis: questions answered and next catalysts By Investing.com'.\n• บริบทและเนื้อหาสำคัญ: ติดตามพัฒนาการในหมวด การรายงานงบการเงินและตัวเลขกำไรต่อหุ้น (EPS) เทียบกับที่นักวิเคราะห์ Wall Street คาดการณ์ ซึ่งเป็นการดำเนินงานตามแผนธุรกิจปกติ.\n• นัยต่อปัจจัยพื้นฐาน: โครงสร้างพื้นฐานของธุรกิจยังคงดำเนินไปอย่างมีเสถียรภาพ ไม่พบการเปลี่ยนแปลงเชิงโครงสร้างที่มีนัยสำคัญ.\n• พฤติกรรมเม็ดเงินสถาบัน: ปริมาณการซื้อขายยังคงเคลื่อนไหวตามสภาวะตลาดโดยรวม.",
-            "impact_th": "⚪ เป็นกลาง (Neutral Stance): ไม่ได้สร้างแรงกระตุ้นรุนแรงต่อทิศทางราคา ทิศทางยังคงเคลื่อนไหวตามกรอบเทคนิคและเส้นแนวโน้มเดิม.",
-            "action_th": "💡 แผนกลยุทธ์การเทรด: อ้างอิงสัญญาณเทคนิคจากเส้นค่าเฉลี่ย EMA และระดับ Pivot Points ในการตัดสินใจลงทุนตามรอบปกติ.",
-            "topic": "รายงานผลประกอบการและตัวเลขทางการเงิน",
-            "ai_analyzed": false
-          },
-          {
-            "title": "Monster Beverage (MNST), Why Is Its Latest Update Drawing Attention?",
-            "source": "Simply Wall St",
-            "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNbllNYW8wajM3c3R0ZlN3UmxWV0diMExuckRkbWh0THJrY3FITWo3aXNwMm11UG5UeDA3cjFPU245aDFaanc4bExLVGhxeFRiTzZqQS1sbHZCdDB0bGZfTnVfS3l0RGFBU19Vc2xMMnc4UjFBM29yNHlIREM4QnVjTloyZFNORzNrT0dhWm8xLVZJdExvbWd0blNmeHA2LWQwY1BmY2NyQmhkUG82WGRNek1zNFpMTHZUUEZwbU04Njd2aHV0MEFpRndNRU5NZDlRc1R2aGxnbHNkamZOM1h3ZWZ30gHnAUFVX3lxTE43azAxMld4RmVhY2FUT1RuYWlJQzFxa19MakQ5blR0dWJvQ3VwNE1LbXJlczRaVFd6MWN5TmY1ZDBBcWVwYlM3eldmQmI2YkdCVE5fM2ZoRTdrRzdUV1dmVFlRcEh3cW1EOWRKR1lBNVk3ZnFxT29BYjVnUFJ1a1ZobWJVVG5BMC1WWU9OYndiYnNtWTBHa0JHUkxGWk9rLUlNV0NSMW5CZGhSQ0JrTlQ1enUyQmpJSV9TcDRsd2dVUnlhM08zQlpFaGtkUXZvVFFCQ3BzbDdsdkxlOERlS3JXUU9uLTBKUQ?oc=5",
-            "published": "06 Nov 2026",
-            "raw_date": "Fri, 06 Nov 2026 18:20:50 GMT",
-            "sentiment": "neutral",
-            "title_th": "Monster Beverage (MNST), Why Is Its Latest Update Drawing Attention?",
-            "summary_th": "• สำนักข่าว Simply Wall St รายงานสถานการณ์ทั่วไปของ MNST ในประเด็น 'Monster Beverage (MNST), Why Is Its Latest Update Drawing Attention?'.\n• บริบทและเนื้อหาสำคัญ: ติดตามพัฒนาการในหมวด การดำเนินงานตามแผนยุทธศาสตร์และการแข่งขันในอุตสาหกรรม ซึ่งเป็นการดำเนินงานตามแผนธุรกิจปกติ.\n• นัยต่อปัจจัยพื้นฐาน: โครงสร้างพื้นฐานของธุรกิจยังคงดำเนินไปอย่างมีเสถียรภาพ ไม่พบการเปลี่ยนแปลงเชิงโครงสร้างที่มีนัยสำคัญ.\n• พฤติกรรมเม็ดเงินสถาบัน: ปริมาณการซื้อขายยังคงเคลื่อนไหวตามสภาวะตลาดโดยรวม.",
-            "impact_th": "⚪ เป็นกลาง (Neutral Stance): ไม่ได้สร้างแรงกระตุ้นรุนแรงต่อทิศทางราคา ทิศทางยังคงเคลื่อนไหวตามกรอบเทคนิคและเส้นแนวโน้มเดิม.",
-            "action_th": "💡 แผนกลยุทธ์การเทรด: อ้างอิงสัญญาณเทคนิคจากเส้นค่าเฉลี่ย EMA และระดับ Pivot Points ในการตัดสินใจลงทุนตามรอบปกติ.",
-            "topic": "ผลการดำเนินงานและทิศทางธุรกิจ",
-            "ai_analyzed": false
-          },
-          {
-            "title": "Why is Monster Beverage stock sliding today?",
-            "source": "Investing.com",
-            "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNd1Y4SXN5WmZtZS1fakdlalFEazg0aUxZek9aWEdZeUh0ZTNoY2prOHBzN3ZuUXFDTzNpbFBTMU9DSE5FSDlWYmR1aFpjQ2JEZjZoazdFVDNKcF9lUVBpLTR2dzNpcHFWTlNPZG1lWlptRUpURnhyZzN1czZaemdZSkowUzhUU0tmTm5OSnEzVXB3ZjNPZ0tvdTBoS3FScWFGa0g5ZVpMbE4?oc=5",
-            "published": "06 Nov 2026",
-            "raw_date": "Fri, 06 Nov 2026 17:08:31 GMT",
-            "sentiment": "neutral",
-            "title_th": "Why is Monster Beverage stock sliding today?",
-            "summary_th": "• สำนักข่าว Investing.com รายงานสถานการณ์ทั่วไปของ MNST ในประเด็น 'Why is Monster Beverage stock sliding today?'.\n• บริบทและเนื้อหาสำคัญ: ติดตามพัฒนาการในหมวด การดำเนินงานตามแผนยุทธศาสตร์และการแข่งขันในอุตสาหกรรม ซึ่งเป็นการดำเนินงานตามแผนธุรกิจปกติ.\n• นัยต่อปัจจัยพื้นฐาน: โครงสร้างพื้นฐานของธุรกิจยังคงดำเนินไปอย่างมีเสถียรภาพ ไม่พบการเปลี่ยนแปลงเชิงโครงสร้างที่มีนัยสำคัญ.\n• พฤติกรรมเม็ดเงินสถาบัน: ปริมาณการซื้อขายยังคงเคลื่อนไหวตามสภาวะตลาดโดยรวม.",
-            "impact_th": "⚪ เป็นกลาง (Neutral Stance): ไม่ได้สร้างแรงกระตุ้นรุนแรงต่อทิศทางราคา ทิศทางยังคงเคลื่อนไหวตามกรอบเทคนิคและเส้นแนวโน้มเดิม.",
-            "action_th": "💡 แผนกลยุทธ์การเทรด: อ้างอิงสัญญาณเทคนิคจากเส้นค่าเฉลี่ย EMA และระดับ Pivot Points ในการตัดสินใจลงทุนตามรอบปกติ.",
-            "topic": "ผลการดำเนินงานและทิศทางธุรกิจ",
-            "ai_analyzed": false
-          }
-        ],
-        "fetch_ok": true
-      },
-      "news": [
-        {
-          "title": "Why Monster (MNST) shares are trading lower today",
-          "source": "TradingView",
-          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQNHhlVXQ1SVZnVGI1MFdKYVhXZXRqR2xSd1YxNzVGOXQ3aVlHUjN3QjVKTnBuNE5WdjY0T1d6VjNOVkdmZWVDNUljWG43TnZOclo3ekJkSUNwQThBdURsNl81bUhmRzIxNTRweF9VaUd1SkNjMlBlS1dLc01GNTVjcWVneDJvT29HZzc0X25xZkJfNVRXeGZ3Mm1RdXQ5Wk9vV29CQzhnVjFFSnpG?oc=5",
-          "published": "06 Nov 2026",
-          "raw_date": "Fri, 06 Nov 2026 19:10:42 GMT",
-          "sentiment": "bearish",
-          "title_th": "Why Monster (MNST) shares are trading lower today",
-          "summary_th": "• สำนักข่าว TradingView รายงานปัจจัยกดดันต่อ MNST ในประเด็น 'Why Monster (MNST) shares are trading lower today'.\n• บริบทและเนื้อหาสำคัญ: ข่าวนี้ระบุถึงประเด็น การดำเนินงานตามแผนยุทธศาสตร์และการแข่งขันในอุตสาหกรรม ที่อาจก่อให้เกิดอุปสรรคชั่วคราวต่อการดำเนินงาน.\n• นัยต่อปัจจัยพื้นฐาน: ตลาดมีความกังวลต่อแรงกดดันด้านต้นทุน การชะลอตัวของคำสั่งซื้อ หรือความเสี่ยงด้านกฎระเบียบที่อาจกระทบต่อผลกำไร.\n• พฤติกรรมเม็ดเงินสถาบัน: มีแนวโน้มที่ผู้จัดการกองทุนจะชะลอการเข้าซื้อเพื่อประเมินสถานการณ์ หรือทยอยขายทำกำไรลดความเสี่ยงบางส่วน.",
-          "impact_th": "🔴 เชิงลบต่อราคาหุ้น (Bearish Risk): อาจสร้างแรงกระเพื่อมเชิงลบในระยะสั้น ส่งผลให้ราคาหุ้นเผชิญแรงขายทำกำไรหรือพักฐานลงมาทดสอบแนวรับล่าง.",
-          "action_th": "💡 แผนกลยุทธ์การเทรด: ชะลอการเข้าซื้อก้อนใหญ่ (Wait & See) ควรรอให้แรงขายชะลอตัวและราคาสร้างฐานแนวรับที่มั่นคง พร้อมตั้งระดับ Stop Loss หรือจุด Invalidation ตามกรอบทางเทคนิคอย่างเคร่งครัด.",
-          "topic": "ผลการดำเนินงานและทิศทางธุรกิจ",
-          "ai_analyzed": false
-        },
-        {
-          "title": "Monster earnings analysis: questions answered and next catalysts By Investing.com",
-          "source": "Investing.com Canada",
-          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQd24xUzU3UkI1YVJYQUdiZENRYVBncmJMNU04OG1VS2k2U0RTbjJUZXVRUjNqUWdrSUJEVHZRMkkzSFJzRllYU2RkNXVnOGJBRGVXblppVzZrbjRFcDNpLTRNQXQwcnF4ZmNjNkpId2ptMmg3aGJ1X1ItM0R2cnQ5TzJSbUJJZWZBRU9nczNlNno4YWZ0Tk5NVHgyNFlKY1E0bkRhY2VxSkExZ3M4a1FNNUxmNG9WbGNEU09iRW5JWVJ1UQ?oc=5",
-          "published": "06 Nov 2026",
-          "raw_date": "Fri, 06 Nov 2026 18:22:25 GMT",
-          "sentiment": "neutral",
-          "title_th": "Monster earnings analysis: questions answered and next catalysts By Investing.com",
-          "summary_th": "• สำนักข่าว Investing.com Canada รายงานสถานการณ์ทั่วไปของ MNST ในประเด็น 'Monster earnings analysis: questions answered and next catalysts By Investing.com'.\n• บริบทและเนื้อหาสำคัญ: ติดตามพัฒนาการในหมวด การรายงานงบการเงินและตัวเลขกำไรต่อหุ้น (EPS) เทียบกับที่นักวิเคราะห์ Wall Street คาดการณ์ ซึ่งเป็นการดำเนินงานตามแผนธุรกิจปกติ.\n• นัยต่อปัจจัยพื้นฐาน: โครงสร้างพื้นฐานของธุรกิจยังคงดำเนินไปอย่างมีเสถียรภาพ ไม่พบการเปลี่ยนแปลงเชิงโครงสร้างที่มีนัยสำคัญ.\n• พฤติกรรมเม็ดเงินสถาบัน: ปริมาณการซื้อขายยังคงเคลื่อนไหวตามสภาวะตลาดโดยรวม.",
-          "impact_th": "⚪ เป็นกลาง (Neutral Stance): ไม่ได้สร้างแรงกระตุ้นรุนแรงต่อทิศทางราคา ทิศทางยังคงเคลื่อนไหวตามกรอบเทคนิคและเส้นแนวโน้มเดิม.",
-          "action_th": "💡 แผนกลยุทธ์การเทรด: อ้างอิงสัญญาณเทคนิคจากเส้นค่าเฉลี่ย EMA และระดับ Pivot Points ในการตัดสินใจลงทุนตามรอบปกติ.",
-          "topic": "รายงานผลประกอบการและตัวเลขทางการเงิน",
-          "ai_analyzed": false
-        }
-      ],
-      "weight_pct": 1.7151576827788784,
-      "alerts": [],
-      "rating": {
-        "stars_count": 5,
-        "stars_str": "⭐⭐⭐⭐⭐",
-        "grade": "เกรด A+ (ยอดเยี่ยม ปลอดภัยสูง)",
-        "summary": "สถานะ กำไร +6.5%, กราฟ ยืนเหนือเส้น 200 วัน +5.7%.",
-        "strength": "เทรนด์ขาขึ้นเหนือเส้น 200 วัน (+5.7%), อยู่ใน Institutional Value Zone 💎, Rev Growth +20% 🚀, Net Income +35% 🚀, Elite ROE (26%) 🏆, Safe Debt (D/E 0.00) 🛡️, FCF Cash Cow 💵, Value Zone เหนือ EMA200 (+6.2%) 💎",
-        "risk": "ไม่มีสัญญาณความเสี่ยงผิดปกติ.",
-        "action": "ถือรันเทรนด์ต่อ หรือสะสมเพิ่มเมื่อราคาย่อเข้า Value Zone เหนือ EMA200.",
-        "grade_code": "A+",
-        "total": 97.6,
-        "pillars": {
-          "fundamental": 96.0,
-          "timing": 100.0
-        },
-        "coverage": 1.0
-      },
-      "financial_health": {
-        "health_grade": "เกรด A+ (ยอดเยี่ยม 🟢)",
-        "health_badge": "🟢 ยอดเยี่ยม",
-        "peg_verdict": "สมเหตุสมผล (1.29 👍)",
-        "fcf_str": "$2.1B",
-        "roe_str": "+25.7%",
-        "de_str": "0.00",
-        "summary": "รายได้เติบโต +20.4%, กำไรขยายตัว +35.2%, ROE คุณภาพสูง +25.7%, หนี้สินต่ำ D/E 0.00, กระแสเงินสด $2.1B, PEG สมเหตุสมผล (1.29 👍).",
-        "score": 24.0,
-        "pct": 96.0,
-        "coverage": 1.0,
-        "grade_code": "A+"
-      },
-      "forward_outlook": {
-        "thesis_title": "การวิเคราะห์เจาะลึกศักยภาพการเติบโต MNST ในกลุ่ม Consumer Non-Durables (Beverages: Non-Alcoholic)",
-        "quality_badge": "🟡 Market Leader",
-        "future_growth_drivers": [
-          "การขยายตัวของรายได้ระดับ +20.4% YoY และความสามารถในการทำกำไรสุทธิ +35.2% YoY",
-          "อัตราการประเมินมูลค่า P/E 42.4x และค่า PEG 1.29 เท่า สะท้อนระดับราคาต่อการเติบโต",
-          "ส่วนแบ่งการตลาดและความแข็งแกร่งของตราสินค้าในกลุ่มอุตสาหกรรม Beverages: Non-Alcoholic",
-          "การเพิ่มประสิทธิภาพการดำเนินงานและการบริหารจัดการต้นทุนเพื่อผลักดันกระแสเงินสดอิสระ"
-        ],
-        "drawdown_root_cause": [],
-        "catalyst_timeline": [
-          {
-            "period": "ปฏิทินงบ (118 วัน)",
-            "event": "การแถลงงบการเงินและทิศทางคำสั่งซื้อในอนาคต"
-          },
-          {
-            "period": "ระยะ 1-3 เดือน",
-            "event": "การปรับบทวิเคราะห์และประมาณการกำไรจากนักวิเคราะห์วอลล์สตรีท"
-          },
-          {
-            "period": "ระยะ 6-12 เดือน",
-            "event": "การเปิดตัวผลิตภัณฑ์ใหม่และการขยายตลาดสู่กลุ่มเป้าหมายใหม่"
-          }
-        ],
-        "wall_street_verdict": "โบรกเกอร์ 27 แห่ง (Buy 14 / Hold 13 / Sell 0) ราคาเป้าหมายเฉลี่ยสถาบันอยู่ที่ $50.69 (Upside +10.9%)",
-        "tailored_roadmap": "วันงบถัดไปอยู่ห่างอีก 118 วัน ไม่มีความเสี่ยงเรื่องงบตกใจในระยะสั้น. ติดตามกรอบแนวรับแนวต้านสำคัญทางเทคนิค และปฏิบัติตามวินัย Stop-Loss อย่างเคร่งครัด",
-        "invalidation_risk": "การปิดหลุดแนวรับโครงสร้างหลัก หรือตัวเลขอัตรากำไรสุทธิชะลอตัวลงเกิน 20%"
       }
     }
   ],
@@ -4083,6 +3314,32 @@
     }
   ],
   "all_orders": [
+    {
+      "action": "SELL",
+      "ticker": "MNST",
+      "shares": 17.3443577,
+      "price_usd": 45.31,
+      "amt_usd": 784.61,
+      "amt_thb": 0.0,
+      "fx_rate": 0.0,
+      "date": "6 พ.ย. 69 - 21:35 น.",
+      "order_type": "Market",
+      "account": "Dime! USD",
+      "fn": "IMG_5878.webp"
+    },
+    {
+      "action": "SELL",
+      "ticker": "ABNB",
+      "shares": 9.8248563,
+      "price_usd": 187.11,
+      "amt_usd": 1835.42,
+      "amt_thb": 0.0,
+      "fx_rate": 0.0,
+      "date": "6 พ.ย. 69 - 21:34 น.",
+      "order_type": "Market",
+      "account": "Dime! USD",
+      "fn": "IMG_5877.webp"
+    },
     {
       "action": "SELL",
       "ticker": "VOO",
@@ -9323,31 +8580,31 @@
     },
     {
       "time": "2026-11-06",
-      "nav_thb": 1644397.06,
-      "nav_usd": 49013.33,
+      "nav_thb": 1643069.2,
+      "nav_usd": 48973.75,
       "capital_thb": 1295000.0,
       "capital_usd": 38599.11,
-      "stock_thb": 1555642.29,
-      "stock_usd": 46367.88,
-      "cash_thb": 88754.77,
-      "cash_usd": 2645.45,
-      "profit_thb": 349397.06,
-      "profit_usd": 10414.22,
-      "roi_pct": 26.98
+      "stock_thb": 1466412.43,
+      "stock_usd": 43708.27,
+      "cash_thb": 176656.77,
+      "cash_usd": 5265.48,
+      "profit_thb": 348069.2,
+      "profit_usd": 10374.64,
+      "roi_pct": 26.88
     },
     {
       "time": "2026-11-07",
-      "nav_thb": 1649818.67,
-      "nav_usd": 49174.92,
+      "nav_thb": 1648490.81,
+      "nav_usd": 49135.34,
       "capital_thb": 1295000.0,
       "capital_usd": 38599.11,
-      "stock_thb": 1551146.86,
-      "stock_usd": 46233.89,
-      "cash_thb": 98671.81,
-      "cash_usd": 2941.04,
-      "profit_thb": 354818.67,
-      "profit_usd": 10575.82,
-      "roi_pct": 27.4
+      "stock_thb": 1461916.99,
+      "stock_usd": 43574.28,
+      "cash_thb": 186573.82,
+      "cash_usd": 5561.07,
+      "profit_thb": 353490.81,
+      "profit_usd": 10536.24,
+      "roi_pct": 27.3
     }
   ],
   "wealth_summary": {
@@ -9356,10 +8613,10 @@
     "total_days": 279,
     "ath_nav_thb": 1700881.36,
     "ath_date": "2026-11-04",
-    "current_nav_thb": 1649818.67,
-    "current_nav_usd": 49174.92,
+    "current_nav_thb": 1648490.81,
+    "current_nav_usd": 49135.34,
     "current_capital_thb": 1295000.0,
-    "current_profit_thb": 354818.67,
-    "current_roi_pct": 27.4
+    "current_profit_thb": 353490.81,
+    "current_roi_pct": 27.3
   }
 }

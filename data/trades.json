@@ -541,6 +541,106 @@
       ],
       "sell_slip": "IMG_5876.webp",
       "notes": "ขายทำกำไรปิดสถานะ VOO 0.4951753 หุ้น รับเงิน $335.23 เข้า Dime! USD (สลิป IMG_5876.webp)"
+    },
+    {
+      "id": "TRD-20261106-ABNB",
+      "ticker": "ABNB",
+      "exchange": "NASDAQ",
+      "name": "Airbnb, Inc.",
+      "action": "SELL",
+      "date": "6 พ.ย. 69",
+      "sell_date": "6 พ.ย. 69 - 21:34 น.",
+      "order_type": "Market",
+      "buy_date": "23 - 25 ก.ย. 69",
+      "holding_days": 44,
+      "shares": 9.8248563,
+      "buy_price_usd": 151.79,
+      "sell_price_usd": 187.11,
+      "total_cost_usd": 1491.31,
+      "cost_thb": 50137.84,
+      "gross_revenue_usd": 1838.41,
+      "fees_usd": 2.99,
+      "net_revenue_usd": 1835.42,
+      "revenue_thb": 61706.82,
+      "realized_pl_usd": 344.11,
+      "realized_pl_thb": 11568.98,
+      "realized_pl_pct": 23.07,
+      "fx_rate": 33.62,
+      "buy_tranches_count": 3,
+      "buy_tranches": [
+        {
+          "tranche": 1,
+          "date": "23 ก.ย. 69 - 21:47 น.",
+          "shares": 2.915974,
+          "price_usd": 154.0,
+          "amt_usd": 449.78,
+          "amt_thb": 0.0,
+          "file": "IMG_5572.webp",
+          "note": "ไม้ที่ 1 ซื้อสะสมโซนเปิด"
+        },
+        {
+          "tranche": 2,
+          "date": "24 ก.ย. 69 - 02:25 น.",
+          "shares": 1.9724764,
+          "price_usd": 150.99,
+          "amt_usd": 298.32,
+          "amt_thb": 9999.69,
+          "file": "IMG_5574.webp",
+          "note": "ไม้ที่ 2 ซื้อเพิ่มผ่าน Dime! Save"
+        },
+        {
+          "tranche": 3,
+          "date": "25 ก.ย. 69 - 00:24 น.",
+          "shares": 4.9364058,
+          "price_usd": 150.8,
+          "amt_usd": 745.6,
+          "amt_thb": 0.0,
+          "file": "IMG_5577.webp",
+          "note": "ไม้ที่ 3 ซื้อสะสมไม้ใหญ่"
+        }
+      ],
+      "sell_slip": "IMG_5877.webp",
+      "notes": "ขายทำกำไรปิดสถานะ ABNB 9.8248563 หุ้น @ $187.11 รับเงิน $1,835.42 เข้า Dime! USD (สลิป IMG_5877.webp)"
+    },
+    {
+      "id": "TRD-20261106-MNST",
+      "ticker": "MNST",
+      "exchange": "NASDAQ",
+      "name": "Monster Beverage Corp",
+      "action": "SELL",
+      "date": "6 พ.ย. 69",
+      "sell_date": "6 พ.ย. 69 - 21:35 น.",
+      "order_type": "Market",
+      "buy_date": "24 ก.ย. 69 - 23:34 น.",
+      "holding_days": 43,
+      "shares": 17.3443577,
+      "buy_price_usd": 42.935,
+      "sell_price_usd": 45.31,
+      "total_cost_usd": 744.68,
+      "cost_thb": 25036.14,
+      "gross_revenue_usd": 785.89,
+      "fees_usd": 1.28,
+      "net_revenue_usd": 784.61,
+      "revenue_thb": 26378.59,
+      "realized_pl_usd": 39.93,
+      "realized_pl_thb": 1342.45,
+      "realized_pl_pct": 5.36,
+      "fx_rate": 33.62,
+      "buy_tranches_count": 1,
+      "buy_tranches": [
+        {
+          "tranche": 1,
+          "date": "24 ก.ย. 69 - 23:34 น.",
+          "shares": 17.3443577,
+          "price_usd": 42.93,
+          "amt_usd": 744.68,
+          "amt_thb": 24961.67,
+          "file": "IMG_5575.webp",
+          "note": "ไม้ซื้อรอบสอง ผ่าน Dime! Save"
+        }
+      ],
+      "sell_slip": "IMG_5878.webp",
+      "notes": "ขายทำกำไรปิดสถานะ MNST 17.3443577 หุ้น @ $45.31 รับเงิน $784.61 เข้า Dime! USD (สลิป IMG_5878.webp)"
     }
   ]
 }

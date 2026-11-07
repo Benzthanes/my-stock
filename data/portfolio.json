@@ -23,15 +23,6 @@
       "cost_thb": 128552.88
     },
     {
-      "ticker": "ABNB",
-      "exchange": "NASDAQ",
-      "name": "Airbnb, Inc.",
-      "shares": 9.8248563,
-      "avg_cost_usd": 151.7895,
-      "total_cost_usd": 1491.31,
-      "cost_thb": 50137.84
-    },
-    {
       "ticker": "NOK",
       "exchange": "NYSE",
       "name": "Nokia Oyj",
@@ -48,17 +39,8 @@
       "avg_cost_usd": 54.3123,
       "total_cost_usd": 1486.59,
       "cost_thb": 49979.16
-    },
-    {
-      "ticker": "MNST",
-      "exchange": "NASDAQ",
-      "name": "Monster Beverage Corp",
-      "shares": 17.3443578,
-      "avg_cost_usd": 42.935,
-      "total_cost_usd": 744.68,
-      "cost_thb": 25036.14
     }
   ],
-  "total_cost_usd": 37995.95,
-  "total_cost_thb": 1277542.35
+  "total_cost_usd": 35759.96,
+  "total_cost_thb": 1202368.37
 }

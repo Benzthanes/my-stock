@@ -211,6 +211,7 @@ OCR_SELL_SLIPS = {
     "VST": {"fn": "IMG_5581.webp", "date": "6 ต.ค. 69 - 23:12 น.", "order_type": "Market"},
     "VRT": {"fn": "IMG_5873.webp", "date": "4 พ.ย. 69 - 21:31 น.", "order_type": "Market"},
     "VOO": {"fn": "IMG_5876.webp", "date": "6 พ.ย. 69 - 00:42 น.", "order_type": "Market"},
+    "ABNB": {"fn": "IMG_5877.webp", "date": "6 พ.ย. 69 - 21:34 น.", "order_type": "Market"},
 }
 
 
@@ -241,8 +242,8 @@ def build_all_orders(buy_orders, closed_trades):
         else:
             info = OCR_SELL_SLIPS.get(tk, {})
             fn = t.get("sell_slip") or info.get("fn", "")
-            dt = info.get("date") or t.get("date", "")
-            ot = info.get("order_type") or "Market"
+            dt = t.get("sell_date") or info.get("date") or t.get("date", "")
+            ot = t.get("order_type") or info.get("order_type") or "Market"
             all_orders.append({
                 "action": "SELL",
                 "ticker": tk,

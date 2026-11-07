@@ -4,7 +4,7 @@
   "account_no": "2081682995",
   "fx_rate": 33.55,
   "fx_source": "live",
-  "updated_at": "2026-11-07 23:29:34",
+  "updated_at": "2026-11-08 00:38:35",
   "net_injected_capital_thb": 1295000.0,
   "gross_deposits_thb": 1345000.0,
   "transfer_out_thb": 50000.0,
@@ -2420,6 +2420,20 @@
         "bearish": [],
         "neutral": [
           {
+            "title": "Bank of America (BAC) Bond Sales Keep The Undervalued Narrative In Play",
+            "source": "Yahoo Finance",
+            "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNUXhKNGlicHVLa09qcUJPOHE5ekxPTzNOdFFJR01OWFh0MlJicC14WVRjeEstUC0yYTJXSHEyZTVFaHJwUm5ybU91QVVyMXhlNnNxcEc3Y1RuZ0x3c0FVTVF1TGpWZjl0TUlEdUotUXVTYzV2QjdGRC0zSTZjcUdNRWpaT3V6T3NERUIyaEhTNDljRzhUTHRn?oc=5",
+            "published": "07 Nov 2026",
+            "raw_date": "Sat, 07 Nov 2026 16:11:56 GMT",
+            "sentiment": "neutral",
+            "title_th": "การขายพันธบัตรของ Bank of America (BAC) ยังคงเรื่องราวที่ประเมินค่าไว้ต่ำเกินไปเอาไว้",
+            "summary_th": "• สำนักข่าว Yahoo Finance รายงานสถานการณ์ทั่วไปของ BAC ในประเด็น 'การขายพันธบัตรของ Bank of America (BAC) ยังคงเรื่องราวที่ประเมินค่าไว้ต่ำเกินไปเอาไว้'.\n• บริบทและเนื้อหาสำคัญ: ติดตามพัฒนาการในหมวด การเปรียบเทียบราคาตลาดกับมูลค่าพื้นฐานที่แท้จริง (Intrinsic Value) ของบริษัท ซึ่งเป็นการดำเนินงานตามแผนธุรกิจปกติ.\n• นัยต่อปัจจัยพื้นฐาน: โครงสร้างพื้นฐานของธุรกิจยังคงดำเนินไปอย่างมีเสถียรภาพ ไม่พบการเปลี่ยนแปลงเชิงโครงสร้างที่มีนัยสำคัญ.\n• พฤติกรรมเม็ดเงินสถาบัน: ปริมาณการซื้อขายยังคงเคลื่อนไหวตามสภาวะตลาดโดยรวม.",
+            "impact_th": "⚪ เป็นกลาง (Neutral Stance): ไม่ได้สร้างแรงกระตุ้นรุนแรงต่อทิศทางราคา ทิศทางยังคงเคลื่อนไหวตามกรอบเทคนิคและเส้นแนวโน้มเดิม.",
+            "action_th": "💡 แผนกลยุทธ์การเทรด: อ้างอิงสัญญาณเทคนิคจากเส้นค่าเฉลี่ย EMA และระดับ Pivot Points ในการตัดสินใจลงทุนตามรอบปกติ.",
+            "topic": "การประเมินมูลค่าหุ้น (Stock Valuation & Fair Value)",
+            "ai_analyzed": false
+          },
+          {
             "title": "BANK OF AMERICA ALERT: Bragar Eagel & Squire, P.C. Reminds",
             "source": "GlobeNewswire",
             "link": "https://news.google.com/rss/articles/CBMi5gJBVV95cUxPRkZWajJ2eDRvMk5tMVJQT2dWMWZKREVubmxEbk5ZdmtUckJBbUU1dGl4XzFiRDNWZGNTYy1MTDVDNkUtclE3MDdvc2lmdjhsQUYxWkdVb2NCaWtuS2swMDZRUy1CUnNyS21Ka1dYVlFQNGFxaGYyT2xRbDlTeFFuazRkNVdtanMzTHpzbUNyamptZFI2T0tPVHA0RWpGLVdtUHhlVjg0OU9TeEd4TWFvNlJBdk5oeDJQZW1wRGE2YmVuTGdCUERqM2hjd1dBVmRxZHFmMHY2NEE1QjNXWlJWNGdTOVFBOW1sbW1qVzBtVTJxVXFwQVBja2hIR2N0ZlNKZ3dzczVpYTVZend2aTlXQUp5Mkl0U09lWFFyTmVIYlZ0aEpjUk11N1p5Qmd5VmpoTWNXRmhRYVktbFhLUXlleFRHVUhYNVVNbkNndVljakZSZjNXd3pDdXh5U3h6UzFjN2NwR0hn?oc=5",
@@ -2459,25 +2473,25 @@
             "impact_th": "⚪ เป็นกลาง (Neutral Stance): ไม่ได้สร้างแรงกระตุ้นรุนแรงต่อทิศทางราคา ทิศทางยังคงเคลื่อนไหวตามกรอบเทคนิคและเส้นแนวโน้มเดิม.",
             "action_th": "💡 แผนกลยุทธ์การเทรด: อ้างอิงสัญญาณเทคนิคจากเส้นค่าเฉลี่ย EMA และระดับ Pivot Points ในการตัดสินใจลงทุนตามรอบปกติ.",
             "topic": "ผลการดำเนินงานและทิศทางธุรกิจ",
-            "ai_analyzed": false
-          },
-          {
-            "title": "Bank Of America Sets $370 Target On Apple (NASDAQ: AAPL) Anchored To 2028 Earnings Outlook",
-            "source": "Foreign Policy Journal",
-            "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOWC1ZcWdMX1ZRbkZscHJCbXFnZFJwVGxLTS01T0dzeGdUdmVRbkxDelZqZlc0bmo2dzktWkp1am9kUXJxdWJ6aG1veUxqZ3VMMlg1cXIwajJ0RDlWRHdFcGlpQ1RfMHdXWEtsY0JUZllyeGxFT2t2ZlF4Y21lWVhPdkhvZHRYeXQzdVBxRW1KLUo4MVVTNjJDZ0NnWGlWc0E1RERwTkhiS21oMURDckVjZHVsVmNyZjZGcHkydDg3STZnWjNlSDNiaDdHNDdzbUdF?oc=5",
-            "published": "06 Nov 2026",
-            "raw_date": "Fri, 06 Nov 2026 15:02:00 GMT",
-            "sentiment": "neutral",
-            "title_th": "Bank Of America ตั้งเป้าหมายที่ $370 บน Apple (NASDAQ: AAPL) ซึ่งอิงกับแนวโน้มรายได้ปี 2028",
-            "summary_th": "• สำนักข่าว Foreign Policy Journal รายงานสถานการณ์ทั่วไปของ BAC ในประเด็น 'Bank Of America ตั้งเป้าหมายที่ $370 บน Apple (NASDAQ: AAPL) ซึ่งอิงกับแนวโน้มรายได้ปี 2028'.\n• บริบทและเนื้อหาสำคัญ: ติดตามพัฒนาการในหมวด การรายงานงบการเงินและตัวเลขกำไรต่อหุ้น (EPS) เทียบกับที่นักวิเคราะห์ Wall Street คาดการณ์ ซึ่งเป็นการดำเนินงานตามแผนธุรกิจปกติ.\n• นัยต่อปัจจัยพื้นฐาน: โครงสร้างพื้นฐานของธุรกิจยังคงดำเนินไปอย่างมีเสถียรภาพ ไม่พบการเปลี่ยนแปลงเชิงโครงสร้างที่มีนัยสำคัญ.\n• พฤติกรรมเม็ดเงินสถาบัน: ปริมาณการซื้อขายยังคงเคลื่อนไหวตามสภาวะตลาดโดยรวม.",
-            "impact_th": "⚪ เป็นกลาง (Neutral Stance): ไม่ได้สร้างแรงกระตุ้นรุนแรงต่อทิศทางราคา ทิศทางยังคงเคลื่อนไหวตามกรอบเทคนิคและเส้นแนวโน้มเดิม.",
-            "action_th": "💡 แผนกลยุทธ์การเทรด: อ้างอิงสัญญาณเทคนิคจากเส้นค่าเฉลี่ย EMA และระดับ Pivot Points ในการตัดสินใจลงทุนตามรอบปกติ.",
-            "topic": "รายงานผลประกอบการและตัวเลขทางการเงิน",
             "ai_analyzed": false
           }
         ],
         "all": [
           {
+            "title": "Bank of America (BAC) Bond Sales Keep The Undervalued Narrative In Play",
+            "source": "Yahoo Finance",
+            "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNUXhKNGlicHVLa09qcUJPOHE5ekxPTzNOdFFJR01OWFh0MlJicC14WVRjeEstUC0yYTJXSHEyZTVFaHJwUm5ybU91QVVyMXhlNnNxcEc3Y1RuZ0x3c0FVTVF1TGpWZjl0TUlEdUotUXVTYzV2QjdGRC0zSTZjcUdNRWpaT3V6T3NERUIyaEhTNDljRzhUTHRn?oc=5",
+            "published": "07 Nov 2026",
+            "raw_date": "Sat, 07 Nov 2026 16:11:56 GMT",
+            "sentiment": "neutral",
+            "title_th": "การขายพันธบัตรของ Bank of America (BAC) ยังคงเรื่องราวที่ประเมินค่าไว้ต่ำเกินไปเอาไว้",
+            "summary_th": "• สำนักข่าว Yahoo Finance รายงานสถานการณ์ทั่วไปของ BAC ในประเด็น 'การขายพันธบัตรของ Bank of America (BAC) ยังคงเรื่องราวที่ประเมินค่าไว้ต่ำเกินไปเอาไว้'.\n• บริบทและเนื้อหาสำคัญ: ติดตามพัฒนาการในหมวด การเปรียบเทียบราคาตลาดกับมูลค่าพื้นฐานที่แท้จริง (Intrinsic Value) ของบริษัท ซึ่งเป็นการดำเนินงานตามแผนธุรกิจปกติ.\n• นัยต่อปัจจัยพื้นฐาน: โครงสร้างพื้นฐานของธุรกิจยังคงดำเนินไปอย่างมีเสถียรภาพ ไม่พบการเปลี่ยนแปลงเชิงโครงสร้างที่มีนัยสำคัญ.\n• พฤติกรรมเม็ดเงินสถาบัน: ปริมาณการซื้อขายยังคงเคลื่อนไหวตามสภาวะตลาดโดยรวม.",
+            "impact_th": "⚪ เป็นกลาง (Neutral Stance): ไม่ได้สร้างแรงกระตุ้นรุนแรงต่อทิศทางราคา ทิศทางยังคงเคลื่อนไหวตามกรอบเทคนิคและเส้นแนวโน้มเดิม.",
+            "action_th": "💡 แผนกลยุทธ์การเทรด: อ้างอิงสัญญาณเทคนิคจากเส้นค่าเฉลี่ย EMA และระดับ Pivot Points ในการตัดสินใจลงทุนตามรอบปกติ.",
+            "topic": "การประเมินมูลค่าหุ้น (Stock Valuation & Fair Value)",
+            "ai_analyzed": false
+          },
+          {
             "title": "BANK OF AMERICA ALERT: Bragar Eagel & Squire, P.C. Reminds",
             "source": "GlobeNewswire",
             "link": "https://news.google.com/rss/articles/CBMi5gJBVV95cUxPRkZWajJ2eDRvMk5tMVJQT2dWMWZKREVubmxEbk5ZdmtUckJBbUU1dGl4XzFiRDNWZGNTYy1MTDVDNkUtclE3MDdvc2lmdjhsQUYxWkdVb2NCaWtuS2swMDZRUy1CUnNyS21Ka1dYVlFQNGFxaGYyT2xRbDlTeFFuazRkNVdtanMzTHpzbUNyamptZFI2T0tPVHA0RWpGLVdtUHhlVjg0OU9TeEd4TWFvNlJBdk5oeDJQZW1wRGE2YmVuTGdCUERqM2hjd1dBVmRxZHFmMHY2NEE1QjNXWlJWNGdTOVFBOW1sbW1qVzBtVTJxVXFwQVBja2hIR2N0ZlNKZ3dzczVpYTVZend2aTlXQUp5Mkl0U09lWFFyTmVIYlZ0aEpjUk11N1p5Qmd5VmpoTWNXRmhRYVktbFhLUXlleFRHVUhYNVVNbkNndVljakZSZjNXd3pDdXh5U3h6UzFjN2NwR0hn?oc=5",
@@ -2517,26 +2531,26 @@
             "impact_th": "⚪ เป็นกลาง (Neutral Stance): ไม่ได้สร้างแรงกระตุ้นรุนแรงต่อทิศทางราคา ทิศทางยังคงเคลื่อนไหวตามกรอบเทคนิคและเส้นแนวโน้มเดิม.",
             "action_th": "💡 แผนกลยุทธ์การเทรด: อ้างอิงสัญญาณเทคนิคจากเส้นค่าเฉลี่ย EMA และระดับ Pivot Points ในการตัดสินใจลงทุนตามรอบปกติ.",
             "topic": "ผลการดำเนินงานและทิศทางธุรกิจ",
-            "ai_analyzed": false
-          },
-          {
-            "title": "Bank Of America Sets $370 Target On Apple (NASDAQ: AAPL) Anchored To 2028 Earnings Outlook",
-            "source": "Foreign Policy Journal",
-            "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOWC1ZcWdMX1ZRbkZscHJCbXFnZFJwVGxLTS01T0dzeGdUdmVRbkxDelZqZlc0bmo2dzktWkp1am9kUXJxdWJ6aG1veUxqZ3VMMlg1cXIwajJ0RDlWRHdFcGlpQ1RfMHdXWEtsY0JUZllyeGxFT2t2ZlF4Y21lWVhPdkhvZHRYeXQzdVBxRW1KLUo4MVVTNjJDZ0NnWGlWc0E1RERwTkhiS21oMURDckVjZHVsVmNyZjZGcHkydDg3STZnWjNlSDNiaDdHNDdzbUdF?oc=5",
-            "published": "06 Nov 2026",
-            "raw_date": "Fri, 06 Nov 2026 15:02:00 GMT",
-            "sentiment": "neutral",
-            "title_th": "Bank Of America ตั้งเป้าหมายที่ $370 บน Apple (NASDAQ: AAPL) ซึ่งอิงกับแนวโน้มรายได้ปี 2028",
-            "summary_th": "• สำนักข่าว Foreign Policy Journal รายงานสถานการณ์ทั่วไปของ BAC ในประเด็น 'Bank Of America ตั้งเป้าหมายที่ $370 บน Apple (NASDAQ: AAPL) ซึ่งอิงกับแนวโน้มรายได้ปี 2028'.\n• บริบทและเนื้อหาสำคัญ: ติดตามพัฒนาการในหมวด การรายงานงบการเงินและตัวเลขกำไรต่อหุ้น (EPS) เทียบกับที่นักวิเคราะห์ Wall Street คาดการณ์ ซึ่งเป็นการดำเนินงานตามแผนธุรกิจปกติ.\n• นัยต่อปัจจัยพื้นฐาน: โครงสร้างพื้นฐานของธุรกิจยังคงดำเนินไปอย่างมีเสถียรภาพ ไม่พบการเปลี่ยนแปลงเชิงโครงสร้างที่มีนัยสำคัญ.\n• พฤติกรรมเม็ดเงินสถาบัน: ปริมาณการซื้อขายยังคงเคลื่อนไหวตามสภาวะตลาดโดยรวม.",
-            "impact_th": "⚪ เป็นกลาง (Neutral Stance): ไม่ได้สร้างแรงกระตุ้นรุนแรงต่อทิศทางราคา ทิศทางยังคงเคลื่อนไหวตามกรอบเทคนิคและเส้นแนวโน้มเดิม.",
-            "action_th": "💡 แผนกลยุทธ์การเทรด: อ้างอิงสัญญาณเทคนิคจากเส้นค่าเฉลี่ย EMA และระดับ Pivot Points ในการตัดสินใจลงทุนตามรอบปกติ.",
-            "topic": "รายงานผลประกอบการและตัวเลขทางการเงิน",
             "ai_analyzed": false
           }
         ],
         "fetch_ok": true
       },
       "news": [
+        {
+          "title": "Bank of America (BAC) Bond Sales Keep The Undervalued Narrative In Play",
+          "source": "Yahoo Finance",
+          "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNUXhKNGlicHVLa09qcUJPOHE5ekxPTzNOdFFJR01OWFh0MlJicC14WVRjeEstUC0yYTJXSHEyZTVFaHJwUm5ybU91QVVyMXhlNnNxcEc3Y1RuZ0x3c0FVTVF1TGpWZjl0TUlEdUotUXVTYzV2QjdGRC0zSTZjcUdNRWpaT3V6T3NERUIyaEhTNDljRzhUTHRn?oc=5",
+          "published": "07 Nov 2026",
+          "raw_date": "Sat, 07 Nov 2026 16:11:56 GMT",
+          "sentiment": "neutral",
+          "title_th": "การขายพันธบัตรของ Bank of America (BAC) ยังคงเรื่องราวที่ประเมินค่าไว้ต่ำเกินไปเอาไว้",
+          "summary_th": "• สำนักข่าว Yahoo Finance รายงานสถานการณ์ทั่วไปของ BAC ในประเด็น 'การขายพันธบัตรของ Bank of America (BAC) ยังคงเรื่องราวที่ประเมินค่าไว้ต่ำเกินไปเอาไว้'.\n• บริบทและเนื้อหาสำคัญ: ติดตามพัฒนาการในหมวด การเปรียบเทียบราคาตลาดกับมูลค่าพื้นฐานที่แท้จริง (Intrinsic Value) ของบริษัท ซึ่งเป็นการดำเนินงานตามแผนธุรกิจปกติ.\n• นัยต่อปัจจัยพื้นฐาน: โครงสร้างพื้นฐานของธุรกิจยังคงดำเนินไปอย่างมีเสถียรภาพ ไม่พบการเปลี่ยนแปลงเชิงโครงสร้างที่มีนัยสำคัญ.\n• พฤติกรรมเม็ดเงินสถาบัน: ปริมาณการซื้อขายยังคงเคลื่อนไหวตามสภาวะตลาดโดยรวม.",
+          "impact_th": "⚪ เป็นกลาง (Neutral Stance): ไม่ได้สร้างแรงกระตุ้นรุนแรงต่อทิศทางราคา ทิศทางยังคงเคลื่อนไหวตามกรอบเทคนิคและเส้นแนวโน้มเดิม.",
+          "action_th": "💡 แผนกลยุทธ์การเทรด: อ้างอิงสัญญาณเทคนิคจากเส้นค่าเฉลี่ย EMA และระดับ Pivot Points ในการตัดสินใจลงทุนตามรอบปกติ.",
+          "topic": "การประเมินมูลค่าหุ้น (Stock Valuation & Fair Value)",
+          "ai_analyzed": false
+        },
         {
           "title": "BANK OF AMERICA ALERT: Bragar Eagel & Squire, P.C. Reminds",
           "source": "GlobeNewswire",
@@ -2549,20 +2563,6 @@
           "impact_th": "⚪ เป็นกลาง (Neutral Stance): ไม่ได้สร้างแรงกระตุ้นรุนแรงต่อทิศทางราคา ทิศทางยังคงเคลื่อนไหวตามกรอบเทคนิคและเส้นแนวโน้มเดิม.",
           "action_th": "💡 แผนกลยุทธ์การเทรด: อ้างอิงสัญญาณเทคนิคจากเส้นค่าเฉลี่ย EMA และระดับ Pivot Points ในการตัดสินใจลงทุนตามรอบปกติ.",
           "topic": "ผลการดำเนินงานและทิศทางธุรกิจ",
-          "ai_analyzed": false
-        },
-        {
-          "title": "Cautious Bank Outlook Weighs on Stocks Despite Strong Earnings",
-          "source": "Global Finance Magazine",
-          "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1uT1JoMy05S256R0J0YWU1TDhuTDJiUWNuVVVZYnh1azNyMDhEZW4tTmc1TXlPNUhWUWdSemZxMVpWaUhobGtYVFM5dnJsTHhwU2hWQ2ZQSFFtLWRRTWR0S1I2WC1Rd1ZEVlg3UDBWWS10YTY1cFJFYg?oc=5",
-          "published": "06 Nov 2026",
-          "raw_date": "Fri, 06 Nov 2026 21:33:39 GMT",
-          "sentiment": "neutral",
-          "title_th": "แนวโน้มของธนาคารที่ระมัดระวังยังส่งผลต่อหุ้นแม้ว่ากำไรจะแข็งแกร่งก็ตาม",
-          "summary_th": "• สำนักข่าว Global Finance Magazine รายงานสถานการณ์ทั่วไปของ BAC ในประเด็น 'แนวโน้มของธนาคารที่ระมัดระวังยังส่งผลต่อหุ้นแม้ว่ากำไรจะแข็งแกร่งก็ตาม'.\n• บริบทและเนื้อหาสำคัญ: ติดตามพัฒนาการในหมวด การรายงานงบการเงินและตัวเลขกำไรต่อหุ้น (EPS) เทียบกับที่นักวิเคราะห์ Wall Street คาดการณ์ ซึ่งเป็นการดำเนินงานตามแผนธุรกิจปกติ.\n• นัยต่อปัจจัยพื้นฐาน: โครงสร้างพื้นฐานของธุรกิจยังคงดำเนินไปอย่างมีเสถียรภาพ ไม่พบการเปลี่ยนแปลงเชิงโครงสร้างที่มีนัยสำคัญ.\n• พฤติกรรมเม็ดเงินสถาบัน: ปริมาณการซื้อขายยังคงเคลื่อนไหวตามสภาวะตลาดโดยรวม.",
-          "impact_th": "⚪ เป็นกลาง (Neutral Stance): ไม่ได้สร้างแรงกระตุ้นรุนแรงต่อทิศทางราคา ทิศทางยังคงเคลื่อนไหวตามกรอบเทคนิคและเส้นแนวโน้มเดิม.",
-          "action_th": "💡 แผนกลยุทธ์การเทรด: อ้างอิงสัญญาณเทคนิคจากเส้นค่าเฉลี่ย EMA และระดับ Pivot Points ในการตัดสินใจลงทุนตามรอบปกติ.",
-          "topic": "รายงานผลประกอบการและตัวเลขทางการเงิน",
           "ai_analyzed": false
         }
       ],
@@ -8599,6 +8599,20 @@
     },
     {
       "time": "2026-11-07",
+      "nav_thb": 1643069.2,
+      "nav_usd": 48973.75,
+      "capital_thb": 1295000.0,
+      "capital_usd": 38599.11,
+      "stock_thb": 1466412.43,
+      "stock_usd": 43708.27,
+      "cash_thb": 176656.77,
+      "cash_usd": 5265.48,
+      "profit_thb": 348069.2,
+      "profit_usd": 10374.64,
+      "roi_pct": 26.88
+    },
+    {
+      "time": "2026-11-08",
       "nav_thb": 1648490.81,
       "nav_usd": 49135.34,
       "capital_thb": 1295000.0,
@@ -8614,8 +8628,8 @@
   ],
   "wealth_summary": {
     "start_date": "2026-02-02",
-    "end_date": "2026-11-07",
-    "total_days": 279,
+    "end_date": "2026-11-08",
+    "total_days": 280,
     "ath_nav_thb": 1700881.36,
     "ath_date": "2026-11-04",
     "current_nav_thb": 1648490.81,

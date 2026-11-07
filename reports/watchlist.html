@@ -15,8 +15,12 @@
     --gold: #fbbf24; --gold-glow: rgba(251,191,36,0.3); --blue: #60a5fa; --blue-glow: rgba(96,165,250,0.3);
     --purple: #c084fc; --slate: #94a3b8;
 }
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html, body { overflow-x: hidden; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+}
 body {
     font-family: 'Prompt', 'Inter', -apple-system, sans-serif;
     background: var(--bg); color: var(--text);
@@ -26,7 +30,13 @@ body {
         radial-gradient(at 100% 0%, rgba(168,85,247,0.07) 0, transparent 45%),
         radial-gradient(at 50% 100%, rgba(16,185,129,0.05) 0, transparent 40%);
 }
-.container { max-width: 1200px; margin: 0 auto; min-width: 0; }
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-width: 0;
+    box-sizing: border-box;
+}
 
 /* Top Header */
 .top-header { margin-bottom: 20px; }
@@ -153,6 +163,7 @@ h1 { font-size: 1.75rem; font-weight: 700; color: #fff; display: flex; align-ite
     background: var(--card); border: 1px solid var(--line); border-radius: 16px;
     padding: 16px 18px; position: relative; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex; flex-direction: column; justify-content: space-between; gap: 12px;
+    min-width: 0; overflow: hidden;
 }
 .stock-card:hover {
     transform: translateY(-2px); border-color: var(--line-bright);
@@ -162,28 +173,29 @@ h1 { font-size: 1.75rem; font-weight: 700; color: #fff; display: flex; align-ite
 .card-rose { border-left: 4px solid var(--rose); }
 .card-slate { border-left: 4px solid var(--slate); }
 
-.card-head { display: flex; justify-content: space-between; align-items: center; }
-.card-tk-box { display: flex; align-items: center; gap: 8px; }
-.tk { font-family: 'Inter', sans-serif; font-weight: 800; font-size: 1.15rem; letter-spacing: 0.02em; color: #fff; }
-.port-star { color: var(--gold); font-size: 0.95rem; }
-.card-grp { font-size: 0.76rem; color: var(--text2); background: rgba(255,255,255,0.05); padding: 2px 7px; border-radius: 6px; }
-.card-name { font-size: 0.82rem; color: var(--text2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.card-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; min-width: 0; }
+.card-tk-box { display: flex; align-items: center; gap: 8px; min-width: 0; flex: 1 1 auto; overflow: hidden; }
+.tk { font-family: 'Inter', sans-serif; font-weight: 800; font-size: 1.15rem; letter-spacing: 0.02em; color: #fff; flex-shrink: 0; }
+.port-star { color: var(--gold); font-size: 0.95rem; flex-shrink: 0; }
+.card-grp { font-size: 0.74rem; color: var(--text2); background: rgba(255,255,255,0.05); padding: 2px 7px; border-radius: 6px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 140px; }
+.card-name { font-size: 0.82rem; color: var(--text2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
 
 /* Catalyst Tag */
 .card-catalyst {
     font-size: 0.78rem; color: #93c5fd; background: rgba(96,165,250,0.08);
-    border: 1px solid rgba(96,165,250,0.22); border-radius: 8px; padding: 5px 10px;
-    line-height: 1.4; display: flex; align-items: center; gap: 6px;
+    border: 1px solid rgba(96,165,250,0.22); border-radius: 8px; padding: 6px 10px;
+    line-height: 1.4; word-break: break-word;
 }
 
 /* Card Price Matrix */
 .card-price-grid {
-    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px;
     background: rgba(255,255,255,0.02); border: 1px solid var(--line);
-    border-radius: 12px; padding: 10px 12px;
+    border-radius: 12px; padding: 10px 12px; min-width: 0;
 }
+.card-price-grid > div { min-width: 0; }
 .card-lbl { font-size: 0.7rem; color: var(--muted); }
-.card-val { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.05rem; }
+.card-val { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.05rem; white-space: nowrap; }
 .gold { color: var(--gold); }
 .dist-emerald { color: var(--emerald); font-weight: 700; }
 .dist-rose { color: var(--rose); font-weight: 700; }
@@ -195,42 +207,47 @@ h1 { font-size: 1.75rem; font-weight: 700; color: #fff; display: flex; align-ite
 /* Status Pills */
 .status-pill {
     display: inline-flex; align-items: center; gap: 4px; font-size: 0.72rem;
-    font-weight: 700; padding: 3px 8px; border-radius: 9999px; white-space: nowrap;
+    font-weight: 700; padding: 3px 8px; border-radius: 9999px; white-space: nowrap; flex-shrink: 0;
 }
 .status-emerald { background: rgba(16,185,129,0.15); color: var(--emerald); border: 1px solid rgba(16,185,129,0.35); }
 .status-rose { background: rgba(244,63,94,0.15); color: var(--rose); border: 1px solid rgba(244,63,94,0.35); }
 .status-slate { background: rgba(148,163,184,0.12); color: var(--text2); border: 1px solid rgba(148,163,184,0.25); }
 
-/* Visual Proximity Gauge */
-.card-gauge-box { margin: 4px 0; }
-.gauge {
-    position: relative; height: 8px; border-radius: 4px;
-    background: linear-gradient(90deg, rgba(244,63,94,0.3), rgba(244,63,94,0.08) 50%, rgba(148,163,184,0.15) 50%);
+/* Modern Distance Meter */
+.card-meter-box { margin: 2px 0; }
+.card-meter {
+    display: flex; justify-content: space-between; align-items: center; gap: 8px;
+    border-radius: 10px; padding: 7px 11px; font-size: 0.78rem; min-width: 0;
 }
-.gauge-empty { opacity: 0.3; }
-.gauge-zone { position: absolute; top: 0; bottom: 0; background: rgba(16,185,129,0.65); }
-.gauge-mid { position: absolute; left: 50%; top: -4px; bottom: -4px; width: 2px; background: var(--gold); }
-.gauge-dot {
-    position: absolute; top: 50%; width: 12px; height: 12px; border-radius: 50%;
-    transform: translate(-50%, -50%); border: 2px solid var(--bg);
+.meter-main { display: flex; align-items: center; gap: 6px; white-space: nowrap; }
+.meter-bold { font-weight: 700; }
+.meter-hint { font-size: 0.72rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; opacity: 0.85; }
+.meter-emerald { background: rgba(16,185,129,0.12); border: 1px solid rgba(16,185,129,0.3); color: #6ee7b7; }
+.meter-rose { background: rgba(244,63,94,0.12); border: 1px solid rgba(244,63,94,0.3); color: #fca5a5; }
+.meter-slate { background: rgba(148,163,184,0.08); border: 1px solid rgba(148,163,184,0.2); color: var(--text2); }
+.meter-unknown { background: rgba(255,255,255,0.03); border: 1px solid var(--line); color: var(--muted); }
+
+.tbl-meter {
+    display: inline-flex; align-items: center; gap: 4px; padding: 3px 8px;
+    border-radius: 6px; font-size: 0.74rem; font-weight: 600; white-space: nowrap;
 }
-.dot-emerald { background: var(--emerald); box-shadow: 0 0 6px var(--emerald); }
-.dot-rose { background: var(--rose); box-shadow: 0 0 6px var(--rose); }
-.dot-slate { background: #cbd5e1; }
-.gauge-dot-edge { box-shadow: 0 0 0 3px rgba(255,255,255,0.2); }
 
 /* Card Actions */
 .card-actions {
-    display: flex; justify-content: space-between; align-items: center;
-    border-top: 1px solid var(--line); padding-top: 10px; margin-top: 2px;
+    display: flex; justify-content: space-between; align-items: center; gap: 8px;
+    border-top: 1px solid var(--line); padding-top: 10px; margin-top: 2px; min-width: 0;
 }
 .btn-chart-link {
     font-size: 0.78rem; font-weight: 600; color: var(--blue); text-decoration: none;
     background: rgba(96,165,250,0.1); border: 1px solid rgba(96,165,250,0.3);
-    border-radius: 8px; padding: 4px 10px; transition: 0.15s; display: inline-flex; align-items: center; gap: 4px;
+    border-radius: 8px; padding: 5px 12px; transition: 0.15s; display: inline-flex; align-items: center; gap: 4px;
+    flex-shrink: 0;
 }
 .btn-chart-link:hover { background: rgba(96,165,250,0.2); color: #fff; transform: translateY(-1px); }
-.card-src-tag { font-size: 0.7rem; color: var(--muted); }
+.card-src-tag {
+    font-size: 0.7rem; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    text-align: right; min-width: 0;
+}
 
 /* Pillar 2: Pro Table View */
 .pro-table-wrap {
@@ -340,73 +357,191 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
 
 /* Tablet Adaptive Breakpoint (769px - 1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
-    .radar-ribbon { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-    .cards-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
-    .strategy-grid { grid-template-columns: repeat(2, 1fr); }
+    .radar-ribbon { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .cards-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .strategy-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .toolbar { gap: 10px; }
     .search-box { flex: 1 1 180px; }
 }
 
 /* Desktop Large (> 1025px) */
 @media (min-width: 1025px) {
-    .radar-ribbon { grid-template-columns: repeat(4, 1fr); }
+    .radar-ribbon { grid-template-columns: repeat(4, minmax(0, 1fr)); }
     .cards-grid { grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); }
-    .strategy-grid { grid-template-columns: repeat(3, 1fr); }
+    .strategy-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 
 /* Mobile Adaptive Breakpoint (<= 768px) */
 @media (max-width: 768px) {
-    body { padding: 12px; }
+    body { padding: 12px 10px; }
     h1 { font-size: 1.35rem; }
-    .top-header { margin-bottom: 14px; }
-    .lead { font-size: 0.88rem; }
-    .meta { gap: 8px; font-size: 0.78rem; }
+    .top-header { margin-bottom: 12px; }
+    .lead { font-size: 0.85rem; }
+    .meta { gap: 6px; font-size: 0.75rem; }
+    .meta-price-note { display: none; }
 
-    /* Main Navigation Tabs touch target */
-    .main-tabs { gap: 6px; margin: 14px 0 18px; }
-    .main-tab-btn { font-size: 0.85rem; padding: 10px 14px; min-height: 44px; }
+    /* Main Navigation Tabs touch target: stack neatly into full-width vertical buttons */
+    .main-tabs {
+        flex-direction: column;
+        gap: 8px;
+        margin: 12px 0 16px;
+        width: 100%;
+        padding-bottom: 10px;
+    }
+    .main-tab-btn {
+        width: 100%;
+        justify-content: center;
+        font-size: 0.86rem;
+        padding: 10px 14px;
+        min-height: 44px;
+        box-sizing: border-box;
+    }
 
-    /* Pillar 1: Radar Ribbon 2 columns on mobile */
-    .radar-ribbon { grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 16px; }
-    .ribbon-card { padding: 12px 14px; min-height: 120px; }
-    .ribbon-title { font-size: 0.75rem; }
-    .ribbon-num { font-size: 1.6rem; margin: 4px 0; }
-    .ribbon-sub { font-size: 0.7rem; line-height: 1.3; }
+    /* Pillar 1: Radar Ribbon Compact 2x2 Grid on mobile */
+    .radar-ribbon {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+        margin-bottom: 14px;
+        width: 100%;
+    }
+    .ribbon-card {
+        padding: 10px 12px;
+        min-height: 72px;
+        border-radius: 12px;
+        min-width: 0;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+    .ribbon-title {
+        font-size: 0.72rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .ribbon-num { font-size: 1.35rem; margin: 2px 0; line-height: 1.1; }
+    .ribbon-sub { display: none; }
     .ribbon-preview { display: none; }
-    .health-legend { font-size: 0.68rem; }
+    .ribbon-top .status-pill { display: none; }
+    .health-bar-container { margin: 4px 0 2px; }
+    .health-bar { height: 6px; }
+    .health-legend { font-size: 0.65rem; margin-top: 2px; }
 
     /* Pillar 3: Theme Pills Touch-friendly Scroll */
-    .pills-container { margin-bottom: 14px; scroll-padding: 10px; }
-    .pill-btn { min-height: 40px; padding: 8px 14px; font-size: 0.8rem; }
+    .pills-container {
+        margin-bottom: 12px;
+        scroll-padding: 8px;
+        overscroll-behavior-x: contain;
+        width: 100%;
+    }
+    .pill-btn { min-height: 32px; padding: 5px 12px; font-size: 0.76rem; }
 
     /* Toolbar & Search Bar on Mobile */
-    .toolbar { flex-direction: column; align-items: stretch; gap: 10px; padding: 12px; margin-bottom: 16px; }
+    .toolbar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+        padding: 10px;
+        margin-bottom: 14px;
+        width: 100%;
+        box-sizing: border-box;
+    }
     .search-box { width: 100%; flex: 1 1 auto; }
-    .search-box input { height: 44px; font-size: 0.88rem; }
-    .view-toggle-group { width: 100%; display: grid; grid-template-columns: 1fr 1fr; height: 44px; }
-    .view-btn { justify-content: center; font-size: 0.88rem; height: 100%; }
-    .row-count-chip { width: 100%; text-align: center; margin-left: 0; font-size: 0.78rem; }
+    .search-box input { height: 38px; font-size: 0.84rem; box-sizing: border-box; }
+    .view-toggle-group { width: 100%; display: grid; grid-template-columns: 1fr 1fr; height: 36px; box-sizing: border-box; }
+    .view-btn { justify-content: center; font-size: 0.8rem; height: 100%; }
+    .row-count-chip { width: 100%; text-align: center; margin-left: 0; font-size: 0.74rem; }
 
     /* Pillar 2: Cards Grid Single Column on Mobile */
-    .cards-grid { grid-template-columns: 1fr; gap: 12px; }
-    .stock-card { padding: 14px; }
-    .card-price-grid { grid-template-columns: 1fr 1fr 1fr; gap: 6px; padding: 8px 10px; }
+    .cards-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 12px;
+        width: 100%;
+        max-width: 100%;
+    }
+    .stock-card {
+        padding: 14px;
+        gap: 10px;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        min-width: 0;
+        overflow: hidden;
+    }
     .card-val { font-size: 0.95rem; }
-    .btn-chart-link { min-height: 40px; padding: 8px 14px; font-size: 0.84rem; }
+    .btn-chart-link { min-height: 36px; padding: 6px 12px; font-size: 0.8rem; }
 
     /* Tab 2: Robotics Strategy Grid & Hero on Mobile */
-    .robotics-hero { padding: 16px 18px; }
-    .robotics-hero h2 { font-size: 1.15rem; }
-    .hero-stats { grid-template-columns: 1fr; gap: 10px; }
-    .strategy-grid { grid-template-columns: 1fr; gap: 12px; }
-    .strat-card { padding: 14px 16px; }
+    .robotics-hero { padding: 14px 16px; width: 100%; box-sizing: border-box; }
+    .robotics-hero h2 { font-size: 1.1rem; }
+    .hero-stats { grid-template-columns: 1fr; gap: 8px; }
+    .strategy-grid { grid-template-columns: 1fr; gap: 12px; width: 100%; }
+    .strat-card { padding: 14px 16px; width: 100%; box-sizing: border-box; }
 }
 
-/* Extra Small Mobile (<= 480px) */
-@media (max-width: 480px) {
-    .radar-ribbon { grid-template-columns: 1fr; gap: 8px; }
-    .card-price-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
-    .card-price-grid > div:last-child { grid-column: span 2; text-align: left; }
+/* Extra Small Mobile (<= 600px) */
+@media (max-width: 600px) {
+    body { padding: 10px 8px; }
+    .card-head { width: 100%; min-width: 0; }
+    .card-tk-box { min-width: 0; flex: 1 1 auto; overflow: hidden; }
+    .card-grp { max-width: 95px; }
+    .status-pill { flex-shrink: 0; }
+    .card-price-grid {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 6px 10px;
+        padding: 8px 10px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .price-col-current {
+        border-right: 1px solid var(--line);
+        padding-right: 6px;
+        min-width: 0;
+    }
+    .price-col-support {
+        padding-left: 2px;
+        min-width: 0;
+    }
+    .price-col-dist {
+        grid-column: span 2;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(255,255,255,0.03);
+        border-radius: 8px;
+        padding: 6px 10px;
+        margin-top: 2px;
+        min-width: 0;
+    }
+    .price-col-dist .card-lbl {
+        font-size: 0.72rem;
+        color: var(--text2);
+    }
+    .price-col-dist .card-val {
+        font-size: 0.95rem;
+    }
+    .price-col-dist .card-sub {
+        display: none;
+    }
+    .card-meter {
+        padding: 6px 10px;
+        font-size: 0.74rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .meter-hint {
+        font-size: 0.68rem;
+    }
+    .card-actions {
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+    .card-src-tag {
+        max-width: 150px;
+    }
 }
 </style>
 </head>
@@ -464,7 +599,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
   .rnav-int-btn { padding: 3px 6px; min-height: 30px; }
 }
 </style>
-<nav class="rnav" aria-label="รายงาน"><div class="rnav-top-row"><div class="rnav-links"><a href="portfolio_master.html" class="rnav-link" data-icon="👑">ภาพรวม</a><a href="portfolio_review.html" class="rnav-link" data-icon="🩺">สุขภาพพอร์ต</a><a href="portfolio_recovery.html" class="rnav-link" data-icon="🧗">แก้ดอย</a><a href="portfolio_dip_sim.html" class="rnav-link" data-icon="🎯">Dip จำลอง</a><a href="trades_ledger.html" class="rnav-link" data-icon="📜">รายการซื้อขายทั้งหมด</a><a href="stock_chart.html" class="rnav-link" data-icon="📈">กราฟ</a><a href="watchlist.html" class="rnav-link active" aria-current="page" data-icon="📋">หุ้นที่สนใจ</a><a href="advisor.html" class="rnav-link" data-icon="💡">คำแนะนำ</a></div></div><div class="rnav-live-bar"><div class="rnav-live-left"><button id="rnav-btn-refresh" class="rnav-refresh-btn" onclick="triggerGlobalRefresh()" title="กดเพื่อดึงราคาตลาดสดทันที"><span id="rnav-refresh-icon" style="display:inline-block; transition:transform 0.6s ease;">🔄</span> <span id="rnav-refresh-text">รีเฟรชราคา</span> <span class="rnav-live-badge">Live</span></button><div class="rnav-int-group" title="อัปเดตราคาหุ้นอัตโนมัติ (5วิ - 60วิ)"><span class="rnav-int-label">⏱️<span class="rnav-int-word"> อัปเดตสด:</span></span><button id="rnav-live-0" class="rnav-int-btn active" onclick="setGlobalLiveInterval(0)">ปิด</button><button id="rnav-live-5" class="rnav-int-btn" onclick="setGlobalLiveInterval(5)">5s</button><button id="rnav-live-15" class="rnav-int-btn" onclick="setGlobalLiveInterval(15)">15s</button><button id="rnav-live-30" class="rnav-int-btn" onclick="setGlobalLiveInterval(30)">30s</button><button id="rnav-live-60" class="rnav-int-btn" onclick="setGlobalLiveInterval(60)">60s</button></div></div><div class="rnav-live-right"><span id="rnav-live-status" class="rnav-status">⚪ อัปเดตด้วยตนเอง</span><span class="rnav-time">อัปเดต: 2026-11-07 23:29</span></div></div></nav>
+<nav class="rnav" aria-label="รายงาน"><div class="rnav-top-row"><div class="rnav-links"><a href="portfolio_master.html" class="rnav-link" data-icon="👑">ภาพรวม</a><a href="portfolio_review.html" class="rnav-link" data-icon="🩺">สุขภาพพอร์ต</a><a href="portfolio_recovery.html" class="rnav-link" data-icon="🧗">แก้ดอย</a><a href="portfolio_dip_sim.html" class="rnav-link" data-icon="🎯">Dip จำลอง</a><a href="trades_ledger.html" class="rnav-link" data-icon="📜">รายการซื้อขายทั้งหมด</a><a href="stock_chart.html" class="rnav-link" data-icon="📈">กราฟ</a><a href="watchlist.html" class="rnav-link active" aria-current="page" data-icon="📋">หุ้นที่สนใจ</a><a href="advisor.html" class="rnav-link" data-icon="💡">คำแนะนำ</a></div></div><div class="rnav-live-bar"><div class="rnav-live-left"><button id="rnav-btn-refresh" class="rnav-refresh-btn" onclick="triggerGlobalRefresh()" title="กดเพื่อดึงราคาตลาดสดทันที"><span id="rnav-refresh-icon" style="display:inline-block; transition:transform 0.6s ease;">🔄</span> <span id="rnav-refresh-text">รีเฟรชราคา</span> <span class="rnav-live-badge">Live</span></button><div class="rnav-int-group" title="อัปเดตราคาหุ้นอัตโนมัติ (5วิ - 60วิ)"><span class="rnav-int-label">⏱️<span class="rnav-int-word"> อัปเดตสด:</span></span><button id="rnav-live-0" class="rnav-int-btn active" onclick="setGlobalLiveInterval(0)">ปิด</button><button id="rnav-live-5" class="rnav-int-btn" onclick="setGlobalLiveInterval(5)">5s</button><button id="rnav-live-15" class="rnav-int-btn" onclick="setGlobalLiveInterval(15)">15s</button><button id="rnav-live-30" class="rnav-int-btn" onclick="setGlobalLiveInterval(30)">30s</button><button id="rnav-live-60" class="rnav-int-btn" onclick="setGlobalLiveInterval(60)">60s</button></div></div><div class="rnav-live-right"><span id="rnav-live-status" class="rnav-status">⚪ อัปเดตด้วยตนเอง</span><span class="rnav-time">อัปเดต: 2026-11-08 00:38</span></div></div></nav>
 <script>
 (function() {
   var activeLink = document.querySelector(".rnav-link.active");
@@ -709,9 +844,9 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
 <div class="container">
     <div class="top-header">
         <h1>📋 หุ้นที่สนใจ (Watchlist)</h1>
-        <p class="lead">เรดาร์ติดตามหุ้นคุณภาพสูง 44 ตัวตามกรอบแนวรับสำคัญ เพื่อจับจังหวะเข้าซื้อในระดับราคาที่ปลอดภัย</p>
+        <p class="lead">เรดาร์ติดตามหุ้นคุณภาพสูง 38 ตัวตามกรอบแนวรับสำคัญ เพื่อจับจังหวะเข้าซื้อในระดับราคาที่ปลอดภัย</p>
         <div class="meta">
-            <span class="meta-chip">🕒 ข้อมูลราคา: <strong>2026-11-07 23:29:43</strong> (ใช้ราคา Premarket ถ้ามี ไม่มีจึงใช้ราคาปิด)</span>
+            <span class="meta-chip">🕒 ข้อมูลราคา: <strong>2026-11-08 00:38:42</strong> <span class="meta-price-note">(ใช้ราคา Premarket ถ้ามี ไม่มีจึงใช้ราคาปิด)</span></span>
             <span class="meta-chip">⭐ ในพอร์ตจริง: <strong>1 ตัว</strong></span>
             <span class="meta-chip">🎯 ในโซนซื้อ 0-5%: <strong>2 ตัว</strong></span>
         </div>
@@ -721,10 +856,10 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
     <!-- Main Navigation Tabs -->
     <div class="main-tabs">
         <button class="main-tab-btn active" id="tab-btn-watchlist" onclick="switchMainTab('watchlist')">
-            📋 เรดาร์หุ้นและแนวรับ (44 ตัว)
+            📋 เรดาร์หุ้นและแนวรับ (38 ตัว)
         </button>
         <button class="main-tab-btn" id="tab-btn-robotics" onclick="switchMainTab('robotics')">
-            🤖 เจาะลึกชิปหุ่นยนต์ & Physical AI (BOM $7,200) <span class="tab-badge">Hot</span>
+            🤖 ชิปหุ่นยนต์ & Physical AI ($7,200) <span class="tab-badge">Hot</span>
         </button>
     </div>
 
@@ -735,7 +870,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <!-- Card 1: Buy Zone Ready -->
             <div class="ribbon-card ribbon-card-buy" onclick="filterByPill('buy')" style="cursor:pointer;" title="คลิกเพื่อกรองเฉพาะหุ้นในโซนซื้อ">
                 <div class="ribbon-top">
-                    <span class="ribbon-title"><span>🎯</span> พร้อมเข้าซื้อ (Buy Zone 0-5%)</span>
+                    <span class="ribbon-title"><span>🎯</span> พร้อมซื้อ (0-5%)</span>
                     <span class="status-pill status-emerald">จุดซื้อทันที</span>
                 </div>
                 <div class="ribbon-num">2</div>
@@ -746,43 +881,43 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <!-- Card 2: Broken Support -->
             <div class="ribbon-card ribbon-card-broken" onclick="filterByStatus('A')" style="cursor:pointer;" title="คลิกเพื่อกรองหุ้นที่หลุดแนวรับ">
                 <div class="ribbon-top">
-                    <span class="ribbon-title"><span>🔻</span> หลุดแนวรับแล้ว (&lt; 0%)</span>
+                    <span class="ribbon-title"><span>🔻</span> หลุดแนวรับ (&lt; 0%)</span>
                     <span class="status-pill status-rose">ห้ามรับมีด</span>
                 </div>
-                <div class="ribbon-num">26</div>
+                <div class="ribbon-num">23</div>
                 <div class="ribbon-sub">แนวรับเดิมแตกแล้ว รอราคายืนกลับเหนือเส้นเฉลี่ย</div>
             </div>
 
             <!-- Card 3: Far from Support -->
             <div class="ribbon-card ribbon-card-far" onclick="filterByStatus('C')" style="cursor:pointer;" title="คลิกเพื่อกรองหุ้นที่ยังไกล">
                 <div class="ribbon-top">
-                    <span class="ribbon-title"><span>⏳</span> ยังไกลจากแนวรับ (&gt; 5%)</span>
+                    <span class="ribbon-title"><span>⏳</span> ยังไกลแนวรับ (&gt; 5%)</span>
                     <span class="status-pill status-slate">รอจังหวะย่อ</span>
                 </div>
-                <div class="ribbon-num">16</div>
+                <div class="ribbon-num">13</div>
                 <div class="ribbon-sub">ยังไม่ถึงจุดเข้าซื้อ อดทนรอราคาย่อตัวลงมาทดสอบ</div>
             </div>
 
             <!-- Card 4: Health Gauge & Highlights -->
             <div class="ribbon-card ribbon-card-health">
                 <div class="ribbon-top">
-                    <span class="ribbon-title"><span>📊</span> สัดส่วนสุขภาพ Watchlist</span>
-                    <span style="font-size:0.75rem;color:var(--gold);font-weight:700;">2/44 ตัว</span>
+                    <span class="ribbon-title"><span>📊</span> สัดส่วนสุขภาพ</span>
+                    <span style="font-size:0.75rem;color:var(--gold);font-weight:700;">2/38 ตัว</span>
                 </div>
                 <div class="health-bar-container">
                     <div class="health-bar">
-                        <div class="hb-seg hb-emerald" style="width:4.5%" title="ในจุดซื้อ: 4.5%"></div>
-                        <div class="hb-seg hb-slate" style="width:36.4%" title="ยังไกล: 36.4%"></div>
-                        <div class="hb-seg hb-rose" style="width:59.1%" title="หลุดแนวรับ: 59.1%"></div>
+                        <div class="hb-seg hb-emerald" style="width:5.3%" title="ในจุดซื้อ: 5.3%"></div>
+                        <div class="hb-seg hb-slate" style="width:34.2%" title="ยังไกล: 34.2%"></div>
+                        <div class="hb-seg hb-rose" style="width:60.5%" title="หลุดแนวรับ: 60.5%"></div>
                     </div>
                     <div class="health-legend">
                         <span>🟢 จุดซื้อ 5%</span>
-                        <span>⚪ รอ 36%</span>
-                        <span>🔴 หลุด 59%</span>
+                        <span>⚪ รอ 34%</span>
+                        <span>🔴 หลุด 61%</span>
                     </div>
                 </div>
-                <div style="font-size:0.74rem;color:var(--text2);margin-top:4px;">
-                    ✨ <strong>AEHR</strong> Super Turnaround | 👑 <strong>ADI</strong> ชิปหุ่นยนต์ #1
+                <div style="font-size:0.74rem;color:var(--text2);margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">
+                    ✨ <strong>AEHR</strong> Turnaround | 👑 <strong>ADI</strong> #1
                 </div>
             </div>
         </div>
@@ -790,7 +925,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
         <!-- Pillar 3: Theme & Sector Filter Pills -->
         <div class="pills-container">
             <div class="pills-bar">
-                <button class="pill-btn active" id="pill-all" onclick="filterByPill('all')">🌟 ทั้งหมด (44)</button><button class="pill-btn pill-buy" id="pill-buy" onclick="filterByPill('buy')">🎯 โซนซื้อ 0-5% (2)</button><button class="pill-btn pill-port" id="pill-port" onclick="filterByPill('port')">⭐ ในพอร์ต (1)</button><button class="pill-btn" data-group="AI Applications" onclick="filterByPill('AI Applications')">💼 AI Applications (4)</button><button class="pill-btn" data-group="AI Connectivity" onclick="filterByPill('AI Connectivity')">🌐 AI Connectivity (4)</button><button class="pill-btn" data-group="AI Power" onclick="filterByPill('AI Power')">🔋 AI Power (2)</button><button class="pill-btn" data-group="AI Silicon" onclick="filterByPill('AI Silicon')">🧠 AI Silicon (4)</button><button class="pill-btn" data-group="AI Utilities" onclick="filterByPill('AI Utilities')">☁️ AI Utilities (1)</button><button class="pill-btn" data-group="Bigtech Dip 2026-11" onclick="filterByPill('Bigtech Dip 2026-11')">💎 Bigtech Dip 2026-11 (2)</button><button class="pill-btn" data-group="CPU Bottleneck" onclick="filterByPill('CPU Bottleneck')">🖥️ CPU Bottleneck (3)</button><button class="pill-btn" data-group="Drones" onclick="filterByPill('Drones')">🛩️ Drones (2)</button><button class="pill-btn" data-group="ETF Plan 2026-11" onclick="filterByPill('ETF Plan 2026-11')">📈 ETF Plan 2026-11 (3)</button><button class="pill-btn" data-group="Midterm 2026" onclick="filterByPill('Midterm 2026')">🗳️ Midterm 2026 (5)</button><button class="pill-btn" data-group="Nuclear" onclick="filterByPill('Nuclear')">⚡ Nuclear (1)</button><button class="pill-btn" data-group="Photonics" onclick="filterByPill('Photonics')">💡 Photonics (2)</button><button class="pill-btn" data-group="Physical AI" onclick="filterByPill('Physical AI')">🤖 Physical AI (6)</button><button class="pill-btn" data-group="Quantum" onclick="filterByPill('Quantum')">⚛️ Quantum (1)</button><button class="pill-btn" data-group="Space" onclick="filterByPill('Space')">🚀 Space (4)</button>
+                <button class="pill-btn active" id="pill-all" onclick="filterByPill('all')">🌟 ทั้งหมด (38)</button><button class="pill-btn pill-buy" id="pill-buy" onclick="filterByPill('buy')">🎯 โซนซื้อ 0-5% (2)</button><button class="pill-btn pill-port" id="pill-port" onclick="filterByPill('port')">⭐ ในพอร์ต (1)</button><button class="pill-btn" data-group="AI Applications" onclick="filterByPill('AI Applications')">💼 AI Applications (3)</button><button class="pill-btn" data-group="AI Connectivity" onclick="filterByPill('AI Connectivity')">🌐 AI Connectivity (4)</button><button class="pill-btn" data-group="AI Power" onclick="filterByPill('AI Power')">🔋 AI Power (2)</button><button class="pill-btn" data-group="AI Silicon" onclick="filterByPill('AI Silicon')">🧠 AI Silicon (4)</button><button class="pill-btn" data-group="Bigtech Dip 2026-11" onclick="filterByPill('Bigtech Dip 2026-11')">💎 Bigtech Dip 2026-11 (2)</button><button class="pill-btn" data-group="CPU Bottleneck" onclick="filterByPill('CPU Bottleneck')">🖥️ CPU Bottleneck (3)</button><button class="pill-btn" data-group="Drones" onclick="filterByPill('Drones')">🛩️ Drones (2)</button><button class="pill-btn" data-group="ETF Plan 2026-11" onclick="filterByPill('ETF Plan 2026-11')">📈 ETF Plan 2026-11 (3)</button><button class="pill-btn" data-group="Midterm 2026" onclick="filterByPill('Midterm 2026')">🗳️ Midterm 2026 (2)</button><button class="pill-btn" data-group="Nuclear" onclick="filterByPill('Nuclear')">⚡ Nuclear (1)</button><button class="pill-btn" data-group="Photonics" onclick="filterByPill('Photonics')">💡 Photonics (2)</button><button class="pill-btn" data-group="Physical AI" onclick="filterByPill('Physical AI')">🤖 Physical AI (6)</button><button class="pill-btn" data-group="Space" onclick="filterByPill('Space')">🚀 Space (4)</button>
             </div>
         </div>
 
@@ -804,14 +939,14 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <!-- Pillar 2: Dual View Switcher -->
             <div class="view-toggle-group">
                 <button class="view-btn active" id="btn-view-grid" onclick="setViewMode('grid')">
-                    <span>🗂️</span> Grid Cards
+                    <span>🗂️</span> การ์ด (Cards)
                 </button>
                 <button class="view-btn" id="btn-view-table" onclick="setViewMode('table')">
-                    <span>📊</span> Pro Table
+                    <span>📊</span> ตาราง (Table)
                 </button>
             </div>
 
-            <div class="row-count-chip" id="row-count-display">แสดง 44 จาก 44 ตัว</div>
+            <div class="row-count-chip" id="row-count-display">แสดง 38 จาก 38 ตัว</div>
         </div>
 
         <!-- View 1: Grid Cards View -->
@@ -830,30 +965,30 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <div class="card-name" title="Marvell Technology, Inc.">Marvell Technology, Inc.</div>
             <div class="card-catalyst">📡 ชิปเครือข่ายความเร็วสูง Optical DSP &amp; AI</div>
             <div class="card-price-grid">
-                <div>
+                <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$145.38</div>
                     <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+3.0%</span></div>
                 </div>
-                <div>
-                    <div class="card-lbl">แนวรับ</div>
+                <div class="price-col-support">
+                    <div class="card-lbl">แนวรับ Fibo</div>
                     <div class="card-val gold">$222</div>
-                    <div class="card-sub">แนวรับ Fibo Shay Boloor</div>
+                    <div class="card-sub">แนวรับอ้างอิง</div>
                 </div>
-                <div style="text-align:right;">
+                <div class="price-col-dist">
                     <div class="card-lbl">ระยะห่าง</div>
                     <div class="card-val dist-rose">-34.5%</div>
                     <div class="card-sub">เทียบแนวรับ</div>
                 </div>
             </div>
-            <div class="card-gauge-box">
-                <div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose gauge-dot-edge" style="left:0.0%"></span></div>
+            <div class="card-meter-box">
+                <div class="card-meter meter-rose"><div class="meter-main"><span class="meter-icon">🔻</span> <span class="meter-bold">หลุดแนวรับแล้ว</span> (-34.5%)</div><span class="meter-hint">ห้ามรับมีด รอสัญญาณยืนฐาน</span></div>
             </div>
             <div class="card-actions">
-                <a href="chart.html?ticker=MRVL" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
+                <a href="stock_chart.html?ticker=MRVL" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
                     <span>📈</span> ดูกราฟ
                 </a>
-                <span class="card-src-tag">แนวรับ Fibo Shay Boloor</span>
+                <span class="card-src-tag" title="แนวรับ Fibo Shay Boloor">แนวรับ Fibo Shay Boloor</span>
             </div>
         </div>
         
@@ -870,30 +1005,30 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <div class="card-name" title="Credo Technology Group Holding Ltd.">Credo Technology Group Holding Ltd.</div>
             <div class="card-catalyst">⚡ สายเคเบิลความเร็วสูง AEC &amp; DSP ประหยัดไฟ</div>
             <div class="card-price-grid">
-                <div>
+                <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$124.34</div>
                     <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+3.2%</span></div>
                 </div>
-                <div>
-                    <div class="card-lbl">แนวรับ</div>
+                <div class="price-col-support">
+                    <div class="card-lbl">แนวรับ Fibo</div>
                     <div class="card-val gold">$167</div>
-                    <div class="card-sub">แนวรับ Fibo Shay Boloor</div>
+                    <div class="card-sub">แนวรับอ้างอิง</div>
                 </div>
-                <div style="text-align:right;">
+                <div class="price-col-dist">
                     <div class="card-lbl">ระยะห่าง</div>
                     <div class="card-val dist-rose">-25.5%</div>
                     <div class="card-sub">เทียบแนวรับ</div>
                 </div>
             </div>
-            <div class="card-gauge-box">
-                <div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose gauge-dot-edge" style="left:0.0%"></span></div>
+            <div class="card-meter-box">
+                <div class="card-meter meter-rose"><div class="meter-main"><span class="meter-icon">🔻</span> <span class="meter-bold">หลุดแนวรับแล้ว</span> (-25.5%)</div><span class="meter-hint">ห้ามรับมีด รอสัญญาณยืนฐาน</span></div>
             </div>
             <div class="card-actions">
-                <a href="chart.html?ticker=CRDO" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
+                <a href="stock_chart.html?ticker=CRDO" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
                     <span>📈</span> ดูกราฟ
                 </a>
-                <span class="card-src-tag">แนวรับ Fibo Shay Boloor</span>
+                <span class="card-src-tag" title="แนวรับ Fibo Shay Boloor">แนวรับ Fibo Shay Boloor</span>
             </div>
         </div>
         
@@ -910,30 +1045,30 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <div class="card-name" title="Astera Labs, Inc.">Astera Labs, Inc.</div>
             <div class="card-catalyst">🔌 ชิปเชื่อมต่อ PCIe Gen 6/CXL สำหรับ AI</div>
             <div class="card-price-grid">
-                <div>
+                <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$194.00</div>
                     <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+1.7%</span></div>
                 </div>
-                <div>
-                    <div class="card-lbl">แนวรับ</div>
+                <div class="price-col-support">
+                    <div class="card-lbl">แนวรับ Fibo</div>
                     <div class="card-val gold">$251</div>
-                    <div class="card-sub">แนวรับ Fibo Shay Boloor</div>
+                    <div class="card-sub">แนวรับอ้างอิง</div>
                 </div>
-                <div style="text-align:right;">
+                <div class="price-col-dist">
                     <div class="card-lbl">ระยะห่าง</div>
                     <div class="card-val dist-rose">-22.7%</div>
                     <div class="card-sub">เทียบแนวรับ</div>
                 </div>
             </div>
-            <div class="card-gauge-box">
-                <div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:4.6%"></span></div>
+            <div class="card-meter-box">
+                <div class="card-meter meter-rose"><div class="meter-main"><span class="meter-icon">🔻</span> <span class="meter-bold">หลุดแนวรับแล้ว</span> (-22.7%)</div><span class="meter-hint">ห้ามรับมีด รอสัญญาณยืนฐาน</span></div>
             </div>
             <div class="card-actions">
-                <a href="chart.html?ticker=ALAB" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
+                <a href="stock_chart.html?ticker=ALAB" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
                     <span>📈</span> ดูกราฟ
                 </a>
-                <span class="card-src-tag">แนวรับ Fibo Shay Boloor</span>
+                <span class="card-src-tag" title="แนวรับ Fibo Shay Boloor">แนวรับ Fibo Shay Boloor</span>
             </div>
         </div>
         
@@ -950,30 +1085,30 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <div class="card-name" title="ARM Holdings PLC Sponsored ADR">ARM Holdings PLC Sponsored ADR</div>
             <div class="card-catalyst">📱 สถาปัตยกรรมชิปประหยัดพลังงาน v9 ในเซิร์ฟเวอร์</div>
             <div class="card-price-grid">
-                <div>
+                <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$177.34</div>
                     <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+1.6%</span></div>
                 </div>
-                <div>
-                    <div class="card-lbl">แนวรับ</div>
+                <div class="price-col-support">
+                    <div class="card-lbl">แนวรับ Fibo</div>
                     <div class="card-val gold">$225</div>
-                    <div class="card-sub">แนวรับ Fibo Shay Boloor</div>
+                    <div class="card-sub">แนวรับอ้างอิง</div>
                 </div>
-                <div style="text-align:right;">
+                <div class="price-col-dist">
                     <div class="card-lbl">ระยะห่าง</div>
                     <div class="card-val dist-rose">-21.2%</div>
                     <div class="card-sub">เทียบแนวรับ</div>
                 </div>
             </div>
-            <div class="card-gauge-box">
-                <div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:7.6%"></span></div>
+            <div class="card-meter-box">
+                <div class="card-meter meter-rose"><div class="meter-main"><span class="meter-icon">🔻</span> <span class="meter-bold">หลุดแนวรับแล้ว</span> (-21.2%)</div><span class="meter-hint">ห้ามรับมีด รอสัญญาณยืนฐาน</span></div>
             </div>
             <div class="card-actions">
-                <a href="chart.html?ticker=ARM" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
+                <a href="stock_chart.html?ticker=ARM" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
                     <span>📈</span> ดูกราฟ
                 </a>
-                <span class="card-src-tag">แนวรับ Fibo Shay Boloor</span>
+                <span class="card-src-tag" title="แนวรับ Fibo Shay Boloor">แนวรับ Fibo Shay Boloor</span>
             </div>
         </div>
         
@@ -990,30 +1125,30 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <div class="card-name" title="ServiceNow, Inc.">ServiceNow, Inc.</div>
             <div class="card-catalyst">💼 ระบบจัดการงานอัตโนมัติ Workflow AI</div>
             <div class="card-price-grid">
-                <div>
+                <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$102.54</div>
                     <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+0.6%</span></div>
                 </div>
-                <div>
-                    <div class="card-lbl">แนวรับ</div>
+                <div class="price-col-support">
+                    <div class="card-lbl">แนวรับ Fibo</div>
                     <div class="card-val gold">$124</div>
-                    <div class="card-sub">แนวรับ Fibo Shay Boloor</div>
+                    <div class="card-sub">แนวรับอ้างอิง</div>
                 </div>
-                <div style="text-align:right;">
+                <div class="price-col-dist">
                     <div class="card-lbl">ระยะห่าง</div>
                     <div class="card-val dist-rose">-17.3%</div>
                     <div class="card-sub">เทียบแนวรับ</div>
                 </div>
             </div>
-            <div class="card-gauge-box">
-                <div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:15.4%"></span></div>
+            <div class="card-meter-box">
+                <div class="card-meter meter-rose"><div class="meter-main"><span class="meter-icon">🔻</span> <span class="meter-bold">หลุดแนวรับแล้ว</span> (-17.3%)</div><span class="meter-hint">ห้ามรับมีด รอสัญญาณยืนฐาน</span></div>
             </div>
             <div class="card-actions">
-                <a href="chart.html?ticker=NOW" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
+                <a href="stock_chart.html?ticker=NOW" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
                     <span>📈</span> ดูกราฟ
                 </a>
-                <span class="card-src-tag">แนวรับ Fibo Shay Boloor</span>
+                <span class="card-src-tag" title="แนวรับ Fibo Shay Boloor">แนวรับ Fibo Shay Boloor</span>
             </div>
         </div>
         
@@ -1030,30 +1165,30 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <div class="card-name" title="Micron Technology, Inc.">Micron Technology, Inc.</div>
             <div class="card-catalyst">💾 ชิปหน่วยความจำ HBM3E สำหรับเซิร์ฟเวอร์ AI</div>
             <div class="card-price-grid">
-                <div>
+                <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$709.00</div>
                     <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+2.8%</span></div>
                 </div>
-                <div>
-                    <div class="card-lbl">แนวรับ</div>
+                <div class="price-col-support">
+                    <div class="card-lbl">แนวรับ Fibo</div>
                     <div class="card-val gold">$849</div>
-                    <div class="card-sub">แนวรับ Fibo Shay Boloor</div>
+                    <div class="card-sub">แนวรับอ้างอิง</div>
                 </div>
-                <div style="text-align:right;">
+                <div class="price-col-dist">
                     <div class="card-lbl">ระยะห่าง</div>
                     <div class="card-val dist-rose">-16.5%</div>
                     <div class="card-sub">เทียบแนวรับ</div>
                 </div>
             </div>
-            <div class="card-gauge-box">
-                <div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:17.0%"></span></div>
+            <div class="card-meter-box">
+                <div class="card-meter meter-rose"><div class="meter-main"><span class="meter-icon">🔻</span> <span class="meter-bold">หลุดแนวรับแล้ว</span> (-16.5%)</div><span class="meter-hint">ห้ามรับมีด รอสัญญาณยืนฐาน</span></div>
             </div>
             <div class="card-actions">
-                <a href="chart.html?ticker=MU" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
+                <a href="stock_chart.html?ticker=MU" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
                     <span>📈</span> ดูกราฟ
                 </a>
-                <span class="card-src-tag">แนวรับ Fibo Shay Boloor</span>
+                <span class="card-src-tag" title="แนวรับ Fibo Shay Boloor">แนวรับ Fibo Shay Boloor</span>
             </div>
         </div>
         
@@ -1070,30 +1205,30 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <div class="card-name" title="Coherent Corp.">Coherent Corp.</div>
             <div class="card-catalyst">💡 Optical Transceiver 800G/1.6T สำหรับ AI</div>
             <div class="card-price-grid">
-                <div>
+                <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$189.50</div>
                     <div class="card-sub"><span class="ptag">Pre</span> <span class="down">-1.7%</span></div>
                 </div>
-                <div>
-                    <div class="card-lbl">แนวรับ</div>
+                <div class="price-col-support">
+                    <div class="card-lbl">แนวรับ Fibo</div>
                     <div class="card-val gold">$224</div>
-                    <div class="card-sub">แนวรับ Fibo Shay Boloor</div>
+                    <div class="card-sub">แนวรับอ้างอิง</div>
                 </div>
-                <div style="text-align:right;">
+                <div class="price-col-dist">
                     <div class="card-lbl">ระยะห่าง</div>
                     <div class="card-val dist-rose">-15.4%</div>
                     <div class="card-sub">เทียบแนวรับ</div>
                 </div>
             </div>
-            <div class="card-gauge-box">
-                <div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:19.2%"></span></div>
+            <div class="card-meter-box">
+                <div class="card-meter meter-rose"><div class="meter-main"><span class="meter-icon">🔻</span> <span class="meter-bold">หลุดแนวรับแล้ว</span> (-15.4%)</div><span class="meter-hint">ห้ามรับมีด รอสัญญาณยืนฐาน</span></div>
             </div>
             <div class="card-actions">
-                <a href="chart.html?ticker=COHR" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
+                <a href="stock_chart.html?ticker=COHR" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
                     <span>📈</span> ดูกราฟ
                 </a>
-                <span class="card-src-tag">แนวรับ Fibo Shay Boloor</span>
+                <span class="card-src-tag" title="แนวรับ Fibo Shay Boloor">แนวรับ Fibo Shay Boloor</span>
             </div>
         </div>
         
@@ -1110,70 +1245,30 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <div class="card-name" title="Kratos Defense &amp; Security Solutions, Inc.">Kratos Defense &amp; Security Solutions, Inc.</div>
             <div class="card-catalyst">🛩️ โดรนเป้าซ้อมรบ &amp; โดรนรบร่วม Valkyrie</div>
             <div class="card-price-grid">
-                <div>
+                <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$33.51</div>
                     <div class="card-sub"><span class="ptag">Pre</span> <span class="down">-4.5%</span></div>
                 </div>
-                <div>
-                    <div class="card-lbl">แนวรับ</div>
+                <div class="price-col-support">
+                    <div class="card-lbl">แนวรับ Fibo</div>
                     <div class="card-val gold">$39</div>
-                    <div class="card-sub">แนวรับ Fibo Shay Boloor</div>
+                    <div class="card-sub">แนวรับอ้างอิง</div>
                 </div>
-                <div style="text-align:right;">
+                <div class="price-col-dist">
                     <div class="card-lbl">ระยะห่าง</div>
                     <div class="card-val dist-rose">-14.1%</div>
                     <div class="card-sub">เทียบแนวรับ</div>
                 </div>
             </div>
-            <div class="card-gauge-box">
-                <div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:21.8%"></span></div>
+            <div class="card-meter-box">
+                <div class="card-meter meter-rose"><div class="meter-main"><span class="meter-icon">🔻</span> <span class="meter-bold">หลุดแนวรับแล้ว</span> (-14.1%)</div><span class="meter-hint">ห้ามรับมีด รอสัญญาณยืนฐาน</span></div>
             </div>
             <div class="card-actions">
-                <a href="chart.html?ticker=KTOS" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
+                <a href="stock_chart.html?ticker=KTOS" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
                     <span>📈</span> ดูกราฟ
                 </a>
-                <span class="card-src-tag">แนวรับ Fibo Shay Boloor</span>
-            </div>
-        </div>
-        
-        <div class="stock-card card-rose" data-group="AI Utilities" data-status="A"
-             data-portfolio="false" data-ticker="DOCN"
-             data-pct="-13.333333333333334">
-            <div class="card-head">
-                <div class="card-tk-box">
-                    <span class="tk">DOCN</span>
-                    <span class="card-grp">AI Utilities</span>
-                </div>
-                <span class="status-pill status-rose">🔻 หลุดแนวรับ</span>
-            </div>
-            <div class="card-name" title="DigitalOcean Holdings, Inc.">DigitalOcean Holdings, Inc.</div>
-            <div class="card-catalyst">☁️ คลาวด์สำหรับนักพัฒนาโมเดล AI ขนาดเล็ก/กลาง</div>
-            <div class="card-price-grid">
-                <div>
-                    <div class="card-lbl">ราคาตอนนี้</div>
-                    <div class="card-val">$78.00</div>
-                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+7.6%</span></div>
-                </div>
-                <div>
-                    <div class="card-lbl">แนวรับ</div>
-                    <div class="card-val gold">$90</div>
-                    <div class="card-sub">แนวรับ Fibo Shay Boloor</div>
-                </div>
-                <div style="text-align:right;">
-                    <div class="card-lbl">ระยะห่าง</div>
-                    <div class="card-val dist-rose">-13.3%</div>
-                    <div class="card-sub">เทียบแนวรับ</div>
-                </div>
-            </div>
-            <div class="card-gauge-box">
-                <div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:23.3%"></span></div>
-            </div>
-            <div class="card-actions">
-                <a href="chart.html?ticker=DOCN" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
-                    <span>📈</span> ดูกราฟ
-                </a>
-                <span class="card-src-tag">แนวรับ Fibo Shay Boloor</span>
+                <span class="card-src-tag" title="แนวรับ Fibo Shay Boloor">แนวรับ Fibo Shay Boloor</span>
             </div>
         </div>
         
@@ -1190,30 +1285,30 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <div class="card-name" title="Amkor Technology, Inc.">Amkor Technology, Inc.</div>
             <div class="card-catalyst">📦 แพ็กเกจจิ้งชิปขั้นสูง 2.5D/3D สำหรับ AI</div>
             <div class="card-price-grid">
-                <div>
+                <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$33.40</div>
                     <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+1.8%</span></div>
                 </div>
-                <div>
-                    <div class="card-lbl">แนวรับ</div>
+                <div class="price-col-support">
+                    <div class="card-lbl">แนวรับ Fibo</div>
                     <div class="card-val gold">$38</div>
-                    <div class="card-sub">แนวรับ Fibo Shay Boloor</div>
+                    <div class="card-sub">แนวรับอ้างอิง</div>
                 </div>
-                <div style="text-align:right;">
+                <div class="price-col-dist">
                     <div class="card-lbl">ระยะห่าง</div>
                     <div class="card-val dist-rose">-12.1%</div>
                     <div class="card-sub">เทียบแนวรับ</div>
                 </div>
             </div>
-            <div class="card-gauge-box">
-                <div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:25.8%"></span></div>
+            <div class="card-meter-box">
+                <div class="card-meter meter-rose"><div class="meter-main"><span class="meter-icon">🔻</span> <span class="meter-bold">หลุดแนวรับแล้ว</span> (-12.1%)</div><span class="meter-hint">ห้ามรับมีด รอสัญญาณยืนฐาน</span></div>
             </div>
             <div class="card-actions">
-                <a href="chart.html?ticker=AMKR" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
+                <a href="stock_chart.html?ticker=AMKR" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
                     <span>📈</span> ดูกราฟ
                 </a>
-                <span class="card-src-tag">แนวรับ Fibo Shay Boloor</span>
+                <span class="card-src-tag" title="แนวรับ Fibo Shay Boloor">แนวรับ Fibo Shay Boloor</span>
             </div>
         </div>
         
@@ -1230,30 +1325,30 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <div class="card-name" title="ASML Holding NV Sponsored ADR">ASML Holding NV Sponsored ADR</div>
             <div class="card-catalyst">🔬 เครื่องพิมพ์ชิป EUV High-NA หนึ่งเดียวในโลก</div>
             <div class="card-price-grid">
-                <div>
+                <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$1,446.28</div>
                     <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+1.5%</span></div>
                 </div>
-                <div>
-                    <div class="card-lbl">แนวรับ</div>
+                <div class="price-col-support">
+                    <div class="card-lbl">แนวรับ Fibo</div>
                     <div class="card-val gold">$1,637</div>
-                    <div class="card-sub">แนวรับ Fibo Shay Boloor</div>
+                    <div class="card-sub">แนวรับอ้างอิง</div>
                 </div>
-                <div style="text-align:right;">
+                <div class="price-col-dist">
                     <div class="card-lbl">ระยะห่าง</div>
                     <div class="card-val dist-rose">-11.7%</div>
                     <div class="card-sub">เทียบแนวรับ</div>
                 </div>
             </div>
-            <div class="card-gauge-box">
-                <div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:26.7%"></span></div>
+            <div class="card-meter-box">
+                <div class="card-meter meter-rose"><div class="meter-main"><span class="meter-icon">🔻</span> <span class="meter-bold">หลุดแนวรับแล้ว</span> (-11.7%)</div><span class="meter-hint">ห้ามรับมีด รอสัญญาณยืนฐาน</span></div>
             </div>
             <div class="card-actions">
-                <a href="chart.html?ticker=ASML" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
+                <a href="stock_chart.html?ticker=ASML" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
                     <span>📈</span> ดูกราฟ
                 </a>
-                <span class="card-src-tag">แนวรับ Fibo Shay Boloor</span>
+                <span class="card-src-tag" title="แนวรับ Fibo Shay Boloor">แนวรับ Fibo Shay Boloor</span>
             </div>
         </div>
         
@@ -1270,30 +1365,30 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <div class="card-name" title="NVIDIA Corporation">NVIDIA Corporation</div>
             <div class="card-catalyst">🧠 เจ้าตลาดชิป AI ผูกขาดสถาปัตยกรรม Blackwell Ultra</div>
             <div class="card-price-grid">
-                <div>
+                <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$191.18</div>
                     <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+2.4%</span></div>
                 </div>
-                <div>
-                    <div class="card-lbl">แนวรับ</div>
+                <div class="price-col-support">
+                    <div class="card-lbl">แนวรับ Fibo</div>
                     <div class="card-val gold">$210</div>
-                    <div class="card-sub">แนวรับ Fibo Shay Boloor</div>
+                    <div class="card-sub">แนวรับอ้างอิง</div>
                 </div>
-                <div style="text-align:right;">
+                <div class="price-col-dist">
                     <div class="card-lbl">ระยะห่าง</div>
                     <div class="card-val dist-rose">-9.0%</div>
                     <div class="card-sub">เทียบแนวรับ</div>
                 </div>
             </div>
-            <div class="card-gauge-box">
-                <div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:32.1%"></span></div>
+            <div class="card-meter-box">
+                <div class="card-meter meter-rose"><div class="meter-main"><span class="meter-icon">🔻</span> <span class="meter-bold">หลุดแนวรับแล้ว</span> (-9.0%)</div><span class="meter-hint">ห้ามรับมีด รอสัญญาณยืนฐาน</span></div>
             </div>
             <div class="card-actions">
-                <a href="chart.html?ticker=NVDA" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
+                <a href="stock_chart.html?ticker=NVDA" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
                     <span>📈</span> ดูกราฟ
                 </a>
-                <span class="card-src-tag">แนวรับ Fibo Shay Boloor</span>
+                <span class="card-src-tag" title="แนวรับ Fibo Shay Boloor">แนวรับ Fibo Shay Boloor</span>
             </div>
         </div>
         
@@ -1310,30 +1405,30 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <div class="card-name" title="Palantir Technologies Inc. Class A">Palantir Technologies Inc. Class A</div>
             <div class="card-catalyst">🛡️ แพลตฟอร์มซอฟต์แวร์ AIP กองทัพและองค์กร</div>
             <div class="card-price-grid">
-                <div>
+                <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$158.69</div>
                     <div class="card-sub"><span class="ptag">Pre</span> <span class="down">-1.1%</span></div>
                 </div>
-                <div>
-                    <div class="card-lbl">แนวรับ</div>
+                <div class="price-col-support">
+                    <div class="card-lbl">แนวรับ Fibo</div>
                     <div class="card-val gold">$172</div>
-                    <div class="card-sub">แนวรับ Fibo Shay Boloor</div>
+                    <div class="card-sub">แนวรับอ้างอิง</div>
                 </div>
-                <div style="text-align:right;">
+                <div class="price-col-dist">
                     <div class="card-lbl">ระยะห่าง</div>
                     <div class="card-val dist-rose">-7.7%</div>
                     <div class="card-sub">เทียบแนวรับ</div>
                 </div>
             </div>
-            <div class="card-gauge-box">
-                <div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:34.5%"></span></div>
+            <div class="card-meter-box">
+                <div class="card-meter meter-rose"><div class="meter-main"><span class="meter-icon">🔻</span> <span class="meter-bold">หลุดแนวรับแล้ว</span> (-7.7%)</div><span class="meter-hint">ห้ามรับมีด รอสัญญาณยืนฐาน</span></div>
             </div>
             <div class="card-actions">
-                <a href="chart.html?ticker=PLTR" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
+                <a href="stock_chart.html?ticker=PLTR" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
                     <span>📈</span> ดูกราฟ
                 </a>
-                <span class="card-src-tag">แนวรับ Fibo Shay Boloor</span>
+                <span class="card-src-tag" title="แนวรับ Fibo Shay Boloor">แนวรับ Fibo Shay Boloor</span>
             </div>
         </div>
         
@@ -1350,30 +1445,30 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <div class="card-name" title="Advanced Micro Devices, Inc.">Advanced Micro Devices, Inc.</div>
             <div class="card-catalyst">🖥️ ชิปเร่งความเร็ว AI MI300/MI350 &amp; ซีพียู EPYC</div>
             <div class="card-price-grid">
-                <div>
+                <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$443.67</div>
                     <div class="card-sub"><span class="ptag">Pre</span> <span class="down">-1.2%</span></div>
                 </div>
-                <div>
-                    <div class="card-lbl">แนวรับ</div>
+                <div class="price-col-support">
+                    <div class="card-lbl">แนวรับ Fibo</div>
                     <div class="card-val gold">$479</div>
-                    <div class="card-sub">แนวรับ Fibo Shay Boloor</div>
+                    <div class="card-sub">แนวรับอ้างอิง</div>
                 </div>
-                <div style="text-align:right;">
+                <div class="price-col-dist">
                     <div class="card-lbl">ระยะห่าง</div>
                     <div class="card-val dist-rose">-7.4%</div>
                     <div class="card-sub">เทียบแนวรับ</div>
                 </div>
             </div>
-            <div class="card-gauge-box">
-                <div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:35.2%"></span></div>
+            <div class="card-meter-box">
+                <div class="card-meter meter-rose"><div class="meter-main"><span class="meter-icon">🔻</span> <span class="meter-bold">หลุดแนวรับแล้ว</span> (-7.4%)</div><span class="meter-hint">ห้ามรับมีด รอสัญญาณยืนฐาน</span></div>
             </div>
             <div class="card-actions">
-                <a href="chart.html?ticker=AMD" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
+                <a href="stock_chart.html?ticker=AMD" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
                     <span>📈</span> ดูกราฟ
                 </a>
-                <span class="card-src-tag">แนวรับ Fibo Shay Boloor</span>
+                <span class="card-src-tag" title="แนวรับ Fibo Shay Boloor">แนวรับ Fibo Shay Boloor</span>
             </div>
         </div>
         
@@ -1390,30 +1485,30 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <div class="card-name" title="Redwire Corp">Redwire Corp</div>
             <div class="card-catalyst">🛰️ แผงโซลาร์อวกาศ &amp; โครงสร้างพื้นฐานวงโคจร</div>
             <div class="card-price-grid">
-                <div>
+                <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$6.49</div>
                     <div class="card-sub"><span class="ptag">Pre</span> <span class="down">-10.0%</span></div>
                 </div>
-                <div>
-                    <div class="card-lbl">แนวรับ</div>
+                <div class="price-col-support">
+                    <div class="card-lbl">แนวรับ Fibo</div>
                     <div class="card-val gold">$7</div>
-                    <div class="card-sub">แนวรับ Fibo Shay Boloor</div>
+                    <div class="card-sub">แนวรับอ้างอิง</div>
                 </div>
-                <div style="text-align:right;">
+                <div class="price-col-dist">
                     <div class="card-lbl">ระยะห่าง</div>
                     <div class="card-val dist-rose">-7.3%</div>
                     <div class="card-sub">เทียบแนวรับ</div>
                 </div>
             </div>
-            <div class="card-gauge-box">
-                <div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:35.4%"></span></div>
+            <div class="card-meter-box">
+                <div class="card-meter meter-rose"><div class="meter-main"><span class="meter-icon">🔻</span> <span class="meter-bold">หลุดแนวรับแล้ว</span> (-7.3%)</div><span class="meter-hint">ห้ามรับมีด รอสัญญาณยืนฐาน</span></div>
             </div>
             <div class="card-actions">
-                <a href="chart.html?ticker=RDW" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
+                <a href="stock_chart.html?ticker=RDW" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
                     <span>📈</span> ดูกราฟ
                 </a>
-                <span class="card-src-tag">แนวรับ Fibo Shay Boloor</span>
+                <span class="card-src-tag" title="แนวรับ Fibo Shay Boloor">แนวรับ Fibo Shay Boloor</span>
             </div>
         </div>
         
@@ -1430,70 +1525,30 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <div class="card-name" title="Alphabet Inc. Class A">Alphabet Inc. Class A</div>
             <div class="card-catalyst">🤖 สมองกล Physical AI Gemini &amp; ชิป TPU v6</div>
             <div class="card-price-grid">
-                <div>
+                <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$284.80</div>
                     <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+0.0%</span></div>
                 </div>
-                <div>
-                    <div class="card-lbl">แนวรับ</div>
+                <div class="price-col-support">
+                    <div class="card-lbl">แนวรับ Fibo</div>
                     <div class="card-val gold">$307</div>
-                    <div class="card-sub">แนวรับ Fibo Shay Boloor</div>
+                    <div class="card-sub">แนวรับอ้างอิง</div>
                 </div>
-                <div style="text-align:right;">
+                <div class="price-col-dist">
                     <div class="card-lbl">ระยะห่าง</div>
                     <div class="card-val dist-rose">-7.2%</div>
                     <div class="card-sub">เทียบแนวรับ</div>
                 </div>
             </div>
-            <div class="card-gauge-box">
-                <div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:35.5%"></span></div>
+            <div class="card-meter-box">
+                <div class="card-meter meter-rose"><div class="meter-main"><span class="meter-icon">🔻</span> <span class="meter-bold">หลุดแนวรับแล้ว</span> (-7.2%)</div><span class="meter-hint">ห้ามรับมีด รอสัญญาณยืนฐาน</span></div>
             </div>
             <div class="card-actions">
-                <a href="chart.html?ticker=GOOGL" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
+                <a href="stock_chart.html?ticker=GOOGL" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
                     <span>📈</span> ดูกราฟ
                 </a>
-                <span class="card-src-tag">แนวรับ Fibo Shay Boloor</span>
-            </div>
-        </div>
-        
-        <div class="stock-card card-rose" data-group="Quantum" data-status="A"
-             data-portfolio="false" data-ticker="IONQ"
-             data-pct="-6.666666666666667">
-            <div class="card-head">
-                <div class="card-tk-box">
-                    <span class="tk">IONQ</span>
-                    <span class="card-grp">Quantum</span>
-                </div>
-                <span class="status-pill status-rose">🔻 หลุดแนวรับ</span>
-            </div>
-            <div class="card-name" title="IonQ, Inc.">IonQ, Inc.</div>
-            <div class="card-catalyst">⚛️ ผู้นำควอนตัม Trapped-ion เชิงพาณิชย์</div>
-            <div class="card-price-grid">
-                <div>
-                    <div class="card-lbl">ราคาตอนนี้</div>
-                    <div class="card-val">$28.00</div>
-                    <div class="card-sub"><span class="ptag">Pre</span> <span class="down">-14.2%</span></div>
-                </div>
-                <div>
-                    <div class="card-lbl">แนวรับ</div>
-                    <div class="card-val gold">$30</div>
-                    <div class="card-sub">แนวรับ Fibo Shay Boloor</div>
-                </div>
-                <div style="text-align:right;">
-                    <div class="card-lbl">ระยะห่าง</div>
-                    <div class="card-val dist-rose">-6.7%</div>
-                    <div class="card-sub">เทียบแนวรับ</div>
-                </div>
-            </div>
-            <div class="card-gauge-box">
-                <div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:36.7%"></span></div>
-            </div>
-            <div class="card-actions">
-                <a href="chart.html?ticker=IONQ" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
-                    <span>📈</span> ดูกราฟ
-                </a>
-                <span class="card-src-tag">แนวรับ Fibo Shay Boloor</span>
+                <span class="card-src-tag" title="แนวรับ Fibo Shay Boloor">แนวรับ Fibo Shay Boloor</span>
             </div>
         </div>
         
@@ -1510,30 +1565,30 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <div class="card-name" title="Bloom Energy Corporation Class A">Bloom Energy Corporation Class A</div>
             <div class="card-catalyst">⚡ เซลล์เชื้อเพลิงผลิตไฟฟ้านอกสายส่งป้อน Datacenter</div>
             <div class="card-price-grid">
-                <div>
+                <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$183.30</div>
                     <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+5.8%</span></div>
                 </div>
-                <div>
-                    <div class="card-lbl">แนวรับ</div>
+                <div class="price-col-support">
+                    <div class="card-lbl">แนวรับ Fibo</div>
                     <div class="card-val gold">$192</div>
-                    <div class="card-sub">แนวรับ Fibo Shay Boloor</div>
+                    <div class="card-sub">แนวรับอ้างอิง</div>
                 </div>
-                <div style="text-align:right;">
+                <div class="price-col-dist">
                     <div class="card-lbl">ระยะห่าง</div>
                     <div class="card-val dist-rose">-4.5%</div>
                     <div class="card-sub">เทียบแนวรับ</div>
                 </div>
             </div>
-            <div class="card-gauge-box">
-                <div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:40.9%"></span></div>
+            <div class="card-meter-box">
+                <div class="card-meter meter-rose"><div class="meter-main"><span class="meter-icon">🔻</span> <span class="meter-bold">หลุดแนวรับแล้ว</span> (-4.5%)</div><span class="meter-hint">ห้ามรับมีด รอสัญญาณยืนฐาน</span></div>
             </div>
             <div class="card-actions">
-                <a href="chart.html?ticker=BE" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
+                <a href="stock_chart.html?ticker=BE" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
                     <span>📈</span> ดูกราฟ
                 </a>
-                <span class="card-src-tag">แนวรับ Fibo Shay Boloor</span>
+                <span class="card-src-tag" title="แนวรับ Fibo Shay Boloor">แนวรับ Fibo Shay Boloor</span>
             </div>
         </div>
         
@@ -1550,30 +1605,30 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <div class="card-name" title="Taiwan Semiconductor Manufacturing Co., Ltd. Sponsored ADR">Taiwan Semiconductor Manufacturing Co., Ltd. Sponsored ADR</div>
             <div class="card-catalyst">🏭 ผู้ผลิตชิปผูกขาดระดับโลก N3/N2 Foundry</div>
             <div class="card-price-grid">
-                <div>
+                <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$380.85</div>
                     <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+1.4%</span></div>
                 </div>
-                <div>
-                    <div class="card-lbl">แนวรับ</div>
+                <div class="price-col-support">
+                    <div class="card-lbl">แนวรับ Fibo</div>
                     <div class="card-val gold">$398</div>
-                    <div class="card-sub">แนวรับ Fibo Shay Boloor</div>
+                    <div class="card-sub">แนวรับอ้างอิง</div>
                 </div>
-                <div style="text-align:right;">
+                <div class="price-col-dist">
                     <div class="card-lbl">ระยะห่าง</div>
                     <div class="card-val dist-rose">-4.3%</div>
                     <div class="card-sub">เทียบแนวรับ</div>
                 </div>
             </div>
-            <div class="card-gauge-box">
-                <div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:41.4%"></span></div>
+            <div class="card-meter-box">
+                <div class="card-meter meter-rose"><div class="meter-main"><span class="meter-icon">🔻</span> <span class="meter-bold">หลุดแนวรับแล้ว</span> (-4.3%)</div><span class="meter-hint">ห้ามรับมีด รอสัญญาณยืนฐาน</span></div>
             </div>
             <div class="card-actions">
-                <a href="chart.html?ticker=TSM" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
+                <a href="stock_chart.html?ticker=TSM" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
                     <span>📈</span> ดูกราฟ
                 </a>
-                <span class="card-src-tag">แนวรับ Fibo Shay Boloor</span>
+                <span class="card-src-tag" title="แนวรับ Fibo Shay Boloor">แนวรับ Fibo Shay Boloor</span>
             </div>
         </div>
         
@@ -1590,30 +1645,30 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <div class="card-name" title="Aehr Test Systems">Aehr Test Systems</div>
             <div class="card-catalyst">✨ Q1 Turnaround สถิติ Backlog $109M Wafer Burn-in</div>
             <div class="card-price-grid">
-                <div>
+                <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$54.65</div>
                     <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+2.0%</span></div>
                 </div>
-                <div>
-                    <div class="card-lbl">แนวรับ</div>
+                <div class="price-col-support">
+                    <div class="card-lbl">แนวรับ Fibo</div>
                     <div class="card-val gold">$57</div>
-                    <div class="card-sub">แนวรับ Fibo Shay Boloor</div>
+                    <div class="card-sub">แนวรับอ้างอิง</div>
                 </div>
-                <div style="text-align:right;">
+                <div class="price-col-dist">
                     <div class="card-lbl">ระยะห่าง</div>
                     <div class="card-val dist-rose">-4.1%</div>
                     <div class="card-sub">เทียบแนวรับ</div>
                 </div>
             </div>
-            <div class="card-gauge-box">
-                <div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:41.8%"></span></div>
+            <div class="card-meter-box">
+                <div class="card-meter meter-rose"><div class="meter-main"><span class="meter-icon">🔻</span> <span class="meter-bold">หลุดแนวรับแล้ว</span> (-4.1%)</div><span class="meter-hint">ห้ามรับมีด รอสัญญาณยืนฐาน</span></div>
             </div>
             <div class="card-actions">
-                <a href="chart.html?ticker=AEHR" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
+                <a href="stock_chart.html?ticker=AEHR" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
                     <span>📈</span> ดูกราฟ
                 </a>
-                <span class="card-src-tag">แนวรับ Fibo Shay Boloor</span>
+                <span class="card-src-tag" title="แนวรับ Fibo Shay Boloor">แนวรับ Fibo Shay Boloor</span>
             </div>
         </div>
         
@@ -1630,30 +1685,30 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <div class="card-name" title="Broadcom Inc.">Broadcom Inc.</div>
             <div class="card-catalyst">🌐 ชิปเน็ตเวิร์ก Ethernet 800G &amp; Custom ASIC</div>
             <div class="card-price-grid">
-                <div>
+                <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$311.41</div>
                     <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+6.0%</span></div>
                 </div>
-                <div>
-                    <div class="card-lbl">แนวรับ</div>
+                <div class="price-col-support">
+                    <div class="card-lbl">แนวรับ Fibo</div>
                     <div class="card-val gold">$324</div>
-                    <div class="card-sub">แนวรับ Fibo Shay Boloor</div>
+                    <div class="card-sub">แนวรับอ้างอิง</div>
                 </div>
-                <div style="text-align:right;">
+                <div class="price-col-dist">
                     <div class="card-lbl">ระยะห่าง</div>
                     <div class="card-val dist-rose">-3.9%</div>
                     <div class="card-sub">เทียบแนวรับ</div>
                 </div>
             </div>
-            <div class="card-gauge-box">
-                <div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:42.2%"></span></div>
+            <div class="card-meter-box">
+                <div class="card-meter meter-rose"><div class="meter-main"><span class="meter-icon">🔻</span> <span class="meter-bold">หลุดแนวรับแล้ว</span> (-3.9%)</div><span class="meter-hint">ห้ามรับมีด รอสัญญาณยืนฐาน</span></div>
             </div>
             <div class="card-actions">
-                <a href="chart.html?ticker=AVGO" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
+                <a href="stock_chart.html?ticker=AVGO" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
                     <span>📈</span> ดูกราฟ
                 </a>
-                <span class="card-src-tag">แนวรับ Fibo Shay Boloor</span>
+                <span class="card-src-tag" title="แนวรับ Fibo Shay Boloor">แนวรับ Fibo Shay Boloor</span>
             </div>
         </div>
         
@@ -1670,30 +1725,30 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <div class="card-name" title="Rocket Lab Corporation">Rocket Lab Corporation</div>
             <div class="card-catalyst">🚀 จรวด Neutron &amp; ดาวเทียมป้องกันประเทศ</div>
             <div class="card-price-grid">
-                <div>
+                <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$48.31</div>
                     <div class="card-sub"><span class="ptag">Pre</span> <span class="down">-9.0%</span></div>
                 </div>
-                <div>
-                    <div class="card-lbl">แนวรับ</div>
+                <div class="price-col-support">
+                    <div class="card-lbl">แนวรับ Fibo</div>
                     <div class="card-val gold">$50</div>
-                    <div class="card-sub">แนวรับ Fibo Shay Boloor</div>
+                    <div class="card-sub">แนวรับอ้างอิง</div>
                 </div>
-                <div style="text-align:right;">
+                <div class="price-col-dist">
                     <div class="card-lbl">ระยะห่าง</div>
                     <div class="card-val dist-rose">-3.4%</div>
                     <div class="card-sub">เทียบแนวรับ</div>
                 </div>
             </div>
-            <div class="card-gauge-box">
-                <div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:43.2%"></span></div>
+            <div class="card-meter-box">
+                <div class="card-meter meter-rose"><div class="meter-main"><span class="meter-icon">🔻</span> <span class="meter-bold">หลุดแนวรับแล้ว</span> (-3.4%)</div><span class="meter-hint">ห้ามรับมีด รอสัญญาณยืนฐาน</span></div>
             </div>
             <div class="card-actions">
-                <a href="chart.html?ticker=RKLB" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
+                <a href="stock_chart.html?ticker=RKLB" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
                     <span>📈</span> ดูกราฟ
                 </a>
-                <span class="card-src-tag">แนวรับ Fibo Shay Boloor</span>
+                <span class="card-src-tag" title="แนวรับ Fibo Shay Boloor">แนวรับ Fibo Shay Boloor</span>
             </div>
         </div>
         
@@ -1710,30 +1765,30 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <div class="card-name" title="Vertiv Holdings Co. Class A">Vertiv Holdings Co. Class A</div>
             <div class="card-catalyst">❄️ ระบบระบายความร้อนด้วยของเหลวสำหรับ GPU คลัสเตอร์</div>
             <div class="card-price-grid">
-                <div>
+                <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$190.39</div>
                     <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+4.1%</span></div>
                 </div>
-                <div>
-                    <div class="card-lbl">แนวรับ</div>
+                <div class="price-col-support">
+                    <div class="card-lbl">แนวรับ Fibo</div>
                     <div class="card-val gold">$195</div>
-                    <div class="card-sub">แนวรับ Fibo Shay Boloor</div>
+                    <div class="card-sub">แนวรับอ้างอิง</div>
                 </div>
-                <div style="text-align:right;">
+                <div class="price-col-dist">
                     <div class="card-lbl">ระยะห่าง</div>
                     <div class="card-val dist-rose">-2.4%</div>
                     <div class="card-sub">เทียบแนวรับ</div>
                 </div>
             </div>
-            <div class="card-gauge-box">
-                <div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:45.3%"></span></div>
+            <div class="card-meter-box">
+                <div class="card-meter meter-rose"><div class="meter-main"><span class="meter-icon">🔻</span> <span class="meter-bold">หลุดแนวรับแล้ว</span> (-2.4%)</div><span class="meter-hint">ห้ามรับมีด รอสัญญาณยืนฐาน</span></div>
             </div>
             <div class="card-actions">
-                <a href="chart.html?ticker=VRT" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
+                <a href="stock_chart.html?ticker=VRT" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
                     <span>📈</span> ดูกราฟ
                 </a>
-                <span class="card-src-tag">แนวรับ Fibo Shay Boloor</span>
+                <span class="card-src-tag" title="แนวรับ Fibo Shay Boloor">แนวรับ Fibo Shay Boloor</span>
             </div>
         </div>
         
@@ -1750,70 +1805,30 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <div class="card-name" title="Tesla, Inc.">Tesla, Inc.</div>
             <div class="card-catalyst">🤖 หุ่นยนต์ Optimus &amp; ระบบขับเคลื่อนไร้คนขับ FSD</div>
             <div class="card-price-grid">
-                <div>
+                <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$349.12</div>
                     <div class="card-sub"><span class="ptag">Pre</span> <span class="down">-2.5%</span></div>
                 </div>
-                <div>
-                    <div class="card-lbl">แนวรับ</div>
+                <div class="price-col-support">
+                    <div class="card-lbl">แนวรับ Fibo</div>
                     <div class="card-val gold">$353</div>
-                    <div class="card-sub">แนวรับ Fibo Shay Boloor</div>
+                    <div class="card-sub">แนวรับอ้างอิง</div>
                 </div>
-                <div style="text-align:right;">
+                <div class="price-col-dist">
                     <div class="card-lbl">ระยะห่าง</div>
                     <div class="card-val dist-rose">-1.1%</div>
                     <div class="card-sub">เทียบแนวรับ</div>
                 </div>
             </div>
-            <div class="card-gauge-box">
-                <div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:47.8%"></span></div>
+            <div class="card-meter-box">
+                <div class="card-meter meter-rose"><div class="meter-main"><span class="meter-icon">🔻</span> <span class="meter-bold">หลุดแนวรับแล้ว</span> (-1.1%)</div><span class="meter-hint">ห้ามรับมีด รอสัญญาณยืนฐาน</span></div>
             </div>
             <div class="card-actions">
-                <a href="chart.html?ticker=TSLA" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
+                <a href="stock_chart.html?ticker=TSLA" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
                     <span>📈</span> ดูกราฟ
                 </a>
-                <span class="card-src-tag">แนวรับ Fibo Shay Boloor</span>
-            </div>
-        </div>
-        
-        <div class="stock-card card-rose" data-group="AI Applications" data-status="A"
-             data-portfolio="false" data-ticker="SNOW"
-             data-pct="-0.7243816254417001">
-            <div class="card-head">
-                <div class="card-tk-box">
-                    <span class="tk">SNOW</span>
-                    <span class="card-grp">AI Applications</span>
-                </div>
-                <span class="status-pill status-rose">🔻 หลุดแนวรับ</span>
-            </div>
-            <div class="card-name" title="Snowflake, Inc.">Snowflake, Inc.</div>
-            <div class="card-catalyst">📊 คลังข้อมูล Data Cloud ผนวก Cortex AI</div>
-            <div class="card-price-grid">
-                <div>
-                    <div class="card-lbl">ราคาตอนนี้</div>
-                    <div class="card-val">$280.95</div>
-                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+1.8%</span></div>
-                </div>
-                <div>
-                    <div class="card-lbl">แนวรับ</div>
-                    <div class="card-val gold">$283</div>
-                    <div class="card-sub">แนวรับ Fibo Shay Boloor</div>
-                </div>
-                <div style="text-align:right;">
-                    <div class="card-lbl">ระยะห่าง</div>
-                    <div class="card-val dist-rose">-0.7%</div>
-                    <div class="card-sub">เทียบแนวรับ</div>
-                </div>
-            </div>
-            <div class="card-gauge-box">
-                <div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:48.6%"></span></div>
-            </div>
-            <div class="card-actions">
-                <a href="chart.html?ticker=SNOW" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
-                    <span>📈</span> ดูกราฟ
-                </a>
-                <span class="card-src-tag">แนวรับ Fibo Shay Boloor</span>
+                <span class="card-src-tag" title="แนวรับ Fibo Shay Boloor">แนวรับ Fibo Shay Boloor</span>
             </div>
         </div>
         
@@ -1830,30 +1845,30 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <div class="card-name" title="Ensign Group, Inc.">Ensign Group, Inc.</div>
             <div class="card-catalyst">🏥 ธุรกิจดูแลผู้ป่วยระยะยาว นโยบายหนุน</div>
             <div class="card-price-grid">
-                <div>
+                <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$181.08</div>
                     <div class="card-sub"><span class="ptag">Post</span> <span class="up">+0.0%</span></div>
                 </div>
-                <div>
-                    <div class="card-lbl">แนวรับ</div>
+                <div class="price-col-support">
+                    <div class="card-lbl">แนวรับ Fibo</div>
                     <div class="card-val gold">$181.68</div>
-                    <div class="card-sub">แนวรับจาก เทรนเลือกตั้ง 2026-11-05 แนวรับ SMA200</div>
+                    <div class="card-sub">แนวรับอ้างอิง</div>
                 </div>
-                <div style="text-align:right;">
+                <div class="price-col-dist">
                     <div class="card-lbl">ระยะห่าง</div>
                     <div class="card-val dist-rose">-0.3%</div>
                     <div class="card-sub">เทียบแนวรับ</div>
                 </div>
             </div>
-            <div class="card-gauge-box">
-                <div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:49.3%"></span></div>
+            <div class="card-meter-box">
+                <div class="card-meter meter-rose"><div class="meter-main"><span class="meter-icon">🔻</span> <span class="meter-bold">หลุดแนวรับแล้ว</span> (-0.3%)</div><span class="meter-hint">ห้ามรับมีด รอสัญญาณยืนฐาน</span></div>
             </div>
             <div class="card-actions">
-                <a href="chart.html?ticker=ENSG" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
+                <a href="stock_chart.html?ticker=ENSG" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
                     <span>📈</span> ดูกราฟ
                 </a>
-                <span class="card-src-tag">แนวรับจาก เทรนเลือกตั้ง 2026-11-05 แนวรับ SMA200</span>
+                <span class="card-src-tag" title="แนวรับจาก เทรนเลือกตั้ง 2026-11-05 แนวรับ SMA200">แนวรับจาก เทรนเลือกตั้ง 2026-11-05 แนวรับ SMA200</span>
             </div>
         </div>
         
@@ -1870,30 +1885,30 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <div class="card-name" title="AeroVironment, Inc.">AeroVironment, Inc.</div>
             <div class="card-catalyst">🛩️ โดรนพลีชีพ Switchblade &amp; ยุทธวิธีไร้คนขับ</div>
             <div class="card-price-grid">
-                <div>
+                <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$104.60</div>
                     <div class="card-sub"><span class="ptag">Pre</span> <span class="down">-7.2%</span></div>
                 </div>
-                <div>
-                    <div class="card-lbl">แนวรับ</div>
+                <div class="price-col-support">
+                    <div class="card-lbl">แนวรับ Fibo</div>
                     <div class="card-val gold">$102</div>
-                    <div class="card-sub">แนวรับ Fibo Shay Boloor</div>
+                    <div class="card-sub">แนวรับอ้างอิง</div>
                 </div>
-                <div style="text-align:right;">
+                <div class="price-col-dist">
                     <div class="card-lbl">ระยะห่าง</div>
                     <div class="card-val dist-emerald">+2.5%</div>
                     <div class="card-sub">เทียบแนวรับ</div>
                 </div>
             </div>
-            <div class="card-gauge-box">
-                <div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-emerald " style="left:55.1%"></span></div>
+            <div class="card-meter-box">
+                <div class="card-meter meter-emerald"><div class="meter-main"><span class="meter-icon">🎯</span> <span class="meter-bold">อยู่ในโซนซื้อ</span> (+2.5%)</div><span class="meter-hint">พร้อมตั้ง Limit Order ที่แนวรับ</span></div>
             </div>
             <div class="card-actions">
-                <a href="chart.html?ticker=AVAV" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
+                <a href="stock_chart.html?ticker=AVAV" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
                     <span>📈</span> ดูกราฟ
                 </a>
-                <span class="card-src-tag">แนวรับ Fibo Shay Boloor</span>
+                <span class="card-src-tag" title="แนวรับ Fibo Shay Boloor">แนวรับ Fibo Shay Boloor</span>
             </div>
         </div>
         
@@ -1910,30 +1925,30 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <div class="card-name" title="Analog Devices, Inc.">Analog Devices, Inc.</div>
             <div class="card-catalyst">👑 ชิปหุ่นยนต์อันดับ 1 (BOM $1,625) มาร์จิ้น 67%</div>
             <div class="card-price-grid">
-                <div>
+                <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$375.25</div>
                     <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+3.2%</span></div>
                 </div>
-                <div>
-                    <div class="card-lbl">แนวรับ</div>
+                <div class="price-col-support">
+                    <div class="card-lbl">แนวรับ Fibo</div>
                     <div class="card-val gold">$363</div>
-                    <div class="card-sub">แนวรับจาก ชิปหุ่นยนต์ Morgan Stanley #1 ($1,625) แนวรับ EMA200</div>
+                    <div class="card-sub">แนวรับอ้างอิง</div>
                 </div>
-                <div style="text-align:right;">
+                <div class="price-col-dist">
                     <div class="card-lbl">ระยะห่าง</div>
                     <div class="card-val dist-emerald">+3.4%</div>
                     <div class="card-sub">เทียบแนวรับ</div>
                 </div>
             </div>
-            <div class="card-gauge-box">
-                <div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-emerald " style="left:56.7%"></span></div>
+            <div class="card-meter-box">
+                <div class="card-meter meter-emerald"><div class="meter-main"><span class="meter-icon">🎯</span> <span class="meter-bold">อยู่ในโซนซื้อ</span> (+3.4%)</div><span class="meter-hint">พร้อมตั้ง Limit Order ที่แนวรับ</span></div>
             </div>
             <div class="card-actions">
-                <a href="chart.html?ticker=ADI" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
+                <a href="stock_chart.html?ticker=ADI" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
                     <span>📈</span> ดูกราฟ
                 </a>
-                <span class="card-src-tag">แนวรับจาก ชิปหุ่นยนต์ Morgan Stanley #1 ($1,625) แนวรับ EMA200</span>
+                <span class="card-src-tag" title="แนวรับจาก ชิปหุ่นยนต์ Morgan Stanley #1 ($1,625) แนวรับ EMA200">แนวรับจาก ชิปหุ่นยนต์ Morgan Stanley #1 ($1,625) แนวรับ EMA200</span>
             </div>
         </div>
         
@@ -1950,30 +1965,30 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <div class="card-name" title="Ollie&#x27;s Bargain Outlet Holdings Inc">Ollie&#x27;s Bargain Outlet Holdings Inc</div>
             <div class="card-catalyst">🛒 ค้าปลีกสินค้าราคาประหยัด ชนะเงินเฟ้อ</div>
             <div class="card-price-grid">
-                <div>
+                <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$92.57</div>
                     <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+2.4%</span></div>
                 </div>
-                <div>
-                    <div class="card-lbl">แนวรับ</div>
+                <div class="price-col-support">
+                    <div class="card-lbl">แนวรับ Fibo</div>
                     <div class="card-val gold">$86.69</div>
-                    <div class="card-sub">แนวรับจาก เทรนเลือกตั้ง 2026-11-05 แนวรับ SMA200</div>
+                    <div class="card-sub">แนวรับอ้างอิง</div>
                 </div>
-                <div style="text-align:right;">
+                <div class="price-col-dist">
                     <div class="card-lbl">ระยะห่าง</div>
                     <div class="card-val dist-slate">+6.8%</div>
                     <div class="card-sub">เทียบแนวรับ</div>
                 </div>
             </div>
-            <div class="card-gauge-box">
-                <div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-slate " style="left:63.6%"></span></div>
+            <div class="card-meter-box">
+                <div class="card-meter meter-slate"><div class="meter-main"><span class="meter-icon">⏳</span> <span class="meter-bold">ยังไกลจากแนวรับ</span> (+6.8%)</div><span class="meter-hint">รอราคาย่อตัวลงมาทดสอบ</span></div>
             </div>
             <div class="card-actions">
-                <a href="chart.html?ticker=OLLI" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
+                <a href="stock_chart.html?ticker=OLLI" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
                     <span>📈</span> ดูกราฟ
                 </a>
-                <span class="card-src-tag">แนวรับจาก เทรนเลือกตั้ง 2026-11-05 แนวรับ SMA200</span>
+                <span class="card-src-tag" title="แนวรับจาก เทรนเลือกตั้ง 2026-11-05 แนวรับ SMA200">แนวรับจาก เทรนเลือกตั้ง 2026-11-05 แนวรับ SMA200</span>
             </div>
         </div>
         
@@ -1990,30 +2005,30 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <div class="card-name" title="Netflix, Inc.">Netflix, Inc.</div>
             <div class="card-catalyst">🎬 ผู้นำสตรีมมิงระดับโลก ย่อตัวลึกจากจุดสูงสุด</div>
             <div class="card-price-grid">
-                <div>
+                <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$63.80</div>
                     <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+0.6%</span></div>
                 </div>
-                <div>
-                    <div class="card-lbl">แนวรับ</div>
+                <div class="price-col-support">
+                    <div class="card-lbl">แนวรับ Fibo</div>
                     <div class="card-val gold">$59.58</div>
-                    <div class="card-sub">แนวรับจาก Bigtech ลงหนัก 2026-11-06 แนวรับ BB ล่าง</div>
+                    <div class="card-sub">แนวรับอ้างอิง</div>
                 </div>
-                <div style="text-align:right;">
+                <div class="price-col-dist">
                     <div class="card-lbl">ระยะห่าง</div>
                     <div class="card-val dist-slate">+7.1%</div>
                     <div class="card-sub">เทียบแนวรับ</div>
                 </div>
             </div>
-            <div class="card-gauge-box">
-                <div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-slate " style="left:64.2%"></span></div>
+            <div class="card-meter-box">
+                <div class="card-meter meter-slate"><div class="meter-main"><span class="meter-icon">⏳</span> <span class="meter-bold">ยังไกลจากแนวรับ</span> (+7.1%)</div><span class="meter-hint">รอราคาย่อตัวลงมาทดสอบ</span></div>
             </div>
             <div class="card-actions">
-                <a href="chart.html?ticker=NFLX" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
+                <a href="stock_chart.html?ticker=NFLX" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
                     <span>📈</span> ดูกราฟ
                 </a>
-                <span class="card-src-tag">แนวรับจาก Bigtech ลงหนัก 2026-11-06 แนวรับ BB ล่าง</span>
+                <span class="card-src-tag" title="แนวรับจาก Bigtech ลงหนัก 2026-11-06 แนวรับ BB ล่าง">แนวรับจาก Bigtech ลงหนัก 2026-11-06 แนวรับ BB ล่าง</span>
             </div>
         </div>
         
@@ -2030,70 +2045,30 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <div class="card-name" title="Goldman Sachs Nasdaq-100 Premium Income ETF">Goldman Sachs Nasdaq-100 Premium Income ETF</div>
             <div class="card-catalyst">💵 ETF ปันผลรายเดือนจากดัชนี Nasdaq 100 ไม้ 2</div>
             <div class="card-price-grid">
-                <div>
+                <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$51.44</div>
                     <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+0.4%</span></div>
                 </div>
-                <div>
-                    <div class="card-lbl">แนวรับ</div>
+                <div class="price-col-support">
+                    <div class="card-lbl">แนวรับ Fibo</div>
                     <div class="card-val gold">$48</div>
-                    <div class="card-sub">แนวรับจาก แผน ETF $10k 2026-11-06 ไม้ 2</div>
+                    <div class="card-sub">แนวรับอ้างอิง</div>
                 </div>
-                <div style="text-align:right;">
+                <div class="price-col-dist">
                     <div class="card-lbl">ระยะห่าง</div>
                     <div class="card-val dist-slate">+7.2%</div>
                     <div class="card-sub">เทียบแนวรับ</div>
                 </div>
             </div>
-            <div class="card-gauge-box">
-                <div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-slate " style="left:64.3%"></span></div>
+            <div class="card-meter-box">
+                <div class="card-meter meter-slate"><div class="meter-main"><span class="meter-icon">⏳</span> <span class="meter-bold">ยังไกลจากแนวรับ</span> (+7.2%)</div><span class="meter-hint">รอราคาย่อตัวลงมาทดสอบ</span></div>
             </div>
             <div class="card-actions">
-                <a href="chart.html?ticker=GPIQ" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
+                <a href="stock_chart.html?ticker=GPIQ" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
                     <span>📈</span> ดูกราฟ
                 </a>
-                <span class="card-src-tag">แนวรับจาก แผน ETF $10k 2026-11-06 ไม้ 2</span>
-            </div>
-        </div>
-        
-        <div class="stock-card card-slate" data-group="Midterm 2026" data-status="C"
-             data-portfolio="false" data-ticker="DVA"
-             data-pct="7.355251346499093">
-            <div class="card-head">
-                <div class="card-tk-box">
-                    <span class="tk">DVA</span>
-                    <span class="card-grp">Midterm 2026</span>
-                </div>
-                <span class="status-pill status-slate">⏳ ยังไกล</span>
-            </div>
-            <div class="card-name" title="DaVita Inc.">DaVita Inc.</div>
-            <div class="card-catalyst">🏥 ศูนย์ฟอกไตทั่วสหรัฐฯ ประกันสุขภาพคุ้มครอง</div>
-            <div class="card-price-grid">
-                <div>
-                    <div class="card-lbl">ราคาตอนนี้</div>
-                    <div class="card-val">$191.35</div>
-                    <div class="card-sub"><span class="ptag">Post</span> <span class="up">+0.0%</span></div>
-                </div>
-                <div>
-                    <div class="card-lbl">แนวรับ</div>
-                    <div class="card-val gold">$178.24</div>
-                    <div class="card-sub">แนวรับจาก เทรนเลือกตั้ง 2026-11-05 แนวรับ SMA200</div>
-                </div>
-                <div style="text-align:right;">
-                    <div class="card-lbl">ระยะห่าง</div>
-                    <div class="card-val dist-slate">+7.4%</div>
-                    <div class="card-sub">เทียบแนวรับ</div>
-                </div>
-            </div>
-            <div class="card-gauge-box">
-                <div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-slate " style="left:64.7%"></span></div>
-            </div>
-            <div class="card-actions">
-                <a href="chart.html?ticker=DVA" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
-                    <span>📈</span> ดูกราฟ
-                </a>
-                <span class="card-src-tag">แนวรับจาก เทรนเลือกตั้ง 2026-11-05 แนวรับ SMA200</span>
+                <span class="card-src-tag" title="แนวรับจาก แผน ETF $10k 2026-11-06 ไม้ 2">แนวรับจาก แผน ETF $10k 2026-11-06 ไม้ 2</span>
             </div>
         </div>
         
@@ -2110,30 +2085,30 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <div class="card-name" title="Texas Instruments Incorporated">Texas Instruments Incorporated</div>
             <div class="card-catalyst">🛡️ โรงงาน 300mm ชิปแอนะล็อกต้นทุนต่ำ R:R 1:5.1</div>
             <div class="card-price-grid">
-                <div>
+                <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$282.61</div>
                     <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+1.9%</span></div>
                 </div>
-                <div>
-                    <div class="card-lbl">แนวรับ</div>
+                <div class="price-col-support">
+                    <div class="card-lbl">แนวรับ Fibo</div>
                     <div class="card-val gold">$262</div>
-                    <div class="card-sub">แนวรับจาก ชิปแอนะล็อกโรงงาน 300mm แนวรับ EMA200</div>
+                    <div class="card-sub">แนวรับอ้างอิง</div>
                 </div>
-                <div style="text-align:right;">
+                <div class="price-col-dist">
                     <div class="card-lbl">ระยะห่าง</div>
                     <div class="card-val dist-slate">+7.9%</div>
                     <div class="card-sub">เทียบแนวรับ</div>
                 </div>
             </div>
-            <div class="card-gauge-box">
-                <div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-slate " style="left:65.7%"></span></div>
+            <div class="card-meter-box">
+                <div class="card-meter meter-slate"><div class="meter-main"><span class="meter-icon">⏳</span> <span class="meter-bold">ยังไกลจากแนวรับ</span> (+7.9%)</div><span class="meter-hint">รอราคาย่อตัวลงมาทดสอบ</span></div>
             </div>
             <div class="card-actions">
-                <a href="chart.html?ticker=TXN" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
+                <a href="stock_chart.html?ticker=TXN" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
                     <span>📈</span> ดูกราฟ
                 </a>
-                <span class="card-src-tag">แนวรับจาก ชิปแอนะล็อกโรงงาน 300mm แนวรับ EMA200</span>
+                <span class="card-src-tag" title="แนวรับจาก ชิปแอนะล็อกโรงงาน 300mm แนวรับ EMA200">แนวรับจาก ชิปแอนะล็อกโรงงาน 300mm แนวรับ EMA200</span>
             </div>
         </div>
         
@@ -2150,30 +2125,30 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <div class="card-name" title="Invesco NASDAQ 100 ETF">Invesco NASDAQ 100 ETF</div>
             <div class="card-catalyst">📈 ดัชนี Nasdaq 100 ค่าธรรมเนียมต่ำ ไม้ 2</div>
             <div class="card-price-grid">
-                <div>
+                <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$270.97</div>
                     <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+0.3%</span></div>
                 </div>
-                <div>
-                    <div class="card-lbl">แนวรับ</div>
+                <div class="price-col-support">
+                    <div class="card-lbl">แนวรับ Fibo</div>
                     <div class="card-val gold">$251</div>
-                    <div class="card-sub">แนวรับจาก แผน ETF $10k 2026-11-06 ไม้ 2</div>
+                    <div class="card-sub">แนวรับอ้างอิง</div>
                 </div>
-                <div style="text-align:right;">
+                <div class="price-col-dist">
                     <div class="card-lbl">ระยะห่าง</div>
                     <div class="card-val dist-slate">+8.0%</div>
                     <div class="card-sub">เทียบแนวรับ</div>
                 </div>
             </div>
-            <div class="card-gauge-box">
-                <div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-slate " style="left:65.9%"></span></div>
+            <div class="card-meter-box">
+                <div class="card-meter meter-slate"><div class="meter-main"><span class="meter-icon">⏳</span> <span class="meter-bold">ยังไกลจากแนวรับ</span> (+8.0%)</div><span class="meter-hint">รอราคาย่อตัวลงมาทดสอบ</span></div>
             </div>
             <div class="card-actions">
-                <a href="chart.html?ticker=QQQM" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
+                <a href="stock_chart.html?ticker=QQQM" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
                     <span>📈</span> ดูกราฟ
                 </a>
-                <span class="card-src-tag">แนวรับจาก แผน ETF $10k 2026-11-06 ไม้ 2</span>
+                <span class="card-src-tag" title="แนวรับจาก แผน ETF $10k 2026-11-06 ไม้ 2">แนวรับจาก แผน ETF $10k 2026-11-06 ไม้ 2</span>
             </div>
         </div>
         
@@ -2190,30 +2165,30 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <div class="card-name" title="Monolithic Power Systems, Inc.">Monolithic Power Systems, Inc.</div>
             <div class="card-catalyst">🚀 Monolithic BCD ชิปจัดการพลังงานข้อต่อหุ่นยนต์</div>
             <div class="card-price-grid">
-                <div>
+                <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$1,201.30</div>
                     <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+0.9%</span></div>
                 </div>
-                <div>
-                    <div class="card-lbl">แนวรับ</div>
+                <div class="price-col-support">
+                    <div class="card-lbl">แนวรับ Fibo</div>
                     <div class="card-val gold">$1,100</div>
-                    <div class="card-sub">แนวรับจาก ชิปข้อต่อหุ่นยนต์ &amp; Power Stage แนวรับจิตวิทยา</div>
+                    <div class="card-sub">แนวรับอ้างอิง</div>
                 </div>
-                <div style="text-align:right;">
+                <div class="price-col-dist">
                     <div class="card-lbl">ระยะห่าง</div>
                     <div class="card-val dist-slate">+9.2%</div>
                     <div class="card-sub">เทียบแนวรับ</div>
                 </div>
             </div>
-            <div class="card-gauge-box">
-                <div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-slate " style="left:68.4%"></span></div>
+            <div class="card-meter-box">
+                <div class="card-meter meter-slate"><div class="meter-main"><span class="meter-icon">⏳</span> <span class="meter-bold">ยังไกลจากแนวรับ</span> (+9.2%)</div><span class="meter-hint">รอราคาย่อตัวลงมาทดสอบ</span></div>
             </div>
             <div class="card-actions">
-                <a href="chart.html?ticker=MPWR" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
+                <a href="stock_chart.html?ticker=MPWR" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
                     <span>📈</span> ดูกราฟ
                 </a>
-                <span class="card-src-tag">แนวรับจาก ชิปข้อต่อหุ่นยนต์ &amp; Power Stage แนวรับจิตวิทยา</span>
+                <span class="card-src-tag" title="แนวรับจาก ชิปข้อต่อหุ่นยนต์ &amp; Power Stage แนวรับจิตวิทยา">แนวรับจาก ชิปข้อต่อหุ่นยนต์ &amp; Power Stage แนวรับจิตวิทยา</span>
             </div>
         </div>
         
@@ -2230,30 +2205,30 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <div class="card-name" title="CrowdStrike Holdings, Inc. Class A">CrowdStrike Holdings, Inc. Class A</div>
             <div class="card-catalyst">🔒 ระบบความปลอดภัยไซเบอร์ Falcon AI Cloud</div>
             <div class="card-price-grid">
-                <div>
+                <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$230.90</div>
                     <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+6.5%</span></div>
                 </div>
-                <div>
-                    <div class="card-lbl">แนวรับ</div>
+                <div class="price-col-support">
+                    <div class="card-lbl">แนวรับ Fibo</div>
                     <div class="card-val gold">$210</div>
-                    <div class="card-sub">แนวรับ Fibo Shay Boloor</div>
+                    <div class="card-sub">แนวรับอ้างอิง</div>
                 </div>
-                <div style="text-align:right;">
+                <div class="price-col-dist">
                     <div class="card-lbl">ระยะห่าง</div>
                     <div class="card-val dist-slate">+10.0%</div>
                     <div class="card-sub">เทียบแนวรับ</div>
                 </div>
             </div>
-            <div class="card-gauge-box">
-                <div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-slate " style="left:69.9%"></span></div>
+            <div class="card-meter-box">
+                <div class="card-meter meter-slate"><div class="meter-main"><span class="meter-icon">⏳</span> <span class="meter-bold">ยังไกลจากแนวรับ</span> (+10.0%)</div><span class="meter-hint">รอราคาย่อตัวลงมาทดสอบ</span></div>
             </div>
             <div class="card-actions">
-                <a href="chart.html?ticker=CRWD" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
+                <a href="stock_chart.html?ticker=CRWD" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
                     <span>📈</span> ดูกราฟ
                 </a>
-                <span class="card-src-tag">แนวรับ Fibo Shay Boloor</span>
+                <span class="card-src-tag" title="แนวรับ Fibo Shay Boloor">แนวรับ Fibo Shay Boloor</span>
             </div>
         </div>
         
@@ -2270,30 +2245,30 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <div class="card-name" title="Amazon.com, Inc.">Amazon.com, Inc.</div>
             <div class="card-catalyst">📦 หุ่นยนต์อัตโนมัติในคลังสินค้า &amp; ชิป Trainium</div>
             <div class="card-price-grid">
-                <div>
+                <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$259.92</div>
                     <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+0.2%</span></div>
                 </div>
-                <div>
-                    <div class="card-lbl">แนวรับ</div>
+                <div class="price-col-support">
+                    <div class="card-lbl">แนวรับ Fibo</div>
                     <div class="card-val gold">$231</div>
-                    <div class="card-sub">แนวรับ Fibo Shay Boloor</div>
+                    <div class="card-sub">แนวรับอ้างอิง</div>
                 </div>
-                <div style="text-align:right;">
+                <div class="price-col-dist">
                     <div class="card-lbl">ระยะห่าง</div>
                     <div class="card-val dist-slate">+12.5%</div>
                     <div class="card-sub">เทียบแนวรับ</div>
                 </div>
             </div>
-            <div class="card-gauge-box">
-                <div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-slate " style="left:75.0%"></span></div>
+            <div class="card-meter-box">
+                <div class="card-meter meter-slate"><div class="meter-main"><span class="meter-icon">⏳</span> <span class="meter-bold">ยังไกลจากแนวรับ</span> (+12.5%)</div><span class="meter-hint">รอราคาย่อตัวลงมาทดสอบ</span></div>
             </div>
             <div class="card-actions">
-                <a href="chart.html?ticker=AMZN" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
+                <a href="stock_chart.html?ticker=AMZN" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
                     <span>📈</span> ดูกราฟ
                 </a>
-                <span class="card-src-tag">แนวรับ Fibo Shay Boloor</span>
+                <span class="card-src-tag" title="แนวรับ Fibo Shay Boloor">แนวรับ Fibo Shay Boloor</span>
             </div>
         </div>
         
@@ -2310,30 +2285,30 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <div class="card-name" title="Space Exploration Technologies Corp">Space Exploration Technologies Corp</div>
             <div class="card-catalyst">🚀 ยาน Starship &amp; ดาวเทียม Starlink ผูกขาด</div>
             <div class="card-price-grid">
-                <div>
+                <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$131.00</div>
                     <div class="card-sub"><span class="ptag">Pre</span> <span class="down">-2.4%</span></div>
                 </div>
-                <div>
-                    <div class="card-lbl">แนวรับ</div>
+                <div class="price-col-support">
+                    <div class="card-lbl">แนวรับ Fibo</div>
                     <div class="card-val gold">$115</div>
-                    <div class="card-sub">แนวรับจาก ผู้ใช้กำหนดเอง 2026-10-30</div>
+                    <div class="card-sub">แนวรับอ้างอิง</div>
                 </div>
-                <div style="text-align:right;">
+                <div class="price-col-dist">
                     <div class="card-lbl">ระยะห่าง</div>
                     <div class="card-val dist-slate">+13.9%</div>
                     <div class="card-sub">เทียบแนวรับ</div>
                 </div>
             </div>
-            <div class="card-gauge-box">
-                <div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-slate " style="left:77.8%"></span></div>
+            <div class="card-meter-box">
+                <div class="card-meter meter-slate"><div class="meter-main"><span class="meter-icon">⏳</span> <span class="meter-bold">ยังไกลจากแนวรับ</span> (+13.9%)</div><span class="meter-hint">รอราคาย่อตัวลงมาทดสอบ</span></div>
             </div>
             <div class="card-actions">
-                <a href="chart.html?ticker=SPCX" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
+                <a href="stock_chart.html?ticker=SPCX" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
                     <span>📈</span> ดูกราฟ
                 </a>
-                <span class="card-src-tag">แนวรับจาก ผู้ใช้กำหนดเอง 2026-10-30</span>
+                <span class="card-src-tag" title="แนวรับจาก ผู้ใช้กำหนดเอง 2026-10-30">แนวรับจาก ผู้ใช้กำหนดเอง 2026-10-30</span>
             </div>
         </div>
         
@@ -2350,70 +2325,30 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <div class="card-name" title="GE Vernova Inc.">GE Vernova Inc.</div>
             <div class="card-catalyst">⚡ โรงไฟฟ้านิวเคลียร์ SMR &amp; กังหันพลังงานสะอาด</div>
             <div class="card-price-grid">
-                <div>
+                <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$793.51</div>
                     <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+2.5%</span></div>
                 </div>
-                <div>
-                    <div class="card-lbl">แนวรับ</div>
+                <div class="price-col-support">
+                    <div class="card-lbl">แนวรับ Fibo</div>
                     <div class="card-val gold">$678</div>
-                    <div class="card-sub">แนวรับ Fibo Shay Boloor</div>
+                    <div class="card-sub">แนวรับอ้างอิง</div>
                 </div>
-                <div style="text-align:right;">
+                <div class="price-col-dist">
                     <div class="card-lbl">ระยะห่าง</div>
                     <div class="card-val dist-slate">+17.0%</div>
                     <div class="card-sub">เทียบแนวรับ</div>
                 </div>
             </div>
-            <div class="card-gauge-box">
-                <div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-slate " style="left:84.1%"></span></div>
+            <div class="card-meter-box">
+                <div class="card-meter meter-slate"><div class="meter-main"><span class="meter-icon">⏳</span> <span class="meter-bold">ยังไกลจากแนวรับ</span> (+17.0%)</div><span class="meter-hint">รอราคาย่อตัวลงมาทดสอบ</span></div>
             </div>
             <div class="card-actions">
-                <a href="chart.html?ticker=GEV" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
+                <a href="stock_chart.html?ticker=GEV" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
                     <span>📈</span> ดูกราฟ
                 </a>
-                <span class="card-src-tag">แนวรับ Fibo Shay Boloor</span>
-            </div>
-        </div>
-        
-        <div class="stock-card card-slate" data-group="Midterm 2026" data-status="C"
-             data-portfolio="false" data-ticker="FIVE"
-             data-pct="17.46178560996982">
-            <div class="card-head">
-                <div class="card-tk-box">
-                    <span class="tk">FIVE</span>
-                    <span class="card-grp">Midterm 2026</span>
-                </div>
-                <span class="status-pill status-slate">⏳ ยังไกล</span>
-            </div>
-            <div class="card-name" title="Five Below, Inc.">Five Below, Inc.</div>
-            <div class="card-catalyst">🛍️ สินค้าวัยรุ่นราคาประหยัด ขยายสาขาเติบโตเร็ว</div>
-            <div class="card-price-grid">
-                <div>
-                    <div class="card-lbl">ราคาตอนนี้</div>
-                    <div class="card-val">$241.29</div>
-                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+0.4%</span></div>
-                </div>
-                <div>
-                    <div class="card-lbl">แนวรับ</div>
-                    <div class="card-val gold">$205.42</div>
-                    <div class="card-sub">แนวรับจาก เทรนเลือกตั้ง 2026-11-05 แนวรับ BB ล่าง</div>
-                </div>
-                <div style="text-align:right;">
-                    <div class="card-lbl">ระยะห่าง</div>
-                    <div class="card-val dist-slate">+17.5%</div>
-                    <div class="card-sub">เทียบแนวรับ</div>
-                </div>
-            </div>
-            <div class="card-gauge-box">
-                <div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-slate " style="left:84.9%"></span></div>
-            </div>
-            <div class="card-actions">
-                <a href="chart.html?ticker=FIVE" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
-                    <span>📈</span> ดูกราฟ
-                </a>
-                <span class="card-src-tag">แนวรับจาก เทรนเลือกตั้ง 2026-11-05 แนวรับ BB ล่าง</span>
+                <span class="card-src-tag" title="แนวรับ Fibo Shay Boloor">แนวรับ Fibo Shay Boloor</span>
             </div>
         </div>
         
@@ -2430,70 +2365,30 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <div class="card-name" title="Planet Labs PBC Class A">Planet Labs PBC Class A</div>
             <div class="card-catalyst">🛰️ ภาพถ่ายดาวเทียม &amp; AI Geospatial Analytics</div>
             <div class="card-price-grid">
-                <div>
+                <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$11.82</div>
                     <div class="card-sub"><span class="ptag">Pre</span> <span class="down">-5.8%</span></div>
                 </div>
-                <div>
-                    <div class="card-lbl">แนวรับ</div>
+                <div class="price-col-support">
+                    <div class="card-lbl">แนวรับ Fibo</div>
                     <div class="card-val gold">$10</div>
-                    <div class="card-sub">แนวรับ Fibo Shay Boloor</div>
+                    <div class="card-sub">แนวรับอ้างอิง</div>
                 </div>
-                <div style="text-align:right;">
+                <div class="price-col-dist">
                     <div class="card-lbl">ระยะห่าง</div>
                     <div class="card-val dist-slate">+18.2%</div>
                     <div class="card-sub">เทียบแนวรับ</div>
                 </div>
             </div>
-            <div class="card-gauge-box">
-                <div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-slate " style="left:86.4%"></span></div>
+            <div class="card-meter-box">
+                <div class="card-meter meter-slate"><div class="meter-main"><span class="meter-icon">⏳</span> <span class="meter-bold">ยังไกลจากแนวรับ</span> (+18.2%)</div><span class="meter-hint">รอราคาย่อตัวลงมาทดสอบ</span></div>
             </div>
             <div class="card-actions">
-                <a href="chart.html?ticker=PL" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
+                <a href="stock_chart.html?ticker=PL" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
                     <span>📈</span> ดูกราฟ
                 </a>
-                <span class="card-src-tag">แนวรับ Fibo Shay Boloor</span>
-            </div>
-        </div>
-        
-        <div class="stock-card card-slate" data-group="Midterm 2026" data-status="C"
-             data-portfolio="false" data-ticker="FSLR"
-             data-pct="18.92397802065091">
-            <div class="card-head">
-                <div class="card-tk-box">
-                    <span class="tk">FSLR</span>
-                    <span class="card-grp">Midterm 2026</span>
-                </div>
-                <span class="status-pill status-slate">⏳ ยังไกล</span>
-            </div>
-            <div class="card-name" title="First Solar, Inc.">First Solar, Inc.</div>
-            <div class="card-catalyst">☀️ แผงโซลาร์สหรัฐฯ รับอานิสงส์กฎหมายพลังงานสะอาด</div>
-            <div class="card-price-grid">
-                <div>
-                    <div class="card-lbl">ราคาตอนนี้</div>
-                    <div class="card-val">$196.95</div>
-                    <div class="card-sub"><span class="ptag">Pre</span> <span class="down">-2.1%</span></div>
-                </div>
-                <div>
-                    <div class="card-lbl">แนวรับ</div>
-                    <div class="card-val gold">$165.61</div>
-                    <div class="card-sub">แนวรับจาก เทรนเลือกตั้ง 2026-11-05 แนวรับ BB ล่าง</div>
-                </div>
-                <div style="text-align:right;">
-                    <div class="card-lbl">ระยะห่าง</div>
-                    <div class="card-val dist-slate">+18.9%</div>
-                    <div class="card-sub">เทียบแนวรับ</div>
-                </div>
-            </div>
-            <div class="card-gauge-box">
-                <div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-slate " style="left:87.8%"></span></div>
-            </div>
-            <div class="card-actions">
-                <a href="chart.html?ticker=FSLR" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
-                    <span>📈</span> ดูกราฟ
-                </a>
-                <span class="card-src-tag">แนวรับจาก เทรนเลือกตั้ง 2026-11-05 แนวรับ BB ล่าง</span>
+                <span class="card-src-tag" title="แนวรับ Fibo Shay Boloor">แนวรับ Fibo Shay Boloor</span>
             </div>
         </div>
         
@@ -2510,30 +2405,30 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <div class="card-name" title="Invesco PHLX Semiconductor ETF">Invesco PHLX Semiconductor ETF</div>
             <div class="card-catalyst">📈 กองทุนดัชนีเซมิคอนดักเตอร์ SOX ไม้ 2</div>
             <div class="card-price-grid">
-                <div>
+                <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$75.60</div>
                     <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+2.4%</span></div>
                 </div>
-                <div>
-                    <div class="card-lbl">แนวรับ</div>
+                <div class="price-col-support">
+                    <div class="card-lbl">แนวรับ Fibo</div>
                     <div class="card-val gold">$63</div>
-                    <div class="card-sub">แนวรับจาก แผน ETF $10k 2026-11-06 ไม้ 2</div>
+                    <div class="card-sub">แนวรับอ้างอิง</div>
                 </div>
-                <div style="text-align:right;">
+                <div class="price-col-dist">
                     <div class="card-lbl">ระยะห่าง</div>
                     <div class="card-val dist-slate">+20.0%</div>
                     <div class="card-sub">เทียบแนวรับ</div>
                 </div>
             </div>
-            <div class="card-gauge-box">
-                <div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-slate " style="left:90.0%"></span></div>
+            <div class="card-meter-box">
+                <div class="card-meter meter-slate"><div class="meter-main"><span class="meter-icon">⏳</span> <span class="meter-bold">ยังไกลจากแนวรับ</span> (+20.0%)</div><span class="meter-hint">รอราคาย่อตัวลงมาทดสอบ</span></div>
             </div>
             <div class="card-actions">
-                <a href="chart.html?ticker=SOXQ" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
+                <a href="stock_chart.html?ticker=SOXQ" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
                     <span>📈</span> ดูกราฟ
                 </a>
-                <span class="card-src-tag">แนวรับจาก แผน ETF $10k 2026-11-06 ไม้ 2</span>
+                <span class="card-src-tag" title="แนวรับจาก แผน ETF $10k 2026-11-06 ไม้ 2">แนวรับจาก แผน ETF $10k 2026-11-06 ไม้ 2</span>
             </div>
         </div>
         
@@ -2550,30 +2445,30 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <div class="card-name" title="Lam Research Corporation">Lam Research Corporation</div>
             <div class="card-catalyst">⚙️ เครื่องจักรผลิตชิป Etching ย่อตัวลึก 1.5 ATR</div>
             <div class="card-price-grid">
-                <div>
+                <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$208.64</div>
                     <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+4.1%</span></div>
                 </div>
-                <div>
-                    <div class="card-lbl">แนวรับ</div>
+                <div class="price-col-support">
+                    <div class="card-lbl">แนวรับ Fibo</div>
                     <div class="card-val gold">$161.03</div>
-                    <div class="card-sub">แนวรับจาก Bigtech ลงหนัก 2026-11-06 แนวรับ 1.5 ATR</div>
+                    <div class="card-sub">แนวรับอ้างอิง</div>
                 </div>
-                <div style="text-align:right;">
+                <div class="price-col-dist">
                     <div class="card-lbl">ระยะห่าง</div>
                     <div class="card-val dist-slate">+29.6%</div>
                     <div class="card-sub">เทียบแนวรับ</div>
                 </div>
             </div>
-            <div class="card-gauge-box">
-                <div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-slate gauge-dot-edge" style="left:100.0%"></span></div>
+            <div class="card-meter-box">
+                <div class="card-meter meter-slate"><div class="meter-main"><span class="meter-icon">⏳</span> <span class="meter-bold">ยังไกลจากแนวรับ</span> (+29.6%)</div><span class="meter-hint">รอราคาย่อตัวลงมาทดสอบ</span></div>
             </div>
             <div class="card-actions">
-                <a href="chart.html?ticker=LRCX" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
+                <a href="stock_chart.html?ticker=LRCX" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
                     <span>📈</span> ดูกราฟ
                 </a>
-                <span class="card-src-tag">แนวรับจาก Bigtech ลงหนัก 2026-11-06 แนวรับ 1.5 ATR</span>
+                <span class="card-src-tag" title="แนวรับจาก Bigtech ลงหนัก 2026-11-06 แนวรับ 1.5 ATR">แนวรับจาก Bigtech ลงหนัก 2026-11-06 แนวรับ 1.5 ATR</span>
             </div>
         </div>
         
@@ -2614,10 +2509,10 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             </td>
             <td><div class="table-supp gold">$222</div></td>
             <td><div class="table-dist dist-rose">-34.5%</div></td>
-            <td style="min-width:110px;"><div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose gauge-dot-edge" style="left:0.0%"></span></div></td>
+            <td style="min-width:120px;"><span class="tbl-meter meter-rose">🔻 หลุด (-34.5%)</span></td>
             <td><span class="status-pill status-rose">🔻 หลุดแนวรับ</span></td>
             <td>
-                <a href="chart.html?ticker=MRVL" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
+                <a href="stock_chart.html?ticker=MRVL" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
             </td>
         </tr>
         
@@ -2638,10 +2533,10 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             </td>
             <td><div class="table-supp gold">$167</div></td>
             <td><div class="table-dist dist-rose">-25.5%</div></td>
-            <td style="min-width:110px;"><div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose gauge-dot-edge" style="left:0.0%"></span></div></td>
+            <td style="min-width:120px;"><span class="tbl-meter meter-rose">🔻 หลุด (-25.5%)</span></td>
             <td><span class="status-pill status-rose">🔻 หลุดแนวรับ</span></td>
             <td>
-                <a href="chart.html?ticker=CRDO" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
+                <a href="stock_chart.html?ticker=CRDO" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
             </td>
         </tr>
         
@@ -2662,10 +2557,10 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             </td>
             <td><div class="table-supp gold">$251</div></td>
             <td><div class="table-dist dist-rose">-22.7%</div></td>
-            <td style="min-width:110px;"><div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:4.6%"></span></div></td>
+            <td style="min-width:120px;"><span class="tbl-meter meter-rose">🔻 หลุด (-22.7%)</span></td>
             <td><span class="status-pill status-rose">🔻 หลุดแนวรับ</span></td>
             <td>
-                <a href="chart.html?ticker=ALAB" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
+                <a href="stock_chart.html?ticker=ALAB" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
             </td>
         </tr>
         
@@ -2686,10 +2581,10 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             </td>
             <td><div class="table-supp gold">$225</div></td>
             <td><div class="table-dist dist-rose">-21.2%</div></td>
-            <td style="min-width:110px;"><div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:7.6%"></span></div></td>
+            <td style="min-width:120px;"><span class="tbl-meter meter-rose">🔻 หลุด (-21.2%)</span></td>
             <td><span class="status-pill status-rose">🔻 หลุดแนวรับ</span></td>
             <td>
-                <a href="chart.html?ticker=ARM" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
+                <a href="stock_chart.html?ticker=ARM" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
             </td>
         </tr>
         
@@ -2710,10 +2605,10 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             </td>
             <td><div class="table-supp gold">$124</div></td>
             <td><div class="table-dist dist-rose">-17.3%</div></td>
-            <td style="min-width:110px;"><div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:15.4%"></span></div></td>
+            <td style="min-width:120px;"><span class="tbl-meter meter-rose">🔻 หลุด (-17.3%)</span></td>
             <td><span class="status-pill status-rose">🔻 หลุดแนวรับ</span></td>
             <td>
-                <a href="chart.html?ticker=NOW" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
+                <a href="stock_chart.html?ticker=NOW" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
             </td>
         </tr>
         
@@ -2734,10 +2629,10 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             </td>
             <td><div class="table-supp gold">$849</div></td>
             <td><div class="table-dist dist-rose">-16.5%</div></td>
-            <td style="min-width:110px;"><div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:17.0%"></span></div></td>
+            <td style="min-width:120px;"><span class="tbl-meter meter-rose">🔻 หลุด (-16.5%)</span></td>
             <td><span class="status-pill status-rose">🔻 หลุดแนวรับ</span></td>
             <td>
-                <a href="chart.html?ticker=MU" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
+                <a href="stock_chart.html?ticker=MU" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
             </td>
         </tr>
         
@@ -2758,10 +2653,10 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             </td>
             <td><div class="table-supp gold">$224</div></td>
             <td><div class="table-dist dist-rose">-15.4%</div></td>
-            <td style="min-width:110px;"><div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:19.2%"></span></div></td>
+            <td style="min-width:120px;"><span class="tbl-meter meter-rose">🔻 หลุด (-15.4%)</span></td>
             <td><span class="status-pill status-rose">🔻 หลุดแนวรับ</span></td>
             <td>
-                <a href="chart.html?ticker=COHR" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
+                <a href="stock_chart.html?ticker=COHR" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
             </td>
         </tr>
         
@@ -2782,34 +2677,10 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             </td>
             <td><div class="table-supp gold">$39</div></td>
             <td><div class="table-dist dist-rose">-14.1%</div></td>
-            <td style="min-width:110px;"><div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:21.8%"></span></div></td>
+            <td style="min-width:120px;"><span class="tbl-meter meter-rose">🔻 หลุด (-14.1%)</span></td>
             <td><span class="status-pill status-rose">🔻 หลุดแนวรับ</span></td>
             <td>
-                <a href="chart.html?ticker=KTOS" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
-            </td>
-        </tr>
-        
-        <tr class="table-row row-rose" data-group="AI Utilities" data-status="A"
-            data-portfolio="false" data-ticker="DOCN"
-            data-pct="-13.333333333333334">
-            <td>
-                <div class="table-tk-box">
-                    <span class="tk">DOCN</span>
-                    <span class="table-company">DigitalOcean Holdings, Inc.</span>
-                </div>
-            </td>
-            <td><span class="table-grp-pill">AI Utilities</span></td>
-            <td><div class="table-catalyst">☁️ คลาวด์สำหรับนักพัฒนาโมเดล AI ขนาดเล็ก/กลาง</div></td>
-            <td>
-                <div class="table-price">$78.00</div>
-                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+7.6%</span></div>
-            </td>
-            <td><div class="table-supp gold">$90</div></td>
-            <td><div class="table-dist dist-rose">-13.3%</div></td>
-            <td style="min-width:110px;"><div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:23.3%"></span></div></td>
-            <td><span class="status-pill status-rose">🔻 หลุดแนวรับ</span></td>
-            <td>
-                <a href="chart.html?ticker=DOCN" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
+                <a href="stock_chart.html?ticker=KTOS" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
             </td>
         </tr>
         
@@ -2830,10 +2701,10 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             </td>
             <td><div class="table-supp gold">$38</div></td>
             <td><div class="table-dist dist-rose">-12.1%</div></td>
-            <td style="min-width:110px;"><div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:25.8%"></span></div></td>
+            <td style="min-width:120px;"><span class="tbl-meter meter-rose">🔻 หลุด (-12.1%)</span></td>
             <td><span class="status-pill status-rose">🔻 หลุดแนวรับ</span></td>
             <td>
-                <a href="chart.html?ticker=AMKR" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
+                <a href="stock_chart.html?ticker=AMKR" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
             </td>
         </tr>
         
@@ -2854,10 +2725,10 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             </td>
             <td><div class="table-supp gold">$1,637</div></td>
             <td><div class="table-dist dist-rose">-11.7%</div></td>
-            <td style="min-width:110px;"><div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:26.7%"></span></div></td>
+            <td style="min-width:120px;"><span class="tbl-meter meter-rose">🔻 หลุด (-11.7%)</span></td>
             <td><span class="status-pill status-rose">🔻 หลุดแนวรับ</span></td>
             <td>
-                <a href="chart.html?ticker=ASML" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
+                <a href="stock_chart.html?ticker=ASML" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
             </td>
         </tr>
         
@@ -2878,10 +2749,10 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             </td>
             <td><div class="table-supp gold">$210</div></td>
             <td><div class="table-dist dist-rose">-9.0%</div></td>
-            <td style="min-width:110px;"><div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:32.1%"></span></div></td>
+            <td style="min-width:120px;"><span class="tbl-meter meter-rose">🔻 หลุด (-9.0%)</span></td>
             <td><span class="status-pill status-rose">🔻 หลุดแนวรับ</span></td>
             <td>
-                <a href="chart.html?ticker=NVDA" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
+                <a href="stock_chart.html?ticker=NVDA" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
             </td>
         </tr>
         
@@ -2902,10 +2773,10 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             </td>
             <td><div class="table-supp gold">$172</div></td>
             <td><div class="table-dist dist-rose">-7.7%</div></td>
-            <td style="min-width:110px;"><div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:34.5%"></span></div></td>
+            <td style="min-width:120px;"><span class="tbl-meter meter-rose">🔻 หลุด (-7.7%)</span></td>
             <td><span class="status-pill status-rose">🔻 หลุดแนวรับ</span></td>
             <td>
-                <a href="chart.html?ticker=PLTR" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
+                <a href="stock_chart.html?ticker=PLTR" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
             </td>
         </tr>
         
@@ -2926,10 +2797,10 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             </td>
             <td><div class="table-supp gold">$479</div></td>
             <td><div class="table-dist dist-rose">-7.4%</div></td>
-            <td style="min-width:110px;"><div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:35.2%"></span></div></td>
+            <td style="min-width:120px;"><span class="tbl-meter meter-rose">🔻 หลุด (-7.4%)</span></td>
             <td><span class="status-pill status-rose">🔻 หลุดแนวรับ</span></td>
             <td>
-                <a href="chart.html?ticker=AMD" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
+                <a href="stock_chart.html?ticker=AMD" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
             </td>
         </tr>
         
@@ -2950,10 +2821,10 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             </td>
             <td><div class="table-supp gold">$7</div></td>
             <td><div class="table-dist dist-rose">-7.3%</div></td>
-            <td style="min-width:110px;"><div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:35.4%"></span></div></td>
+            <td style="min-width:120px;"><span class="tbl-meter meter-rose">🔻 หลุด (-7.3%)</span></td>
             <td><span class="status-pill status-rose">🔻 หลุดแนวรับ</span></td>
             <td>
-                <a href="chart.html?ticker=RDW" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
+                <a href="stock_chart.html?ticker=RDW" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
             </td>
         </tr>
         
@@ -2974,34 +2845,10 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             </td>
             <td><div class="table-supp gold">$307</div></td>
             <td><div class="table-dist dist-rose">-7.2%</div></td>
-            <td style="min-width:110px;"><div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:35.5%"></span></div></td>
+            <td style="min-width:120px;"><span class="tbl-meter meter-rose">🔻 หลุด (-7.2%)</span></td>
             <td><span class="status-pill status-rose">🔻 หลุดแนวรับ</span></td>
             <td>
-                <a href="chart.html?ticker=GOOGL" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
-            </td>
-        </tr>
-        
-        <tr class="table-row row-rose" data-group="Quantum" data-status="A"
-            data-portfolio="false" data-ticker="IONQ"
-            data-pct="-6.666666666666667">
-            <td>
-                <div class="table-tk-box">
-                    <span class="tk">IONQ</span>
-                    <span class="table-company">IonQ, Inc.</span>
-                </div>
-            </td>
-            <td><span class="table-grp-pill">Quantum</span></td>
-            <td><div class="table-catalyst">⚛️ ผู้นำควอนตัม Trapped-ion เชิงพาณิชย์</div></td>
-            <td>
-                <div class="table-price">$28.00</div>
-                <div class="table-sub"><span class="ptag">Pre</span> <span class="down">-14.2%</span></div>
-            </td>
-            <td><div class="table-supp gold">$30</div></td>
-            <td><div class="table-dist dist-rose">-6.7%</div></td>
-            <td style="min-width:110px;"><div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:36.7%"></span></div></td>
-            <td><span class="status-pill status-rose">🔻 หลุดแนวรับ</span></td>
-            <td>
-                <a href="chart.html?ticker=IONQ" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
+                <a href="stock_chart.html?ticker=GOOGL" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
             </td>
         </tr>
         
@@ -3022,10 +2869,10 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             </td>
             <td><div class="table-supp gold">$192</div></td>
             <td><div class="table-dist dist-rose">-4.5%</div></td>
-            <td style="min-width:110px;"><div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:40.9%"></span></div></td>
+            <td style="min-width:120px;"><span class="tbl-meter meter-rose">🔻 หลุด (-4.5%)</span></td>
             <td><span class="status-pill status-rose">🔻 หลุดแนวรับ</span></td>
             <td>
-                <a href="chart.html?ticker=BE" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
+                <a href="stock_chart.html?ticker=BE" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
             </td>
         </tr>
         
@@ -3046,10 +2893,10 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             </td>
             <td><div class="table-supp gold">$398</div></td>
             <td><div class="table-dist dist-rose">-4.3%</div></td>
-            <td style="min-width:110px;"><div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:41.4%"></span></div></td>
+            <td style="min-width:120px;"><span class="tbl-meter meter-rose">🔻 หลุด (-4.3%)</span></td>
             <td><span class="status-pill status-rose">🔻 หลุดแนวรับ</span></td>
             <td>
-                <a href="chart.html?ticker=TSM" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
+                <a href="stock_chart.html?ticker=TSM" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
             </td>
         </tr>
         
@@ -3070,10 +2917,10 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             </td>
             <td><div class="table-supp gold">$57</div></td>
             <td><div class="table-dist dist-rose">-4.1%</div></td>
-            <td style="min-width:110px;"><div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:41.8%"></span></div></td>
+            <td style="min-width:120px;"><span class="tbl-meter meter-rose">🔻 หลุด (-4.1%)</span></td>
             <td><span class="status-pill status-rose">🔻 หลุดแนวรับ</span></td>
             <td>
-                <a href="chart.html?ticker=AEHR" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
+                <a href="stock_chart.html?ticker=AEHR" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
             </td>
         </tr>
         
@@ -3094,10 +2941,10 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             </td>
             <td><div class="table-supp gold">$324</div></td>
             <td><div class="table-dist dist-rose">-3.9%</div></td>
-            <td style="min-width:110px;"><div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:42.2%"></span></div></td>
+            <td style="min-width:120px;"><span class="tbl-meter meter-rose">🔻 หลุด (-3.9%)</span></td>
             <td><span class="status-pill status-rose">🔻 หลุดแนวรับ</span></td>
             <td>
-                <a href="chart.html?ticker=AVGO" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
+                <a href="stock_chart.html?ticker=AVGO" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
             </td>
         </tr>
         
@@ -3118,10 +2965,10 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             </td>
             <td><div class="table-supp gold">$50</div></td>
             <td><div class="table-dist dist-rose">-3.4%</div></td>
-            <td style="min-width:110px;"><div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:43.2%"></span></div></td>
+            <td style="min-width:120px;"><span class="tbl-meter meter-rose">🔻 หลุด (-3.4%)</span></td>
             <td><span class="status-pill status-rose">🔻 หลุดแนวรับ</span></td>
             <td>
-                <a href="chart.html?ticker=RKLB" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
+                <a href="stock_chart.html?ticker=RKLB" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
             </td>
         </tr>
         
@@ -3142,10 +2989,10 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             </td>
             <td><div class="table-supp gold">$195</div></td>
             <td><div class="table-dist dist-rose">-2.4%</div></td>
-            <td style="min-width:110px;"><div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:45.3%"></span></div></td>
+            <td style="min-width:120px;"><span class="tbl-meter meter-rose">🔻 หลุด (-2.4%)</span></td>
             <td><span class="status-pill status-rose">🔻 หลุดแนวรับ</span></td>
             <td>
-                <a href="chart.html?ticker=VRT" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
+                <a href="stock_chart.html?ticker=VRT" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
             </td>
         </tr>
         
@@ -3166,34 +3013,10 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             </td>
             <td><div class="table-supp gold">$353</div></td>
             <td><div class="table-dist dist-rose">-1.1%</div></td>
-            <td style="min-width:110px;"><div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:47.8%"></span></div></td>
+            <td style="min-width:120px;"><span class="tbl-meter meter-rose">🔻 หลุด (-1.1%)</span></td>
             <td><span class="status-pill status-rose">🔻 หลุดแนวรับ</span></td>
             <td>
-                <a href="chart.html?ticker=TSLA" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
-            </td>
-        </tr>
-        
-        <tr class="table-row row-rose" data-group="AI Applications" data-status="A"
-            data-portfolio="false" data-ticker="SNOW"
-            data-pct="-0.7243816254417001">
-            <td>
-                <div class="table-tk-box">
-                    <span class="tk">SNOW</span>
-                    <span class="table-company">Snowflake, Inc.</span>
-                </div>
-            </td>
-            <td><span class="table-grp-pill">AI Applications</span></td>
-            <td><div class="table-catalyst">📊 คลังข้อมูล Data Cloud ผนวก Cortex AI</div></td>
-            <td>
-                <div class="table-price">$280.95</div>
-                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+1.8%</span></div>
-            </td>
-            <td><div class="table-supp gold">$283</div></td>
-            <td><div class="table-dist dist-rose">-0.7%</div></td>
-            <td style="min-width:110px;"><div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:48.6%"></span></div></td>
-            <td><span class="status-pill status-rose">🔻 หลุดแนวรับ</span></td>
-            <td>
-                <a href="chart.html?ticker=SNOW" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
+                <a href="stock_chart.html?ticker=TSLA" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
             </td>
         </tr>
         
@@ -3214,10 +3037,10 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             </td>
             <td><div class="table-supp gold">$181.68</div></td>
             <td><div class="table-dist dist-rose">-0.3%</div></td>
-            <td style="min-width:110px;"><div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-rose " style="left:49.3%"></span></div></td>
+            <td style="min-width:120px;"><span class="tbl-meter meter-rose">🔻 หลุด (-0.3%)</span></td>
             <td><span class="status-pill status-rose">🔻 หลุดแนวรับ</span></td>
             <td>
-                <a href="chart.html?ticker=ENSG" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
+                <a href="stock_chart.html?ticker=ENSG" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
             </td>
         </tr>
         
@@ -3238,10 +3061,10 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             </td>
             <td><div class="table-supp gold">$102</div></td>
             <td><div class="table-dist dist-emerald">+2.5%</div></td>
-            <td style="min-width:110px;"><div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-emerald " style="left:55.1%"></span></div></td>
+            <td style="min-width:120px;"><span class="tbl-meter meter-emerald">🎯 ในโซน (+2.5%)</span></td>
             <td><span class="status-pill status-emerald">🎯 โซนซื้อ 0-5%</span></td>
             <td>
-                <a href="chart.html?ticker=AVAV" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
+                <a href="stock_chart.html?ticker=AVAV" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
             </td>
         </tr>
         
@@ -3262,10 +3085,10 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             </td>
             <td><div class="table-supp gold">$363</div></td>
             <td><div class="table-dist dist-emerald">+3.4%</div></td>
-            <td style="min-width:110px;"><div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-emerald " style="left:56.7%"></span></div></td>
+            <td style="min-width:120px;"><span class="tbl-meter meter-emerald">🎯 ในโซน (+3.4%)</span></td>
             <td><span class="status-pill status-emerald">🎯 โซนซื้อ 0-5%</span></td>
             <td>
-                <a href="chart.html?ticker=ADI" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
+                <a href="stock_chart.html?ticker=ADI" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
             </td>
         </tr>
         
@@ -3286,10 +3109,10 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             </td>
             <td><div class="table-supp gold">$86.69</div></td>
             <td><div class="table-dist dist-slate">+6.8%</div></td>
-            <td style="min-width:110px;"><div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-slate " style="left:63.6%"></span></div></td>
+            <td style="min-width:120px;"><span class="tbl-meter meter-slate">⏳ ไกล (+6.8%)</span></td>
             <td><span class="status-pill status-slate">⏳ ยังไกล</span></td>
             <td>
-                <a href="chart.html?ticker=OLLI" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
+                <a href="stock_chart.html?ticker=OLLI" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
             </td>
         </tr>
         
@@ -3310,10 +3133,10 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             </td>
             <td><div class="table-supp gold">$59.58</div></td>
             <td><div class="table-dist dist-slate">+7.1%</div></td>
-            <td style="min-width:110px;"><div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-slate " style="left:64.2%"></span></div></td>
+            <td style="min-width:120px;"><span class="tbl-meter meter-slate">⏳ ไกล (+7.1%)</span></td>
             <td><span class="status-pill status-slate">⏳ ยังไกล</span></td>
             <td>
-                <a href="chart.html?ticker=NFLX" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
+                <a href="stock_chart.html?ticker=NFLX" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
             </td>
         </tr>
         
@@ -3334,34 +3157,10 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             </td>
             <td><div class="table-supp gold">$48</div></td>
             <td><div class="table-dist dist-slate">+7.2%</div></td>
-            <td style="min-width:110px;"><div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-slate " style="left:64.3%"></span></div></td>
+            <td style="min-width:120px;"><span class="tbl-meter meter-slate">⏳ ไกล (+7.2%)</span></td>
             <td><span class="status-pill status-slate">⏳ ยังไกล</span></td>
             <td>
-                <a href="chart.html?ticker=GPIQ" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
-            </td>
-        </tr>
-        
-        <tr class="table-row row-slate" data-group="Midterm 2026" data-status="C"
-            data-portfolio="false" data-ticker="DVA"
-            data-pct="7.355251346499093">
-            <td>
-                <div class="table-tk-box">
-                    <span class="tk">DVA</span>
-                    <span class="table-company">DaVita Inc.</span>
-                </div>
-            </td>
-            <td><span class="table-grp-pill">Midterm 2026</span></td>
-            <td><div class="table-catalyst">🏥 ศูนย์ฟอกไตทั่วสหรัฐฯ ประกันสุขภาพคุ้มครอง</div></td>
-            <td>
-                <div class="table-price">$191.35</div>
-                <div class="table-sub"><span class="ptag">Post</span> <span class="up">+0.0%</span></div>
-            </td>
-            <td><div class="table-supp gold">$178.24</div></td>
-            <td><div class="table-dist dist-slate">+7.4%</div></td>
-            <td style="min-width:110px;"><div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-slate " style="left:64.7%"></span></div></td>
-            <td><span class="status-pill status-slate">⏳ ยังไกล</span></td>
-            <td>
-                <a href="chart.html?ticker=DVA" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
+                <a href="stock_chart.html?ticker=GPIQ" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
             </td>
         </tr>
         
@@ -3382,10 +3181,10 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             </td>
             <td><div class="table-supp gold">$262</div></td>
             <td><div class="table-dist dist-slate">+7.9%</div></td>
-            <td style="min-width:110px;"><div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-slate " style="left:65.7%"></span></div></td>
+            <td style="min-width:120px;"><span class="tbl-meter meter-slate">⏳ ไกล (+7.9%)</span></td>
             <td><span class="status-pill status-slate">⏳ ยังไกล</span></td>
             <td>
-                <a href="chart.html?ticker=TXN" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
+                <a href="stock_chart.html?ticker=TXN" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
             </td>
         </tr>
         
@@ -3406,10 +3205,10 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             </td>
             <td><div class="table-supp gold">$251</div></td>
             <td><div class="table-dist dist-slate">+8.0%</div></td>
-            <td style="min-width:110px;"><div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-slate " style="left:65.9%"></span></div></td>
+            <td style="min-width:120px;"><span class="tbl-meter meter-slate">⏳ ไกล (+8.0%)</span></td>
             <td><span class="status-pill status-slate">⏳ ยังไกล</span></td>
             <td>
-                <a href="chart.html?ticker=QQQM" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
+                <a href="stock_chart.html?ticker=QQQM" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
             </td>
         </tr>
         
@@ -3430,10 +3229,10 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             </td>
             <td><div class="table-supp gold">$1,100</div></td>
             <td><div class="table-dist dist-slate">+9.2%</div></td>
-            <td style="min-width:110px;"><div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-slate " style="left:68.4%"></span></div></td>
+            <td style="min-width:120px;"><span class="tbl-meter meter-slate">⏳ ไกล (+9.2%)</span></td>
             <td><span class="status-pill status-slate">⏳ ยังไกล</span></td>
             <td>
-                <a href="chart.html?ticker=MPWR" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
+                <a href="stock_chart.html?ticker=MPWR" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
             </td>
         </tr>
         
@@ -3454,10 +3253,10 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             </td>
             <td><div class="table-supp gold">$210</div></td>
             <td><div class="table-dist dist-slate">+10.0%</div></td>
-            <td style="min-width:110px;"><div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-slate " style="left:69.9%"></span></div></td>
+            <td style="min-width:120px;"><span class="tbl-meter meter-slate">⏳ ไกล (+10.0%)</span></td>
             <td><span class="status-pill status-slate">⏳ ยังไกล</span></td>
             <td>
-                <a href="chart.html?ticker=CRWD" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
+                <a href="stock_chart.html?ticker=CRWD" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
             </td>
         </tr>
         
@@ -3478,10 +3277,10 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             </td>
             <td><div class="table-supp gold">$231</div></td>
             <td><div class="table-dist dist-slate">+12.5%</div></td>
-            <td style="min-width:110px;"><div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-slate " style="left:75.0%"></span></div></td>
+            <td style="min-width:120px;"><span class="tbl-meter meter-slate">⏳ ไกล (+12.5%)</span></td>
             <td><span class="status-pill status-slate">⏳ ยังไกล</span></td>
             <td>
-                <a href="chart.html?ticker=AMZN" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
+                <a href="stock_chart.html?ticker=AMZN" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
             </td>
         </tr>
         
@@ -3502,10 +3301,10 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             </td>
             <td><div class="table-supp gold">$115</div></td>
             <td><div class="table-dist dist-slate">+13.9%</div></td>
-            <td style="min-width:110px;"><div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-slate " style="left:77.8%"></span></div></td>
+            <td style="min-width:120px;"><span class="tbl-meter meter-slate">⏳ ไกล (+13.9%)</span></td>
             <td><span class="status-pill status-slate">⏳ ยังไกล</span></td>
             <td>
-                <a href="chart.html?ticker=SPCX" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
+                <a href="stock_chart.html?ticker=SPCX" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
             </td>
         </tr>
         
@@ -3526,34 +3325,10 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             </td>
             <td><div class="table-supp gold">$678</div></td>
             <td><div class="table-dist dist-slate">+17.0%</div></td>
-            <td style="min-width:110px;"><div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-slate " style="left:84.1%"></span></div></td>
+            <td style="min-width:120px;"><span class="tbl-meter meter-slate">⏳ ไกล (+17.0%)</span></td>
             <td><span class="status-pill status-slate">⏳ ยังไกล</span></td>
             <td>
-                <a href="chart.html?ticker=GEV" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
-            </td>
-        </tr>
-        
-        <tr class="table-row row-slate" data-group="Midterm 2026" data-status="C"
-            data-portfolio="false" data-ticker="FIVE"
-            data-pct="17.46178560996982">
-            <td>
-                <div class="table-tk-box">
-                    <span class="tk">FIVE</span>
-                    <span class="table-company">Five Below, Inc.</span>
-                </div>
-            </td>
-            <td><span class="table-grp-pill">Midterm 2026</span></td>
-            <td><div class="table-catalyst">🛍️ สินค้าวัยรุ่นราคาประหยัด ขยายสาขาเติบโตเร็ว</div></td>
-            <td>
-                <div class="table-price">$241.29</div>
-                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+0.4%</span></div>
-            </td>
-            <td><div class="table-supp gold">$205.42</div></td>
-            <td><div class="table-dist dist-slate">+17.5%</div></td>
-            <td style="min-width:110px;"><div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-slate " style="left:84.9%"></span></div></td>
-            <td><span class="status-pill status-slate">⏳ ยังไกล</span></td>
-            <td>
-                <a href="chart.html?ticker=FIVE" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
+                <a href="stock_chart.html?ticker=GEV" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
             </td>
         </tr>
         
@@ -3574,34 +3349,10 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             </td>
             <td><div class="table-supp gold">$10</div></td>
             <td><div class="table-dist dist-slate">+18.2%</div></td>
-            <td style="min-width:110px;"><div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-slate " style="left:86.4%"></span></div></td>
+            <td style="min-width:120px;"><span class="tbl-meter meter-slate">⏳ ไกล (+18.2%)</span></td>
             <td><span class="status-pill status-slate">⏳ ยังไกล</span></td>
             <td>
-                <a href="chart.html?ticker=PL" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
-            </td>
-        </tr>
-        
-        <tr class="table-row row-slate" data-group="Midterm 2026" data-status="C"
-            data-portfolio="false" data-ticker="FSLR"
-            data-pct="18.92397802065091">
-            <td>
-                <div class="table-tk-box">
-                    <span class="tk">FSLR</span>
-                    <span class="table-company">First Solar, Inc.</span>
-                </div>
-            </td>
-            <td><span class="table-grp-pill">Midterm 2026</span></td>
-            <td><div class="table-catalyst">☀️ แผงโซลาร์สหรัฐฯ รับอานิสงส์กฎหมายพลังงานสะอาด</div></td>
-            <td>
-                <div class="table-price">$196.95</div>
-                <div class="table-sub"><span class="ptag">Pre</span> <span class="down">-2.1%</span></div>
-            </td>
-            <td><div class="table-supp gold">$165.61</div></td>
-            <td><div class="table-dist dist-slate">+18.9%</div></td>
-            <td style="min-width:110px;"><div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-slate " style="left:87.8%"></span></div></td>
-            <td><span class="status-pill status-slate">⏳ ยังไกล</span></td>
-            <td>
-                <a href="chart.html?ticker=FSLR" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
+                <a href="stock_chart.html?ticker=PL" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
             </td>
         </tr>
         
@@ -3622,10 +3373,10 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             </td>
             <td><div class="table-supp gold">$63</div></td>
             <td><div class="table-dist dist-slate">+20.0%</div></td>
-            <td style="min-width:110px;"><div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-slate " style="left:90.0%"></span></div></td>
+            <td style="min-width:120px;"><span class="tbl-meter meter-slate">⏳ ไกล (+20.0%)</span></td>
             <td><span class="status-pill status-slate">⏳ ยังไกล</span></td>
             <td>
-                <a href="chart.html?ticker=SOXQ" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
+                <a href="stock_chart.html?ticker=SOXQ" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
             </td>
         </tr>
         
@@ -3646,10 +3397,10 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             </td>
             <td><div class="table-supp gold">$161.03</div></td>
             <td><div class="table-dist dist-slate">+29.6%</div></td>
-            <td style="min-width:110px;"><div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%"><span class="gauge-zone" style="left:50.0%;width:10.0%"></span><span class="gauge-mid"></span><span class="gauge-dot dot-slate gauge-dot-edge" style="left:100.0%"></span></div></td>
+            <td style="min-width:120px;"><span class="tbl-meter meter-slate">⏳ ไกล (+29.6%)</span></td>
             <td><span class="status-pill status-slate">⏳ ยังไกล</span></td>
             <td>
-                <a href="chart.html?ticker=LRCX" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
+                <a href="stock_chart.html?ticker=LRCX" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
             </td>
         </tr>
         
@@ -3668,7 +3419,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                     <li><strong>ไม่ใช่คำแนะนำการลงทุน:</strong> ข้อมูลนี้จัดทำเพื่อการติดตามและศึกษา Risk/Reward เท่านั้น ผู้ลงทุนต้องวิเคราะห์ปัจจัยพื้นฐานและความเสี่ยงด้วยตนเอง</li>
                 </ul>
                 <h3>วิธีคำนวณระยะห่าง</h3>
-                <p>ระยะห่าง = <code>((ราคา - แนวรับ) / แนวรับ) × 100</code>. ราคาที่ใช้คือ Premarket ถ้ามี ต่อด้วย Postmarket แล้วจึงเป็นราคาปิด. แถบแสดงช่วง ±25% ถ้าเกินนั้นจุดจะอยู่ที่ขอบ.</p>
+                <p>ระยะห่าง = <code>((ราคา - แนวรับ) / แนวรับ) × 100</code>. ราคาที่ใช้คือ Premarket ถ้ามี ต่อด้วย Postmarket แล้วจึงเป็นราคาปิด. ป้ายสถานะระบุชัดเจนทั้ง โซนซื้อ 0-5%, หลุดแนวรับ (&lt; 0%), และยังไกล (&gt; 5%).</p>
                 <h3>ที่มาของแนวรับ</h3>
                 <div class="thumb">
                     <img src="assets/shay_fibo_support_2026-10-17.jpeg" alt="Fibo Support" onclick="openImageModal()">
@@ -3754,7 +3505,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                             <td><span class="deep-badge deep-badge-rank3">🛡️ อันดับ 3 (ตัวแทนตลาดสหรัฐฯ แกร่งสุด)</span></td>
                         </tr>
                         <tr>
-                            <td><strong style="color:#a78bfa;font-size:1rem;">IFX</strong></td>
+                            <td><strong style="#a78bfa;font-size:1rem;">IFX</strong></td>
                             <td>Infineon Technologies</td>
                             <td>เบอร์ 1 ชิปพลังงานโลก (MOSFET/GaN/SiC Modules) ครองหุ่นยนต์โรงงานยุโรป/ญี่ปุ่น</td>
                             <td><strong>$1,094</strong> <span style="color:var(--text2);">(15.2%)</span></td>
@@ -3763,17 +3514,6 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                             <td>0.45</td>
                             <td>~16.0x</td>
                             <td><span class="deep-badge" style="background:rgba(167,139,250,0.15);color:#a78bfa;border:1px solid rgba(167,139,250,0.4);">🌐 อันดับ 3 ร่วม (ตลาดต่างประเทศ / ADR)</span></td>
-                        </tr>
-                        <tr class="culled-row">
-                            <td><strong style="color:var(--rose);font-size:1rem;">ON</strong></td>
-                            <td>ON Semiconductor</td>
-                            <td>Image Sensors สำหรับสายตาหุ่นยนต์ และชิปกำลัง SiC สำหรับมอเตอร์ข้อต่อ</td>
-                            <td><strong>$1,125</strong> <span style="color:var(--rose);">(15.6%)</span></td>
-                            <td>36 - 41%</td>
-                            <td>19.2%</td>
-                            <td>0.62</td>
-                            <td>36.8x TTM</td>
-                            <td><span class="deep-badge deep-badge-culled">❌ คัดออกจากการดีเบต (มาร์จิ้นทรุด & สงครามราคา SiC)</span></td>
                         </tr>
                     </tbody>
                 </table>
@@ -3848,70 +3588,11 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
         </div>
 
         <div>
-            <h3 style="font-size:1.15rem;margin-bottom:12px;color:var(--rose);display:flex;align-items:center;gap:8px;">
-                <span>🗑️</span> บันทึกการทบทวนและคัดหุ้นออกจาก Watchlist (Cull Log 2026-11-07)
-            </h3>
-            <div class="cull-table-wrap">
-                <table class="cull-table">
-                    <thead>
-                        <tr>
-                            <th>Ticker</th>
-                            <th>กลุ่มเดิม</th>
-                            <th>แนวรับเดิม</th>
-                            <th>ราคาล่าสุด</th>
-                            <th>สถานะงบการเงินจริง</th>
-                            <th>มติจากการ Debate (เหตุผลที่คัดออก)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong style="color:var(--text);">ON</strong></td>
-                            <td>AI Power</td>
-                            <td>$72.00</td>
-                            <td>$63.31</td>
-                            <td>Gross Margin ร่วงเหลือ 36-41%, ขาดทุนต้นปี 2026</td>
-                            <td>หลุดแนวรับรุนแรง, ภาระค่าเสื่อมโรงงาน IDM และสงครามราคา SiC จากผู้ผลิตจีนตัดส่วนแบ่ง</td>
-                        </tr>
-                        <tr>
-                            <td><strong style="color:var(--text);">NVTS</strong></td>
-                            <td>AI Power</td>
-                            <td>$8.00</td>
-                            <td>$8.61</td>
-                            <td>Operating Margin -222.8%, FCF -$19.2M</td>
-                            <td>บริษัทเผาเงินสดหนักต่อเนื่อง ขาดทุนบานปลาย ไม่ผ่านเกณฑ์พื้นฐานสำหรับการลงทุน</td>
-                        </tr>
-                        <tr>
-                            <td><strong style="color:var(--text);">QBTS</strong></td>
-                            <td>Quantum</td>
-                            <td>$10.00</td>
-                            <td>$10.68</td>
-                            <td>Operating Margin -1,732.1%, ขาดทุน -$48.0M</td>
-                            <td>หุ้นเก็งกำไรขนาดเล็ก อัตราการเผาเงินสดสูงลิบลิ่ว และเทรดต่ำกว่าเส้น SMA200</td>
-                        </tr>
-                        <tr>
-                            <td><strong style="color:var(--text);">RGTI</strong></td>
-                            <td>Quantum</td>
-                            <td>$11.00</td>
-                            <td>$11.75</td>
-                            <td>Operating Margin -546.2%, ขาดทุน -$52.6M</td>
-                            <td>ผลขาดทุนสุทธิสูงกว่ารายได้เกือบ 10 เท่า ธุรกิจยังไม่สามารถทำกำไรในระดับอุตสาหกรรมได้</td>
-                        </tr>
-                        <tr>
-                            <td><strong style="color:var(--text);">INFQ</strong></td>
-                            <td>Quantum</td>
-                            <td>$8.00</td>
-                            <td>$8.89</td>
-                            <td>Operating Margin -220.5%, ขาดทุน -$24.7M</td>
-                            <td>มาร์จิ้นติดลบลึก ขาดทุนเรื้อรัง จึงคงเหลือเพียง IONQ ตัวเดียวในกลุ่ม Quantum ที่การเงินแกร่งสุด</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div style="margin-top:16px;padding:14px 18px;background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.25);border-radius:10px;font-size:0.875rem;line-height:1.6;color:var(--text);">
+            <div style="padding:14px 18px;background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.25);border-radius:10px;font-size:0.875rem;line-height:1.6;color:var(--text);">
                 <div style="font-weight:700;color:var(--emerald);display:flex;align-items:center;gap:6px;margin-bottom:4px;">
-                    <span>✨</span> บันทึกการทบทวนพิเศษ (AEHR Reinstatement & Turnaround)
+                    <span>✨</span> บันทึกการคัดสรรหุ้นคุณภาพสูง (Strict Quality & Turnaround Focus)
                 </div>
-                ตรวจสอบงบล่าสุดไตรมาส Q1 FY2027 พบผลการดำเนินงานพลิกฟื้นแบบ Super Turnaround: รายได้ทำสถิติสูงสุดใหม่ $33.0M (+200% YoY, +75% QoQ), พลิกมีกำไรสุทธิ GAAP EPS $0.21 (Non-GAAP $0.28 ชนะคาดการณ์เกือบ 3 เท่า), ยอดจอง $46.7M (Book-to-Bill 1.4x) และ Backlog All-Time High $109.3M จากความต้องการทดสอบ AI Wafer Burn-in (FOX-P & Sonoma) จึงมีมติเอกฉันท์ <strong>ดึง AEHR กลับเข้า Watchlist กลุ่ม Photonics</strong> ทันที ที่แนวรับเดิม $57.00 โดยวางจุด Stop Loss ที่ $48.50 และเป้าหมาย Rebound เส้น EMA200 ที่ $72.80 (R:R 1 : 3.8).
+                ระบบคัดกรองหุ้นอย่างเข้มงวด โดยคัดหุ้นที่มีภาระหนี้สินสูงผิดปกติ หรือผลการดำเนินงานหดตัวรุนแรงออกจาก Watchlist และเน้นหุ้นกลุ่มเติบโตแข็งแกร่ง ผู้นำอุตสาหกรรม หรือกลุ่ม Turnaround ที่ผลขาดทุนลดลงต่อเนื่องและเริ่มมีกระแสเงินสดเป็นบวก เช่น <strong>AEHR</strong> ซึ่งผลการดำเนินงานพลิกฟื้นใน Q1 FY2027 รายได้สถิติใหม่ $33.0M (+200% YoY), พลิกมีกำไรสุทธิ GAAP EPS $0.21 พร้อม Backlog All-Time High $109.3M จากดีมานด์ AI Wafer Burn-in จึงกำหนดแนวรับสะสมที่ $57.00 วาง Stop Loss ที่ $48.50 และเป้าหมาย Rebound เส้น EMA200 ที่ $72.80 (R:R 1 : 3.8).
             </div>
         </div>
     </div>

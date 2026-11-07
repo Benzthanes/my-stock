@@ -36,61 +36,51 @@ WATCHLIST_STOCKS: List[Dict[str, Any]] = [
     {"group": "Space", "ticker": "RDW", "support": 7.0},
     # Not in Shay Boloor's image: support set by the user on 2026-10-30.
     {"group": "Space", "ticker": "SPCX", "support": 115.0, "source": "ผู้ใช้กำหนดเอง 2026-10-30"},
-    # 2) Quantum (Cull QBTS, RGTI, INFQ due to severe cash burn OM < -200%; keep only commercial leader IONQ)
-    {"group": "Quantum", "ticker": "IONQ", "support": 30.0},
-    # 3) Drones
+    # 2) Drones
     {"group": "Drones", "ticker": "AVAV", "support": 102.0},
     {"group": "Drones", "ticker": "KTOS", "support": 39.0},
-    # 4) Nuclear
+    # 3) Nuclear
     {"group": "Nuclear", "ticker": "GEV", "support": 678.0},
-    # 5) Photonics (COHR & AEHR - AI Wafer Burn-in & Optical Transceiver Turnaround)
+    # 4) Photonics (COHR & AEHR - AI Wafer Burn-in & Optical Transceiver Turnaround)
     {"group": "Photonics", "ticker": "COHR", "support": 224.0},
     {"group": "Photonics", "ticker": "AEHR", "support": 57.0},
-    # 6) CPU Bottleneck
+    # 5) CPU Bottleneck
     {"group": "CPU Bottleneck", "ticker": "AMD", "support": 479.0},
     {"group": "CPU Bottleneck", "ticker": "ARM", "support": 225.0},
     {"group": "CPU Bottleneck", "ticker": "AMKR", "support": 38.0},
-    # 7) Physical AI & Robotics (Added Morgan Stanley BOM leaders: ADI, MPWR, TXN)
+    # 6) Physical AI & Robotics (Added Morgan Stanley BOM leaders: ADI, MPWR, TXN)
     {"group": "Physical AI", "ticker": "TSLA", "support": 353.0},
     {"group": "Physical AI", "ticker": "AMZN", "support": 231.0},
     {"group": "Physical AI", "ticker": "GOOGL", "support": 307.0},
     {"group": "Physical AI", "ticker": "ADI", "support": 363.0, "source": "ชิปหุ่นยนต์ Morgan Stanley #1 ($1,625) แนวรับ EMA200"},
     {"group": "Physical AI", "ticker": "MPWR", "support": 1100.0, "source": "ชิปข้อต่อหุ่นยนต์ & Power Stage แนวรับจิตวิทยา"},
     {"group": "Physical AI", "ticker": "TXN", "support": 262.0, "source": "ชิปแอนะล็อกโรงงาน 300mm แนวรับ EMA200"},
-    # 8) AI Utilities
-    {"group": "AI Utilities", "ticker": "DOCN", "support": 90.0},
-    # 9) AI Power (Cull ON due to SiC price war/margin drop, NVTS due to OM -272%)
+    # 7) AI Power
     {"group": "AI Power", "ticker": "BE", "support": 192.0},
     {"group": "AI Power", "ticker": "VRT", "support": 195.0},
-    # 10) AI Silicon
+    # 8) AI Silicon
     {"group": "AI Silicon", "ticker": "NVDA", "support": 210.0},
     {"group": "AI Silicon", "ticker": "TSM", "support": 398.0},
     {"group": "AI Silicon", "ticker": "ASML", "support": 1637.0},
     {"group": "AI Silicon", "ticker": "MU", "support": 849.0},
-    # 11) AI Applications
+    # 9) AI Applications
     {"group": "AI Applications", "ticker": "PLTR", "support": 172.0},
     {"group": "AI Applications", "ticker": "NOW", "support": 124.0},
     {"group": "AI Applications", "ticker": "CRWD", "support": 210.0},
-    {"group": "AI Applications", "ticker": "SNOW", "support": 283.0},
-    # 12) AI Connectivity
+    # 10) AI Connectivity
     {"group": "AI Connectivity", "ticker": "AVGO", "support": 324.0},
     {"group": "AI Connectivity", "ticker": "ALAB", "support": 251.0},
     {"group": "AI Connectivity", "ticker": "CRDO", "support": 167.0},
     {"group": "AI Connectivity", "ticker": "MRVL", "support": 222.0},
-    # 13) Midterm 2026 trend picks. Not from Shay Boloor's image. Picked with the user on 2026-11-05
-    # after the Democratic sweep (all rose more than SPY on 2026-11-04). Supports are the screener's
-    # key_support on 2026-11-05. Snapshot and reasons: docs/watchlist_midterm_2026-11-05.md
+    # 11) Midterm 2026 trend picks (Strong balance sheets, low debt & solid cash flow)
     {"group": "Midterm 2026", "ticker": "ENSG", "support": 181.68, "source": "เทรนเลือกตั้ง 2026-11-05 แนวรับ SMA200"},
-    {"group": "Midterm 2026", "ticker": "FSLR", "support": 165.61, "source": "เทรนเลือกตั้ง 2026-11-05 แนวรับ BB ล่าง"},
-    {"group": "Midterm 2026", "ticker": "DVA", "support": 178.24, "source": "เทรนเลือกตั้ง 2026-11-05 แนวรับ SMA200"},
     {"group": "Midterm 2026", "ticker": "OLLI", "support": 86.69, "source": "เทรนเลือกตั้ง 2026-11-05 แนวรับ SMA200"},
-    {"group": "Midterm 2026", "ticker": "FIVE", "support": 205.42, "source": "เทรนเลือกตั้ง 2026-11-05 แนวรับ BB ล่าง"},
-    # 14) ETF plan $10k agreed with Antigravity on 2026-11-06 (QQQM 65 / SOXQ 25 / GPIQ 10).
+    # 12) ETF plan $10k agreed with Antigravity on 2026-11-06 (QQQM 65 / SOXQ 25 / GPIQ 10).
     # Support is the tranche-2 buy price of the ladder. Tranche 1 is bought near the 2026-11-05 close.
     {"group": "ETF Plan 2026-11", "ticker": "QQQM", "support": 251.0, "source": "แผน ETF $10k 2026-11-06 ไม้ 2"},
     {"group": "ETF Plan 2026-11", "ticker": "SOXQ", "support": 63.0, "source": "แผน ETF $10k 2026-11-06 ไม้ 2"},
     {"group": "ETF Plan 2026-11", "ticker": "GPIQ", "support": 48.0, "source": "แผน ETF $10k 2026-11-06 ไม้ 2"},
-    # 15) Big-tech dip screen on 2026-11-06 (market cap >= $100B, fundamentals >= 93/100, >= 25% off the
+    # 13) Big-tech dip screen on 2026-11-06 (market cap >= $100B, fundamentals >= 93/100, >= 25% off the
     # 52-week high). Only the names not already in the watchlist. Supports are the screener's key_support that day.
     {"group": "Bigtech Dip 2026-11", "ticker": "NFLX", "support": 59.58, "source": "Bigtech ลงหนัก 2026-11-06 แนวรับ BB ล่าง"},
     {"group": "Bigtech Dip 2026-11", "ticker": "LRCX", "support": 161.03, "source": "Bigtech ลงหนัก 2026-11-06 แนวรับ 1.5 ATR"},
@@ -102,8 +92,6 @@ CATALYSTS: Dict[str, str] = {
     "PL": "🛰️ ภาพถ่ายดาวเทียม & AI Geospatial Analytics",
     "RDW": "🛰️ แผงโซลาร์อวกาศ & โครงสร้างพื้นฐานวงโคจร",
     "SPCX": "🚀 ยาน Starship & ดาวเทียม Starlink ผูกขาด",
-    # Quantum
-    "IONQ": "⚛️ ผู้นำควอนตัม Trapped-ion เชิงพาณิชย์",
     # Drones
     "AVAV": "🛩️ โดรนพลีชีพ Switchblade & ยุทธวิธีไร้คนขับ",
     "KTOS": "🛩️ โดรนเป้าซ้อมรบ & โดรนรบร่วม Valkyrie",
@@ -123,8 +111,6 @@ CATALYSTS: Dict[str, str] = {
     "ADI": "👑 ชิปหุ่นยนต์อันดับ 1 (BOM $1,625) มาร์จิ้น 67%",
     "MPWR": "🚀 Monolithic BCD ชิปจัดการพลังงานข้อต่อหุ่นยนต์",
     "TXN": "🛡️ โรงงาน 300mm ชิปแอนะล็อกต้นทุนต่ำ R:R 1:5.1",
-    # AI Utilities
-    "DOCN": "☁️ คลาวด์สำหรับนักพัฒนาโมเดล AI ขนาดเล็ก/กลาง",
     # AI Power
     "BE": "⚡ เซลล์เชื้อเพลิงผลิตไฟฟ้านอกสายส่งป้อน Datacenter",
     "VRT": "❄️ ระบบระบายความร้อนด้วยของเหลวสำหรับ GPU คลัสเตอร์",
@@ -137,7 +123,6 @@ CATALYSTS: Dict[str, str] = {
     "PLTR": "🛡️ แพลตฟอร์มซอฟต์แวร์ AIP กองทัพและองค์กร",
     "NOW": "💼 ระบบจัดการงานอัตโนมัติ Workflow AI",
     "CRWD": "🔒 ระบบความปลอดภัยไซเบอร์ Falcon AI Cloud",
-    "SNOW": "📊 คลังข้อมูล Data Cloud ผนวก Cortex AI",
     # AI Connectivity
     "AVGO": "🌐 ชิปเน็ตเวิร์ก Ethernet 800G & Custom ASIC",
     "ALAB": "🔌 ชิปเชื่อมต่อ PCIe Gen 6/CXL สำหรับ AI",
@@ -145,10 +130,7 @@ CATALYSTS: Dict[str, str] = {
     "MRVL": "📡 ชิปเครือข่ายความเร็วสูง Optical DSP & AI",
     # Midterm 2026
     "ENSG": "🏥 ธุรกิจดูแลผู้ป่วยระยะยาว นโยบายหนุน",
-    "FSLR": "☀️ แผงโซลาร์สหรัฐฯ รับอานิสงส์กฎหมายพลังงานสะอาด",
-    "DVA": "🏥 ศูนย์ฟอกไตทั่วสหรัฐฯ ประกันสุขภาพคุ้มครอง",
     "OLLI": "🛒 ค้าปลีกสินค้าราคาประหยัด ชนะเงินเฟ้อ",
-    "FIVE": "🛍️ สินค้าวัยรุ่นราคาประหยัด ขยายสาขาเติบโตเร็ว",
     # ETF Plan 2026-11
     "QQQM": "📈 ดัชนี Nasdaq 100 ค่าธรรมเนียมต่ำ ไม้ 2",
     "SOXQ": "📈 กองทุนดัชนีเซมิคอนดักเตอร์ SOX ไม้ 2",
@@ -370,25 +352,63 @@ STATUS_SECTIONS = [
     },
 ]
 
-GAUGE_RANGE_PCT = 25.0  # the bar spans -25% .. +25% around the support line
+GAUGE_RANGE_PCT = 25.0  # reference range for distance calculations
+
+
+def _meter_html(pct: Optional[float], color: str, code: str) -> str:
+    """
+    Modern readable distance meter banner:
+    - B (Buy Zone 0-5%): Emerald banner with target icon, % diff, and actionable hint.
+    - A (Broken < 0%): Rose banner with warning icon, % diff, and strict knife-catching warning.
+    - C (Far > 5%): Slate banner with hourglass icon, % diff, and pullback expectation hint.
+    - Unknown: Slate neutral banner waiting for price.
+    """
+    if pct is None:
+        return (
+            '<div class="card-meter meter-unknown">'
+            '<div class="meter-main"><span class="meter-icon">⚪</span> <span class="meter-bold">รอข้อมูลราคา</span></div>'
+            '<span class="meter-hint">ยังไม่มีราคาล่าสุด</span>'
+            '</div>'
+        )
+    if code == "B":
+        return (
+            f'<div class="card-meter meter-emerald">'
+            f'<div class="meter-main"><span class="meter-icon">🎯</span> <span class="meter-bold">อยู่ในโซนซื้อ</span> (+{pct:.1f}%)</div>'
+            f'<span class="meter-hint">พร้อมตั้ง Limit Order ที่แนวรับ</span>'
+            f'</div>'
+        )
+    elif code == "A":
+        return (
+            f'<div class="card-meter meter-rose">'
+            f'<div class="meter-main"><span class="meter-icon">🔻</span> <span class="meter-bold">หลุดแนวรับแล้ว</span> ({pct:.1f}%)</div>'
+            f'<span class="meter-hint">ห้ามรับมีด รอสัญญาณยืนฐาน</span>'
+            f'</div>'
+        )
+    else:
+        return (
+            f'<div class="card-meter meter-slate">'
+            f'<div class="meter-main"><span class="meter-icon">⏳</span> <span class="meter-bold">ยังไกลจากแนวรับ</span> (+{pct:.1f}%)</div>'
+            f'<span class="meter-hint">รอราคาย่อตัวลงมาทดสอบ</span>'
+            f'</div>'
+        )
+
+
+def _table_meter_html(pct: Optional[float], color: str, code: str) -> str:
+    """Compact badge for table row."""
+    if pct is None:
+        return '<span class="tbl-meter meter-unknown">⚪ รอราคา</span>'
+    if code == "B":
+        return f'<span class="tbl-meter meter-emerald">🎯 ในโซน (+{pct:.1f}%)</span>'
+    elif code == "A":
+        return f'<span class="tbl-meter meter-rose">🔻 หลุด ({pct:.1f}%)</span>'
+    else:
+        return f'<span class="tbl-meter meter-slate">⏳ ไกล (+{pct:.1f}%)</span>'
 
 
 def _gauge_html(pct: Optional[float], color: str) -> str:
-    """A bar with the support line in the middle and a dot for where the price is now."""
-    if pct is None:
-        return '<div class="gauge gauge-empty"></div>'
-    clamped = max(-GAUGE_RANGE_PCT, min(GAUGE_RANGE_PCT, pct))
-    pos = (clamped + GAUGE_RANGE_PCT) / (2 * GAUGE_RANGE_PCT) * 100.0
-    zone_left = 50.0
-    zone_width = 5.0 / (2 * GAUGE_RANGE_PCT) * 100.0
-    overflow = "gauge-dot-edge" if abs(pct) > GAUGE_RANGE_PCT else ""
-    return (
-        '<div class="gauge" title="เส้นกลาง = แนวรับ (0%), แถบเขียว = โซนซื้อ 0-5%">'
-        f'<span class="gauge-zone" style="left:{zone_left:.1f}%;width:{zone_width:.1f}%"></span>'
-        '<span class="gauge-mid"></span>'
-        f'<span class="gauge-dot dot-{color} {overflow}" style="left:{pos:.1f}%"></span>'
-        '</div>'
-    )
+    """Backward-compatible wrapper returning the modern meter HTML."""
+    code = "B" if color == "emerald" else ("A" if color == "rose" else "C")
+    return _meter_html(pct, color, code)
 
 
 def generate_watchlist_html(
@@ -536,30 +556,30 @@ def generate_watchlist_html(
             <div class="card-name" title="{escape(it['name'])}">{escape(it['name'])}</div>
             <div class="card-catalyst">{escape(catalyst)}</div>
             <div class="card-price-grid">
-                <div>
+                <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">{_fmt_money(eff)}</div>
                     <div class="card-sub">{price_sub}</div>
                 </div>
-                <div>
-                    <div class="card-lbl">แนวรับ</div>
+                <div class="price-col-support">
+                    <div class="card-lbl">แนวรับ Fibo</div>
                     <div class="card-val gold">{_fmt_support(supp)}</div>
-                    <div class="card-sub">{src_line}</div>
+                    <div class="card-sub">แนวรับอ้างอิง</div>
                 </div>
-                <div style="text-align:right;">
+                <div class="price-col-dist">
                     <div class="card-lbl">ระยะห่าง</div>
                     <div class="card-val dist-{sec_color}">{dist_txt}</div>
                     <div class="card-sub">เทียบแนวรับ</div>
                 </div>
             </div>
-            <div class="card-gauge-box">
-                {_gauge_html(pct, sec_color)}
+            <div class="card-meter-box">
+                {_meter_html(pct, sec_color, code)}
             </div>
             <div class="card-actions">
-                <a href="chart.html?ticker={escape(tk)}" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
+                <a href="stock_chart.html?ticker={escape(tk)}" class="btn-chart-link" title="เปิดหน้ากราฟแท่งเทียน & อินดิเคเตอร์">
                     <span>📈</span> ดูกราฟ
                 </a>
-                <span class="card-src-tag">{src_line}</span>
+                <span class="card-src-tag" title="{src_line}">{src_line}</span>
             </div>
         </div>
         """)
@@ -583,10 +603,10 @@ def generate_watchlist_html(
             </td>
             <td><div class="table-supp gold">{_fmt_support(supp)}</div></td>
             <td><div class="table-dist dist-{sec_color}">{dist_txt}</div></td>
-            <td style="min-width:110px;">{_gauge_html(pct, sec_color)}</td>
+            <td style="min-width:120px;">{_table_meter_html(pct, sec_color, code)}</td>
             <td><span class="status-pill status-{sec_color}">{status_badge_txt}</span></td>
             <td>
-                <a href="chart.html?ticker={escape(tk)}" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
+                <a href="stock_chart.html?ticker={escape(tk)}" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
             </td>
         </tr>
         """)
@@ -608,8 +628,12 @@ def generate_watchlist_html(
     --gold: #fbbf24; --gold-glow: rgba(251,191,36,0.3); --blue: #60a5fa; --blue-glow: rgba(96,165,250,0.3);
     --purple: #c084fc; --slate: #94a3b8;
 }}
-* {{ box-sizing: border-box; margin: 0; padding: 0; }}
-html, body {{ overflow-x: hidden; }}
+*, *::before, *::after {{ box-sizing: border-box; margin: 0; padding: 0; }}
+html, body {{
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+}}
 body {{
     font-family: 'Prompt', 'Inter', -apple-system, sans-serif;
     background: var(--bg); color: var(--text);
@@ -619,7 +643,13 @@ body {{
         radial-gradient(at 100% 0%, rgba(168,85,247,0.07) 0, transparent 45%),
         radial-gradient(at 50% 100%, rgba(16,185,129,0.05) 0, transparent 40%);
 }}
-.container {{ max-width: 1200px; margin: 0 auto; min-width: 0; }}
+.container {{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-width: 0;
+    box-sizing: border-box;
+}}
 
 /* Top Header */
 .top-header {{ margin-bottom: 20px; }}
@@ -746,6 +776,7 @@ h1 {{ font-size: 1.75rem; font-weight: 700; color: #fff; display: flex; align-it
     background: var(--card); border: 1px solid var(--line); border-radius: 16px;
     padding: 16px 18px; position: relative; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex; flex-direction: column; justify-content: space-between; gap: 12px;
+    min-width: 0; overflow: hidden;
 }}
 .stock-card:hover {{
     transform: translateY(-2px); border-color: var(--line-bright);
@@ -755,28 +786,29 @@ h1 {{ font-size: 1.75rem; font-weight: 700; color: #fff; display: flex; align-it
 .card-rose {{ border-left: 4px solid var(--rose); }}
 .card-slate {{ border-left: 4px solid var(--slate); }}
 
-.card-head {{ display: flex; justify-content: space-between; align-items: center; }}
-.card-tk-box {{ display: flex; align-items: center; gap: 8px; }}
-.tk {{ font-family: 'Inter', sans-serif; font-weight: 800; font-size: 1.15rem; letter-spacing: 0.02em; color: #fff; }}
-.port-star {{ color: var(--gold); font-size: 0.95rem; }}
-.card-grp {{ font-size: 0.76rem; color: var(--text2); background: rgba(255,255,255,0.05); padding: 2px 7px; border-radius: 6px; }}
-.card-name {{ font-size: 0.82rem; color: var(--text2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }}
+.card-head {{ display: flex; justify-content: space-between; align-items: center; gap: 8px; min-width: 0; }}
+.card-tk-box {{ display: flex; align-items: center; gap: 8px; min-width: 0; flex: 1 1 auto; overflow: hidden; }}
+.tk {{ font-family: 'Inter', sans-serif; font-weight: 800; font-size: 1.15rem; letter-spacing: 0.02em; color: #fff; flex-shrink: 0; }}
+.port-star {{ color: var(--gold); font-size: 0.95rem; flex-shrink: 0; }}
+.card-grp {{ font-size: 0.74rem; color: var(--text2); background: rgba(255,255,255,0.05); padding: 2px 7px; border-radius: 6px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 140px; }}
+.card-name {{ font-size: 0.82rem; color: var(--text2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }}
 
 /* Catalyst Tag */
 .card-catalyst {{
     font-size: 0.78rem; color: #93c5fd; background: rgba(96,165,250,0.08);
-    border: 1px solid rgba(96,165,250,0.22); border-radius: 8px; padding: 5px 10px;
-    line-height: 1.4; display: flex; align-items: center; gap: 6px;
+    border: 1px solid rgba(96,165,250,0.22); border-radius: 8px; padding: 6px 10px;
+    line-height: 1.4; word-break: break-word;
 }}
 
 /* Card Price Matrix */
 .card-price-grid {{
-    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px;
     background: rgba(255,255,255,0.02); border: 1px solid var(--line);
-    border-radius: 12px; padding: 10px 12px;
+    border-radius: 12px; padding: 10px 12px; min-width: 0;
 }}
+.card-price-grid > div {{ min-width: 0; }}
 .card-lbl {{ font-size: 0.7rem; color: var(--muted); }}
-.card-val {{ font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.05rem; }}
+.card-val {{ font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.05rem; white-space: nowrap; }}
 .gold {{ color: var(--gold); }}
 .dist-emerald {{ color: var(--emerald); font-weight: 700; }}
 .dist-rose {{ color: var(--rose); font-weight: 700; }}
@@ -788,42 +820,47 @@ h1 {{ font-size: 1.75rem; font-weight: 700; color: #fff; display: flex; align-it
 /* Status Pills */
 .status-pill {{
     display: inline-flex; align-items: center; gap: 4px; font-size: 0.72rem;
-    font-weight: 700; padding: 3px 8px; border-radius: 9999px; white-space: nowrap;
+    font-weight: 700; padding: 3px 8px; border-radius: 9999px; white-space: nowrap; flex-shrink: 0;
 }}
 .status-emerald {{ background: rgba(16,185,129,0.15); color: var(--emerald); border: 1px solid rgba(16,185,129,0.35); }}
 .status-rose {{ background: rgba(244,63,94,0.15); color: var(--rose); border: 1px solid rgba(244,63,94,0.35); }}
 .status-slate {{ background: rgba(148,163,184,0.12); color: var(--text2); border: 1px solid rgba(148,163,184,0.25); }}
 
-/* Visual Proximity Gauge */
-.card-gauge-box {{ margin: 4px 0; }}
-.gauge {{
-    position: relative; height: 8px; border-radius: 4px;
-    background: linear-gradient(90deg, rgba(244,63,94,0.3), rgba(244,63,94,0.08) 50%, rgba(148,163,184,0.15) 50%);
+/* Modern Distance Meter */
+.card-meter-box {{ margin: 2px 0; }}
+.card-meter {{
+    display: flex; justify-content: space-between; align-items: center; gap: 8px;
+    border-radius: 10px; padding: 7px 11px; font-size: 0.78rem; min-width: 0;
 }}
-.gauge-empty {{ opacity: 0.3; }}
-.gauge-zone {{ position: absolute; top: 0; bottom: 0; background: rgba(16,185,129,0.65); }}
-.gauge-mid {{ position: absolute; left: 50%; top: -4px; bottom: -4px; width: 2px; background: var(--gold); }}
-.gauge-dot {{
-    position: absolute; top: 50%; width: 12px; height: 12px; border-radius: 50%;
-    transform: translate(-50%, -50%); border: 2px solid var(--bg);
+.meter-main {{ display: flex; align-items: center; gap: 6px; white-space: nowrap; }}
+.meter-bold {{ font-weight: 700; }}
+.meter-hint {{ font-size: 0.72rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; opacity: 0.85; }}
+.meter-emerald {{ background: rgba(16,185,129,0.12); border: 1px solid rgba(16,185,129,0.3); color: #6ee7b7; }}
+.meter-rose {{ background: rgba(244,63,94,0.12); border: 1px solid rgba(244,63,94,0.3); color: #fca5a5; }}
+.meter-slate {{ background: rgba(148,163,184,0.08); border: 1px solid rgba(148,163,184,0.2); color: var(--text2); }}
+.meter-unknown {{ background: rgba(255,255,255,0.03); border: 1px solid var(--line); color: var(--muted); }}
+
+.tbl-meter {{
+    display: inline-flex; align-items: center; gap: 4px; padding: 3px 8px;
+    border-radius: 6px; font-size: 0.74rem; font-weight: 600; white-space: nowrap;
 }}
-.dot-emerald {{ background: var(--emerald); box-shadow: 0 0 6px var(--emerald); }}
-.dot-rose {{ background: var(--rose); box-shadow: 0 0 6px var(--rose); }}
-.dot-slate {{ background: #cbd5e1; }}
-.gauge-dot-edge {{ box-shadow: 0 0 0 3px rgba(255,255,255,0.2); }}
 
 /* Card Actions */
 .card-actions {{
-    display: flex; justify-content: space-between; align-items: center;
-    border-top: 1px solid var(--line); padding-top: 10px; margin-top: 2px;
+    display: flex; justify-content: space-between; align-items: center; gap: 8px;
+    border-top: 1px solid var(--line); padding-top: 10px; margin-top: 2px; min-width: 0;
 }}
 .btn-chart-link {{
     font-size: 0.78rem; font-weight: 600; color: var(--blue); text-decoration: none;
     background: rgba(96,165,250,0.1); border: 1px solid rgba(96,165,250,0.3);
-    border-radius: 8px; padding: 4px 10px; transition: 0.15s; display: inline-flex; align-items: center; gap: 4px;
+    border-radius: 8px; padding: 5px 12px; transition: 0.15s; display: inline-flex; align-items: center; gap: 4px;
+    flex-shrink: 0;
 }}
 .btn-chart-link:hover {{ background: rgba(96,165,250,0.2); color: #fff; transform: translateY(-1px); }}
-.card-src-tag {{ font-size: 0.7rem; color: var(--muted); }}
+.card-src-tag {{
+    font-size: 0.7rem; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    text-align: right; min-width: 0;
+}}
 
 /* Pillar 2: Pro Table View */
 .pro-table-wrap {{
@@ -933,73 +970,191 @@ code {{ background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px
 
 /* Tablet Adaptive Breakpoint (769px - 1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {{
-    .radar-ribbon {{ grid-template-columns: repeat(2, 1fr); gap: 12px; }}
-    .cards-grid {{ grid-template-columns: repeat(2, 1fr); gap: 14px; }}
-    .strategy-grid {{ grid-template-columns: repeat(2, 1fr); }}
+    .radar-ribbon {{ grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }}
+    .cards-grid {{ grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }}
+    .strategy-grid {{ grid-template-columns: repeat(2, minmax(0, 1fr)); }}
     .toolbar {{ gap: 10px; }}
     .search-box {{ flex: 1 1 180px; }}
 }}
 
 /* Desktop Large (> 1025px) */
 @media (min-width: 1025px) {{
-    .radar-ribbon {{ grid-template-columns: repeat(4, 1fr); }}
+    .radar-ribbon {{ grid-template-columns: repeat(4, minmax(0, 1fr)); }}
     .cards-grid {{ grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); }}
-    .strategy-grid {{ grid-template-columns: repeat(3, 1fr); }}
+    .strategy-grid {{ grid-template-columns: repeat(3, minmax(0, 1fr)); }}
 }}
 
 /* Mobile Adaptive Breakpoint (<= 768px) */
 @media (max-width: 768px) {{
-    body {{ padding: 12px; }}
+    body {{ padding: 12px 10px; }}
     h1 {{ font-size: 1.35rem; }}
-    .top-header {{ margin-bottom: 14px; }}
-    .lead {{ font-size: 0.88rem; }}
-    .meta {{ gap: 8px; font-size: 0.78rem; }}
+    .top-header {{ margin-bottom: 12px; }}
+    .lead {{ font-size: 0.85rem; }}
+    .meta {{ gap: 6px; font-size: 0.75rem; }}
+    .meta-price-note {{ display: none; }}
 
-    /* Main Navigation Tabs touch target */
-    .main-tabs {{ gap: 6px; margin: 14px 0 18px; }}
-    .main-tab-btn {{ font-size: 0.85rem; padding: 10px 14px; min-height: 44px; }}
+    /* Main Navigation Tabs touch target: stack neatly into full-width vertical buttons */
+    .main-tabs {{
+        flex-direction: column;
+        gap: 8px;
+        margin: 12px 0 16px;
+        width: 100%;
+        padding-bottom: 10px;
+    }}
+    .main-tab-btn {{
+        width: 100%;
+        justify-content: center;
+        font-size: 0.86rem;
+        padding: 10px 14px;
+        min-height: 44px;
+        box-sizing: border-box;
+    }}
 
-    /* Pillar 1: Radar Ribbon 2 columns on mobile */
-    .radar-ribbon {{ grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 16px; }}
-    .ribbon-card {{ padding: 12px 14px; min-height: 120px; }}
-    .ribbon-title {{ font-size: 0.75rem; }}
-    .ribbon-num {{ font-size: 1.6rem; margin: 4px 0; }}
-    .ribbon-sub {{ font-size: 0.7rem; line-height: 1.3; }}
+    /* Pillar 1: Radar Ribbon Compact 2x2 Grid on mobile */
+    .radar-ribbon {{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+        margin-bottom: 14px;
+        width: 100%;
+    }}
+    .ribbon-card {{
+        padding: 10px 12px;
+        min-height: 72px;
+        border-radius: 12px;
+        min-width: 0;
+        box-sizing: border-box;
+        overflow: hidden;
+    }}
+    .ribbon-title {{
+        font-size: 0.72rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }}
+    .ribbon-num {{ font-size: 1.35rem; margin: 2px 0; line-height: 1.1; }}
+    .ribbon-sub {{ display: none; }}
     .ribbon-preview {{ display: none; }}
-    .health-legend {{ font-size: 0.68rem; }}
+    .ribbon-top .status-pill {{ display: none; }}
+    .health-bar-container {{ margin: 4px 0 2px; }}
+    .health-bar {{ height: 6px; }}
+    .health-legend {{ font-size: 0.65rem; margin-top: 2px; }}
 
     /* Pillar 3: Theme Pills Touch-friendly Scroll */
-    .pills-container {{ margin-bottom: 14px; scroll-padding: 10px; }}
-    .pill-btn {{ min-height: 40px; padding: 8px 14px; font-size: 0.8rem; }}
+    .pills-container {{
+        margin-bottom: 12px;
+        scroll-padding: 8px;
+        overscroll-behavior-x: contain;
+        width: 100%;
+    }}
+    .pill-btn {{ min-height: 32px; padding: 5px 12px; font-size: 0.76rem; }}
 
     /* Toolbar & Search Bar on Mobile */
-    .toolbar {{ flex-direction: column; align-items: stretch; gap: 10px; padding: 12px; margin-bottom: 16px; }}
+    .toolbar {{
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+        padding: 10px;
+        margin-bottom: 14px;
+        width: 100%;
+        box-sizing: border-box;
+    }}
     .search-box {{ width: 100%; flex: 1 1 auto; }}
-    .search-box input {{ height: 44px; font-size: 0.88rem; }}
-    .view-toggle-group {{ width: 100%; display: grid; grid-template-columns: 1fr 1fr; height: 44px; }}
-    .view-btn {{ justify-content: center; font-size: 0.88rem; height: 100%; }}
-    .row-count-chip {{ width: 100%; text-align: center; margin-left: 0; font-size: 0.78rem; }}
+    .search-box input {{ height: 38px; font-size: 0.84rem; box-sizing: border-box; }}
+    .view-toggle-group {{ width: 100%; display: grid; grid-template-columns: 1fr 1fr; height: 36px; box-sizing: border-box; }}
+    .view-btn {{ justify-content: center; font-size: 0.8rem; height: 100%; }}
+    .row-count-chip {{ width: 100%; text-align: center; margin-left: 0; font-size: 0.74rem; }}
 
     /* Pillar 2: Cards Grid Single Column on Mobile */
-    .cards-grid {{ grid-template-columns: 1fr; gap: 12px; }}
-    .stock-card {{ padding: 14px; }}
-    .card-price-grid {{ grid-template-columns: 1fr 1fr 1fr; gap: 6px; padding: 8px 10px; }}
+    .cards-grid {{
+        grid-template-columns: minmax(0, 1fr);
+        gap: 12px;
+        width: 100%;
+        max-width: 100%;
+    }}
+    .stock-card {{
+        padding: 14px;
+        gap: 10px;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        min-width: 0;
+        overflow: hidden;
+    }}
     .card-val {{ font-size: 0.95rem; }}
-    .btn-chart-link {{ min-height: 40px; padding: 8px 14px; font-size: 0.84rem; }}
+    .btn-chart-link {{ min-height: 36px; padding: 6px 12px; font-size: 0.8rem; }}
 
     /* Tab 2: Robotics Strategy Grid & Hero on Mobile */
-    .robotics-hero {{ padding: 16px 18px; }}
-    .robotics-hero h2 {{ font-size: 1.15rem; }}
-    .hero-stats {{ grid-template-columns: 1fr; gap: 10px; }}
-    .strategy-grid {{ grid-template-columns: 1fr; gap: 12px; }}
-    .strat-card {{ padding: 14px 16px; }}
+    .robotics-hero {{ padding: 14px 16px; width: 100%; box-sizing: border-box; }}
+    .robotics-hero h2 {{ font-size: 1.1rem; }}
+    .hero-stats {{ grid-template-columns: 1fr; gap: 8px; }}
+    .strategy-grid {{ grid-template-columns: 1fr; gap: 12px; width: 100%; }}
+    .strat-card {{ padding: 14px 16px; width: 100%; box-sizing: border-box; }}
 }}
 
-/* Extra Small Mobile (<= 480px) */
-@media (max-width: 480px) {{
-    .radar-ribbon {{ grid-template-columns: 1fr; gap: 8px; }}
-    .card-price-grid {{ grid-template-columns: 1fr 1fr; gap: 8px; }}
-    .card-price-grid > div:last-child {{ grid-column: span 2; text-align: left; }}
+/* Extra Small Mobile (<= 600px) */
+@media (max-width: 600px) {{
+    body {{ padding: 10px 8px; }}
+    .card-head {{ width: 100%; min-width: 0; }}
+    .card-tk-box {{ min-width: 0; flex: 1 1 auto; overflow: hidden; }}
+    .card-grp {{ max-width: 95px; }}
+    .status-pill {{ flex-shrink: 0; }}
+    .card-price-grid {{
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 6px 10px;
+        padding: 8px 10px;
+        width: 100%;
+        box-sizing: border-box;
+    }}
+    .price-col-current {{
+        border-right: 1px solid var(--line);
+        padding-right: 6px;
+        min-width: 0;
+    }}
+    .price-col-support {{
+        padding-left: 2px;
+        min-width: 0;
+    }}
+    .price-col-dist {{
+        grid-column: span 2;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(255,255,255,0.03);
+        border-radius: 8px;
+        padding: 6px 10px;
+        margin-top: 2px;
+        min-width: 0;
+    }}
+    .price-col-dist .card-lbl {{
+        font-size: 0.72rem;
+        color: var(--text2);
+    }}
+    .price-col-dist .card-val {{
+        font-size: 0.95rem;
+    }}
+    .price-col-dist .card-sub {{
+        display: none;
+    }}
+    .card-meter {{
+        padding: 6px 10px;
+        font-size: 0.74rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2px;
+        width: 100%;
+        box-sizing: border-box;
+    }}
+    .meter-hint {{
+        font-size: 0.68rem;
+    }}
+    .card-actions {{
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+    }}
+    .card-src-tag {{
+        max-width: 150px;
+    }}
 }}
 </style>
 </head>
@@ -1008,9 +1163,9 @@ code {{ background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px
 <div class="container">
     <div class="top-header">
         <h1>📋 หุ้นที่สนใจ (Watchlist)</h1>
-        <p class="lead">เรดาร์ติดตามหุ้นคุณภาพสูง 44 ตัวตามกรอบแนวรับสำคัญ เพื่อจับจังหวะเข้าซื้อในระดับราคาที่ปลอดภัย</p>
+        <p class="lead">เรดาร์ติดตามหุ้นคุณภาพสูง {total} ตัวตามกรอบแนวรับสำคัญ เพื่อจับจังหวะเข้าซื้อในระดับราคาที่ปลอดภัย</p>
         <div class="meta">
-            <span class="meta-chip">🕒 ข้อมูลราคา: <strong>{fetch_time}</strong> ({price_note})</span>
+            <span class="meta-chip">🕒 ข้อมูลราคา: <strong>{fetch_time}</strong> <span class="meta-price-note">({price_note})</span></span>
             <span class="meta-chip">⭐ ในพอร์ตจริง: <strong>{port_count} ตัว</strong></span>
             <span class="meta-chip">🎯 ในโซนซื้อ 0-5%: <strong>{cnt_b} ตัว</strong></span>
         </div>
@@ -1023,7 +1178,7 @@ code {{ background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px
             📋 เรดาร์หุ้นและแนวรับ ({total} ตัว)
         </button>
         <button class="main-tab-btn" id="tab-btn-robotics" onclick="switchMainTab('robotics')">
-            🤖 เจาะลึกชิปหุ่นยนต์ & Physical AI (BOM $7,200) <span class="tab-badge">Hot</span>
+            🤖 ชิปหุ่นยนต์ & Physical AI ($7,200) <span class="tab-badge">Hot</span>
         </button>
     </div>
 
@@ -1034,7 +1189,7 @@ code {{ background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px
             <!-- Card 1: Buy Zone Ready -->
             <div class="ribbon-card ribbon-card-buy" onclick="filterByPill('buy')" style="cursor:pointer;" title="คลิกเพื่อกรองเฉพาะหุ้นในโซนซื้อ">
                 <div class="ribbon-top">
-                    <span class="ribbon-title"><span>🎯</span> พร้อมเข้าซื้อ (Buy Zone 0-5%)</span>
+                    <span class="ribbon-title"><span>🎯</span> พร้อมซื้อ (0-5%)</span>
                     <span class="status-pill status-emerald">จุดซื้อทันที</span>
                 </div>
                 <div class="ribbon-num">{cnt_b}</div>
@@ -1045,7 +1200,7 @@ code {{ background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px
             <!-- Card 2: Broken Support -->
             <div class="ribbon-card ribbon-card-broken" onclick="filterByStatus('A')" style="cursor:pointer;" title="คลิกเพื่อกรองหุ้นที่หลุดแนวรับ">
                 <div class="ribbon-top">
-                    <span class="ribbon-title"><span>🔻</span> หลุดแนวรับแล้ว (&lt; 0%)</span>
+                    <span class="ribbon-title"><span>🔻</span> หลุดแนวรับ (&lt; 0%)</span>
                     <span class="status-pill status-rose">ห้ามรับมีด</span>
                 </div>
                 <div class="ribbon-num">{cnt_a}</div>
@@ -1055,7 +1210,7 @@ code {{ background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px
             <!-- Card 3: Far from Support -->
             <div class="ribbon-card ribbon-card-far" onclick="filterByStatus('C')" style="cursor:pointer;" title="คลิกเพื่อกรองหุ้นที่ยังไกล">
                 <div class="ribbon-top">
-                    <span class="ribbon-title"><span>⏳</span> ยังไกลจากแนวรับ (&gt; 5%)</span>
+                    <span class="ribbon-title"><span>⏳</span> ยังไกลแนวรับ (&gt; 5%)</span>
                     <span class="status-pill status-slate">รอจังหวะย่อ</span>
                 </div>
                 <div class="ribbon-num">{cnt_c}</div>
@@ -1065,7 +1220,7 @@ code {{ background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px
             <!-- Card 4: Health Gauge & Highlights -->
             <div class="ribbon-card ribbon-card-health">
                 <div class="ribbon-top">
-                    <span class="ribbon-title"><span>📊</span> สัดส่วนสุขภาพ Watchlist</span>
+                    <span class="ribbon-title"><span>📊</span> สัดส่วนสุขภาพ</span>
                     <span style="font-size:0.75rem;color:var(--gold);font-weight:700;">{cnt_b}/{total} ตัว</span>
                 </div>
                 <div class="health-bar-container">
@@ -1080,8 +1235,8 @@ code {{ background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px
                         <span>🔴 หลุด {pct_a:.0f}%</span>
                     </div>
                 </div>
-                <div style="font-size:0.74rem;color:var(--text2);margin-top:4px;">
-                    ✨ <strong>AEHR</strong> Super Turnaround | 👑 <strong>ADI</strong> ชิปหุ่นยนต์ #1
+                <div style="font-size:0.74rem;color:var(--text2);margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">
+                    ✨ <strong>AEHR</strong> Turnaround | 👑 <strong>ADI</strong> #1
                 </div>
             </div>
         </div>
@@ -1103,10 +1258,10 @@ code {{ background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px
             <!-- Pillar 2: Dual View Switcher -->
             <div class="view-toggle-group">
                 <button class="view-btn active" id="btn-view-grid" onclick="setViewMode('grid')">
-                    <span>🗂️</span> Grid Cards
+                    <span>🗂️</span> การ์ด (Cards)
                 </button>
                 <button class="view-btn" id="btn-view-table" onclick="setViewMode('table')">
-                    <span>📊</span> Pro Table
+                    <span>📊</span> ตาราง (Table)
                 </button>
             </div>
 
@@ -1151,7 +1306,7 @@ code {{ background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px
                     <li><strong>ไม่ใช่คำแนะนำการลงทุน:</strong> ข้อมูลนี้จัดทำเพื่อการติดตามและศึกษา Risk/Reward เท่านั้น ผู้ลงทุนต้องวิเคราะห์ปัจจัยพื้นฐานและความเสี่ยงด้วยตนเอง</li>
                 </ul>
                 <h3>วิธีคำนวณระยะห่าง</h3>
-                <p>ระยะห่าง = <code>((ราคา - แนวรับ) / แนวรับ) × 100</code>. ราคาที่ใช้คือ Premarket ถ้ามี ต่อด้วย Postmarket แล้วจึงเป็นราคาปิด. แถบแสดงช่วง ±{GAUGE_RANGE_PCT:.0f}% ถ้าเกินนั้นจุดจะอยู่ที่ขอบ.</p>
+                <p>ระยะห่าง = <code>((ราคา - แนวรับ) / แนวรับ) × 100</code>. ราคาที่ใช้คือ Premarket ถ้ามี ต่อด้วย Postmarket แล้วจึงเป็นราคาปิด. ป้ายสถานะระบุชัดเจนทั้ง โซนซื้อ 0-5%, หลุดแนวรับ (&lt; 0%), และยังไกล (&gt; 5%).</p>
                 <h3>ที่มาของแนวรับ</h3>
                 <div class="thumb">
                     <img src="assets/shay_fibo_support_2026-10-17.jpeg" alt="Fibo Support" onclick="openImageModal()">
@@ -1237,7 +1392,7 @@ code {{ background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px
                             <td><span class="deep-badge deep-badge-rank3">🛡️ อันดับ 3 (ตัวแทนตลาดสหรัฐฯ แกร่งสุด)</span></td>
                         </tr>
                         <tr>
-                            <td><strong style="color:#a78bfa;font-size:1rem;">IFX</strong></td>
+                            <td><strong style="#a78bfa;font-size:1rem;">IFX</strong></td>
                             <td>Infineon Technologies</td>
                             <td>เบอร์ 1 ชิปพลังงานโลก (MOSFET/GaN/SiC Modules) ครองหุ่นยนต์โรงงานยุโรป/ญี่ปุ่น</td>
                             <td><strong>$1,094</strong> <span style="color:var(--text2);">(15.2%)</span></td>
@@ -1246,17 +1401,6 @@ code {{ background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px
                             <td>0.45</td>
                             <td>~16.0x</td>
                             <td><span class="deep-badge" style="background:rgba(167,139,250,0.15);color:#a78bfa;border:1px solid rgba(167,139,250,0.4);">🌐 อันดับ 3 ร่วม (ตลาดต่างประเทศ / ADR)</span></td>
-                        </tr>
-                        <tr class="culled-row">
-                            <td><strong style="color:var(--rose);font-size:1rem;">ON</strong></td>
-                            <td>ON Semiconductor</td>
-                            <td>Image Sensors สำหรับสายตาหุ่นยนต์ และชิปกำลัง SiC สำหรับมอเตอร์ข้อต่อ</td>
-                            <td><strong>$1,125</strong> <span style="color:var(--rose);">(15.6%)</span></td>
-                            <td>36 - 41%</td>
-                            <td>19.2%</td>
-                            <td>0.62</td>
-                            <td>36.8x TTM</td>
-                            <td><span class="deep-badge deep-badge-culled">❌ คัดออกจากการดีเบต (มาร์จิ้นทรุด & สงครามราคา SiC)</span></td>
                         </tr>
                     </tbody>
                 </table>
@@ -1331,70 +1475,11 @@ code {{ background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px
         </div>
 
         <div>
-            <h3 style="font-size:1.15rem;margin-bottom:12px;color:var(--rose);display:flex;align-items:center;gap:8px;">
-                <span>🗑️</span> บันทึกการทบทวนและคัดหุ้นออกจาก Watchlist (Cull Log 2026-11-07)
-            </h3>
-            <div class="cull-table-wrap">
-                <table class="cull-table">
-                    <thead>
-                        <tr>
-                            <th>Ticker</th>
-                            <th>กลุ่มเดิม</th>
-                            <th>แนวรับเดิม</th>
-                            <th>ราคาล่าสุด</th>
-                            <th>สถานะงบการเงินจริง</th>
-                            <th>มติจากการ Debate (เหตุผลที่คัดออก)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong style="color:var(--text);">ON</strong></td>
-                            <td>AI Power</td>
-                            <td>$72.00</td>
-                            <td>$63.31</td>
-                            <td>Gross Margin ร่วงเหลือ 36-41%, ขาดทุนต้นปี 2026</td>
-                            <td>หลุดแนวรับรุนแรง, ภาระค่าเสื่อมโรงงาน IDM และสงครามราคา SiC จากผู้ผลิตจีนตัดส่วนแบ่ง</td>
-                        </tr>
-                        <tr>
-                            <td><strong style="color:var(--text);">NVTS</strong></td>
-                            <td>AI Power</td>
-                            <td>$8.00</td>
-                            <td>$8.61</td>
-                            <td>Operating Margin -222.8%, FCF -$19.2M</td>
-                            <td>บริษัทเผาเงินสดหนักต่อเนื่อง ขาดทุนบานปลาย ไม่ผ่านเกณฑ์พื้นฐานสำหรับการลงทุน</td>
-                        </tr>
-                        <tr>
-                            <td><strong style="color:var(--text);">QBTS</strong></td>
-                            <td>Quantum</td>
-                            <td>$10.00</td>
-                            <td>$10.68</td>
-                            <td>Operating Margin -1,732.1%, ขาดทุน -$48.0M</td>
-                            <td>หุ้นเก็งกำไรขนาดเล็ก อัตราการเผาเงินสดสูงลิบลิ่ว และเทรดต่ำกว่าเส้น SMA200</td>
-                        </tr>
-                        <tr>
-                            <td><strong style="color:var(--text);">RGTI</strong></td>
-                            <td>Quantum</td>
-                            <td>$11.00</td>
-                            <td>$11.75</td>
-                            <td>Operating Margin -546.2%, ขาดทุน -$52.6M</td>
-                            <td>ผลขาดทุนสุทธิสูงกว่ารายได้เกือบ 10 เท่า ธุรกิจยังไม่สามารถทำกำไรในระดับอุตสาหกรรมได้</td>
-                        </tr>
-                        <tr>
-                            <td><strong style="color:var(--text);">INFQ</strong></td>
-                            <td>Quantum</td>
-                            <td>$8.00</td>
-                            <td>$8.89</td>
-                            <td>Operating Margin -220.5%, ขาดทุน -$24.7M</td>
-                            <td>มาร์จิ้นติดลบลึก ขาดทุนเรื้อรัง จึงคงเหลือเพียง IONQ ตัวเดียวในกลุ่ม Quantum ที่การเงินแกร่งสุด</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div style="margin-top:16px;padding:14px 18px;background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.25);border-radius:10px;font-size:0.875rem;line-height:1.6;color:var(--text);">
+            <div style="padding:14px 18px;background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.25);border-radius:10px;font-size:0.875rem;line-height:1.6;color:var(--text);">
                 <div style="font-weight:700;color:var(--emerald);display:flex;align-items:center;gap:6px;margin-bottom:4px;">
-                    <span>✨</span> บันทึกการทบทวนพิเศษ (AEHR Reinstatement & Turnaround)
+                    <span>✨</span> บันทึกการคัดสรรหุ้นคุณภาพสูง (Strict Quality & Turnaround Focus)
                 </div>
-                ตรวจสอบงบล่าสุดไตรมาส Q1 FY2027 พบผลการดำเนินงานพลิกฟื้นแบบ Super Turnaround: รายได้ทำสถิติสูงสุดใหม่ $33.0M (+200% YoY, +75% QoQ), พลิกมีกำไรสุทธิ GAAP EPS $0.21 (Non-GAAP $0.28 ชนะคาดการณ์เกือบ 3 เท่า), ยอดจอง $46.7M (Book-to-Bill 1.4x) และ Backlog All-Time High $109.3M จากความต้องการทดสอบ AI Wafer Burn-in (FOX-P & Sonoma) จึงมีมติเอกฉันท์ <strong>ดึง AEHR กลับเข้า Watchlist กลุ่ม Photonics</strong> ทันที ที่แนวรับเดิม $57.00 โดยวางจุด Stop Loss ที่ $48.50 และเป้าหมาย Rebound เส้น EMA200 ที่ $72.80 (R:R 1 : 3.8).
+                ระบบคัดกรองหุ้นอย่างเข้มงวด โดยคัดหุ้นที่มีภาระหนี้สินสูงผิดปกติ หรือผลการดำเนินงานหดตัวรุนแรงออกจาก Watchlist และเน้นหุ้นกลุ่มเติบโตแข็งแกร่ง ผู้นำอุตสาหกรรม หรือกลุ่ม Turnaround ที่ผลขาดทุนลดลงต่อเนื่องและเริ่มมีกระแสเงินสดเป็นบวก เช่น <strong>AEHR</strong> ซึ่งผลการดำเนินงานพลิกฟื้นใน Q1 FY2027 รายได้สถิติใหม่ $33.0M (+200% YoY), พลิกมีกำไรสุทธิ GAAP EPS $0.21 พร้อม Backlog All-Time High $109.3M จากดีมานด์ AI Wafer Burn-in จึงกำหนดแนวรับสะสมที่ $57.00 วาง Stop Loss ที่ $48.50 และเป้าหมาย Rebound เส้น EMA200 ที่ $72.80 (R:R 1 : 3.8).
             </div>
         </div>
     </div>

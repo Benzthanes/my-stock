@@ -48,7 +48,7 @@ class TestWatchlist(unittest.TestCase):
 
     def test_watchlist_stocks_data_integrity(self):
         """Assert image stocks left after cleanups, SPCX added by user, Physical AI additions, and midterm/ETF/Bigtech picks."""
-        self.assertEqual(len(WATCHLIST_STOCKS), 44)
+        self.assertEqual(len(WATCHLIST_STOCKS), 38)
         self.assertEqual(SOURCE_AUTHOR, "Shay Boloor")
         self.assertEqual(SOURCE_UPDATED, "2026-10-17")
 
@@ -59,22 +59,22 @@ class TestWatchlist(unittest.TestCase):
             self.assertGreater(s["support"], 0)
             self.assertTrue(s["ticker"].isupper())
 
-        self.assertEqual(len(groups), 15)
+        self.assertEqual(len(groups), 13)
         IMAGE_STOCKS_PER_GROUP = {
-            "Space": 3, "Quantum": 1, "Drones": 2, "Nuclear": 1, "Photonics": 2, "CPU Bottleneck": 3,
-            "Physical AI": 3, "AI Utilities": 1, "AI Power": 2, "AI Silicon": 4, "AI Applications": 4,
+            "Space": 3, "Drones": 2, "Nuclear": 1, "Photonics": 2, "CPU Bottleneck": 3,
+            "Physical AI": 3, "AI Power": 2, "AI Silicon": 4, "AI Applications": 3,
             "AI Connectivity": 4, "Midterm 2026": 0, "ETF Plan 2026-11": 0, "Bigtech Dip 2026-11": 0,
         }
         removed = {
             "CIFR", "INTC", "LITE", "OKLO", "VPG", "IREN", "LEU", "ONDS", "UUUU", "ASTS", "NBIS", "MRCY", "AAOI",
-            "ON", "NVTS", "QBTS", "RGTI", "INFQ"
+            "ON", "NVTS", "QBTS", "RGTI", "INFQ", "IONQ", "DOCN", "SNOW", "FSLR", "DVA", "FIVE"
         }
         self.assertFalse(removed & {s["ticker"] for s in WATCHLIST_STOCKS})
         for g, stocks in groups.items():
             from_image = [x for x in stocks if not x.get("source")]
             expected = IMAGE_STOCKS_PER_GROUP[g]
             self.assertEqual(len(from_image), expected, f"Group {g} should have exactly {expected} image stocks")
-        self.assertEqual([x["ticker"] for x in groups["Midterm 2026"]], ["ENSG", "FSLR", "DVA", "OLLI", "FIVE"])
+        self.assertEqual([x["ticker"] for x in groups["Midterm 2026"]], ["ENSG", "OLLI"])
 
         # Spot check specific values from shay_fibo_support_2026-10-17.md and additions
         stock_map = {s["ticker"]: s for s in WATCHLIST_STOCKS}
@@ -88,10 +88,9 @@ class TestWatchlist(unittest.TestCase):
         self.assertEqual(stock_map["SPCX"]["group"], "Space")
         self.assertEqual(
             [x["ticker"] for x in WATCHLIST_STOCKS if x.get("source")],
-            ["SPCX", "ADI", "MPWR", "TXN", "ENSG", "FSLR", "DVA", "OLLI", "FIVE", "QQQM", "SOXQ", "GPIQ", "NFLX", "LRCX"],
+            ["SPCX", "ADI", "MPWR", "TXN", "ENSG", "OLLI", "QQQM", "SOXQ", "GPIQ", "NFLX", "LRCX"],
         )
         self.assertEqual(stock_map["ENSG"]["support"], 181.68)
-        self.assertEqual(stock_map["FIVE"]["support"], 205.42)
         self.assertEqual(
             [(x["ticker"], x["support"]) for x in groups["ETF Plan 2026-11"]],
             [("QQQM", 251.0), ("SOXQ", 63.0), ("GPIQ", 48.0)],
@@ -143,7 +142,7 @@ class TestWatchlist(unittest.TestCase):
         }
 
         result = analyze_watchlist(price_data=mock_quotes)
-        self.assertEqual(result["total_count"], 44)
+        self.assertEqual(result["total_count"], 38)
         self.assertEqual(result["portfolio_count"], 2)  # GOOGL and VRT in portfolio.json
 
         item_map = {it["ticker"]: it for it in result["items"]}

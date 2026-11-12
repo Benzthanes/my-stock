@@ -32,6 +32,7 @@ class LedgerCase(unittest.TestCase):
         self.base_capital = float(base_ledger.get("net_injected_capital_thb", 0.0))
         self.base_gross = float(base_ledger.get("gross_deposits_thb", 0.0))
         base_ledger["cash"] = {"dime_save_thb": 0.0, "dime_usd": 0.0}
+        base_ledger["buy_orders"] = []
         self.ledger.write_text(json.dumps(base_ledger), encoding="utf-8")
         from unittest import mock
         fx_patch = mock.patch("src.fx.fetch_usdthb", return_value=None)

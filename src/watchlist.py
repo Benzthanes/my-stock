@@ -25,6 +25,7 @@ if str(ROOT) not in sys.path:
 from src.nav import nav_bar_html
 from src.trades import data_path
 from src.universe import resolve_custom_tickers
+from src.valuation import get_valuation
 
 SOURCE_AUTHOR = "Shay Boloor"
 SOURCE_UPDATED = "2026-10-17"
@@ -67,6 +68,7 @@ WATCHLIST_STOCKS: List[Dict[str, Any]] = [
     {"group": "AI Applications", "ticker": "PLTR", "support": 172.0},
     {"group": "AI Applications", "ticker": "NOW", "support": 124.0},
     {"group": "AI Applications", "ticker": "CRWD", "support": 210.0},
+    {"group": "AI Applications", "ticker": "NBIS", "support": 138.0, "source": "GPU Cloud Hyperscaler & AI Infrastructure แนวรับ Fibo"},
     # 10) AI Connectivity
     {"group": "AI Connectivity", "ticker": "AVGO", "support": 324.0},
     {"group": "AI Connectivity", "ticker": "ALAB", "support": 251.0},
@@ -123,6 +125,7 @@ CATALYSTS: Dict[str, str] = {
     "PLTR": "🛡️ แพลตฟอร์มซอฟต์แวร์ AIP กองทัพและองค์กร",
     "NOW": "💼 ระบบจัดการงานอัตโนมัติ Workflow AI",
     "CRWD": "🔒 ระบบความปลอดภัยไซเบอร์ Falcon AI Cloud",
+    "NBIS": "☁️ GPU Cloud Hyperscaler & AI Supercluster Blackwell",
     # AI Connectivity
     "AVGO": "🌐 ชิปเน็ตเวิร์ก Ethernet 800G & Custom ASIC",
     "ALAB": "🔌 ชิปเชื่อมต่อ PCIe Gen 6/CXL สำหรับ AI",
@@ -275,6 +278,7 @@ def analyze_watchlist(
         group_counts[code] = group_counts.get(code, 0) + 1
 
         catalyst = CATALYSTS.get(tk, "")
+        val = get_valuation(tk, current_price=eff_price)
 
         items.append({
             "ticker": tk,
@@ -294,6 +298,14 @@ def analyze_watchlist(
             "in_portfolio": in_port,
             "source": stock.get("source"),
             "catalyst": catalyst,
+            "valuation": val,
+            "fair_price": val.get("fair_price"),
+            "val_status": val.get("status", "SPECULATIVE"),
+            "val_upside": val.get("upside_pct", 0.0),
+            "val_label": val.get("status_label", "🟡 อยู่ระหว่างประเมิน"),
+            "val_color": val.get("status_color", "#facc15"),
+            "val_model": val.get("primary_model", "Market Price Baseline"),
+            "val_desc": val.get("model_desc", ""),
         })
 
     # Sort ascending by pct_diff (None goes to the bottom)
@@ -486,12 +498,20 @@ def generate_watchlist_html(
         "Bigtech Dip 2026-11": "💎",
     }
 
+    cnt_undervalued = sum(1 for it in items if it.get("val_status") == "UNDERVALUED")
+
     # Build Interactive Filter Pills
     pills_html = [
         f'<button class="pill-btn active" id="pill-all" onclick="filterByPill(\'all\')">🌟 ทั้งหมด ({total})</button>',
         f'<button class="pill-btn pill-buy" id="pill-buy" onclick="filterByPill(\'buy\')">🎯 โซนซื้อ 0-5% ({cnt_b})</button>',
-        f'<button class="pill-btn pill-port" id="pill-port" onclick="filterByPill(\'port\')">⭐ ในพอร์ต ({port_count})</button>',
     ]
+    if cnt_undervalued > 0:
+        pills_html.append(
+            f'<button class="pill-btn pill-val" id="pill-undervalued" onclick="filterByPill(\'undervalued\')">💎 ราคาต่ำกว่าพื้นฐาน ({cnt_undervalued})</button>'
+        )
+    pills_html.append(
+        f'<button class="pill-btn pill-port" id="pill-port" onclick="filterByPill(\'port\')">⭐ ในพอร์ต ({port_count})</button>'
+    )
     for g in all_groups:
         g_count = sum(1 for it in items if it["group"] == g)
         icon = GROUP_ICONS.get(g, "📁")
@@ -541,11 +561,33 @@ def generate_watchlist_html(
 
         port_badge = '<span class="port-star" title="มีในพอร์ตจริง">⭐</span>' if it["in_portfolio"] else ""
 
+        fair_val = it.get("fair_price")
+        val_status = it.get("val_status", "SPECULATIVE")
+        val_upside = it.get("val_upside", 0.0)
+        val_label = it.get("val_label", "🟡 อยู่ระหว่างประเมิน")
+        val_color = it.get("val_color", "#facc15")
+        val_model = it.get("val_model", "Market Price Baseline")
+        val_desc = it.get("val_desc", "")
+        fair_price_str = _fmt_money(fair_val) if (fair_val and fair_val > 0) else "-"
+
+        if val_status == "UNDERVALUED":
+            upside_badge_html = f'<span class="val-up-tag up">{val_upside:+.1f}%</span>'
+            val_short_status = f"🟢 {val_upside:+.1f}%"
+        elif val_status == "OVERVALUED":
+            upside_badge_html = f'<span class="val-up-tag down">{val_upside:+.1f}%</span>'
+            val_short_status = f"🔴 {val_upside:+.1f}%"
+        elif val_status == "FAIR":
+            upside_badge_html = '<span class="val-up-tag fair">Fair</span>'
+            val_short_status = "🟡 Fair Value"
+        else:
+            upside_badge_html = '<span class="val-up-tag spec">Unrated</span>'
+            val_short_status = "🟡 Unrated"
+
         # 1. Grid Card
         grid_cards_html.append(f"""
         <div class="stock-card card-{sec_color}" data-group="{escape(grp)}" data-status="{code}"
              data-portfolio="{'true' if it['in_portfolio'] else 'false'}" data-ticker="{escape(tk)}"
-             data-pct="{dist_val}">
+             data-pct="{dist_val}" data-val-status="{val_status}" data-val-upside="{val_upside}">
             <div class="card-head">
                 <div class="card-tk-box">
                     <span class="tk">{tk}</span>{port_badge}
@@ -572,6 +614,22 @@ def generate_watchlist_html(
                     <div class="card-sub">เทียบแนวรับ</div>
                 </div>
             </div>
+            <div class="card-val-box">
+                <div class="val-header">
+                    <span class="val-title">🎯 Intrinsic Fair Value</span>
+                    <span class="val-pill" style="color: {val_color}; border-color: {val_color}4d; background: {val_color}18;">
+                        {escape(val_label)}
+                    </span>
+                </div>
+                <div class="val-body">
+                    <div class="val-price-wrap">
+                        <span class="val-lbl">มูลค่าเหมาะสม:</span>
+                        <span class="val-price" style="color: {val_color};">{fair_price_str}</span>
+                        {upside_badge_html}
+                    </div>
+                    <div class="val-model-tag" title="{escape(val_desc)}">📐 {escape(val_model)}</div>
+                </div>
+            </div>
             <div class="card-meter-box">
                 {_meter_html(pct, sec_color, code)}
             </div>
@@ -588,7 +646,7 @@ def generate_watchlist_html(
         table_rows_html.append(f"""
         <tr class="table-row row-{sec_color}" data-group="{escape(grp)}" data-status="{code}"
             data-portfolio="{'true' if it['in_portfolio'] else 'false'}" data-ticker="{escape(tk)}"
-            data-pct="{dist_val}">
+            data-pct="{dist_val}" data-val-status="{val_status}" data-val-upside="{val_upside}">
             <td>
                 <div class="table-tk-box">
                     <span class="tk">{tk}</span>{port_badge}
@@ -605,6 +663,17 @@ def generate_watchlist_html(
             <td><div class="table-dist dist-{sec_color}">{dist_txt}</div></td>
             <td style="min-width:120px;">{_table_meter_html(pct, sec_color, code)}</td>
             <td><span class="status-pill status-{sec_color}">{status_badge_txt}</span></td>
+            <td>
+                <div class="table-val-box">
+                    <div class="table-val-price" style="color: {val_color};">{fair_price_str}</div>
+                    <div class="table-val-sub">
+                        <span class="val-pill" style="color: {val_color}; border-color: {val_color}4d; background: {val_color}18; font-size:0.68rem; padding: 1px 6px;">
+                            {val_short_status}
+                        </span>
+                        <span class="table-val-model" title="{escape(val_desc)}">{escape(val_model)}</span>
+                    </div>
+                </div>
+            </td>
             <td>
                 <a href="stock_chart.html?ticker={escape(tk)}" class="table-chart-btn" title="ดูกราฟ">📈 กราฟ</a>
             </td>
@@ -825,6 +894,44 @@ h1 {{ font-size: 1.75rem; font-weight: 700; color: #fff; display: flex; align-it
 .status-emerald {{ background: rgba(16,185,129,0.15); color: var(--emerald); border: 1px solid rgba(16,185,129,0.35); }}
 .status-rose {{ background: rgba(244,63,94,0.15); color: var(--rose); border: 1px solid rgba(244,63,94,0.35); }}
 .status-slate {{ background: rgba(148,163,184,0.12); color: var(--text2); border: 1px solid rgba(148,163,184,0.25); }}
+
+/* Card Intrinsic Valuation Box */
+.card-val-box {{
+    background: rgba(255,255,255,0.02); border: 1px solid var(--line);
+    border-radius: 10px; padding: 8px 10px; margin-top: 4px;
+    display: flex; flex-direction: column; gap: 4px; min-width: 0;
+}}
+.val-header {{
+    display: flex; justify-content: space-between; align-items: center; gap: 6px; font-size: 0.72rem;
+}}
+.val-title {{ color: var(--muted); font-weight: 600; font-size: 0.7rem; }}
+.val-pill {{
+    display: inline-flex; align-items: center; font-size: 0.68rem; font-weight: 700;
+    padding: 2px 7px; border-radius: 9999px; border: 1px solid transparent; white-space: nowrap;
+}}
+.val-body {{
+    display: flex; justify-content: space-between; align-items: baseline; gap: 8px; min-width: 0;
+}}
+.val-price-wrap {{ display: flex; align-items: baseline; gap: 6px; }}
+.val-lbl {{ font-size: 0.7rem; color: var(--muted); }}
+.val-price {{ font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.95rem; }}
+.val-up-tag {{ font-size: 0.72rem; font-weight: 700; padding: 1px 5px; border-radius: 4px; }}
+.val-up-tag.up {{ color: #34d399; background: rgba(52,211,153,0.12); }}
+.val-up-tag.down {{ color: #fb7185; background: rgba(251,113,133,0.12); }}
+.val-up-tag.fair {{ color: #38bdf8; background: rgba(56,189,248,0.12); }}
+.val-up-tag.spec {{ color: #facc15; background: rgba(250,204,21,0.12); }}
+.val-model-tag {{
+    font-size: 0.68rem; color: var(--muted); white-space: nowrap;
+    overflow: hidden; text-overflow: ellipsis; text-align: right; max-width: 135px;
+}}
+
+/* Pro Table Valuation Box */
+.table-val-box {{ display: flex; flex-direction: column; gap: 3px; min-width: 130px; }}
+.table-val-price {{ font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.92rem; }}
+.table-val-sub {{ display: flex; align-items: center; gap: 4px; flex-wrap: wrap; }}
+.table-val-model {{ font-size: 0.68rem; color: var(--muted); max-width: 130px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }}
+
+.pill-btn.pill-val.active {{ background: rgba(52,211,153,0.18); color: var(--emerald); border-color: var(--emerald); }}
 
 /* Modern Distance Meter */
 .card-meter-box {{ margin: 2px 0; }}
@@ -1286,6 +1393,7 @@ code {{ background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px
                         <th onclick="sortTable(5)">ระยะห่าง (%) ⬍</th>
                         <th>เรดาร์วัดระยะ</th>
                         <th onclick="sortTable(7)">สถานะ ⬍</th>
+                        <th onclick="sortTable(8)">มูลค่าเหมาะสม (Fair Value) ⬍</th>
                         <th>ดูกราฟ</th>
                     </tr>
                 </thead>
@@ -1493,7 +1601,7 @@ code {{ background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px
 </div>
 
 <script>
-let currentStatus = 'all', currentGroup = 'all', currentSearch = '', currentPortOnly = false;
+let currentStatus = 'all', currentGroup = 'all', currentSearch = '', currentPortOnly = false, currentValFilter = 'all';
 let currentViewMode = localStorage.getItem('watchlist_view_mode') || 'grid';
 
 function setViewMode(mode) {{
@@ -1522,6 +1630,7 @@ function applyFilters() {{
     function checkItem(el) {{
         const ok = (currentStatus === 'all' || el.dataset.status === currentStatus)
             && (!currentPortOnly || el.dataset.portfolio === 'true')
+            && (currentValFilter === 'all' || el.dataset.valStatus === 'UNDERVALUED')
             && (currentGroup === 'all' || el.dataset.group === currentGroup)
             && (!currentSearch || el.dataset.ticker.toLowerCase().includes(currentSearch) || el.innerText.toLowerCase().includes(currentSearch));
         el.style.display = ok ? '' : 'none';
@@ -1541,7 +1650,9 @@ function applyFilters() {{
 
 function setActivePills() {{
     document.querySelectorAll('.pill-btn').forEach(btn => btn.classList.remove('active'));
-    if (currentPortOnly) {{
+    if (currentValFilter === 'undervalued') {{
+        document.getElementById('pill-undervalued')?.classList.add('active');
+    }} else if (currentPortOnly) {{
         document.getElementById('pill-port')?.classList.add('active');
     }} else if (currentStatus === 'B') {{
         document.getElementById('pill-buy')?.classList.add('active');
@@ -1554,13 +1665,15 @@ function setActivePills() {{
 
 function filterByPill(pill) {{
     if (pill === 'all') {{
-        currentStatus = 'all'; currentGroup = 'all'; currentPortOnly = false;
+        currentStatus = 'all'; currentGroup = 'all'; currentPortOnly = false; currentValFilter = 'all';
     }} else if (pill === 'buy') {{
-        currentStatus = 'B'; currentGroup = 'all'; currentPortOnly = false;
+        currentStatus = 'B'; currentGroup = 'all'; currentPortOnly = false; currentValFilter = 'all';
     }} else if (pill === 'port') {{
-        currentPortOnly = true; currentStatus = 'all'; currentGroup = 'all';
+        currentPortOnly = true; currentStatus = 'all'; currentGroup = 'all'; currentValFilter = 'all';
+    }} else if (pill === 'undervalued') {{
+        currentValFilter = 'undervalued'; currentStatus = 'all'; currentGroup = 'all'; currentPortOnly = false;
     }} else {{
-        currentGroup = pill; currentStatus = 'all'; currentPortOnly = false;
+        currentGroup = pill; currentStatus = 'all'; currentPortOnly = false; currentValFilter = 'all';
     }}
     setActivePills();
     applyFilters();
@@ -1568,7 +1681,7 @@ function filterByPill(pill) {{
 
 function filterByStatus(status) {{
     currentStatus = (status === currentStatus && status !== 'all') ? 'all' : status;
-    currentGroup = 'all'; currentPortOnly = false;
+    currentGroup = 'all'; currentPortOnly = false; currentValFilter = 'all';
     setActivePills();
     applyFilters();
 }}
@@ -1604,6 +1717,9 @@ function sortTable(colIndex) {{
             valB = parseFloat(b.dataset.pct) || 999999;
         }} else if (colIndex === 7) {{ // Status
             valA = a.dataset.status; valB = b.dataset.status;
+        }} else if (colIndex === 8) {{ // Fair Value Upside %
+            valA = parseFloat(a.dataset.valUpside) || -999999;
+            valB = parseFloat(b.dataset.valUpside) || -999999;
         }} else {{
             valA = a.cells[colIndex].innerText.trim();
             valB = b.cells[colIndex].innerText.trim();

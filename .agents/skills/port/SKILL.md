@@ -14,6 +14,7 @@ description: Live US stock portfolio health check with 1-5 star ratings from the
 * ใน `src/portfolio.py` key `score` คือแต้มของ screener. ดาวและเกรดรวมอยู่ที่ `stock_score` และ `rating`.
 * คำสั่ง `trades.py` ทุกคำสั่งต้องรันด้วย `--dry-run` ก่อน แล้วให้ผู้ใช้ยืนยันก่อนรันจริง.
 * ถ้าเกรดของหุ้นตัวเดียวกันไม่ตรงกันในแต่ละหน้า แปลว่ามีบั๊ก. ให้แจ้งผู้ใช้และดูหัวข้อ 3 ของ `AGENTS.md`.
+* **การประเมินมูลค่าที่เหมาะสม (Intrinsic Fair Value).** ทุกครั้งที่สร้างรายงาน ให้ใช้ตัวเลขงบการเงินล่าสุด (TTM EPS, Revenue Growth, BVPS, Net Cash) และเป้าหมายสถาบันวอลล์สตรีทจาก TradingView มาคำนวณตามสูตร 5 กลุ่มธุรกิจใน `src/valuation.py` (Big Tech Owner Earnings, Banking Justified P/B, AI Infra EV/Sales หัก Net Debt, Turnaround Normalized EV/EBIT บวก Net Cash, ETF Fair NAV). ห้ามใช้สมมติฐานกำไรเก่าที่ต่ำกว่าผลงานจริง TTM ในปัจจุบัน.
 * **ค้นข้อมูลด้วย Tavily (รันในเครื่องเท่านั้น).** ใช้เครื่องมือ Tavily MCP ถ้ามี หรือรัน `/usr/bin/python3 -m src.tavily "<คำค้น>"` (ต้องมี `TAVILY_API_KEY` ใน environment). ทุกข้อเท็จจริงต้องบอกแหล่งที่มา และถ้ายืนยันไม่ได้ให้บอกว่ายังไม่ยืนยัน (หัวข้อ 3.1 ของ `AGENTS.md`). สำหรับ skill นี้ ใช้ Tavily เช็กหุ้นที่งบออกภายใน 14 วันว่าวันงบยังตรง (ข้อ 4) และหาข่าวสำคัญล่าสุดกับราคาเป้าหมายของนักวิเคราะห์ (ข้อ 7) โดยเฉพาะตัวที่ราคาเปลี่ยนแรงในวันนี้.
 
 ## วิธีรัน

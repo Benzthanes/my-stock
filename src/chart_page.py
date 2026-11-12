@@ -6,6 +6,7 @@ saved to reports/stock_chart.html.
 
 import json
 import sys
+import time
 from html import escape
 from pathlib import Path
 from typing import Dict, Any, List, Optional
@@ -39,6 +40,12 @@ WATCHED_STOCKS: Dict[str, Dict[str, Any]] = {
         "sector": "Semiconductor Equipment",
         "exchange": "NASDAQ",
         "fibo_support": next((s["support"] for s in WATCHLIST_STOCKS if s["ticker"] == "AEHR"), 57.0),
+    },
+    "NBIS": {
+        "name": "Nebius Group N.V.",
+        "sector": "AI Infrastructure & GPU Cloud",
+        "exchange": "NASDAQ",
+        "fibo_support": next((s["support"] for s in WATCHLIST_STOCKS if s["ticker"] == "NBIS"), 138.0),
     },
 }
 
@@ -95,6 +102,7 @@ def get_all_stocks_metadata() -> Dict[str, Dict[str, Any]]:
         "VST": ("Vistra Corp.", "Independent Power Producers", "NYSE"),
         "SKHY": ("SK hynix Inc. American Depositary Shares", "Memory Semiconductors", "NASDAQ"),
         "AEHR": ("Aehr Test Systems", "Semiconductor Equipment", "NASDAQ"),
+        "NBIS": ("Nebius Group N.V.", "AI Infrastructure & GPU Cloud", "NASDAQ"),
     }
 
     # 1. From portfolio.json
@@ -392,7 +400,7 @@ def generate_stock_chart_page_html() -> str:
 
     all_tickers = sorted([t for t in cache.keys() if t in meta])
     # Put portfolio core holdings first
-    priority_order = ["LLY", "GOOGL", "ABNB", "NOK", "BAC", "MNST", "APP", "VRT", "VOO", "PLTR", "VST", "NOW", "SPCX", "QQQI", "SKHY"]
+    priority_order = ["LLY", "GOOGL", "NVDA", "NOK", "BAC", "ABNB", "MNST", "APP", "VRT", "VOO", "PLTR", "VST", "NOW", "SPCX", "QQQI", "SKHY", "AEHR", "NBIS"]
     sorted_tickers = [t for t in priority_order if t in all_tickers] + [t for t in all_tickers if t not in priority_order]
     sorted_tickers_json = json.dumps(sorted_tickers)
 
@@ -439,12 +447,17 @@ def generate_stock_chart_page_html() -> str:
     meta_json = json.dumps(meta, ensure_ascii=False)
     financials_json = json.dumps(financials_data, ensure_ascii=False, separators=(",", ":"))
 
+    from src.valuation import get_all_valuations
+    valuation_data = get_all_valuations(sorted_tickers, meta)
+    valuation_json = json.dumps(valuation_data, ensure_ascii=False, separators=(",", ":"))
+
     reports_dir = REPORTS_DIR
     reports_dir.mkdir(parents=True, exist_ok=True)
     js_content = (
         f"window.CHARTS_DATA = {chart_data_json};\n"
         f"window.STOCKS_META = {meta_json};\n"
         f"window.FINANCIALS_DATA = {financials_json};\n"
+        f"window.VALUATION_DATA = {valuation_json};\n"
     )
     (reports_dir / "chart_data.js").write_text(js_content, encoding="utf-8")
 
@@ -507,6 +520,7 @@ def generate_stock_chart_page_html() -> str:
         "__SORTED_TICKERS_JSON__": sorted_tickers_json,
         "__STOCK_COUNT__": str(len(sorted_tickers)),
         "__INIT_TICKER__": sorted_tickers[0] if sorted_tickers else "LLY",
+        "__CACHE_BUST__": str(int(time.time())),
     })
     (reports_dir / "stock_chart.html").write_text(html_content, encoding="utf-8")
     return html_content

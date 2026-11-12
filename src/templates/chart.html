@@ -269,6 +269,102 @@ __CHART_CSS__    </style>
                         </div>
                     </div>
 
+                    <!-- Intrinsic Fair Value & Target Valuation Section (Right below Price Chart) -->
+                    <div class="fair-value-panel" id="fair_value_panel">
+                        <!-- Valuation Math Details Popover Modal -->
+                        <div id="fv_help_popover" class="fv-help-popover" style="display: none;">
+                            <div class="fv-popover-header">
+                                <div class="fv-popover-title">
+                                    <span id="fv_popover_ticker">NVDA</span>
+                                    <span>สูตรคำนวณมูลค่า & ข้อมูลอ้างอิงงบการเงินจริง</span>
+                                </div>
+                                <button type="button" class="fv-popover-close" onclick="closeValuationHelp(event)" title="ปิด">&times;</button>
+                            </div>
+                            <div class="fv-popover-body">
+                                <div class="fv-popover-section">
+                                    <div class="fv-popover-label">🧮 สูตรและการคำนวณ (Formula & Math):</div>
+                                    <div class="fv-popover-code" id="fv_popover_formula">-</div>
+                                </div>
+                                <div class="fv-popover-section">
+                                    <div class="fv-popover-label">📑 ตัวเลขจากงบการเงินจริงล่าสุด (Accounting Metrics):</div>
+                                    <div class="fv-popover-val" id="fv_popover_accounting">-</div>
+                                </div>
+                                <div class="fv-popover-row">
+                                    <div class="fv-popover-col">
+                                        <div class="fv-popover-label">📊 อัตราส่วนทางการเงินหลัก:</div>
+                                        <div class="fv-popover-badge" id="fv_popover_multiples">-</div>
+                                    </div>
+                                    <div class="fv-popover-col">
+                                        <div class="fv-popover-label">🏛️ เป้าหมายเฉลี่ยสถาบันวอลล์สตรีท:</div>
+                                        <div class="fv-popover-badge" id="fv_popover_wallstreet">-</div>
+                                    </div>
+                                </div>
+                                <div class="fv-popover-section">
+                                    <div class="fv-popover-label">💡 คำอธิบายเหตุผลและการเผื่อส่วนปลอดภัย (Margin of Safety):</div>
+                                    <div class="fv-popover-desc" id="fv_popover_explanation">-</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="fv-header-row">
+                            <div class="fv-title-group">
+                                <div class="fv-main-title">
+                                    <span class="fv-icon">🎯</span>
+                                    <span>มูลค่าที่แท้จริง & ราคาเหมาะสม (Intrinsic Fair Value)</span>
+                                    <span class="fv-status-badge" id="fv_status_badge">กำลังคำนวณมูลค่า...</span>
+                                    <button type="button" class="fv-help-btn" onclick="toggleValuationHelp(event)" title="คลิกดูสูตรคำนวณ ตัวเลขงบจริง และที่มาค้ำยัน">?</button>
+                                </div>
+                                <div class="fv-subtitle">ประเมินราคาเหมาะสมตัวเลขเดียวตามโมเดลการเงิน • อัตราส่วนผลตอบแทนต่อความเสี่ยง • เสาหลักเหตุผลค้ำยัน 3 มิติ</div>
+                            </div>
+                            <div class="fv-model-badge" id="fv_primary_model">-</div>
+                        </div>
+
+                        <!-- Main Valuation Grid: Price Hero Card + Rationale Pillars -->
+                        <div class="fv-content-grid">
+                            <!-- Left: Target Price Hero Display -->
+                            <div class="fv-hero-card">
+                                <div class="fv-hero-label" style="display: flex; justify-content: space-between; align-items: center;">
+                                    <span>ราคาที่เหมาะสมตามปัจจัยพื้นฐาน (Target Fair Price)</span>
+                                    <button type="button" class="fv-help-btn" onclick="toggleValuationHelp(event)" title="คลิกดูสูตรคำนวณและตัวเลขงบจริง">?</button>
+                                </div>
+                                <div class="fv-price-row">
+                                    <span class="fv-target-price" id="fv_target_price">$0.00</span>
+                                    <div class="fv-upside-box" id="fv_upside_box">
+                                        <span id="fv_upside_val">+0.0%</span>
+                                        <span class="fv-upside-sub" id="fv_upside_sub">เทียบราคาตลาด</span>
+                                    </div>
+                                </div>
+
+                                <div class="fv-comp-strip">
+                                    <div class="fv-comp-item">
+                                        <span class="fv-comp-k">ราคาตลาดปัจจุบัน:</span>
+                                        <span class="fv-comp-v" id="fv_market_price">$0.00</span>
+                                    </div>
+                                    <div class="fv-comp-divider">|</div>
+                                    <div class="fv-comp-item">
+                                        <span class="fv-comp-k">ส่วนต่างราคา:</span>
+                                        <span class="fv-comp-v" id="fv_spread_val">$0.00</span>
+                                    </div>
+                                </div>
+
+                                <div class="fv-model-desc-box">
+                                    <span class="fv-desc-tag">📐 วิธีการประเมิน:</span>
+                                    <span id="fv_model_desc">-</span>
+                                </div>
+                            </div>
+
+                            <!-- Right: 3 Core Rationale Pillars -->
+                            <div class="fv-pillars-card">
+                                <div class="fv-pillars-header">
+                                    <span>🏛️ 3 เสาหลักเหตุผลค้ำยันราคา (Core Valuation Pillars)</span>
+                                </div>
+                                <div class="fv-pillars-list" id="fv_pillars_list">
+                                    <!-- Injected dynamically by chart.js -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- TradingView Widget Box (Alternative Tab) -->
                     <div id="tv_widget_container" class="tv-widget-box"></div>
 
@@ -788,7 +884,7 @@ __CHART_CSS__    </style>
     </div>
 
     <!-- External Technical Dataset (Cached) -->
-    <script type="text/javascript" src="chart_data.js"></script>
+    <script type="text/javascript" src="chart_data.js?v=__CACHE_BUST__"></script>
     <!-- Core Chart & Technical Engine JavaScript -->
     <script>
 __CHART_JS__    </script>

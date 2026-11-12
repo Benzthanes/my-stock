@@ -257,7 +257,7 @@
   .rnav-int-btn { padding: 3px 6px; min-height: 30px; }
 }
 </style>
-<nav class="rnav" aria-label="รายงาน"><div class="rnav-top-row"><div class="rnav-links"><a href="portfolio_master.html" class="rnav-link" data-icon="👑">ภาพรวม</a><a href="portfolio_review.html" class="rnav-link" data-icon="🩺">สุขภาพพอร์ต</a><a href="portfolio_recovery.html" class="rnav-link" data-icon="🧗">แก้ดอย</a><a href="portfolio_dip_sim.html" class="rnav-link" data-icon="🎯">Dip จำลอง</a><a href="trades_ledger.html" class="rnav-link active" aria-current="page" data-icon="📜">รายการซื้อขายทั้งหมด</a><a href="stock_chart.html" class="rnav-link" data-icon="📈">กราฟ</a><a href="watchlist.html" class="rnav-link" data-icon="📋">หุ้นที่สนใจ</a><a href="advisor.html" class="rnav-link" data-icon="💡">คำแนะนำ</a></div></div><div class="rnav-live-bar"><div class="rnav-live-left"><button id="rnav-btn-refresh" class="rnav-refresh-btn" onclick="triggerGlobalRefresh()" title="กดเพื่อดึงราคาตลาดสดทันที"><span id="rnav-refresh-icon" style="display:inline-block; transition:transform 0.6s ease;">🔄</span> <span id="rnav-refresh-text">รีเฟรชราคา</span> <span class="rnav-live-badge">Live</span></button><div class="rnav-int-group" title="อัปเดตราคาหุ้นอัตโนมัติ (5วิ - 60วิ)"><span class="rnav-int-label">⏱️<span class="rnav-int-word"> อัปเดตสด:</span></span><button id="rnav-live-0" class="rnav-int-btn active" onclick="setGlobalLiveInterval(0)">ปิด</button><button id="rnav-live-5" class="rnav-int-btn" onclick="setGlobalLiveInterval(5)">5s</button><button id="rnav-live-15" class="rnav-int-btn" onclick="setGlobalLiveInterval(15)">15s</button><button id="rnav-live-30" class="rnav-int-btn" onclick="setGlobalLiveInterval(30)">30s</button><button id="rnav-live-60" class="rnav-int-btn" onclick="setGlobalLiveInterval(60)">60s</button></div></div><div class="rnav-live-right"><span id="rnav-live-status" class="rnav-status">⚪ อัปเดตด้วยตนเอง</span><span class="rnav-time">อัปเดต: 2026-11-12 08:32</span></div></div></nav>
+<nav class="rnav" aria-label="รายงาน"><div class="rnav-top-row"><div class="rnav-links"><a href="portfolio_master.html" class="rnav-link" data-icon="👑">ภาพรวม</a><a href="portfolio_review.html" class="rnav-link" data-icon="🩺">สุขภาพพอร์ต</a><a href="portfolio_recovery.html" class="rnav-link" data-icon="🧗">แก้ดอย</a><a href="portfolio_dip_sim.html" class="rnav-link" data-icon="🎯">Dip จำลอง</a><a href="trades_ledger.html" class="rnav-link active" aria-current="page" data-icon="📜">รายการซื้อขายทั้งหมด</a><a href="stock_chart.html" class="rnav-link" data-icon="📈">กราฟ</a><a href="watchlist.html" class="rnav-link" data-icon="📋">หุ้นที่สนใจ</a><a href="advisor.html" class="rnav-link" data-icon="💡">คำแนะนำ</a></div></div><div class="rnav-live-bar"><div class="rnav-live-left"><button id="rnav-btn-refresh" class="rnav-refresh-btn" onclick="triggerGlobalRefresh()" title="กดเพื่อดึงราคาตลาดสดทันที"><span id="rnav-refresh-icon" style="display:inline-block; transition:transform 0.6s ease;">🔄</span> <span id="rnav-refresh-text">รีเฟรชราคา</span> <span class="rnav-live-badge">Live</span></button><div class="rnav-int-group" title="อัปเดตราคาหุ้นอัตโนมัติ (5วิ - 60วิ)"><span class="rnav-int-label">⏱️<span class="rnav-int-word"> อัปเดตสด:</span></span><button id="rnav-live-0" class="rnav-int-btn active" onclick="setGlobalLiveInterval(0)">ปิด</button><button id="rnav-live-5" class="rnav-int-btn" onclick="setGlobalLiveInterval(5)">5s</button><button id="rnav-live-15" class="rnav-int-btn" onclick="setGlobalLiveInterval(15)">15s</button><button id="rnav-live-30" class="rnav-int-btn" onclick="setGlobalLiveInterval(30)">30s</button><button id="rnav-live-60" class="rnav-int-btn" onclick="setGlobalLiveInterval(60)">60s</button></div></div><div class="rnav-live-right"><span id="rnav-live-status" class="rnav-status">⚪ อัปเดตด้วยตนเอง</span><span class="rnav-time">อัปเดต: 2026-11-12 23:00</span></div></div></nav>
 <script>
 (function() {
   var activeLink = document.querySelector(".rnav-link.active");
@@ -514,8 +514,8 @@
                 <button onclick="toggleAllTranches()" style="background: rgba(139, 92, 246, 0.15); border: 1px solid rgba(139, 92, 246, 0.4); color: #c084fc; padding: 8px 16px; border-radius: 8px; font-size: 0.88rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 6px;">
                     <span>🔍</span> <span id="toggleAllBtnText">คลี่ดูรายละเอียดทุกไม้ (Expand All)</span>
                 </button>
-                <span class="meta-pill">⚡ 1 USD = 33.73 THB</span>
-                <span class="meta-pill">🕒 ข้อมูล ณ: 2026-11-12 08:32:36</span>
+                <span class="meta-pill">⚡ 1 USD = 33.86 THB</span>
+                <span class="meta-pill">🕒 ข้อมูล ณ: 2026-11-12 23:00:31</span>
             </div>
         </div>
 
@@ -528,8 +528,8 @@
             </div>
             <div class="card">
                 <div class="kpi-label" title="Total Orders">ประวัติคำสั่งซื้อ-ขาย</div>
-                <div class="kpi-value" style="color: #38bdf8; white-space: nowrap;">70 ไม้</div>
-                <div class="kpi-subtext">🟢 ซื้อ 57 ไม้ ($44,557.21) • 🔴 ขาย 13 ไม้ ($10,112.35)</div>
+                <div class="kpi-value" style="color: #38bdf8; white-space: nowrap;">71 ไม้</div>
+                <div class="kpi-subtext">🟢 ซื้อ 58 ไม้ ($44,853.95) • 🔴 ขาย 13 ไม้ ($10,112.35)</div>
             </div>
             <div class="card">
                 <div class="kpi-label" title="Realized P&L">กำไรปิดรอบที่ขายแล้ว</div>
@@ -538,15 +538,15 @@
             </div>
             <div class="card">
                 <div class="kpi-label" title="Dividends">เงินปันผลรับสะสม</div>
-                <div class="kpi-value" style="color: #10b981; white-space: nowrap;">+฿4,780.89</div>
+                <div class="kpi-value" style="color: #10b981; white-space: nowrap;">+฿4,799.32</div>
                 <div class="kpi-subtext">+$141.74 USD (13 ครั้ง)</div>
             </div>
         </div>
 
         <!-- SUB-TAB BAR -->
         <div class="sub-tab-bar">
-            <button id="btn-sub-all" class="sub-tab-btn active" onclick="switchSubTab('all')">ทั้งหมด (154)</button>
-            <button id="btn-sub-orders" class="sub-tab-btn" onclick="switchSubTab('orders')">📋 คำสั่งซื้อ-ขาย (70)</button>
+            <button id="btn-sub-all" class="sub-tab-btn active" onclick="switchSubTab('all')">ทั้งหมด (155)</button>
+            <button id="btn-sub-orders" class="sub-tab-btn" onclick="switchSubTab('orders')">📋 คำสั่งซื้อ-ขาย (71)</button>
             <button id="btn-sub-sells" class="sub-tab-btn" onclick="switchSubTab('sells')">🏆 กำไรปิดรอบ (12)</button>
             <button id="btn-sub-divs" class="sub-tab-btn" onclick="switchSubTab('divs')">💵 เงินปันผล (13)</button>
             <button id="btn-sub-cash" class="sub-tab-btn" onclick="switchSubTab('cash')">🏦 เติมเงิน & เดินบัญชี (59)</button>
@@ -556,14 +556,14 @@
         <div id="section-orders" class="sub-section" style="margin-bottom: 36px;">
             <div class="section-title" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
                 <div>
-                    <span>📋</span> 1. ประวัติคำสั่งซื้อ-ขายหุ้นทั้งหมด (Complete Orders History: 70 ไม้)
-                    <span class="badge" style="background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.4); font-weight: 700;">🟢 ซื้อ 57 ไม้</span>
+                    <span>📋</span> 1. ประวัติคำสั่งซื้อ-ขายหุ้นทั้งหมด (Complete Orders History: 71 ไม้)
+                    <span class="badge" style="background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.4); font-weight: 700;">🟢 ซื้อ 58 ไม้</span>
                     <span class="badge" style="background: rgba(244, 63, 94, 0.2); color: #fb7185; border: 1px solid rgba(244, 63, 94, 0.4); font-weight: 700;">🔴 ขาย 13 ไม้</span>
                     <span class="badge badge-info">รวมทั้งซื้อและขายในตารางเดียว ไม่ต้องแยก เรียงตามวันเวลาจริง</span>
                 </div>
                 <div style="display: flex; gap: 8px; align-items: center;">
-                    <button type="button" class="ctrl-btn active" id="btn-filter-all" onclick="filterOrderAction('ALL')">ทั้งหมด (70)</button>
-                    <button type="button" class="ctrl-btn" id="btn-filter-buy" onclick="filterOrderAction('BUY')">🟢 ซื้อ (57)</button>
+                    <button type="button" class="ctrl-btn active" id="btn-filter-all" onclick="filterOrderAction('ALL')">ทั้งหมด (71)</button>
+                    <button type="button" class="ctrl-btn" id="btn-filter-buy" onclick="filterOrderAction('BUY')">🟢 ซื้อ (58)</button>
                     <button type="button" class="ctrl-btn" id="btn-filter-sell" onclick="filterOrderAction('SELL')">🔴 ขาย (13)</button>
                 </div>
             </div>
@@ -586,8 +586,25 @@
                     </thead>
                     <tbody id="orders-tbody">
                         
-        <tr data-action="SELL">
+        <tr data-action="BUY">
             <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">01</td>
+            <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">12 พ.ย. 69 - 04:58 น.</td>
+            <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">NVDA</td>
+            <td style="text-align: center; white-space: nowrap;">
+                <span class="badge" style="background: rgba(16, 185, 129, 0.18); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.4); font-weight: 700; padding: 2px 8px; border-radius: 6px; font-size: 0.8rem; display: inline-block;">🟢 ซื้อ (BUY)</span>
+                <div style="margin-top: 3px;"><span class="badge badge-purple">Limit</span></div>
+            </td>
+            <td style="text-align: center; white-space: nowrap;"><span class="badge badge-info">Dime! USD</span></td>
+            <td style="text-align: right; font-family: 'Inter', sans-serif; font-weight: 600; white-space: nowrap;">1.7530</td>
+            <td style="text-align: right; font-family: 'Inter', sans-serif; white-space: nowrap;">$168.99</td>
+            <td style="text-align: right; font-family: 'Inter', sans-serif; font-weight: 600; color: #fff; white-space: nowrap;">$296.74</td>
+            <td style="text-align: right; font-family: 'Inter', sans-serif; white-space: nowrap;">-</td>
+            <td style="text-align: right; font-family: 'Inter', sans-serif; color: var(--text-muted); white-space: nowrap;">฿33.62</td>
+            <td style="text-align: center; white-space: nowrap;"><button type="button" onclick="openSlipModal(&quot;../data/screenshots/IMG_5879.webp&quot;, &quot;IMG_5879.webp&quot;, &quot;NVDA&quot;, &quot;12 พ.ย. 69 - 04:58 น.&quot;, &quot;1.7530 หุ้น @ $168.99&quot;)" class="slip-badge-btn" title="คลิกเพื่อดูสลิปคำสั่งซื้อ">🧾 IMG_5879.webp</button></td>
+        </tr>
+        
+        <tr data-action="SELL">
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">02</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">6 พ.ย. 69 - 21:35 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">MNST</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -604,7 +621,7 @@
         </tr>
         
         <tr data-action="SELL">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">02</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">03</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">6 พ.ย. 69 - 21:34 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">ABNB</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -621,7 +638,7 @@
         </tr>
         
         <tr data-action="SELL">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">03</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">04</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">6 พ.ย. 69 - 00:42 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">VOO</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -638,7 +655,7 @@
         </tr>
         
         <tr data-action="SELL">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">04</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">05</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">5 พ.ย. 69 - 21:52 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">APP</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -655,7 +672,7 @@
         </tr>
         
         <tr data-action="SELL">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">05</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">06</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">5 พ.ย. 69 - 21:42 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">APP</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -672,7 +689,7 @@
         </tr>
         
         <tr data-action="SELL">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">06</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">07</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">4 พ.ย. 69 - 21:31 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">VRT</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -689,7 +706,7 @@
         </tr>
         
         <tr data-action="BUY">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">07</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">08</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">22 ต.ค. 69 - 22:10 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">VRT</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -706,7 +723,7 @@
         </tr>
         
         <tr data-action="BUY">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">08</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">09</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">22 ต.ค. 69 - 21:58 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">NOK</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -723,7 +740,7 @@
         </tr>
         
         <tr data-action="BUY">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">09</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">10</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">14 ต.ค. 69 - 21:03 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">APP</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -740,7 +757,7 @@
         </tr>
         
         <tr data-action="BUY">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">10</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">11</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">14 ต.ค 69 - 20:33 น</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">BAC</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -757,7 +774,7 @@
         </tr>
         
         <tr data-action="BUY">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">11</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">12</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">13 ต.ค. 69 - 22:39 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">VRT</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -774,7 +791,7 @@
         </tr>
         
         <tr data-action="BUY">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">12</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">13</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">13 ต.ค. 69 - 21:16 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">BAC</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -791,7 +808,7 @@
         </tr>
         
         <tr data-action="BUY">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">13</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">14</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">8 ต.ค. 69 - 23:09 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">NOK</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -808,7 +825,7 @@
         </tr>
         
         <tr data-action="BUY">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">14</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">15</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">8 ต.ค. 69 - 01:38 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">VRT</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -825,7 +842,7 @@
         </tr>
         
         <tr data-action="BUY">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">15</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">16</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">7 ต.ค. 69 - 23:30 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">BAC</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -842,7 +859,7 @@
         </tr>
         
         <tr data-action="SELL">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">16</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">17</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">6 ต.ค. 69 - 23:12 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">VST</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -859,7 +876,7 @@
         </tr>
         
         <tr data-action="BUY">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">17</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">18</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">3 ต.ค. 69 - 00:13 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">APP</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -876,7 +893,7 @@
         </tr>
         
         <tr data-action="BUY">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">18</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">19</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">30 ก.ย. 69 - 22:08 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">VST</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -893,7 +910,7 @@
         </tr>
         
         <tr data-action="BUY">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">19</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">20</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">30 ก.ย. 69 - 22:06 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">NOK</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -910,7 +927,7 @@
         </tr>
         
         <tr data-action="BUY">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">20</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">21</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">25 ก.ย. 69 - 00:24 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">ABNB</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -927,7 +944,7 @@
         </tr>
         
         <tr data-action="BUY">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">21</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">22</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">25 ก.ย. 69 - 00:15 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">BAC</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -944,7 +961,7 @@
         </tr>
         
         <tr data-action="BUY">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">22</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">23</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">24 ก.ย. 69 - 23:34 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">MNST</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -961,7 +978,7 @@
         </tr>
         
         <tr data-action="BUY">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">23</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">24</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">24 ก.ย. 69 - 02:25 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">ABNB</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -978,7 +995,7 @@
         </tr>
         
         <tr data-action="BUY">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">24</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">25</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">23 ก.ย. 69 - 21:47 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">ABNB</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -995,7 +1012,7 @@
         </tr>
         
         <tr data-action="BUY">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">25</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">26</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">23 ก.ย. 69 - 21:25 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">APP</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -1012,7 +1029,7 @@
         </tr>
         
         <tr data-action="BUY">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">26</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">27</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">9 ก.ย. 69 - 20:32 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">GOOGL</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -1029,7 +1046,7 @@
         </tr>
         
         <tr data-action="BUY">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">27</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">28</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">4 ส.ค. 69 - 23:48 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">LLY</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -1046,7 +1063,7 @@
         </tr>
         
         <tr data-action="SELL">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">28</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">29</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">28 ก.ค. 69 - 21:28 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">MNST</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -1063,7 +1080,7 @@
         </tr>
         
         <tr data-action="SELL">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">29</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">30</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">28 ก.ค. 69 - 21:24 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">NOW</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -1080,7 +1097,7 @@
         </tr>
         
         <tr data-action="SELL">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">30</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">31</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">28 ก.ค. 69</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">PLTR</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -1097,7 +1114,7 @@
         </tr>
         
         <tr data-action="BUY">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">31</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">32</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">23 ก.ค. 69 - 21:38 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">GOOGL</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -1114,7 +1131,7 @@
         </tr>
         
         <tr data-action="BUY">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">32</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">33</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">16 ก.ค. 69 - 23:05 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">NOK</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -1131,7 +1148,7 @@
         </tr>
         
         <tr data-action="BUY">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">33</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">34</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">15 ก.ค. 69 - 21:20 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">NOK</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -1148,7 +1165,7 @@
         </tr>
         
         <tr data-action="BUY">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">34</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">35</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">15 ก.ค. 69 - 21:00 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">NOW</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -1165,7 +1182,7 @@
         </tr>
         
         <tr data-action="SELL">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">35</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">36</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">10 ก.ค. 69 - 22:52 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">SKHY</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -1182,7 +1199,7 @@
         </tr>
         
         <tr data-action="BUY">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">36</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">37</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">10 ก.ค. 69 - 22:34 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">SKHY</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -1199,7 +1216,7 @@
         </tr>
         
         <tr data-action="BUY">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">37</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">38</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">29 มิ.ย. 69 - 20:56 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">GOOGL</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -1216,7 +1233,7 @@
         </tr>
         
         <tr data-action="BUY">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">38</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">39</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">29 มิ.ย. 69 - 20:55 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">PLTR</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -1233,7 +1250,7 @@
         </tr>
         
         <tr data-action="BUY">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">39</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">40</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">29 มิ.ย. 69 - 20:50 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">NOK</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -1250,7 +1267,7 @@
         </tr>
         
         <tr data-action="SELL">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">40</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">41</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">25 มิ.ย. 69 - 22:37 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">QQQI</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -1267,7 +1284,7 @@
         </tr>
         
         <tr data-action="BUY">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">41</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">42</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">23 มิ.ย. 69 - 00:14 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">PLTR</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -1284,7 +1301,7 @@
         </tr>
         
         <tr data-action="BUY">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">42</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">43</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">23 มิ.ย. 69 - 00:14 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">GOOGL</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -1301,7 +1318,7 @@
         </tr>
         
         <tr data-action="BUY">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">43</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">44</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">22 มิ.ย. 69 - 20:42 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">NOW</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -1318,7 +1335,7 @@
         </tr>
         
         <tr data-action="BUY">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">44</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">45</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">22 มิ.ย. 69 - 20:41 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">GOOGL</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -1335,7 +1352,7 @@
         </tr>
         
         <tr data-action="SELL">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">45</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">46</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">17 มิ.ย. 69 - 20:37 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">SPCX</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -1352,7 +1369,7 @@
         </tr>
         
         <tr data-action="BUY">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">46</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">47</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">15 มิ.ย. 69 - 21:01 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">GOOGL</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -1369,7 +1386,7 @@
         </tr>
         
         <tr data-action="BUY">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">47</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">48</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">15 มิ.ย. 69 - 21:00 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">GOOGL</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -1386,7 +1403,7 @@
         </tr>
         
         <tr data-action="BUY">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">48</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">49</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">15 มิ.ย. 69 - 20:59 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">NOW</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -1403,7 +1420,7 @@
         </tr>
         
         <tr data-action="BUY">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">49</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">50</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">12 มิ.ย. 69 - 22:46 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">SPCX</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -1420,7 +1437,7 @@
         </tr>
         
         <tr data-action="BUY">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">50</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">51</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">1 มิ.ย. 69 - 22:34 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">NOW</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -1437,7 +1454,7 @@
         </tr>
         
         <tr data-action="BUY">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">51</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">52</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">29 พ.ค. 69 - 21:38 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">NOK</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -1454,7 +1471,7 @@
         </tr>
         
         <tr data-action="BUY">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">52</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">53</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">27 พ.ค. 69 - 22:35 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">NOK</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -1471,7 +1488,7 @@
         </tr>
         
         <tr data-action="BUY">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">53</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">54</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">27 พ.ค. 69 - 22:34 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">PLTR</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -1488,7 +1505,7 @@
         </tr>
         
         <tr data-action="BUY">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">54</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">55</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">6 พ.ค. 69 - 21:57 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">LLY</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -1505,7 +1522,7 @@
         </tr>
         
         <tr data-action="BUY">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">55</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">56</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">6 พ.ค. 69 - 21:56 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">NOK</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -1522,7 +1539,7 @@
         </tr>
         
         <tr data-action="BUY">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">56</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">57</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">6 พ.ค. 69 - 21:55 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">PLTR</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -1539,7 +1556,7 @@
         </tr>
         
         <tr data-action="BUY">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">57</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">58</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">10 เม.ย. 69 - 21:02 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">PLTR</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -1556,7 +1573,7 @@
         </tr>
         
         <tr data-action="BUY">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">58</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">59</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">1 เม.ย. 69 - 23:00 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">LLY</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -1573,7 +1590,7 @@
         </tr>
         
         <tr data-action="BUY">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">59</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">60</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">1 เม.ย. 69 - 23:00 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">LLY</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -1590,7 +1607,7 @@
         </tr>
         
         <tr data-action="BUY">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">60</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">61</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">1 เม.ย. 69 - 22:59 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">LLY</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -1607,7 +1624,7 @@
         </tr>
         
         <tr data-action="BUY">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">61</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">62</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">17 มี.ค. 69 - 22:49 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">LLY</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -1624,7 +1641,7 @@
         </tr>
         
         <tr data-action="BUY">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">62</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">63</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">17 มี.ค. 69 - 02:36 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">MNST</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -1641,7 +1658,7 @@
         </tr>
         
         <tr data-action="BUY">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">63</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">64</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">16 มี.ค. 69 - 22:51 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">MNST</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -1658,7 +1675,7 @@
         </tr>
         
         <tr data-action="BUY">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">64</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">65</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">14 มี.ค. 69 - 00:50 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">PLTR</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -1675,7 +1692,7 @@
         </tr>
         
         <tr data-action="BUY">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">65</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">66</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">4 มี.ค. 69 - 22:14 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">PLTR</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -1692,7 +1709,7 @@
         </tr>
         
         <tr data-action="BUY">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">66</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">67</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">4 ก.พ. 69 - 22:16 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">LLY</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -1709,7 +1726,7 @@
         </tr>
         
         <tr data-action="BUY">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">67</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">68</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">4 ก.พ. 69 - 21:57 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">LLY</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -1726,7 +1743,7 @@
         </tr>
         
         <tr data-action="BUY">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">68</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">69</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">3 ก.พ. 69 - 21:30 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">QQQI</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -1743,7 +1760,7 @@
         </tr>
         
         <tr data-action="BUY">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">69</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">70</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">3 ก.พ. 69 - 21:30 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">VOO</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -1760,7 +1777,7 @@
         </tr>
         
         <tr data-action="BUY">
-            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">70</td>
+            <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">71</td>
             <td style="white-space: nowrap; font-size: 0.85rem; color: var(--text-secondary);">3 ก.พ. 69 - 21:30 น.</td>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; color: #60a5fa; white-space: nowrap;">LLY</td>
             <td style="text-align: center; white-space: nowrap;">
@@ -1781,6 +1798,28 @@
             </div>
             <div class="mobile-view" id="orders-mobile-list">
                 
+        <div class="m-order-card" data-action="BUY" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 12px 14px; display: flex; flex-direction: column; gap: 8px;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div style="display: flex; align-items: center; gap: 7px;">
+                    <span style="background: rgba(16, 185, 129, 0.2); color: #10b981; font-weight: 700; padding: 2px 7px; border-radius: 6px; font-size: 0.74rem;">🟢 ซื้อ</span>
+                    <span style="font-size: 1.15rem; font-weight: 800; font-family: 'Inter'; color: #fff;">NVDA</span>
+                    <span class="badge badge-purple">Limit</span>
+                </div>
+                <div style="text-align: right;">
+                    <div style="font-size: 1.05rem; font-weight: 700; font-family: 'Inter'; color: #fff;">$296.74</div>
+                    
+                </div>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.82rem; color: var(--text-secondary); padding: 2px 0 6px 0; border-bottom: 1px solid rgba(255,255,255,0.04);">
+                <div style="font-family: 'Inter'; color: #94a3b8;">1.7530 หุ้น @ $168.99</div>
+                <div><span class="badge badge-info">Dime! USD</span></div>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.76rem; color: var(--text-muted); padding-top: 2px;">
+                <div>🕒 12 พ.ย. 69 - 04:58 น.</div>
+                <div><button type="button" onclick="openSlipModal(&quot;../data/screenshots/IMG_5879.webp&quot;, &quot;IMG_5879.webp&quot;, &quot;NVDA&quot;, &quot;12 พ.ย. 69 - 04:58 น.&quot;, &quot;1.7530 หุ้น @ $168.99&quot;)" class="slip-badge-btn" style="padding: 2px 8px; font-size: 0.75rem;" title="คลิกเพื่อดูสลิป">🧾 สลิป</button></div>
+            </div>
+        </div>
+        
         <div class="m-order-card" data-action="SELL" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 12px 14px; display: flex; flex-direction: column; gap: 8px;">
             <div style="display: flex; justify-content: space-between; align-items: center;">
                 <div style="display: flex; align-items: center; gap: 7px;">
@@ -5080,7 +5119,7 @@
         <div id="section-divs" class="sub-section" style="margin-bottom: 36px;">
             <div class="section-title">
                 <span>💵</span> 3. ประวัติเงินปันผลรับสะสม (Dividends Received: 13 ครั้ง)
-                <span class="badge badge-success">รวม +$141.74 (~฿4,780.89)</span>
+                <span class="badge badge-success">รวม +$141.74 (~฿4,799.32)</span>
             </div>
             <div class="desktop-view card" style="padding: 0; overflow-x: auto;">
                 <table>
@@ -5100,7 +5139,7 @@
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; white-space: nowrap;">VOO</td>
             <td>1.8226/หุ้น</td>
             <td style="text-align: right; font-family: 'Inter', sans-serif; font-weight: 700; color: #10b981; white-space: nowrap;">+$0.90</td>
-            <td style="text-align: right; font-family: 'Inter', sans-serif; font-weight: 600; color: #10b981; white-space: nowrap;">+฿30.36</td>
+            <td style="text-align: right; font-family: 'Inter', sans-serif; font-weight: 600; color: #10b981; white-space: nowrap;">+฿30.47</td>
         </tr>
         
         <tr>
@@ -5108,7 +5147,7 @@
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; white-space: nowrap;">GOOGL</td>
             <td>0.22/หุ้น</td>
             <td style="text-align: right; font-family: 'Inter', sans-serif; font-weight: 700; color: #10b981; white-space: nowrap;">+$1.95</td>
-            <td style="text-align: right; font-family: 'Inter', sans-serif; font-weight: 600; color: #10b981; white-space: nowrap;">+฿65.77</td>
+            <td style="text-align: right; font-family: 'Inter', sans-serif; font-weight: 600; color: #10b981; white-space: nowrap;">+฿66.03</td>
         </tr>
         
         <tr>
@@ -5116,7 +5155,7 @@
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; white-space: nowrap;">LLY</td>
             <td>1.73/หุ้น</td>
             <td style="text-align: right; font-family: 'Inter', sans-serif; font-weight: 700; color: #10b981; white-space: nowrap;">+$47.83</td>
-            <td style="text-align: right; font-family: 'Inter', sans-serif; font-weight: 600; color: #10b981; white-space: nowrap;">+฿1,613.31</td>
+            <td style="text-align: right; font-family: 'Inter', sans-serif; font-weight: 600; color: #10b981; white-space: nowrap;">+฿1,619.52</td>
         </tr>
         
         <tr>
@@ -5124,7 +5163,7 @@
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; white-space: nowrap;">NOK</td>
             <td>0.0285/หุ้น</td>
             <td style="text-align: right; font-family: 'Inter', sans-serif; font-weight: 700; color: #10b981; white-space: nowrap;">+$2.69</td>
-            <td style="text-align: right; font-family: 'Inter', sans-serif; font-weight: 600; color: #10b981; white-space: nowrap;">+฿90.73</td>
+            <td style="text-align: right; font-family: 'Inter', sans-serif; font-weight: 600; color: #10b981; white-space: nowrap;">+฿91.08</td>
         </tr>
         
         <tr>
@@ -5132,7 +5171,7 @@
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; white-space: nowrap;">VOO</td>
             <td>1.9622/หุ้น</td>
             <td style="text-align: right; font-family: 'Inter', sans-serif; font-weight: 700; color: #10b981; white-space: nowrap;">+$0.97</td>
-            <td style="text-align: right; font-family: 'Inter', sans-serif; font-weight: 600; color: #10b981; white-space: nowrap;">+฿32.72</td>
+            <td style="text-align: right; font-family: 'Inter', sans-serif; font-weight: 600; color: #10b981; white-space: nowrap;">+฿32.84</td>
         </tr>
         
         <tr>
@@ -5140,7 +5179,7 @@
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; white-space: nowrap;">QQQI</td>
             <td>0.6572/หุ้น</td>
             <td style="text-align: right; font-family: 'Inter', sans-serif; font-weight: 700; color: #10b981; white-space: nowrap;">+$3.84</td>
-            <td style="text-align: right; font-family: 'Inter', sans-serif; font-weight: 600; color: #10b981; white-space: nowrap;">+฿129.52</td>
+            <td style="text-align: right; font-family: 'Inter', sans-serif; font-weight: 600; color: #10b981; white-space: nowrap;">+฿130.02</td>
         </tr>
         
         <tr>
@@ -5148,7 +5187,7 @@
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; white-space: nowrap;">LLY</td>
             <td>1.73/หุ้น</td>
             <td style="text-align: right; font-family: 'Inter', sans-serif; font-weight: 700; color: #10b981; white-space: nowrap;">+$46.24</td>
-            <td style="text-align: right; font-family: 'Inter', sans-serif; font-weight: 600; color: #10b981; white-space: nowrap;">+฿1,559.68</td>
+            <td style="text-align: right; font-family: 'Inter', sans-serif; font-weight: 600; color: #10b981; white-space: nowrap;">+฿1,565.69</td>
         </tr>
         
         <tr>
@@ -5156,7 +5195,7 @@
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; white-space: nowrap;">QQQI</td>
             <td>0.6589/หุ้น</td>
             <td style="text-align: right; font-family: 'Inter', sans-serif; font-weight: 700; color: #10b981; white-space: nowrap;">+$3.85</td>
-            <td style="text-align: right; font-family: 'Inter', sans-serif; font-weight: 600; color: #10b981; white-space: nowrap;">+฿129.86</td>
+            <td style="text-align: right; font-family: 'Inter', sans-serif; font-weight: 600; color: #10b981; white-space: nowrap;">+฿130.36</td>
         </tr>
         
         <tr>
@@ -5164,7 +5203,7 @@
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; white-space: nowrap;">QQQI</td>
             <td>0.6297/หุ้น</td>
             <td style="text-align: right; font-family: 'Inter', sans-serif; font-weight: 700; color: #10b981; white-space: nowrap;">+$3.68</td>
-            <td style="text-align: right; font-family: 'Inter', sans-serif; font-weight: 600; color: #10b981; white-space: nowrap;">+฿124.13</td>
+            <td style="text-align: right; font-family: 'Inter', sans-serif; font-weight: 600; color: #10b981; white-space: nowrap;">+฿124.60</td>
         </tr>
         
         <tr>
@@ -5172,7 +5211,7 @@
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; white-space: nowrap;">VOO</td>
             <td>1.8724/หุ้น</td>
             <td style="text-align: right; font-family: 'Inter', sans-serif; font-weight: 700; color: #10b981; white-space: nowrap;">+$0.93</td>
-            <td style="text-align: right; font-family: 'Inter', sans-serif; font-weight: 600; color: #10b981; white-space: nowrap;">+฿31.37</td>
+            <td style="text-align: right; font-family: 'Inter', sans-serif; font-weight: 600; color: #10b981; white-space: nowrap;">+฿31.49</td>
         </tr>
         
         <tr>
@@ -5180,7 +5219,7 @@
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; white-space: nowrap;">QQQI</td>
             <td>0.6089/หุ้น</td>
             <td style="text-align: right; font-family: 'Inter', sans-serif; font-weight: 700; color: #10b981; white-space: nowrap;">+$3.55</td>
-            <td style="text-align: right; font-family: 'Inter', sans-serif; font-weight: 600; color: #10b981; white-space: nowrap;">+฿119.74</td>
+            <td style="text-align: right; font-family: 'Inter', sans-serif; font-weight: 600; color: #10b981; white-space: nowrap;">+฿120.20</td>
         </tr>
         
         <tr>
@@ -5188,7 +5227,7 @@
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; white-space: nowrap;">LLY</td>
             <td>1.73/หุ้น</td>
             <td style="text-align: right; font-family: 'Inter', sans-serif; font-weight: 700; color: #10b981; white-space: nowrap;">+$21.73</td>
-            <td style="text-align: right; font-family: 'Inter', sans-serif; font-weight: 600; color: #10b981; white-space: nowrap;">+฿732.95</td>
+            <td style="text-align: right; font-family: 'Inter', sans-serif; font-weight: 600; color: #10b981; white-space: nowrap;">+฿735.78</td>
         </tr>
         
         <tr>
@@ -5196,7 +5235,7 @@
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; white-space: nowrap;">QQQI</td>
             <td>0.6140/หุ้น</td>
             <td style="text-align: right; font-family: 'Inter', sans-serif; font-weight: 700; color: #10b981; white-space: nowrap;">+$3.58</td>
-            <td style="text-align: right; font-family: 'Inter', sans-serif; font-weight: 600; color: #10b981; white-space: nowrap;">+฿120.75</td>
+            <td style="text-align: right; font-family: 'Inter', sans-serif; font-weight: 600; color: #10b981; white-space: nowrap;">+฿121.22</td>
         </tr>
         
                     </tbody>
@@ -5211,7 +5250,7 @@
             </div>
             <div style="text-align: right;">
                 <div style="font-size: 1.02rem; font-weight: 700; color: #10b981; font-family: 'Inter';">+$0.90</div>
-                <div style="font-size: 0.74rem; color: #6ee7b7; font-family: 'Inter';">+฿30.36</div>
+                <div style="font-size: 0.74rem; color: #6ee7b7; font-family: 'Inter';">+฿30.47</div>
             </div>
         </div>
         
@@ -5222,7 +5261,7 @@
             </div>
             <div style="text-align: right;">
                 <div style="font-size: 1.02rem; font-weight: 700; color: #10b981; font-family: 'Inter';">+$1.95</div>
-                <div style="font-size: 0.74rem; color: #6ee7b7; font-family: 'Inter';">+฿65.77</div>
+                <div style="font-size: 0.74rem; color: #6ee7b7; font-family: 'Inter';">+฿66.03</div>
             </div>
         </div>
         
@@ -5233,7 +5272,7 @@
             </div>
             <div style="text-align: right;">
                 <div style="font-size: 1.02rem; font-weight: 700; color: #10b981; font-family: 'Inter';">+$47.83</div>
-                <div style="font-size: 0.74rem; color: #6ee7b7; font-family: 'Inter';">+฿1,613.31</div>
+                <div style="font-size: 0.74rem; color: #6ee7b7; font-family: 'Inter';">+฿1,619.52</div>
             </div>
         </div>
         
@@ -5244,7 +5283,7 @@
             </div>
             <div style="text-align: right;">
                 <div style="font-size: 1.02rem; font-weight: 700; color: #10b981; font-family: 'Inter';">+$2.69</div>
-                <div style="font-size: 0.74rem; color: #6ee7b7; font-family: 'Inter';">+฿90.73</div>
+                <div style="font-size: 0.74rem; color: #6ee7b7; font-family: 'Inter';">+฿91.08</div>
             </div>
         </div>
         
@@ -5255,7 +5294,7 @@
             </div>
             <div style="text-align: right;">
                 <div style="font-size: 1.02rem; font-weight: 700; color: #10b981; font-family: 'Inter';">+$0.97</div>
-                <div style="font-size: 0.74rem; color: #6ee7b7; font-family: 'Inter';">+฿32.72</div>
+                <div style="font-size: 0.74rem; color: #6ee7b7; font-family: 'Inter';">+฿32.84</div>
             </div>
         </div>
         
@@ -5266,7 +5305,7 @@
             </div>
             <div style="text-align: right;">
                 <div style="font-size: 1.02rem; font-weight: 700; color: #10b981; font-family: 'Inter';">+$3.84</div>
-                <div style="font-size: 0.74rem; color: #6ee7b7; font-family: 'Inter';">+฿129.52</div>
+                <div style="font-size: 0.74rem; color: #6ee7b7; font-family: 'Inter';">+฿130.02</div>
             </div>
         </div>
         
@@ -5277,7 +5316,7 @@
             </div>
             <div style="text-align: right;">
                 <div style="font-size: 1.02rem; font-weight: 700; color: #10b981; font-family: 'Inter';">+$46.24</div>
-                <div style="font-size: 0.74rem; color: #6ee7b7; font-family: 'Inter';">+฿1,559.68</div>
+                <div style="font-size: 0.74rem; color: #6ee7b7; font-family: 'Inter';">+฿1,565.69</div>
             </div>
         </div>
         
@@ -5288,7 +5327,7 @@
             </div>
             <div style="text-align: right;">
                 <div style="font-size: 1.02rem; font-weight: 700; color: #10b981; font-family: 'Inter';">+$3.85</div>
-                <div style="font-size: 0.74rem; color: #6ee7b7; font-family: 'Inter';">+฿129.86</div>
+                <div style="font-size: 0.74rem; color: #6ee7b7; font-family: 'Inter';">+฿130.36</div>
             </div>
         </div>
         
@@ -5299,7 +5338,7 @@
             </div>
             <div style="text-align: right;">
                 <div style="font-size: 1.02rem; font-weight: 700; color: #10b981; font-family: 'Inter';">+$3.68</div>
-                <div style="font-size: 0.74rem; color: #6ee7b7; font-family: 'Inter';">+฿124.13</div>
+                <div style="font-size: 0.74rem; color: #6ee7b7; font-family: 'Inter';">+฿124.60</div>
             </div>
         </div>
         
@@ -5310,7 +5349,7 @@
             </div>
             <div style="text-align: right;">
                 <div style="font-size: 1.02rem; font-weight: 700; color: #10b981; font-family: 'Inter';">+$0.93</div>
-                <div style="font-size: 0.74rem; color: #6ee7b7; font-family: 'Inter';">+฿31.37</div>
+                <div style="font-size: 0.74rem; color: #6ee7b7; font-family: 'Inter';">+฿31.49</div>
             </div>
         </div>
         
@@ -5321,7 +5360,7 @@
             </div>
             <div style="text-align: right;">
                 <div style="font-size: 1.02rem; font-weight: 700; color: #10b981; font-family: 'Inter';">+$3.55</div>
-                <div style="font-size: 0.74rem; color: #6ee7b7; font-family: 'Inter';">+฿119.74</div>
+                <div style="font-size: 0.74rem; color: #6ee7b7; font-family: 'Inter';">+฿120.20</div>
             </div>
         </div>
         
@@ -5332,7 +5371,7 @@
             </div>
             <div style="text-align: right;">
                 <div style="font-size: 1.02rem; font-weight: 700; color: #10b981; font-family: 'Inter';">+$21.73</div>
-                <div style="font-size: 0.74rem; color: #6ee7b7; font-family: 'Inter';">+฿732.95</div>
+                <div style="font-size: 0.74rem; color: #6ee7b7; font-family: 'Inter';">+฿735.78</div>
             </div>
         </div>
         
@@ -5343,7 +5382,7 @@
             </div>
             <div style="text-align: right;">
                 <div style="font-size: 1.02rem; font-weight: 700; color: #10b981; font-family: 'Inter';">+$3.58</div>
-                <div style="font-size: 0.74rem; color: #6ee7b7; font-family: 'Inter';">+฿120.75</div>
+                <div style="font-size: 0.74rem; color: #6ee7b7; font-family: 'Inter';">+฿121.22</div>
             </div>
         </div>
         

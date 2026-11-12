@@ -13,6 +13,7 @@ description: Refreshes all 8 HTML reports in one run (Master Dashboard, Health R
 อ่าน `AGENTS.md` ที่ root ของโปรเจกต์ให้จบก่อน. จุดที่ต้องระวังเฉพาะ skill นี้มีดังนี้:
 * ห้ามแก้ `data/portfolio.json`, `data/trades.json` และ `data/ledger.json` ในงานนี้. ไฟล์ที่ `/all` เขียนได้มีแค่ `data/ai_news_cache.json`, `data/account_summary.json`, `data/candles_cache.json` และ `reports/`.
 * **วันประกาศงบย้อนหลัง.** รายงานใช้ข้อมูลที่ยืนยันแล้วใน `src/earnings_calendar.py` เท่านั้น ห้ามเดาจากโวลุ่ม. ตอนรันในเครื่องใช้ Tavily ค้นวันงบที่ยังไม่มีได้ แต่ต้องยืนยันจากแหล่งทางการก่อนเพิ่มลงไฟล์ (หัวข้อ 3.1 ของ `AGENTS.md`). GitHub Actions ไม่ค้นภายนอก.
+* **การประเมินมูลค่าที่เหมาะสม (Intrinsic Fair Value).** ทุกครั้งที่สร้างรายงาน ให้ใช้ตัวเลขงบการเงินล่าสุด (TTM EPS, Revenue Growth, BVPS, Net Cash) และเป้าหมายสถาบันวอลล์สตรีทจาก TradingView มาคำนวณตามสูตร 5 กลุ่มธุรกิจใน `src/valuation.py` (Big Tech Owner Earnings, Banking Justified P/B, AI Infra EV/Sales หัก Net Debt, Turnaround Normalized EV/EBIT บวก Net Cash, ETF Fair NAV). ห้ามใช้สมมติฐานกำไรเก่าที่ต่ำกว่าผลงานจริง TTM ในปัจจุบัน.
 * ก่อนเขียนบทวิเคราะห์ข่าว ให้ยืนยันว่า ticker คือบริษัทอะไร (หัวข้อ 4 ของ `AGENTS.md`). SPCX คือหุ้น SpaceX.
 * ถ้า `portfolio.py --all` แจ้งว่ามีขั้นตอนที่อัปเดตไม่สำเร็จ หน้านั้นยังเป็นข้อมูลเก่า. ให้บอกผู้ใช้ตรงๆ ว่าหน้าไหนไม่ได้อัปเดต.
 

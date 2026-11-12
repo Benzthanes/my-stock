@@ -2446,6 +2446,427 @@
                 margin: 3px 0 0 auto;
             }
         }
+
+        /* Intrinsic Fair Value & Target Valuation Panel */
+        .fair-value-panel {
+            background: #0d1222;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin-top: 14px;
+            margin-bottom: 14px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .fv-header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .fv-title-group {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .fv-main-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: #f8fafc;
+        }
+
+        .fv-icon {
+            font-size: 1.2rem;
+        }
+
+        .fv-status-badge {
+            padding: 3px 10px;
+            border-radius: 6px;
+            font-size: 0.76rem;
+            font-weight: 700;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            background: rgba(56, 189, 248, 0.1);
+            color: #38bdf8;
+        }
+
+        .fv-subtitle {
+            font-size: 0.74rem;
+            color: #94a3b8;
+        }
+
+        .fv-model-badge {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #cbd5e1;
+            background: #151d33;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            padding: 4px 10px;
+        }
+
+        .fv-content-grid {
+            display: grid;
+            grid-template-columns: 340px 1fr;
+            gap: 16px;
+        }
+
+        @media (max-width: 900px) {
+            .fv-content-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .fv-hero-card {
+            background: #090e1c;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 10px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .fv-hero-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .fv-price-row {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .fv-target-price {
+            font-size: 2.1rem;
+            font-weight: 900;
+            font-family: 'JetBrains Mono', monospace;
+            letter-spacing: -0.5px;
+        }
+
+        .fv-upside-box {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            padding: 4px 10px;
+            border-radius: 6px;
+            border: 1px solid rgba(52, 211, 153, 0.3);
+            background: rgba(52, 211, 153, 0.1);
+        }
+
+        .fv-upside-box span:first-child {
+            font-size: 1.15rem;
+            font-weight: 800;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .fv-upside-sub {
+            font-size: 0.62rem;
+            font-weight: 600;
+        }
+
+        .fv-comp-strip {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 12px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 6px;
+            margin-bottom: 12px;
+            font-size: 0.74rem;
+        }
+
+        .fv-comp-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .fv-comp-k {
+            color: #94a3b8;
+        }
+
+        .fv-comp-v {
+            font-weight: 700;
+            font-family: 'JetBrains Mono', monospace;
+            color: #f8fafc;
+        }
+
+        .fv-comp-divider {
+            color: rgba(255, 255, 255, 0.15);
+        }
+
+        .fv-model-desc-box {
+            font-size: 0.72rem;
+            color: #94a3b8;
+            line-height: 1.5;
+            background: rgba(56, 189, 248, 0.04);
+            border-left: 2px solid #38bdf8;
+            padding: 6px 10px;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .fv-desc-tag {
+            font-weight: 700;
+            color: #38bdf8;
+            margin-right: 4px;
+        }
+
+        .fv-pillars-card {
+            background: #090e1c;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 10px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .fv-pillars-header {
+            font-size: 0.82rem;
+            font-weight: 800;
+            color: #f8fafc;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .fv-pillars-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .fv-pillar-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 10px 12px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            border-radius: 8px;
+            transition: background 0.2s;
+        }
+
+        .fv-pillar-item:hover {
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .fv-pillar-icon {
+            font-size: 1.15rem;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .fv-pillar-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .fv-pillar-title {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: #e2e8f0;
+        }
+
+        .fv-pillar-desc {
+            font-size: 0.72rem;
+            color: #94a3b8;
+            line-height: 1.45;
+        }
+
+        /* Help Button (? icon) */
+        .fv-help-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: rgba(56, 189, 248, 0.15);
+            border: 1px solid rgba(56, 189, 248, 0.4);
+            color: #38bdf8;
+            font-size: 0.72rem;
+            font-weight: 800;
+            cursor: pointer;
+            padding: 0;
+            line-height: 1;
+            transition: all 0.2s ease;
+            vertical-align: middle;
+            margin-left: 6px;
+        }
+
+        .fv-help-btn:hover {
+            background: #38bdf8;
+            color: #0d1222;
+            transform: scale(1.1);
+            box-shadow: 0 0 8px rgba(56, 189, 248, 0.5);
+        }
+
+        /* Valuation Math & Accounting Popover Modal */
+        .fair-value-panel {
+            position: relative;
+        }
+
+        .fv-help-popover {
+            position: absolute;
+            top: 50px;
+            left: 20px;
+            right: 20px;
+            z-index: 100;
+            background: #0b101e;
+            border: 1px solid rgba(56, 189, 248, 0.35);
+            border-radius: 12px;
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.85), 0 0 20px rgba(56, 189, 248, 0.15);
+            padding: 18px 20px;
+            backdrop-filter: blur(8px);
+            animation: fvPopoverFadeIn 0.2s ease-out;
+        }
+
+        @keyframes fvPopoverFadeIn {
+            from { opacity: 0; transform: translateY(-8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fv-popover-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding-bottom: 10px;
+            margin-bottom: 14px;
+        }
+
+        .fv-popover-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+            font-weight: 800;
+            color: #f8fafc;
+        }
+
+        .fv-popover-title span:first-child {
+            background: #1e293b;
+            color: #38bdf8;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+        }
+
+        .fv-popover-close {
+            background: transparent;
+            border: none;
+            color: #94a3b8;
+            font-size: 1.4rem;
+            line-height: 1;
+            cursor: pointer;
+            padding: 0 4px;
+            border-radius: 4px;
+            transition: color 0.15s;
+        }
+
+        .fv-popover-close:hover {
+            color: #f43f5e;
+        }
+
+        .fv-popover-body {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .fv-popover-section {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .fv-popover-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        @media (max-width: 768px) {
+            .fv-popover-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .fv-popover-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: #38bdf8;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .fv-popover-code {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            color: #34d399;
+            background: rgba(52, 211, 153, 0.08);
+            border: 1px solid rgba(52, 211, 153, 0.2);
+            padding: 8px 12px;
+            border-radius: 6px;
+            line-height: 1.4;
+            word-break: break-word;
+        }
+
+        .fv-popover-val {
+            font-size: 0.78rem;
+            color: #e2e8f0;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 8px 12px;
+            border-radius: 6px;
+            line-height: 1.45;
+        }
+
+        .fv-popover-col {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .fv-popover-badge {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.76rem;
+            font-weight: 700;
+            color: #fbbf24;
+            background: rgba(251, 191, 36, 0.08);
+            border: 1px solid rgba(251, 191, 36, 0.2);
+            padding: 6px 10px;
+            border-radius: 6px;
+        }
+
+        .fv-popover-desc {
+            font-size: 0.75rem;
+            color: #cbd5e1;
+            line-height: 1.5;
+            background: rgba(56, 189, 248, 0.05);
+            border-left: 3px solid #38bdf8;
+            padding: 8px 12px;
+            border-radius: 0 6px 6px 0;
+        }
     </style>
 </head>
 <body>
@@ -2502,7 +2923,7 @@
   .rnav-int-btn { padding: 3px 6px; min-height: 30px; }
 }
 </style>
-<nav class="rnav" aria-label="รายงาน"><div class="rnav-top-row"><div class="rnav-links"><a href="portfolio_master.html" class="rnav-link" data-icon="👑">ภาพรวม</a><a href="portfolio_review.html" class="rnav-link" data-icon="🩺">สุขภาพพอร์ต</a><a href="portfolio_recovery.html" class="rnav-link" data-icon="🧗">แก้ดอย</a><a href="portfolio_dip_sim.html" class="rnav-link" data-icon="🎯">Dip จำลอง</a><a href="trades_ledger.html" class="rnav-link" data-icon="📜">รายการซื้อขายทั้งหมด</a><a href="stock_chart.html" class="rnav-link active" aria-current="page" data-icon="📈">กราฟ</a><a href="watchlist.html" class="rnav-link" data-icon="📋">หุ้นที่สนใจ</a><a href="advisor.html" class="rnav-link" data-icon="💡">คำแนะนำ</a></div></div><div class="rnav-live-bar"><div class="rnav-live-left"><button id="rnav-btn-refresh" class="rnav-refresh-btn" onclick="triggerGlobalRefresh()" title="กดเพื่อดึงราคาตลาดสดทันที"><span id="rnav-refresh-icon" style="display:inline-block; transition:transform 0.6s ease;">🔄</span> <span id="rnav-refresh-text">รีเฟรชราคา</span> <span class="rnav-live-badge">Live</span></button><div class="rnav-int-group" title="อัปเดตราคาหุ้นอัตโนมัติ (5วิ - 60วิ)"><span class="rnav-int-label">⏱️<span class="rnav-int-word"> อัปเดตสด:</span></span><button id="rnav-live-0" class="rnav-int-btn active" onclick="setGlobalLiveInterval(0)">ปิด</button><button id="rnav-live-5" class="rnav-int-btn" onclick="setGlobalLiveInterval(5)">5s</button><button id="rnav-live-15" class="rnav-int-btn" onclick="setGlobalLiveInterval(15)">15s</button><button id="rnav-live-30" class="rnav-int-btn" onclick="setGlobalLiveInterval(30)">30s</button><button id="rnav-live-60" class="rnav-int-btn" onclick="setGlobalLiveInterval(60)">60s</button></div></div><div class="rnav-live-right"><span id="rnav-live-status" class="rnav-status">⚪ อัปเดตด้วยตนเอง</span><span class="rnav-time">อัปเดต: 2026-11-12 08:32</span></div></div></nav>
+<nav class="rnav" aria-label="รายงาน"><div class="rnav-top-row"><div class="rnav-links"><a href="portfolio_master.html" class="rnav-link" data-icon="👑">ภาพรวม</a><a href="portfolio_review.html" class="rnav-link" data-icon="🩺">สุขภาพพอร์ต</a><a href="portfolio_recovery.html" class="rnav-link" data-icon="🧗">แก้ดอย</a><a href="portfolio_dip_sim.html" class="rnav-link" data-icon="🎯">Dip จำลอง</a><a href="trades_ledger.html" class="rnav-link" data-icon="📜">รายการซื้อขายทั้งหมด</a><a href="stock_chart.html" class="rnav-link active" aria-current="page" data-icon="📈">กราฟ</a><a href="watchlist.html" class="rnav-link" data-icon="📋">หุ้นที่สนใจ</a><a href="advisor.html" class="rnav-link" data-icon="💡">คำแนะนำ</a></div></div><div class="rnav-live-bar"><div class="rnav-live-left"><button id="rnav-btn-refresh" class="rnav-refresh-btn" onclick="triggerGlobalRefresh()" title="กดเพื่อดึงราคาตลาดสดทันที"><span id="rnav-refresh-icon" style="display:inline-block; transition:transform 0.6s ease;">🔄</span> <span id="rnav-refresh-text">รีเฟรชราคา</span> <span class="rnav-live-badge">Live</span></button><div class="rnav-int-group" title="อัปเดตราคาหุ้นอัตโนมัติ (5วิ - 60วิ)"><span class="rnav-int-label">⏱️<span class="rnav-int-word"> อัปเดตสด:</span></span><button id="rnav-live-0" class="rnav-int-btn active" onclick="setGlobalLiveInterval(0)">ปิด</button><button id="rnav-live-5" class="rnav-int-btn" onclick="setGlobalLiveInterval(5)">5s</button><button id="rnav-live-15" class="rnav-int-btn" onclick="setGlobalLiveInterval(15)">15s</button><button id="rnav-live-30" class="rnav-int-btn" onclick="setGlobalLiveInterval(30)">30s</button><button id="rnav-live-60" class="rnav-int-btn" onclick="setGlobalLiveInterval(60)">60s</button></div></div><div class="rnav-live-right"><span id="rnav-live-status" class="rnav-status">⚪ อัปเดตด้วยตนเอง</span><span class="rnav-time">อัปเดต: 2026-11-12 23:00</span></div></div></nav>
 <script>
 (function() {
   var activeLink = document.querySelector(".rnav-link.active");
@@ -2749,7 +3170,7 @@
     <button class="floating-sidebar-toggle" id="floating_sidebar_toggle" onclick="toggleStockSidebar(true)" title="เปิดเมนูเลือกหุ้น (Open Stock Menu)">
         <span class="fst-icon">☰</span>
         <span class="fst-text">หุ้นในพอร์ต</span>
-        <span class="fst-badge" id="floating_stock_badge">16</span>
+        <span class="fst-badge" id="floating_stock_badge">18</span>
     </button>
 
     <!-- Mobile Drawer Backdrop -->
@@ -2763,7 +3184,7 @@
                     <div class="sidebar-brand-pill">
                         <span class="sb-fire">🔥</span>
                         <span class="sb-title">อัปเดตหุ้นล่าสุด</span>
-                        <span class="sb-count" id="sidebar_stock_count">16</span>
+                        <span class="sb-count" id="sidebar_stock_count">18</span>
                     </div>
                     <button class="sidebar-hide-btn" onclick="toggleStockSidebar(false)" title="ซ่อนเมนู (Hide Menu)">
                         <span>✕</span>
@@ -2776,22 +3197,24 @@
 
             <!-- Scrollable Stock Cards List -->
             <div class="sidebar-cards-scroll" id="pills_container">
-                <div class="sp-pill stock-card" id="pill_LLY" onclick="selectStock('LLY')" title="Eli Lilly and Company"><div class="sc-row-top"><span class="sp-pill-t sc-ticker">LLY</span><div class="sc-badges"><span class="sc-badge sc-badge-holding">ถืออยู่</span><span class="sc-live-dot" title="มีในพอร์ตจริง">●</span></div></div><div class="sc-row-price"><span class="sc-label">Price</span><span class="sp-pill-p sc-price">$1,432.29</span></div><div class="sc-row-level sc-support"><span class="sc-tag-support">รับ:</span><span class="sc-vals-support">$1,367.7, $1,215.9</span></div><div class="sc-row-level sc-resistance"><span class="sc-tag-resistance">ต้าน:</span><span class="sc-vals-resistance">$1,475.9, $1,501.1</span></div></div>
-<div class="sp-pill stock-card" id="pill_GOOGL" onclick="selectStock('GOOGL')" title="Alphabet Inc. Class A"><div class="sc-row-top"><span class="sp-pill-t sc-ticker">GOOGL</span><div class="sc-badges"><span class="sc-badge sc-badge-holding">ถืออยู่</span><span class="sc-live-dot" title="มีในพอร์ตจริง">●</span></div></div><div class="sc-row-price"><span class="sc-label">Price</span><span class="sp-pill-p sc-price">$287.38</span></div><div class="sc-row-level sc-support"><span class="sc-tag-support">รับ:</span><span class="sc-vals-support">$278.0, $258.5</span></div><div class="sc-row-level sc-resistance"><span class="sc-tag-resistance">ต้าน:</span><span class="sc-vals-resistance">$329.9, $333.9</span></div></div>
-<div class="sp-pill stock-card" id="pill_ABNB" onclick="selectStock('ABNB')" title="Airbnb, Inc."><div class="sc-row-top"><span class="sp-pill-t sc-ticker">ABNB</span><div class="sc-badges"><span class="sc-badge sc-badge-closed">ขายแล้ว</span></div></div><div class="sc-row-price"><span class="sc-label">Price</span><span class="sp-pill-p sc-price">$186.90</span></div><div class="sc-row-level sc-support"><span class="sc-tag-support">รับ:</span><span class="sc-vals-support">$155.1, $149.0</span></div><div class="sc-row-level sc-resistance"><span class="sc-tag-resistance">ต้าน:</span><span class="sc-vals-resistance">$187.1, $188.4</span></div></div>
-<div class="sp-pill stock-card" id="pill_NOK" onclick="selectStock('NOK')" title="Nokia Oyj"><div class="sc-row-top"><span class="sp-pill-t sc-ticker">NOK</span><div class="sc-badges"><span class="sc-badge sc-badge-holding">ถืออยู่</span><span class="sc-live-dot" title="มีในพอร์ตจริง">●</span></div></div><div class="sc-row-price"><span class="sc-label">Price</span><span class="sp-pill-p sc-price">$8.25</span></div><div class="sc-row-level sc-support"><span class="sc-tag-support">รับ:</span><span class="sc-vals-support">$7.70, $7.45</span></div><div class="sc-row-level sc-resistance"><span class="sc-tag-resistance">ต้าน:</span><span class="sc-vals-resistance">$9.63, $10.4</span></div></div>
-<div class="sp-pill stock-card" id="pill_BAC" onclick="selectStock('BAC')" title="Bank of America Corp"><div class="sc-row-top"><span class="sp-pill-t sc-ticker">BAC</span><div class="sc-badges"><span class="sc-badge sc-badge-holding">ถืออยู่</span><span class="sc-live-dot" title="มีในพอร์ตจริง">●</span></div></div><div class="sc-row-price"><span class="sc-label">Price</span><span class="sp-pill-p sc-price">$50.68</span></div><div class="sc-row-level sc-support"><span class="sc-tag-support">รับ:</span><span class="sc-vals-support">$49.3, $48.8</span></div><div class="sc-row-level sc-resistance"><span class="sc-tag-resistance">ต้าน:</span><span class="sc-vals-resistance">$53.5, $54.5</span></div></div>
-<div class="sp-pill stock-card" id="pill_MNST" onclick="selectStock('MNST')" title="Monster Beverage Corp"><div class="sc-row-top"><span class="sp-pill-t sc-ticker">MNST</span><div class="sc-badges"><span class="sc-badge sc-badge-closed">ขายแล้ว</span></div></div><div class="sc-row-price"><span class="sc-label">Price</span><span class="sp-pill-p sc-price">$45.34</span></div><div class="sc-row-level sc-support"><span class="sc-tag-support">รับ:</span><span class="sc-vals-support">$43.3, $41.0</span></div><div class="sc-row-level sc-resistance"><span class="sc-tag-resistance">ต้าน:</span><span class="sc-vals-resistance">$49.2, $49.5</span></div></div>
-<div class="sp-pill stock-card" id="pill_APP" onclick="selectStock('APP')" title="AppLovin Corporation"><div class="sc-row-top"><span class="sp-pill-t sc-ticker">APP</span><div class="sc-badges"><span class="sc-badge sc-badge-closed">ขายแล้ว</span></div></div><div class="sc-row-price"><span class="sc-label">Price</span><span class="sp-pill-p sc-price">$395.51</span></div><div class="sc-row-level sc-support"><span class="sc-tag-support">รับ:</span><span class="sc-vals-support">$297.5, $205.3</span></div><div class="sc-row-level sc-resistance"><span class="sc-tag-resistance">ต้าน:</span><span class="sc-vals-resistance">$358.6, $338.3</span></div></div>
-<div class="sp-pill stock-card" id="pill_VRT" onclick="selectStock('VRT')" title="Vertiv Holdings Co"><div class="sc-row-top"><span class="sp-pill-t sc-ticker">VRT</span><div class="sc-badges"><span class="sc-badge sc-badge-closed">ขายแล้ว</span></div></div><div class="sc-row-price"><span class="sc-label">Price</span><span class="sp-pill-p sc-price">$194.22</span></div><div class="sc-row-level sc-support"><span class="sc-tag-support">รับ:</span><span class="sc-vals-support">$193.8, $155.1</span></div><div class="sc-row-level sc-resistance"><span class="sc-tag-resistance">ต้าน:</span><span class="sc-vals-resistance">$217.0, $258.1</span></div></div>
-<div class="sp-pill stock-card" id="pill_VOO" onclick="selectStock('VOO')" title="Vanguard S&amp;P 500 ETF"><div class="sc-row-top"><span class="sp-pill-t sc-ticker">VOO</span><div class="sc-badges"><span class="sc-badge sc-badge-closed">ขายแล้ว</span></div></div><div class="sc-row-price"><span class="sc-label">Price</span><span class="sp-pill-p sc-price">$689.50</span></div><div class="sc-row-level sc-support"><span class="sc-tag-support">รับ:</span><span class="sc-vals-support">$689.0, $683.5</span></div><div class="sc-row-level sc-resistance"><span class="sc-tag-resistance">ต้าน:</span><span class="sc-vals-resistance">$712.3, $718.5</span></div></div>
-<div class="sp-pill stock-card" id="pill_PLTR" onclick="selectStock('PLTR')" title="Palantir Technologies Inc."><div class="sc-row-top"><span class="sp-pill-t sc-ticker">PLTR</span><div class="sc-badges"><span class="sc-badge sc-badge-closed">ขายแล้ว</span></div></div><div class="sc-row-price"><span class="sc-label">Price</span><span class="sp-pill-p sc-price">$168.82</span></div><div class="sc-row-level sc-support"><span class="sc-tag-support">รับ:</span><span class="sc-vals-support">$164.6, $160.5</span></div><div class="sc-row-level sc-resistance"><span class="sc-tag-resistance">ต้าน:</span><span class="sc-vals-resistance">$169.2, $204.4</span></div></div>
-<div class="sp-pill stock-card" id="pill_VST" onclick="selectStock('VST')" title="Vistra Corp."><div class="sc-row-top"><span class="sp-pill-t sc-ticker">VST</span><div class="sc-badges"><span class="sc-badge sc-badge-closed">ขายแล้ว</span></div></div><div class="sc-row-price"><span class="sc-label">Price</span><span class="sp-pill-p sc-price">$131.18</span></div><div class="sc-row-level sc-support"><span class="sc-tag-support">รับ:</span><span class="sc-vals-support">$125.9, $113.3</span></div><div class="sc-row-level sc-resistance"><span class="sc-tag-resistance">ต้าน:</span><span class="sc-vals-resistance">$159.8, $161.2</span></div></div>
-<div class="sp-pill stock-card" id="pill_NOW" onclick="selectStock('NOW')" title="ServiceNow, Inc."><div class="sc-row-top"><span class="sp-pill-t sc-ticker">NOW</span><div class="sc-badges"><span class="sc-badge sc-badge-closed">ขายแล้ว</span></div></div><div class="sc-row-price"><span class="sc-label">Price</span><span class="sp-pill-p sc-price">$99.61</span></div><div class="sc-row-level sc-support"><span class="sc-tag-support">รับ:</span><span class="sc-vals-support">$85.9, $66.7</span></div><div class="sc-row-level sc-resistance"><span class="sc-tag-resistance">ต้าน:</span><span class="sc-vals-resistance">$109.8, $141.9</span></div></div>
-<div class="sp-pill stock-card" id="pill_SPCX" onclick="selectStock('SPCX')" title="SpaceX (Space Exploration Technologies)"><div class="sc-row-top"><span class="sp-pill-t sc-ticker">SPCX</span><div class="sc-badges"><span class="sc-badge sc-badge-closed">ขายแล้ว</span></div></div><div class="sc-row-price"><span class="sc-label">Price</span><span class="sp-pill-p sc-price">$143.09</span></div><div class="sc-row-level sc-support"><span class="sc-tag-support">รับ:</span><span class="sc-vals-support">$120.7, $106.6</span></div><div class="sc-row-level sc-resistance"><span class="sc-tag-resistance">ต้าน:</span><span class="sc-vals-resistance">$162.6, $176.4</span></div></div>
-<div class="sp-pill stock-card" id="pill_QQQI" onclick="selectStock('QQQI')" title="NEOS Nasdaq 100 High Income ETF"><div class="sc-row-top"><span class="sp-pill-t sc-ticker">QQQI</span><div class="sc-badges"><span class="sc-badge sc-badge-closed">ขายแล้ว</span></div></div><div class="sc-row-price"><span class="sc-label">Price</span><span class="sp-pill-p sc-price">$50.78</span></div><div class="sc-row-level sc-support"><span class="sc-tag-support">รับ:</span><span class="sc-vals-support">$49.6, $47.5</span></div><div class="sc-row-level sc-resistance"><span class="sc-tag-resistance">ต้าน:</span><span class="sc-vals-resistance">$55.2, $55.3</span></div></div>
-<div class="sp-pill stock-card" id="pill_SKHY" onclick="selectStock('SKHY')" title="SK hynix Inc. American Depositary Shares"><div class="sc-row-top"><span class="sp-pill-t sc-ticker">SKHY</span><div class="sc-badges"><span class="sc-badge sc-badge-closed">ขายแล้ว</span></div></div><div class="sc-row-price"><span class="sc-label">Price</span><span class="sp-pill-p sc-price">$129.66</span></div><div class="sc-row-level sc-support"><span class="sc-tag-support">รับ:</span><span class="sc-vals-support">$121.3, $93.5</span></div><div class="sc-row-level sc-resistance"><span class="sc-tag-resistance">ต้าน:</span><span class="sc-vals-resistance">$171.3, $186.5</span></div></div>
-<div class="sp-pill stock-card" id="pill_AEHR" onclick="selectStock('AEHR')" title="Aehr Test Systems"><div class="sc-row-top"><span class="sp-pill-t sc-ticker">AEHR</span><div class="sc-badges"><span class="sc-badge sc-badge-watch">จับตา</span></div></div><div class="sc-row-price"><span class="sc-label">Price</span><span class="sp-pill-p sc-price">$59.57</span></div><div class="sc-row-level sc-support"><span class="sc-tag-support">รับ:</span><span class="sc-vals-support">$57.0, $34.6</span></div><div class="sc-row-level sc-resistance"><span class="sc-tag-resistance">ต้าน:</span><span class="sc-vals-resistance">$92.3, $109.5</span></div></div>
+                <div class="sp-pill stock-card" id="pill_LLY" onclick="selectStock('LLY')" title="Eli Lilly and Company"><div class="sc-row-top"><span class="sp-pill-t sc-ticker">LLY</span><div class="sc-badges"><span class="sc-badge sc-badge-holding">ถืออยู่</span><span class="sc-live-dot" title="มีในพอร์ตจริง">●</span></div></div><div class="sc-row-price"><span class="sc-label">Price</span><span class="sp-pill-p sc-price">$1,437.29</span></div><div class="sc-row-level sc-support"><span class="sc-tag-support">รับ:</span><span class="sc-vals-support">$1,382.9, $1,215.9</span></div><div class="sc-row-level sc-resistance"><span class="sc-tag-resistance">ต้าน:</span><span class="sc-vals-resistance">$1,488.1, $1,501.1</span></div></div>
+<div class="sp-pill stock-card" id="pill_GOOGL" onclick="selectStock('GOOGL')" title="Alphabet Inc. Class A"><div class="sc-row-top"><span class="sp-pill-t sc-ticker">GOOGL</span><div class="sc-badges"><span class="sc-badge sc-badge-holding">ถืออยู่</span><span class="sc-live-dot" title="มีในพอร์ตจริง">●</span></div></div><div class="sc-row-price"><span class="sc-label">Price</span><span class="sp-pill-p sc-price">$293.45</span></div><div class="sc-row-level sc-support"><span class="sc-tag-support">รับ:</span><span class="sc-vals-support">$280.9, $259.3</span></div><div class="sc-row-level sc-resistance"><span class="sc-tag-resistance">ต้าน:</span><span class="sc-vals-resistance">$329.1, $333.9</span></div></div>
+<div class="sp-pill stock-card" id="pill_NVDA" onclick="selectStock('NVDA')" title="NVIDIA Corporation"><div class="sc-row-top"><span class="sp-pill-t sc-ticker">NVDA</span><div class="sc-badges"><span class="sc-badge sc-badge-holding">ถืออยู่</span><span class="sc-live-dot" title="มีในพอร์ตจริง">●</span></div></div><div class="sc-row-price"><span class="sc-label">Price</span><span class="sp-pill-p sc-price">$173.73</span></div><div class="sc-row-level sc-support"><span class="sc-tag-support">รับ:</span><span class="sc-vals-support">$173.9, $149.8</span></div><div class="sc-row-level sc-resistance"><span class="sc-tag-resistance">ต้าน:</span><span class="sc-vals-resistance">$215.9, $231.7</span></div></div>
+<div class="sp-pill stock-card" id="pill_NOK" onclick="selectStock('NOK')" title="Nokia Oyj"><div class="sc-row-top"><span class="sp-pill-t sc-ticker">NOK</span><div class="sc-badges"><span class="sc-badge sc-badge-holding">ถืออยู่</span><span class="sc-live-dot" title="มีในพอร์ตจริง">●</span></div></div><div class="sc-row-price"><span class="sc-label">Price</span><span class="sp-pill-p sc-price">$8.44</span></div><div class="sc-row-level sc-support"><span class="sc-tag-support">รับ:</span><span class="sc-vals-support">$7.56, $7.47</span></div><div class="sc-row-level sc-resistance"><span class="sc-tag-resistance">ต้าน:</span><span class="sc-vals-resistance">$9.60, $10.4</span></div></div>
+<div class="sp-pill stock-card" id="pill_BAC" onclick="selectStock('BAC')" title="Bank of America Corp"><div class="sc-row-top"><span class="sp-pill-t sc-ticker">BAC</span><div class="sc-badges"><span class="sc-badge sc-badge-holding">ถืออยู่</span><span class="sc-live-dot" title="มีในพอร์ตจริง">●</span></div></div><div class="sc-row-price"><span class="sc-label">Price</span><span class="sp-pill-p sc-price">$50.67</span></div><div class="sc-row-level sc-support"><span class="sc-tag-support">รับ:</span><span class="sc-vals-support">$49.4, $49.3</span></div><div class="sc-row-level sc-resistance"><span class="sc-tag-resistance">ต้าน:</span><span class="sc-vals-resistance">$53.5, $54.3</span></div></div>
+<div class="sp-pill stock-card" id="pill_ABNB" onclick="selectStock('ABNB')" title="Airbnb, Inc."><div class="sc-row-top"><span class="sp-pill-t sc-ticker">ABNB</span><div class="sc-badges"><span class="sc-badge sc-badge-closed">ขายแล้ว</span></div></div><div class="sc-row-price"><span class="sc-label">Price</span><span class="sp-pill-p sc-price">$181.13</span></div><div class="sc-row-level sc-support"><span class="sc-tag-support">รับ:</span><span class="sc-vals-support">$155.1, $152.0</span></div><div class="sc-row-level sc-resistance"><span class="sc-tag-resistance">ต้าน:</span><span class="sc-vals-resistance">$184.8, $188.4</span></div></div>
+<div class="sp-pill stock-card" id="pill_MNST" onclick="selectStock('MNST')" title="Monster Beverage Corp"><div class="sc-row-top"><span class="sp-pill-t sc-ticker">MNST</span><div class="sc-badges"><span class="sc-badge sc-badge-closed">ขายแล้ว</span></div></div><div class="sc-row-price"><span class="sc-label">Price</span><span class="sp-pill-p sc-price">$45.40</span></div><div class="sc-row-level sc-support"><span class="sc-tag-support">รับ:</span><span class="sc-vals-support">$43.3, $42.5</span></div><div class="sc-row-level sc-resistance"><span class="sc-tag-resistance">ต้าน:</span><span class="sc-vals-resistance">$45.2, $49.2</span></div></div>
+<div class="sp-pill stock-card" id="pill_APP" onclick="selectStock('APP')" title="AppLovin Corporation"><div class="sc-row-top"><span class="sp-pill-t sc-ticker">APP</span><div class="sc-badges"><span class="sc-badge sc-badge-closed">ขายแล้ว</span></div></div><div class="sc-row-price"><span class="sc-label">Price</span><span class="sp-pill-p sc-price">$404.77</span></div><div class="sc-row-level sc-support"><span class="sc-tag-support">รับ:</span><span class="sc-vals-support">$297.5, $266.3</span></div><div class="sc-row-level sc-resistance"><span class="sc-tag-resistance">ต้าน:</span><span class="sc-vals-resistance">$496.9</span></div></div>
+<div class="sp-pill stock-card" id="pill_VRT" onclick="selectStock('VRT')" title="Vertiv Holdings Co"><div class="sc-row-top"><span class="sp-pill-t sc-ticker">VRT</span><div class="sc-badges"><span class="sc-badge sc-badge-closed">ขายแล้ว</span></div></div><div class="sc-row-price"><span class="sc-label">Price</span><span class="sp-pill-p sc-price">$206.51</span></div><div class="sc-row-level sc-support"><span class="sc-tag-support">รับ:</span><span class="sc-vals-support">$193.8, $155.1</span></div><div class="sc-row-level sc-resistance"><span class="sc-tag-resistance">ต้าน:</span><span class="sc-vals-resistance">$217.0, $258.1</span></div></div>
+<div class="sp-pill stock-card" id="pill_VOO" onclick="selectStock('VOO')" title="Vanguard S&amp;P 500 ETF"><div class="sc-row-top"><span class="sp-pill-t sc-ticker">VOO</span><div class="sc-badges"><span class="sc-badge sc-badge-closed">ขายแล้ว</span></div></div><div class="sc-row-price"><span class="sc-label">Price</span><span class="sp-pill-p sc-price">$698.35</span></div><div class="sc-row-level sc-support"><span class="sc-tag-support">รับ:</span><span class="sc-vals-support">$702.2, $689.0</span></div><div class="sc-row-level sc-resistance"><span class="sc-tag-resistance">ต้าน:</span><span class="sc-vals-resistance">$712.3, $717.4</span></div></div>
+<div class="sp-pill stock-card" id="pill_PLTR" onclick="selectStock('PLTR')" title="Palantir Technologies Inc."><div class="sc-row-top"><span class="sp-pill-t sc-ticker">PLTR</span><div class="sc-badges"><span class="sc-badge sc-badge-closed">ขายแล้ว</span></div></div><div class="sc-row-price"><span class="sc-label">Price</span><span class="sp-pill-p sc-price">$172.40</span></div><div class="sc-row-level sc-support"><span class="sc-tag-support">รับ:</span><span class="sc-vals-support">$172.3, $164.6</span></div><div class="sc-row-level sc-resistance"><span class="sc-tag-resistance">ต้าน:</span><span class="sc-vals-resistance">$204.4, $212.9</span></div></div>
+<div class="sp-pill stock-card" id="pill_VST" onclick="selectStock('VST')" title="Vistra Corp."><div class="sc-row-top"><span class="sp-pill-t sc-ticker">VST</span><div class="sc-badges"><span class="sc-badge sc-badge-closed">ขายแล้ว</span></div></div><div class="sc-row-price"><span class="sc-label">Price</span><span class="sp-pill-p sc-price">$133.45</span></div><div class="sc-row-level sc-support"><span class="sc-tag-support">รับ:</span><span class="sc-vals-support">$133.4, $125.9</span></div><div class="sc-row-level sc-resistance"><span class="sc-tag-resistance">ต้าน:</span><span class="sc-vals-resistance">$159.8, $161.2</span></div></div>
+<div class="sp-pill stock-card" id="pill_NOW" onclick="selectStock('NOW')" title="ServiceNow, Inc."><div class="sc-row-top"><span class="sp-pill-t sc-ticker">NOW</span><div class="sc-badges"><span class="sc-badge sc-badge-closed">ขายแล้ว</span></div></div><div class="sc-row-price"><span class="sc-label">Price</span><span class="sp-pill-p sc-price">$102.76</span></div><div class="sc-row-level sc-support"><span class="sc-tag-support">รับ:</span><span class="sc-vals-support">$85.9, $66.7</span></div><div class="sc-row-level sc-resistance"><span class="sc-tag-resistance">ต้าน:</span><span class="sc-vals-resistance">$109.8, $141.9</span></div></div>
+<div class="sp-pill stock-card" id="pill_SPCX" onclick="selectStock('SPCX')" title="SpaceX (Space Exploration Technologies)"><div class="sc-row-top"><span class="sp-pill-t sc-ticker">SPCX</span><div class="sc-badges"><span class="sc-badge sc-badge-closed">ขายแล้ว</span></div></div><div class="sc-row-price"><span class="sc-label">Price</span><span class="sp-pill-p sc-price">$139.75</span></div><div class="sc-row-level sc-support"><span class="sc-tag-support">รับ:</span><span class="sc-vals-support">$120.7, $106.6</span></div><div class="sc-row-level sc-resistance"><span class="sc-tag-resistance">ต้าน:</span><span class="sc-vals-resistance">$162.6, $176.4</span></div></div>
+<div class="sp-pill stock-card" id="pill_QQQI" onclick="selectStock('QQQI')" title="NEOS Nasdaq 100 High Income ETF"><div class="sc-row-top"><span class="sp-pill-t sc-ticker">QQQI</span><div class="sc-badges"><span class="sc-badge sc-badge-closed">ขายแล้ว</span></div></div><div class="sc-row-price"><span class="sc-label">Price</span><span class="sp-pill-p sc-price">$51.77</span></div><div class="sc-row-level sc-support"><span class="sc-tag-support">รับ:</span><span class="sc-vals-support">$49.6, $47.5</span></div><div class="sc-row-level sc-resistance"><span class="sc-tag-resistance">ต้าน:</span><span class="sc-vals-resistance">$55.2, $55.3</span></div></div>
+<div class="sp-pill stock-card" id="pill_SKHY" onclick="selectStock('SKHY')" title="SK hynix Inc. American Depositary Shares"><div class="sc-row-top"><span class="sp-pill-t sc-ticker">SKHY</span><div class="sc-badges"><span class="sc-badge sc-badge-closed">ขายแล้ว</span></div></div><div class="sc-row-price"><span class="sc-label">Price</span><span class="sp-pill-p sc-price">$142.25</span></div><div class="sc-row-level sc-support"><span class="sc-tag-support">รับ:</span><span class="sc-vals-support">$121.3, $93.5</span></div><div class="sc-row-level sc-resistance"><span class="sc-tag-resistance">ต้าน:</span><span class="sc-vals-resistance">$171.3, $186.5</span></div></div>
+<div class="sp-pill stock-card" id="pill_AEHR" onclick="selectStock('AEHR')" title="Aehr Test Systems"><div class="sc-row-top"><span class="sp-pill-t sc-ticker">AEHR</span><div class="sc-badges"><span class="sc-badge sc-badge-watch">จับตา</span></div></div><div class="sc-row-price"><span class="sc-label">Price</span><span class="sp-pill-p sc-price">$65.78</span></div><div class="sc-row-level sc-support"><span class="sc-tag-support">รับ:</span><span class="sc-vals-support">$57.0, $34.6</span></div><div class="sc-row-level sc-resistance"><span class="sc-tag-resistance">ต้าน:</span><span class="sc-vals-resistance">$92.3, $109.5</span></div></div>
+<div class="sp-pill stock-card" id="pill_NBIS" onclick="selectStock('NBIS')" title="Nebius Group N.V."><div class="sc-row-top"><span class="sp-pill-t sc-ticker">NBIS</span><div class="sc-badges"><span class="sc-badge sc-badge-watch">จับตา</span></div></div><div class="sc-row-price"><span class="sc-label">Price</span><span class="sp-pill-p sc-price">$154.69</span></div><div class="sc-row-level sc-support"><span class="sc-tag-support">รับ:</span><span class="sc-vals-support">$145.8, $138.0</span></div><div class="sc-row-level sc-resistance"><span class="sc-tag-resistance">ต้าน:</span><span class="sc-vals-resistance">$223.0, $255.1</span></div></div>
             </div>
         </aside>
 
@@ -3009,6 +3432,102 @@
 
                         <div style="font-size: 0.72rem; color: #64748b; display: flex; align-items: center; gap: 6px;">
                             <span>💡 คลิกที่แท่งเทียนบนกราฟเพื่อส่งราคาเข้าเครื่องคิดเลข DCA</span>
+                        </div>
+                    </div>
+
+                    <!-- Intrinsic Fair Value & Target Valuation Section (Right below Price Chart) -->
+                    <div class="fair-value-panel" id="fair_value_panel">
+                        <!-- Valuation Math Details Popover Modal -->
+                        <div id="fv_help_popover" class="fv-help-popover" style="display: none;">
+                            <div class="fv-popover-header">
+                                <div class="fv-popover-title">
+                                    <span id="fv_popover_ticker">NVDA</span>
+                                    <span>สูตรคำนวณมูลค่า & ข้อมูลอ้างอิงงบการเงินจริง</span>
+                                </div>
+                                <button type="button" class="fv-popover-close" onclick="closeValuationHelp(event)" title="ปิด">&times;</button>
+                            </div>
+                            <div class="fv-popover-body">
+                                <div class="fv-popover-section">
+                                    <div class="fv-popover-label">🧮 สูตรและการคำนวณ (Formula & Math):</div>
+                                    <div class="fv-popover-code" id="fv_popover_formula">-</div>
+                                </div>
+                                <div class="fv-popover-section">
+                                    <div class="fv-popover-label">📑 ตัวเลขจากงบการเงินจริงล่าสุด (Accounting Metrics):</div>
+                                    <div class="fv-popover-val" id="fv_popover_accounting">-</div>
+                                </div>
+                                <div class="fv-popover-row">
+                                    <div class="fv-popover-col">
+                                        <div class="fv-popover-label">📊 อัตราส่วนทางการเงินหลัก:</div>
+                                        <div class="fv-popover-badge" id="fv_popover_multiples">-</div>
+                                    </div>
+                                    <div class="fv-popover-col">
+                                        <div class="fv-popover-label">🏛️ เป้าหมายเฉลี่ยสถาบันวอลล์สตรีท:</div>
+                                        <div class="fv-popover-badge" id="fv_popover_wallstreet">-</div>
+                                    </div>
+                                </div>
+                                <div class="fv-popover-section">
+                                    <div class="fv-popover-label">💡 คำอธิบายเหตุผลและการเผื่อส่วนปลอดภัย (Margin of Safety):</div>
+                                    <div class="fv-popover-desc" id="fv_popover_explanation">-</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="fv-header-row">
+                            <div class="fv-title-group">
+                                <div class="fv-main-title">
+                                    <span class="fv-icon">🎯</span>
+                                    <span>มูลค่าที่แท้จริง & ราคาเหมาะสม (Intrinsic Fair Value)</span>
+                                    <span class="fv-status-badge" id="fv_status_badge">กำลังคำนวณมูลค่า...</span>
+                                    <button type="button" class="fv-help-btn" onclick="toggleValuationHelp(event)" title="คลิกดูสูตรคำนวณ ตัวเลขงบจริง และที่มาค้ำยัน">?</button>
+                                </div>
+                                <div class="fv-subtitle">ประเมินราคาเหมาะสมตัวเลขเดียวตามโมเดลการเงิน • อัตราส่วนผลตอบแทนต่อความเสี่ยง • เสาหลักเหตุผลค้ำยัน 3 มิติ</div>
+                            </div>
+                            <div class="fv-model-badge" id="fv_primary_model">-</div>
+                        </div>
+
+                        <!-- Main Valuation Grid: Price Hero Card + Rationale Pillars -->
+                        <div class="fv-content-grid">
+                            <!-- Left: Target Price Hero Display -->
+                            <div class="fv-hero-card">
+                                <div class="fv-hero-label" style="display: flex; justify-content: space-between; align-items: center;">
+                                    <span>ราคาที่เหมาะสมตามปัจจัยพื้นฐาน (Target Fair Price)</span>
+                                    <button type="button" class="fv-help-btn" onclick="toggleValuationHelp(event)" title="คลิกดูสูตรคำนวณและตัวเลขงบจริง">?</button>
+                                </div>
+                                <div class="fv-price-row">
+                                    <span class="fv-target-price" id="fv_target_price">$0.00</span>
+                                    <div class="fv-upside-box" id="fv_upside_box">
+                                        <span id="fv_upside_val">+0.0%</span>
+                                        <span class="fv-upside-sub" id="fv_upside_sub">เทียบราคาตลาด</span>
+                                    </div>
+                                </div>
+
+                                <div class="fv-comp-strip">
+                                    <div class="fv-comp-item">
+                                        <span class="fv-comp-k">ราคาตลาดปัจจุบัน:</span>
+                                        <span class="fv-comp-v" id="fv_market_price">$0.00</span>
+                                    </div>
+                                    <div class="fv-comp-divider">|</div>
+                                    <div class="fv-comp-item">
+                                        <span class="fv-comp-k">ส่วนต่างราคา:</span>
+                                        <span class="fv-comp-v" id="fv_spread_val">$0.00</span>
+                                    </div>
+                                </div>
+
+                                <div class="fv-model-desc-box">
+                                    <span class="fv-desc-tag">📐 วิธีการประเมิน:</span>
+                                    <span id="fv_model_desc">-</span>
+                                </div>
+                            </div>
+
+                            <!-- Right: 3 Core Rationale Pillars -->
+                            <div class="fv-pillars-card">
+                                <div class="fv-pillars-header">
+                                    <span>🏛️ 3 เสาหลักเหตุผลค้ำยันราคา (Core Valuation Pillars)</span>
+                                </div>
+                                <div class="fv-pillars-list" id="fv_pillars_list">
+                                    <!-- Injected dynamically by chart.js -->
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -3531,7 +4050,7 @@
     </div>
 
     <!-- External Technical Dataset (Cached) -->
-    <script type="text/javascript" src="chart_data.js"></script>
+    <script type="text/javascript" src="chart_data.js?v=1794499232"></script>
     <!-- Core Chart & Technical Engine JavaScript -->
     <script>
     const CHARTS_DATA = window.CHARTS_DATA || {};
@@ -3992,7 +4511,7 @@
         extPriceLine: null
     };
 
-    const ALL_TICKERS = ["LLY", "GOOGL", "ABNB", "NOK", "BAC", "MNST", "APP", "VRT", "VOO", "PLTR", "VST", "NOW", "SPCX", "QQQI", "SKHY", "AEHR"];
+    const ALL_TICKERS = ["LLY", "GOOGL", "NVDA", "NOK", "BAC", "ABNB", "MNST", "APP", "VRT", "VOO", "PLTR", "VST", "NOW", "SPCX", "QQQI", "SKHY", "AEHR", "NBIS"];
     let currentAggTimeframe = 'D';
     let currentFiboMode = 'cycle';
 
@@ -4778,7 +5297,7 @@
             dEarn = Math.round(diffMs / (1000 * 60 * 60 * 24));
         }
 
-        if (dEarn < 0 || dEarn > 120) {
+        if (dEarn < 0 || dEarn > 30) {
             currentEarningsIso = null;
             syncVerticalEarningsPosition();
             if (upcomingEarningsSeries && activeLwChart) {
@@ -6364,6 +6883,27 @@
         });
         activeLwChart = chart;
 
+        // Auto-detect container dimension shifts (e.g. sidebar collapse/expand, font load, flex settlement)
+        if (window.ResizeObserver && !mainContainer.__resizeObs__) {
+            mainContainer.__resizeObs__ = new ResizeObserver((entries) => {
+                for (let entry of entries) {
+                    const newWidth = Math.floor(entry.contentRect.width);
+                    if (newWidth > 100) {
+                        if (activeLwChart) {
+                            activeLwChart.applyOptions({ width: newWidth });
+                        }
+                        if (activeSubpaneCharts && activeSubpaneCharts.length > 0) {
+                            activeSubpaneCharts.forEach(item => {
+                                if (item.chart) item.chart.applyOptions({ width: newWidth });
+                            });
+                        }
+                        syncVerticalEarningsPosition();
+                    }
+                }
+            });
+            mainContainer.__resizeObs__.observe(mainContainer);
+        }
+
         chart.timeScale().subscribeVisibleLogicalRangeChange(() => {
             syncVerticalEarningsPosition();
         });
@@ -7406,6 +7946,9 @@
         renderAiDecisionSection(tData);
         renderPatternDeepDive(tData);
 
+        // Render Intrinsic Fair Value & Target Valuation Section
+        updateFairValueSection(ticker);
+
         // Render Financial Statements & Quarterly Trends
         updateFinancialsSection(ticker);
 
@@ -8113,6 +8656,158 @@
         const unit = isPoints ? ' จุด' : '%';
         const arrow = val > 0 ? '▲' : (val < 0 ? '▼' : '');
         return `<span class="${cls}">${val > 0 ? '+' : (val < 0 ? '-' : '')}${Math.abs(val).toFixed(1)}${unit} ${arrow} YoY</span>`;
+    }
+
+    window.toggleValuationHelp = function(e) {
+        if (e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+        const popover = document.getElementById('fv_help_popover');
+        if (!popover) return;
+        popover.style.display = (popover.style.display === 'block') ? 'none' : 'block';
+    };
+
+    window.closeValuationHelp = function(e) {
+        if (e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+        const popover = document.getElementById('fv_help_popover');
+        if (popover) popover.style.display = 'none';
+    };
+
+    document.addEventListener('click', function(e) {
+        const popover = document.getElementById('fv_help_popover');
+        if (popover && popover.style.display === 'block') {
+            if (!popover.contains(e.target) && !e.target.closest('.fv-help-btn')) {
+                popover.style.display = 'none';
+            }
+        }
+    });
+
+    function updateFairValueSection(ticker) {
+        const panel = document.getElementById('fair_value_panel');
+        if (!panel) return;
+
+        const valData = (window.VALUATION_DATA && window.VALUATION_DATA[ticker]) || null;
+        if (!valData) {
+            panel.style.display = 'none';
+            return;
+        }
+        panel.style.display = 'block';
+
+        // Close popover when switching ticker
+        const popover = document.getElementById('fv_help_popover');
+        if (popover) popover.style.display = 'none';
+
+        // Update Popover Details
+        const mDetails = valData.math_details || {};
+        const pTicker = document.getElementById('fv_popover_ticker');
+        if (pTicker) pTicker.textContent = ticker;
+        const pFormula = document.getElementById('fv_popover_formula');
+        if (pFormula) pFormula.textContent = mDetails.formula || valData.primary_model || '-';
+        const pAccounting = document.getElementById('fv_popover_accounting');
+        if (pAccounting) pAccounting.textContent = mDetails.accounting_source || '-';
+        const pMultiples = document.getElementById('fv_popover_multiples');
+        if (pMultiples) pMultiples.textContent = mDetails.key_multiples || '-';
+        const pWallstreet = document.getElementById('fv_popover_wallstreet');
+        if (pWallstreet) pWallstreet.textContent = mDetails.wall_street_target || '-';
+        const pExplanation = document.getElementById('fv_popover_explanation');
+        if (pExplanation) pExplanation.textContent = mDetails.explanation || valData.model_desc || '-';
+
+        const fmt = (v) => (v != null && v > 0) ? '$' + Number(v).toFixed(2) : '-';
+
+        // Badges & Headers
+        const badge = document.getElementById('fv_status_badge');
+        if (badge) {
+            badge.textContent = valData.status_label || '-';
+            badge.style.borderColor = valData.status_color || '#38bdf8';
+            badge.style.color = valData.status_color || '#38bdf8';
+            badge.style.backgroundColor = (valData.status_color || '#38bdf8') + '1a';
+        }
+
+        const modelBadge = document.getElementById('fv_primary_model');
+        if (modelBadge) {
+            modelBadge.textContent = '📐 ' + (valData.primary_model || '-');
+        }
+
+        // Prices & Upside
+        const targetPriceEl = document.getElementById('fv_target_price');
+        if (targetPriceEl) {
+            targetPriceEl.textContent = fmt(valData.fair_price);
+            targetPriceEl.style.color = valData.status_color || '#34d399';
+        }
+
+        const tData = (window.CHARTS_DATA && window.CHARTS_DATA[ticker]) || {};
+        const lastBar = (tData.candles && tData.candles.length) ? tData.candles[tData.candles.length - 1] : null;
+        const currentPrice = (valData.current_price && valData.current_price > 0) ? valData.current_price : (lastBar ? lastBar.close : 0);
+
+        const marketPriceEl = document.getElementById('fv_market_price');
+        if (marketPriceEl) {
+            marketPriceEl.textContent = fmt(currentPrice);
+        }
+
+        const spreadValEl = document.getElementById('fv_spread_val');
+        if (spreadValEl) {
+            const spread = (valData.fair_price || 0) - currentPrice;
+            const spreadSign = spread > 0 ? '+' : (spread < 0 ? '-' : '');
+            spreadValEl.textContent = spreadSign + '$' + Math.abs(spread).toFixed(2);
+            spreadValEl.style.color = spread > 0 ? '#34d399' : (spread < 0 ? '#fb7185' : '#facc15');
+        }
+
+        const upsideBox = document.getElementById('fv_upside_box');
+        const upsideVal = document.getElementById('fv_upside_val');
+        const upsideSub = document.getElementById('fv_upside_sub');
+        if (upsideBox && upsideVal && upsideSub) {
+            const up = currentPrice > 0 ? (((valData.fair_price || currentPrice) - currentPrice) / currentPrice) * 100 : (valData.upside_pct || 0);
+            if (valData.status === 'UNDERVALUED') {
+                upsideVal.textContent = (up > 0 ? '+' : '') + up.toFixed(1) + '%';
+                upsideVal.style.color = '#34d399';
+                upsideSub.textContent = 'Upside สู่ราคาเหมาะสม';
+                upsideSub.style.color = '#34d399';
+                upsideBox.style.borderColor = 'rgba(52, 211, 153, 0.4)';
+                upsideBox.style.backgroundColor = 'rgba(52, 211, 153, 0.12)';
+            } else if (valData.status === 'OVERVALUED') {
+                upsideVal.textContent = up.toFixed(1) + '%';
+                upsideVal.style.color = '#fb7185';
+                upsideSub.textContent = 'Downside สูงกว่าพื้นฐาน';
+                upsideSub.style.color = '#fb7185';
+                upsideBox.style.borderColor = 'rgba(251, 113, 133, 0.4)';
+                upsideBox.style.backgroundColor = 'rgba(251, 113, 133, 0.12)';
+            } else {
+                upsideVal.textContent = (up >= 0 ? '+' : '') + up.toFixed(1) + '%';
+                upsideVal.style.color = '#facc15';
+                upsideSub.textContent = 'กรอบราคาสมดุล (Fair)';
+                upsideSub.style.color = '#facc15';
+                upsideBox.style.borderColor = 'rgba(250, 204, 21, 0.4)';
+                upsideBox.style.backgroundColor = 'rgba(250, 204, 21, 0.12)';
+            }
+        }
+
+        const modelDescEl = document.getElementById('fv_model_desc');
+        if (modelDescEl) {
+            modelDescEl.textContent = valData.model_desc || '-';
+        }
+
+        // Pillars
+        const pillarsListEl = document.getElementById('fv_pillars_list');
+        if (pillarsListEl) {
+            const pillars = valData.pillars || [];
+            if (!pillars.length) {
+                pillarsListEl.innerHTML = '<div style="color: #64748b; font-size: 0.78rem;">ไม่มีข้อมูลเหตุผลค้ำยัน</div>';
+            } else {
+                pillarsListEl.innerHTML = pillars.map(p => `
+                    <div class="fv-pillar-item">
+                        <div class="fv-pillar-icon">${p.icon || '📌'}</div>
+                        <div class="fv-pillar-content">
+                            <div class="fv-pillar-title">${escapeHtml(p.title || '')}</div>
+                            <div class="fv-pillar-desc">${escapeHtml(p.desc || '')}</div>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        }
     }
 
     function updateFinancialsSection(ticker) {
@@ -8920,7 +9615,10 @@
 
         setTimeout(() => {
             window.dispatchEvent(new Event('resize'));
-        }, 300);
+            const activeTfBtn = document.querySelector('.chart-botbar .botbar-btn.active');
+            const tf = activeTfBtn ? activeTfBtn.textContent.trim() : '1Y';
+            if (typeof setTimeframe === 'function') setTimeframe(tf);
+        }, 320);
     }
 
     function scrollToAiSection() {
@@ -9390,17 +10088,7 @@
 
     // Initializer
     window.addEventListener('DOMContentLoaded', () => {
-        const urlParams = new URLSearchParams(window.location.search);
-        let targetTicker = urlParams.get('ticker');
-        if (!targetTicker && window.location.hash) {
-            targetTicker = window.location.hash.replace('#', '');
-        }
-        if (!targetTicker || !CHARTS_DATA[targetTicker]) {
-            targetTicker = 'LLY';
-        }
-        selectStock(targetTicker);
-
-        // Restore sidebar state from localStorage or screen width
+        // 1. Restore sidebar state FIRST so container establishes true layout width
         try {
             const savedState = localStorage.getItem('stock_sidebar_collapsed');
             const root = document.getElementById('chart_layout_root');
@@ -9414,6 +10102,24 @@
                 }
             }
         } catch (e) {}
+
+        // 2. Select initial stock after container dimensions are established
+        const urlParams = new URLSearchParams(window.location.search);
+        let targetTicker = urlParams.get('ticker');
+        if (!targetTicker && window.location.hash) {
+            targetTicker = window.location.hash.replace('#', '');
+        }
+        if (!targetTicker || !CHARTS_DATA[targetTicker]) {
+            targetTicker = 'LLY';
+        }
+        selectStock(targetTicker);
+
+        // 3. Trigger immediate layout check to ensure canvas matches container width
+        requestAnimationFrame(() => {
+            setTimeout(() => {
+                window.dispatchEvent(new Event('resize'));
+            }, 80);
+        });
 
         // Check for cached live quotes on load
         try {

@@ -48,7 +48,7 @@ class TestWatchlist(unittest.TestCase):
 
     def test_watchlist_stocks_data_integrity(self):
         """Assert image stocks left after cleanups, SPCX added by user, Physical AI additions, and midterm/ETF/Bigtech picks."""
-        self.assertEqual(len(WATCHLIST_STOCKS), 38)
+        self.assertEqual(len(WATCHLIST_STOCKS), 39)
         self.assertEqual(SOURCE_AUTHOR, "Shay Boloor")
         self.assertEqual(SOURCE_UPDATED, "2026-10-17")
 
@@ -66,7 +66,7 @@ class TestWatchlist(unittest.TestCase):
             "AI Connectivity": 4, "Midterm 2026": 0, "ETF Plan 2026-11": 0, "Bigtech Dip 2026-11": 0,
         }
         removed = {
-            "CIFR", "INTC", "LITE", "OKLO", "VPG", "IREN", "LEU", "ONDS", "UUUU", "ASTS", "NBIS", "MRCY", "AAOI",
+            "CIFR", "INTC", "LITE", "OKLO", "VPG", "IREN", "LEU", "ONDS", "UUUU", "ASTS", "MRCY", "AAOI",
             "ON", "NVTS", "QBTS", "RGTI", "INFQ", "IONQ", "DOCN", "SNOW", "FSLR", "DVA", "FIVE"
         }
         self.assertFalse(removed & {s["ticker"] for s in WATCHLIST_STOCKS})
@@ -88,7 +88,7 @@ class TestWatchlist(unittest.TestCase):
         self.assertEqual(stock_map["SPCX"]["group"], "Space")
         self.assertEqual(
             [x["ticker"] for x in WATCHLIST_STOCKS if x.get("source")],
-            ["SPCX", "ADI", "MPWR", "TXN", "ENSG", "OLLI", "QQQM", "SOXQ", "GPIQ", "NFLX", "LRCX"],
+            ["SPCX", "ADI", "MPWR", "TXN", "NBIS", "ENSG", "OLLI", "QQQM", "SOXQ", "GPIQ", "NFLX", "LRCX"],
         )
         self.assertEqual(stock_map["ENSG"]["support"], 181.68)
         self.assertEqual(
@@ -142,7 +142,7 @@ class TestWatchlist(unittest.TestCase):
         }
 
         result = analyze_watchlist(price_data=mock_quotes)
-        self.assertEqual(result["total_count"], 38)
+        self.assertEqual(result["total_count"], 39)
         self.assertEqual(result["portfolio_count"], 2)  # GOOGL and VRT in portfolio.json
 
         item_map = {it["ticker"]: it for it in result["items"]}
@@ -198,6 +198,35 @@ class TestWatchlist(unittest.TestCase):
         # Assert all 46 tickers are in the generated table
         for s in WATCHLIST_STOCKS:
             self.assertIn(f">{s['ticker']}<", content)
+
+    def test_watchlist_valuation_integration(self):
+        """Assert that analyze_watchlist integrates valuation data and renders Fair Value in HTML."""
+        mock_quotes = {
+            "NVDA": {"close": 200.0, "premarket_close": None, "postmarket_close": None, "exchange": "NASDAQ", "description": "NVIDIA Corp"},
+            "GOOGL": {"close": 280.0, "premarket_close": None, "postmarket_close": None, "exchange": "NASDAQ", "description": "Alphabet Inc"},
+        }
+        res = analyze_watchlist(price_data=mock_quotes)
+        item_map = {it["ticker"]: it for it in res["items"]}
+
+        # NVDA has model in valuation engine ($280.00 fair price)
+        nvda = item_map["NVDA"]
+        self.assertIn("valuation", nvda)
+        self.assertEqual(nvda["fair_price"], 280.0)
+        self.assertEqual(nvda["val_status"], "UNDERVALUED")
+        self.assertAlmostEqual(nvda["val_upside"], 40.0, places=1)
+
+        # GOOGL has model in valuation engine ($385.00 fair price)
+        googl = item_map["GOOGL"]
+        self.assertEqual(googl["fair_price"], 385.0)
+        self.assertEqual(googl["val_status"], "UNDERVALUED")
+
+        # HTML generation includes valuation elements
+        html = generate_watchlist_html(res, reports_dir=Path(self.temp_dir) / "reports")
+        self.assertIn("card-val-box", html)
+        self.assertIn("Intrinsic Fair Value", html)
+        self.assertIn("มูลค่าเหมาะสม (Fair Value)", html)
+        self.assertIn("pill-undervalued", html)
+        self.assertIn("data-val-status", html)
 
 
 if __name__ == "__main__":

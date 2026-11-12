@@ -2432,3 +2432,424 @@
                 margin: 3px 0 0 auto;
             }
         }
+
+        /* Intrinsic Fair Value & Target Valuation Panel */
+        .fair-value-panel {
+            background: #0d1222;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin-top: 14px;
+            margin-bottom: 14px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .fv-header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .fv-title-group {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .fv-main-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: #f8fafc;
+        }
+
+        .fv-icon {
+            font-size: 1.2rem;
+        }
+
+        .fv-status-badge {
+            padding: 3px 10px;
+            border-radius: 6px;
+            font-size: 0.76rem;
+            font-weight: 700;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            background: rgba(56, 189, 248, 0.1);
+            color: #38bdf8;
+        }
+
+        .fv-subtitle {
+            font-size: 0.74rem;
+            color: #94a3b8;
+        }
+
+        .fv-model-badge {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #cbd5e1;
+            background: #151d33;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            padding: 4px 10px;
+        }
+
+        .fv-content-grid {
+            display: grid;
+            grid-template-columns: 340px 1fr;
+            gap: 16px;
+        }
+
+        @media (max-width: 900px) {
+            .fv-content-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .fv-hero-card {
+            background: #090e1c;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 10px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .fv-hero-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .fv-price-row {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .fv-target-price {
+            font-size: 2.1rem;
+            font-weight: 900;
+            font-family: 'JetBrains Mono', monospace;
+            letter-spacing: -0.5px;
+        }
+
+        .fv-upside-box {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            padding: 4px 10px;
+            border-radius: 6px;
+            border: 1px solid rgba(52, 211, 153, 0.3);
+            background: rgba(52, 211, 153, 0.1);
+        }
+
+        .fv-upside-box span:first-child {
+            font-size: 1.15rem;
+            font-weight: 800;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .fv-upside-sub {
+            font-size: 0.62rem;
+            font-weight: 600;
+        }
+
+        .fv-comp-strip {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 12px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 6px;
+            margin-bottom: 12px;
+            font-size: 0.74rem;
+        }
+
+        .fv-comp-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .fv-comp-k {
+            color: #94a3b8;
+        }
+
+        .fv-comp-v {
+            font-weight: 700;
+            font-family: 'JetBrains Mono', monospace;
+            color: #f8fafc;
+        }
+
+        .fv-comp-divider {
+            color: rgba(255, 255, 255, 0.15);
+        }
+
+        .fv-model-desc-box {
+            font-size: 0.72rem;
+            color: #94a3b8;
+            line-height: 1.5;
+            background: rgba(56, 189, 248, 0.04);
+            border-left: 2px solid #38bdf8;
+            padding: 6px 10px;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .fv-desc-tag {
+            font-weight: 700;
+            color: #38bdf8;
+            margin-right: 4px;
+        }
+
+        .fv-pillars-card {
+            background: #090e1c;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 10px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .fv-pillars-header {
+            font-size: 0.82rem;
+            font-weight: 800;
+            color: #f8fafc;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .fv-pillars-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .fv-pillar-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 10px 12px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            border-radius: 8px;
+            transition: background 0.2s;
+        }
+
+        .fv-pillar-item:hover {
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .fv-pillar-icon {
+            font-size: 1.15rem;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .fv-pillar-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .fv-pillar-title {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: #e2e8f0;
+        }
+
+        .fv-pillar-desc {
+            font-size: 0.72rem;
+            color: #94a3b8;
+            line-height: 1.45;
+        }
+
+        /* Help Button (? icon) */
+        .fv-help-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: rgba(56, 189, 248, 0.15);
+            border: 1px solid rgba(56, 189, 248, 0.4);
+            color: #38bdf8;
+            font-size: 0.72rem;
+            font-weight: 800;
+            cursor: pointer;
+            padding: 0;
+            line-height: 1;
+            transition: all 0.2s ease;
+            vertical-align: middle;
+            margin-left: 6px;
+        }
+
+        .fv-help-btn:hover {
+            background: #38bdf8;
+            color: #0d1222;
+            transform: scale(1.1);
+            box-shadow: 0 0 8px rgba(56, 189, 248, 0.5);
+        }
+
+        /* Valuation Math & Accounting Popover Modal */
+        .fair-value-panel {
+            position: relative;
+        }
+
+        .fv-help-popover {
+            position: absolute;
+            top: 50px;
+            left: 20px;
+            right: 20px;
+            z-index: 100;
+            background: #0b101e;
+            border: 1px solid rgba(56, 189, 248, 0.35);
+            border-radius: 12px;
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.85), 0 0 20px rgba(56, 189, 248, 0.15);
+            padding: 18px 20px;
+            backdrop-filter: blur(8px);
+            animation: fvPopoverFadeIn 0.2s ease-out;
+        }
+
+        @keyframes fvPopoverFadeIn {
+            from { opacity: 0; transform: translateY(-8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fv-popover-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding-bottom: 10px;
+            margin-bottom: 14px;
+        }
+
+        .fv-popover-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+            font-weight: 800;
+            color: #f8fafc;
+        }
+
+        .fv-popover-title span:first-child {
+            background: #1e293b;
+            color: #38bdf8;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+        }
+
+        .fv-popover-close {
+            background: transparent;
+            border: none;
+            color: #94a3b8;
+            font-size: 1.4rem;
+            line-height: 1;
+            cursor: pointer;
+            padding: 0 4px;
+            border-radius: 4px;
+            transition: color 0.15s;
+        }
+
+        .fv-popover-close:hover {
+            color: #f43f5e;
+        }
+
+        .fv-popover-body {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .fv-popover-section {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .fv-popover-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        @media (max-width: 768px) {
+            .fv-popover-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .fv-popover-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: #38bdf8;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .fv-popover-code {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            color: #34d399;
+            background: rgba(52, 211, 153, 0.08);
+            border: 1px solid rgba(52, 211, 153, 0.2);
+            padding: 8px 12px;
+            border-radius: 6px;
+            line-height: 1.4;
+            word-break: break-word;
+        }
+
+        .fv-popover-val {
+            font-size: 0.78rem;
+            color: #e2e8f0;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 8px 12px;
+            border-radius: 6px;
+            line-height: 1.45;
+        }
+
+        .fv-popover-col {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .fv-popover-badge {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.76rem;
+            font-weight: 700;
+            color: #fbbf24;
+            background: rgba(251, 191, 36, 0.08);
+            border: 1px solid rgba(251, 191, 36, 0.2);
+            padding: 6px 10px;
+            border-radius: 6px;
+        }
+
+        .fv-popover-desc {
+            font-size: 0.75rem;
+            color: #cbd5e1;
+            line-height: 1.5;
+            background: rgba(56, 189, 248, 0.05);
+            border-left: 3px solid #38bdf8;
+            padding: 8px 12px;
+            border-radius: 0 6px 6px 0;
+        }

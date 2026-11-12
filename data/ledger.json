@@ -1,7 +1,7 @@
 {
   "cash": {
     "dime_save_thb": 0.59,
-    "dime_usd": 5561.05
+    "dime_usd": 5264.31
   },
   "net_injected_capital_thb": 1295000.0,
   "gross_deposits_thb": 1345000.0,
@@ -185,5 +185,19 @@
       "rate": "0.6140/หุ้น"
     }
   ],
-  "buy_orders": []
+  "buy_orders": [
+    {
+      "fn": "IMG_5879.webp",
+      "ticker": "NVDA",
+      "shares": 1.7530416,
+      "price_usd": 168.99,
+      "amt_usd": 296.74,
+      "amt_thb": 0.0,
+      "fx_rate": 33.62,
+      "date": "12 พ.ย. 69 - 04:58 น.",
+      "order_type": "Limit",
+      "account": "Dime! USD",
+      "fees_usd": 0.48
+    }
+  ]
 }

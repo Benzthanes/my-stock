@@ -1242,7 +1242,7 @@
             dEarn = Math.round(diffMs / (1000 * 60 * 60 * 24));
         }
 
-        if (dEarn < 0 || dEarn > 120) {
+        if (dEarn < 0 || dEarn > 30) {
             currentEarningsIso = null;
             syncVerticalEarningsPosition();
             if (upcomingEarningsSeries && activeLwChart) {
@@ -2828,6 +2828,27 @@
         });
         activeLwChart = chart;
 
+        // Auto-detect container dimension shifts (e.g. sidebar collapse/expand, font load, flex settlement)
+        if (window.ResizeObserver && !mainContainer.__resizeObs__) {
+            mainContainer.__resizeObs__ = new ResizeObserver((entries) => {
+                for (let entry of entries) {
+                    const newWidth = Math.floor(entry.contentRect.width);
+                    if (newWidth > 100) {
+                        if (activeLwChart) {
+                            activeLwChart.applyOptions({ width: newWidth });
+                        }
+                        if (activeSubpaneCharts && activeSubpaneCharts.length > 0) {
+                            activeSubpaneCharts.forEach(item => {
+                                if (item.chart) item.chart.applyOptions({ width: newWidth });
+                            });
+                        }
+                        syncVerticalEarningsPosition();
+                    }
+                }
+            });
+            mainContainer.__resizeObs__.observe(mainContainer);
+        }
+
         chart.timeScale().subscribeVisibleLogicalRangeChange(() => {
             syncVerticalEarningsPosition();
         });
@@ -3870,6 +3891,9 @@
         renderAiDecisionSection(tData);
         renderPatternDeepDive(tData);
 
+        // Render Intrinsic Fair Value & Target Valuation Section
+        updateFairValueSection(ticker);
+
         // Render Financial Statements & Quarterly Trends
         updateFinancialsSection(ticker);
 
@@ -4577,6 +4601,158 @@
         const unit = isPoints ? ' จุด' : '%';
         const arrow = val > 0 ? '▲' : (val < 0 ? '▼' : '');
         return `<span class="${cls}">${val > 0 ? '+' : (val < 0 ? '-' : '')}${Math.abs(val).toFixed(1)}${unit} ${arrow} YoY</span>`;
+    }
+
+    window.toggleValuationHelp = function(e) {
+        if (e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+        const popover = document.getElementById('fv_help_popover');
+        if (!popover) return;
+        popover.style.display = (popover.style.display === 'block') ? 'none' : 'block';
+    };
+
+    window.closeValuationHelp = function(e) {
+        if (e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+        const popover = document.getElementById('fv_help_popover');
+        if (popover) popover.style.display = 'none';
+    };
+
+    document.addEventListener('click', function(e) {
+        const popover = document.getElementById('fv_help_popover');
+        if (popover && popover.style.display === 'block') {
+            if (!popover.contains(e.target) && !e.target.closest('.fv-help-btn')) {
+                popover.style.display = 'none';
+            }
+        }
+    });
+
+    function updateFairValueSection(ticker) {
+        const panel = document.getElementById('fair_value_panel');
+        if (!panel) return;
+
+        const valData = (window.VALUATION_DATA && window.VALUATION_DATA[ticker]) || null;
+        if (!valData) {
+            panel.style.display = 'none';
+            return;
+        }
+        panel.style.display = 'block';
+
+        // Close popover when switching ticker
+        const popover = document.getElementById('fv_help_popover');
+        if (popover) popover.style.display = 'none';
+
+        // Update Popover Details
+        const mDetails = valData.math_details || {};
+        const pTicker = document.getElementById('fv_popover_ticker');
+        if (pTicker) pTicker.textContent = ticker;
+        const pFormula = document.getElementById('fv_popover_formula');
+        if (pFormula) pFormula.textContent = mDetails.formula || valData.primary_model || '-';
+        const pAccounting = document.getElementById('fv_popover_accounting');
+        if (pAccounting) pAccounting.textContent = mDetails.accounting_source || '-';
+        const pMultiples = document.getElementById('fv_popover_multiples');
+        if (pMultiples) pMultiples.textContent = mDetails.key_multiples || '-';
+        const pWallstreet = document.getElementById('fv_popover_wallstreet');
+        if (pWallstreet) pWallstreet.textContent = mDetails.wall_street_target || '-';
+        const pExplanation = document.getElementById('fv_popover_explanation');
+        if (pExplanation) pExplanation.textContent = mDetails.explanation || valData.model_desc || '-';
+
+        const fmt = (v) => (v != null && v > 0) ? '$' + Number(v).toFixed(2) : '-';
+
+        // Badges & Headers
+        const badge = document.getElementById('fv_status_badge');
+        if (badge) {
+            badge.textContent = valData.status_label || '-';
+            badge.style.borderColor = valData.status_color || '#38bdf8';
+            badge.style.color = valData.status_color || '#38bdf8';
+            badge.style.backgroundColor = (valData.status_color || '#38bdf8') + '1a';
+        }
+
+        const modelBadge = document.getElementById('fv_primary_model');
+        if (modelBadge) {
+            modelBadge.textContent = '📐 ' + (valData.primary_model || '-');
+        }
+
+        // Prices & Upside
+        const targetPriceEl = document.getElementById('fv_target_price');
+        if (targetPriceEl) {
+            targetPriceEl.textContent = fmt(valData.fair_price);
+            targetPriceEl.style.color = valData.status_color || '#34d399';
+        }
+
+        const tData = (window.CHARTS_DATA && window.CHARTS_DATA[ticker]) || {};
+        const lastBar = (tData.candles && tData.candles.length) ? tData.candles[tData.candles.length - 1] : null;
+        const currentPrice = (valData.current_price && valData.current_price > 0) ? valData.current_price : (lastBar ? lastBar.close : 0);
+
+        const marketPriceEl = document.getElementById('fv_market_price');
+        if (marketPriceEl) {
+            marketPriceEl.textContent = fmt(currentPrice);
+        }
+
+        const spreadValEl = document.getElementById('fv_spread_val');
+        if (spreadValEl) {
+            const spread = (valData.fair_price || 0) - currentPrice;
+            const spreadSign = spread > 0 ? '+' : (spread < 0 ? '-' : '');
+            spreadValEl.textContent = spreadSign + '$' + Math.abs(spread).toFixed(2);
+            spreadValEl.style.color = spread > 0 ? '#34d399' : (spread < 0 ? '#fb7185' : '#facc15');
+        }
+
+        const upsideBox = document.getElementById('fv_upside_box');
+        const upsideVal = document.getElementById('fv_upside_val');
+        const upsideSub = document.getElementById('fv_upside_sub');
+        if (upsideBox && upsideVal && upsideSub) {
+            const up = currentPrice > 0 ? (((valData.fair_price || currentPrice) - currentPrice) / currentPrice) * 100 : (valData.upside_pct || 0);
+            if (valData.status === 'UNDERVALUED') {
+                upsideVal.textContent = (up > 0 ? '+' : '') + up.toFixed(1) + '%';
+                upsideVal.style.color = '#34d399';
+                upsideSub.textContent = 'Upside สู่ราคาเหมาะสม';
+                upsideSub.style.color = '#34d399';
+                upsideBox.style.borderColor = 'rgba(52, 211, 153, 0.4)';
+                upsideBox.style.backgroundColor = 'rgba(52, 211, 153, 0.12)';
+            } else if (valData.status === 'OVERVALUED') {
+                upsideVal.textContent = up.toFixed(1) + '%';
+                upsideVal.style.color = '#fb7185';
+                upsideSub.textContent = 'Downside สูงกว่าพื้นฐาน';
+                upsideSub.style.color = '#fb7185';
+                upsideBox.style.borderColor = 'rgba(251, 113, 133, 0.4)';
+                upsideBox.style.backgroundColor = 'rgba(251, 113, 133, 0.12)';
+            } else {
+                upsideVal.textContent = (up >= 0 ? '+' : '') + up.toFixed(1) + '%';
+                upsideVal.style.color = '#facc15';
+                upsideSub.textContent = 'กรอบราคาสมดุล (Fair)';
+                upsideSub.style.color = '#facc15';
+                upsideBox.style.borderColor = 'rgba(250, 204, 21, 0.4)';
+                upsideBox.style.backgroundColor = 'rgba(250, 204, 21, 0.12)';
+            }
+        }
+
+        const modelDescEl = document.getElementById('fv_model_desc');
+        if (modelDescEl) {
+            modelDescEl.textContent = valData.model_desc || '-';
+        }
+
+        // Pillars
+        const pillarsListEl = document.getElementById('fv_pillars_list');
+        if (pillarsListEl) {
+            const pillars = valData.pillars || [];
+            if (!pillars.length) {
+                pillarsListEl.innerHTML = '<div style="color: #64748b; font-size: 0.78rem;">ไม่มีข้อมูลเหตุผลค้ำยัน</div>';
+            } else {
+                pillarsListEl.innerHTML = pillars.map(p => `
+                    <div class="fv-pillar-item">
+                        <div class="fv-pillar-icon">${p.icon || '📌'}</div>
+                        <div class="fv-pillar-content">
+                            <div class="fv-pillar-title">${escapeHtml(p.title || '')}</div>
+                            <div class="fv-pillar-desc">${escapeHtml(p.desc || '')}</div>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        }
     }
 
     function updateFinancialsSection(ticker) {
@@ -5384,7 +5560,10 @@
 
         setTimeout(() => {
             window.dispatchEvent(new Event('resize'));
-        }, 300);
+            const activeTfBtn = document.querySelector('.chart-botbar .botbar-btn.active');
+            const tf = activeTfBtn ? activeTfBtn.textContent.trim() : '1Y';
+            if (typeof setTimeframe === 'function') setTimeframe(tf);
+        }, 320);
     }
 
     function scrollToAiSection() {
@@ -5854,17 +6033,7 @@
 
     // Initializer
     window.addEventListener('DOMContentLoaded', () => {
-        const urlParams = new URLSearchParams(window.location.search);
-        let targetTicker = urlParams.get('ticker');
-        if (!targetTicker && window.location.hash) {
-            targetTicker = window.location.hash.replace('#', '');
-        }
-        if (!targetTicker || !CHARTS_DATA[targetTicker]) {
-            targetTicker = '__INIT_TICKER__';
-        }
-        selectStock(targetTicker);
-
-        // Restore sidebar state from localStorage or screen width
+        // 1. Restore sidebar state FIRST so container establishes true layout width
         try {
             const savedState = localStorage.getItem('stock_sidebar_collapsed');
             const root = document.getElementById('chart_layout_root');
@@ -5878,6 +6047,24 @@
                 }
             }
         } catch (e) {}
+
+        // 2. Select initial stock after container dimensions are established
+        const urlParams = new URLSearchParams(window.location.search);
+        let targetTicker = urlParams.get('ticker');
+        if (!targetTicker && window.location.hash) {
+            targetTicker = window.location.hash.replace('#', '');
+        }
+        if (!targetTicker || !CHARTS_DATA[targetTicker]) {
+            targetTicker = '__INIT_TICKER__';
+        }
+        selectStock(targetTicker);
+
+        // 3. Trigger immediate layout check to ensure canvas matches container width
+        requestAnimationFrame(() => {
+            setTimeout(() => {
+                window.dispatchEvent(new Event('resize'));
+            }, 80);
+        });
 
         // Check for cached live quotes on load
         try {

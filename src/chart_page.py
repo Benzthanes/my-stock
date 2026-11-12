@@ -491,6 +491,30 @@ def generate_stock_chart_page_html() -> str:
             badge_html = '<span class="sc-badge sc-badge-closed">ขายแล้ว</span>'
 
         name_escaped = escape(str(m.get("name") or t), quote=True)
+
+        # Valuation for pill
+        v_entry = valuation_data.get(t, {})
+        fair_val = v_entry.get("fair_price")
+        val_status = v_entry.get("status")
+        val_upside = v_entry.get("upside_pct", 0.0)
+        is_etf = (v_entry.get("primary_model") or "").startswith("Net Asset Value") or (t in ("VOO", "QQQI", "SPY", "QQQ"))
+
+        if fair_val and fair_val > 0:
+            fv_txt = f"${fair_val:,.2f}"
+            if is_etf:
+                fv_tag = '<span class="sc-fv-tag fv-fair" title="อิงมูลค่าสินทรัพย์สุทธิ">NAV</span>'
+            elif val_status == "UNDERVALUED":
+                fv_tag = f'<span class="sc-fv-tag fv-under" title="ราคาต่ำกว่าพื้นฐาน เหลือ Upside +{val_upside:.1f}%">+{val_upside:.1f}% ยังไม่ถึง</span>'
+            elif val_status == "OVERVALUED":
+                fv_tag = f'<span class="sc-fv-tag fv-over" title="ราคาสูงกว่าพื้นฐาน {val_upside:.1f}%">{val_upside:.1f}% ถึงเป้าแล้ว</span>'
+            elif val_status == "SPECULATIVE":
+                fv_tag = '<span class="sc-fv-tag fv-spec" title="สถานะเก็งกำไรฐานระดมทุน">Pre-IPO</span>'
+            else:
+                fv_tag = f'<span class="sc-fv-tag fv-fair" title="ราคาอยู่ในกรอบสมดุล">{val_upside:+.1f}% ถึงเป้า</span>'
+        else:
+            fv_txt = "-"
+            fv_tag = '<span class="sc-fv-tag fv-spec">รอประเมิน</span>'
+
         pills_html.append(
             f'<div class="sp-pill stock-card" id="pill_{t}" onclick="selectStock(\'{t}\')" title="{name_escaped}">'
             f'<div class="sc-row-top">'
@@ -500,6 +524,13 @@ def generate_stock_chart_page_html() -> str:
             f'<div class="sc-row-price">'
             f'<span class="sc-label">Price</span>'
             f'<span class="sp-pill-p sc-price">{p_txt}</span>'
+            f'</div>'
+            f'<div class="sc-row-fv">'
+            f'<div class="sc-fv-left">'
+            f'<span class="sc-tag-fv">FV:</span>'
+            f'<span class="sc-val-fv">{fv_txt}</span>'
+            f'</div>'
+            f'{fv_tag}'
             f'</div>'
             f'<div class="sc-row-level sc-support">'
             f'<span class="sc-tag-support">รับ:</span>'

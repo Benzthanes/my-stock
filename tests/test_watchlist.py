@@ -48,7 +48,7 @@ class TestWatchlist(unittest.TestCase):
 
     def test_watchlist_stocks_data_integrity(self):
         """Assert image stocks left after cleanups, SPCX added by user, Physical AI additions, and midterm/ETF/Bigtech picks."""
-        self.assertEqual(len(WATCHLIST_STOCKS), 39)
+        self.assertEqual(len(WATCHLIST_STOCKS), 41)
         self.assertEqual(SOURCE_AUTHOR, "Shay Boloor")
         self.assertEqual(SOURCE_UPDATED, "2026-10-17")
 
@@ -59,11 +59,12 @@ class TestWatchlist(unittest.TestCase):
             self.assertGreater(s["support"], 0)
             self.assertTrue(s["ticker"].isupper())
 
-        self.assertEqual(len(groups), 13)
+        self.assertEqual(len(groups), 14)
         IMAGE_STOCKS_PER_GROUP = {
             "Space": 3, "Drones": 2, "Nuclear": 1, "Photonics": 2, "CPU Bottleneck": 3,
             "Physical AI": 3, "AI Power": 2, "AI Silicon": 4, "AI Applications": 3,
             "AI Connectivity": 4, "Midterm 2026": 0, "ETF Plan 2026-11": 0, "Bigtech Dip 2026-11": 0,
+            "Retail Scale": 0,
         }
         removed = {
             "CIFR", "INTC", "LITE", "OKLO", "VPG", "IREN", "LEU", "ONDS", "UUUU", "ASTS", "MRCY", "AAOI",
@@ -88,7 +89,7 @@ class TestWatchlist(unittest.TestCase):
         self.assertEqual(stock_map["SPCX"]["group"], "Space")
         self.assertEqual(
             [x["ticker"] for x in WATCHLIST_STOCKS if x.get("source")],
-            ["SPCX", "ADI", "MPWR", "TXN", "NBIS", "ENSG", "OLLI", "QQQM", "SOXQ", "GPIQ", "NFLX", "LRCX"],
+            ["SPCX", "ADI", "MPWR", "TXN", "NBIS", "ENSG", "OLLI", "QQQM", "SOXQ", "GPIQ", "NFLX", "LRCX", "COST", "WMT"],
         )
         self.assertEqual(stock_map["ENSG"]["support"], 181.68)
         self.assertEqual(
@@ -142,7 +143,7 @@ class TestWatchlist(unittest.TestCase):
         }
 
         result = analyze_watchlist(price_data=mock_quotes)
-        self.assertEqual(result["total_count"], 39)
+        self.assertEqual(result["total_count"], 41)
         self.assertEqual(result["portfolio_count"], 2)  # GOOGL and VRT in portfolio.json
 
         item_map = {it["ticker"]: it for it in result["items"]}

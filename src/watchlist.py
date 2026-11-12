@@ -86,6 +86,9 @@ WATCHLIST_STOCKS: List[Dict[str, Any]] = [
     # 52-week high). Only the names not already in the watchlist. Supports are the screener's key_support that day.
     {"group": "Bigtech Dip 2026-11", "ticker": "NFLX", "support": 59.58, "source": "Bigtech ลงหนัก 2026-11-06 แนวรับ BB ล่าง"},
     {"group": "Bigtech Dip 2026-11", "ticker": "LRCX", "support": 161.03, "source": "Bigtech ลงหนัก 2026-11-06 แนวรับ 1.5 ATR"},
+    # 14) Retail Scale & Membership Cash Machines (User added 2026-11-12)
+    {"group": "Retail Scale", "ticker": "COST", "support": 965.0, "source": "โมเดลสมาชิกเหนียวแน่น แนวรับ EMA200"},
+    {"group": "Retail Scale", "ticker": "WMT", "support": 115.0, "source": "ผู้นำค้าปลีกสหรัฐ $1T แนวรับ EMA200"},
 ]
 
 CATALYSTS: Dict[str, str] = {
@@ -141,6 +144,9 @@ CATALYSTS: Dict[str, str] = {
     # Bigtech Dip 2026-11
     "NFLX": "🎬 ผู้นำสตรีมมิงระดับโลก ย่อตัวลึกจากจุดสูงสุด",
     "LRCX": "⚙️ เครื่องจักรผลิตชิป Etching ย่อตัวลึก 1.5 ATR",
+    # Retail Scale
+    "COST": "💳 เครื่องจักรค่าสมาชิก ต่ออายุ 93% แบรนด์ Kirkland",
+    "WMT": "🛒 ค้าปลีกยักษ์ใหญ่ $1T ค่าโฆษณา Connect & E-commerce",
 }
 
 

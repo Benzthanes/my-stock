@@ -5858,6 +5858,26 @@
                         if (cardElem) triggerCardFlashEffect(cardElem, isUp);
                     }
                 }
+
+                // Update live FV tag in sidebar pill
+                const valEntry = window.VALUATION_DATA && window.VALUATION_DATA[tk];
+                if (valEntry && valEntry.fair_price && valEntry.fair_price > 0 && typeof q.close === 'number') {
+                    const fvTagElem = document.querySelector('#pill_' + tk + ' .sc-fv-tag');
+                    const isEtf = valEntry.primary_model && valEntry.primary_model.startsWith('Net Asset Value');
+                    if (fvTagElem && !isEtf && valEntry.status !== 'SPECULATIVE') {
+                        const up = ((valEntry.fair_price - q.close) / q.close) * 100.0;
+                        if (up > 10.0) {
+                            fvTagElem.className = 'sc-fv-tag fv-under';
+                            fvTagElem.textContent = '+' + up.toFixed(1) + '% ยังไม่ถึง';
+                        } else if (up < -10.0) {
+                            fvTagElem.className = 'sc-fv-tag fv-over';
+                            fvTagElem.textContent = up.toFixed(1) + '% ถึงเป้าแล้ว';
+                        } else {
+                            fvTagElem.className = 'sc-fv-tag fv-fair';
+                            fvTagElem.textContent = (up >= 0 ? '+' : '') + up.toFixed(1) + '% ถึงเป้า';
+                        }
+                    }
+                }
                 previousQuotesPriceMap[tk] = q.close;
             }
         });

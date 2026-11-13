@@ -645,6 +645,56 @@
       ],
       "sell_slip": "IMG_5878.webp",
       "notes": "ขายทำกำไรปิดสถานะ MNST 17.3443577 หุ้น @ $45.31 รับเงิน $784.61 เข้า Dime! USD (สลิป IMG_5878.webp)"
+    },
+    {
+      "id": "TRD-20261113-NVDA",
+      "ticker": "NVDA",
+      "exchange": "NASDAQ",
+      "name": "NVIDIA Corporation",
+      "action": "SELL",
+      "date": "13 พ.ย. 69",
+      "sell_date": "13 พ.ย. 69 - 00:50 น.",
+      "order_type": "Market",
+      "buy_date": "12 พ.ย. 69",
+      "holding_days": 1,
+      "shares": 3.6499309,
+      "buy_price_usd": 162.5017,
+      "sell_price_usd": 165.44,
+      "total_cost_usd": 593.12,
+      "cost_thb": 19940.7,
+      "gross_revenue_usd": 603.84,
+      "fees_usd": 0.99,
+      "net_revenue_usd": 602.85,
+      "revenue_thb": 20267.82,
+      "realized_pl_usd": 9.73,
+      "realized_pl_thb": 327.12,
+      "realized_pl_pct": 1.64,
+      "fx_rate": 33.62,
+      "buy_tranches_count": 2,
+      "buy_tranches": [
+        {
+          "tranche": 1,
+          "date": "12 พ.ย. 69 - 04:58 น.",
+          "shares": 1.7530416,
+          "price_usd": 168.99,
+          "amt_usd": 296.74,
+          "amt_thb": 0.0,
+          "file": "IMG_5879.webp",
+          "note": "ไม้ที่ 1 ซื้อผ่าน Dime! USD"
+        },
+        {
+          "tranche": 2,
+          "date": "12 พ.ย. 69 - 20:48 น.",
+          "shares": 1.8968893,
+          "price_usd": 155.99,
+          "amt_usd": 296.38,
+          "amt_thb": 0.0,
+          "file": "IMG_6040.webp",
+          "note": "ไม้ที่ 2 ซื้อผ่าน Dime! USD"
+        }
+      ],
+      "sell_slip": "IMG_6039.webp",
+      "notes": "ขายทำกำไรปิดสถานะ NVDA 3.6499309 หุ้น @ $165.44 รับเงิน $602.85 เข้า Dime! USD (สลิป IMG_6039.webp)"
     }
   ]
 }

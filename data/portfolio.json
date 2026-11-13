@@ -39,18 +39,8 @@
       "avg_cost_usd": 54.3123,
       "total_cost_usd": 1486.59,
       "cost_thb": 49979.16
-    },
-    {
-      "ticker": "NVDA",
-      "exchange": "NASDAQ",
-      "name": "NVIDIA Corporation",
-      "shares": 1.7530416,
-      "avg_cost_usd": 169.2715,
-      "total_cost_usd": 296.74,
-      "cost_thb": 9976.4,
-      "buy_date": "2026-11-12"
     }
   ],
-  "total_cost_usd": 36056.7,
-  "total_cost_thb": 1212344.77
+  "total_cost_usd": 35759.96,
+  "total_cost_thb": 1202368.37
 }

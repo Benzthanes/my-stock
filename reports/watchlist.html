@@ -637,7 +637,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
   .rnav-int-btn { padding: 3px 6px; min-height: 30px; }
 }
 </style>
-<nav class="rnav" aria-label="รายงาน"><div class="rnav-top-row"><div class="rnav-links"><a href="portfolio_master.html" class="rnav-link" data-icon="👑">ภาพรวม</a><a href="portfolio_review.html" class="rnav-link" data-icon="🩺">สุขภาพพอร์ต</a><a href="portfolio_recovery.html" class="rnav-link" data-icon="🧗">แก้ดอย</a><a href="portfolio_dip_sim.html" class="rnav-link" data-icon="🎯">Dip จำลอง</a><a href="trades_ledger.html" class="rnav-link" data-icon="📜">รายการซื้อขายทั้งหมด</a><a href="stock_chart.html" class="rnav-link" data-icon="📈">กราฟ</a><a href="watchlist.html" class="rnav-link active" aria-current="page" data-icon="📋">หุ้นที่สนใจ</a><a href="advisor.html" class="rnav-link" data-icon="💡">คำแนะนำ</a></div></div><div class="rnav-live-bar"><div class="rnav-live-left"><button id="rnav-btn-refresh" class="rnav-refresh-btn" onclick="triggerGlobalRefresh()" title="กดเพื่อดึงราคาตลาดสดทันที"><span id="rnav-refresh-icon" style="display:inline-block; transition:transform 0.6s ease;">🔄</span> <span id="rnav-refresh-text">รีเฟรชราคา</span> <span class="rnav-live-badge">Live</span></button><div class="rnav-int-group" title="อัปเดตราคาหุ้นอัตโนมัติ (5วิ - 60วิ)"><span class="rnav-int-label">⏱️<span class="rnav-int-word"> อัปเดตสด:</span></span><button id="rnav-live-0" class="rnav-int-btn active" onclick="setGlobalLiveInterval(0)">ปิด</button><button id="rnav-live-5" class="rnav-int-btn" onclick="setGlobalLiveInterval(5)">5s</button><button id="rnav-live-15" class="rnav-int-btn" onclick="setGlobalLiveInterval(15)">15s</button><button id="rnav-live-30" class="rnav-int-btn" onclick="setGlobalLiveInterval(30)">30s</button><button id="rnav-live-60" class="rnav-int-btn" onclick="setGlobalLiveInterval(60)">60s</button></div></div><div class="rnav-live-right"><span id="rnav-live-status" class="rnav-status">⚪ อัปเดตด้วยตนเอง</span><span class="rnav-time">อัปเดต: 2026-11-18 03:26</span></div></div></nav>
+<nav class="rnav" aria-label="รายงาน"><div class="rnav-top-row"><div class="rnav-links"><a href="portfolio_master.html" class="rnav-link" data-icon="👑">ภาพรวม</a><a href="portfolio_review.html" class="rnav-link" data-icon="🩺">สุขภาพพอร์ต</a><a href="portfolio_recovery.html" class="rnav-link" data-icon="🧗">แก้ดอย</a><a href="portfolio_dip_sim.html" class="rnav-link" data-icon="🎯">Dip จำลอง</a><a href="trades_ledger.html" class="rnav-link" data-icon="📜">รายการซื้อขายทั้งหมด</a><a href="stock_chart.html" class="rnav-link" data-icon="📈">กราฟ</a><a href="watchlist.html" class="rnav-link active" aria-current="page" data-icon="📋">หุ้นที่สนใจ</a><a href="advisor.html" class="rnav-link" data-icon="💡">คำแนะนำ</a></div></div><div class="rnav-live-bar"><div class="rnav-live-left"><button id="rnav-btn-refresh" class="rnav-refresh-btn" onclick="triggerGlobalRefresh()" title="กดเพื่อดึงราคาตลาดสดทันที"><span id="rnav-refresh-icon" style="display:inline-block; transition:transform 0.6s ease;">🔄</span> <span id="rnav-refresh-text">รีเฟรชราคา</span> <span class="rnav-live-badge">Live</span></button><div class="rnav-int-group" title="อัปเดตราคาหุ้นอัตโนมัติ (5วิ - 60วิ)"><span class="rnav-int-label">⏱️<span class="rnav-int-word"> อัปเดตสด:</span></span><button id="rnav-live-0" class="rnav-int-btn active" onclick="setGlobalLiveInterval(0)">ปิด</button><button id="rnav-live-5" class="rnav-int-btn" onclick="setGlobalLiveInterval(5)">5s</button><button id="rnav-live-15" class="rnav-int-btn" onclick="setGlobalLiveInterval(15)">15s</button><button id="rnav-live-30" class="rnav-int-btn" onclick="setGlobalLiveInterval(30)">30s</button><button id="rnav-live-60" class="rnav-int-btn" onclick="setGlobalLiveInterval(60)">60s</button></div></div><div class="rnav-live-right"><span id="rnav-live-status" class="rnav-status">⚪ อัปเดตด้วยตนเอง</span><span class="rnav-time">อัปเดต: 2026-11-18 08:37</span></div></div></nav>
 <script>
 (function() {
   var activeLink = document.querySelector(".rnav-link.active");
@@ -884,7 +884,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
         <h1>📋 หุ้นที่สนใจ (Watchlist)</h1>
         <p class="lead">เรดาร์ติดตามหุ้นคุณภาพสูง 41 ตัวตามกรอบแนวรับสำคัญ เพื่อจับจังหวะเข้าซื้อในระดับราคาที่ปลอดภัย</p>
         <div class="meta">
-            <span class="meta-chip">🕒 ข้อมูลราคา: <strong>2026-11-18 03:26:54</strong> <span class="meta-price-note">(ใช้ราคา Premarket ถ้ามี ไม่มีจึงใช้ราคาปิด)</span></span>
+            <span class="meta-chip">🕒 ข้อมูลราคา: <strong>2026-11-18 08:37:23</strong> <span class="meta-price-note">(ใช้ราคา Premarket ถ้ามี ไม่มีจึงใช้ราคาปิด)</span></span>
             <span class="meta-chip">⭐ ในพอร์ตจริง: <strong>1 ตัว</strong></span>
             <span class="meta-chip">🎯 ในโซนซื้อ 0-5%: <strong>4 ตัว</strong></span>
         </div>
@@ -1006,7 +1006,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$150.14</div>
-                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+3.6%</span></div>
+                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+0.9%</span></div>
                 </div>
                 <div class="price-col-support">
                     <div class="card-lbl">แนวรับ Fibo</div>
@@ -1062,7 +1062,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$156.92</div>
-                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+2.5%</span></div>
+                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+0.9%</span></div>
                 </div>
                 <div class="price-col-support">
                     <div class="card-lbl">แนวรับ Fibo</div>
@@ -1118,7 +1118,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$125.00</div>
-                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+3.6%</span></div>
+                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+0.8%</span></div>
                 </div>
                 <div class="price-col-support">
                     <div class="card-lbl">แนวรับ Fibo</div>
@@ -1174,7 +1174,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$97.68</div>
-                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+5.5%</span></div>
+                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+5.1%</span></div>
                 </div>
                 <div class="price-col-support">
                     <div class="card-lbl">แนวรับ Fibo</div>
@@ -1230,7 +1230,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$108.88</div>
-                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+2.1%</span></div>
+                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+2.7%</span></div>
                 </div>
                 <div class="price-col-support">
                     <div class="card-lbl">แนวรับ Fibo</div>
@@ -1286,7 +1286,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$179.25</div>
-                    <div class="card-sub"><span class="ptag">Pre</span> <span class="down">-1.1%</span></div>
+                    <div class="card-sub"><span class="ptag">Pre</span> <span class="down">-2.3%</span></div>
                 </div>
                 <div class="price-col-support">
                     <div class="card-lbl">แนวรับ Fibo</div>
@@ -1342,7 +1342,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$31.50</div>
-                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+1.2%</span></div>
+                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+1.4%</span></div>
                 </div>
                 <div class="price-col-support">
                     <div class="card-lbl">แนวรับ Fibo</div>
@@ -1398,7 +1398,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$207.50</div>
-                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+1.0%</span></div>
+                    <div class="card-sub"><span class="ptag">Pre</span> <span class="down">-1.9%</span></div>
                 </div>
                 <div class="price-col-support">
                     <div class="card-lbl">แนวรับ Fibo</div>
@@ -1454,7 +1454,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$726.40</div>
-                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+4.7%</span></div>
+                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+2.0%</span></div>
                 </div>
                 <div class="price-col-support">
                     <div class="card-lbl">แนวรับ Fibo</div>
@@ -1510,7 +1510,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$1,405.90</div>
-                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+3.7%</span></div>
+                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+1.6%</span></div>
                 </div>
                 <div class="price-col-support">
                     <div class="card-lbl">แนวรับ Fibo</div>
@@ -1566,7 +1566,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$34.31</div>
-                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+2.6%</span></div>
+                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+0.8%</span></div>
                 </div>
                 <div class="price-col-support">
                     <div class="card-lbl">แนวรับ Fibo</div>
@@ -1622,7 +1622,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$52.00</div>
-                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+6.8%</span></div>
+                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+4.5%</span></div>
                 </div>
                 <div class="price-col-support">
                     <div class="card-lbl">แนวรับ Fibo</div>
@@ -1734,7 +1734,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$160.01</div>
-                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+2.4%</span></div>
+                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+2.2%</span></div>
                 </div>
                 <div class="price-col-support">
                     <div class="card-lbl">แนวรับ Fibo</div>
@@ -1790,7 +1790,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$372.41</div>
-                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+4.1%</span></div>
+                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+3.5%</span></div>
                 </div>
                 <div class="price-col-support">
                     <div class="card-lbl">แนวรับ Fibo</div>
@@ -1846,7 +1846,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$181.00</div>
-                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+7.1%</span></div>
+                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+4.3%</span></div>
                 </div>
                 <div class="price-col-support">
                     <div class="card-lbl">แนวรับ Fibo</div>
@@ -1902,7 +1902,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$215.01</div>
-                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+3.8%</span></div>
+                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+2.0%</span></div>
                 </div>
                 <div class="price-col-support">
                     <div class="card-lbl">แนวรับ Fibo</div>
@@ -1958,7 +1958,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$192.50</div>
-                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+3.3%</span></div>
+                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+1.1%</span></div>
                 </div>
                 <div class="price-col-support">
                     <div class="card-lbl">แนวรับ Fibo</div>
@@ -2014,7 +2014,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$7.07</div>
-                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+4.4%</span></div>
+                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+4.3%</span></div>
                 </div>
                 <div class="price-col-support">
                     <div class="card-lbl">แนวรับ Fibo</div>
@@ -2070,7 +2070,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$60.62</div>
-                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+1.7%</span></div>
+                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+1.6%</span></div>
                 </div>
                 <div class="price-col-support">
                     <div class="card-lbl">แนวรับ Fibo</div>
@@ -2182,7 +2182,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$336.00</div>
-                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+0.1%</span></div>
+                    <div class="card-sub"><span class="ptag">Pre</span> <span class="down">-1.6%</span></div>
                 </div>
                 <div class="price-col-support">
                     <div class="card-lbl">แนวรับ Fibo</div>
@@ -2238,7 +2238,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$224.21</div>
-                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+2.7%</span></div>
+                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+2.1%</span></div>
                 </div>
                 <div class="price-col-support">
                     <div class="card-lbl">แนวรับ Fibo</div>
@@ -2294,7 +2294,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$512.44</div>
-                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+5.3%</span></div>
+                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+1.8%</span></div>
                 </div>
                 <div class="price-col-support">
                     <div class="card-lbl">แนวรับ Fibo</div>
@@ -2350,7 +2350,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$109.50</div>
-                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+4.7%</span></div>
+                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+4.9%</span></div>
                 </div>
                 <div class="price-col-support">
                     <div class="card-lbl">แนวรับ Fibo</div>
@@ -2406,7 +2406,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$390.66</div>
-                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+3.0%</span></div>
+                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+1.8%</span></div>
                 </div>
                 <div class="price-col-support">
                     <div class="card-lbl">แนวรับ Fibo</div>
@@ -2462,7 +2462,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$51.92</div>
-                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+1.7%</span></div>
+                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+0.9%</span></div>
                 </div>
                 <div class="price-col-support">
                     <div class="card-lbl">แนวรับ Fibo</div>
@@ -2518,7 +2518,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$382.25</div>
-                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+0.9%</span></div>
+                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+0.6%</span></div>
                 </div>
                 <div class="price-col-support">
                     <div class="card-lbl">แนวรับ Fibo</div>
@@ -2574,7 +2574,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$273.22</div>
-                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+1.7%</span></div>
+                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+1.0%</span></div>
                 </div>
                 <div class="price-col-support">
                     <div class="card-lbl">แนวรับ Fibo</div>
@@ -2630,7 +2630,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$96.11</div>
-                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+2.2%</span></div>
+                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+1.8%</span></div>
                 </div>
                 <div class="price-col-support">
                     <div class="card-lbl">แนวรับ Fibo</div>
@@ -2686,7 +2686,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$127.61</div>
-                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+0.0%</span></div>
+                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+0.1%</span></div>
                 </div>
                 <div class="price-col-support">
                     <div class="card-lbl">แนวรับ Fibo</div>
@@ -2742,7 +2742,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$257.29</div>
-                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+0.3%</span></div>
+                    <div class="card-sub"><span class="ptag">Pre</span> <span class="down">-0.2%</span></div>
                 </div>
                 <div class="price-col-support">
                     <div class="card-lbl">แนวรับ Fibo</div>
@@ -2798,7 +2798,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$297.97</div>
-                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+2.3%</span></div>
+                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+0.7%</span></div>
                 </div>
                 <div class="price-col-support">
                     <div class="card-lbl">แนวรับ Fibo</div>
@@ -2854,7 +2854,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$778.99</div>
-                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+1.9%</span></div>
+                    <div class="card-sub"><span class="ptag">Pre</span> <span class="down">-0.1%</span></div>
                 </div>
                 <div class="price-col-support">
                     <div class="card-lbl">แนวรับ Fibo</div>
@@ -2910,7 +2910,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$57.53</div>
-                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+4.7%</span></div>
+                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+4.5%</span></div>
                 </div>
                 <div class="price-col-support">
                     <div class="card-lbl">แนวรับ Fibo</div>
@@ -2966,7 +2966,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$1,110.91</div>
-                    <div class="card-sub"><span class="ptag">Pre</span> <span class="down">-0.2%</span></div>
+                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+0.1%</span></div>
                 </div>
                 <div class="price-col-support">
                     <div class="card-lbl">แนวรับ Fibo</div>
@@ -3022,7 +3022,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$138.57</div>
-                    <div class="card-sub"><span class="ptag">Pre</span> <span class="down">-1.6%</span></div>
+                    <div class="card-sub"><span class="ptag">Pre</span> <span class="down">-2.2%</span></div>
                 </div>
                 <div class="price-col-support">
                     <div class="card-lbl">แนวรับ Fibo</div>
@@ -3078,7 +3078,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$1,335.00</div>
-                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+2.8%</span></div>
+                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+1.3%</span></div>
                 </div>
                 <div class="price-col-support">
                     <div class="card-lbl">แนวรับ Fibo</div>
@@ -3134,7 +3134,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$77.24</div>
-                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+3.7%</span></div>
+                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+1.8%</span></div>
                 </div>
                 <div class="price-col-support">
                     <div class="card-lbl">แนวรับ Fibo</div>
@@ -3190,7 +3190,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$12.79</div>
-                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+1.9%</span></div>
+                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+2.4%</span></div>
                 </div>
                 <div class="price-col-support">
                     <div class="card-lbl">แนวรับ Fibo</div>
@@ -3246,7 +3246,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
                 <div class="price-col-current">
                     <div class="card-lbl">ราคาตอนนี้</div>
                     <div class="card-val">$215.27</div>
-                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+4.6%</span></div>
+                    <div class="card-sub"><span class="ptag">Pre</span> <span class="up">+2.2%</span></div>
                 </div>
                 <div class="price-col-support">
                     <div class="card-lbl">แนวรับ Fibo</div>
@@ -3320,7 +3320,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <td><div class="table-catalyst">📡 ชิปเครือข่ายความเร็วสูง Optical DSP &amp; AI</div></td>
             <td>
                 <div class="table-price">$150.14</div>
-                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+3.6%</span></div>
+                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+0.9%</span></div>
             </td>
             <td><div class="table-supp gold">$222</div></td>
             <td><div class="table-dist dist-rose">-32.4%</div></td>
@@ -3355,7 +3355,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <td><div class="table-catalyst">🧠 เจ้าตลาดชิป AI ผูกขาดสถาปัตยกรรม Blackwell Ultra</div></td>
             <td>
                 <div class="table-price">$156.92</div>
-                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+2.5%</span></div>
+                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+0.9%</span></div>
             </td>
             <td><div class="table-supp gold">$210</div></td>
             <td><div class="table-dist dist-rose">-25.3%</div></td>
@@ -3390,7 +3390,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <td><div class="table-catalyst">⚡ สายเคเบิลความเร็วสูง AEC &amp; DSP ประหยัดไฟ</div></td>
             <td>
                 <div class="table-price">$125.00</div>
-                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+3.6%</span></div>
+                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+0.8%</span></div>
             </td>
             <td><div class="table-supp gold">$167</div></td>
             <td><div class="table-dist dist-rose">-25.1%</div></td>
@@ -3425,7 +3425,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <td><div class="table-catalyst">💼 ระบบจัดการงานอัตโนมัติ Workflow AI</div></td>
             <td>
                 <div class="table-price">$97.68</div>
-                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+5.5%</span></div>
+                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+5.1%</span></div>
             </td>
             <td><div class="table-supp gold">$124</div></td>
             <td><div class="table-dist dist-rose">-21.2%</div></td>
@@ -3460,7 +3460,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <td><div class="table-catalyst">☁️ GPU Cloud Hyperscaler &amp; AI Supercluster Blackwell</div></td>
             <td>
                 <div class="table-price">$108.88</div>
-                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+2.1%</span></div>
+                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+2.7%</span></div>
             </td>
             <td><div class="table-supp gold">$138</div></td>
             <td><div class="table-dist dist-rose">-21.1%</div></td>
@@ -3495,7 +3495,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <td><div class="table-catalyst">📱 สถาปัตยกรรมชิปประหยัดพลังงาน v9 ในเซิร์ฟเวอร์</div></td>
             <td>
                 <div class="table-price">$179.25</div>
-                <div class="table-sub"><span class="ptag">Pre</span> <span class="down">-1.1%</span></div>
+                <div class="table-sub"><span class="ptag">Pre</span> <span class="down">-2.3%</span></div>
             </td>
             <td><div class="table-supp gold">$225</div></td>
             <td><div class="table-dist dist-rose">-20.3%</div></td>
@@ -3530,7 +3530,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <td><div class="table-catalyst">🛩️ โดรนเป้าซ้อมรบ &amp; โดรนรบร่วม Valkyrie</div></td>
             <td>
                 <div class="table-price">$31.50</div>
-                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+1.2%</span></div>
+                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+1.4%</span></div>
             </td>
             <td><div class="table-supp gold">$39</div></td>
             <td><div class="table-dist dist-rose">-19.2%</div></td>
@@ -3565,7 +3565,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <td><div class="table-catalyst">🔌 ชิปเชื่อมต่อ PCIe Gen 6/CXL สำหรับ AI</div></td>
             <td>
                 <div class="table-price">$207.50</div>
-                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+1.0%</span></div>
+                <div class="table-sub"><span class="ptag">Pre</span> <span class="down">-1.9%</span></div>
             </td>
             <td><div class="table-supp gold">$251</div></td>
             <td><div class="table-dist dist-rose">-17.3%</div></td>
@@ -3600,7 +3600,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <td><div class="table-catalyst">💾 ชิปหน่วยความจำ HBM3E สำหรับเซิร์ฟเวอร์ AI</div></td>
             <td>
                 <div class="table-price">$726.40</div>
-                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+4.7%</span></div>
+                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+2.0%</span></div>
             </td>
             <td><div class="table-supp gold">$849</div></td>
             <td><div class="table-dist dist-rose">-14.4%</div></td>
@@ -3635,7 +3635,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <td><div class="table-catalyst">🔬 เครื่องพิมพ์ชิป EUV High-NA หนึ่งเดียวในโลก</div></td>
             <td>
                 <div class="table-price">$1,405.90</div>
-                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+3.7%</span></div>
+                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+1.6%</span></div>
             </td>
             <td><div class="table-supp gold">$1,637</div></td>
             <td><div class="table-dist dist-rose">-14.1%</div></td>
@@ -3670,7 +3670,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <td><div class="table-catalyst">📦 แพ็กเกจจิ้งชิปขั้นสูง 2.5D/3D สำหรับ AI</div></td>
             <td>
                 <div class="table-price">$34.31</div>
-                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+2.6%</span></div>
+                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+0.8%</span></div>
             </td>
             <td><div class="table-supp gold">$38</div></td>
             <td><div class="table-dist dist-rose">-9.7%</div></td>
@@ -3705,7 +3705,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <td><div class="table-catalyst">✨ Q1 Turnaround สถิติ Backlog $109M Wafer Burn-in</div></td>
             <td>
                 <div class="table-price">$52.00</div>
-                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+6.8%</span></div>
+                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+4.5%</span></div>
             </td>
             <td><div class="table-supp gold">$57</div></td>
             <td><div class="table-dist dist-rose">-8.8%</div></td>
@@ -3775,7 +3775,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <td><div class="table-catalyst">🛡️ แพลตฟอร์มซอฟต์แวร์ AIP กองทัพและองค์กร</div></td>
             <td>
                 <div class="table-price">$160.01</div>
-                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+2.4%</span></div>
+                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+2.2%</span></div>
             </td>
             <td><div class="table-supp gold">$172</div></td>
             <td><div class="table-dist dist-rose">-7.0%</div></td>
@@ -3810,7 +3810,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <td><div class="table-catalyst">🏭 ผู้ผลิตชิปผูกขาดระดับโลก N3/N2 Foundry</div></td>
             <td>
                 <div class="table-price">$372.41</div>
-                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+4.1%</span></div>
+                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+3.5%</span></div>
             </td>
             <td><div class="table-supp gold">$398</div></td>
             <td><div class="table-dist dist-rose">-6.4%</div></td>
@@ -3845,7 +3845,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <td><div class="table-catalyst">⚡ เซลล์เชื้อเพลิงผลิตไฟฟ้านอกสายส่งป้อน Datacenter</div></td>
             <td>
                 <div class="table-price">$181.00</div>
-                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+7.1%</span></div>
+                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+4.3%</span></div>
             </td>
             <td><div class="table-supp gold">$192</div></td>
             <td><div class="table-dist dist-rose">-5.7%</div></td>
@@ -3880,7 +3880,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <td><div class="table-catalyst">💡 Optical Transceiver 800G/1.6T สำหรับ AI</div></td>
             <td>
                 <div class="table-price">$215.01</div>
-                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+3.8%</span></div>
+                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+2.0%</span></div>
             </td>
             <td><div class="table-supp gold">$224</div></td>
             <td><div class="table-dist dist-rose">-4.0%</div></td>
@@ -3915,7 +3915,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <td><div class="table-catalyst">❄️ ระบบระบายความร้อนด้วยของเหลวสำหรับ GPU คลัสเตอร์</div></td>
             <td>
                 <div class="table-price">$192.50</div>
-                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+3.3%</span></div>
+                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+1.1%</span></div>
             </td>
             <td><div class="table-supp gold">$195</div></td>
             <td><div class="table-dist dist-rose">-1.3%</div></td>
@@ -3950,7 +3950,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <td><div class="table-catalyst">🛰️ แผงโซลาร์อวกาศ &amp; โครงสร้างพื้นฐานวงโคจร</div></td>
             <td>
                 <div class="table-price">$7.07</div>
-                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+4.4%</span></div>
+                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+4.3%</span></div>
             </td>
             <td><div class="table-supp gold">$7</div></td>
             <td><div class="table-dist dist-emerald">+1.0%</div></td>
@@ -3985,7 +3985,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <td><div class="table-catalyst">🎬 ผู้นำสตรีมมิงระดับโลก ย่อตัวลึกจากจุดสูงสุด</div></td>
             <td>
                 <div class="table-price">$60.62</div>
-                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+1.7%</span></div>
+                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+1.6%</span></div>
             </td>
             <td><div class="table-supp gold">$59.58</div></td>
             <td><div class="table-dist dist-emerald">+1.8%</div></td>
@@ -4055,7 +4055,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <td><div class="table-catalyst">🌐 ชิปเน็ตเวิร์ก Ethernet 800G &amp; Custom ASIC</div></td>
             <td>
                 <div class="table-price">$336.00</div>
-                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+0.1%</span></div>
+                <div class="table-sub"><span class="ptag">Pre</span> <span class="down">-1.6%</span></div>
             </td>
             <td><div class="table-supp gold">$324</div></td>
             <td><div class="table-dist dist-emerald">+3.7%</div></td>
@@ -4090,7 +4090,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <td><div class="table-catalyst">🔒 ระบบความปลอดภัยไซเบอร์ Falcon AI Cloud</div></td>
             <td>
                 <div class="table-price">$224.21</div>
-                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+2.7%</span></div>
+                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+2.1%</span></div>
             </td>
             <td><div class="table-supp gold">$210</div></td>
             <td><div class="table-dist dist-slate">+6.8%</div></td>
@@ -4125,7 +4125,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <td><div class="table-catalyst">🖥️ ชิปเร่งความเร็ว AI MI300/MI350 &amp; ซีพียู EPYC</div></td>
             <td>
                 <div class="table-price">$512.44</div>
-                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+5.3%</span></div>
+                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+1.8%</span></div>
             </td>
             <td><div class="table-supp gold">$479</div></td>
             <td><div class="table-dist dist-slate">+7.0%</div></td>
@@ -4160,7 +4160,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <td><div class="table-catalyst">🛩️ โดรนพลีชีพ Switchblade &amp; ยุทธวิธีไร้คนขับ</div></td>
             <td>
                 <div class="table-price">$109.50</div>
-                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+4.7%</span></div>
+                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+4.9%</span></div>
             </td>
             <td><div class="table-supp gold">$102</div></td>
             <td><div class="table-dist dist-slate">+7.4%</div></td>
@@ -4195,7 +4195,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <td><div class="table-catalyst">👑 ชิปหุ่นยนต์อันดับ 1 (BOM $1,625) มาร์จิ้น 67%</div></td>
             <td>
                 <div class="table-price">$390.66</div>
-                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+3.0%</span></div>
+                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+1.8%</span></div>
             </td>
             <td><div class="table-supp gold">$363</div></td>
             <td><div class="table-dist dist-slate">+7.6%</div></td>
@@ -4230,7 +4230,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <td><div class="table-catalyst">💵 ETF ปันผลรายเดือนจากดัชนี Nasdaq 100 ไม้ 2</div></td>
             <td>
                 <div class="table-price">$51.92</div>
-                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+1.7%</span></div>
+                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+0.9%</span></div>
             </td>
             <td><div class="table-supp gold">$48</div></td>
             <td><div class="table-dist dist-slate">+8.2%</div></td>
@@ -4265,7 +4265,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <td><div class="table-catalyst">🤖 หุ่นยนต์ Optimus &amp; ระบบขับเคลื่อนไร้คนขับ FSD</div></td>
             <td>
                 <div class="table-price">$382.25</div>
-                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+0.9%</span></div>
+                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+0.6%</span></div>
             </td>
             <td><div class="table-supp gold">$353</div></td>
             <td><div class="table-dist dist-slate">+8.3%</div></td>
@@ -4300,7 +4300,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <td><div class="table-catalyst">📈 ดัชนี Nasdaq 100 ค่าธรรมเนียมต่ำ ไม้ 2</div></td>
             <td>
                 <div class="table-price">$273.22</div>
-                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+1.7%</span></div>
+                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+1.0%</span></div>
             </td>
             <td><div class="table-supp gold">$251</div></td>
             <td><div class="table-dist dist-slate">+8.9%</div></td>
@@ -4335,7 +4335,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <td><div class="table-catalyst">🛒 ค้าปลีกสินค้าราคาประหยัด ชนะเงินเฟ้อ</div></td>
             <td>
                 <div class="table-price">$96.11</div>
-                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+2.2%</span></div>
+                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+1.8%</span></div>
             </td>
             <td><div class="table-supp gold">$86.69</div></td>
             <td><div class="table-dist dist-slate">+10.9%</div></td>
@@ -4370,7 +4370,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <td><div class="table-catalyst">🛒 ค้าปลีกยักษ์ใหญ่ $1T ค่าโฆษณา Connect &amp; E-commerce</div></td>
             <td>
                 <div class="table-price">$127.61</div>
-                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+0.0%</span></div>
+                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+0.1%</span></div>
             </td>
             <td><div class="table-supp gold">$115</div></td>
             <td><div class="table-dist dist-slate">+11.0%</div></td>
@@ -4405,7 +4405,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <td><div class="table-catalyst">📦 หุ่นยนต์อัตโนมัติในคลังสินค้า &amp; ชิป Trainium</div></td>
             <td>
                 <div class="table-price">$257.29</div>
-                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+0.3%</span></div>
+                <div class="table-sub"><span class="ptag">Pre</span> <span class="down">-0.2%</span></div>
             </td>
             <td><div class="table-supp gold">$231</div></td>
             <td><div class="table-dist dist-slate">+11.4%</div></td>
@@ -4440,7 +4440,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <td><div class="table-catalyst">🛡️ โรงงาน 300mm ชิปแอนะล็อกต้นทุนต่ำ R:R 1:5.1</div></td>
             <td>
                 <div class="table-price">$297.97</div>
-                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+2.3%</span></div>
+                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+0.7%</span></div>
             </td>
             <td><div class="table-supp gold">$262</div></td>
             <td><div class="table-dist dist-slate">+13.7%</div></td>
@@ -4475,7 +4475,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <td><div class="table-catalyst">⚡ โรงไฟฟ้านิวเคลียร์ SMR &amp; กังหันพลังงานสะอาด</div></td>
             <td>
                 <div class="table-price">$778.99</div>
-                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+1.9%</span></div>
+                <div class="table-sub"><span class="ptag">Pre</span> <span class="down">-0.1%</span></div>
             </td>
             <td><div class="table-supp gold">$678</div></td>
             <td><div class="table-dist dist-slate">+14.9%</div></td>
@@ -4510,7 +4510,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <td><div class="table-catalyst">🚀 จรวด Neutron &amp; ดาวเทียมป้องกันประเทศ</div></td>
             <td>
                 <div class="table-price">$57.53</div>
-                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+4.7%</span></div>
+                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+4.5%</span></div>
             </td>
             <td><div class="table-supp gold">$50</div></td>
             <td><div class="table-dist dist-slate">+15.1%</div></td>
@@ -4545,7 +4545,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <td><div class="table-catalyst">💳 เครื่องจักรค่าสมาชิก ต่ออายุ 93% แบรนด์ Kirkland</div></td>
             <td>
                 <div class="table-price">$1,110.91</div>
-                <div class="table-sub"><span class="ptag">Pre</span> <span class="down">-0.2%</span></div>
+                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+0.1%</span></div>
             </td>
             <td><div class="table-supp gold">$965</div></td>
             <td><div class="table-dist dist-slate">+15.1%</div></td>
@@ -4580,7 +4580,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <td><div class="table-catalyst">🚀 ยาน Starship &amp; ดาวเทียม Starlink ผูกขาด</div></td>
             <td>
                 <div class="table-price">$138.57</div>
-                <div class="table-sub"><span class="ptag">Pre</span> <span class="down">-1.6%</span></div>
+                <div class="table-sub"><span class="ptag">Pre</span> <span class="down">-2.2%</span></div>
             </td>
             <td><div class="table-supp gold">$115</div></td>
             <td><div class="table-dist dist-slate">+20.5%</div></td>
@@ -4615,7 +4615,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <td><div class="table-catalyst">🚀 Monolithic BCD ชิปจัดการพลังงานข้อต่อหุ่นยนต์</div></td>
             <td>
                 <div class="table-price">$1,335.00</div>
-                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+2.8%</span></div>
+                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+1.3%</span></div>
             </td>
             <td><div class="table-supp gold">$1,100</div></td>
             <td><div class="table-dist dist-slate">+21.4%</div></td>
@@ -4650,7 +4650,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <td><div class="table-catalyst">📈 กองทุนดัชนีเซมิคอนดักเตอร์ SOX ไม้ 2</div></td>
             <td>
                 <div class="table-price">$77.24</div>
-                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+3.7%</span></div>
+                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+1.8%</span></div>
             </td>
             <td><div class="table-supp gold">$63</div></td>
             <td><div class="table-dist dist-slate">+22.6%</div></td>
@@ -4685,7 +4685,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <td><div class="table-catalyst">🛰️ ภาพถ่ายดาวเทียม &amp; AI Geospatial Analytics</div></td>
             <td>
                 <div class="table-price">$12.79</div>
-                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+1.9%</span></div>
+                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+2.4%</span></div>
             </td>
             <td><div class="table-supp gold">$10</div></td>
             <td><div class="table-dist dist-slate">+27.9%</div></td>
@@ -4720,7 +4720,7 @@ code { background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px;
             <td><div class="table-catalyst">⚙️ เครื่องจักรผลิตชิป Etching ย่อตัวลึก 1.5 ATR</div></td>
             <td>
                 <div class="table-price">$215.27</div>
-                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+4.6%</span></div>
+                <div class="table-sub"><span class="ptag">Pre</span> <span class="up">+2.2%</span></div>
             </td>
             <td><div class="table-supp gold">$161.03</div></td>
             <td><div class="table-dist dist-slate">+33.7%</div></td>

@@ -13,7 +13,8 @@ import os
 import shutil
 import sys
 import urllib.request
-from datetime import datetime
+import zoneinfo
+from datetime import datetime, time, timezone
 from html import escape
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
@@ -27,15 +28,15 @@ from src.trades import data_path
 from src.universe import resolve_custom_tickers
 from src.valuation import get_valuation
 
-SOURCE_AUTHOR = "Shay Boloor"
-SOURCE_UPDATED = "2026-10-17"
+SOURCE_AUTHOR = "คำนวณเอง"
+SOURCE_UPDATED = "2026-11-20"
 
 WATCHLIST_STOCKS: List[Dict[str, Any]] = [
     # 1) Space
     {"group": "Space", "ticker": "RKLB", "support": 50.0},
     {"group": "Space", "ticker": "PL", "support": 10.0},
     {"group": "Space", "ticker": "RDW", "support": 7.0},
-    # Not in Shay Boloor's image: support set by the user on 2026-10-30.
+    # Support set by user on 2026-10-30.
     {"group": "Space", "ticker": "SPCX", "support": 115.0, "source": "ผู้ใช้กำหนดเอง 2026-10-30"},
     # 2) Drones
     {"group": "Drones", "ticker": "AVAV", "support": 102.0},
@@ -69,6 +70,7 @@ WATCHLIST_STOCKS: List[Dict[str, Any]] = [
     {"group": "AI Applications", "ticker": "NOW", "support": 124.0},
     {"group": "AI Applications", "ticker": "CRWD", "support": 210.0},
     {"group": "AI Applications", "ticker": "NBIS", "support": 138.0, "source": "GPU Cloud Hyperscaler & AI Infrastructure แนวรับ Fibo"},
+    {"group": "AI Applications", "ticker": "ANT", "support": 85.0, "source": "IPO พ.ย. 2026 ผู้พัฒนาโมเดล Claude & Constitutional AI แนวรับ Fibo"},
     # 10) AI Connectivity
     {"group": "AI Connectivity", "ticker": "AVGO", "support": 324.0},
     {"group": "AI Connectivity", "ticker": "ALAB", "support": 251.0},
@@ -129,6 +131,7 @@ CATALYSTS: Dict[str, str] = {
     "NOW": "💼 ระบบจัดการงานอัตโนมัติ Workflow AI",
     "CRWD": "🔒 ระบบความปลอดภัยไซเบอร์ Falcon AI Cloud",
     "NBIS": "☁️ GPU Cloud Hyperscaler & AI Supercluster Blackwell",
+    "ANT": "🧠 โมเดลปัญญาประดิษฐ์ระดับแนวหน้า Claude & Constitutional AI ผู้นำ Agentic Coding",
     # AI Connectivity
     "AVGO": "🌐 ชิปเน็ตเวิร์ก Ethernet 800G & Custom ASIC",
     "ALAB": "🔌 ชิปเชื่อมต่อ PCIe Gen 6/CXL สำหรับ AI",
@@ -168,9 +171,40 @@ def classify_support_distance(pct_diff: Optional[float]) -> Tuple[str, str]:
         return ("C", "(ค) เกิน 5%")
 
 
+def get_us_market_session(as_of: Optional[datetime] = None) -> str:
+    """
+    Determine current US stock market session from US Eastern Time (ET):
+    - 'premarket': Mon-Fri 04:00 - 09:30 ET (16:00 - 21:30 BKK)
+    - 'regular': Mon-Fri 09:30 - 16:00 ET (21:30 - 04:00 BKK)
+    - 'postmarket': Mon-Fri 16:00 - 20:00 ET (04:00 - 08:00 BKK)
+    - 'closed': Overnight (20:00 - 04:00 ET) or Weekend (Sat/Sun)
+    """
+    if as_of is None:
+        as_of = datetime.now(timezone.utc)
+    elif as_of.tzinfo is None:
+        as_of = as_of.replace(tzinfo=timezone.utc)
+
+    ny_tz = zoneinfo.ZoneInfo("America/New_York")
+    dt_ny = as_of.astimezone(ny_tz)
+
+    # 0 = Monday, ..., 4 = Friday, 5 = Saturday, 6 = Sunday
+    if dt_ny.weekday() >= 5:
+        return "closed"
+
+    t = dt_ny.time()
+    if time(4, 0) <= t < time(9, 30):
+        return "premarket"
+    elif time(9, 30) <= t < time(16, 0):
+        return "regular"
+    elif time(16, 0) <= t < time(20, 0):
+        return "postmarket"
+    else:
+        return "closed"
+
+
 def fetch_watchlist_prices(timeout: int = 15) -> Dict[str, Dict[str, Any]]:
     """
-    Fetch market quotes (close, premarket_close, postmarket_close) for all watchlist tickers.
+    Fetch market quotes (close, change, premarket_close, postmarket_close) for all watchlist tickers.
     Returns mapping of {ticker: {column: val}}.
     """
     tickers = [s["ticker"] for s in WATCHLIST_STOCKS]
@@ -181,6 +215,7 @@ def fetch_watchlist_prices(timeout: int = 15) -> Dict[str, Dict[str, Any]]:
         "name",
         "description",
         "close",
+        "change",
         "premarket_close",
         "premarket_change",
         "postmarket_close",
@@ -234,15 +269,20 @@ def load_portfolio_holdings_tickers() -> set:
 def analyze_watchlist(
     price_data: Optional[Dict[str, Dict[str, Any]]] = None,
     portfolio_tickers: Optional[set] = None,
+    as_of: Optional[datetime] = None,
+    session: Optional[str] = None,
 ) -> Dict[str, Any]:
     """
     Analyze every watchlist stock against Fibonacci support levels.
     Sorts ascending by percentage distance (%ห่างจากแนวรับ ต่ำสุดไปสูงสุด).
+    Determines effective price based on the current US market session.
     """
     if price_data is None:
         price_data = fetch_watchlist_prices()
     if portfolio_tickers is None:
         portfolio_tickers = load_portfolio_holdings_tickers()
+    if session is None:
+        session = get_us_market_session(as_of)
 
     fetch_time_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     has_prices = bool(price_data)
@@ -258,24 +298,77 @@ def analyze_watchlist(
 
         p_info = price_data.get(tk, {}) if price_data else {}
         close = p_info.get("close")
+        reg_chg = p_info.get("change")
         pm_close = p_info.get("premarket_close")
+        pm_chg = p_info.get("premarket_change")
         post_close = p_info.get("postmarket_close")
+        post_chg = p_info.get("postmarket_change")
         ex = p_info.get("exchange", "")
         desc = p_info.get("description", tk)
 
-        # Pick effective price: premarket > postmarket > close
-        price_type = "รอราคา"
+        # Session-aware price selection
         eff_price = None
+        price_type = "รอราคา"
+        session_chg = None
+        card_lbl = "ราคาปิดล่าสุด"
+        price_sub = '<span class="ptag-wait">รอราคา</span>'
 
-        if pm_close is not None:
-            eff_price = pm_close
-            price_type = "Premarket"
-        elif post_close is not None:
-            eff_price = post_close
-            price_type = "Postmarket"
-        elif close is not None:
-            eff_price = close
-            price_type = "ราคาปิด (Close)"
+        if session == "premarket":
+            if pm_close is not None and pm_close > 0:
+                eff_price = pm_close
+                price_type = "Premarket"
+                session_chg = pm_chg if pm_chg is not None else 0.0
+                card_lbl = "ราคา Premarket"
+                cls = "up" if session_chg >= 0 else "down"
+                close_note = f' <span style="opacity:0.75">(ปิด {_fmt_money(close)})</span>' if close else ""
+                price_sub = f'<span class="ptag">Pre</span> <span class="{cls}">{session_chg:+.2f}%</span>{close_note}'
+            elif close is not None:
+                eff_price = close
+                price_type = "ราคาปิด (Close)"
+                session_chg = reg_chg
+                card_lbl = "ราคาปิดล่าสุด"
+                cls = "up" if (reg_chg or 0) >= 0 else "down"
+                chg_str = f' <span class="{cls}">{reg_chg:+.2f}%</span>' if reg_chg is not None else ""
+                price_sub = f'<span class="ptag-close">Close</span>{chg_str} <span style="opacity:0.75">(รอ Pre)</span>'
+        elif session == "regular":
+            if close is not None:
+                eff_price = close
+                price_type = "ตลาดสด (Live)"
+                session_chg = reg_chg
+                card_lbl = "ราคาตลาดสด"
+                cls = "up" if (reg_chg or 0) >= 0 else "down"
+                chg_str = f' <span class="{cls}">{reg_chg:+.2f}%</span>' if reg_chg is not None else ""
+                price_sub = f'<span class="ptag-live">Live</span>{chg_str}'
+        elif session == "postmarket":
+            if post_close is not None and post_close > 0:
+                eff_price = post_close
+                price_type = "Postmarket"
+                session_chg = post_chg if post_chg is not None else 0.0
+                card_lbl = "ราคา Postmarket"
+                cls = "up" if session_chg >= 0 else "down"
+                close_note = f' <span style="opacity:0.75">(ปิด {_fmt_money(close)})</span>' if close else ""
+                price_sub = f'<span class="ptag-post">Post</span> <span class="{cls}">{session_chg:+.2f}%</span>{close_note}'
+            elif close is not None:
+                eff_price = close
+                price_type = "ราคาปิด (Close)"
+                session_chg = reg_chg
+                card_lbl = "ราคาปิดล่าสุด"
+                cls = "up" if (reg_chg or 0) >= 0 else "down"
+                chg_str = f' <span class="{cls}">{reg_chg:+.2f}%</span>' if reg_chg is not None else ""
+                price_sub = f'<span class="ptag-close">Close</span>{chg_str}'
+        else:  # session == "closed"
+            if close is not None:
+                eff_price = close
+                price_type = "ราคาปิด (Close)"
+                session_chg = reg_chg
+                card_lbl = "ราคาปิดล่าสุด"
+                cls = "up" if (reg_chg or 0) >= 0 else "down"
+                chg_str = f' <span class="{cls}">{reg_chg:+.2f}%</span>' if reg_chg is not None else ""
+                if post_close is not None and post_chg is not None and post_close > 0:
+                    p_cls = "up" if post_chg >= 0 else "down"
+                    price_sub = f'<span class="ptag-close">Close</span>{chg_str} <span style="opacity:0.75">· Post {_fmt_money(post_close)}</span> <span class="{p_cls}" style="font-size:0.68rem">({post_chg:+.2f}%)</span>'
+                else:
+                    price_sub = f'<span class="ptag-close">Close</span>{chg_str}'
 
         diff = (eff_price - supp) if eff_price is not None else None
         pct_diff = ((diff / supp) * 100.0) if diff is not None else None
@@ -293,10 +386,16 @@ def analyze_watchlist(
             "exchange": ex,
             "support": supp,
             "close": close,
+            "change": reg_chg,
             "premarket_close": pm_close,
+            "premarket_change": pm_chg,
             "postmarket_close": post_close,
+            "postmarket_change": post_chg,
             "effective_price": eff_price,
             "price_type": price_type,
+            "price_sub": price_sub,
+            "card_lbl": card_lbl,
+            "session_chg": session_chg,
             "diff": diff,
             "pct_diff": pct_diff,
             "status_code": code,
@@ -320,6 +419,7 @@ def analyze_watchlist(
     return {
         "fetch_time": fetch_time_str,
         "has_prices": has_prices,
+        "session": session,
         "source_author": SOURCE_AUTHOR,
         "source_updated": SOURCE_UPDATED,
         "group_counts": group_counts,
@@ -330,14 +430,10 @@ def analyze_watchlist(
 
 
 def copy_watchlist_assets(reports_dir: Path) -> Path:
-    """Copy shay_fibo_support_2026-10-17.jpeg to reports/assets/."""
-    src_img = Path("docs/assets/shay_fibo_support_2026-10-17.jpeg")
+    """Ensure reports/assets/ directory exists."""
     dst_dir = reports_dir / "assets"
     dst_dir.mkdir(parents=True, exist_ok=True)
-    dst_img = dst_dir / "shay_fibo_support_2026-10-17.jpeg"
-    if src_img.exists() and (not dst_img.exists() or dst_img.stat().st_size != src_img.stat().st_size):
-        shutil.copy2(src_img, dst_img)
-    return dst_img
+    return dst_dir
 
 
 def _fmt_money(v: Optional[float]) -> str:
@@ -460,13 +556,15 @@ def generate_watchlist_html(
         </div>
         """
 
-    price_types = {it["price_type"] for it in items if it["effective_price"] is not None}
-    if "Premarket" in price_types:
-        price_note = "ใช้ราคา Premarket ถ้ามี ไม่มีจึงใช้ราคาปิด"
-    elif "Postmarket" in price_types:
-        price_note = "ใช้ราคา Postmarket ถ้ามี ไม่มีจึงใช้ราคาปิด"
+    session = analyzed.get("session", "closed")
+    if session == "premarket":
+        price_note = "☀️ ตลาด Premarket · อ้างอิงราคาซื้อขาย Pre-market สด (มีราคาปิดกำกับ)"
+    elif session == "regular":
+        price_note = "🟢 ตลาดเปิดทำการ · ราคา Realtime ตลาดปกติ"
+    elif session == "postmarket":
+        price_note = "🌙 ตลาด Postmarket · ราคาซื้อขายนอกเวลาทำการ After-hours"
     else:
-        price_note = "ใช้ราคาปิดล่าสุด"
+        price_note = "ตลาดปิด · อ้างอิงราคาปิดล่าสุด Regular Close (มีราคา Post-market กำกับ)"
 
     # Identify tickers in buy zone for spotlight
     buy_zone_tickers = [it["ticker"] for it in items if it["status_code"] == "B"]
@@ -555,15 +653,8 @@ def generate_watchlist_html(
             dist_txt = f"+{pct:.1f}%"
             dist_val = pct
 
-        if it["price_type"] in ("Premarket", "Postmarket") and close:
-            chg = (eff - close) / close * 100.0
-            chg_cls = "up" if chg >= 0 else "down"
-            tag = "Pre" if it["price_type"] == "Premarket" else "Post"
-            price_sub = f'<span class="ptag">{tag}</span> <span class="{chg_cls}">{chg:+.1f}%</span>'
-        elif eff is not None:
-            price_sub = '<span class="ptag-close">Close</span>'
-        else:
-            price_sub = '<span class="ptag-wait">รอราคา</span>'
+        price_sub = it.get("price_sub") or '<span class="ptag-wait">รอราคา</span>'
+        card_lbl = it.get("card_lbl", "ราคาปิดล่าสุด")
 
         port_badge = '<span class="port-star" title="มีในพอร์ตจริง">⭐</span>' if it["in_portfolio"] else ""
 
@@ -605,7 +696,7 @@ def generate_watchlist_html(
             <div class="card-catalyst">{escape(catalyst)}</div>
             <div class="card-price-grid">
                 <div class="price-col-current">
-                    <div class="card-lbl">ราคาตอนนี้</div>
+                    <div class="card-lbl">{card_lbl}</div>
                     <div class="card-val">{_fmt_money(eff)}</div>
                     <div class="card-sub">{price_sub}</div>
                 </div>
@@ -890,6 +981,10 @@ h1 {{ font-size: 1.75rem; font-weight: 700; color: #fff; display: flex; align-it
 .dist-slate {{ color: var(--text2); font-weight: 600; }}
 .card-sub {{ font-size: 0.72rem; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }}
 .ptag {{ color: var(--blue); font-weight: 700; }}
+.ptag-close {{ color: var(--muted); font-weight: 600; }}
+.ptag-live {{ color: var(--emerald); font-weight: 700; }}
+.ptag-post {{ color: var(--purple); font-weight: 700; }}
+.ptag-wait {{ color: var(--muted); font-weight: 500; }}
 .up {{ color: var(--emerald); font-weight: 600; }} .down {{ color: var(--rose); font-weight: 600; }}
 
 /* Status Pills */
@@ -1415,18 +1510,15 @@ code {{ background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px
             <div class="inner">
                 <h3>⚠️ ข้อจำกัดและคำเตือนสำคัญ (Risk Disclaimer)</h3>
                 <ul>
-                    <li><strong>แนวรับ Fibo จากภาพยังไม่ผ่าน backtest:</strong> เป็นการประเมินโซนราคาทางเทคนิคจากภายนอก ห้ามนำไปใช้เป็นคะแนนในระบบหลัก (Unified Score) และห้ามใช้บล็อกการซื้อขาย</li>
+                    <li><strong>แนวรับ Fibo ยังไม่ผ่าน backtest:</strong> เป็นระดับราคาทางเทคนิคที่คำนวณจาก Fibonacci และโครงสร้างราคา ไม่ได้นำไปคำนวณเป็นคะแนนในระบบหลัก (Unified Score) และห้ามใช้บล็อกการซื้อขาย</li>
                     <li><strong>สภาพคล่องช่วง Premarket ต่ำ:</strong> ราคาซื้อขายนอกเวลาทำการปกติมีความผันผวนสูงและมี Spread กว้าง โปรดใช้ความระมัดระวัง</li>
                     <li><strong>ไม่ใช่คำแนะนำการลงทุน:</strong> ข้อมูลนี้จัดทำเพื่อการติดตามและศึกษา Risk/Reward เท่านั้น ผู้ลงทุนต้องวิเคราะห์ปัจจัยพื้นฐานและความเสี่ยงด้วยตนเอง</li>
                 </ul>
                 <h3>วิธีคำนวณระยะห่าง</h3>
                 <p>ระยะห่าง = <code>((ราคา - แนวรับ) / แนวรับ) × 100</code>. ราคาที่ใช้คือ Premarket ถ้ามี ต่อด้วย Postmarket แล้วจึงเป็นราคาปิด. ป้ายสถานะระบุชัดเจนทั้ง โซนซื้อ 0-5%, หลุดแนวรับ (&lt; 0%), และยังไกล (&gt; 5%).</p>
                 <h3>ที่มาของแนวรับ</h3>
-                <div class="thumb">
-                    <img src="assets/shay_fibo_support_2026-10-17.jpeg" alt="Fibo Support" onclick="openImageModal()">
-                    <p>แนวรับ Fibonacci ส่วนใหญ่มาจาก <strong>{SOURCE_AUTHOR}</strong> (อัปเดต {analyzed['source_updated']}).
-                    ตัวที่มีบรรทัด "แนวรับจาก ..." ใต้ชื่อเป็นแนวรับที่กำหนดเอง เช่น ชิปหุ่นยนต์จากการดีเบต หรือแผน ETF. คลิกภาพเพื่อขยาย.</p>
-                </div>
+                <p>แนวรับ Fibonacci และโครงสร้างราคา (Structural Swing Support) ทั้งหมดคำนวณและประเมินโดยระบบของเราเอง (อัปเดต {analyzed['source_updated']}). ไม่ได้อิงจากแหล่งภายนอก.</p>
+                <p>ตัวที่มีระบุ "แนวรับจาก ..." ใต้ชื่อเป็นแนวรับเฉพาะกลยุทธ์ เช่น ชิปหุ่นยนต์ Physical AI, แผนบันไดช้อนซื้อ ETF หรือแนวรับเส้นค่าเฉลี่ย SMA200/EMA200.</p>
             </div>
         </details>
     </div>
@@ -1599,12 +1691,7 @@ code {{ background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px
     </div>
 </div>
 
-<div class="modal-overlay" id="image-modal" onclick="closeImageModal(event)">
-    <div class="modal-content" onclick="event.stopPropagation()">
-        <button class="modal-close" onclick="closeImageModal()">&times;</button>
-        <img src="assets/shay_fibo_support_2026-10-17.jpeg" alt="Fibo Support Large" class="modal-img">
-    </div>
-</div>
+<div class="modal-overlay" id="image-modal" onclick="closeImageModal(event)" style="display:none;"></div>
 
 <script>
 let currentStatus = 'all', currentGroup = 'all', currentSearch = '', currentPortOnly = false, currentValFilter = 'all';

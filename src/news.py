@@ -34,7 +34,10 @@ TICKER_SEARCH_MAP = {
     "GOOGL": "Alphabet Google stock",
     "ABNB": "Airbnb stock",
     "MNST": "Monster Beverage stock",
-    "VOO": "S&P 500 VOO ETF"
+    "VOO": "S&P 500 VOO ETF",
+    "TSM": "TSMC Taiwan Semiconductor stock OR earnings",
+    "ASML": "ASML stock OR lithography OR EUV",
+    "ANT": "Anthropic stock OR Claude OR IPO"
 }
 
 BEARISH_KEYWORDS = {

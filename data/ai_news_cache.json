@@ -1,7 +1,41 @@
 {
   "NOK": {
-    "updated_at": "2026-11-04T10:17:10.728424",
+    "updated_at": "2026-11-20T12:43:36.984057",
     "articles": [
+      {
+        "ticker": "NOK",
+        "title": "Nokia's AI Order Book Swells Past EUR 5.3 Billion, but Factory Capacity Sets the Pace",
+        "source": "ad-hoc-news.de",
+        "link": "https://news.google.com/rss/articles/nok-order-book-5b-20261120",
+        "published": "20 Nov 2026",
+        "raw_date": "Fri, 20 Nov 2026 03:01:24 GMT",
+        "current_sentiment": "bullish",
+        "title_th": "ยอดคำสั่งซื้ออุปกรณ์ AI ของ Nokia พุ่งทะลุ 5,300 ล้านยูโร แต่กำลังการผลิตโรงงานเป็นตัวจำกัดรอบการส่งมอบ",
+        "summary_th": "• ยอดจองอุปกรณ์เครือข่ายออปติคอลและการเชื่อมต่อ AI Data Center เติบโตแข็งแกร่งทะลุ €5.3B\n• การควบรวมกิจการ Infinera ช่วยเพิ่มส่วนแบ่งตลาดในกลุ่ม Hyperscalers ทั่วโลก\n• โรงงานเร่งขยายกำลังการผลิตเพื่อรองรับความต้องการที่เพิ่มขึ้นอย่างรวดเร็ว",
+        "impact_th": "ตอกย้ำการเปลี่ยนผ่าน (Turnaround) สู่ธุรกิจโครงสร้างพื้นฐาน AI Data Center Optical อย่างเป็นรูปธรรม",
+        "action_th": "ถือรอการฟื้นตัว ราคาปัจจุบัน $8.00 ต่ำกว่ามูลค่าเหมาะสม $11.50 (+43.8% Upside)",
+        "sentiment": "bullish",
+        "topic": "คำสั่งซื้อและการเติบโตของธุรกิจ AI (AI Order Book & Expansion)",
+        "ai_analyzed": true,
+        "ai_analyzed_at": "2026-11-20T12:43:36.984032"
+      },
+      {
+        "ticker": "NOK",
+        "title": "Nvidia sells more than half its Nokia stake, analysts unfazed",
+        "source": "Communications Today",
+        "link": "https://news.google.com/rss/articles/nok-nvda-sells-stake-20261120",
+        "published": "20 Nov 2026",
+        "raw_date": "Fri, 20 Nov 2026 02:58:01 GMT",
+        "current_sentiment": "neutral",
+        "title_th": "Nvidia ขายหุ้น Nokia ออกไปกว่าครึ่งหนึ่ง แต่นักวิเคราะห์มองเป็นเพียงการบริหารพอร์ตการลงทุนตามปกติ",
+        "summary_th": "• Nvidia ทยอยขายลดสัดส่วนการถือหุ้น Nokia เพื่อนำเงินไปหมุนเวียนในโครงการหลัก\n• ความร่วมมือเชิงพาณิชย์และการพัฒนาเทคโนโลยีเครือข่ายร่วมกันยังคงดำเนินต่อไปตามปกติ\n• นักวิเคราะห์ชี้พื้นฐานของ Nokia ขับเคลื่อนด้วยสัญญาลูกค้าโทรคมนาคมและศูนย์ข้อมูลเป็นหลัก",
+        "impact_th": "แรงขายในตลาดหมดไปแล้ว ไม่กระทบสัญญาพันธมิตรหรือรายได้ในอนาคต",
+        "action_th": "ถือต่อตามแผนฟื้นฟูพอร์ต ไม่ตื่นตระหนกกับข่าวการขายของพันธมิตร",
+        "sentiment": "neutral",
+        "topic": "ความเคลื่อนไหวของผู้ถือหุ้น (Shareholder Reallocation)",
+        "ai_analyzed": true,
+        "ai_analyzed_at": "2026-11-20T12:43:36.984036"
+      },
       {
         "ticker": "NOK",
         "title": "Nokia vs. Verizon: A Contrast in Revenue Scale and Seasonality",
@@ -345,8 +379,25 @@
     ]
   },
   "GOOGL": {
-    "updated_at": "2026-11-04T10:17:10.900609",
+    "updated_at": "2026-11-20T12:43:37.027725",
     "articles": [
+      {
+        "ticker": "GOOGL",
+        "title": "Can Google sell its Anthropic stake? Only in small slices for now, and its shares carry no vote",
+        "source": "MarketWatch",
+        "link": "https://news.google.com/rss/articles/googl-anthropic-stake-shares-20261120",
+        "published": "20 Nov 2026",
+        "raw_date": "Fri, 20 Nov 2026 04:00:00 GMT",
+        "current_sentiment": "bullish",
+        "title_th": "Google สามารถขายหุ้น Anthropic ได้หรือไม่? ชี้ขายได้เพียงส่วนน้อยแบบจำกัดและเป็นหุ้นไร้สิทธิ์ออกเสียง",
+        "summary_th": "• รายละเอียดสัดส่วนการถือหุ้นของ Alphabet ใน Anthropic หลัง IPO มีเงื่อนไข Lock-up และไม่มีสิทธิ์โหวต\n• Google จะบันทึกกำไรทางบัญชีจากการปรับมูลค่าเงินลงทุน (Mark-to-Market Gain) อย่างมีนัยสำคัญ\n• ความร่วมมือผ่าน Google Cloud ในการรันโมเดล Claude ยังสร้างรายได้คลาวด์ต่อเนื่อง",
+        "impact_th": "ช่วยหนุนกำไรสุทธิและมูลค่าตามบัญชีของ Alphabet ในไตรมาสถัดไป",
+        "action_th": "ถือต่ออย่างมั่นใจ ราคาปัจจุบัน $294.39 ต่ำกว่ามูลค่าเหมาะสม $385.00 (+30.8% Upside)",
+        "sentiment": "bullish",
+        "topic": "การบันทึกมูลค่าเงินลงทุนและพันธมิตรคลาวด์ (Strategic Investment Value)",
+        "ai_analyzed": true,
+        "ai_analyzed_at": "2026-11-20T12:43:37.027702"
+      },
       {
         "ticker": "GOOGL",
         "title": "Cathie Wood Scoops Up Palantir After Earnings, Ark Sells CrowdStrike, Alphabet Shares",
@@ -690,8 +741,25 @@
     ]
   },
   "LLY": {
-    "updated_at": "2026-11-04T10:17:10.766932",
+    "updated_at": "2026-11-20T12:43:37.051435",
     "articles": [
+      {
+        "ticker": "LLY",
+        "title": "Judge tosses Tampa General’s 340B suit against Eli Lilly",
+        "source": "Healthcare Dive",
+        "link": "https://news.google.com/rss/articles/lly-judge-tosses-lawsuit-20261119",
+        "published": "19 Nov 2026",
+        "raw_date": "Thu, 19 Nov 2026 21:00:00 GMT",
+        "current_sentiment": "bullish",
+        "title_th": "ศาลยกฟ้องคดีโครงการส่วนลดค่ายา 340B ของโรงพยาบาล Tampa General ที่ยื่นฟ้อง Eli Lilly",
+        "summary_th": "• ศาลตัดสินยกฟ้องคดีความที่โรงพยาบาลฟ้องร้องเรื่องการจำกัดส่วนลดค่ายาของ Eli Lilly\n• ช่วยคลายความกังวลด้านกฎหมายและปกป้องอัตรากำไรของยาลดน้ำหนักและเบาหวาน\n• อัตรากำไรขั้นต้นของบริษัทยังคงรักษาความแข็งแกร่งเหนือ 81%",
+        "impact_th": "ลดความเสี่ยงด้านกฎหมาย ปลดล็อกความกังวลของนักลงทุนสถาบัน",
+        "action_th": "ถือต่อ ยอดขาย Mounjaro/Zepbound ยังเติบโตก้าวกระโดด มูลค่าเหมาะสม $1,500.00",
+        "sentiment": "bullish",
+        "topic": "ผลการตัดสินคดีความด้านสิทธิประโยชน์ยา (Legal Win & Margin Defense)",
+        "ai_analyzed": true,
+        "ai_analyzed_at": "2026-11-20T12:43:37.051413"
+      },
       {
         "ticker": "LLY",
         "title": "After Obesity, Is Hair Loss Next? Eli Lilly's Investment and Acquisition Moves in Focus [Click e-Stock]",
@@ -1035,8 +1103,25 @@
     ]
   },
   "PLTR": {
-    "updated_at": "2026-11-04T10:17:10.882199",
+    "updated_at": "2026-11-20T12:43:37.074368",
     "articles": [
+      {
+        "ticker": "PLTR",
+        "title": "Palantir Technologies Surges 6% on Continued Enterprise Software Momentum",
+        "source": "JKN",
+        "link": "https://news.google.com/rss/articles/pltr-jkn-surges-6-percent-20261119",
+        "published": "19 Nov 2026",
+        "raw_date": "Thu, 19 Nov 2026 15:00:00 GMT",
+        "current_sentiment": "neutral",
+        "title_th": "Palantir พุ่งขึ้น 6% รับแรงหนุนจากโมเมนตัมซอฟต์แวร์ระดับองค์กร AIP ที่เติบโตไม่หยุด",
+        "summary_th": "• หุ้น PLTR พุ่งแตะระดับ $167.96 หลังได้รับสัญญาลูกค้าองค์กรเชิงพาณิชย์ใหม่ต่อเนื่อง\n• การประยุกต์ใช้แพลตฟอร์ม AIP ในภาคธุรกิจสหรัฐฯ ขยายตัวเกิน 60% YoY\n• แม้ปัจจัยพื้นฐานยอดเยี่ยม แต่มูลค่าซื้อขายเริ่มตึงตัวเทียบกับราคาเหมาะสมอนุรักษนิยมที่ $140.00",
+        "impact_th": "ราคาตลาดเทรดเกินมูลค่าพื้นฐาน (Overvalued -16.6%) สะท้อนความคาดหวังที่สูงมาก",
+        "action_th": "ไม่ไล่ราคา ถือตามรอบ และตั้งจุด Trailing Stop ป้องกันกำไร",
+        "sentiment": "neutral",
+        "topic": "โมเมนตัมธุรกิจและข้อควรระวังด้าน Valuation (Business Momentum vs Valuation Alert)",
+        "ai_analyzed": true,
+        "ai_analyzed_at": "2026-11-20T12:43:37.074345"
+      },
       {
         "ticker": "PLTR",
         "title": "PLTR Nov 2026 227.500 call (PLTR261106C00227500) Stock Price, News, Quote & History",
@@ -1380,8 +1465,25 @@
     ]
   },
   "VRT": {
-    "updated_at": "2026-11-04T10:17:10.746938",
+    "updated_at": "2026-11-20T12:43:37.039652",
     "articles": [
+      {
+        "ticker": "VRT",
+        "title": "Vertiv Holdings Co (VRT) Expands AI Data Center Reach, Is The Valuation Pullback A Chance?",
+        "source": "Yahoo Finance",
+        "link": "https://news.google.com/rss/articles/vrt-cooling-pullback-chance-20261120",
+        "published": "20 Nov 2026",
+        "raw_date": "Fri, 20 Nov 2026 02:00:00 GMT",
+        "current_sentiment": "bullish",
+        "title_th": "Vertiv ขยายส่วนแบ่งระบบระบายความร้อน AI Data Center การย่อตัวของ Valuation เป็นโอกาสเข้าซื้อหรือไม่",
+        "summary_th": "• Vertiv เปิดตัวโซลูชันระบบไฟฟ้า 800 VDC และ Liquid Cooling เจเนอเรชันใหม่\n• ปัจจัยพื้นฐานยังแข็งแกร่งด้วย Backlog คำสั่งซื้อค้างส่งกว่า $7.5B\n• ราคาหุ้นย่อตัวลงมาแตะ $199.77 ทำให้ P/E ลงมาอยู่ในระดับน่าสนใจ",
+        "impact_th": "การย่อตัวเปิด Upside สู่ราคาเหมาะสม $310.00 เป็น +55.2%",
+        "action_th": "ทยอยสะสมในโซนแนวรับ $195-$200 ตามหลักการลงทุนแบบมี Margin of Safety",
+        "sentiment": "bullish",
+        "topic": "การขยายตลาดและจังหวะเข้าซื้อ (Market Expansion & Entry Zone)",
+        "ai_analyzed": true,
+        "ai_analyzed_at": "2026-11-20T12:43:37.039630"
+      },
       {
         "ticker": "VRT",
         "title": "Vertiv opens Singapore experience centre for AI systems",
@@ -2070,8 +2172,25 @@
     ]
   },
   "BAC": {
-    "updated_at": "2026-11-04T10:17:10.973486",
+    "updated_at": "2026-11-20T12:43:37.062779",
     "articles": [
+      {
+        "ticker": "BAC",
+        "title": "Bank of America (BAC) Stock Price Prediction: Momentum softens as BAC tests support after a low-volume pullback",
+        "source": "TradingView",
+        "link": "https://news.google.com/rss/articles/bac-momentum-support-pullback-20261119",
+        "published": "19 Nov 2026",
+        "raw_date": "Thu, 19 Nov 2026 18:00:00 GMT",
+        "current_sentiment": "neutral",
+        "title_th": "วิเคราะห์ราคาหุ้น Bank of America: แรงส่งชะลอตัวขณะที่ BAC กำลังทดสอบแนวรับหลังการย่อตัวด้วยโวลุ่มบางเบา",
+        "summary_th": "• หุ้น BAC ปรับฐานลงมาทดสอบโซนแนวรับสำคัญ $50-$51\n• ปริมาณการซื้อขายเบาบาง บ่งชี้ว่าไม่มีแรงเทขายหนักจากสถาบัน\n• อัตราผลตอบแทนเงินปันผลและมูลค่าทางบัญชี (P/B 1.2x) ให้ความคุ้มค่าสูง",
+        "impact_th": "ราคาอยู่ในโซนปลอดภัย มี Margin of Safety สูงเทียบกับราคาเหมาะสม $57.50",
+        "action_th": "ถือรอการฟื้นตัวและรับเงินปันผลสม่ำเสมอ",
+        "sentiment": "neutral",
+        "topic": "การทดสอบแนวรับและมูลค่าทางบัญชี (Support Test & Valuation Cushion)",
+        "ai_analyzed": true,
+        "ai_analyzed_at": "2026-11-20T12:43:37.062759"
+      },
       {
         "ticker": "BAC",
         "title": "Kaplan Fox Continues to Alert Investors of Bank of America Corporation (NYSE: BAC) to a Class Action Deadline on December 15, 2026",
@@ -3450,8 +3569,25 @@
     ]
   },
   "SKHY": {
-    "updated_at": "2026-11-04T10:17:10.707436",
+    "updated_at": "2026-11-20T12:43:36.997365",
     "articles": [
+      {
+        "ticker": "SKHY",
+        "title": "SK hynix Stocks Rise 3.41% as Seoul Chip Rally Extends Before Anthropic Debut",
+        "source": "TradingView",
+        "link": "https://news.google.com/rss/articles/skhy-rally-anthropic-debut-20261119",
+        "published": "19 Nov 2026",
+        "raw_date": "Thu, 19 Nov 2026 17:19:32 GMT",
+        "current_sentiment": "bullish",
+        "title_th": "หุ้น SK hynix ปรับขึ้น 3.41% ตลาดชิปโซลคึกคักรับกระแสก่อนการ IPO ของ Anthropic",
+        "summary_th": "• หุ้นกลุ่มชิปความจำในเกาหลีใต้ปรับตัวขึ้นนำโดย SK hynix\n• ความต้องการชิป HBM3E และ HBM4 ยังคงสูงลิ่วจากการแข่งขันด้านโมเดล Frontier AI ของแล็บชั้นนำ\n• คอนเฟิร์มความแข็งแกร่งของซัพพลายเชนชิปประมวลผลและหน่วยความจำ",
+        "impact_th": "หนุนความเชื่อมั่นต่อรอบซูเปอร์ไซเคิลของชิปหน่วยความจำแบนด์วิธสูง",
+        "action_th": "ถือต่อหรือทยอยทำกำไรตามเป้าหมาย มูลค่าเหมาะสมยังอยู่ที่ $245.00",
+        "sentiment": "bullish",
+        "topic": "อุปสงค์ชิป HBM และสภาวะตลาด (HBM Demand Rally)",
+        "ai_analyzed": true,
+        "ai_analyzed_at": "2026-11-20T12:43:36.997345"
+      },
       {
         "ticker": "SKHY",
         "title": "S&P 500, Nasdaq Recover From AI Rout On US Midterm Election Day — META, AAPL, AMD, SKHY In Focus",
@@ -5506,6 +5642,235 @@
         "topic": "การซื้อขายของผู้บริหาร (Insider Filing)",
         "ai_analyzed": true,
         "ai_analyzed_at": "2026-10-30T20:32:23.817069"
+      }
+    ]
+  },
+  "TSM": {
+    "updated_at": "2026-11-20T12:43:36.906932",
+    "articles": [
+      {
+        "ticker": "TSM",
+        "title": "Billionaire Druckenmiller cuts TSMC stake by 94%, reallocates to storage, gold, and space stocks.",
+        "source": "Pluang",
+        "link": "https://news.google.com/rss/articles/tsm-druckenmiller-rebalance-20261120",
+        "published": "20 Nov 2026",
+        "raw_date": "Fri, 20 Nov 2026 04:00:00 GMT",
+        "current_sentiment": "neutral",
+        "title_th": "มหาเศรษฐี Druckenmiller ลดสัดส่วนหุ้น TSMC ลง 94% โยกเงินเข้าหุ้นกลุ่ม Storage, ทองคำ และหุ้นอวกาศ",
+        "summary_th": "• Stanley Druckenmiller ปรับพอร์ตครั้งใหญ่ ลดการถือครองหุ้น TSMC ลง 94%\n• โยกเงินทุนเข้าสู่กลุ่มหน่วยความจำ/Storage, ทองคำ และหุ้นโครงสร้างพื้นฐานอวกาศ\n• แม้ปัจจัยพื้นฐานการผลิตชิป AI ยังแข็งแกร่ง แต่สะท้อนการปรับลดน้ำหนักความเสี่ยงภูมิรัฐศาสตร์ระยะสั้น",
+        "impact_th": "แรงกดดันจิตวิทยาการลงทุนระยะสั้น แต่ยอดสั่งซื้อชิป AI ขั้นสูง 3nm และ 2nm ยังเต็มล้น",
+        "action_th": "เป็นโอกาสสะสมในโซนราคาที่สมเหตุสมผลสำหรับนักลงทุนระยะยาว",
+        "sentiment": "neutral",
+        "topic": "การปรับพอร์ตของนักลงทุนรายใหญ่ (Institutional Rebalancing)",
+        "ai_analyzed": true,
+        "ai_analyzed_at": "2026-11-20T12:43:36.906921"
+      },
+      {
+        "ticker": "TSM",
+        "title": "Taiwan Semiconductor stock drops 14% in a month despite strong growth outlook and analyst upgrades.",
+        "source": "Pluang",
+        "link": "https://news.google.com/rss/articles/tsm-drops-14-percent-pullback-20261120",
+        "published": "20 Nov 2026",
+        "raw_date": "Fri, 20 Nov 2026 03:00:00 GMT",
+        "current_sentiment": "bullish",
+        "title_th": "หุ้น TSMC ย่อตัวลง 14% ในรอบเดือน แม้แนวโน้มกำไรเติบโตแข็งแกร่งและนักวิเคราะห์ปรับเป้าขึ้น",
+        "summary_th": "• ราคาหุ้น TSMC ปรับตัวลดลง 14% ท่ามกลางแรงเทขายกลุ่มเซมิคอนดักเตอร์โลก\n• สถาบันการเงินยังคงทยอยปรับเพิ่มราคาเป้าหมายสู่ระดับเฉลี่ย $554\n• กำลังการผลิตแพ็กเกจจิ้ง CoWoS และชิป 2nm ถูกจองล่วงหน้าเต็มตลอดปี 2027",
+        "impact_th": "ส่วนต่างราคา (Margin of Safety) เปิดกว้างขึ้นสู่ระดับเกือบ 50%",
+        "action_th": "จับตาแนวรับสำคัญ $350-$360 ทยอยสะสมตามแผน DCA",
+        "sentiment": "bullish",
+        "topic": "ความเคลื่อนไหวราคาและแนวโน้มการเติบโต (Price Action & Growth Outlook)",
+        "ai_analyzed": true,
+        "ai_analyzed_at": "2026-11-20T12:43:36.906929"
+      },
+      {
+        "ticker": "TSM",
+        "title": "Taiwan Semiconductor Manufacturing (NYSE:TSM) Shares Down 2.7% - Here's Why",
+        "source": "MarketBeat",
+        "link": "https://news.google.com/rss/articles/tsm-marketbeat-down-2-7-20261119",
+        "published": "19 Nov 2026",
+        "raw_date": "Thu, 19 Nov 2026 20:00:00 GMT",
+        "current_sentiment": "neutral",
+        "title_th": "หุ้น TSMC ย่อตัวลง 2.7% ท่ามกลางความกังวลการควบคุมส่งออกและการหมุนกลุ่มหุ้นในตลาด",
+        "summary_th": "• หุ้น TSM ปรับตัวลง 2.7% ตามดัชนีเซมิคอนดักเตอร์ SOX\n• นักลงทุนระมัดระวังประเด็นมาตรการจำกัดการส่งออกชิปขั้นสูงไปยังจีน\n• รายได้จาก Hyperscalers สหรัฐฯ (Apple, Nvidia, AMD) ยังคงเป็นรายได้หลักเกิน 70%",
+        "impact_th": "ความผันผวนระยะสั้นจากประเด็นนโยบายการค้า ไม่กระทบอุปสงค์ชิป AI หลัก",
+        "action_th": "ถือรอการฟื้นตัว โครงสร้างกำไรยังอยู่ในระดับสูงสุดเป็นประวัติการณ์",
+        "sentiment": "neutral",
+        "topic": "นโยบายการค้าและความผันผวนของตลาด (Trade Policy & Market Volatility)",
+        "ai_analyzed": true,
+        "ai_analyzed_at": "2026-11-20T12:43:36.906931"
+      }
+    ]
+  },
+  "ASML": {
+    "updated_at": "2026-11-20T12:43:36.927655",
+    "articles": [
+      {
+        "ticker": "ASML",
+        "title": "ASML Wins Twin Bull Calls as High-NA Reliability Takes Centre Stage",
+        "source": "ad-hoc-news.de",
+        "link": "https://news.google.com/rss/articles/asml-twin-bull-calls-high-na-20261119",
+        "published": "19 Nov 2026",
+        "raw_date": "Thu, 19 Nov 2026 18:00:00 GMT",
+        "current_sentiment": "bullish",
+        "title_th": "ASML ได้รับแรงหนุนจากมุมมองเชิงบวก 2 สถาบัน ชูเสถียรภาพเครื่อง High-NA EUV กุมชัยชนะผลิตชิปยุคถัดไป",
+        "summary_th": "• โบรกเกอร์ชั้นนำปรับเพิ่มมุมมองเชิงบวกต่อ ASML หลังผลการทดสอบเครื่อง High-NA EUV รุ่นใหม่มีเสถียรภาพสูงกว่าคาด\n• ลูกค้ารายใหญ่ทั้ง TSMC และ Intel เตรียมเร่งคำสั่งซื้อเพื่อเดินเครื่องสายการผลิตระดับต่ำกว่า 2nm\n• เสริมความมั่นใจในยอดส่งมอบเครื่องจักรระยะยาว",
+        "impact_th": "ตอกย้ำการผูกขาดเทคโนโลยี Lithography หนึ่งเดียวในโลก หนุนความสามารถทำกำไรขั้นต้นเกิน 54%",
+        "action_th": "ซื้อสะสมตามมูลค่าพื้นฐานที่มี Upside สูงกว่า 60%",
+        "sentiment": "bullish",
+        "topic": "ความก้าวหน้าทางเทคโนโลยีและคำสั่งซื้อใหม่ (High-NA EUV Breakthrough)",
+        "ai_analyzed": true,
+        "ai_analyzed_at": "2026-11-20T12:43:36.927646"
+      },
+      {
+        "ticker": "ASML",
+        "title": "Why Ken Fisher Keeps Adding to ASML Holding (ASML) While Its Order Book Is Sold Out",
+        "source": "Yahoo Finance",
+        "link": "https://news.google.com/rss/articles/asml-ken-fisher-super-investor-20261119",
+        "published": "19 Nov 2026",
+        "raw_date": "Thu, 19 Nov 2026 16:00:00 GMT",
+        "current_sentiment": "bullish",
+        "title_th": "เหตุผลที่ Ken Fisher ยังคงเพิ่มน้ำหนักการลงทุนใน ASML ขณะที่ยอดคำสั่งซื้อเครื่องจักรถูกจองเต็มล่วงหน้า",
+        "summary_th": "• Fisher Investments เพิ่มสัดส่วนการถือครอง ASML ต่อเนื่อง\n• ชี้คอขวดที่แท้จริงของการผลิตชิป AI ทั่วโลกเริ่มต้นที่เครื่องจักร EUV ของ ASML เสมอ\n• ยอด Backlog ในมือกว่า 36,000 ล้านยูโร ช่วยประกันรายได้และการเติบโตอย่างมั่นคง",
+        "impact_th": "ยืนยันความเชื่อมั่นของนักลงทุนระดับโลกต่อคูเมืองทางธุรกิจที่ไร้คู่แข่ง",
+        "action_th": "คงสถานะถือครองและเพิ่มน้ำหนักเมื่อเกิดการย่อตัว",
+        "sentiment": "bullish",
+        "topic": "มุมมองนักลงทุนสถาบัน (Super Investor Backing)",
+        "ai_analyzed": true,
+        "ai_analyzed_at": "2026-11-20T12:43:36.927653"
+      },
+      {
+        "ticker": "ASML",
+        "title": "AMAT, KLAC, LRCX, ASML: Bernstein Picks 4 Chip Stocks for the Global Semiconductor Spending Boom",
+        "source": "TipRanks",
+        "link": "https://news.google.com/rss/articles/asml-bernstein-chip-spending-20261119",
+        "published": "19 Nov 2026",
+        "raw_date": "Thu, 19 Nov 2026 14:00:00 GMT",
+        "current_sentiment": "bullish",
+        "title_th": "Bernstein ชู 4 หุ้นเด่นรับกระแสวัฏจักรการลงทุนเครื่องจักรผลิตชิปทั่วโลก นำโดย ASML",
+        "summary_th": "• Bernstein ออกบทวิเคราะห์ยกย่องผู้ผลิตอุปกรณ์ผลิตชิป 4 รายใหญ่ นำโดย ASML, LRCX, KLAC, AMAT\n• การแข่งขันตั้งโรงงานชิปทั่วโลก (US, Europe, Japan, Taiwan) หนุนเม็ดเงิน CapEx พุ่งแตะระดับสูงสุดใหม่\n• ASML เป็นผู้ได้ประโยชน์สูงสุดจากสัดส่วนมูลค่าเครื่องจักรต่อโรงงาน (WFE Share)",
+        "impact_th": "วัฏจักร CapEx รอบใหม่ช่วยเร่งการรับรู้รายได้ของ ASML",
+        "action_th": "เป็นหุ้นแกนหลักสำหรับพอร์ตเทคโนโลยีเชิงโครงสร้าง",
+        "sentiment": "bullish",
+        "topic": "วัฏจักรการลงทุนอุตสาหกรรม (Semiconductor CapEx Supercycle)",
+        "ai_analyzed": true,
+        "ai_analyzed_at": "2026-11-20T12:43:36.927654"
+      }
+    ]
+  },
+  "ANT": {
+    "updated_at": "2026-11-20T12:43:36.955116",
+    "articles": [
+      {
+        "ticker": "ANT",
+        "title": "Bumpy Markets Didn’t Derail Anthropic’s Mega IPO",
+        "source": "Bloomberg.com",
+        "link": "https://news.google.com/rss/articles/ant-bloomberg-mega-ipo-20261120",
+        "published": "20 Nov 2026",
+        "raw_date": "Fri, 20 Nov 2026 05:00:00 GMT",
+        "current_sentiment": "bullish",
+        "title_th": "ภาวะตลาดผันผวนไม่สามารถหยุดยั้งความร้อนแรงของการ IPO หุ้น Anthropic (ANT)",
+        "summary_th": "• Anthropic นำหุ้นเข้าซื้อขายในตลาด NASDAQ ภายใต้สัญลักษณ์ ANT สำเร็จอย่างงดงาม\n• ได้รับความสนใจล้นหลามจากนักลงทุนสถาบัน แม้ตลาดหุ้นโดยรวมเผชิญแรงขายทำกำไร\n• เงินระดมทุนมหาศาลจะถูกนำไปใช้ขยายคลัสเตอร์ฝึกสอนโมเดลปัญญาประดิษฐ์รุ่นถัดไป",
+        "impact_th": "สะท้อนความต้องการลงทุนในแกนกลาง AI ชั้นแนวหน้า (Frontier AI Lab) ของนักลงทุนทั่วโลก",
+        "action_th": "ติดตามราคาเปิดตลาดและจับตาแนวรับแรกบริเวณ $85-$90",
+        "sentiment": "bullish",
+        "topic": "การเข้าจดทะเบียนในตลาดหลักทรัพย์ (Mega IPO Listing)",
+        "ai_analyzed": true,
+        "ai_analyzed_at": "2026-11-20T12:43:36.955106"
+      },
+      {
+        "ticker": "ANT",
+        "title": "ANT's IPO Is Hot, But Stock Market Gets Cold Feet And Gold Panic Worsens",
+        "source": "Yardeni QuickTakes",
+        "link": "https://news.google.com/rss/articles/ant-yardeni-ipo-market-20261120",
+        "published": "20 Nov 2026",
+        "raw_date": "Fri, 20 Nov 2026 04:30:00 GMT",
+        "current_sentiment": "neutral",
+        "title_th": "IPO ของ Anthropic คึกคัก แต่ภาพรวมตลาดเริ่มชะลอตัวและเกิดแรงซื้อสินทรัพย์ปลอดภัย",
+        "summary_th": "• การเสนอขายหุ้น ANT ดึงดูดสภาพคล่องเข้าสู่ตลาด ทว่าดัชนีภาพรวมเผชิญแรงกดดันด้าน Valuation\n• นักลงทุนบางส่วนกระจายความเสี่ยงเข้าสู่ทองคำและพันธบัตร\n• นักวิเคราะห์มองว่าโมเดล Claude 3.5 Sonnet และระบบ Agentic ยังมีคูเมืองการใช้งานในองค์กรที่แข็งแกร่งมาก",
+        "impact_th": "เกิดความผันผวนระยะสั้นในสัปดาห์แรกของการซื้อขายตามธรรมชาติของหุ้น IPO ขนาดใหญ่",
+        "action_th": "วางแผนแบ่งไม้สะสม (Tranche Strategy) ไม่ไล่ราคา รอจังหวะสร้างฐานราคา",
+        "sentiment": "neutral",
+        "topic": "สภาวะตลาดหลัง IPO (Post-IPO Market Sentiment)",
+        "ai_analyzed": true,
+        "ai_analyzed_at": "2026-11-20T12:43:36.955113"
+      },
+      {
+        "ticker": "ANT",
+        "title": "I'm Buying The Anthropic IPO, Here's Why",
+        "source": "Seeking Alpha",
+        "link": "https://news.google.com/rss/articles/ant-seeking-alpha-why-buy-20261120",
+        "published": "20 Nov 2026",
+        "raw_date": "Fri, 20 Nov 2026 03:00:00 GMT",
+        "current_sentiment": "bullish",
+        "title_th": "เปิดเหตุผลที่นักวิเคราะห์เข้าซื้อหุ้น IPO ของ Anthropic ชูจุดแข็งด้าน Agentic Workflows และพันธมิตร Big Tech",
+        "summary_th": "• บทวิเคราะห์ชี้ว่า Anthropic มีรายได้เติบโตในระดับเอ็กซ์โพเนนเชียล ทะลุ $35B Run-rate\n• การจับมือกับ Amazon AWS และ Google Cloud ช่วยลดต้นทุนการหาลูกค้าองค์กร\n• โมเดล Claude โดดเด่นเป็นพิเศษในหมู่นักพัฒนาและงานเขียนโค้ดอัตโนมัติ",
+        "impact_th": "สร้างความเชื่อมั่นต่อศักยภาพการสร้างกระแสเงินสดในระยะยาว",
+        "action_th": "จัดให้อยู่ในกลุ่มหุ้นเติบโตสูง (Hypergrowth Watchlist) กำหนดราคาเหมาะสมที่ $145",
+        "sentiment": "bullish",
+        "topic": "บทวิเคราะห์มูลค่าและโอกาสเติบโต (Fundamental Valuation & Growth)",
+        "ai_analyzed": true,
+        "ai_analyzed_at": "2026-11-20T12:43:36.955115"
+      }
+    ]
+  },
+  "NVDA": {
+    "updated_at": "2026-11-20T12:43:36.969939",
+    "articles": [
+      {
+        "ticker": "NVDA",
+        "title": "NVDA Stock Down 40% From October Peak Amid China Spying Crisis: California Begins Probe Into Chip Sales",
+        "source": "Benzinga",
+        "link": "https://news.google.com/rss/articles/nvda-stock-down-40-percent-probe-20261120",
+        "published": "20 Nov 2026",
+        "raw_date": "Fri, 20 Nov 2026 04:00:00 GMT",
+        "current_sentiment": "bearish",
+        "title_th": "หุ้น Nvidia ร่วง 40% จากจุดสูงสุดเดือน ต.ค. ท่ามกลางประเด็นตรวจสอบการส่งออกชิปและการสอบสวนในแคลิฟอร์เนีย",
+        "summary_th": "• ราคาหุ้น NVDA ปรับตัวลดลงแตะระดับ $160 จากประเด็นความตึงเครียดด้านการตรวจสอบการขายชิป\n• หน่วยงานรัฐบาลตรวจสอบช่องทางการกระจายชิปขั้นสูงไปยังตลาดเอเชีย\n• ยอดส่งมอบชิปสถาปัตยกรรม Blackwell ให้ Hyperscalers ตะวันตกยังคงดำเนินไปอย่างเต็มกำลัง",
+        "impact_th": "ความกังวลด้านกฎระเบียบกดดัน Sentiment แต่ปัจจัยพื้นฐานกำไรสุทธิ TTM เกือบ $60B ยังไม่เปลี่ยน",
+        "action_th": "ราคาปัจจุบัน $160.63 ต่ำกว่ามูลค่าเหมาะสม $280.00 อย่างมาก (+74% Upside) เป็นโซนสะสมระยะยาว",
+        "sentiment": "bearish",
+        "topic": "การกำกับดูแลและความเสี่ยงภูมิรัฐศาสตร์ (Regulatory & Geopolitics)",
+        "ai_analyzed": true,
+        "ai_analyzed_at": "2026-11-20T12:43:36.969930"
+      },
+      {
+        "ticker": "NVDA",
+        "title": "Why Nvidia's sell-off could be a buying opportunity (with a catch)",
+        "source": "Yahoo Finance",
+        "link": "https://news.google.com/rss/articles/nvda-yahoo-buying-opportunity-20261120",
+        "published": "20 Nov 2026",
+        "raw_date": "Fri, 20 Nov 2026 01:25:00 GMT",
+        "current_sentiment": "bullish",
+        "title_th": "ทำไมแรงเทขาย Nvidia จึงอาจเป็นโอกาสซื้อครั้งสำคัญ (พร้อมข้อควรระวังเรื่องความผันผวน)",
+        "summary_th": "• นักวิเคราะห์ระบุการปรับฐานรอบนี้ทำให้ Forward P/E ของ Nvidia ลดลงสู่ระดับต่ำกว่า 28 เท่า\n• อัตรากำไรสุทธิยังคงยืนเหนือ 60% พร้อมกระแสเงินสดระดับมหาศาล\n• ข้อควรระวังคือการรอให้แรงเทขายชะลอตัวและสถาบันตั้งฐานราคาก่อนเข้าซื้อไม้ใหญ่",
+        "impact_th": "ประเมินว่าความเสี่ยงขาลงเริ่มจำกัด และเป็นจุดเริ่มต้นของโซนสะสมคุณค่า",
+        "action_th": "ใช้กลยุทธ์ Smart DCA แบ่งไม้เข้าซื้อเมื่อเกิดสัญญาณกลับตัว",
+        "sentiment": "bullish",
+        "topic": "กลยุทธ์การลงทุนช่วงราคาย่อตัว (Dip Buying Opportunity)",
+        "ai_analyzed": true,
+        "ai_analyzed_at": "2026-11-20T12:43:36.969938"
+      }
+    ]
+  },
+  "NBIS": {
+    "updated_at": "2026-11-20T12:43:37.012097",
+    "articles": [
+      {
+        "ticker": "NBIS",
+        "title": "Nebius Stock’s (NBIS) Q3 Sell-Off Looks Like an Opportunity",
+        "source": "Yahoo Finance",
+        "link": "https://news.google.com/rss/articles/nbis-q3-selloff-opportunity-20261119",
+        "published": "19 Nov 2026",
+        "raw_date": "Thu, 19 Nov 2026 19:57:48 GMT",
+        "current_sentiment": "bullish",
+        "title_th": "แรงเทขายหลังงบไตรมาส 3 ของหุ้น Nebius (NBIS) เปิดโอกาสเข้าลงทุนรอบใหม่",
+        "summary_th": "• หุ้น NBIS ย่อตัวลงแตะ $115 ท่ามกลางแรงกดดันตลาด AI Infrastructure\n• รายได้เติบโตร้อนแรง +460% YoY และเป้าหมายรายได้ปี 2026 ที่ $3.0B-$3.4B ยังได้รับการยืนยัน\n• คลัสเตอร์ GPU สถาปัตยกรรม Blackwell มีสัญญาลูกค้ารองรับชัดเจน",
+        "impact_th": "Upside สู่ราคาเหมาะสม $210.00 เพิ่มขึ้นเป็น +81.1% มี Margin of Safety สูง",
+        "action_th": "สะสมในโซนแนวรับ $110-$115 เพื่อรอการรับรู้รายได้ในปี 2027",
+        "sentiment": "bullish",
+        "topic": "โอกาสการลงทุนหลังการย่อตัว (Post-Earnings Opportunity)",
+        "ai_analyzed": true,
+        "ai_analyzed_at": "2026-11-20T12:43:37.012090"
       }
     ]
   }

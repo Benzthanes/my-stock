@@ -52,6 +52,12 @@ NASDAQ100_TICKERS = {
     "XEL": "NASDAQ", "ZS": "NASDAQ"
 }
 
+# Additional watched stocks with explicit primary exchange
+EXTRA_WATCHED_TICKERS = {
+    "TSM": "NYSE",
+    "ANT": "NASDAQ",
+}
+
 def get_universe(category: str = "all") -> dict[str, str]:
     """
     Get dictionary mapping {ticker: exchange}.
@@ -100,6 +106,11 @@ def resolve_custom_tickers(ticker_list: list[str]) -> list[str]:
         # Check known universe
         if clean in all_univ:
             sym = f"{all_univ[clean]}:{clean}"
+            if sym not in seen:
+                seen.add(sym)
+                symbols.append(sym)
+        elif clean in EXTRA_WATCHED_TICKERS:
+            sym = f"{EXTRA_WATCHED_TICKERS[clean]}:{clean}"
             if sym not in seen:
                 seen.add(sym)
                 symbols.append(sym)

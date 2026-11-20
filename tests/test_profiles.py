@@ -5,11 +5,13 @@ from src.profiles import CURATED_PROFILES, get_business_summary
 
 class ProfilesTest(unittest.TestCase):
     def test_curated_profiles_count_and_keys(self):
-        self.assertEqual(len(CURATED_PROFILES), 110)
+        self.assertEqual(len(CURATED_PROFILES), 112)
         self.assertIn("AAPL", CURATED_PROFILES)
         self.assertIn("MSFT", CURATED_PROFILES)
         self.assertIn("AEHR", CURATED_PROFILES)
         self.assertIn("SCB", CURATED_PROFILES)
+        self.assertIn("TSM", CURATED_PROFILES)
+        self.assertIn("ANT", CURATED_PROFILES)
 
     def test_get_business_summary_curated(self):
         aapl_desc = get_business_summary("AAPL")

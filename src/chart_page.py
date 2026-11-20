@@ -47,6 +47,24 @@ WATCHED_STOCKS: Dict[str, Dict[str, Any]] = {
         "exchange": "NASDAQ",
         "fibo_support": next((s["support"] for s in WATCHLIST_STOCKS if s["ticker"] == "NBIS"), 138.0),
     },
+    "TSM": {
+        "name": "Taiwan Semiconductor Manufacturing Co., Ltd.",
+        "sector": "Semiconductors & Foundry",
+        "exchange": "NYSE",
+        "fibo_support": next((s["support"] for s in WATCHLIST_STOCKS if s["ticker"] == "TSM"), 398.0),
+    },
+    "ASML": {
+        "name": "ASML Holding N.V.",
+        "sector": "Semiconductor Equipment & Lithography",
+        "exchange": "NASDAQ",
+        "fibo_support": next((s["support"] for s in WATCHLIST_STOCKS if s["ticker"] == "ASML"), 1637.0),
+    },
+    "ANT": {
+        "name": "Anthropic, PBC",
+        "sector": "AI Frontier & Foundation Models",
+        "exchange": "NASDAQ",
+        "fibo_support": next((s["support"] for s in WATCHLIST_STOCKS if s["ticker"] == "ANT"), 85.0),
+    },
 }
 
 
@@ -74,6 +92,9 @@ def get_all_stocks_metadata() -> Dict[str, Dict[str, Any]]:
         "AMZN": ("Amazon.com, Inc.", "Internet Retail", "NASDAQ"),
         "GOOGL": ("Alphabet Inc. Class A", "Internet Content & Information", "NASDAQ"),
         "PLTR": ("Palantir Technologies Inc.", "Software Infrastructure", "NASDAQ"),
+        "TSM": ("Taiwan Semiconductor Manufacturing Co., Ltd.", "Semiconductors & Foundry", "NYSE"),
+        "ASML": ("ASML Holding N.V.", "Semiconductor Equipment & Lithography", "NASDAQ"),
+        "ANT": ("Anthropic, PBC", "AI Frontier & Foundation Models", "NASDAQ"),
         "LLY": ("Eli Lilly and Company", "Pharmaceuticals", "NYSE"),
         "ISRG": ("Intuitive Surgical, Inc.", "Medical Instruments", "NASDAQ"),
         "BMY": ("Bristol-Myers Squibb Company", "Pharmaceuticals", "NYSE"),

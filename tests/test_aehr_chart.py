@@ -62,7 +62,7 @@ class TestAehrChart(unittest.TestCase):
         shutil.rmtree(self.temp_dir, ignore_errors=True)
 
     def test_aehr_in_watched_stocks_registry(self):
-        """Assert AEHR is in WATCHED_STOCKS table with valid metadata and Shay Boloor fibo support."""
+        """Assert AEHR is in WATCHED_STOCKS table with valid metadata and fibo support."""
         self.assertIn("AEHR", WATCHED_STOCKS)
         info = WATCHED_STOCKS["AEHR"]
         self.assertEqual(info["name"], "Aehr Test Systems")

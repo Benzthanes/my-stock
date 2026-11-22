@@ -39,8 +39,58 @@
       "avg_cost_usd": 54.3123,
       "total_cost_usd": 1486.59,
       "cost_thb": 49979.16
+    },
+    {
+      "ticker": "SKHY",
+      "exchange": "NASDAQ",
+      "name": "SK hynix Inc. Sponsored ADR",
+      "shares": 1.4045564,
+      "avg_cost_usd": 105.1649,
+      "total_cost_usd": 147.71,
+      "cost_thb": 4966.01,
+      "buy_date": "2026-11-21"
+    },
+    {
+      "ticker": "ASML",
+      "exchange": "NASDAQ",
+      "name": "ASML Holding NV Sponsored ADR",
+      "shares": 0.1156701,
+      "avg_cost_usd": 1276.9938,
+      "total_cost_usd": 147.71,
+      "cost_thb": 4966.01,
+      "buy_date": "2026-11-20"
+    },
+    {
+      "ticker": "TSM",
+      "exchange": "NYSE",
+      "name": "Taiwan Semiconductor Manufacturing Co., Ltd. Sponsored ADR",
+      "shares": 0.4608466,
+      "avg_cost_usd": 320.5188,
+      "total_cost_usd": 147.71,
+      "cost_thb": 4966.01,
+      "buy_date": "2026-11-21"
+    },
+    {
+      "ticker": "MU",
+      "exchange": "NASDAQ",
+      "name": "Micron Technology, Inc.",
+      "shares": 0.2457841,
+      "avg_cost_usd": 600.9746,
+      "total_cost_usd": 147.71,
+      "cost_thb": 4966.01,
+      "buy_date": "2026-11-21"
+    },
+    {
+      "ticker": "SOXQ",
+      "exchange": "NASDAQ",
+      "name": "Invesco PHLX Semiconductor ETF",
+      "shares": 2.2175939,
+      "avg_cost_usd": 66.6082,
+      "total_cost_usd": 147.71,
+      "cost_thb": 4966.01,
+      "buy_date": "2026-11-21"
     }
   ],
-  "total_cost_usd": 35759.96,
-  "total_cost_thb": 1202368.37
+  "total_cost_usd": 36498.51,
+  "total_cost_thb": 1227198.42
 }

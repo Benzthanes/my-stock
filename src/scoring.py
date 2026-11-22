@@ -7,7 +7,7 @@ the Dip screener, Portfolio health/star rating and Recovery analyzer.
 from typing import Dict, List, NamedTuple, Optional, TypedDict
 
 EARNINGS_GUARD_DAYS = 14.0
-ETF_TICKERS = frozenset({"VOO", "SPY", "QQQ", "QQQI"})
+ETF_TICKERS = frozenset({"VOO", "SPY", "QQQ", "QQQI", "SOXQ"})
 ETF_FALLBACK_SECTORS = ("Miscellaneous", "Other / Diversified")
 
 

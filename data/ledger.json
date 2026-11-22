@@ -1,7 +1,7 @@
 {
   "cash": {
     "dime_save_thb": 0.59,
-    "dime_usd": 5570.78
+    "dime_usd": 4832.23
   },
   "net_injected_capital_thb": 1295000.0,
   "gross_deposits_thb": 1345000.0,
@@ -211,6 +211,71 @@
       "order_type": "Limit",
       "account": "Dime! USD",
       "fees_usd": 0.47
+    },
+    {
+      "fn": "IMG_6041.webp",
+      "ticker": "SKHY",
+      "shares": 1.4045564,
+      "price_usd": 104.99,
+      "amt_usd": 147.71,
+      "amt_thb": 0.0,
+      "fx_rate": 33.62,
+      "date": "21 พ.ย. 69 - 02:26 น.",
+      "order_type": "Limit",
+      "account": "Dime! USD",
+      "fees_usd": 0.24
+    },
+    {
+      "fn": "IMG_6042.webp",
+      "ticker": "ASML",
+      "shares": 0.1156701,
+      "price_usd": 1274.91,
+      "amt_usd": 147.71,
+      "amt_thb": 0.0,
+      "fx_rate": 33.62,
+      "date": "20 พ.ย. 69 - 23:47 น.",
+      "order_type": "Limit",
+      "account": "Dime! USD",
+      "fees_usd": 0.24
+    },
+    {
+      "fn": "IMG_6043.webp",
+      "ticker": "TSM",
+      "shares": 0.4608466,
+      "price_usd": 319.99,
+      "amt_usd": 147.71,
+      "amt_thb": 0.0,
+      "fx_rate": 33.62,
+      "date": "21 พ.ย. 69 - 00:04 น.",
+      "order_type": "Limit",
+      "account": "Dime! USD",
+      "fees_usd": 0.24
+    },
+    {
+      "fn": "IMG_6044.webp",
+      "ticker": "MU",
+      "shares": 0.2457841,
+      "price_usd": 599.99,
+      "amt_usd": 147.71,
+      "amt_thb": 0.0,
+      "fx_rate": 33.62,
+      "date": "21 พ.ย. 69 - 00:04 น.",
+      "order_type": "Limit",
+      "account": "Dime! USD",
+      "fees_usd": 0.24
+    },
+    {
+      "fn": "IMG_6045.webp",
+      "ticker": "SOXQ",
+      "shares": 2.2175939,
+      "price_usd": 66.5,
+      "amt_usd": 147.71,
+      "amt_thb": 0.0,
+      "fx_rate": 33.62,
+      "date": "21 พ.ย. 69 - 03:14 น.",
+      "order_type": "Limit",
+      "account": "Dime! USD",
+      "fees_usd": 0.24
     }
   ]
 }

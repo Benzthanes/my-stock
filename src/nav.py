@@ -7,11 +7,9 @@ PAGES = (
     ("master", "portfolio_master.html", "ภาพรวม"),
     ("review", "portfolio_review.html", "สุขภาพพอร์ต"),
     ("recovery", "portfolio_recovery.html", "แก้ดอย"),
-    ("dip_sim", "portfolio_dip_sim.html", "Dip จำลอง"),
     ("ledger", "trades_ledger.html", "รายการซื้อขายทั้งหมด"),
     ("chart", "stock_chart.html", "กราฟ"),
     ("watchlist", "watchlist.html", "หุ้นที่สนใจ"),
-    ("advisor", "advisor.html", "คำแนะนำ"),
 )
 
 PAGE_ICONS = {
@@ -481,7 +479,8 @@ _MOBILE_TABLES = """<style>
 def nav_bar_html(active: str, now: Optional[datetime] = None) -> str:
     """Return the nav bar (with its scoped <style>) marking the page whose key is `active`."""
     active = ALIASES.get(active, active)
-    if active not in {key for key, _, _ in PAGES}:
+    valid_keys = {key for key, _, _ in PAGES} | {"dip_sim", "advisor"}
+    if active not in valid_keys:
         raise ValueError(f"unknown nav page: {active!r}")
     stamp = (now or datetime.now()).strftime("%Y-%m-%d %H:%M")
     links = "".join(

@@ -41,9 +41,10 @@ class AdvisorPageTest(unittest.TestCase):
         self.assertIn("อีก +8.8%", smh_rows[2])
         self.assertIn("อีก -10.9%", smh_rows[3])
 
-    def test_nav_marks_advisor_active(self):
+    def test_nav_renders_in_advisor(self):
         html = generate_advisor_html(PRICES, 78.0, FIXED)
-        self.assertIn('href="advisor.html" class="rnav-link active"', html)
+        self.assertIn('class="rnav"', html)
+        self.assertNotIn('href="advisor.html"', html)
 
     def test_lly_weight_bar_uses_value(self):
         html = generate_advisor_html(PRICES, 63.4, FIXED)

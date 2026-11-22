@@ -2479,6 +2479,16 @@
                 font-size: 0.66rem;
             }
             .floating-sidebar-toggle:hover { transform: none; }
+            /* Stack scroll-to-top cleanly above the floating stock drawer button to prevent overlapping */
+            .scroll-to-top-btn {
+                bottom: calc(84px + env(safe-area-inset-bottom, 0px)) !important;
+                right: 20px !important;
+            }
+            .chart-layout-root.sidebar-open .scroll-to-top-btn {
+                opacity: 0 !important;
+                visibility: hidden !important;
+                pointer-events: none !important;
+            }
             body { padding-bottom: 84px; }
         }
 

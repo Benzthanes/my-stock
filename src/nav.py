@@ -120,7 +120,7 @@ _STYLE = """<style>
 }
 @media (max-width: 640px) {
   .scroll-to-top-btn {
-    bottom: 20px;
+    bottom: calc(20px + env(safe-area-inset-bottom, 0px));
     right: 16px;
     width: 42px;
     height: 42px;

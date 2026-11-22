@@ -128,6 +128,61 @@ _STYLE = """<style>
     height: 42px;
   }
 }
+
+/* FINANCIAL TABULAR TYPOGRAPHY */
+table td, table th, .kpi-value, .wealth-hud-val, .wealth-hud-sub,
+.cell-price, .cell-val-usd, .cell-val-thb, .cell-pl-usd, .cell-pl-thb, .cell-pl-pct, .cell-weight,
+.acc-val, .stock-card-price, .stock-card-pl-badge, .badge, .mono, [data-num], .tabular-nums {
+  font-variant-numeric: tabular-nums;
+  -webkit-font-feature-settings: "tnum";
+  font-feature-settings: "tnum";
+}
+
+/* CARD HOVER MICRO-INTERACTIONS */
+.card {
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 0 15px rgba(59, 130, 246, 0.12);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* ACTIONABLE COMMAND COPY WIDGET */
+.copy-cmd-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(59, 130, 246, 0.35);
+  color: #93c5fd;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+.copy-cmd-btn:hover {
+  background: rgba(30, 58, 138, 0.4);
+  border-color: #60a5fa;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+.copy-cmd-btn.copied {
+  background: rgba(16, 185, 129, 0.2) !important;
+  border-color: #10b981 !important;
+  color: #34d399 !important;
+}
+.cmd-code {
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  background: rgba(0, 0, 0, 0.35);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: #f1f5f9;
+  font-size: 0.78rem;
+}
 </style>"""
 
 _SCRIPT = """<script>
@@ -294,6 +349,40 @@ _SCRIPT = """<script>
       btn.classList.remove('visible');
     }
   }, { passive: true });
+
+  window.copyTradeCommand = function(cmdText, btn) {
+    if (!cmdText) return;
+    function onSuccess() {
+      if (!btn) return;
+      var origHTML = btn.innerHTML;
+      btn.classList.add('copied');
+      btn.innerHTML = '<span>✓</span> คัดลอกแล้ว!';
+      setTimeout(function() {
+        btn.innerHTML = origHTML;
+        btn.classList.remove('copied');
+      }, 2000);
+    }
+    function fallback() {
+      var ta = document.createElement('textarea');
+      ta.value = cmdText;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        document.execCommand('copy');
+        onSuccess();
+      } catch (e) {
+        prompt('กด Ctrl+C เพื่อคัดลอกคำสั่ง:', cmdText);
+      }
+      document.body.removeChild(ta);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(cmdText).then(onSuccess).catch(fallback);
+    } else {
+      fallback();
+    }
+  };
 })();
 </script>"""
 

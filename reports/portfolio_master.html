@@ -390,6 +390,133 @@
                 font-size: 0.82rem !important;
             }
         }
+
+        /* RESPONSIVE STOCK CARDS FOR MOBILE */
+        .holdings-mobile-cards {
+            display: none;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .holdings-desktop-table {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .holdings-desktop-table {
+                display: none !important;
+            }
+            .holdings-mobile-cards {
+                display: flex !important;
+            }
+        }
+
+        .stock-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 14px 16px;
+            cursor: pointer;
+            transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        .stock-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(59, 130, 246, 0.45);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 0 12px rgba(59, 130, 246, 0.15);
+        }
+        .stock-card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        .stock-card-ticker {
+            font-size: 1.15rem;
+            font-weight: 800;
+            font-family: 'Inter', sans-serif;
+            color: #ffffff;
+            letter-spacing: -0.01em;
+        }
+        .stock-card-name {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            margin-top: 3px;
+            max-width: 190px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .stock-card-right {
+            text-align: right;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 4px;
+        }
+        .stock-card-price {
+            font-size: 1.08rem;
+            font-weight: 700;
+            font-family: 'Inter', sans-serif;
+            color: #f8fafc;
+        }
+        .stock-card-pl-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            font-family: 'Inter', sans-serif;
+        }
+        .stock-card-quick-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+            padding-top: 8px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.8rem;
+        }
+        .stock-card-expand-icon {
+            font-size: 0.74rem;
+            color: var(--text-muted);
+            transition: transform 0.25s ease;
+        }
+        .stock-card.expanded .stock-card-expand-icon {
+            transform: rotate(180deg);
+            color: #60a5fa;
+        }
+        .stock-card-accordion {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease, margin-top 0.25s ease;
+        }
+        .stock-card.expanded .stock-card-accordion {
+            max-height: 350px;
+            opacity: 1;
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px dashed rgba(255, 255, 255, 0.08);
+        }
+        .accordion-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px 14px;
+        }
+        .accordion-item {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+        .acc-label {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+        }
+        .acc-val {
+            font-size: 0.88rem;
+            font-family: 'Inter', sans-serif;
+            color: #f1f5f9;
+        }
     </style>
 </head>
 <body>
@@ -492,8 +619,63 @@
     height: 42px;
   }
 }
+
+/* FINANCIAL TABULAR TYPOGRAPHY */
+table td, table th, .kpi-value, .wealth-hud-val, .wealth-hud-sub,
+.cell-price, .cell-val-usd, .cell-val-thb, .cell-pl-usd, .cell-pl-thb, .cell-pl-pct, .cell-weight,
+.acc-val, .stock-card-price, .stock-card-pl-badge, .badge, .mono, [data-num], .tabular-nums {
+  font-variant-numeric: tabular-nums;
+  -webkit-font-feature-settings: "tnum";
+  font-feature-settings: "tnum";
+}
+
+/* CARD HOVER MICRO-INTERACTIONS */
+.card {
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 0 15px rgba(59, 130, 246, 0.12);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* ACTIONABLE COMMAND COPY WIDGET */
+.copy-cmd-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(59, 130, 246, 0.35);
+  color: #93c5fd;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+.copy-cmd-btn:hover {
+  background: rgba(30, 58, 138, 0.4);
+  border-color: #60a5fa;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+.copy-cmd-btn.copied {
+  background: rgba(16, 185, 129, 0.2) !important;
+  border-color: #10b981 !important;
+  color: #34d399 !important;
+}
+.cmd-code {
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  background: rgba(0, 0, 0, 0.35);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: #f1f5f9;
+  font-size: 0.78rem;
+}
 </style>
-<nav class="rnav" aria-label="รายงาน"><div class="rnav-top-row"><div class="rnav-links"><a href="portfolio_master.html" class="rnav-link active" aria-current="page" data-icon="👑">ภาพรวม</a><a href="portfolio_review.html" class="rnav-link" data-icon="🩺">สุขภาพพอร์ต</a><a href="portfolio_recovery.html" class="rnav-link" data-icon="🧗">แก้ดอย</a><a href="portfolio_dip_sim.html" class="rnav-link" data-icon="🎯">Dip จำลอง</a><a href="trades_ledger.html" class="rnav-link" data-icon="📜">รายการซื้อขายทั้งหมด</a><a href="stock_chart.html" class="rnav-link" data-icon="📈">กราฟ</a><a href="watchlist.html" class="rnav-link" data-icon="📋">หุ้นที่สนใจ</a><a href="advisor.html" class="rnav-link" data-icon="💡">คำแนะนำ</a></div></div><div class="rnav-live-bar"><div class="rnav-live-left"><button id="rnav-btn-refresh" class="rnav-refresh-btn" onclick="triggerGlobalRefresh()" title="กดเพื่อดึงราคาตลาดสดทันที"><span id="rnav-refresh-icon" style="display:inline-block; transition:transform 0.6s ease;">🔄</span> <span id="rnav-refresh-text">รีเฟรชราคา</span> <span class="rnav-live-badge">Live</span></button><div class="rnav-int-group" title="อัปเดตราคาหุ้นอัตโนมัติ (5วิ - 60วิ)"><span class="rnav-int-label">⏱️<span class="rnav-int-word"> อัปเดตสด:</span></span><button id="rnav-live-0" class="rnav-int-btn active" onclick="setGlobalLiveInterval(0)">ปิด</button><button id="rnav-live-5" class="rnav-int-btn" onclick="setGlobalLiveInterval(5)">5s</button><button id="rnav-live-15" class="rnav-int-btn" onclick="setGlobalLiveInterval(15)">15s</button><button id="rnav-live-30" class="rnav-int-btn" onclick="setGlobalLiveInterval(30)">30s</button><button id="rnav-live-60" class="rnav-int-btn" onclick="setGlobalLiveInterval(60)">60s</button></div></div><div class="rnav-live-right"><span id="rnav-live-status" class="rnav-status">⚪ อัปเดตด้วยตนเอง</span><span class="rnav-time">อัปเดต: 2026-11-22 20:22</span></div></div></nav>
+<nav class="rnav" aria-label="รายงาน"><div class="rnav-top-row"><div class="rnav-links"><a href="portfolio_master.html" class="rnav-link active" aria-current="page" data-icon="👑">ภาพรวม</a><a href="portfolio_review.html" class="rnav-link" data-icon="🩺">สุขภาพพอร์ต</a><a href="portfolio_recovery.html" class="rnav-link" data-icon="🧗">แก้ดอย</a><a href="portfolio_dip_sim.html" class="rnav-link" data-icon="🎯">Dip จำลอง</a><a href="trades_ledger.html" class="rnav-link" data-icon="📜">รายการซื้อขายทั้งหมด</a><a href="stock_chart.html" class="rnav-link" data-icon="📈">กราฟ</a><a href="watchlist.html" class="rnav-link" data-icon="📋">หุ้นที่สนใจ</a><a href="advisor.html" class="rnav-link" data-icon="💡">คำแนะนำ</a></div></div><div class="rnav-live-bar"><div class="rnav-live-left"><button id="rnav-btn-refresh" class="rnav-refresh-btn" onclick="triggerGlobalRefresh()" title="กดเพื่อดึงราคาตลาดสดทันที"><span id="rnav-refresh-icon" style="display:inline-block; transition:transform 0.6s ease;">🔄</span> <span id="rnav-refresh-text">รีเฟรชราคา</span> <span class="rnav-live-badge">Live</span></button><div class="rnav-int-group" title="อัปเดตราคาหุ้นอัตโนมัติ (5วิ - 60วิ)"><span class="rnav-int-label">⏱️<span class="rnav-int-word"> อัปเดตสด:</span></span><button id="rnav-live-0" class="rnav-int-btn active" onclick="setGlobalLiveInterval(0)">ปิด</button><button id="rnav-live-5" class="rnav-int-btn" onclick="setGlobalLiveInterval(5)">5s</button><button id="rnav-live-15" class="rnav-int-btn" onclick="setGlobalLiveInterval(15)">15s</button><button id="rnav-live-30" class="rnav-int-btn" onclick="setGlobalLiveInterval(30)">30s</button><button id="rnav-live-60" class="rnav-int-btn" onclick="setGlobalLiveInterval(60)">60s</button></div></div><div class="rnav-live-right"><span id="rnav-live-status" class="rnav-status">⚪ อัปเดตด้วยตนเอง</span><span class="rnav-time">อัปเดต: 2026-11-22 20:48</span></div></div></nav>
 <button id="scroll-to-top" class="scroll-to-top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="เลื่อนขึ้นบนสุด" title="เลื่อนขึ้นบนสุด"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg></button>
 <script>
 (function() {
@@ -659,6 +841,40 @@
       btn.classList.remove('visible');
     }
   }, { passive: true });
+
+  window.copyTradeCommand = function(cmdText, btn) {
+    if (!cmdText) return;
+    function onSuccess() {
+      if (!btn) return;
+      var origHTML = btn.innerHTML;
+      btn.classList.add('copied');
+      btn.innerHTML = '<span>✓</span> คัดลอกแล้ว!';
+      setTimeout(function() {
+        btn.innerHTML = origHTML;
+        btn.classList.remove('copied');
+      }, 2000);
+    }
+    function fallback() {
+      var ta = document.createElement('textarea');
+      ta.value = cmdText;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        document.execCommand('copy');
+        onSuccess();
+      } catch (e) {
+        prompt('กด Ctrl+C เพื่อคัดลอกคำสั่ง:', cmdText);
+      }
+      document.body.removeChild(ta);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(cmdText).then(onSuccess).catch(fallback);
+    } else {
+      fallback();
+    }
+  };
 })();
 </script>
 <style>
@@ -828,6 +1044,39 @@
                 </div>
             </div>
         </div>
+
+        
+    <div class="card" style="margin-bottom: 24px; padding: 18px 22px; background: rgba(13, 21, 39, 0.7); border: 1px solid rgba(255, 255, 255, 0.08);">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 8px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+                <span style="font-size: 1.15rem;">📊</span>
+                <strong style="color: #f8fafc; font-size: 0.98rem; font-weight: 700;">สัดส่วนการจัดสรรสินทรัพย์รวม (Asset Allocation)</strong>
+            </div>
+            <div style="color: #94a3b8; font-size: 0.85rem;">
+                NAV สุทธิ: <strong id="alloc-nav-val" style="color: #60a5fa; font-family: 'Inter', sans-serif;">฿1,647,161.27</strong>
+            </div>
+        </div>
+        <div style="display: flex; width: 100%; height: 14px; border-radius: 999px; overflow: hidden; background: rgba(255, 255, 255, 0.05); margin-bottom: 14px; box-shadow: inset 0 2px 4px rgba(0,0,0,0.4);">
+            <div id="alloc-bar-stocks" style="width: 90.0%; background: linear-gradient(90deg, #10b981, #059669); transition: width 0.6s ease;" title="หุ้นสหรัฐฯ: 90.0%"></div>
+            <div id="alloc-bar-dime-usd" style="width: 10.0%; background: linear-gradient(90deg, #3b82f6, #2563eb); transition: width 0.6s ease;" title="เงินสด Dime! USD: 10.0%"></div>
+            <div id="alloc-bar-dime-save" style="width: 0.0%; background: linear-gradient(90deg, #8b5cf6, #7c3aed); transition: width 0.6s ease;" title="เงินฝาก Dime! Save: 0.0%"></div>
+        </div>
+        <div style="display: flex; gap: 16px 24px; flex-wrap: wrap; font-size: 0.82rem; color: #94a3b8;">
+            <div style="display: inline-flex; align-items: center; gap: 8px;">
+                <span style="width: 10px; height: 10px; border-radius: 50%; background: #10b981; display: inline-block;"></span>
+                <span>หุ้นสหรัฐฯ (Active Stocks): <strong id="alloc-lbl-stocks" style="color: #f8fafc;">90.0%</strong> (฿1,483,058.15)</span>
+            </div>
+            <div style="display: inline-flex; align-items: center; gap: 8px;">
+                <span style="width: 10px; height: 10px; border-radius: 50%; background: #3b82f6; display: inline-block;"></span>
+                <span>เงินสด Dime! USD: <strong id="alloc-lbl-dime-usd" style="color: #f8fafc;">10.0%</strong> (฿164,102.53 / $4,832.23)</span>
+            </div>
+            <div style="display: inline-flex; align-items: center; gap: 8px;">
+                <span style="width: 10px; height: 10px; border-radius: 50%; background: #8b5cf6; display: inline-block;"></span>
+                <span>เงินฝาก Dime! Save: <strong id="alloc-lbl-dime-save" style="color: #f8fafc;">0.0%</strong> (฿0.59)</span>
+            </div>
+        </div>
+    </div>
+    
 
         
     <!-- SECTION: TOTAL WEALTH & NAV TIMELINE CHART -->
@@ -1478,13 +1727,14 @@
     </script>
     
 
-        <!-- SECTION 1: ACTIVE HOLDINGS TABLE -->
+        <!-- SECTION 1: ACTIVE HOLDINGS TABLE & MOBILE CARDS -->
         <div style="margin-bottom: 36px;">
             <div class="section-title">
                 <span>📈</span> 1. รายการหุ้นที่กำลังถือครองในพอร์ต (Active Holdings: 9 ตัว)
                 <span class="badge badge-info">ราคาตลาดสดจาก TradingView API</span>
             </div>
-            <div class="card" style="padding: 0; overflow-x: auto;">
+            <!-- Desktop Tabular View -->
+            <div class="holdings-desktop-table card" style="padding: 0; overflow-x: auto;">
                 <table>
                     <thead>
                         <tr>
@@ -1649,6 +1899,578 @@
         
                     </tbody>
                 </table>
+            </div>
+
+            <!-- Mobile Modern Stock Cards (< 768px) -->
+            <div class="holdings-mobile-cards">
+                
+        <div class="stock-card holding-card" data-ticker="LLY" data-exchange="NYSE" data-shares="27.6477631" data-cost="1021.1077" data-cost-usd="28231.34" data-cost-thb="949137.8" onclick="toggleStockCardAccordion(this)">
+            <div class="stock-card-top">
+                <div class="stock-card-left">
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <span class="stock-card-ticker">LLY</span>
+                        <span style="background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); padding: 1px 7px; border-radius: 4px; font-size: 0.72rem; font-weight: 700;">US Stock</span>
+                    </div>
+                    <div class="stock-card-name">Eli Lilly and Company</div>
+                </div>
+                <div class="stock-card-right">
+                    <div class="stock-card-price cell-price">$1,347.11</div>
+                    <div class="stock-card-pl-badge cell-pl-pct" style="color: #10b981; background: rgba(16, 185, 129, 0.12); border: 1px solid rgba(16, 185, 129, 0.25);">
+                        +31.93%
+                    </div>
+                </div>
+            </div>
+            <div class="stock-card-quick-bar">
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <span style="color: var(--text-muted); font-size: 0.78rem;">พอร์ต:</span>
+                    <strong class="cell-weight" style="font-size: 0.82rem; color: #f8fafc;">85.3%</strong>
+                </div>
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <span style="color: var(--text-muted); font-size: 0.78rem;">มูลค่า:</span>
+                    <strong class="cell-val-usd" style="font-size: 0.82rem; color: #f8fafc;">$37,244.58</strong>
+                    <span class="cell-val-thb" style="color: var(--text-muted); font-size: 0.76rem;">(฿1,264,825.87)</span>
+                </div>
+                <div class="stock-card-expand-icon">▼</div>
+            </div>
+            <div class="stock-card-accordion">
+                <div class="accordion-grid">
+                    <div class="accordion-item">
+                        <span class="acc-label">จำนวนหุ้น</span>
+                        <span class="acc-val">27.6478 หุ้น</span>
+                    </div>
+                    <div class="accordion-item">
+                        <span class="acc-label">ต้นทุนเฉลี่ย</span>
+                        <span class="acc-val">$1,021.11</span>
+                    </div>
+                    <div class="accordion-item">
+                        <span class="acc-label">ต้นทุนรวม ($)</span>
+                        <span class="acc-val">$28,231.34</span>
+                    </div>
+                    <div class="accordion-item">
+                        <span class="acc-label">ต้นทุนรวม (฿)</span>
+                        <span class="acc-val">฿949,137.80</span>
+                    </div>
+                    <div class="accordion-item">
+                        <span class="acc-label">กำไร/ขาดทุน ($)</span>
+                        <span class="acc-val cell-pl-usd" style="color: #10b981; font-weight: 700;">+$9,013.24</span>
+                    </div>
+                    <div class="accordion-item">
+                        <span class="acc-label">กำไร/ขาดทุน (฿)</span>
+                        <span class="acc-val cell-pl-thb" style="color: #10b981; font-weight: 700;">+฿315,688.07</span>
+                    </div>
+                </div>
+                <div style="margin-top: 10px; display: flex; justify-content: flex-end;">
+                    <button type="button" onclick="event.stopPropagation(); openChartModal(&quot;LLY&quot;, &quot;NYSE&quot;, &quot;Eli Lilly and Company&quot;, &quot;Health Technology&quot;, 1021.1077, 1347.11, 1281.26, 1486.56, 1283.47, 1454.88, 1507.96)" style="background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.35); color: #60a5fa; border-radius: 6px; padding: 6px 12px; font-size: 0.8rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;">
+                        📈 ดูกราฟสด & สัญญาณ LLY
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="stock-card holding-card" data-ticker="GOOGL" data-exchange="NASDAQ" data-shares="11.1897032" data-cost="341.7162" data-cost-usd="3823.7" data-cost-thb="128552.88" onclick="toggleStockCardAccordion(this)">
+            <div class="stock-card-top">
+                <div class="stock-card-left">
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <span class="stock-card-ticker">GOOGL</span>
+                        <span style="background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); padding: 1px 7px; border-radius: 4px; font-size: 0.72rem; font-weight: 700;">US Stock</span>
+                    </div>
+                    <div class="stock-card-name">Alphabet Inc. Class A</div>
+                </div>
+                <div class="stock-card-right">
+                    <div class="stock-card-price cell-price">$265.29</div>
+                    <div class="stock-card-pl-badge cell-pl-pct" style="color: #f43f5e; background: rgba(244, 63, 94, 0.12); border: 1px solid rgba(244, 63, 94, 0.25);">
+                        -22.37%
+                    </div>
+                </div>
+            </div>
+            <div class="stock-card-quick-bar">
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <span style="color: var(--text-muted); font-size: 0.78rem;">พอร์ต:</span>
+                    <strong class="cell-weight" style="font-size: 0.82rem; color: #f8fafc;">6.8%</strong>
+                </div>
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <span style="color: var(--text-muted); font-size: 0.78rem;">มูลค่า:</span>
+                    <strong class="cell-val-usd" style="font-size: 0.82rem; color: #f8fafc;">$2,968.52</strong>
+                    <span class="cell-val-thb" style="color: var(--text-muted); font-size: 0.76rem;">(฿100,810.82)</span>
+                </div>
+                <div class="stock-card-expand-icon">▼</div>
+            </div>
+            <div class="stock-card-accordion">
+                <div class="accordion-grid">
+                    <div class="accordion-item">
+                        <span class="acc-label">จำนวนหุ้น</span>
+                        <span class="acc-val">11.1897 หุ้น</span>
+                    </div>
+                    <div class="accordion-item">
+                        <span class="acc-label">ต้นทุนเฉลี่ย</span>
+                        <span class="acc-val">$341.72</span>
+                    </div>
+                    <div class="accordion-item">
+                        <span class="acc-label">ต้นทุนรวม ($)</span>
+                        <span class="acc-val">$3,823.70</span>
+                    </div>
+                    <div class="accordion-item">
+                        <span class="acc-label">ต้นทุนรวม (฿)</span>
+                        <span class="acc-val">฿128,552.88</span>
+                    </div>
+                    <div class="accordion-item">
+                        <span class="acc-label">กำไร/ขาดทุน ($)</span>
+                        <span class="acc-val cell-pl-usd" style="color: #f43f5e; font-weight: 700;">-$855.18</span>
+                    </div>
+                    <div class="accordion-item">
+                        <span class="acc-label">กำไร/ขาดทุน (฿)</span>
+                        <span class="acc-val cell-pl-thb" style="color: #f43f5e; font-weight: 700;">-฿27,742.06</span>
+                    </div>
+                </div>
+                <div style="margin-top: 10px; display: flex; justify-content: flex-end;">
+                    <button type="button" onclick="event.stopPropagation(); openChartModal(&quot;GOOGL&quot;, &quot;NASDAQ&quot;, &quot;Alphabet Inc. Class A&quot;, &quot;Technology Services&quot;, 341.7162, 265.29, 259.3, 322.3, 248.32, 322.3, 389.26)" style="background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.35); color: #60a5fa; border-radius: 6px; padding: 6px 12px; font-size: 0.8rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;">
+                        📈 ดูกราฟสด & สัญญาณ GOOGL
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="stock-card holding-card" data-ticker="NOK" data-exchange="NYSE" data-shares="208.8669845" data-cost="10.6208" data-cost-usd="2218.33" data-cost-thb="74698.53" onclick="toggleStockCardAccordion(this)">
+            <div class="stock-card-top">
+                <div class="stock-card-left">
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <span class="stock-card-ticker">NOK</span>
+                        <span style="background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); padding: 1px 7px; border-radius: 4px; font-size: 0.72rem; font-weight: 700;">US Stock</span>
+                    </div>
+                    <div class="stock-card-name">Nokia Oyj</div>
+                </div>
+                <div class="stock-card-right">
+                    <div class="stock-card-price cell-price">$6.88</div>
+                    <div class="stock-card-pl-badge cell-pl-pct" style="color: #f43f5e; background: rgba(244, 63, 94, 0.12); border: 1px solid rgba(244, 63, 94, 0.25);">
+                        -35.22%
+                    </div>
+                </div>
+            </div>
+            <div class="stock-card-quick-bar">
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <span style="color: var(--text-muted); font-size: 0.78rem;">พอร์ต:</span>
+                    <strong class="cell-weight" style="font-size: 0.82rem; color: #f8fafc;">3.3%</strong>
+                </div>
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <span style="color: var(--text-muted); font-size: 0.78rem;">มูลค่า:</span>
+                    <strong class="cell-val-usd" style="font-size: 0.82rem; color: #f8fafc;">$1,437.00</strong>
+                    <span class="cell-val-thb" style="color: var(--text-muted); font-size: 0.76rem;">(฿48,800.68)</span>
+                </div>
+                <div class="stock-card-expand-icon">▼</div>
+            </div>
+            <div class="stock-card-accordion">
+                <div class="accordion-grid">
+                    <div class="accordion-item">
+                        <span class="acc-label">จำนวนหุ้น</span>
+                        <span class="acc-val">208.8670 หุ้น</span>
+                    </div>
+                    <div class="accordion-item">
+                        <span class="acc-label">ต้นทุนเฉลี่ย</span>
+                        <span class="acc-val">$10.62</span>
+                    </div>
+                    <div class="accordion-item">
+                        <span class="acc-label">ต้นทุนรวม ($)</span>
+                        <span class="acc-val">$2,218.33</span>
+                    </div>
+                    <div class="accordion-item">
+                        <span class="acc-label">ต้นทุนรวม (฿)</span>
+                        <span class="acc-val">฿74,698.53</span>
+                    </div>
+                    <div class="accordion-item">
+                        <span class="acc-label">กำไร/ขาดทุน ($)</span>
+                        <span class="acc-val cell-pl-usd" style="color: #f43f5e; font-weight: 700;">-$781.33</span>
+                    </div>
+                    <div class="accordion-item">
+                        <span class="acc-label">กำไร/ขาดทุน (฿)</span>
+                        <span class="acc-val cell-pl-thb" style="color: #f43f5e; font-weight: 700;">-฿25,897.85</span>
+                    </div>
+                </div>
+                <div style="margin-top: 10px; display: flex; justify-content: flex-end;">
+                    <button type="button" onclick="event.stopPropagation(); openChartModal(&quot;NOK&quot;, &quot;NYSE&quot;, &quot;Nokia Oyj&quot;, &quot;Electronic Technology&quot;, 10.6208, 6.88, 6.2, 9.25, 6.2, 9.25, 12.68)" style="background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.35); color: #60a5fa; border-radius: 6px; padding: 6px 12px; font-size: 0.8rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;">
+                        📈 ดูกราฟสด & สัญญาณ NOK
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="stock-card holding-card" data-ticker="BAC" data-exchange="NYSE" data-shares="27.3711243" data-cost="54.3123" data-cost-usd="1486.59" data-cost-thb="49979.16" onclick="toggleStockCardAccordion(this)">
+            <div class="stock-card-top">
+                <div class="stock-card-left">
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <span class="stock-card-ticker">BAC</span>
+                        <span style="background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); padding: 1px 7px; border-radius: 4px; font-size: 0.72rem; font-weight: 700;">US Stock</span>
+                    </div>
+                    <div class="stock-card-name">Bank of America Corp</div>
+                </div>
+                <div class="stock-card-right">
+                    <div class="stock-card-price cell-price">$47.08</div>
+                    <div class="stock-card-pl-badge cell-pl-pct" style="color: #f43f5e; background: rgba(244, 63, 94, 0.12); border: 1px solid rgba(244, 63, 94, 0.25);">
+                        -13.32%
+                    </div>
+                </div>
+            </div>
+            <div class="stock-card-quick-bar">
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <span style="color: var(--text-muted); font-size: 0.78rem;">พอร์ต:</span>
+                    <strong class="cell-weight" style="font-size: 0.82rem; color: #f8fafc;">3.0%</strong>
+                </div>
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <span style="color: var(--text-muted); font-size: 0.78rem;">มูลค่า:</span>
+                    <strong class="cell-val-usd" style="font-size: 0.82rem; color: #f8fafc;">$1,288.63</strong>
+                    <span class="cell-val-thb" style="color: var(--text-muted); font-size: 0.76rem;">(฿43,761.96)</span>
+                </div>
+                <div class="stock-card-expand-icon">▼</div>
+            </div>
+            <div class="stock-card-accordion">
+                <div class="accordion-grid">
+                    <div class="accordion-item">
+                        <span class="acc-label">จำนวนหุ้น</span>
+                        <span class="acc-val">27.3711 หุ้น</span>
+                    </div>
+                    <div class="accordion-item">
+                        <span class="acc-label">ต้นทุนเฉลี่ย</span>
+                        <span class="acc-val">$54.31</span>
+                    </div>
+                    <div class="accordion-item">
+                        <span class="acc-label">ต้นทุนรวม ($)</span>
+                        <span class="acc-val">$1,486.59</span>
+                    </div>
+                    <div class="accordion-item">
+                        <span class="acc-label">ต้นทุนรวม (฿)</span>
+                        <span class="acc-val">฿49,979.16</span>
+                    </div>
+                    <div class="accordion-item">
+                        <span class="acc-label">กำไร/ขาดทุน ($)</span>
+                        <span class="acc-val cell-pl-usd" style="color: #f43f5e; font-weight: 700;">-$197.96</span>
+                    </div>
+                    <div class="accordion-item">
+                        <span class="acc-label">กำไร/ขาดทุน (฿)</span>
+                        <span class="acc-val cell-pl-thb" style="color: #f43f5e; font-weight: 700;">-฿6,217.20</span>
+                    </div>
+                </div>
+                <div style="margin-top: 10px; display: flex; justify-content: flex-end;">
+                    <button type="button" onclick="event.stopPropagation(); openChartModal(&quot;BAC&quot;, &quot;NYSE&quot;, &quot;Bank of America Corp&quot;, &quot;Finance&quot;, 54.3123, 47.08, 45.27, 52.69, 45.27, 52.69, 62.16)" style="background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.35); color: #60a5fa; border-radius: 6px; padding: 6px 12px; font-size: 0.8rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;">
+                        📈 ดูกราฟสด & สัญญาณ BAC
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="stock-card holding-card" data-ticker="TSM" data-exchange="NYSE" data-shares="0.4608466" data-cost="320.5188" data-cost-usd="147.71" data-cost-thb="4966.01" onclick="toggleStockCardAccordion(this)">
+            <div class="stock-card-top">
+                <div class="stock-card-left">
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <span class="stock-card-ticker">TSM</span>
+                        <span style="background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); padding: 1px 7px; border-radius: 4px; font-size: 0.72rem; font-weight: 700;">US Stock</span>
+                    </div>
+                    <div class="stock-card-name">Taiwan Semiconductor Manufacturing Co., Ltd. Sponsored ADR</div>
+                </div>
+                <div class="stock-card-right">
+                    <div class="stock-card-price cell-price">$319.14</div>
+                    <div class="stock-card-pl-badge cell-pl-pct" style="color: #f43f5e; background: rgba(244, 63, 94, 0.12); border: 1px solid rgba(244, 63, 94, 0.25);">
+                        -0.43%
+                    </div>
+                </div>
+            </div>
+            <div class="stock-card-quick-bar">
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <span style="color: var(--text-muted); font-size: 0.78rem;">พอร์ต:</span>
+                    <strong class="cell-weight" style="font-size: 0.82rem; color: #f8fafc;">0.3%</strong>
+                </div>
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <span style="color: var(--text-muted); font-size: 0.78rem;">มูลค่า:</span>
+                    <strong class="cell-val-usd" style="font-size: 0.82rem; color: #f8fafc;">$147.08</strong>
+                    <span class="cell-val-thb" style="color: var(--text-muted); font-size: 0.76rem;">(฿4,994.73)</span>
+                </div>
+                <div class="stock-card-expand-icon">▼</div>
+            </div>
+            <div class="stock-card-accordion">
+                <div class="accordion-grid">
+                    <div class="accordion-item">
+                        <span class="acc-label">จำนวนหุ้น</span>
+                        <span class="acc-val">0.4608 หุ้น</span>
+                    </div>
+                    <div class="accordion-item">
+                        <span class="acc-label">ต้นทุนเฉลี่ย</span>
+                        <span class="acc-val">$320.52</span>
+                    </div>
+                    <div class="accordion-item">
+                        <span class="acc-label">ต้นทุนรวม ($)</span>
+                        <span class="acc-val">$147.71</span>
+                    </div>
+                    <div class="accordion-item">
+                        <span class="acc-label">ต้นทุนรวม (฿)</span>
+                        <span class="acc-val">฿4,966.01</span>
+                    </div>
+                    <div class="accordion-item">
+                        <span class="acc-label">กำไร/ขาดทุน ($)</span>
+                        <span class="acc-val cell-pl-usd" style="color: #f43f5e; font-weight: 700;">-$0.63</span>
+                    </div>
+                    <div class="accordion-item">
+                        <span class="acc-label">กำไร/ขาดทุน (฿)</span>
+                        <span class="acc-val cell-pl-thb" style="color: #f43f5e; font-weight: 700;">+฿28.72</span>
+                    </div>
+                </div>
+                <div style="margin-top: 10px; display: flex; justify-content: flex-end;">
+                    <button type="button" onclick="event.stopPropagation(); openChartModal(&quot;TSM&quot;, &quot;NYSE&quot;, &quot;Taiwan Semiconductor Manufacturing Co., Ltd. Sponsored ADR&quot;, &quot;Electronic Technology&quot;, 320.5188, 319.145, 290.56, 422.16, 290.56, 422.16, 554.22)" style="background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.35); color: #60a5fa; border-radius: 6px; padding: 6px 12px; font-size: 0.8rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;">
+                        📈 ดูกราฟสด & สัญญาณ TSM
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="stock-card holding-card" data-ticker="SOXQ" data-exchange="NASDAQ" data-shares="2.2175939" data-cost="66.6082" data-cost-usd="147.71" data-cost-thb="4966.01" onclick="toggleStockCardAccordion(this)">
+            <div class="stock-card-top">
+                <div class="stock-card-left">
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <span class="stock-card-ticker">SOXQ</span>
+                        <span style="background: rgba(139, 92, 246, 0.15); color: #c084fc; border: 1px solid rgba(139, 92, 246, 0.3); padding: 1px 7px; border-radius: 4px; font-size: 0.72rem; font-weight: 700;">Index ETF</span>
+                    </div>
+                    <div class="stock-card-name">Invesco PHLX Semiconductor ETF</div>
+                </div>
+                <div class="stock-card-right">
+                    <div class="stock-card-price cell-price">$66.23</div>
+                    <div class="stock-card-pl-badge cell-pl-pct" style="color: #f43f5e; background: rgba(244, 63, 94, 0.12); border: 1px solid rgba(244, 63, 94, 0.25);">
+                        -0.57%
+                    </div>
+                </div>
+            </div>
+            <div class="stock-card-quick-bar">
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <span style="color: var(--text-muted); font-size: 0.78rem;">พอร์ต:</span>
+                    <strong class="cell-weight" style="font-size: 0.82rem; color: #f8fafc;">0.3%</strong>
+                </div>
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <span style="color: var(--text-muted); font-size: 0.78rem;">มูลค่า:</span>
+                    <strong class="cell-val-usd" style="font-size: 0.82rem; color: #f8fafc;">$146.87</strong>
+                    <span class="cell-val-thb" style="color: var(--text-muted); font-size: 0.76rem;">(฿4,987.75)</span>
+                </div>
+                <div class="stock-card-expand-icon">▼</div>
+            </div>
+            <div class="stock-card-accordion">
+                <div class="accordion-grid">
+                    <div class="accordion-item">
+                        <span class="acc-label">จำนวนหุ้น</span>
+                        <span class="acc-val">2.2176 หุ้น</span>
+                    </div>
+                    <div class="accordion-item">
+                        <span class="acc-label">ต้นทุนเฉลี่ย</span>
+                        <span class="acc-val">$66.61</span>
+                    </div>
+                    <div class="accordion-item">
+                        <span class="acc-label">ต้นทุนรวม ($)</span>
+                        <span class="acc-val">$147.71</span>
+                    </div>
+                    <div class="accordion-item">
+                        <span class="acc-label">ต้นทุนรวม (฿)</span>
+                        <span class="acc-val">฿4,966.01</span>
+                    </div>
+                    <div class="accordion-item">
+                        <span class="acc-label">กำไร/ขาดทุน ($)</span>
+                        <span class="acc-val cell-pl-usd" style="color: #f43f5e; font-weight: 700;">-$0.84</span>
+                    </div>
+                    <div class="accordion-item">
+                        <span class="acc-label">กำไร/ขาดทุน (฿)</span>
+                        <span class="acc-val cell-pl-thb" style="color: #f43f5e; font-weight: 700;">+฿21.74</span>
+                    </div>
+                </div>
+                <div style="margin-top: 10px; display: flex; justify-content: flex-end;">
+                    <button type="button" onclick="event.stopPropagation(); openChartModal(&quot;SOXQ&quot;, &quot;NASDAQ&quot;, &quot;Invesco PHLX Semiconductor ETF&quot;, &quot;Miscellaneous&quot;, 66.6082, 66.23, 59.36, 89.21, 59.36, 89.21, null)" style="background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.35); color: #60a5fa; border-radius: 6px; padding: 6px 12px; font-size: 0.8rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;">
+                        📈 ดูกราฟสด & สัญญาณ SOXQ
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="stock-card holding-card" data-ticker="ASML" data-exchange="NASDAQ" data-shares="0.1156701" data-cost="1276.9938" data-cost-usd="147.71" data-cost-thb="4966.01" onclick="toggleStockCardAccordion(this)">
+            <div class="stock-card-top">
+                <div class="stock-card-left">
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <span class="stock-card-ticker">ASML</span>
+                        <span style="background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); padding: 1px 7px; border-radius: 4px; font-size: 0.72rem; font-weight: 700;">US Stock</span>
+                    </div>
+                    <div class="stock-card-name">ASML Holding NV Sponsored ADR</div>
+                </div>
+                <div class="stock-card-right">
+                    <div class="stock-card-price cell-price">$1,266.22</div>
+                    <div class="stock-card-pl-badge cell-pl-pct" style="color: #f43f5e; background: rgba(244, 63, 94, 0.12); border: 1px solid rgba(244, 63, 94, 0.25);">
+                        -0.84%
+                    </div>
+                </div>
+            </div>
+            <div class="stock-card-quick-bar">
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <span style="color: var(--text-muted); font-size: 0.78rem;">พอร์ต:</span>
+                    <strong class="cell-weight" style="font-size: 0.82rem; color: #f8fafc;">0.3%</strong>
+                </div>
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <span style="color: var(--text-muted); font-size: 0.78rem;">มูลค่า:</span>
+                    <strong class="cell-val-usd" style="font-size: 0.82rem; color: #f8fafc;">$146.46</strong>
+                    <span class="cell-val-thb" style="color: var(--text-muted); font-size: 0.76rem;">(฿4,973.91)</span>
+                </div>
+                <div class="stock-card-expand-icon">▼</div>
+            </div>
+            <div class="stock-card-accordion">
+                <div class="accordion-grid">
+                    <div class="accordion-item">
+                        <span class="acc-label">จำนวนหุ้น</span>
+                        <span class="acc-val">0.1157 หุ้น</span>
+                    </div>
+                    <div class="accordion-item">
+                        <span class="acc-label">ต้นทุนเฉลี่ย</span>
+                        <span class="acc-val">$1,276.99</span>
+                    </div>
+                    <div class="accordion-item">
+                        <span class="acc-label">ต้นทุนรวม ($)</span>
+                        <span class="acc-val">$147.71</span>
+                    </div>
+                    <div class="accordion-item">
+                        <span class="acc-label">ต้นทุนรวม (฿)</span>
+                        <span class="acc-val">฿4,966.01</span>
+                    </div>
+                    <div class="accordion-item">
+                        <span class="acc-label">กำไร/ขาดทุน ($)</span>
+                        <span class="acc-val cell-pl-usd" style="color: #f43f5e; font-weight: 700;">-$1.25</span>
+                    </div>
+                    <div class="accordion-item">
+                        <span class="acc-label">กำไร/ขาดทุน (฿)</span>
+                        <span class="acc-val cell-pl-thb" style="color: #f43f5e; font-weight: 700;">+฿7.90</span>
+                    </div>
+                </div>
+                <div style="margin-top: 10px; display: flex; justify-content: flex-end;">
+                    <button type="button" onclick="event.stopPropagation(); openChartModal(&quot;ASML&quot;, &quot;NASDAQ&quot;, &quot;ASML Holding NV Sponsored ADR&quot;, &quot;Electronic Technology&quot;, 1276.9938, 1266.22, 1163.29, 1624.75, 1163.29, 1624.75, 2436.94)" style="background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.35); color: #60a5fa; border-radius: 6px; padding: 6px 12px; font-size: 0.8rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;">
+                        📈 ดูกราฟสด & สัญญาณ ASML
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="stock-card holding-card" data-ticker="MU" data-exchange="NASDAQ" data-shares="0.2457841" data-cost="600.9746" data-cost-usd="147.71" data-cost-thb="4966.01" onclick="toggleStockCardAccordion(this)">
+            <div class="stock-card-top">
+                <div class="stock-card-left">
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <span class="stock-card-ticker">MU</span>
+                        <span style="background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); padding: 1px 7px; border-radius: 4px; font-size: 0.72rem; font-weight: 700;">US Stock</span>
+                    </div>
+                    <div class="stock-card-name">Micron Technology, Inc.</div>
+                </div>
+                <div class="stock-card-right">
+                    <div class="stock-card-price cell-price">$594.51</div>
+                    <div class="stock-card-pl-badge cell-pl-pct" style="color: #f43f5e; background: rgba(244, 63, 94, 0.12); border: 1px solid rgba(244, 63, 94, 0.25);">
+                        -1.08%
+                    </div>
+                </div>
+            </div>
+            <div class="stock-card-quick-bar">
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <span style="color: var(--text-muted); font-size: 0.78rem;">พอร์ต:</span>
+                    <strong class="cell-weight" style="font-size: 0.82rem; color: #f8fafc;">0.3%</strong>
+                </div>
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <span style="color: var(--text-muted); font-size: 0.78rem;">มูลค่า:</span>
+                    <strong class="cell-val-usd" style="font-size: 0.82rem; color: #f8fafc;">$146.12</strong>
+                    <span class="cell-val-thb" style="color: var(--text-muted); font-size: 0.76rem;">(฿4,962.27)</span>
+                </div>
+                <div class="stock-card-expand-icon">▼</div>
+            </div>
+            <div class="stock-card-accordion">
+                <div class="accordion-grid">
+                    <div class="accordion-item">
+                        <span class="acc-label">จำนวนหุ้น</span>
+                        <span class="acc-val">0.2458 หุ้น</span>
+                    </div>
+                    <div class="accordion-item">
+                        <span class="acc-label">ต้นทุนเฉลี่ย</span>
+                        <span class="acc-val">$600.97</span>
+                    </div>
+                    <div class="accordion-item">
+                        <span class="acc-label">ต้นทุนรวม ($)</span>
+                        <span class="acc-val">$147.71</span>
+                    </div>
+                    <div class="accordion-item">
+                        <span class="acc-label">ต้นทุนรวม (฿)</span>
+                        <span class="acc-val">฿4,966.01</span>
+                    </div>
+                    <div class="accordion-item">
+                        <span class="acc-label">กำไร/ขาดทุน ($)</span>
+                        <span class="acc-val cell-pl-usd" style="color: #f43f5e; font-weight: 700;">-$1.59</span>
+                    </div>
+                    <div class="accordion-item">
+                        <span class="acc-label">กำไร/ขาดทุน (฿)</span>
+                        <span class="acc-val cell-pl-thb" style="color: #f43f5e; font-weight: 700;">-฿3.74</span>
+                    </div>
+                </div>
+                <div style="margin-top: 10px; display: flex; justify-content: flex-end;">
+                    <button type="button" onclick="event.stopPropagation(); openChartModal(&quot;MU&quot;, &quot;NASDAQ&quot;, &quot;Micron Technology, Inc.&quot;, &quot;Electronic Technology&quot;, 600.9746, 594.51, 582.9, 912.26, 501.76, 912.26, 1631.56)" style="background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.35); color: #60a5fa; border-radius: 6px; padding: 6px 12px; font-size: 0.8rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;">
+                        📈 ดูกราฟสด & สัญญาณ MU
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="stock-card holding-card" data-ticker="SKHY" data-exchange="NASDAQ" data-shares="1.4045564" data-cost="105.1649" data-cost-usd="147.71" data-cost-thb="4966.01" onclick="toggleStockCardAccordion(this)">
+            <div class="stock-card-top">
+                <div class="stock-card-left">
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <span class="stock-card-ticker">SKHY</span>
+                        <span style="background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); padding: 1px 7px; border-radius: 4px; font-size: 0.72rem; font-weight: 700;">US Stock</span>
+                    </div>
+                    <div class="stock-card-name">SK hynix Inc. Sponsored ADR</div>
+                </div>
+                <div class="stock-card-right">
+                    <div class="stock-card-price cell-price">$103.57</div>
+                    <div class="stock-card-pl-badge cell-pl-pct" style="color: #f43f5e; background: rgba(244, 63, 94, 0.12); border: 1px solid rgba(244, 63, 94, 0.25);">
+                        -1.52%
+                    </div>
+                </div>
+            </div>
+            <div class="stock-card-quick-bar">
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <span style="color: var(--text-muted); font-size: 0.78rem;">พอร์ต:</span>
+                    <strong class="cell-weight" style="font-size: 0.82rem; color: #f8fafc;">0.3%</strong>
+                </div>
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <span style="color: var(--text-muted); font-size: 0.78rem;">มูลค่า:</span>
+                    <strong class="cell-val-usd" style="font-size: 0.82rem; color: #f8fafc;">$145.47</strong>
+                    <span class="cell-val-thb" style="color: var(--text-muted); font-size: 0.76rem;">(฿4,940.16)</span>
+                </div>
+                <div class="stock-card-expand-icon">▼</div>
+            </div>
+            <div class="stock-card-accordion">
+                <div class="accordion-grid">
+                    <div class="accordion-item">
+                        <span class="acc-label">จำนวนหุ้น</span>
+                        <span class="acc-val">1.4046 หุ้น</span>
+                    </div>
+                    <div class="accordion-item">
+                        <span class="acc-label">ต้นทุนเฉลี่ย</span>
+                        <span class="acc-val">$105.16</span>
+                    </div>
+                    <div class="accordion-item">
+                        <span class="acc-label">ต้นทุนรวม ($)</span>
+                        <span class="acc-val">$147.71</span>
+                    </div>
+                    <div class="accordion-item">
+                        <span class="acc-label">ต้นทุนรวม (฿)</span>
+                        <span class="acc-val">฿4,966.01</span>
+                    </div>
+                    <div class="accordion-item">
+                        <span class="acc-label">กำไร/ขาดทุน ($)</span>
+                        <span class="acc-val cell-pl-usd" style="color: #f43f5e; font-weight: 700;">-$2.24</span>
+                    </div>
+                    <div class="accordion-item">
+                        <span class="acc-label">กำไร/ขาดทุน (฿)</span>
+                        <span class="acc-val cell-pl-thb" style="color: #f43f5e; font-weight: 700;">-฿25.85</span>
+                    </div>
+                </div>
+                <div style="margin-top: 10px; display: flex; justify-content: flex-end;">
+                    <button type="button" onclick="event.stopPropagation(); openChartModal(&quot;SKHY&quot;, &quot;NASDAQ&quot;, &quot;SK hynix Inc. Sponsored ADR&quot;, &quot;Electronic Technology&quot;, 105.1649, 103.57, 88.06, 157.01, 88.06, 157.01, 264.3)" style="background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.35); color: #60a5fa; border-radius: 6px; padding: 6px 12px; font-size: 0.8rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;">
+                        📈 ดูกราฟสด & สัญญาณ SKHY
+                    </button>
+                </div>
+            </div>
+        </div>
+        
             </div>
 
             <!-- Link to Deep-Dive Health & Catalysts -->
@@ -1932,6 +2754,52 @@ function fmtPct(v, digits) {
                 if (weightCell) weightCell.textContent = weightPct.toFixed(1) + '%';
             });
 
+            // 5b. Update mobile cards
+            const cards = document.querySelectorAll('.holding-card');
+            cards.forEach(c => {
+                const ticker = c.dataset.ticker;
+                const quote = quotes[ticker];
+                const shares = parseFloat(c.dataset.shares) || 0;
+                const avgCost = parseFloat(c.dataset.cost) || 0;
+                const costUsd = parseFloat(c.dataset.costUsd) || (shares * avgCost);
+                const costThb = parseFloat(c.dataset.costThb) || (costUsd * currentFx);
+
+                if (quote && typeof quote.close === 'number') {
+                    const close = quote.close;
+                    const valUsd = shares * close;
+                    const valThb = valUsd * currentFx;
+                    const plUsd = valUsd - costUsd;
+                    const plThb = valThb - costThb;
+                    const plPct = costUsd > 0 ? (plUsd / costUsd * 100) : 0;
+                    const color = plUsd >= 0 ? '#10b981' : '#f43f5e';
+                    const plBg = plUsd >= 0 ? 'rgba(16, 185, 129, 0.12)' : 'rgba(244, 63, 94, 0.12)';
+                    const plBorder = plUsd >= 0 ? 'rgba(16, 185, 129, 0.25)' : 'rgba(244, 63, 94, 0.25)';
+
+                    const priceEl = c.querySelector('.cell-price');
+                    const valUsdEl = c.querySelector('.cell-val-usd');
+                    const valThbEl = c.querySelector('.cell-val-thb');
+                    const plUsdEl = c.querySelector('.cell-pl-usd');
+                    const plThbEl = c.querySelector('.cell-pl-thb');
+                    const plPctEl = c.querySelector('.cell-pl-pct');
+                    const weightEl = c.querySelector('.cell-weight');
+
+                    if (priceEl) priceEl.textContent = fmtMoney(close, '$');
+                    if (valUsdEl) valUsdEl.textContent = fmtMoney(valUsd, '$');
+                    if (valThbEl) valThbEl.textContent = '(' + fmtMoney(valThb, '฿') + ')';
+                    if (plUsdEl) { plUsdEl.textContent = fmtMoney(plUsd, '$', true); plUsdEl.style.color = color; }
+                    if (plThbEl) { plThbEl.textContent = fmtMoney(plThb, '฿', true); plThbEl.style.color = color; }
+                    if (plPctEl) {
+                        plPctEl.textContent = fmtPct(plPct, 2);
+                        plPctEl.style.color = color;
+                        plPctEl.style.background = plBg;
+                        plPctEl.style.borderColor = plBorder;
+                    }
+                    if (weightEl && totalMarketValUsd > 0) {
+                        weightEl.textContent = (valUsd / totalMarketValUsd * 100).toFixed(1) + '%';
+                    }
+                }
+            });
+
             // 6. Update KPIs
             const totalMarketValThb = totalMarketValUsd * currentFx;
             const totalPlUsd = totalMarketValUsd - totalCostUsd;
@@ -1980,6 +2848,18 @@ function fmtPct(v, digits) {
 
             if (kpiTotalCashThb) kpiTotalCashThb.textContent = fmtMoney(totalCashThb, '฿');
             if (kpiFxPill) kpiFxPill.textContent = '⚡ 1 USD = ' + currentFx.toFixed(2) + ' THB';
+
+            // Update Asset Allocation Bar
+            const allocBarStocks = document.getElementById('alloc-bar-stocks');
+            const allocLblStocks = document.getElementById('alloc-lbl-stocks');
+            const allocNavVal = document.getElementById('alloc-nav-val');
+            if (allocBarStocks && totalNetWorthThb > 0) {
+                const sPct = Math.max(0, Math.min(100, (totalMarketValThb / totalNetWorthThb) * 100));
+                allocBarStocks.style.width = sPct.toFixed(1) + '%';
+                allocBarStocks.title = 'หุ้นสหรัฐฯ: ' + sPct.toFixed(1) + '%';
+                if (allocLblStocks) allocLblStocks.textContent = sPct.toFixed(1) + '%';
+                if (allocNavVal) allocNavVal.textContent = fmtMoney(totalNetWorthThb, '฿');
+            }
 
             if (typeof window.__WEALTH_CHART_UPDATE__ === 'function') {
                 window.__WEALTH_CHART_UPDATE__({
@@ -2136,6 +3016,11 @@ function fmtPct(v, digits) {
             if (icon) icon.style.transform = '';
         }
     }
+
+    window.toggleStockCardAccordion = function(cardEl) {
+        if (!cardEl) return;
+        cardEl.classList.toggle('expanded');
+    };
     </script>
     
     

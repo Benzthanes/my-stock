@@ -28,6 +28,7 @@ from src.fx import resolve_usdthb, resolve_usdthb_with_source
 from src.html_report import get_chart_modal_component, _make_chart_onclick, _format_fx_badge
 from src.nav import nav_bar_html
 from src.portfolio import CONCENTRATION_WARN_PCT
+from src.scoring import ETF_TICKERS
 from src.wealth_timeline import calculate_daily_wealth_timeline
 
 MONTH_MAP = {
@@ -436,6 +437,51 @@ def generate_master_dashboard_data(ledger_path=None):
         result_data["wealth_summary"] = {}
 
     return result_data
+
+
+def render_asset_allocation_bar(data):
+    nav_thb = data.get("total_net_worth_thb") or 1.0
+    stocks_thb = data.get("stock_market_val_thb") or 0.0
+    dime_save_thb = data.get("dime_save_cash_thb") or 0.0
+    dime_usd_thb = data.get("dime_usd_cash_thb") or 0.0
+    dime_usd = data.get("dime_usd_cash") or 0.0
+
+    pct_stocks = max(0.0, min(100.0, (stocks_thb / nav_thb) * 100)) if nav_thb > 0 else 0.0
+    pct_dime_usd = max(0.0, min(100.0, (dime_usd_thb / nav_thb) * 100)) if nav_thb > 0 else 0.0
+    pct_dime_save = max(0.0, min(100.0, (dime_save_thb / nav_thb) * 100)) if nav_thb > 0 else 0.0
+
+    return f"""
+    <div class="card" style="margin-bottom: 24px; padding: 18px 22px; background: rgba(13, 21, 39, 0.7); border: 1px solid rgba(255, 255, 255, 0.08);">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 8px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+                <span style="font-size: 1.15rem;">📊</span>
+                <strong style="color: #f8fafc; font-size: 0.98rem; font-weight: 700;">สัดส่วนการจัดสรรสินทรัพย์รวม (Asset Allocation)</strong>
+            </div>
+            <div style="color: #94a3b8; font-size: 0.85rem;">
+                NAV สุทธิ: <strong id="alloc-nav-val" style="color: #60a5fa; font-family: 'Inter', sans-serif;">{money(nav_thb, 'THB')}</strong>
+            </div>
+        </div>
+        <div style="display: flex; width: 100%; height: 14px; border-radius: 999px; overflow: hidden; background: rgba(255, 255, 255, 0.05); margin-bottom: 14px; box-shadow: inset 0 2px 4px rgba(0,0,0,0.4);">
+            <div id="alloc-bar-stocks" style="width: {pct_stocks:.1f}%; background: linear-gradient(90deg, #10b981, #059669); transition: width 0.6s ease;" title="หุ้นสหรัฐฯ: {pct_stocks:.1f}%"></div>
+            <div id="alloc-bar-dime-usd" style="width: {pct_dime_usd:.1f}%; background: linear-gradient(90deg, #3b82f6, #2563eb); transition: width 0.6s ease;" title="เงินสด Dime! USD: {pct_dime_usd:.1f}%"></div>
+            <div id="alloc-bar-dime-save" style="width: {pct_dime_save:.1f}%; background: linear-gradient(90deg, #8b5cf6, #7c3aed); transition: width 0.6s ease;" title="เงินฝาก Dime! Save: {pct_dime_save:.1f}%"></div>
+        </div>
+        <div style="display: flex; gap: 16px 24px; flex-wrap: wrap; font-size: 0.82rem; color: #94a3b8;">
+            <div style="display: inline-flex; align-items: center; gap: 8px;">
+                <span style="width: 10px; height: 10px; border-radius: 50%; background: #10b981; display: inline-block;"></span>
+                <span>หุ้นสหรัฐฯ (Active Stocks): <strong id="alloc-lbl-stocks" style="color: #f8fafc;">{pct_stocks:.1f}%</strong> ({money(stocks_thb, 'THB')})</span>
+            </div>
+            <div style="display: inline-flex; align-items: center; gap: 8px;">
+                <span style="width: 10px; height: 10px; border-radius: 50%; background: #3b82f6; display: inline-block;"></span>
+                <span>เงินสด Dime! USD: <strong id="alloc-lbl-dime-usd" style="color: #f8fafc;">{pct_dime_usd:.1f}%</strong> ({money(dime_usd_thb, 'THB')} / {money(dime_usd)})</span>
+            </div>
+            <div style="display: inline-flex; align-items: center; gap: 8px;">
+                <span style="width: 10px; height: 10px; border-radius: 50%; background: #8b5cf6; display: inline-block;"></span>
+                <span>เงินฝาก Dime! Save: <strong id="alloc-lbl-dime-save" style="color: #f8fafc;">{pct_dime_save:.1f}%</strong> ({money(dime_save_thb, 'THB')})</span>
+            </div>
+        </div>
+    </div>
+    """
 
 
 def render_wealth_chart_section(data):
@@ -1341,6 +1387,52 @@ def get_live_refresh_script(data):
                 if (weightCell) weightCell.textContent = weightPct.toFixed(1) + '%';
             }});
 
+            // 5b. Update mobile cards
+            const cards = document.querySelectorAll('.holding-card');
+            cards.forEach(c => {{
+                const ticker = c.dataset.ticker;
+                const quote = quotes[ticker];
+                const shares = parseFloat(c.dataset.shares) || 0;
+                const avgCost = parseFloat(c.dataset.cost) || 0;
+                const costUsd = parseFloat(c.dataset.costUsd) || (shares * avgCost);
+                const costThb = parseFloat(c.dataset.costThb) || (costUsd * currentFx);
+
+                if (quote && typeof quote.close === 'number') {{
+                    const close = quote.close;
+                    const valUsd = shares * close;
+                    const valThb = valUsd * currentFx;
+                    const plUsd = valUsd - costUsd;
+                    const plThb = valThb - costThb;
+                    const plPct = costUsd > 0 ? (plUsd / costUsd * 100) : 0;
+                    const color = plUsd >= 0 ? '#10b981' : '#f43f5e';
+                    const plBg = plUsd >= 0 ? 'rgba(16, 185, 129, 0.12)' : 'rgba(244, 63, 94, 0.12)';
+                    const plBorder = plUsd >= 0 ? 'rgba(16, 185, 129, 0.25)' : 'rgba(244, 63, 94, 0.25)';
+
+                    const priceEl = c.querySelector('.cell-price');
+                    const valUsdEl = c.querySelector('.cell-val-usd');
+                    const valThbEl = c.querySelector('.cell-val-thb');
+                    const plUsdEl = c.querySelector('.cell-pl-usd');
+                    const plThbEl = c.querySelector('.cell-pl-thb');
+                    const plPctEl = c.querySelector('.cell-pl-pct');
+                    const weightEl = c.querySelector('.cell-weight');
+
+                    if (priceEl) priceEl.textContent = fmtMoney(close, '$');
+                    if (valUsdEl) valUsdEl.textContent = fmtMoney(valUsd, '$');
+                    if (valThbEl) valThbEl.textContent = '(' + fmtMoney(valThb, '฿') + ')';
+                    if (plUsdEl) {{ plUsdEl.textContent = fmtMoney(plUsd, '$', true); plUsdEl.style.color = color; }}
+                    if (plThbEl) {{ plThbEl.textContent = fmtMoney(plThb, '฿', true); plThbEl.style.color = color; }}
+                    if (plPctEl) {{
+                        plPctEl.textContent = fmtPct(plPct, 2);
+                        plPctEl.style.color = color;
+                        plPctEl.style.background = plBg;
+                        plPctEl.style.borderColor = plBorder;
+                    }}
+                    if (weightEl && totalMarketValUsd > 0) {{
+                        weightEl.textContent = (valUsd / totalMarketValUsd * 100).toFixed(1) + '%';
+                    }}
+                }}
+            }});
+
             // 6. Update KPIs
             const totalMarketValThb = totalMarketValUsd * currentFx;
             const totalPlUsd = totalMarketValUsd - totalCostUsd;
@@ -1389,6 +1481,18 @@ def get_live_refresh_script(data):
 
             if (kpiTotalCashThb) kpiTotalCashThb.textContent = fmtMoney(totalCashThb, '฿');
             if (kpiFxPill) kpiFxPill.textContent = '⚡ 1 USD = ' + currentFx.toFixed(2) + ' THB';
+
+            // Update Asset Allocation Bar
+            const allocBarStocks = document.getElementById('alloc-bar-stocks');
+            const allocLblStocks = document.getElementById('alloc-lbl-stocks');
+            const allocNavVal = document.getElementById('alloc-nav-val');
+            if (allocBarStocks && totalNetWorthThb > 0) {{
+                const sPct = Math.max(0, Math.min(100, (totalMarketValThb / totalNetWorthThb) * 100));
+                allocBarStocks.style.width = sPct.toFixed(1) + '%';
+                allocBarStocks.title = 'หุ้นสหรัฐฯ: ' + sPct.toFixed(1) + '%';
+                if (allocLblStocks) allocLblStocks.textContent = sPct.toFixed(1) + '%';
+                if (allocNavVal) allocNavVal.textContent = fmtMoney(totalNetWorthThb, '฿');
+            }}
 
             if (typeof window.__WEALTH_CHART_UPDATE__ === 'function') {{
                 window.__WEALTH_CHART_UPDATE__({{
@@ -1545,6 +1649,11 @@ def get_live_refresh_script(data):
             if (icon) icon.style.transform = '';
         }}
     }}
+
+    window.toggleStockCardAccordion = function(cardEl) {{
+        if (!cardEl) return;
+        cardEl.classList.toggle('expanded');
+    }};
     </script>
     """
 
@@ -1579,18 +1688,28 @@ def generate_master_dashboard_html(data):
         _, fx_source = resolve_usdthb_with_source(data.get("fx_rate"))
     fx_badge_html = _format_fx_badge(fx_source)
 
-    # 1. Active Holdings Rows
+    # 1. Active Holdings Rows & Mobile Cards
     holdings_rows = ""
+    holdings_mobile_cards = ""
     for p in data["positions"]:
         p_pl_usd = p["unrealized_pl_usd"]
         p_pl_thb = p["unrealized_pl_thb"]
         p_pl_pct = p["unrealized_pl_pct"]
         c = "#10b981" if (p_pl_usd or 0) >= 0 else "#f43f5e"
+        c_bg = "rgba(16, 185, 129, 0.12)" if (p_pl_usd or 0) >= 0 else "rgba(244, 63, 94, 0.12)"
+        c_border = "rgba(16, 185, 129, 0.25)" if (p_pl_usd or 0) >= 0 else "rgba(244, 63, 94, 0.25)"
         onclick_js = _make_chart_onclick(p)
         ex = escape(str(p.get('exchange', 'NASDAQ')), quote=True)
         tk = escape(str(p['ticker']), quote=True)
         server_val = p.get('current_val_usd')
         server_val_attr = f' data-server-val-usd="{server_val}"' if server_val is not None else ""
+
+        is_etf = p['ticker'] in ETF_TICKERS
+        tag_text = "Index ETF" if is_etf else "US Stock"
+        tag_bg = "rgba(139, 92, 246, 0.15)" if is_etf else "rgba(59, 130, 246, 0.15)"
+        tag_color = "#c084fc" if is_etf else "#60a5fa"
+        tag_border = "rgba(139, 92, 246, 0.3)" if is_etf else "rgba(59, 130, 246, 0.3)"
+
         holdings_rows += f"""
         <tr class="holding-row" data-ticker="{tk}" data-exchange="{ex}" data-shares="{p['shares']}" data-cost="{p['avg_cost_usd']}" data-cost-usd="{p.get('total_cost_usd') or ''}" data-cost-thb="{p.get('cost_thb') or ''}"{server_val_attr}>
             <td style="font-weight: 700; font-family: 'Inter', sans-serif; white-space: nowrap;">
@@ -1607,6 +1726,71 @@ def generate_master_dashboard_html(data):
             <td class="cell-pl-pct" style="text-align: right; color: {c}; font-family: 'Inter', sans-serif; font-weight: 700; white-space: nowrap;">{pct(p_pl_pct, digits=2, na='n/a')}</td>
             <td class="cell-weight" style="text-align: right; font-family: 'Inter', sans-serif; white-space: nowrap;">{pct(p.get('weight_pct'), signed=False)}</td>
         </tr>
+        """
+
+        holdings_mobile_cards += f"""
+        <div class="stock-card holding-card" data-ticker="{tk}" data-exchange="{ex}" data-shares="{p['shares']}" data-cost="{p['avg_cost_usd']}" data-cost-usd="{p.get('total_cost_usd') or ''}" data-cost-thb="{p.get('cost_thb') or ''}" onclick="toggleStockCardAccordion(this)">
+            <div class="stock-card-top">
+                <div class="stock-card-left">
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <span class="stock-card-ticker">{tk}</span>
+                        <span style="background: {tag_bg}; color: {tag_color}; border: 1px solid {tag_border}; padding: 1px 7px; border-radius: 4px; font-size: 0.72rem; font-weight: 700;">{tag_text}</span>
+                    </div>
+                    <div class="stock-card-name">{escape(str(p.get('name') or '-'))}</div>
+                </div>
+                <div class="stock-card-right">
+                    <div class="stock-card-price cell-price">{money(p.get('close_price'), na='n/a')}</div>
+                    <div class="stock-card-pl-badge cell-pl-pct" style="color: {c}; background: {c_bg}; border: 1px solid {c_border};">
+                        {pct(p_pl_pct, digits=2, na='n/a')}
+                    </div>
+                </div>
+            </div>
+            <div class="stock-card-quick-bar">
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <span style="color: var(--text-muted); font-size: 0.78rem;">พอร์ต:</span>
+                    <strong class="cell-weight" style="font-size: 0.82rem; color: #f8fafc;">{pct(p.get('weight_pct'), signed=False)}</strong>
+                </div>
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <span style="color: var(--text-muted); font-size: 0.78rem;">มูลค่า:</span>
+                    <strong class="cell-val-usd" style="font-size: 0.82rem; color: #f8fafc;">{money(p.get('current_val_usd'), na='n/a')}</strong>
+                    <span class="cell-val-thb" style="color: var(--text-muted); font-size: 0.76rem;">({money(p.get('current_val_thb'), 'THB', na='n/a')})</span>
+                </div>
+                <div class="stock-card-expand-icon">▼</div>
+            </div>
+            <div class="stock-card-accordion">
+                <div class="accordion-grid">
+                    <div class="accordion-item">
+                        <span class="acc-label">จำนวนหุ้น</span>
+                        <span class="acc-val">{p['shares']:.4f} หุ้น</span>
+                    </div>
+                    <div class="accordion-item">
+                        <span class="acc-label">ต้นทุนเฉลี่ย</span>
+                        <span class="acc-val">{money(p['avg_cost_usd'])}</span>
+                    </div>
+                    <div class="accordion-item">
+                        <span class="acc-label">ต้นทุนรวม ($)</span>
+                        <span class="acc-val">{money(p.get('total_cost_usd'))}</span>
+                    </div>
+                    <div class="accordion-item">
+                        <span class="acc-label">ต้นทุนรวม (฿)</span>
+                        <span class="acc-val">{money(p.get('cost_thb'), 'THB')}</span>
+                    </div>
+                    <div class="accordion-item">
+                        <span class="acc-label">กำไร/ขาดทุน ($)</span>
+                        <span class="acc-val cell-pl-usd" style="color: {c}; font-weight: 700;">{money(p_pl_usd, signed=True, na='n/a')}</span>
+                    </div>
+                    <div class="accordion-item">
+                        <span class="acc-label">กำไร/ขาดทุน (฿)</span>
+                        <span class="acc-val cell-pl-thb" style="color: {c}; font-weight: 700;">{money(p_pl_thb, 'THB', signed=True, na='n/a')}</span>
+                    </div>
+                </div>
+                <div style="margin-top: 10px; display: flex; justify-content: flex-end;">
+                    <button type="button" onclick="event.stopPropagation(); {onclick_js}" style="background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.35); color: #60a5fa; border-radius: 6px; padding: 6px 12px; font-size: 0.8rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;">
+                        📈 ดูกราฟสด & สัญญาณ {tk}
+                    </button>
+                </div>
+            </div>
+        </div>
         """
 
     html = f"""<!DOCTYPE html>
@@ -2001,6 +2185,133 @@ def generate_master_dashboard_html(data):
                 font-size: 0.82rem !important;
             }}
         }}
+
+        /* RESPONSIVE STOCK CARDS FOR MOBILE */
+        .holdings-mobile-cards {{
+            display: none;
+            flex-direction: column;
+            gap: 12px;
+        }}
+        .holdings-desktop-table {{
+            display: block;
+        }}
+
+        @media (max-width: 768px) {{
+            .holdings-desktop-table {{
+                display: none !important;
+            }}
+            .holdings-mobile-cards {{
+                display: flex !important;
+            }}
+        }}
+
+        .stock-card {{
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 14px 16px;
+            cursor: pointer;
+            transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.2s ease, box-shadow 0.2s ease;
+        }}
+        .stock-card:hover {{
+            transform: translateY(-2px);
+            border-color: rgba(59, 130, 246, 0.45);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 0 12px rgba(59, 130, 246, 0.15);
+        }}
+        .stock-card-top {{
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 10px;
+        }}
+        .stock-card-ticker {{
+            font-size: 1.15rem;
+            font-weight: 800;
+            font-family: 'Inter', sans-serif;
+            color: #ffffff;
+            letter-spacing: -0.01em;
+        }}
+        .stock-card-name {{
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            margin-top: 3px;
+            max-width: 190px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }}
+        .stock-card-right {{
+            text-align: right;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 4px;
+        }}
+        .stock-card-price {{
+            font-size: 1.08rem;
+            font-weight: 700;
+            font-family: 'Inter', sans-serif;
+            color: #f8fafc;
+        }}
+        .stock-card-pl-badge {{
+            display: inline-flex;
+            align-items: center;
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            font-family: 'Inter', sans-serif;
+        }}
+        .stock-card-quick-bar {{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+            padding-top: 8px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.8rem;
+        }}
+        .stock-card-expand-icon {{
+            font-size: 0.74rem;
+            color: var(--text-muted);
+            transition: transform 0.25s ease;
+        }}
+        .stock-card.expanded .stock-card-expand-icon {{
+            transform: rotate(180deg);
+            color: #60a5fa;
+        }}
+        .stock-card-accordion {{
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease, margin-top 0.25s ease;
+        }}
+        .stock-card.expanded .stock-card-accordion {{
+            max-height: 350px;
+            opacity: 1;
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px dashed rgba(255, 255, 255, 0.08);
+        }}
+        .accordion-grid {{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px 14px;
+        }}
+        .accordion-item {{
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }}
+        .acc-label {{
+            font-size: 0.72rem;
+            color: var(--text-muted);
+        }}
+        .acc-val {{
+            font-size: 0.88rem;
+            font-family: 'Inter', sans-serif;
+            color: #f1f5f9;
+        }}
     </style>
 </head>
 <body>
@@ -2082,15 +2393,18 @@ def generate_master_dashboard_html(data):
             </div>
         </div>
 
+        {render_asset_allocation_bar(data)}
+
         {render_wealth_chart_section(data)}
 
-        <!-- SECTION 1: ACTIVE HOLDINGS TABLE -->
+        <!-- SECTION 1: ACTIVE HOLDINGS TABLE & MOBILE CARDS -->
         <div style="margin-bottom: 36px;">
             <div class="section-title">
                 <span>📈</span> 1. รายการหุ้นที่กำลังถือครองในพอร์ต (Active Holdings: {len(data.get('positions', []))} ตัว)
                 <span class="badge badge-info">ราคาตลาดสดจาก TradingView API</span>
             </div>
-            <div class="card" style="padding: 0; overflow-x: auto;">
+            <!-- Desktop Tabular View -->
+            <div class="holdings-desktop-table card" style="padding: 0; overflow-x: auto;">
                 <table>
                     <thead>
                         <tr>
@@ -2111,6 +2425,11 @@ def generate_master_dashboard_html(data):
                         {holdings_rows}
                     </tbody>
                 </table>
+            </div>
+
+            <!-- Mobile Modern Stock Cards (< 768px) -->
+            <div class="holdings-mobile-cards">
+                {holdings_mobile_cards}
             </div>
 
             <!-- Link to Deep-Dive Health & Catalysts -->

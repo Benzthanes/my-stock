@@ -510,6 +510,13 @@ def generate_portfolio_html(summary: Dict[str, Any]) -> str:
         tailored_roadmap = fo.get("tailored_roadmap", p.get("rating", {}).get("action", ""))
         invalidation_risk = fo.get("invalidation_risk", f"ระวังการหลุดแนวรับสำคัญ {money(p.get('key_support'), ccy, na=NA)}")
 
+        c = float(p.get("close_price") or p.get("close") or 0.0)
+        act_text = p.get("rating", {}).get("action", "")
+        if any(w in act_text for w in ["ขาย", "ลด", "Trim", "Exit"]):
+            trade_cmd = f"python trades.py sell -t {t} -p {c:.2f}"
+        else:
+            trade_cmd = f"python trades.py buy -t {t} -s 1 -p {c:.2f} --pay usd"
+
         # Format drivers
         drivers_li = "".join([f"<li>{d}</li>" for d in drivers]) if drivers else "<li>กำลังติดตามข้อมูลปัจจัยขับเคลื่อนเชิงลึก</li>"
 
@@ -633,12 +640,17 @@ def generate_portfolio_html(summary: Dict[str, Any]) -> str:
                 </div>
             </div>
 
-            <!-- Tailored Strategic Roadmap & Invalidation Risk -->
-            <div class="roadmap-callout">
-                <div style="font-size: 0.85rem; font-weight: 700; color: #fbbf24; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px;">
-                    🧭 แผนกลยุทธ์ฟันธงสำหรับ {t} (Action Roadmap):
+            <!-- Tailored Strategic Roadmap & Invalidation Risk (Action Card) -->
+            <div class="roadmap-callout" style="background: rgba(15, 23, 42, 0.75); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 12px; padding: 16px 18px; margin-top: 14px; box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 10px;">
+                    <div style="font-size: 0.85rem; font-weight: 700; color: #fbbf24; text-transform: uppercase; letter-spacing: 0.05em; display: flex; align-items: center; gap: 6px;">
+                        <span>🧭</span> แผนกลยุทธ์ฟันธงสำหรับ {t} (Action Roadmap):
+                    </div>
+                    <button class="copy-cmd-btn" onclick="copyTradeCommand('{trade_cmd}', this)" title="คลิกเพื่อคัดลอกคำสั่ง CLI ไปรันในเทอร์มินัล">
+                        <span>📋</span> คัดลอกคำสั่ง <code class="cmd-code">{trade_cmd}</code>
+                    </button>
                 </div>
-                <div style="font-size: 0.95rem; color: #ffffff; line-height: 1.5; margin-bottom: 10px;">
+                <div style="font-size: 0.95rem; color: #ffffff; line-height: 1.55; margin-bottom: 10px;">
                     {tailored_roadmap}
                 </div>
                 <div style="font-size: 0.85rem; color: #fca5a5; background: rgba(244, 63, 94, 0.08); padding: 8px 12px; border-radius: 6px; border-left: 3px solid var(--rose);">
@@ -1514,6 +1526,15 @@ def generate_recovery_html(summary: Dict[str, Any]) -> str:
         loss_card_str = f"{money(-abs(p.get('loss_thb', abs(loss_u))), 'THB')} THB" if is_thb else f"{money(-abs(loss_u), 'USD')} USD"
         dca_cash_disp = money(dca_half.get("cash_needed"), ccy)
 
+        dca_sh = dca_half.get("shares_to_buy", 0) if isinstance(dca_half, dict) else 0
+        dca_pr = dca_half.get("buy_price", c) if isinstance(dca_half, dict) else c
+        if dca_sh > 0 and dca_pr > 0:
+            rec_cmd = f"python trades.py buy -t {t} -s {dca_sh:.4f} -p {dca_pr:.2f} --pay usd"
+        elif sl and sl > 0:
+            rec_cmd = f"python trades.py sell -t {t} -p {sl:.2f}"
+        else:
+            rec_cmd = f"python trades.py buy -t {t} -s 1 -p {c:.2f} --pay usd"
+
         onclick_js = _make_chart_onclick(p, is_thb=is_thb)
 
         deep_dive_cards += f"""
@@ -1652,12 +1673,17 @@ def generate_recovery_html(summary: Dict[str, Any]) -> str:
                 </div>
             </div>
 
-            <!-- Tailored Strategic Roadmap & Invalidation Risk -->
-            <div class="roadmap-callout">
-                <div style="font-size: 0.85rem; font-weight: 700; color: #fbbf24; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px;">
-                    🧭 แผนยุทธศาสตร์สำหรับ {t} (แนะนำตามกฎ ไม่ใช่คำสั่ง):
+            <!-- Tailored Strategic Roadmap & Invalidation Risk (Action Card) -->
+            <div class="roadmap-callout" style="background: rgba(15, 23, 42, 0.75); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 12px; padding: 16px 18px; margin-top: 14px; box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 10px;">
+                    <div style="font-size: 0.85rem; font-weight: 700; color: #fbbf24; text-transform: uppercase; letter-spacing: 0.05em; display: flex; align-items: center; gap: 6px;">
+                        <span>🧭</span> แผนยุทธศาสตร์สำหรับ {t} (Action Roadmap):
+                    </div>
+                    <button class="copy-cmd-btn" onclick="copyTradeCommand('{rec_cmd}', this)" title="คลิกเพื่อคัดลอกคำสั่ง CLI ไปรันในเทอร์มินัล">
+                        <span>📋</span> คัดลอกคำสั่ง <code class="cmd-code">{rec_cmd}</code>
+                    </button>
                 </div>
-                <div style="font-size: 0.95rem; color: #ffffff; line-height: 1.5; margin-bottom: 10px;">
+                <div style="font-size: 0.95rem; color: #ffffff; line-height: 1.55; margin-bottom: 10px;">
                     {tailored_roadmap}
                 </div>
                 <div style="font-size: 0.85rem; color: #fca5a5; background: rgba(244, 63, 94, 0.08); padding: 8px 12px; border-radius: 6px; border-left: 3px solid var(--rose);">

@@ -10,6 +10,8 @@ import os
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
 from src.portfolio import load_portfolio, analyze_portfolio, generate_portfolio_markdown
 from src.fmt import money, pct
 from src.html_report import generate_portfolio_html

@@ -82,6 +82,52 @@ _STYLE = """<style>
   .rnav-int-word { display: none; }
   .rnav-int-btn { padding: 3px 6px; min-height: 30px; }
 }
+
+/* FLOATING SCROLL TO TOP BUTTON */
+.scroll-to-top-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(15, 23, 42, 0.9);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(59, 130, 246, 0.45);
+  color: #60a5fa;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4), 0 0 10px rgba(59, 130, 246, 0.25);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease, background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  z-index: 9999;
+}
+.scroll-to-top-btn:hover {
+  background: rgba(30, 41, 59, 0.95);
+  border-color: #3b82f6;
+  color: #ffffff;
+  transform: translateY(8px) scale(1.06);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(59, 130, 246, 0.45);
+}
+.scroll-to-top-btn.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+@media (max-width: 640px) {
+  .scroll-to-top-btn {
+    bottom: 20px;
+    right: 16px;
+    width: 42px;
+    height: 42px;
+  }
+}
 </style>"""
 
 _SCRIPT = """<script>
@@ -238,6 +284,16 @@ _SCRIPT = """<script>
       }
     };
   } catch(e) {}
+
+  window.addEventListener('scroll', function() {
+    var btn = document.getElementById('scroll-to-top');
+    if (!btn) return;
+    if (window.scrollY > 280 || (document.documentElement && document.documentElement.scrollTop > 280)) {
+      btn.classList.add('visible');
+    } else {
+      btn.classList.remove('visible');
+    }
+  }, { passive: true });
 })();
 </script>"""
 
@@ -368,5 +424,9 @@ def nav_bar_html(active: str, now: Optional[datetime] = None) -> str:
         f'<span class="rnav-time">อัปเดต: {stamp}</span>'
         f'</div>'
         f'</div>'
-        f'</nav>\n{_SCRIPT}\n{_MOBILE_TABLES}'
+        f'</nav>\n'
+        f'<button id="scroll-to-top" class="scroll-to-top-btn" onclick="window.scrollTo({{top:0,behavior:\'smooth\'}})" aria-label="เลื่อนขึ้นบนสุด" title="เลื่อนขึ้นบนสุด">'
+        f'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>'
+        f'</button>\n'
+        f'{_SCRIPT}\n{_MOBILE_TABLES}'
     )

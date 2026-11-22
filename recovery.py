@@ -11,6 +11,9 @@ import sys
 import time
 from datetime import datetime, timezone
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
 from typing import Any, Dict, List, Optional
 
 from src.fmt import money, pct

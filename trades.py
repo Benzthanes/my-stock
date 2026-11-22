@@ -10,6 +10,8 @@ import json
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
 from src.trades import (
     load_trades,
     save_trades,

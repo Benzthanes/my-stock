@@ -493,7 +493,7 @@ def _when(trade_date: Optional[str]) -> datetime:
 
 
 def _cash_date_str(when: datetime, trade_date: Optional[str]) -> str:
-    return when.strftime("%d/%m/%Y") if trade_date else when.strftime("%d/%m/%Y %H:%M น.")
+    return when.strftime("%d/%m/%Y") if trade_date else when.strftime("%d/%m/%Y %H:%M") + " น."
 
 
 def _thai_date_str(when: datetime) -> str:

@@ -65,6 +65,12 @@ class NavBarTest(unittest.TestCase):
             self.assertIn(f'id="rnav-live-{interval}"', html)
         self.assertIn(">5s</button>", html)
 
+    def test_scroll_to_top_button(self):
+        html = nav_bar_html("master", FIXED)
+        self.assertIn('id="scroll-to-top"', html)
+        self.assertIn('class="scroll-to-top-btn"', html)
+        self.assertIn("window.scrollTo", html)
+
 
 if __name__ == "__main__":
     unittest.main()

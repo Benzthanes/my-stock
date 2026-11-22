@@ -9,6 +9,8 @@ import json
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
 from src.universe import get_tv_symbols, resolve_custom_tickers
 from src.tradingview import fetch_screener_data
 from src.screener import filter_stocks, generate_markdown_report

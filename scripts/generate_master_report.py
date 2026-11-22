@@ -2226,6 +2226,28 @@ def generate_master_ledger_html(data):
             slip_html = f'<span style="color: var(--text-muted); font-size: 0.78rem;">{fn_html}</span>'
             m_slip_btn = '<span style="color: var(--text-muted); font-size: 0.74rem;">-</span>'
 
+        o_sh = float(o.get("shares", 0.0))
+        o_pr = float(o.get("price_usd", 0.0))
+        o_amt = float(o.get("amt_usd", 0.0))
+        gross_usd = round(o_sh * o_pr, 2)
+        fees_val = o.get("fees_usd")
+        if fees_val is not None:
+            fees_usd = float(fees_val)
+        elif is_buy and o_amt > gross_usd:
+            fees_usd = round(o_amt - gross_usd, 2)
+        elif (not is_buy) and gross_usd > o_amt:
+            fees_usd = round(gross_usd - o_amt, 2)
+        else:
+            fees_usd = 0.0
+
+        if fees_usd > 0:
+            fee_str = f'<span style="color: #fb7185; font-family: \'Inter\', sans-serif; font-weight: 500;">{money(fees_usd)}</span>'
+        else:
+            fee_str = '<span style="color: var(--text-muted); font-size: 0.78rem;">$0.00</span>'
+
+        gross_str = money(gross_usd)
+        net_str = money(o_amt)
+
         row_action_attr = "BUY" if is_buy else "SELL"
         order_rows += f"""
         <tr data-action="{row_action_attr}">
@@ -2239,7 +2261,9 @@ def generate_master_ledger_html(data):
             <td style="text-align: center; white-space: nowrap;">{acc_badge}</td>
             <td style="text-align: right; font-family: 'Inter', sans-serif; font-weight: 600; white-space: nowrap;">{o.get('shares', 0):.4f}</td>
             <td style="text-align: right; font-family: 'Inter', sans-serif; white-space: nowrap;">{money(o.get('price_usd', 0))}</td>
-            <td style="text-align: right; font-family: 'Inter', sans-serif; font-weight: 600; color: #fff; white-space: nowrap;">{money(o.get('amt_usd', 0))}</td>
+            <td style="text-align: right; font-family: 'Inter', sans-serif; white-space: nowrap; color: #cbd5e1;">{gross_str}</td>
+            <td style="text-align: right; font-family: 'Inter', sans-serif; white-space: nowrap;">{fee_str}</td>
+            <td style="text-align: right; font-family: 'Inter', sans-serif; font-weight: 700; color: #fff; white-space: nowrap;">{net_str}</td>
             <td style="text-align: right; font-family: 'Inter', sans-serif; white-space: nowrap;">{thb_str}</td>
             <td style="text-align: right; font-family: 'Inter', sans-serif; color: var(--text-muted); white-space: nowrap;">{fx_str}</td>
             <td style="text-align: center; white-space: nowrap;">{slip_html}</td>
@@ -2264,7 +2288,11 @@ def generate_master_ledger_html(data):
                 <div style="font-family: 'Inter'; color: #94a3b8;">{o.get('shares', 0):.4f} หุ้น @ {money(o.get('price_usd', 0))}</div>
                 <div>{acc_badge}</div>
             </div>
-            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.76rem; color: var(--text-muted); padding-top: 2px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.76rem; color: var(--text-muted);">
+                <div>มูลค่าหุ้น: <span style="font-family: 'Inter'; color: #cbd5e1;">{gross_str}</span></div>
+                <div>ค่าธรรมเนียม: {fee_str}</div>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.76rem; color: var(--text-muted); padding-top: 2px; border-top: 1px solid rgba(255,255,255,0.04);">
                 <div>🕒 {escape(str(o.get('date', '-')))}</div>
                 <div>{m_slip_btn}</div>
             </div>
@@ -2371,6 +2399,13 @@ def generate_master_ledger_html(data):
                 tranche_btn = '<span class="badge badge-neutral" style="font-size: 0.76rem;">1 ไม้</span>'
                 m_tranche_btn = ''
 
+        t_gross = t.get('gross_revenue_usd', round(t.get('shares', 0) * t.get('sell_price_usd', 0), 2))
+        t_fees = t.get('fees_usd', 0.0)
+        if t_fees > 0:
+            fee_cell = f'<span style="color: #fb7185; font-family: \'Inter\', sans-serif; font-weight: 500;">{money(t_fees)}</span>'
+        else:
+            fee_cell = '<span class="badge badge-success" style="font-size: 0.72rem; padding: 2px 6px;">ฟรีคอม</span>'
+
         closed_rows += f"""
         <tr style="border-bottom: 1px solid var(--border-subtle);">
             <td style="text-align: center; color: var(--text-muted); font-family: 'Inter', sans-serif;">{idx+1:02d}</td>
@@ -2389,7 +2424,9 @@ def generate_master_ledger_html(data):
             <td style="text-align: right; font-family: 'Inter', sans-serif; white-space: nowrap;">{money(t.get('buy_price_usd', 0))}</td>
             <td style="text-align: right; font-family: 'Inter', sans-serif; font-weight: 600; color: #fff; white-space: nowrap;">{money(t.get('sell_price_usd', 0))}</td>
             <td style="text-align: right; font-family: 'Inter', sans-serif; white-space: nowrap;">{money(t.get('total_cost_usd', 0))}</td>
-            <td style="text-align: right; font-family: 'Inter', sans-serif; font-weight: 600; color: #fff; white-space: nowrap;">{money(t.get('net_revenue_usd', 0))}</td>
+            <td style="text-align: right; font-family: 'Inter', sans-serif; white-space: nowrap; color: #cbd5e1;">{money(t_gross)}</td>
+            <td style="text-align: right; font-family: 'Inter', sans-serif; white-space: nowrap;">{fee_cell}</td>
+            <td style="text-align: right; font-family: 'Inter', sans-serif; font-weight: 700; color: #fff; white-space: nowrap;">{money(t.get('net_revenue_usd', 0))}</td>
             <td style="text-align: right; color: {c}; font-family: 'Inter', sans-serif; font-weight: 700; white-space: nowrap;">{money(t.get('realized_pl_usd', 0), signed=True)}</td>
             <td style="text-align: right; color: {c}; font-family: 'Inter', sans-serif; font-weight: 600; white-space: nowrap;">{money(t.get('realized_pl_thb', 0), 'THB', signed=True)}</td>
             <td style="text-align: right; color: {c}; font-family: 'Inter', sans-serif; font-weight: 700; white-space: nowrap;">{pct(t.get('realized_pl_pct', 0), digits=2)}</td>
@@ -2445,7 +2482,7 @@ def generate_master_ledger_html(data):
 
             closed_rows += f"""
             <tr id="details-{trade_id}" class="tranche-detail-row" style="display: none; background: rgba(139, 92, 246, 0.05);">
-                <td colspan="15" style="padding: 12px 18px;">
+                <td colspan="17" style="padding: 12px 18px;">
                     <div style="background: #090e1a; border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 8px; padding: 14px 18px;">
                         <div style="font-size: 0.85rem; font-weight: 700; color: #c084fc; margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
                             <span>🔍</span> รายละเอียดการเข้าซื้อทีละไม้ของ {t_ticker} (ทั้งหมด {tranche_count} ไม้ | ต้นทุนเฉลี่ย {money(t.get('buy_price_usd', 0))}):
@@ -2483,6 +2520,7 @@ def generate_master_ledger_html(data):
 
         m_sell_btns_html = " ".join(sell_btns) if sell_btns else ""
 
+        m_fee_info = f"ค่าธรรมเนียม: {money(t_fees)}" if t_fees > 0 else "ฟรีค่าคอม"
         closed_mobile_cards += f"""
         <div class="m-trade-card" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 12px 14px; display: flex; flex-direction: column; gap: 8px;">
             <div style="display: flex; justify-content: space-between; align-items: center;">
@@ -2501,7 +2539,9 @@ def generate_master_ledger_html(data):
                 <div><span style="color: var(--text-muted);">ซื้อเฉลี่ย:</span> <strong style="font-family: 'Inter'; color: #cbd5e1;">{money(t.get('buy_price_usd', 0))}</strong></div>
                 <div><span style="color: var(--text-muted);">ขายจริง:</span> <strong style="font-family: 'Inter'; color: #fff;">{money(t.get('sell_price_usd', 0))}</strong></div>
                 <div><span style="color: var(--text-muted);">จำนวน:</span> <span style="font-family: 'Inter';">{t.get('shares', 0):.4f} หุ้น</span></div>
+                <div><span style="color: var(--text-muted);">มูลค่าขายรวม:</span> <span style="font-family: 'Inter'; color: #cbd5e1;">{money(t_gross)}</span></div>
                 <div><span style="color: var(--text-muted);">รับสุทธิ:</span> <strong style="font-family: 'Inter'; color: #10b981;">{money(t.get('net_revenue_usd', 0))}</strong></div>
+                <div><span style="color: var(--text-muted);">ค่าธรรมเนียม:</span> <span style="font-family: 'Inter'; color: #fb7185;">{m_fee_info}</span></div>
             </div>
             <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.74rem; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 6px;">
                 <div>
@@ -2885,7 +2925,9 @@ def generate_master_ledger_html(data):
                             <th style="text-align: center;">บัญชีที่ชำระ</th>
                             <th style="text-align: right;">จำนวนหุ้น</th>
                             <th style="text-align: right;">ราคาที่ได้จริง ($)</th>
-                            <th style="text-align: right;">ยอดเงิน ($)</th>
+                            <th style="text-align: right;" title="มูลค่าหุ้นจริง = จำนวนหุ้น x ราคาที่ได้จริง">มูลค่าหุ้น ($)</th>
+                            <th style="text-align: right;" title="ค่าคอมมิชชันและภาษี">ค่าธรรมเนียม ($)</th>
+                            <th style="text-align: right;" title="ยอดชำระจริง (ซื้อ) หรือเงินรับจริง (ขาย)">ยอดสุทธิ ($)</th>
                             <th style="text-align: right;">ยอดเงิน (฿)</th>
                             <th style="text-align: right;">FX Rate</th>
                             <th style="text-align: center;">สลิปอ้างอิง</th>
@@ -2925,7 +2967,9 @@ def generate_master_ledger_html(data):
                             <th style="text-align: right;">ราคาซื้อเฉลี่ย</th>
                             <th style="text-align: right;">ราคาขายจริง</th>
                             <th style="text-align: right;">ต้นทุนรวม ($)</th>
-                            <th style="text-align: right;">เงินรับสุทธิ ($)</th>
+                            <th style="text-align: right;" title="มูลค่าขายรวมก่อนหักค่าธรรมเนียม = หุ้น x ราคาขาย">มูลค่าขายรวม ($)</th>
+                            <th style="text-align: right;" title="ค่าคอมมิชชันและค่าธรรมเนียมตลาด">ค่าธรรมเนียม ($)</th>
+                            <th style="text-align: right;" title="เงินรับสุทธิหลังหักค่าธรรมเนียม">เงินรับสุทธิ ($)</th>
                             <th style="text-align: right;">กำไร ($)</th>
                             <th style="text-align: right;">กำไร (฿)</th>
                             <th style="text-align: right;">% ผลตอบแทน</th>

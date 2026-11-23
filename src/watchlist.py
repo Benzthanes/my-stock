@@ -366,7 +366,12 @@ def analyze_watchlist(
                 chg_str = f' <span class="{cls}">{reg_chg:+.2f}%</span>' if reg_chg is not None else ""
                 if post_close is not None and post_chg is not None and post_close > 0:
                     p_cls = "up" if post_chg >= 0 else "down"
-                    price_sub = f'<span class="ptag-close">Close</span>{chg_str} <span style="opacity:0.75">· Post {_fmt_money(post_close)}</span> <span class="{p_cls}" style="font-size:0.68rem">({post_chg:+.2f}%)</span>'
+                    price_sub = (
+                        f'<div class="price-sub-line"><span class="ptag-close">Close</span>{chg_str}</div>'
+                        f'<div class="price-sub-line" style="margin-top:2px; font-size:0.68rem; color:var(--text2);">'
+                        f'<span class="ptag-post">Post</span> {_fmt_money(post_close)} '
+                        f'<span class="{p_cls}">({post_chg:+.2f}%)</span></div>'
+                    )
                 else:
                     price_sub = f'<span class="ptag-close">Close</span>{chg_str}'
 
@@ -952,12 +957,12 @@ h1 {{ font-size: 1.75rem; font-weight: 700; color: #fff; display: flex; align-it
 .card-rose {{ border-left: 4px solid var(--rose); }}
 .card-slate {{ border-left: 4px solid var(--slate); }}
 
-.card-head {{ display: flex; justify-content: space-between; align-items: center; gap: 8px; min-width: 0; }}
-.card-tk-box {{ display: flex; align-items: center; gap: 8px; min-width: 0; flex: 1 1 auto; overflow: hidden; }}
+.card-head {{ display: flex; justify-content: space-between; align-items: center; gap: 8px; min-width: 0; flex-wrap: wrap; }}
+.card-tk-box {{ display: flex; align-items: center; gap: 6px 8px; min-width: 0; flex: 1 1 auto; flex-wrap: wrap; overflow: visible; }}
 .tk {{ font-family: 'Inter', sans-serif; font-weight: 800; font-size: 1.15rem; letter-spacing: 0.02em; color: #fff; flex-shrink: 0; }}
 .port-star {{ color: var(--gold); font-size: 0.95rem; flex-shrink: 0; }}
-.card-grp {{ font-size: 0.74rem; color: var(--text2); background: rgba(255,255,255,0.05); padding: 2px 7px; border-radius: 6px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 140px; }}
-.card-name {{ font-size: 0.82rem; color: var(--text2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }}
+.card-grp {{ font-size: 0.74rem; color: var(--text2); background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); padding: 2px 7px; border-radius: 6px; white-space: nowrap; line-height: 1.4; flex-shrink: 0; }}
+.card-name {{ font-size: 0.82rem; color: var(--text2); white-space: normal; line-height: 1.35; min-width: 0; word-break: break-word; }}
 
 /* Catalyst Tag */
 .card-catalyst {{
@@ -979,7 +984,8 @@ h1 {{ font-size: 1.75rem; font-weight: 700; color: #fff; display: flex; align-it
 .dist-emerald {{ color: var(--emerald); font-weight: 700; }}
 .dist-rose {{ color: var(--rose); font-weight: 700; }}
 .dist-slate {{ color: var(--text2); font-weight: 600; }}
-.card-sub {{ font-size: 0.72rem; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }}
+.card-sub {{ font-size: 0.72rem; color: var(--muted); line-height: 1.35; min-width: 0; }}
+.price-sub-line {{ white-space: nowrap; }}
 .ptag {{ color: var(--blue); font-weight: 700; }}
 .ptag-close {{ color: var(--muted); font-weight: 600; }}
 .ptag-live {{ color: var(--emerald); font-weight: 700; }}
@@ -1003,27 +1009,27 @@ h1 {{ font-size: 1.75rem; font-weight: 700; color: #fff; display: flex; align-it
     display: flex; flex-direction: column; gap: 4px; min-width: 0;
 }}
 .val-header {{
-    display: flex; justify-content: space-between; align-items: center; gap: 6px; font-size: 0.72rem;
+    display: flex; justify-content: space-between; align-items: center; gap: 6px; font-size: 0.72rem; flex-wrap: wrap;
 }}
 .val-title {{ color: var(--muted); font-weight: 600; font-size: 0.7rem; }}
 .val-pill {{
     display: inline-flex; align-items: center; font-size: 0.68rem; font-weight: 700;
-    padding: 2px 7px; border-radius: 9999px; border: 1px solid transparent; white-space: nowrap;
+    padding: 2px 7px; border-radius: 9999px; border: 1px solid transparent; white-space: normal; line-height: 1.3;
 }}
 .val-body {{
-    display: flex; justify-content: space-between; align-items: baseline; gap: 8px; min-width: 0;
+    display: flex; justify-content: space-between; align-items: center; gap: 6px 10px; min-width: 0; flex-wrap: wrap;
 }}
-.val-price-wrap {{ display: flex; align-items: baseline; gap: 6px; }}
+.val-price-wrap {{ display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; flex-shrink: 0; }}
 .val-lbl {{ font-size: 0.7rem; color: var(--muted); }}
 .val-price {{ font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.95rem; }}
-.val-up-tag {{ font-size: 0.72rem; font-weight: 700; padding: 1px 5px; border-radius: 4px; }}
+.val-up-tag {{ font-size: 0.72rem; font-weight: 700; padding: 1px 5px; border-radius: 4px; white-space: nowrap; }}
 .val-up-tag.up {{ color: #34d399; background: rgba(52,211,153,0.12); }}
 .val-up-tag.down {{ color: #fb7185; background: rgba(251,113,133,0.12); }}
 .val-up-tag.fair {{ color: #38bdf8; background: rgba(56,189,248,0.12); }}
 .val-up-tag.spec {{ color: #facc15; background: rgba(250,204,21,0.12); }}
 .val-model-tag {{
-    font-size: 0.68rem; color: var(--muted); white-space: nowrap;
-    overflow: hidden; text-overflow: ellipsis; text-align: right; max-width: 135px;
+    font-size: 0.68rem; color: var(--muted); white-space: normal;
+    line-height: 1.3; text-align: right;
 }}
 
 /* Pro Table Valuation Box */
@@ -1038,11 +1044,11 @@ h1 {{ font-size: 1.75rem; font-weight: 700; color: #fff; display: flex; align-it
 .card-meter-box {{ margin: 2px 0; }}
 .card-meter {{
     display: flex; justify-content: space-between; align-items: center; gap: 8px;
-    border-radius: 10px; padding: 7px 11px; font-size: 0.78rem; min-width: 0;
+    border-radius: 10px; padding: 7px 11px; font-size: 0.78rem; min-width: 0; flex-wrap: wrap;
 }}
 .meter-main {{ display: flex; align-items: center; gap: 6px; white-space: nowrap; }}
 .meter-bold {{ font-weight: 700; }}
-.meter-hint {{ font-size: 0.72rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; opacity: 0.85; }}
+.meter-hint {{ font-size: 0.72rem; line-height: 1.3; opacity: 0.85; white-space: normal; }}
 .meter-emerald {{ background: rgba(16,185,129,0.12); border: 1px solid rgba(16,185,129,0.3); color: #6ee7b7; }}
 .meter-rose {{ background: rgba(244,63,94,0.12); border: 1px solid rgba(244,63,94,0.3); color: #fca5a5; }}
 .meter-slate {{ background: rgba(148,163,184,0.08); border: 1px solid rgba(148,163,184,0.2); color: var(--text2); }}
@@ -1056,7 +1062,7 @@ h1 {{ font-size: 1.75rem; font-weight: 700; color: #fff; display: flex; align-it
 /* Card Actions */
 .card-actions {{
     display: flex; justify-content: space-between; align-items: center; gap: 8px;
-    border-top: 1px solid var(--line); padding-top: 10px; margin-top: 2px; min-width: 0;
+    border-top: 1px solid var(--line); padding-top: 10px; margin-top: 2px; min-width: 0; flex-wrap: wrap;
 }}
 .btn-chart-link {{
     font-size: 0.78rem; font-weight: 600; color: var(--blue); text-decoration: none;
@@ -1066,7 +1072,7 @@ h1 {{ font-size: 1.75rem; font-weight: 700; color: #fff; display: flex; align-it
 }}
 .btn-chart-link:hover {{ background: rgba(96,165,250,0.2); color: #fff; transform: translateY(-1px); }}
 .card-src-tag {{
-    font-size: 0.7rem; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    font-size: 0.7rem; color: var(--muted); white-space: normal; line-height: 1.3;
     text-align: right; min-width: 0;
 }}
 
@@ -1302,9 +1308,10 @@ code {{ background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px
 /* Extra Small Mobile (<= 600px) */
 @media (max-width: 600px) {{
     body {{ padding: 10px 8px; }}
-    .card-head {{ width: 100%; min-width: 0; }}
-    .card-tk-box {{ min-width: 0; flex: 1 1 auto; overflow: hidden; }}
-    .card-grp {{ max-width: 95px; }}
+    .card-head {{ width: 100%; min-width: 0; flex-wrap: wrap; gap: 6px; }}
+    .card-tk-box {{ min-width: 0; flex: 1 1 auto; flex-wrap: wrap; gap: 6px; overflow: visible; }}
+    .card-grp {{ max-width: none; white-space: nowrap; }}
+    .card-name {{ white-space: normal; line-height: 1.35; }}
     .status-pill {{ flex-shrink: 0; }}
     .card-price-grid {{
         grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
@@ -1343,6 +1350,18 @@ code {{ background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px
     .price-col-dist .card-sub {{
         display: none;
     }}
+    .card-val-box .val-body {{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 3px;
+    }}
+    .card-val-box .val-model-tag {{
+        text-align: left;
+        max-width: 100%;
+        white-space: normal;
+        line-height: 1.3;
+        font-size: 0.68rem;
+    }}
     .card-meter {{
         padding: 6px 10px;
         font-size: 0.74rem;
@@ -1354,14 +1373,20 @@ code {{ background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 4px
     }}
     .meter-hint {{
         font-size: 0.68rem;
+        white-space: normal;
+        line-height: 1.3;
     }}
     .card-actions {{
         width: 100%;
         min-width: 0;
         box-sizing: border-box;
+        flex-wrap: wrap;
+        gap: 6px;
     }}
     .card-src-tag {{
-        max-width: 150px;
+        max-width: none;
+        white-space: normal;
+        line-height: 1.3;
     }}
 }}
 </style>

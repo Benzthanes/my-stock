@@ -173,9 +173,9 @@
             font-size: 2rem;
             font-weight: 800;
             font-family: 'Inter', sans-serif;
-            background: var(--amber-glow);
-            border: 3px solid var(--amber);
-            box-shadow: 0 0 20px var(--amber-glow);
+            background: var(--emerald-glow);
+            border: 3px solid var(--emerald);
+            box-shadow: 0 0 20px var(--emerald-glow);
         }
 
         /* Layman Hero Card */
@@ -712,7 +712,7 @@ table td, table th, .kpi-value, .wealth-hud-val, .wealth-hud-sub,
   font-size: 0.78rem;
 }
 </style>
-<nav class="rnav" aria-label="รายงาน"><div class="rnav-top-row"><div class="rnav-links"><a href="portfolio_master.html" class="rnav-link" data-icon="👑">ภาพรวม</a><a href="portfolio_review.html" class="rnav-link active" aria-current="page" data-icon="🩺">สุขภาพพอร์ต</a><a href="portfolio_recovery.html" class="rnav-link" data-icon="🧗">แก้ดอย</a><a href="trades_ledger.html" class="rnav-link" data-icon="📜">รายการซื้อขายทั้งหมด</a><a href="stock_chart.html" class="rnav-link" data-icon="📈">กราฟ</a><a href="watchlist.html" class="rnav-link" data-icon="📋">หุ้นที่สนใจ</a></div></div><div class="rnav-live-bar"><div class="rnav-live-left"><button id="rnav-btn-refresh" class="rnav-refresh-btn" onclick="triggerGlobalRefresh()" title="กดเพื่อดึงราคาตลาดสดทันที"><span id="rnav-refresh-icon" style="display:inline-block; transition:transform 0.6s ease;">🔄</span> <span id="rnav-refresh-text">รีเฟรชราคา</span> <span class="rnav-live-badge">Live</span></button><div class="rnav-int-group" title="อัปเดตราคาหุ้นอัตโนมัติ (5วิ - 60วิ)"><span class="rnav-int-label">⏱️<span class="rnav-int-word"> อัปเดตสด:</span></span><button id="rnav-live-0" class="rnav-int-btn active" onclick="setGlobalLiveInterval(0)">ปิด</button><button id="rnav-live-5" class="rnav-int-btn" onclick="setGlobalLiveInterval(5)">5s</button><button id="rnav-live-15" class="rnav-int-btn" onclick="setGlobalLiveInterval(15)">15s</button><button id="rnav-live-30" class="rnav-int-btn" onclick="setGlobalLiveInterval(30)">30s</button><button id="rnav-live-60" class="rnav-int-btn" onclick="setGlobalLiveInterval(60)">60s</button></div></div><div class="rnav-live-right"><span id="rnav-live-status" class="rnav-status">⚪ อัปเดตด้วยตนเอง</span><span class="rnav-time">อัปเดต: 2026-11-23 13:00</span></div></div></nav>
+<nav class="rnav" aria-label="รายงาน"><div class="rnav-top-row"><div class="rnav-links"><a href="portfolio_master.html" class="rnav-link" data-icon="👑">ภาพรวม</a><a href="portfolio_review.html" class="rnav-link active" aria-current="page" data-icon="🩺">สุขภาพพอร์ต</a><a href="portfolio_recovery.html" class="rnav-link" data-icon="🧗">แก้ดอย</a><a href="trades_ledger.html" class="rnav-link" data-icon="📜">รายการซื้อขายทั้งหมด</a><a href="stock_chart.html" class="rnav-link" data-icon="📈">กราฟ</a><a href="watchlist.html" class="rnav-link" data-icon="📋">หุ้นที่สนใจ</a></div></div><div class="rnav-live-bar"><div class="rnav-live-left"><button id="rnav-btn-refresh" class="rnav-refresh-btn" onclick="triggerGlobalRefresh()" title="กดเพื่อดึงราคาตลาดสดทันที"><span id="rnav-refresh-icon" style="display:inline-block; transition:transform 0.6s ease;">🔄</span> <span id="rnav-refresh-text">รีเฟรชราคา</span> <span class="rnav-live-badge">Live</span></button><div class="rnav-int-group" title="อัปเดตราคาหุ้นอัตโนมัติ (5วิ - 60วิ)"><span class="rnav-int-label">⏱️<span class="rnav-int-word"> อัปเดตสด:</span></span><button id="rnav-live-0" class="rnav-int-btn active" onclick="setGlobalLiveInterval(0)">ปิด</button><button id="rnav-live-5" class="rnav-int-btn" onclick="setGlobalLiveInterval(5)">5s</button><button id="rnav-live-15" class="rnav-int-btn" onclick="setGlobalLiveInterval(15)">15s</button><button id="rnav-live-30" class="rnav-int-btn" onclick="setGlobalLiveInterval(30)">30s</button><button id="rnav-live-60" class="rnav-int-btn" onclick="setGlobalLiveInterval(60)">60s</button></div></div><div class="rnav-live-right"><span id="rnav-live-status" class="rnav-status">⚪ อัปเดตด้วยตนเอง</span><span class="rnav-time">อัปเดต: 2026-11-24 06:22</span></div></div></nav>
 <button id="scroll-to-top" class="scroll-to-top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="เลื่อนขึ้นบนสุด" title="เลื่อนขึ้นบนสุด"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg></button>
 <script>
 (function() {
@@ -1006,7 +1006,7 @@ table td, table th, .kpi-value, .wealth-hud-val, .wealth-hud-sub,
             </div>
             <div class="header-meta">
                 <span class="meta-pill">🏦 <strong>Broker:</strong> Dime! (KKP Securities)</span>
-                <span class="meta-pill">💱 <strong>FX Rate:</strong> 34.01 THB/USD</span>
+                <span class="meta-pill">💱 <strong>FX Rate:</strong> 33.98 THB/USD</span>
             </div>
         </header>
 
@@ -1015,50 +1015,50 @@ table td, table th, .kpi-value, .wealth-hud-val, .wealth-hud-sub,
             <div class="card kpi-card">
                 <div class="kpi-label">🏥 เกรดสุขภาพพอร์ต</div>
                 <div class="grade-box">
-                    <div class="grade-badge">พอใช้</div>
+                    <div class="grade-badge">ดี</div>
                     <div>
-                        <div class="fw-bold" style="font-size: 1.1rem;">57/100 คะแนน</div>
-                        <div class="kpi-subtext">⚠️ ระวังการกระจุกตัวสูง (LLY 85.3%)</div>
+                        <div class="fw-bold" style="font-size: 1.1rem;">71/100 คะแนน</div>
+                        <div class="kpi-subtext">⚠️ ระวังการกระจุกตัวสูง (LLY 84.5%)</div>
                     </div>
                 </div>
             </div>
 
             <div class="card kpi-card">
                 <div class="kpi-label">💰 มูลค่าพอร์ตปัจจุบัน</div>
-                <div class="kpi-value">$43,670.73</div>
-                <div class="kpi-subtext">≈ ฿1,485,241.69 THB (ต้นทุน $36,498.51)</div>
+                <div class="kpi-value">$44,622.79</div>
+                <div class="kpi-subtext">≈ ฿1,516,148.45 THB (ต้นทุน $36,498.51)</div>
                 
             </div>
 
             <div class="card kpi-card">
                 <div class="kpi-label">📈 กำไร/ขาดทุนสุทธิ (Unrealized)</div>
-                <div class="kpi-value" style="color: var(--emerald);">+$7,172.22 (+19.65%)</div>
-                <div class="kpi-subtext">≈ +฿258,043.27 THB</div>
+                <div class="kpi-value" style="color: var(--emerald);">+$8,124.28 (+22.26%)</div>
+                <div class="kpi-subtext">≈ +฿288,950.03 THB</div>
             </div>
 
             <div class="card kpi-card">
                 <div class="kpi-label">⚡ กำไร/ขาดทุนวันนี้ (1D Change)</div>
-                <div class="kpi-value" style="color: var(--rose);">-$452.28 (-1.03%)</div>
-                <div class="kpi-subtext">≈ -฿15,382.02 THB</div>
+                <div class="kpi-value" style="color: var(--emerald);">+$952.05 (+2.18%)</div>
+                <div class="kpi-subtext">≈ +฿32,347.89 THB</div>
             </div>
 
             <div class="card kpi-card">
                 <div class="kpi-label">🎯 การกระจายความเสี่ยง</div>
                 <div class="kpi-value" style="font-size: 1.35rem;">กระจุกตัวสูงมาก</div>
-                <div class="kpi-subtext">หุ้นใหญ่สุด (LLY) 85.3% ของพอร์ต (HHI 7340)</div>
+                <div class="kpi-subtext">หุ้นใหญ่สุด (LLY) 84.5% ของพอร์ต (HHI 7221)</div>
             </div>
         </div>
 
         <!-- Layman Summary Hero -->
         <div class="card layman-hero-card">
             <h3 style="font-size: 1.15rem; margin-bottom: 8px;">👶 1. สรุปสถานะพอร์ตภาษาคน สำหรับมือใหม่</h3>
-            <p style="color: var(--text-secondary); margin-bottom: 12px;">พอร์ตมีหุ้น LLY กระจุกตัวสูงถึง 85.3% ของพอร์ต จึงมีความเสี่ยงสูงจากความผันผวนเฉพาะตัวของหุ้น แม้คะแนนพื้นฐานโดยรวมจะดี ควรหาจังหวะกระจายการลงทุนเพื่อลดความเสี่ยง.</p>
+            <p style="color: var(--text-secondary); margin-bottom: 12px;">พอร์ตมีหุ้น LLY กระจุกตัวสูงถึง 84.5% ของพอร์ต จึงมีความเสี่ยงสูงจากความผันผวนเฉพาะตัวของหุ้น แม้คะแนนพื้นฐานโดยรวมจะดี ควรหาจังหวะกระจายการลงทุนเพื่อลดความเสี่ยง.</p>
             <div class="grid-2-cols" style="margin-bottom: 12px; gap: 12px;">
                 <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: var(--radius-sm);">
-                    ⭐ <strong>หุ้นกำไรสูงสุดในพอร์ต:</strong> [LLY] Eli Lilly and Company (+31.9%)
+                    ⭐ <strong>หุ้นกำไรสูงสุดในพอร์ต:</strong> [LLY] Eli Lilly and Company (+33.6%)
                 </div>
                 <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: var(--radius-sm);">
-                    🔻 <strong>ตัวฉุดดอยหนัก:</strong> [NOK] Nokia Oyj (-35.2%)
+                    🔻 <strong>ตัวฉุดดอยหนัก:</strong> [NOK] Nokia Oyj (-28.9%)
                 </div>
             </div>
             <ul class="layman-checklist">
@@ -1086,10 +1086,10 @@ table td, table th, .kpi-value, .wealth-hud-val, .wealth-hud-sub,
             <td style="font-weight: 600;">Health Technology</td>
             <td style="width: 45%;">
                 <div class="progress-wrap">
-                    <div class="progress-bar" style="width: 85.28498155696722%; background: var(--rose);"></div>
+                    <div class="progress-bar" style="width: 84.54903813801673%; background: var(--rose);"></div>
                 </div>
             </td>
-            <td style="text-align: right; font-weight: 700;">85.3%</td>
+            <td style="text-align: right; font-weight: 700;">84.5%</td>
             <td><span class="badge badge-warn">⚠️ สัดส่วนสูงมาก</span></td>
         </tr>
         
@@ -1097,10 +1097,10 @@ table td, table th, .kpi-value, .wealth-hud-val, .wealth-hud-sub,
             <td style="font-weight: 600;">Technology Services</td>
             <td style="width: 45%;">
                 <div class="progress-wrap">
-                    <div class="progress-bar" style="width: 6.797495790163091%; background: var(--blue);"></div>
+                    <div class="progress-bar" style="width: 7.07399841549258%; background: var(--blue);"></div>
                 </div>
             </td>
-            <td style="text-align: right; font-weight: 700;">6.8%</td>
+            <td style="text-align: right; font-weight: 700;">7.1%</td>
             <td><span class="badge badge-neutral">⚪ กระจายตัวดี</span></td>
         </tr>
         
@@ -1108,10 +1108,10 @@ table td, table th, .kpi-value, .wealth-hud-val, .wealth-hud-sub,
             <td style="font-weight: 600;">Electronic Technology</td>
             <td style="width: 45%;">
                 <div class="progress-wrap">
-                    <div class="progress-bar" style="width: 4.630415665841216%; background: var(--blue);"></div>
+                    <div class="progress-bar" style="width: 5.049149406835768%; background: var(--blue);"></div>
                 </div>
             </td>
-            <td style="text-align: right; font-weight: 700;">4.6%</td>
+            <td style="text-align: right; font-weight: 700;">5.0%</td>
             <td><span class="badge badge-neutral">⚪ กระจายตัวดี</span></td>
         </tr>
         
@@ -1119,7 +1119,7 @@ table td, table th, .kpi-value, .wealth-hud-val, .wealth-hud-sub,
             <td style="font-weight: 600;">Finance</td>
             <td style="width: 45%;">
                 <div class="progress-wrap">
-                    <div class="progress-bar" style="width: 2.950791959235545%; background: var(--blue);"></div>
+                    <div class="progress-bar" style="width: 2.952854361983696%; background: var(--blue);"></div>
                 </div>
             </td>
             <td style="text-align: right; font-weight: 700;">3.0%</td>
@@ -1133,7 +1133,7 @@ table td, table th, .kpi-value, .wealth-hud-val, .wealth-hud-sub,
                     <div class="progress-bar" style="width: 2.0%; background: var(--blue);"></div>
                 </div>
             </td>
-            <td style="text-align: right; font-weight: 700;">0.3%</td>
+            <td style="text-align: right; font-weight: 700;">0.4%</td>
             <td><span class="badge badge-neutral">⚪ กระจายตัวดี</span></td>
         </tr>
         
@@ -1165,289 +1165,289 @@ table td, table th, .kpi-value, .wealth-hud-val, .wealth-hud-sub,
                     
         <tr>
             <td style="white-space: nowrap;">
-                <span class="ticker-pill clickable-ticker" onclick="openChartModal(&quot;LLY&quot;, &quot;NYSE&quot;, &quot;Eli Lilly and Company&quot;, &quot;Health Technology&quot;, 1021.1077, 1347.11, 1281.26, 1486.56, 1283.47, 1454.88, 1507.96)" title="คลิกเปิดดูกราฟเทคนิคัลอัจฉริยะ">LLY 📈</span>
+                <span class="ticker-pill clickable-ticker" onclick="openChartModal(&quot;LLY&quot;, &quot;NYSE&quot;, &quot;Eli Lilly and Company&quot;, &quot;Health Technology&quot;, 1021.1077, 1364.6, 1296.84, 1479.52, 1301.47, 1473.77, 1507.96)" title="คลิกเปิดดูกราฟเทคนิคัลอัจฉริยะ">LLY 📈</span>
             </td>
             <td>
                 <div class="fw-bold">Eli Lilly and Company</div>
                 <div class="text-muted small" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; max-width: 180px; line-height: 1.3;">บริษัทยาชีวเวชภัณฑ์ระดับโลก ผู้นำยารักษาเบาหวานและยาลดความอ้วน (Mounjaro/Zepbound)</div>
             </td>
-            <td style="white-space: nowrap;">⭐⭐⭐⭐<br><span class='badge badge-emerald' title="Rev Growth +46% 🚀 • Net Income +50% 🚀 • Elite ROE (86%) 🏆 • Attractive PEG 0.88 💎 • Moderate Debt (D/E 1.23) • FCF Cash Cow 💵 • ยืดเหนือ EMA200 (+17.4%) รอย่อ" style='cursor:help;'>เกรด A · 78/100</span></td>
-            <td style="text-align: right; font-weight: 700; white-space: nowrap;">85.3%</td>
+            <td style="white-space: nowrap;">⭐⭐⭐⭐<br><span class='badge badge-emerald' title="Rev Growth +46% 🚀 • Net Income +50% 🚀 • Elite ROE (86%) 🏆 • Attractive PEG 0.88 💎 • Moderate Debt (D/E 1.23) • FCF Cash Cow 💵 • ยืดเหนือ EMA200 (+18.7%) รอย่อ" style='cursor:help;'>เกรด A · 78/100</span></td>
+            <td style="text-align: right; font-weight: 700; white-space: nowrap;">84.5%</td>
             <td style="text-align: right; white-space: nowrap;">$1,021.11</td>
-            <td style="text-align: right; font-weight: 600; white-space: nowrap;">$1,347.11</td>
+            <td style="text-align: right; font-weight: 600; white-space: nowrap;">$1,364.60</td>
             <td style="text-align: right; white-space: nowrap;">
-                <div class="text-emerald small fw-bold">รับ $1,281.26</div>
-                <div class="text-amber small">ต้าน $1,486.56</div>
+                <div class="text-emerald small fw-bold">รับ $1,296.84</div>
+                <div class="text-amber small">ต้าน $1,479.52</div>
             </td>
             <td style="text-align: right; white-space: nowrap;">
-                <div>$37,244.58</div>
-                <div class="text-muted small">≈ ฿1,266,688</div>
+                <div>$37,728.14</div>
+                <div class="text-muted small">≈ ฿1,281,889</div>
             </td>
             <td style="text-align: right; white-space: nowrap;" class="text-emerald">
-                <div class="fw-bold">+31.93%</div>
-                <div class="small">(+$9,013.24)</div>
+                <div class="fw-bold">+33.64%</div>
+                <div class="small">(+$9,496.80)</div>
             </td>
             <td style="text-align: right; white-space: nowrap;">
-                <div class="text-rose" style="font-weight: 600;">-0.30%</div>
-                <div class="small text-muted">+20.5%</div>
+                <div class="text-emerald" style="font-weight: 600;">+1.30%</div>
+                <div class="small text-muted">+21.9%</div>
             </td>
-            <td style="text-align: center; white-space: nowrap;">49.5</td>
-            <td><span class="badge badge-rose">🚨 Extreme Concentration (85.3%)</span> </td>
+            <td style="text-align: center; white-space: nowrap;">52.6</td>
+            <td><span class="badge badge-rose">🚨 Extreme Concentration (84.5%)</span> </td>
         </tr>
         
         <tr>
             <td style="white-space: nowrap;">
-                <span class="ticker-pill clickable-ticker" onclick="openChartModal(&quot;GOOGL&quot;, &quot;NASDAQ&quot;, &quot;Alphabet Inc. Class A&quot;, &quot;Technology Services&quot;, 341.7162, 265.29, 259.3, 322.3, 248.32, 322.3, 389.26)" title="คลิกเปิดดูกราฟเทคนิคัลอัจฉริยะ">GOOGL 📈</span>
+                <span class="ticker-pill clickable-ticker" onclick="openChartModal(&quot;GOOGL&quot;, &quot;NASDAQ&quot;, &quot;Alphabet Inc. Class A&quot;, &quot;Technology Services&quot;, 341.7162, 282.1, 260.18, 320.95, 264.21, 320.95, 389.26)" title="คลิกเปิดดูกราฟเทคนิคัลอัจฉริยะ">GOOGL 📈</span>
             </td>
             <td>
                 <div class="fw-bold">Alphabet Inc. Class A</div>
                 <div class="text-muted small" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; max-width: 180px; line-height: 1.3;">ผู้นำเสิร์ชเอนจิน Google, แพลตฟอร์ม YouTube, Android และคลาวด์ Google Cloud</div>
             </td>
-            <td style="white-space: nowrap;">⭐⭐⭐<br><span class='badge badge-amber' title="Rev Growth +22% 🚀 • Net Income +90% 🚀 • Elite ROE (44%) 🏆 • Attractive PEG 0.16 💎 • Safe Debt (D/E 0.22) 🛡️ • FCF Cash Cow 💵 • ⚠️ หลุด EMA200 เกิน 10% (-18.0%) เสี่ยง Drawdown ลึก" style='cursor:help;'>เกรด B · 60/100</span></td>
-            <td style="text-align: right; font-weight: 700; white-space: nowrap;">6.8%</td>
+            <td style="white-space: nowrap;">⭐⭐⭐<br><span class='badge badge-amber' title="Rev Growth +22% 🚀 • Net Income +90% 🚀 • Elite ROE (44%) 🏆 • Attractive PEG 0.16 💎 • Safe Debt (D/E 0.22) 🛡️ • FCF Cash Cow 💵 • ⚠️ หลุด EMA200 เกิน 10% (-12.7%) เสี่ยง Drawdown ลึก • RSI Hook ยกหัวจากต่ำกว่า 40 ⤴" style='cursor:help;'>เกรด B · 60/100 ⤴</span></td>
+            <td style="text-align: right; font-weight: 700; white-space: nowrap;">7.1%</td>
             <td style="text-align: right; white-space: nowrap;">$341.72</td>
-            <td style="text-align: right; font-weight: 600; white-space: nowrap;">$265.29</td>
+            <td style="text-align: right; font-weight: 600; white-space: nowrap;">$282.10</td>
             <td style="text-align: right; white-space: nowrap;">
-                <div class="text-emerald small fw-bold">รับ $259.30</div>
-                <div class="text-amber small">ต้าน $322.30</div>
+                <div class="text-emerald small fw-bold">รับ $260.18</div>
+                <div class="text-amber small">ต้าน $320.95</div>
             </td>
             <td style="text-align: right; white-space: nowrap;">
-                <div>$2,968.52</div>
-                <div class="text-muted small">≈ ฿100,959</div>
+                <div>$3,156.62</div>
+                <div class="text-muted small">≈ ฿107,252</div>
             </td>
             <td style="text-align: right; white-space: nowrap;" class="text-rose">
-                <div class="fw-bold">-22.37%</div>
-                <div class="small">(-$855.18)</div>
+                <div class="fw-bold">-17.45%</div>
+                <div class="small">(-$667.08)</div>
             </td>
             <td style="text-align: right; white-space: nowrap;">
-                <div class="text-rose" style="font-weight: 600;">-2.70%</div>
-                <div class="small text-muted">-21.3%</div>
+                <div class="text-emerald" style="font-weight: 600;">+6.34%</div>
+                <div class="small text-muted">-16.2%</div>
             </td>
-            <td style="text-align: center; white-space: nowrap;"><span class="badge badge-rose">27.8 🚨</span></td>
-            <td><span class="badge badge-rose">🔻 Drawdown (-22.4%)</span> </td>
+            <td style="text-align: center; white-space: nowrap;">41.0</td>
+            <td><span class="badge badge-rose">🔻 Drawdown (-17.4%)</span> </td>
         </tr>
         
         <tr>
             <td style="white-space: nowrap;">
-                <span class="ticker-pill clickable-ticker" onclick="openChartModal(&quot;NOK&quot;, &quot;NYSE&quot;, &quot;Nokia Oyj&quot;, &quot;Electronic Technology&quot;, 10.6208, 6.88, 6.2, 9.25, 6.2, 9.25, 12.68)" title="คลิกเปิดดูกราฟเทคนิคัลอัจฉริยะ">NOK 📈</span>
+                <span class="ticker-pill clickable-ticker" onclick="openChartModal(&quot;NOK&quot;, &quot;NYSE&quot;, &quot;Nokia Oyj&quot;, &quot;Electronic Technology&quot;, 10.6208, 7.55, 6.89, 9.21, 6.83, 9.21, 12.68)" title="คลิกเปิดดูกราฟเทคนิคัลอัจฉริยะ">NOK 📈</span>
             </td>
             <td>
                 <div class="fw-bold">Nokia Oyj</div>
                 <div class="text-muted small" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; max-width: 180px; line-height: 1.3;">ผู้ให้บริการโครงสร้างพื้นฐานเครือข่ายโทรคมนาคม อุปกรณ์ส่งสัญญาณ 5G และไฟเบอร์</div>
             </td>
-            <td style="white-space: nowrap;">⭐<br><span class='badge badge-rose' title="Slow Rev Growth +9.7% • ⚠️ Net Income Shrinking (-6.7%) • Low ROE (4.0%) • Safe Debt (D/E 0.16) 🛡️ • FCF Cash Cow 💵 • ⚠️ หลุด EMA200 เกิน 10% (-27.9%) เสี่ยง Drawdown ลึก" style='cursor:help;'>เกรด F · 29/100</span></td>
-            <td style="text-align: right; font-weight: 700; white-space: nowrap;">3.3%</td>
+            <td style="white-space: nowrap;">⭐<br><span class='badge badge-rose' title="Slow Rev Growth +9.7% • ⚠️ Net Income Shrinking (-6.7%) • Low ROE (4.0%) • Safe Debt (D/E 0.16) 🛡️ • FCF Cash Cow 💵 • ⚠️ หลุด EMA200 เกิน 10% (-20.8%) เสี่ยง Drawdown ลึก • RSI Hook ยกหัวจากต่ำกว่า 40 ⤴" style='cursor:help;'>เกรด F · 29/100 ⤴</span></td>
+            <td style="text-align: right; font-weight: 700; white-space: nowrap;">3.5%</td>
             <td style="text-align: right; white-space: nowrap;">$10.62</td>
-            <td style="text-align: right; font-weight: 600; white-space: nowrap;">$6.88</td>
+            <td style="text-align: right; font-weight: 600; white-space: nowrap;">$7.55</td>
             <td style="text-align: right; white-space: nowrap;">
-                <div class="text-emerald small fw-bold">รับ $6.20</div>
-                <div class="text-amber small">ต้าน $9.25</div>
+                <div class="text-emerald small fw-bold">รับ $6.89</div>
+                <div class="text-amber small">ต้าน $9.21</div>
             </td>
             <td style="text-align: right; white-space: nowrap;">
-                <div>$1,437.00</div>
-                <div class="text-muted small">≈ ฿48,873</div>
+                <div>$1,576.95</div>
+                <div class="text-muted small">≈ ฿53,580</div>
             </td>
             <td style="text-align: right; white-space: nowrap;" class="text-rose">
-                <div class="fw-bold">-35.22%</div>
-                <div class="small">(-$781.33)</div>
+                <div class="fw-bold">-28.91%</div>
+                <div class="small">(-$641.38)</div>
             </td>
             <td style="text-align: right; white-space: nowrap;">
-                <div class="text-rose" style="font-weight: 600;">-8.27%</div>
-                <div class="small text-muted">-33.9%</div>
+                <div class="text-emerald" style="font-weight: 600;">+9.74%</div>
+                <div class="small text-muted">-27.4%</div>
             </td>
-            <td style="text-align: center; white-space: nowrap;"><span class="badge badge-amber">30.7 📉</span></td>
-            <td><span class="badge badge-rose">🔻 Drawdown (-35.2%)</span> </td>
+            <td style="text-align: center; white-space: nowrap;">41.1</td>
+            <td><span class="badge badge-rose">🔻 Drawdown (-28.9%)</span> </td>
         </tr>
         
         <tr>
             <td style="white-space: nowrap;">
-                <span class="ticker-pill clickable-ticker" onclick="openChartModal(&quot;BAC&quot;, &quot;NYSE&quot;, &quot;Bank of America Corp&quot;, &quot;Finance&quot;, 54.3123, 47.08, 45.27, 52.69, 45.27, 52.69, 62.16)" title="คลิกเปิดดูกราฟเทคนิคัลอัจฉริยะ">BAC 📈</span>
+                <span class="ticker-pill clickable-ticker" onclick="openChartModal(&quot;BAC&quot;, &quot;NYSE&quot;, &quot;Bank of America Corp&quot;, &quot;Finance&quot;, 54.3123, 48.14, 47.74, 52.47, 46.3, 52.47, 62.16)" title="คลิกเปิดดูกราฟเทคนิคัลอัจฉริยะ">BAC 📈</span>
             </td>
             <td>
                 <div class="fw-bold">Bank of America Corp</div>
                 <div class="text-muted small" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; max-width: 180px; line-height: 1.3;">หนึ่งในธนาคารพาณิชย์และสถาบันสินเชื่อที่ใหญ่ที่สุดในสหรัฐอเมริกา</div>
             </td>
-            <td style="white-space: nowrap;">⭐<br><span class='badge badge-rose' title="⚠️ Neg Rev Trap (-0.6%) • Slow Net Income +8.7% • Low ROE (10.7%) • Attractive PEG 0.80 💎 • FCF Cash Cow 💵 • ⚠️ หลุด EMA200 เกิน 10% (-13.5%) เสี่ยง Drawdown ลึก" style='cursor:help;'>เกรด F · 30/100</span></td>
+            <td style="white-space: nowrap;">⭐<br><span class='badge badge-rose' title="⚠️ Neg Rev Trap (-0.6%) • Slow Net Income +8.7% • Low ROE (10.7%) • Attractive PEG 0.78 💎 • FCF Cash Cow 💵 • ⚠️ หลุด EMA200 เกิน 10% (-11.4%) เสี่ยง Drawdown ลึก • RSI Hook ยกหัวจากต่ำกว่า 40 ⤴" style='cursor:help;'>เกรด F · 30/100 ⤴</span></td>
             <td style="text-align: right; font-weight: 700; white-space: nowrap;">3.0%</td>
             <td style="text-align: right; white-space: nowrap;">$54.31</td>
-            <td style="text-align: right; font-weight: 600; white-space: nowrap;">$47.08</td>
+            <td style="text-align: right; font-weight: 600; white-space: nowrap;">$48.14</td>
             <td style="text-align: right; white-space: nowrap;">
-                <div class="text-emerald small fw-bold">รับ $45.27</div>
-                <div class="text-amber small">ต้าน $52.69</div>
+                <div class="text-emerald small fw-bold">รับ $47.74</div>
+                <div class="text-amber small">ต้าน $52.47</div>
             </td>
             <td style="text-align: right; white-space: nowrap;">
-                <div>$1,288.63</div>
-                <div class="text-muted small">≈ ฿43,826</div>
+                <div>$1,317.65</div>
+                <div class="text-muted small">≈ ฿44,770</div>
             </td>
             <td style="text-align: right; white-space: nowrap;" class="text-rose">
-                <div class="fw-bold">-13.32%</div>
-                <div class="small">(-$197.96)</div>
+                <div class="fw-bold">-11.36%</div>
+                <div class="small">(-$168.94)</div>
             </td>
             <td style="text-align: right; white-space: nowrap;">
-                <div class="text-rose" style="font-weight: 600;">-3.07%</div>
-                <div class="small text-muted">-14.0%</div>
+                <div class="text-emerald" style="font-weight: 600;">+2.25%</div>
+                <div class="small text-muted">-11.9%</div>
             </td>
-            <td style="text-align: center; white-space: nowrap;"><span class="badge badge-rose">28.0 🚨</span></td>
-            <td><span class="badge badge-rose">🔻 Drawdown (-13.3%)</span> </td>
+            <td style="text-align: center; white-space: nowrap;">36.2</td>
+            <td><span class="badge badge-rose">🔻 Drawdown (-11.4%)</span> </td>
         </tr>
         
         <tr>
             <td style="white-space: nowrap;">
-                <span class="ticker-pill clickable-ticker" onclick="openChartModal(&quot;TSM&quot;, &quot;NYSE&quot;, &quot;Taiwan Semiconductor Manufacturing Co., Ltd. Sponsored ADR&quot;, &quot;Electronic Technology&quot;, 320.5188, 319.145, 290.56, 422.16, 290.56, 422.16, 554.22)" title="คลิกเปิดดูกราฟเทคนิคัลอัจฉริยะ">TSM 📈</span>
-            </td>
-            <td>
-                <div class="fw-bold">Taiwan Semiconductor Manufacturing Co., Ltd. Sponsored ADR</div>
-                <div class="text-muted small" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; max-width: 180px; line-height: 1.3;">ผู้ผลิตและรับจ้างผลิตเซมิคอนดักเตอร์ (Foundry) รายใหญ่ที่สุดในโลก ผูกขาดเทคโนโลยีชิปขั้นสูง 3nm และ 2nm</div>
-            </td>
-            <td style="white-space: nowrap;">⭐⭐⭐<br><span class='badge badge-amber' title="Rev Growth +35% 🚀 • Net Income +59% 🚀 • Elite ROE (42%) 🏆 • Attractive PEG 0.38 💎 • Safe Debt (D/E 0.15) 🛡️ • FCF Cash Cow 💵 • ⚠️ หลุด EMA200 เกิน 10% (-18.8%) เสี่ยง Drawdown ลึก" style='cursor:help;'>เกรด B · 60/100</span></td>
-            <td style="text-align: right; font-weight: 700; white-space: nowrap;">0.3%</td>
-            <td style="text-align: right; white-space: nowrap;">$320.52</td>
-            <td style="text-align: right; font-weight: 600; white-space: nowrap;">$319.14</td>
-            <td style="text-align: right; white-space: nowrap;">
-                <div class="text-emerald small fw-bold">รับ $290.56</div>
-                <div class="text-amber small">ต้าน $422.16</div>
-            </td>
-            <td style="text-align: right; white-space: nowrap;">
-                <div>$147.08</div>
-                <div class="text-muted small">≈ ฿5,002</div>
-            </td>
-            <td style="text-align: right; white-space: nowrap;" class="text-rose">
-                <div class="fw-bold">-0.43%</div>
-                <div class="small">(-$0.63)</div>
-            </td>
-            <td style="text-align: right; white-space: nowrap;">
-                <div class="text-rose" style="font-weight: 600;">-9.36%</div>
-                <div class="small text-muted">-20.9%</div>
-            </td>
-            <td style="text-align: center; white-space: nowrap;"><span class="badge badge-rose">28.3 🚨</span></td>
-            <td><span class="badge badge-neutral">Normal</span></td>
-        </tr>
-        
-        <tr>
-            <td style="white-space: nowrap;">
-                <span class="ticker-pill clickable-ticker" onclick="openChartModal(&quot;SOXQ&quot;, &quot;NASDAQ&quot;, &quot;Invesco PHLX Semiconductor ETF&quot;, &quot;Miscellaneous&quot;, 66.6082, 66.23, 59.36, 89.21, 59.36, 89.21, null)" title="คลิกเปิดดูกราฟเทคนิคัลอัจฉริยะ">SOXQ 📈</span>
-            </td>
-            <td>
-                <div class="fw-bold">Invesco PHLX Semiconductor ETF</div>
-                <div class="text-muted small" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; max-width: 180px; line-height: 1.3;">ธุรกิจ Investment Trusts/Mutual Funds (กลุ่ม Miscellaneous)</div>
-            </td>
-            <td style="white-space: nowrap;">⭐⭐⭐⭐<br><span class='badge badge-neutral' title="Index ETF (ไม่ประเมินงบรายบริษัท) • ⚠️ หลุด EMA200 เกิน 10% (-20.9%) เสี่ยง Drawdown ลึก" style='cursor:help;'>เกรด ETF</span></td>
-            <td style="text-align: right; font-weight: 700; white-space: nowrap;">0.3%</td>
-            <td style="text-align: right; white-space: nowrap;">$66.61</td>
-            <td style="text-align: right; font-weight: 600; white-space: nowrap;">$66.23</td>
-            <td style="text-align: right; white-space: nowrap;">
-                <div class="text-emerald small fw-bold">รับ $59.36</div>
-                <div class="text-amber small">ต้าน $89.21</div>
-            </td>
-            <td style="text-align: right; white-space: nowrap;">
-                <div>$146.87</div>
-                <div class="text-muted small">≈ ฿4,995</div>
-            </td>
-            <td style="text-align: right; white-space: nowrap;" class="text-rose">
-                <div class="fw-bold">-0.57%</div>
-                <div class="small">(-$0.84)</div>
-            </td>
-            <td style="text-align: right; white-space: nowrap;">
-                <div class="text-rose" style="font-weight: 600;">-10.67%</div>
-                <div class="small text-muted">-22.9%</div>
-            </td>
-            <td style="text-align: center; white-space: nowrap;"><span class="badge badge-rose">29.0 🚨</span></td>
-            <td><span class="badge badge-neutral">Normal</span></td>
-        </tr>
-        
-        <tr>
-            <td style="white-space: nowrap;">
-                <span class="ticker-pill clickable-ticker" onclick="openChartModal(&quot;ASML&quot;, &quot;NASDAQ&quot;, &quot;ASML Holding NV Sponsored ADR&quot;, &quot;Electronic Technology&quot;, 1276.9938, 1266.22, 1163.29, 1624.75, 1163.29, 1624.75, 2436.94)" title="คลิกเปิดดูกราฟเทคนิคัลอัจฉริยะ">ASML 📈</span>
-            </td>
-            <td>
-                <div class="fw-bold">ASML Holding NV Sponsored ADR</div>
-                <div class="text-muted small" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; max-width: 180px; line-height: 1.3;">ผู้ผลิตเครื่องพิมพ์โฟโตลิโทกราฟี EUV ผูกขาดเทคโนโลยีผลิตชิปขั้นสูงของโลก</div>
-            </td>
-            <td style="white-space: nowrap;">⭐⭐⭐<br><span class='badge badge-amber' title="Rev Growth +29% 🚀 • Net Income +50% 🚀 • Elite ROE (66%) 🏆 • Attractive PEG 0.64 💎 • Safe Debt (D/E 0.09) 🛡️ • FCF Cash Cow 💵 • ⚠️ หลุด EMA200 เกิน 10% (-18.1%) เสี่ยง Drawdown ลึก" style='cursor:help;'>เกรด B · 60/100</span></td>
-            <td style="text-align: right; font-weight: 700; white-space: nowrap;">0.3%</td>
-            <td style="text-align: right; white-space: nowrap;">$1,276.99</td>
-            <td style="text-align: right; font-weight: 600; white-space: nowrap;">$1,266.22</td>
-            <td style="text-align: right; white-space: nowrap;">
-                <div class="text-emerald small fw-bold">รับ $1,163.29</div>
-                <div class="text-amber small">ต้าน $1,624.75</div>
-            </td>
-            <td style="text-align: right; white-space: nowrap;">
-                <div>$146.46</div>
-                <div class="text-muted small">≈ ฿4,981</div>
-            </td>
-            <td style="text-align: right; white-space: nowrap;" class="text-rose">
-                <div class="fw-bold">-0.84%</div>
-                <div class="small">(-$1.25)</div>
-            </td>
-            <td style="text-align: right; white-space: nowrap;">
-                <div class="text-rose" style="font-weight: 600;">-6.63%</div>
-                <div class="small text-muted">-20.9%</div>
-            </td>
-            <td style="text-align: center; white-space: nowrap;"><span class="badge badge-rose">28.8 🚨</span></td>
-            <td><span class="badge badge-neutral">Normal</span></td>
-        </tr>
-        
-        <tr>
-            <td style="white-space: nowrap;">
-                <span class="ticker-pill clickable-ticker" onclick="openChartModal(&quot;MU&quot;, &quot;NASDAQ&quot;, &quot;Micron Technology, Inc.&quot;, &quot;Electronic Technology&quot;, 600.9746, 594.51, 582.9, 912.26, 501.76, 912.26, 1631.56)" title="คลิกเปิดดูกราฟเทคนิคัลอัจฉริยะ">MU 📈</span>
-            </td>
-            <td>
-                <div class="fw-bold">Micron Technology, Inc.</div>
-                <div class="text-muted small" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; max-width: 180px; line-height: 1.3;">ผู้ผลิตชิปหน่วยความจำ DRAM และแฟลชเมมโมรี NAND ระดับโลก</div>
-            </td>
-            <td style="white-space: nowrap;">⭐⭐⭐<br><span class='badge badge-amber' title="Rev Growth +256% 🚀 • Net Income +895% 🚀 • Elite ROE (88%) 🏆 • Attractive PEG 0.01 💎 • Safe Debt (D/E 0.04) 🛡️ • FCF Cash Cow 💵 • ⚠️ หลุด EMA200 เกิน 10% (-22.3%) เสี่ยง Drawdown ลึก" style='cursor:help;'>เกรด B · 60/100</span></td>
-            <td style="text-align: right; font-weight: 700; white-space: nowrap;">0.3%</td>
-            <td style="text-align: right; white-space: nowrap;">$600.97</td>
-            <td style="text-align: right; font-weight: 600; white-space: nowrap;">$594.51</td>
-            <td style="text-align: right; white-space: nowrap;">
-                <div class="text-emerald small fw-bold">รับ $582.90</div>
-                <div class="text-amber small">ต้าน $912.26</div>
-            </td>
-            <td style="text-align: right; white-space: nowrap;">
-                <div>$146.12</div>
-                <div class="text-muted small">≈ ฿4,970</div>
-            </td>
-            <td style="text-align: right; white-space: nowrap;" class="text-rose">
-                <div class="fw-bold">-1.08%</div>
-                <div class="small">(-$1.59)</div>
-            </td>
-            <td style="text-align: right; white-space: nowrap;">
-                <div class="text-rose" style="font-weight: 600;">-13.89%</div>
-                <div class="small text-muted">-23.1%</div>
-            </td>
-            <td style="text-align: center; white-space: nowrap;"><span class="badge badge-rose">29.5 🚨</span></td>
-            <td><span class="badge badge-neutral">Normal</span></td>
-        </tr>
-        
-        <tr>
-            <td style="white-space: nowrap;">
-                <span class="ticker-pill clickable-ticker" onclick="openChartModal(&quot;SKHY&quot;, &quot;NASDAQ&quot;, &quot;SK hynix Inc. Sponsored ADR&quot;, &quot;Electronic Technology&quot;, 105.1649, 103.57, 88.06, 157.01, 88.06, 157.01, 264.3)" title="คลิกเปิดดูกราฟเทคนิคัลอัจฉริยะ">SKHY 📈</span>
+                <span class="ticker-pill clickable-ticker" onclick="openChartModal(&quot;SKHY&quot;, &quot;NASDAQ&quot;, &quot;SK hynix Inc. Sponsored ADR&quot;, &quot;Electronic Technology&quot;, 105.1649, 124.28, 105.18, 155.99, 107.25, 155.99, 264.3)" title="คลิกเปิดดูกราฟเทคนิคัลอัจฉริยะ">SKHY 📈</span>
             </td>
             <td>
                 <div class="fw-bold">SK hynix Inc. Sponsored ADR</div>
                 <div class="text-muted small" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; max-width: 180px; line-height: 1.3;">ธุรกิจ Semiconductors (กลุ่ม Electronic Technology)</div>
             </td>
-            <td style="white-space: nowrap;">⭐⭐⭐<br><span class='badge badge-amber' title="Rev Growth +209% 🚀 • Net Income +405% 🚀 • Elite ROE (86%) 🏆 • Attractive PEG 0.02 💎 • Safe Debt (D/E 0.06) 🛡️ • FCF Cash Cow 💵" style='cursor:help;'>เกรด B · 100/100</span></td>
-            <td style="text-align: right; font-weight: 700; white-space: nowrap;">0.3%</td>
+            <td style="white-space: nowrap;">⭐⭐⭐<br><span class='badge badge-amber' title="Rev Growth +209% 🚀 • Net Income +405% 🚀 • Elite ROE (86%) 🏆 • Attractive PEG 0.01 💎 • Safe Debt (D/E 0.06) 🛡️ • FCF Cash Cow 💵 • RSI Hook ยกหัวจากต่ำกว่า 40 ⤴" style='cursor:help;'>เกรด B · 100/100 ⤴</span></td>
+            <td style="text-align: right; font-weight: 700; white-space: nowrap;">0.4%</td>
             <td style="text-align: right; white-space: nowrap;">$105.16</td>
-            <td style="text-align: right; font-weight: 600; white-space: nowrap;">$103.57</td>
+            <td style="text-align: right; font-weight: 600; white-space: nowrap;">$124.28</td>
             <td style="text-align: right; white-space: nowrap;">
-                <div class="text-emerald small fw-bold">รับ $88.06</div>
-                <div class="text-amber small">ต้าน $157.01</div>
+                <div class="text-emerald small fw-bold">รับ $105.18</div>
+                <div class="text-amber small">ต้าน $155.99</div>
             </td>
             <td style="text-align: right; white-space: nowrap;">
-                <div>$145.47</div>
-                <div class="text-muted small">≈ ฿4,947</div>
+                <div>$174.56</div>
+                <div class="text-muted small">≈ ฿5,931</div>
             </td>
-            <td style="text-align: right; white-space: nowrap;" class="text-rose">
-                <div class="fw-bold">-1.52%</div>
-                <div class="small">(-$2.24)</div>
+            <td style="text-align: right; white-space: nowrap;" class="text-emerald">
+                <div class="fw-bold">+18.18%</div>
+                <div class="small">(+$26.85)</div>
             </td>
             <td style="text-align: right; white-space: nowrap;">
-                <div class="text-rose" style="font-weight: 600;">-13.11%</div>
+                <div class="text-emerald" style="font-weight: 600;">+20.00%</div>
                 <div class="small text-muted">-</div>
             </td>
-            <td style="text-align: center; white-space: nowrap;"><span class="badge badge-amber">30.4 📉</span></td>
+            <td style="text-align: center; white-space: nowrap;">43.8</td>
+            <td><span class="badge badge-neutral">Normal</span></td>
+        </tr>
+        
+        <tr>
+            <td style="white-space: nowrap;">
+                <span class="ticker-pill clickable-ticker" onclick="openChartModal(&quot;MU&quot;, &quot;NASDAQ&quot;, &quot;Micron Technology, Inc.&quot;, &quot;Electronic Technology&quot;, 600.9746, 707.7, 577.76, 907.94, 608.05, 907.94, 1620.62)" title="คลิกเปิดดูกราฟเทคนิคัลอัจฉริยะ">MU 📈</span>
+            </td>
+            <td>
+                <div class="fw-bold">Micron Technology, Inc.</div>
+                <div class="text-muted small" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; max-width: 180px; line-height: 1.3;">ผู้ผลิตชิปหน่วยความจำ DRAM และแฟลชเมมโมรี NAND ระดับโลก</div>
+            </td>
+            <td style="white-space: nowrap;">⭐⭐⭐⭐<br><span class='badge badge-emerald' title="Rev Growth +256% 🚀 • Net Income +895% 🚀 • Elite ROE (88%) 🏆 • Attractive PEG 0.01 💎 • Safe Debt (D/E 0.04) 🛡️ • FCF Cash Cow 💵 • ต่ำกว่า EMA200 (-7.5%) • RSI Hook ยกหัวจากต่ำกว่า 40 ⤴" style='cursor:help;'>เกรด A · 73/100 ⤴</span></td>
+            <td style="text-align: right; font-weight: 700; white-space: nowrap;">0.4%</td>
+            <td style="text-align: right; white-space: nowrap;">$600.97</td>
+            <td style="text-align: right; font-weight: 600; white-space: nowrap;">$707.70</td>
+            <td style="text-align: right; white-space: nowrap;">
+                <div class="text-emerald small fw-bold">รับ $577.76</div>
+                <div class="text-amber small">ต้าน $907.94</div>
+            </td>
+            <td style="text-align: right; white-space: nowrap;">
+                <div>$173.94</div>
+                <div class="text-muted small">≈ ฿5,910</div>
+            </td>
+            <td style="text-align: right; white-space: nowrap;" class="text-emerald">
+                <div class="fw-bold">+17.76%</div>
+                <div class="small">(+$26.23)</div>
+            </td>
+            <td style="text-align: right; white-space: nowrap;">
+                <div class="text-emerald" style="font-weight: 600;">+19.04%</div>
+                <div class="small text-muted">-8.6%</div>
+            </td>
+            <td style="text-align: center; white-space: nowrap;">42.5</td>
+            <td><span class="badge badge-neutral">Normal</span></td>
+        </tr>
+        
+        <tr>
+            <td style="white-space: nowrap;">
+                <span class="ticker-pill clickable-ticker" onclick="openChartModal(&quot;TSM&quot;, &quot;NYSE&quot;, &quot;Taiwan Semiconductor Manufacturing Co., Ltd. Sponsored ADR&quot;, &quot;Electronic Technology&quot;, 320.5188, 363.6, 327.89, 421.07, 329.8, 421.07, 554.22)" title="คลิกเปิดดูกราฟเทคนิคัลอัจฉริยะ">TSM 📈</span>
+            </td>
+            <td>
+                <div class="fw-bold">Taiwan Semiconductor Manufacturing Co., Ltd. Sponsored ADR</div>
+                <div class="text-muted small" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; max-width: 180px; line-height: 1.3;">ผู้ผลิตและรับจ้างผลิตเซมิคอนดักเตอร์ (Foundry) รายใหญ่ที่สุดในโลก ผูกขาดเทคโนโลยีชิปขั้นสูง 3nm และ 2nm</div>
+            </td>
+            <td style="white-space: nowrap;">⭐⭐⭐⭐<br><span class='badge badge-emerald' title="Rev Growth +35% 🚀 • Net Income +59% 🚀 • Elite ROE (42%) 🏆 • Attractive PEG 0.35 💎 • Safe Debt (D/E 0.15) 🛡️ • FCF Cash Cow 💵 • ต่ำกว่า EMA200 (-7.4%) • RSI Hook ยกหัวจากต่ำกว่า 40 ⤴" style='cursor:help;'>เกรด A · 73/100 ⤴</span></td>
+            <td style="text-align: right; font-weight: 700; white-space: nowrap;">0.4%</td>
+            <td style="text-align: right; white-space: nowrap;">$320.52</td>
+            <td style="text-align: right; font-weight: 600; white-space: nowrap;">$363.60</td>
+            <td style="text-align: right; white-space: nowrap;">
+                <div class="text-emerald small fw-bold">รับ $327.89</div>
+                <div class="text-amber small">ต้าน $421.07</div>
+            </td>
+            <td style="text-align: right; white-space: nowrap;">
+                <div>$167.56</div>
+                <div class="text-muted small">≈ ฿5,693</div>
+            </td>
+            <td style="text-align: right; white-space: nowrap;" class="text-emerald">
+                <div class="fw-bold">+13.44%</div>
+                <div class="small">(+$19.85)</div>
+            </td>
+            <td style="text-align: right; white-space: nowrap;">
+                <div class="text-emerald" style="font-weight: 600;">+13.93%</div>
+                <div class="small text-muted">-9.9%</div>
+            </td>
+            <td style="text-align: center; white-space: nowrap;">43.0</td>
+            <td><span class="badge badge-neutral">Normal</span></td>
+        </tr>
+        
+        <tr>
+            <td style="white-space: nowrap;">
+                <span class="ticker-pill clickable-ticker" onclick="openChartModal(&quot;SOXQ&quot;, &quot;NASDAQ&quot;, &quot;Invesco PHLX Semiconductor ETF&quot;, &quot;Miscellaneous&quot;, 66.6082, 75.45, 66.84, 88.97, 67.96, 88.97, null)" title="คลิกเปิดดูกราฟเทคนิคัลอัจฉริยะ">SOXQ 📈</span>
+            </td>
+            <td>
+                <div class="fw-bold">Invesco PHLX Semiconductor ETF</div>
+                <div class="text-muted small" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; max-width: 180px; line-height: 1.3;">ธุรกิจ Investment Trusts/Mutual Funds (กลุ่ม Miscellaneous)</div>
+            </td>
+            <td style="white-space: nowrap;">⭐⭐⭐⭐<br><span class='badge badge-neutral' title="Index ETF (ไม่ประเมินงบรายบริษัท) • ต่ำกว่า EMA200 (-9.8%) • RSI Hook ยกหัวจากต่ำกว่า 40 ⤴" style='cursor:help;'>เกรด ETF ⤴</span></td>
+            <td style="text-align: right; font-weight: 700; white-space: nowrap;">0.4%</td>
+            <td style="text-align: right; white-space: nowrap;">$66.61</td>
+            <td style="text-align: right; font-weight: 600; white-space: nowrap;">$75.45</td>
+            <td style="text-align: right; white-space: nowrap;">
+                <div class="text-emerald small fw-bold">รับ $66.84</div>
+                <div class="text-amber small">ต้าน $88.97</div>
+            </td>
+            <td style="text-align: right; white-space: nowrap;">
+                <div>$167.32</div>
+                <div class="text-muted small">≈ ฿5,685</div>
+            </td>
+            <td style="text-align: right; white-space: nowrap;" class="text-emerald">
+                <div class="fw-bold">+13.27%</div>
+                <div class="small">(+$19.61)</div>
+            </td>
+            <td style="text-align: right; white-space: nowrap;">
+                <div class="text-emerald" style="font-weight: 600;">+13.92%</div>
+                <div class="small text-muted">-12.3%</div>
+            </td>
+            <td style="text-align: center; white-space: nowrap;">43.2</td>
+            <td><span class="badge badge-neutral">Normal</span></td>
+        </tr>
+        
+        <tr>
+            <td style="white-space: nowrap;">
+                <span class="ticker-pill clickable-ticker" onclick="openChartModal(&quot;ASML&quot;, &quot;NASDAQ&quot;, &quot;ASML Holding NV Sponsored ADR&quot;, &quot;Electronic Technology&quot;, 1276.9938, 1383.78, 1268.83, 1620.92, 1272.29, 1620.92, 2436.94)" title="คลิกเปิดดูกราฟเทคนิคัลอัจฉริยะ">ASML 📈</span>
+            </td>
+            <td>
+                <div class="fw-bold">ASML Holding NV Sponsored ADR</div>
+                <div class="text-muted small" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; max-width: 180px; line-height: 1.3;">ผู้ผลิตเครื่องพิมพ์โฟโตลิโทกราฟี EUV ผูกขาดเทคโนโลยีผลิตชิปขั้นสูงของโลก</div>
+            </td>
+            <td style="white-space: nowrap;">⭐⭐⭐<br><span class='badge badge-amber' title="Rev Growth +29% 🚀 • Net Income +50% 🚀 • Elite ROE (66%) 🏆 • Attractive PEG 0.60 💎 • Safe Debt (D/E 0.09) 🛡️ • FCF Cash Cow 💵 • ⚠️ หลุด EMA200 เกิน 10% (-10.4%) เสี่ยง Drawdown ลึก • RSI Hook ยกหัวจากต่ำกว่า 40 ⤴" style='cursor:help;'>เกรด B · 60/100 ⤴</span></td>
+            <td style="text-align: right; font-weight: 700; white-space: nowrap;">0.4%</td>
+            <td style="text-align: right; white-space: nowrap;">$1,276.99</td>
+            <td style="text-align: right; font-weight: 600; white-space: nowrap;">$1,383.78</td>
+            <td style="text-align: right; white-space: nowrap;">
+                <div class="text-emerald small fw-bold">รับ $1,268.83</div>
+                <div class="text-amber small">ต้าน $1,620.92</div>
+            </td>
+            <td style="text-align: right; white-space: nowrap;">
+                <div>$160.06</div>
+                <div class="text-muted small">≈ ฿5,438</div>
+            </td>
+            <td style="text-align: right; white-space: nowrap;" class="text-emerald">
+                <div class="fw-bold">+8.36%</div>
+                <div class="small">(+$12.35)</div>
+            </td>
+            <td style="text-align: right; white-space: nowrap;">
+                <div class="text-emerald" style="font-weight: 600;">+9.28%</div>
+                <div class="small text-muted">-13.6%</div>
+            </td>
+            <td style="text-align: center; white-space: nowrap;">40.9</td>
             <td><span class="badge badge-neutral">Normal</span></td>
         </tr>
         
@@ -1491,9 +1491,9 @@ table td, table th, .kpi-value, .wealth-hud-val, .wealth-hud-sub,
                 <div class="fw-bold">0.88</div>
                 <div class="text-muted small">คุ้มค่ามาก (0.88 💎)</div>
             </td>
-            <td style="text-align: right;">44.3x</td>
+            <td style="text-align: right;">44.8x</td>
             <td style="text-align: right; font-weight: 600;">$19.7B</td>
-            <td style="text-align: right;"><strong>$1,507.96</strong> <span class='text-emerald small'>(+11.9%)</span></td>
+            <td style="text-align: right;"><strong>$1,507.96</strong> <span class='text-emerald small'>(+10.5%)</span></td>
             <td style="text-align: center;">$940 - $1,700</td>
             <td><span class='badge badge-emerald'>Buy 24</span> <span class='badge badge-amber'>Hold 5</span> <span class='badge badge-rose'>Sell 1</span></td>
             <td><span class='text-muted'>10 Feb 2027 (งบออกใน 79 วัน)</span></td>
@@ -1511,11 +1511,11 @@ table td, table th, .kpi-value, .wealth-hud-val, .wealth-hud-sub,
                 <div class="fw-bold">0.16</div>
                 <div class="text-muted small">ถูกมาก (0.16 💎)</div>
             </td>
-            <td style="text-align: right;">13.8x</td>
+            <td style="text-align: right;">14.7x</td>
             <td style="text-align: right; font-weight: 600;">$19.7B</td>
-            <td style="text-align: right;"><strong>$389.26</strong> <span class='text-emerald small'>(+46.7%)</span></td>
+            <td style="text-align: right;"><strong>$389.26</strong> <span class='text-emerald small'>(+38.0%)</span></td>
             <td style="text-align: center;">$300 - $500</td>
-            <td><span class='badge badge-emerald'>Buy 57</span> <span class='badge badge-amber'>Hold 8</span> <span class='badge badge-rose'>Sell 0</span></td>
+            <td><span class='badge badge-emerald'>Buy 57</span> <span class='badge badge-amber'>Hold 9</span> <span class='badge badge-rose'>Sell 0</span></td>
             <td><span class='text-muted'>02 Feb 2027 (งบออกใน 71 วัน)</span></td>
         </tr>
         
@@ -1531,9 +1531,9 @@ table td, table th, .kpi-value, .wealth-hud-val, .wealth-hud-sub,
                 <div class="fw-bold">-</div>
                 <div class="text-muted small">-</div>
             </td>
-            <td style="text-align: right;">43.4x</td>
+            <td style="text-align: right;">47.6x</td>
             <td style="text-align: right; font-weight: 600;">$6.6M</td>
-            <td style="text-align: right;"><strong>$12.68</strong> <span class='text-emerald small'>(+84.4%)</span></td>
+            <td style="text-align: right;"><strong>$12.68</strong> <span class='text-emerald small'>(+68.0%)</span></td>
             <td style="text-align: center;">$7 - $20</td>
             <td><span class='badge badge-emerald'>Buy 22</span> <span class='badge badge-amber'>Hold 5</span> <span class='badge badge-rose'>Sell 2</span></td>
             <td><span class='text-muted'>28 Jan 2027 (งบออกใน 66 วัน)</span></td>
@@ -1548,15 +1548,55 @@ table td, table th, .kpi-value, .wealth-hud-val, .wealth-hud-sub,
             <td style="text-align: right; font-weight: 600;"><span class='text-emerald'>+10.7%</span></td>
             <td style="text-align: right; font-weight: 600;"><span class='text-amber'>2.39</span></td>
             <td style="text-align: right;">
-                <div class="fw-bold">0.80</div>
-                <div class="text-muted small">คุ้มค่ามาก (0.80 💎)</div>
+                <div class="fw-bold">0.78</div>
+                <div class="text-muted small">คุ้มค่ามาก (0.78 💎)</div>
             </td>
-            <td style="text-align: right;">11.2x</td>
+            <td style="text-align: right;">11.5x</td>
             <td style="text-align: right; font-weight: 600;">$51.0B</td>
-            <td style="text-align: right;"><strong>$62.16</strong> <span class='text-emerald small'>(+32.0%)</span></td>
+            <td style="text-align: right;"><strong>$62.16</strong> <span class='text-emerald small'>(+29.1%)</span></td>
             <td style="text-align: center;">$55 - $71</td>
             <td><span class='badge badge-emerald'>Buy 19</span> <span class='badge badge-amber'>Hold 5</span> <span class='badge badge-rose'>Sell 0</span></td>
             <td><span class='text-muted'>15 Jan 2027 (งบออกใน 53 วัน)</span></td>
+        </tr>
+        
+        <tr>
+            <td><a href="https://www.tradingview.com/chart/?symbol=NASDAQ:SKHY" target="_blank" class="ticker-pill">SKHY</a></td>
+            <td><div class="fw-bold">SK hynix Inc. Sponsored ADR</div></td>
+            <td><span class='badge badge-emerald'>🟢 ยอดเยี่ยม</span> <span class='text-muted' style='font-size:0.72rem;'>100/100 · ข้อมูล 100%</span></td>
+            <td style="text-align: right; font-weight: 600;">+209.3%</td>
+            <td style="text-align: right; font-weight: 600;">+405.3%</td>
+            <td style="text-align: right; font-weight: 600;"><span class='text-emerald fw-bold'>+85.8% 🏆</span></td>
+            <td style="text-align: right; font-weight: 600;"><span class='text-emerald fw-bold'>0.06 🛡️</span></td>
+            <td style="text-align: right;">
+                <div class="fw-bold">0.01</div>
+                <div class="text-muted small">ถูกมาก (0.01 💎)</div>
+            </td>
+            <td style="text-align: right;">6.9x</td>
+            <td style="text-align: right; font-weight: 600;">$83.0B</td>
+            <td style="text-align: right;"><strong>$264.30</strong> <span class='text-emerald small'>(+112.7%)</span></td>
+            <td style="text-align: center;">$200 - $400</td>
+            <td><span class='badge badge-emerald'>Buy 11</span> <span class='badge badge-amber'>Hold 1</span> <span class='badge badge-rose'>Sell 0</span></td>
+            <td><span class='text-muted'>28 Jan 2027 (งบออกใน 66 วัน)</span></td>
+        </tr>
+        
+        <tr>
+            <td><a href="https://www.tradingview.com/chart/?symbol=NASDAQ:MU" target="_blank" class="ticker-pill">MU</a></td>
+            <td><div class="fw-bold">Micron Technology, Inc.</div></td>
+            <td><span class='badge badge-emerald'>🟢 ยอดเยี่ยม</span> <span class='text-muted' style='font-size:0.72rem;'>100/100 · ข้อมูล 100%</span></td>
+            <td style="text-align: right; font-weight: 600;">+256.3%</td>
+            <td style="text-align: right; font-weight: 600;">+895.1%</td>
+            <td style="text-align: right; font-weight: 600;"><span class='text-emerald fw-bold'>+88.3% 🏆</span></td>
+            <td style="text-align: right; font-weight: 600;"><span class='text-emerald fw-bold'>0.04 🛡️</span></td>
+            <td style="text-align: right;">
+                <div class="fw-bold">0.01</div>
+                <div class="text-muted small">ถูกมาก (0.01 💎)</div>
+            </td>
+            <td style="text-align: right;">9.5x</td>
+            <td style="text-align: right; font-weight: 600;">$59.0B</td>
+            <td style="text-align: right;"><strong>$1,620.62</strong> <span class='text-emerald small'>(+129.0%)</span></td>
+            <td style="text-align: center;">$1,100 - $3,000</td>
+            <td><span class='badge badge-emerald'>Buy 45</span> <span class='badge badge-amber'>Hold 3</span> <span class='badge badge-rose'>Sell 0</span></td>
+            <td><span class='text-muted'>17 Dec 2026 (งบออกใน 24 วัน)</span></td>
         </tr>
         
         <tr>
@@ -1568,12 +1608,12 @@ table td, table th, .kpi-value, .wealth-hud-val, .wealth-hud-sub,
             <td style="text-align: right; font-weight: 600;"><span class='text-emerald fw-bold'>+42.0% 🏆</span></td>
             <td style="text-align: right; font-weight: 600;"><span class='text-emerald fw-bold'>0.15 🛡️</span></td>
             <td style="text-align: right;">
-                <div class="fw-bold">0.38</div>
-                <div class="text-muted small">ถูกมาก (0.38 💎)</div>
+                <div class="fw-bold">0.35</div>
+                <div class="text-muted small">ถูกมาก (0.35 💎)</div>
             </td>
-            <td style="text-align: right;">20.5x</td>
+            <td style="text-align: right;">23.4x</td>
             <td style="text-align: right; font-weight: 600;">$49.9B</td>
-            <td style="text-align: right;"><strong>$554.22</strong> <span class='text-emerald small'>(+73.7%)</span></td>
+            <td style="text-align: right;"><strong>$554.22</strong> <span class='text-emerald small'>(+52.4%)</span></td>
             <td style="text-align: center;">$440 - $670</td>
             <td><span class='badge badge-emerald'>Buy 15</span> <span class='badge badge-amber'>Hold 1</span> <span class='badge badge-rose'>Sell 0</span></td>
             <td><span class='text-muted'>21 Jan 2027 (งบออกใน 59 วัน)</span></td>
@@ -1608,55 +1648,15 @@ table td, table th, .kpi-value, .wealth-hud-val, .wealth-hud-sub,
             <td style="text-align: right; font-weight: 600;"><span class='text-emerald fw-bold'>+66.0% 🏆</span></td>
             <td style="text-align: right; font-weight: 600;"><span class='text-emerald fw-bold'>0.09 🛡️</span></td>
             <td style="text-align: right;">
-                <div class="fw-bold">0.64</div>
-                <div class="text-muted small">คุ้มค่ามาก (0.64 💎)</div>
+                <div class="fw-bold">0.60</div>
+                <div class="text-muted small">คุ้มค่ามาก (0.60 💎)</div>
             </td>
-            <td style="text-align: right;">31.2x</td>
+            <td style="text-align: right;">34.1x</td>
             <td style="text-align: right; font-weight: 600;">$24.3B</td>
-            <td style="text-align: right;"><strong>$2,436.94</strong> <span class='text-emerald small'>(+92.5%)</span></td>
+            <td style="text-align: right;"><strong>$2,436.94</strong> <span class='text-emerald small'>(+76.1%)</span></td>
             <td style="text-align: center;">$1,998 - $2,859</td>
             <td><span class='badge badge-emerald'>Buy 33</span> <span class='badge badge-amber'>Hold 4</span> <span class='badge badge-rose'>Sell 1</span></td>
             <td><span class='text-muted'>27 Jan 2027 (งบออกใน 65 วัน)</span></td>
-        </tr>
-        
-        <tr>
-            <td><a href="https://www.tradingview.com/chart/?symbol=NASDAQ:MU" target="_blank" class="ticker-pill">MU</a></td>
-            <td><div class="fw-bold">Micron Technology, Inc.</div></td>
-            <td><span class='badge badge-emerald'>🟢 ยอดเยี่ยม</span> <span class='text-muted' style='font-size:0.72rem;'>100/100 · ข้อมูล 100%</span></td>
-            <td style="text-align: right; font-weight: 600;">+256.3%</td>
-            <td style="text-align: right; font-weight: 600;">+895.1%</td>
-            <td style="text-align: right; font-weight: 600;"><span class='text-emerald fw-bold'>+88.3% 🏆</span></td>
-            <td style="text-align: right; font-weight: 600;"><span class='text-emerald fw-bold'>0.04 🛡️</span></td>
-            <td style="text-align: right;">
-                <div class="fw-bold">0.01</div>
-                <div class="text-muted small">ถูกมาก (0.01 💎)</div>
-            </td>
-            <td style="text-align: right;">8.0x</td>
-            <td style="text-align: right; font-weight: 600;">$59.0B</td>
-            <td style="text-align: right;"><strong>$1,631.56</strong> <span class='text-emerald small'>(+174.4%)</span></td>
-            <td style="text-align: center;">$1,150 - $3,000</td>
-            <td><span class='badge badge-emerald'>Buy 45</span> <span class='badge badge-amber'>Hold 3</span> <span class='badge badge-rose'>Sell 0</span></td>
-            <td><span class='text-muted'>17 Dec 2026 (งบออกใน 24 วัน)</span></td>
-        </tr>
-        
-        <tr>
-            <td><a href="https://www.tradingview.com/chart/?symbol=NASDAQ:SKHY" target="_blank" class="ticker-pill">SKHY</a></td>
-            <td><div class="fw-bold">SK hynix Inc. Sponsored ADR</div></td>
-            <td><span class='badge badge-emerald'>🟢 ยอดเยี่ยม</span> <span class='text-muted' style='font-size:0.72rem;'>100/100 · ข้อมูล 100%</span></td>
-            <td style="text-align: right; font-weight: 600;">+209.3%</td>
-            <td style="text-align: right; font-weight: 600;">+405.3%</td>
-            <td style="text-align: right; font-weight: 600;"><span class='text-emerald fw-bold'>+85.8% 🏆</span></td>
-            <td style="text-align: right; font-weight: 600;"><span class='text-emerald fw-bold'>0.06 🛡️</span></td>
-            <td style="text-align: right;">
-                <div class="fw-bold">0.02</div>
-                <div class="text-muted small">ถูกมาก (0.02 💎)</div>
-            </td>
-            <td style="text-align: right;">5.8x</td>
-            <td style="text-align: right; font-weight: 600;">$83.0B</td>
-            <td style="text-align: right;"><strong>$264.30</strong> <span class='text-emerald small'>(+155.2%)</span></td>
-            <td style="text-align: center;">$200 - $400</td>
-            <td><span class='badge badge-emerald'>Buy 11</span> <span class='badge badge-amber'>Hold 1</span> <span class='badge badge-rose'>Sell 0</span></td>
-            <td><span class='text-muted'>28 Jan 2027 (งบออกใน 66 วัน)</span></td>
         </tr>
         
                 </tbody>
@@ -1667,6 +1667,84 @@ table td, table th, .kpi-value, .wealth-hud-val, .wealth-hud-sub,
         <div class="section-header">💵 5. ถ้ามีเงินใหม่ ควรซื้อตัวไหนเพิ่ม? (Top Rebalancing Buys)</div>
         <div class="grid-3-cols">
             
+        <div class="card buy-card" style="border-top: 4px solid var(--gold);">
+            <div class="buy-header">
+                <span class="buy-rank" style="color: var(--gold);">🥇 อันดับ 1</span>
+                <span class="ticker-pill">MU</span>
+            </div>
+            <h4 style="margin: 8px 0 4px 0;">Micron Technology, Inc. ⭐⭐⭐⭐</h4>
+            <p class="text-muted small" style="margin-bottom: 12px;">ผู้ผลิตชิปหน่วยความจำ DRAM และแฟลชเมมโมรี NAND ระดับโลก</p>
+            <div class="buy-reason-box">
+                💡 <strong>เหตุผลสำหรับมือใหม่:</strong> หุ้นคุณภาพดี พื้นฐานแกร่ง ราคายังต่ำกว่าเส้น 200 วัน รอยืนกลับเหนือเส้นก่อนเพิ่มน้ำหนัก สถาบันให้เป้าหมายมี Upside +129.0%.
+            </div>
+            <div class="grid-2-cols" style="margin-top: 14px; font-size: 0.9rem;">
+                <div><span class="text-muted">สัดส่วนปัจจุบัน:</span> <strong>0.4%</strong></div>
+                <div><span class="text-muted">ราคาตลาด:</span> <strong>$707.70</strong></div>
+            </div>
+            <div class="order-box">
+                <div class="order-row">
+                    <span>โซนตั้งซื้อ (Limit Order):</span>
+                    <strong class="text-emerald">$577.76 - $589.32</strong>
+                </div>
+                <div class="order-row">
+                    <span>จุดตัดขาดทุน (SL):</span>
+                    <strong class="text-rose">$608.05</strong>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card buy-card" style="border-top: 4px solid var(--silver);">
+            <div class="buy-header">
+                <span class="buy-rank" style="color: var(--silver);">🥈 อันดับ 2</span>
+                <span class="ticker-pill">TSM</span>
+            </div>
+            <h4 style="margin: 8px 0 4px 0;">Taiwan Semiconductor Manufacturing Co., Ltd. Sponsored ADR ⭐⭐⭐⭐</h4>
+            <p class="text-muted small" style="margin-bottom: 12px;">ผู้ผลิตและรับจ้างผลิตเซมิคอนดักเตอร์ (Foundry) รายใหญ่ที่สุดในโลก ผูกขาดเทคโนโลยีชิปขั้นสูง 3nm และ 2nm</p>
+            <div class="buy-reason-box">
+                💡 <strong>เหตุผลสำหรับมือใหม่:</strong> หุ้นคุณภาพดี พื้นฐานแกร่ง ราคายังต่ำกว่าเส้น 200 วัน รอยืนกลับเหนือเส้นก่อนเพิ่มน้ำหนัก สถาบันให้เป้าหมายมี Upside +52.4%.
+            </div>
+            <div class="grid-2-cols" style="margin-top: 14px; font-size: 0.9rem;">
+                <div><span class="text-muted">สัดส่วนปัจจุบัน:</span> <strong>0.4%</strong></div>
+                <div><span class="text-muted">ราคาตลาด:</span> <strong>$363.60</strong></div>
+            </div>
+            <div class="order-box">
+                <div class="order-row">
+                    <span>โซนตั้งซื้อ (Limit Order):</span>
+                    <strong class="text-emerald">$327.89 - $334.45</strong>
+                </div>
+                <div class="order-row">
+                    <span>จุดตัดขาดทุน (SL):</span>
+                    <strong class="text-rose">$329.80</strong>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card buy-card" style="border-top: 4px solid var(--bronze);">
+            <div class="buy-header">
+                <span class="buy-rank" style="color: var(--bronze);">🥉 อันดับ 3</span>
+                <span class="ticker-pill">SKHY</span>
+            </div>
+            <h4 style="margin: 8px 0 4px 0;">SK hynix Inc. Sponsored ADR ⭐⭐⭐</h4>
+            <p class="text-muted small" style="margin-bottom: 12px;">ธุรกิจ Semiconductors (กลุ่ม Electronic Technology)</p>
+            <div class="buy-reason-box">
+                💡 <strong>เหตุผลสำหรับมือใหม่:</strong> หุ้นคุณภาพดี พื้นฐานแกร่ง ราคายังต่ำกว่าเส้น 200 วัน รอยืนกลับเหนือเส้นก่อนเพิ่มน้ำหนัก สถาบันให้เป้าหมายมี Upside +112.7%.
+            </div>
+            <div class="grid-2-cols" style="margin-top: 14px; font-size: 0.9rem;">
+                <div><span class="text-muted">สัดส่วนปัจจุบัน:</span> <strong>0.4%</strong></div>
+                <div><span class="text-muted">ราคาตลาด:</span> <strong>$124.28</strong></div>
+            </div>
+            <div class="order-box">
+                <div class="order-row">
+                    <span>โซนตั้งซื้อ (Limit Order):</span>
+                    <strong class="text-emerald">$105.18 - $107.28</strong>
+                </div>
+                <div class="order-row">
+                    <span>จุดตัดขาดทุน (SL):</span>
+                    <strong class="text-rose">$107.25</strong>
+                </div>
+            </div>
+        </div>
+        
         </div>
 
         <!-- Forbidden Buys -->
@@ -1676,47 +1754,7 @@ table td, table th, .kpi-value, .wealth-hud-val, .wealth-hud-sub,
             
         <div class="forbidden-item">
             <span class="badge badge-rose">❌ ห้ามซื้อ LLY</span>
-            <div><strong>Eli Lilly and Company:</strong> สัดส่วนในพอร์ตสูงเกินเกณฑ์ความปลอดภัยแล้ว (85.3%) ห้ามซื้อเพิ่มเพื่อป้องกันความเสี่ยงกระจุกตัว ให้ถือรันเทรนด์.</div>
-        </div>
-        
-        <div class="forbidden-item">
-            <span class="badge badge-rose">❌ ห้ามซื้อ GOOGL</span>
-            <div><strong>Alphabet Inc. Class A:</strong> ราคาปรับตัวลดลงรุนแรงในวันนี้ (Plunge Day) ยังไม่มีแท่งเทียนยืนยันการกลับตัว ห้ามตั้งรับมีดที่กำลังหล่น.</div>
-        </div>
-        
-        <div class="forbidden-item">
-            <span class="badge badge-rose">❌ ห้ามซื้อ NOK</span>
-            <div><strong>Nokia Oyj:</strong> ราคาปรับตัวลดลงรุนแรงในวันนี้ (Plunge Day) ยังไม่มีแท่งเทียนยืนยันการกลับตัว ห้ามตั้งรับมีดที่กำลังหล่น.</div>
-        </div>
-        
-        <div class="forbidden-item">
-            <span class="badge badge-rose">❌ ห้ามซื้อ BAC</span>
-            <div><strong>Bank of America Corp:</strong> ราคาปรับตัวลดลงรุนแรงในวันนี้ (Plunge Day) ยังไม่มีแท่งเทียนยืนยันการกลับตัว ห้ามตั้งรับมีดที่กำลังหล่น.</div>
-        </div>
-        
-        <div class="forbidden-item">
-            <span class="badge badge-rose">❌ ห้ามซื้อ TSM</span>
-            <div><strong>Taiwan Semiconductor Manufacturing Co., Ltd. Sponsored ADR:</strong> ราคาปรับตัวลดลงรุนแรงในวันนี้ (Plunge Day) ยังไม่มีแท่งเทียนยืนยันการกลับตัว ห้ามตั้งรับมีดที่กำลังหล่น.</div>
-        </div>
-        
-        <div class="forbidden-item">
-            <span class="badge badge-rose">❌ ห้ามซื้อ SOXQ</span>
-            <div><strong>Invesco PHLX Semiconductor ETF:</strong> ราคาปรับตัวลดลงรุนแรงในวันนี้ (Plunge Day) ยังไม่มีแท่งเทียนยืนยันการกลับตัว ห้ามตั้งรับมีดที่กำลังหล่น.</div>
-        </div>
-        
-        <div class="forbidden-item">
-            <span class="badge badge-rose">❌ ห้ามซื้อ ASML</span>
-            <div><strong>ASML Holding NV Sponsored ADR:</strong> ราคาปรับตัวลดลงรุนแรงในวันนี้ (Plunge Day) ยังไม่มีแท่งเทียนยืนยันการกลับตัว ห้ามตั้งรับมีดที่กำลังหล่น.</div>
-        </div>
-        
-        <div class="forbidden-item">
-            <span class="badge badge-rose">❌ ห้ามซื้อ MU</span>
-            <div><strong>Micron Technology, Inc.:</strong> ราคาปรับตัวลดลงรุนแรงในวันนี้ (Plunge Day) ยังไม่มีแท่งเทียนยืนยันการกลับตัว ห้ามตั้งรับมีดที่กำลังหล่น.</div>
-        </div>
-        
-        <div class="forbidden-item">
-            <span class="badge badge-rose">❌ ห้ามซื้อ SKHY</span>
-            <div><strong>SK hynix Inc. Sponsored ADR:</strong> ราคาปรับตัวลดลงรุนแรงในวันนี้ (Plunge Day) ยังไม่มีแท่งเทียนยืนยันการกลับตัว ห้ามตั้งรับมีดที่กำลังหล่น.</div>
+            <div><strong>Eli Lilly and Company:</strong> สัดส่วนในพอร์ตสูงเกินเกณฑ์ความปลอดภัยแล้ว (84.5%) ห้ามซื้อเพิ่มเพื่อป้องกันความเสี่ยงกระจุกตัว ให้ถือรันเทรนด์.</div>
         </div>
         
         </div>
@@ -1730,15 +1768,15 @@ table td, table th, .kpi-value, .wealth-hud-val, .wealth-hud-sub,
             <!-- Header -->
             <div class="outlook-card-header">
                 <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
-                    <span class="ticker-pill clickable-ticker" style="font-size: 1.15rem; padding: 4px 12px;" onclick="openChartModal(&quot;LLY&quot;, &quot;NYSE&quot;, &quot;Eli Lilly and Company&quot;, &quot;Health Technology&quot;, 1021.1077, 1347.11, 1281.26, 1486.56, 1283.47, 1454.88, 1507.96)" title="คลิกเปิดดูกราฟเทคนิคัลอัจฉริยะ">LLY 📈</span>
+                    <span class="ticker-pill clickable-ticker" style="font-size: 1.15rem; padding: 4px 12px;" onclick="openChartModal(&quot;LLY&quot;, &quot;NYSE&quot;, &quot;Eli Lilly and Company&quot;, &quot;Health Technology&quot;, 1021.1077, 1364.6, 1296.84, 1479.52, 1301.47, 1473.77, 1507.96)" title="คลิกเปิดดูกราฟเทคนิคัลอัจฉริยะ">LLY 📈</span>
                     <strong style="font-size: 1.25rem;">Eli Lilly and Company</strong>
                     <span class="badge badge-neutral" style="font-size: 0.8rem;">Health Technology • Pharmaceuticals: Major</span>
                     <span class="badge badge-neutral" style="font-size: 0.8rem; background: rgba(59, 130, 246, 0.1); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.25);">🟡 Market Leader</span>
                 </div>
                 <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
-                    <span class="badge badge-emerald" style="font-size: 0.95rem; padding: 5px 12px;">+31.93%</span>
-                    <span class="badge badge-neutral" style="font-size: 0.85rem;">สัดส่วน 85.3% (⭐⭐⭐)</span>
-                    <button onclick="openChartModal(&quot;LLY&quot;, &quot;NYSE&quot;, &quot;Eli Lilly and Company&quot;, &quot;Health Technology&quot;, 1021.1077, 1347.11, 1281.26, 1486.56, 1283.47, 1454.88, 1507.96)" style="background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.35); color: #60a5fa; border-radius: 6px; padding: 5px 12px; font-size: 0.85rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.2s;">📈 ดูกราฟสด & แนวรับแนวต้าน</button>
+                    <span class="badge badge-emerald" style="font-size: 0.95rem; padding: 5px 12px;">+33.64%</span>
+                    <span class="badge badge-neutral" style="font-size: 0.85rem;">สัดส่วน 84.5% (⭐⭐⭐)</span>
+                    <button onclick="openChartModal(&quot;LLY&quot;, &quot;NYSE&quot;, &quot;Eli Lilly and Company&quot;, &quot;Health Technology&quot;, 1021.1077, 1364.6, 1296.84, 1479.52, 1301.47, 1473.77, 1507.96)" style="background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.35); color: #60a5fa; border-radius: 6px; padding: 5px 12px; font-size: 0.85rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.2s;">📈 ดูกราฟสด & แนวรับแนวต้าน</button>
                 </div>
             </div>
 
@@ -1755,7 +1793,7 @@ table td, table th, .kpi-value, .wealth-hud-val, .wealth-hud-sub,
             <div class="drivers-box">
                 <div style="font-size: 0.88rem; font-weight: 700; color: #38bdf8; margin-bottom: 8px;">📈 4 เครื่องจักรขับเคลื่อนการเติบโตในอนาคต (Future Growth Drivers 1-12 เดือน):</div>
                 <ul class="drivers-list">
-                    <li>การขยายตัวของรายได้ระดับ +45.5% YoY และความสามารถในการทำกำไรสุทธิ +49.8% YoY</li><li>อัตราการประเมินมูลค่า P/E 44.3x และค่า PEG 0.88 เท่า สะท้อนระดับราคาต่อการเติบโต</li><li>ส่วนแบ่งการตลาดและความแข็งแกร่งของตราสินค้าในกลุ่มอุตสาหกรรม Pharmaceuticals: Major</li><li>การเพิ่มประสิทธิภาพการดำเนินงานและการบริหารจัดการต้นทุนเพื่อผลักดันกระแสเงินสดอิสระ</li>
+                    <li>การขยายตัวของรายได้ระดับ +45.5% YoY และความสามารถในการทำกำไรสุทธิ +49.8% YoY</li><li>อัตราการประเมินมูลค่า P/E 44.8x และค่า PEG 0.88 เท่า สะท้อนระดับราคาต่อการเติบโต</li><li>ส่วนแบ่งการตลาดและความแข็งแกร่งของตราสินค้าในกลุ่มอุตสาหกรรม Pharmaceuticals: Major</li><li>การเพิ่มประสิทธิภาพการดำเนินงานและการบริหารจัดการต้นทุนเพื่อผลักดันกระแสเงินสดอิสระ</li>
                 </ul>
             </div>
 
@@ -1789,7 +1827,7 @@ table td, table th, .kpi-value, .wealth-hud-val, .wealth-hud-sub,
                     </div>
                     <div class="ws-target-cell">
                         <div class="text-muted small">ราคาปัจจุบัน</div>
-                        <div class="fw-bold text-emerald" style="font-size: 1.1rem;">$1,347.11</div>
+                        <div class="fw-bold text-emerald" style="font-size: 1.1rem;">$1,364.60</div>
                     </div>
                     <div class="ws-target-cell">
                         <div class="text-muted small">เป้าต่ำสุด (Low)</div>
@@ -1797,7 +1835,7 @@ table td, table th, .kpi-value, .wealth-hud-val, .wealth-hud-sub,
                     </div>
                     <div class="ws-target-cell">
                         <div class="text-muted small">เป้าเฉลี่ย (Average)</div>
-                        <div class="fw-bold text-emerald" style="font-size: 1.1rem;">$1,507.96 <span class="small"> (+11.9%)</span></div>
+                        <div class="fw-bold text-emerald" style="font-size: 1.1rem;">$1,507.96 <span class="small"> (+10.5%)</span></div>
                     </div>
                     <div class="ws-target-cell">
                         <div class="text-muted small">เป้าสูงสุด (High)</div>
@@ -1805,7 +1843,7 @@ table td, table th, .kpi-value, .wealth-hud-val, .wealth-hud-sub,
                     </div>
                 </div>
                 <div class="small" style="color: #cbd5e1; background: rgba(0, 0, 0, 0.2); padding: 8px 12px; border-radius: 6px; border-left: 3px solid var(--emerald); margin-top: 6px;">
-                    📌 <strong>ข้อสรุปของวอลล์สตรีท:</strong> โบรกเกอร์ 30 แห่ง (Buy 24 / Hold 5 / Sell 1) ราคาเป้าหมายเฉลี่ยสถาบันอยู่ที่ $1,507.96 (Upside +11.9%)
+                    📌 <strong>ข้อสรุปของวอลล์สตรีท:</strong> โบรกเกอร์ 30 แห่ง (Buy 24 / Hold 5 / Sell 1) ราคาเป้าหมายเฉลี่ยสถาบันอยู่ที่ $1,507.96 (Upside +10.5%)
                 </div>
             </div>
 
@@ -1813,7 +1851,7 @@ table td, table th, .kpi-value, .wealth-hud-val, .wealth-hud-sub,
             <div class="grid-2-cols" style="gap: 14px; margin-bottom: 18px;">
                 <div class="bull-box" style="background: rgba(16, 185, 129, 0.04); padding: 14px; border-radius: var(--radius-sm); border: 1px solid rgba(16, 185, 129, 0.2);">
                     <div class="cat-label text-emerald fw-bold small" style="margin-bottom: 8px;">🟢 พาดหัวข่าวจริงเชิงบวกและปัจจัยหนุน (Positive News):</div>
-                    <ul class="cat-list"><li style='margin-bottom: 8px;'><strong class='source-tag'>[The Globe and Mail]</strong> <span style='font-weight: 600; color: #f1f5f9;'>ยาลดความอ้วนตัวต่อไปของ Eli Lilly ยังไม่ได้รับการอนุมัติ แต่ผู้ใช้ Peptide Tracker เข้าสู่ระบบแล้ว</span> <span class='badge badge-neutral' style='font-size:0.7rem; color:#94a3b8; background:rgba(148,163,184,0.12); border:1px solid rgba(148,163,184,0.25); vertical-align:middle;'>heuristic</span><div class='small' style='color: #94a3b8; margin-top: 2px; padding-left: 2px;'>↳ <a href='https://news.google.com/rss/articles/CBMigAJBVV95cUxOUTVYLTF2dmhfTy1EMGhUZGZRMGpjS2d6a1RMeEF0WEtxYWE4eDhncFprd2dHT0tzMXhTVzdEb2t4T0QzbkNTZU9HckhpUjZHNVBDckMybW9wMXlrUFpnZ0NjaEl1YUNCRUx3R0pma2JHNjItOU1sYUd4TjNjdllIc3lUbnFWWVA5RlNjSXJtb0NQVXRiSG5GWGltRnMwZ2lieG1McENNeHlzMU5Lbmk4VjRTV0JhUVdrLVp3VWRqbEI2UnJTc3VmcjVISEliSEZKVVJaSldxU0xJZjlSYnBpdjh6NTFHOG96SF93SmZOY2NwU1RLRG1ZX1BwejEyUmds?oc=5' target='_blank' rel='noopener noreferrer' class='news-headline-link' title='คลิกเพื่ออ่านข่าวต้นฉบับ'>Eli Lilly&#x27;s Next Obesity Drug Isn&#x27;t Approved Yet, but Peptide Tracker Users Already Log It ↗</a> <span class='text-muted small'>(22 Nov 2026)</span></div></li></ul>
+                    <ul class="cat-list"><li style='margin-bottom: 8px;'><strong class='source-tag'>[The Motley Fool]</strong> <span style='font-weight: 600; color: #f1f5f9;'>Eli Lilly กับ Vertex Pharmaceuticals: หุ้นด้านการดูแลสุขภาพตัวไหนน่าซื้อกว่าในปี 2570</span> <span class='badge badge-neutral' style='font-size:0.7rem; color:#94a3b8; background:rgba(148,163,184,0.12); border:1px solid rgba(148,163,184,0.25); vertical-align:middle;'>heuristic</span><div class='small' style='color: #94a3b8; margin-top: 2px; padding-left: 2px;'>↳ <a href='https://news.google.com/rss/articles/CBMi0gFBVV95cUxQbjJwX0NtS2RIVGt3TW9SQ1NtRVVXakd0ZG9tVGpLVWp3a0pXRXNsTWJ3MGFTM1BfRWttb3FleWptaUgwWUZqZzFqQmYzeHEwcnhRbmxQWkxIUHUxczlIY0s2YzlYWGRyVWowaHpnRzNqYkhRMlpBel85SHh2QmFPTm5EOVNrQVYySVNxU2Uyem1iZlBTeVZMVGt3bHpGMUc4LWtVYVQzRnFGSHdGajl5TUNIZ2NPT1dXY1ZPRE1qMWRndF84UnNqNUVNSWViSnRZQ2c?oc=5' target='_blank' rel='noopener noreferrer' class='news-headline-link' title='คลิกเพื่ออ่านข่าวต้นฉบับ'>Eli Lilly vs. Vertex Pharmaceuticals: Which Healthcare Stock Is a Better Buy for 2027? ↗</a> <span class='text-muted small'>(23 Nov 2026)</span></div></li></ul>
                 </div>
                 <div class="bear-box" style="background: rgba(244, 63, 94, 0.04); padding: 14px; border-radius: var(--radius-sm); border: 1px solid rgba(244, 63, 94, 0.2);">
                     <div class="cat-label text-rose fw-bold small" style="margin-bottom: 8px;">🔴 พาดหัวข่าวจริงที่ต้องระวังและความเสี่ยง (Risk Factors):</div>
@@ -1827,8 +1865,8 @@ table td, table th, .kpi-value, .wealth-hud-val, .wealth-hud-sub,
                     <div style="font-size: 0.85rem; font-weight: 700; color: #fbbf24; text-transform: uppercase; letter-spacing: 0.05em; display: flex; align-items: center; gap: 6px;">
                         <span>🧭</span> แผนกลยุทธ์ฟันธงสำหรับ LLY (Action Roadmap):
                     </div>
-                    <button class="copy-cmd-btn" onclick="copyTradeCommand('python trades.py buy -t LLY -s 1 -p 1347.11 --pay usd', this)" title="คลิกเพื่อคัดลอกคำสั่ง CLI ไปรันในเทอร์มินัล">
-                        <span>📋</span> คัดลอกคำสั่ง <code class="cmd-code">python trades.py buy -t LLY -s 1 -p 1347.11 --pay usd</code>
+                    <button class="copy-cmd-btn" onclick="copyTradeCommand('python trades.py buy -t LLY -s 1 -p 1364.60 --pay usd', this)" title="คลิกเพื่อคัดลอกคำสั่ง CLI ไปรันในเทอร์มินัล">
+                        <span>📋</span> คัดลอกคำสั่ง <code class="cmd-code">python trades.py buy -t LLY -s 1 -p 1364.60 --pay usd</code>
                     </button>
                 </div>
                 <div style="font-size: 0.95rem; color: #ffffff; line-height: 1.55; margin-bottom: 10px;">
@@ -1844,15 +1882,15 @@ table td, table th, .kpi-value, .wealth-hud-val, .wealth-hud-sub,
             <!-- Header -->
             <div class="outlook-card-header">
                 <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
-                    <span class="ticker-pill clickable-ticker" style="font-size: 1.15rem; padding: 4px 12px;" onclick="openChartModal(&quot;GOOGL&quot;, &quot;NASDAQ&quot;, &quot;Alphabet Inc. Class A&quot;, &quot;Technology Services&quot;, 341.7162, 265.29, 259.3, 322.3, 248.32, 322.3, 389.26)" title="คลิกเปิดดูกราฟเทคนิคัลอัจฉริยะ">GOOGL 📈</span>
+                    <span class="ticker-pill clickable-ticker" style="font-size: 1.15rem; padding: 4px 12px;" onclick="openChartModal(&quot;GOOGL&quot;, &quot;NASDAQ&quot;, &quot;Alphabet Inc. Class A&quot;, &quot;Technology Services&quot;, 341.7162, 282.1, 260.18, 320.95, 264.21, 320.95, 389.26)" title="คลิกเปิดดูกราฟเทคนิคัลอัจฉริยะ">GOOGL 📈</span>
                     <strong style="font-size: 1.25rem;">Alphabet Inc. Class A</strong>
                     <span class="badge badge-neutral" style="font-size: 0.8rem;">Technology Services • Internet Software/Services</span>
                     <span class="badge badge-neutral" style="font-size: 0.8rem; background: rgba(59, 130, 246, 0.1); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.25);">🟡 Market Leader</span>
                 </div>
                 <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
-                    <span class="badge badge-rose" style="font-size: 0.95rem; padding: 5px 12px;">-22.37%</span>
-                    <span class="badge badge-neutral" style="font-size: 0.85rem;">สัดส่วน 6.8% (⭐⭐⭐)</span>
-                    <button onclick="openChartModal(&quot;GOOGL&quot;, &quot;NASDAQ&quot;, &quot;Alphabet Inc. Class A&quot;, &quot;Technology Services&quot;, 341.7162, 265.29, 259.3, 322.3, 248.32, 322.3, 389.26)" style="background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.35); color: #60a5fa; border-radius: 6px; padding: 5px 12px; font-size: 0.85rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.2s;">📈 ดูกราฟสด & แนวรับแนวต้าน</button>
+                    <span class="badge badge-rose" style="font-size: 0.95rem; padding: 5px 12px;">-17.45%</span>
+                    <span class="badge badge-neutral" style="font-size: 0.85rem;">สัดส่วน 7.1% (⭐⭐⭐)</span>
+                    <button onclick="openChartModal(&quot;GOOGL&quot;, &quot;NASDAQ&quot;, &quot;Alphabet Inc. Class A&quot;, &quot;Technology Services&quot;, 341.7162, 282.1, 260.18, 320.95, 264.21, 320.95, 389.26)" style="background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.35); color: #60a5fa; border-radius: 6px; padding: 5px 12px; font-size: 0.85rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.2s;">📈 ดูกราฟสด & แนวรับแนวต้าน</button>
                 </div>
             </div>
 
@@ -1869,7 +1907,7 @@ table td, table th, .kpi-value, .wealth-hud-val, .wealth-hud-sub,
             <div class="drivers-box">
                 <div style="font-size: 0.88rem; font-weight: 700; color: #38bdf8; margin-bottom: 8px;">📈 4 เครื่องจักรขับเคลื่อนการเติบโตในอนาคต (Future Growth Drivers 1-12 เดือน):</div>
                 <ul class="drivers-list">
-                    <li>การขยายตัวของรายได้ระดับ +22.2% YoY และความสามารถในการทำกำไรสุทธิ +89.7% YoY</li><li>อัตราการประเมินมูลค่า P/E 13.8x และค่า PEG 0.16 เท่า สะท้อนระดับราคาต่อการเติบโต</li><li>ส่วนแบ่งการตลาดและความแข็งแกร่งของตราสินค้าในกลุ่มอุตสาหกรรม Internet Software/Services</li><li>การเพิ่มประสิทธิภาพการดำเนินงานและการบริหารจัดการต้นทุนเพื่อผลักดันกระแสเงินสดอิสระ</li>
+                    <li>การขยายตัวของรายได้ระดับ +22.2% YoY และความสามารถในการทำกำไรสุทธิ +89.7% YoY</li><li>อัตราการประเมินมูลค่า P/E 14.7x และค่า PEG 0.16 เท่า สะท้อนระดับราคาต่อการเติบโต</li><li>ส่วนแบ่งการตลาดและความแข็งแกร่งของตราสินค้าในกลุ่มอุตสาหกรรม Internet Software/Services</li><li>การเพิ่มประสิทธิภาพการดำเนินงานและการบริหารจัดการต้นทุนเพื่อผลักดันกระแสเงินสดอิสระ</li>
                 </ul>
             </div>
 
@@ -1894,7 +1932,7 @@ table td, table th, .kpi-value, .wealth-hud-val, .wealth-hud-sub,
             <div class="wallstreet-box">
                 <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
                     <div class="fw-bold" style="font-size: 0.95rem; color: #10b981;">🎯 มุมมองราคาเป้าหมายสถาบันการเงินวอลล์สตรีท (Wall Street Consensus)</div>
-                    <div class="small"><span class='text-emerald fw-bold'>🟢 Buy: 57</span> &nbsp;|&nbsp; <span class='text-amber fw-bold'>🟡 Hold: 8</span> &nbsp;|&nbsp; <span class='text-rose fw-bold'>🔴 Sell: 0</span></div>
+                    <div class="small"><span class='text-emerald fw-bold'>🟢 Buy: 57</span> &nbsp;|&nbsp; <span class='text-amber fw-bold'>🟡 Hold: 9</span> &nbsp;|&nbsp; <span class='text-rose fw-bold'>🔴 Sell: 0</span></div>
                 </div>
                 <div class="ws-targets-grid">
                     <div class="ws-target-cell">
@@ -1903,7 +1941,7 @@ table td, table th, .kpi-value, .wealth-hud-val, .wealth-hud-sub,
                     </div>
                     <div class="ws-target-cell">
                         <div class="text-muted small">ราคาปัจจุบัน</div>
-                        <div class="fw-bold text-rose" style="font-size: 1.1rem;">$265.29</div>
+                        <div class="fw-bold text-rose" style="font-size: 1.1rem;">$282.10</div>
                     </div>
                     <div class="ws-target-cell">
                         <div class="text-muted small">เป้าต่ำสุด (Low)</div>
@@ -1911,7 +1949,7 @@ table td, table th, .kpi-value, .wealth-hud-val, .wealth-hud-sub,
                     </div>
                     <div class="ws-target-cell">
                         <div class="text-muted small">เป้าเฉลี่ย (Average)</div>
-                        <div class="fw-bold text-emerald" style="font-size: 1.1rem;">$389.26 <span class="small"> (+46.7%)</span></div>
+                        <div class="fw-bold text-emerald" style="font-size: 1.1rem;">$389.26 <span class="small"> (+38.0%)</span></div>
                     </div>
                     <div class="ws-target-cell">
                         <div class="text-muted small">เป้าสูงสุด (High)</div>
@@ -1919,7 +1957,7 @@ table td, table th, .kpi-value, .wealth-hud-val, .wealth-hud-sub,
                     </div>
                 </div>
                 <div class="small" style="color: #cbd5e1; background: rgba(0, 0, 0, 0.2); padding: 8px 12px; border-radius: 6px; border-left: 3px solid var(--emerald); margin-top: 6px;">
-                    📌 <strong>ข้อสรุปของวอลล์สตรีท:</strong> โบรกเกอร์ 65 แห่ง (Buy 57 / Hold 8 / Sell 0) ราคาเป้าหมายเฉลี่ยสถาบันอยู่ที่ $389.26 (Upside +46.7%)
+                    📌 <strong>ข้อสรุปของวอลล์สตรีท:</strong> โบรกเกอร์ 66 แห่ง (Buy 57 / Hold 9 / Sell 0) ราคาเป้าหมายเฉลี่ยสถาบันอยู่ที่ $389.26 (Upside +38.0%)
                 </div>
             </div>
 
@@ -1927,7 +1965,7 @@ table td, table th, .kpi-value, .wealth-hud-val, .wealth-hud-sub,
             <div class="grid-2-cols" style="gap: 14px; margin-bottom: 18px;">
                 <div class="bull-box" style="background: rgba(16, 185, 129, 0.04); padding: 14px; border-radius: var(--radius-sm); border: 1px solid rgba(16, 185, 129, 0.2);">
                     <div class="cat-label text-emerald fw-bold small" style="margin-bottom: 8px;">🟢 พาดหัวข่าวจริงเชิงบวกและปัจจัยหนุน (Positive News):</div>
-                    <ul class="cat-list"><li style='margin-bottom: 8px;'><strong class='source-tag'>[The Motley Fool]</strong> <span style='font-weight: 600; color: #f1f5f9;'>แพลตฟอร์มตัวอักษรกับ Meta: หุ้นสื่อใดน่าซื้อกว่าในปี 2570</span> <span class='badge badge-neutral' style='font-size:0.7rem; color:#94a3b8; background:rgba(148,163,184,0.12); border:1px solid rgba(148,163,184,0.25); vertical-align:middle;'>heuristic</span><div class='small' style='color: #94a3b8; margin-top: 2px; padding-left: 2px;'>↳ <a href='https://news.google.com/rss/articles/CBMivwFBVV95cUxOMlhsRXNoSjIyU3QzYUxqWW1TN1RGRUdnTDUxSWt4YlNlMEN6Z1RUZlRMV1QxX1ViVVBQWU5uQi1jZUpySHlLXy1DWk5oaFFYWTJDaWpnRUFZOHJkSUZYZUhVcVVFeWN0Yks3b2R0ZmpvSDN1VW5UdFExYTVHRHAyVXJabUJXZG5pMXdlTnU2X0laZkdZMk5VbFJwQ1lISXEyX0hwUi1iMkN6LVZTV2pBM0ZMU2pZZEZLVy14MTNlOA?oc=5' target='_blank' rel='noopener noreferrer' class='news-headline-link' title='คลิกเพื่ออ่านข่าวต้นฉบับ'>Alphabet vs. Meta Platforms: Which Media Stock Is a Better Buy for 2027? ↗</a> <span class='text-muted small'>(22 Nov 2026)</span></div></li></ul>
+                    <ul class="cat-list"><li style='margin-bottom: 8px;'><strong class='source-tag'>[Around Prague]</strong> <span style='font-weight: 600; color: #f1f5f9;'>เหตุใด Google จึงสต๊อกสินค้าวันนี้ ตัวอักษรกระโดด 6.3% ในขณะที่ Huang Return ของ Nvidia จุดประกาย AI Rally</span> <span class='badge badge-neutral' style='font-size:0.7rem; color:#94a3b8; background:rgba(148,163,184,0.12); border:1px solid rgba(148,163,184,0.25); vertical-align:middle;'>heuristic</span><div class='small' style='color: #94a3b8; margin-top: 2px; padding-left: 2px;'>↳ <a href='https://news.google.com/rss/articles/CBMitAFBVV95cUxNMk80VUp2ZGs5bVJLVG55OVJ5VnhwRXNvY1I0RGloZzBvRTlfRWVQZGpFeVdGbmIwbzlyWnJGSnQtdWY5a3JOTWVPWG4yVVlGT25BSGxFUl9Jb2VNczlTYnlpSXFuT05pN2ZiQndudm9zTVk4bEN2M3RRZVM2am56a2hQQ1BaVDJwYm40YjFNbngxck11UEd1eDVtakFjTEhqX1JBYTR1cWljeTNNMmtJUVl3RHI?oc=5' target='_blank' rel='noopener noreferrer' class='news-headline-link' title='คลิกเพื่ออ่านข่าวต้นฉบับ'>Why Is Google Stock Up Today? Alphabet Jumps 6.3% as Nvidia&#x27;s Huang Return Sparks AI Rally ↗</a> <span class='text-muted small'>(23 Nov 2026)</span></div></li><li style='margin-bottom: 8px;'><strong class='source-tag'>[Seeking Alpha]</strong> <span style='font-weight: 600; color: #f1f5f9;'>ตัวอักษรเพิ่มขึ้น 6% เนื่องจากการชุมนุมของตลาดในวงกว้างทำให้หุ้นเพิ่มขึ้น (GOOG: NASDAQ)</span> <span class='badge badge-neutral' style='font-size:0.7rem; color:#94a3b8; background:rgba(148,163,184,0.12); border:1px solid rgba(148,163,184,0.25); vertical-align:middle;'>heuristic</span><div class='small' style='color: #94a3b8; margin-top: 2px; padding-left: 2px;'>↳ <a href='https://news.google.com/rss/articles/CBMingFBVV95cUxOVWhOYkM3RENzRGRqaGJWR1o2THE0eGFBZHlpRHBiWWU4SjRUejJpZkVJZkhsenB6SmM4UDVOWUp5anJ2cWpVSkd1cktRZ0J5Y2VwNFYxd1dpYlY5NFEzQTdteWFsUlJIRDBZbmkxaUROaDlEcFVTTWpXQUdDNW9ab1VpQkVuRDhUbHQzWWFoWkVjTU82MWs5T3dlME9TUQ?oc=5' target='_blank' rel='noopener noreferrer' class='news-headline-link' title='คลิกเพื่ออ่านข่าวต้นฉบับ'>Alphabet rises 6% as broad market rally lifts shares (GOOG:NASDAQ) ↗</a> <span class='text-muted small'>(23 Nov 2026)</span></div></li></ul>
                 </div>
                 <div class="bear-box" style="background: rgba(244, 63, 94, 0.04); padding: 14px; border-radius: var(--radius-sm); border: 1px solid rgba(244, 63, 94, 0.2);">
                     <div class="cat-label text-rose fw-bold small" style="margin-bottom: 8px;">🔴 พาดหัวข่าวจริงที่ต้องระวังและความเสี่ยง (Risk Factors):</div>
@@ -1941,8 +1979,8 @@ table td, table th, .kpi-value, .wealth-hud-val, .wealth-hud-sub,
                     <div style="font-size: 0.85rem; font-weight: 700; color: #fbbf24; text-transform: uppercase; letter-spacing: 0.05em; display: flex; align-items: center; gap: 6px;">
                         <span>🧭</span> แผนกลยุทธ์ฟันธงสำหรับ GOOGL (Action Roadmap):
                     </div>
-                    <button class="copy-cmd-btn" onclick="copyTradeCommand('python trades.py buy -t GOOGL -s 1 -p 265.29 --pay usd', this)" title="คลิกเพื่อคัดลอกคำสั่ง CLI ไปรันในเทอร์มินัล">
-                        <span>📋</span> คัดลอกคำสั่ง <code class="cmd-code">python trades.py buy -t GOOGL -s 1 -p 265.29 --pay usd</code>
+                    <button class="copy-cmd-btn" onclick="copyTradeCommand('python trades.py buy -t GOOGL -s 1 -p 282.10 --pay usd', this)" title="คลิกเพื่อคัดลอกคำสั่ง CLI ไปรันในเทอร์มินัล">
+                        <span>📋</span> คัดลอกคำสั่ง <code class="cmd-code">python trades.py buy -t GOOGL -s 1 -p 282.10 --pay usd</code>
                     </button>
                 </div>
                 <div style="font-size: 0.95rem; color: #ffffff; line-height: 1.55; margin-bottom: 10px;">
@@ -1958,15 +1996,15 @@ table td, table th, .kpi-value, .wealth-hud-val, .wealth-hud-sub,
             <!-- Header -->
             <div class="outlook-card-header">
                 <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
-                    <span class="ticker-pill clickable-ticker" style="font-size: 1.15rem; padding: 4px 12px;" onclick="openChartModal(&quot;NOK&quot;, &quot;NYSE&quot;, &quot;Nokia Oyj&quot;, &quot;Electronic Technology&quot;, 10.6208, 6.88, 6.2, 9.25, 6.2, 9.25, 12.68)" title="คลิกเปิดดูกราฟเทคนิคัลอัจฉริยะ">NOK 📈</span>
+                    <span class="ticker-pill clickable-ticker" style="font-size: 1.15rem; padding: 4px 12px;" onclick="openChartModal(&quot;NOK&quot;, &quot;NYSE&quot;, &quot;Nokia Oyj&quot;, &quot;Electronic Technology&quot;, 10.6208, 7.55, 6.89, 9.21, 6.83, 9.21, 12.68)" title="คลิกเปิดดูกราฟเทคนิคัลอัจฉริยะ">NOK 📈</span>
                     <strong style="font-size: 1.25rem;">Nokia Oyj</strong>
                     <span class="badge badge-neutral" style="font-size: 0.8rem;">Electronic Technology • Telecommunications Equipment</span>
                     <span class="badge badge-neutral" style="font-size: 0.8rem; background: rgba(59, 130, 246, 0.1); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.25);">🟡 Value Recovery & Optical Transition</span>
                 </div>
                 <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
-                    <span class="badge badge-rose" style="font-size: 0.95rem; padding: 5px 12px;">-35.22%</span>
-                    <span class="badge badge-neutral" style="font-size: 0.85rem;">สัดส่วน 3.3% (⭐⭐⭐)</span>
-                    <button onclick="openChartModal(&quot;NOK&quot;, &quot;NYSE&quot;, &quot;Nokia Oyj&quot;, &quot;Electronic Technology&quot;, 10.6208, 6.88, 6.2, 9.25, 6.2, 9.25, 12.68)" style="background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.35); color: #60a5fa; border-radius: 6px; padding: 5px 12px; font-size: 0.85rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.2s;">📈 ดูกราฟสด & แนวรับแนวต้าน</button>
+                    <span class="badge badge-rose" style="font-size: 0.95rem; padding: 5px 12px;">-28.91%</span>
+                    <span class="badge badge-neutral" style="font-size: 0.85rem;">สัดส่วน 3.5% (⭐⭐⭐)</span>
+                    <button onclick="openChartModal(&quot;NOK&quot;, &quot;NYSE&quot;, &quot;Nokia Oyj&quot;, &quot;Electronic Technology&quot;, 10.6208, 7.55, 6.89, 9.21, 6.83, 9.21, 12.68)" style="background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.35); color: #60a5fa; border-radius: 6px; padding: 5px 12px; font-size: 0.85rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.2s;">📈 ดูกราฟสด & แนวรับแนวต้าน</button>
                 </div>
             </div>
 
@@ -2017,7 +2055,7 @@ table td, table th, .kpi-value, .wealth-hud-val, .wealth-hud-sub,
                     </div>
                     <div class="ws-target-cell">
                         <div class="text-muted small">ราคาปัจจุบัน</div>
-                        <div class="fw-bold text-rose" style="font-size: 1.1rem;">$6.88</div>
+                        <div class="fw-bold text-rose" style="font-size: 1.1rem;">$7.55</div>
                     </div>
                     <div class="ws-target-cell">
                         <div class="text-muted small">เป้าต่ำสุด (Low)</div>
@@ -2025,7 +2063,7 @@ table td, table th, .kpi-value, .wealth-hud-val, .wealth-hud-sub,
                     </div>
                     <div class="ws-target-cell">
                         <div class="text-muted small">เป้าเฉลี่ย (Average)</div>
-                        <div class="fw-bold text-emerald" style="font-size: 1.1rem;">$12.68 <span class="small"> (+84.4%)</span></div>
+                        <div class="fw-bold text-emerald" style="font-size: 1.1rem;">$12.68 <span class="small"> (+68.0%)</span></div>
                     </div>
                     <div class="ws-target-cell">
                         <div class="text-muted small">เป้าสูงสุด (High)</div>
@@ -2033,7 +2071,7 @@ table td, table th, .kpi-value, .wealth-hud-val, .wealth-hud-sub,
                     </div>
                 </div>
                 <div class="small" style="color: #cbd5e1; background: rgba(0, 0, 0, 0.2); padding: 8px 12px; border-radius: 6px; border-left: 3px solid var(--emerald); margin-top: 6px;">
-                    📌 <strong>ข้อสรุปของวอลล์สตรีท:</strong> โบรกเกอร์ 29 แห่ง (Buy 22 / Hold 5 / Sell 2) เป้าหมายเฉลี่ย $12.68 (Upside +84.4%) โดยเป้าหมายต่ำสุดอยู่ที่ $7.28 และสูงสุดที่ $20.16
+                    📌 <strong>ข้อสรุปของวอลล์สตรีท:</strong> โบรกเกอร์ 29 แห่ง (Buy 22 / Hold 5 / Sell 2) เป้าหมายเฉลี่ย $12.68 (Upside +68.0%) โดยเป้าหมายต่ำสุดอยู่ที่ $7.28 และสูงสุดที่ $20.16
                 </div>
             </div>
 
@@ -2041,11 +2079,11 @@ table td, table th, .kpi-value, .wealth-hud-val, .wealth-hud-sub,
             <div class="grid-2-cols" style="gap: 14px; margin-bottom: 18px;">
                 <div class="bull-box" style="background: rgba(16, 185, 129, 0.04); padding: 14px; border-radius: var(--radius-sm); border: 1px solid rgba(16, 185, 129, 0.2);">
                     <div class="cat-label text-emerald fw-bold small" style="margin-bottom: 8px;">🟢 พาดหัวข่าวจริงเชิงบวกและปัจจัยหนุน (Positive News):</div>
-                    <ul class="cat-list"><li style='margin-bottom: 8px;'><strong class='source-tag'>[The Motley Fool]</strong> <span style='font-weight: 600; color: #f1f5f9;'>Nokia กับ AT&amp;T: หุ้นโทรคมนาคมตัวไหนน่าซื้อกว่าในปี 2570</span> <span class='badge badge-neutral' style='font-size:0.7rem; color:#94a3b8; background:rgba(148,163,184,0.12); border:1px solid rgba(148,163,184,0.25); vertical-align:middle;'>heuristic</span><div class='small' style='color: #94a3b8; margin-top: 2px; padding-left: 2px;'>↳ <a href='https://news.google.com/rss/articles/CBMitgFBVV95cUxOczlHOGViX3JEb3hxUFNVWG1JTlJNdUdhcWNCbGpUdDBWVzhGOC1ycDBIYi1MNy1Id3NXU3gzQ1NIcXM2VVRIYXpLTU9LZ2dkNFc1QV9IbEl4dXV4V0g0THdxQzI1Z1AxTnRJdFhVZGVKVFpER0owdlN4TXo0a0l5T2R3RFhTd0lmTFNEZFRfLTgxQlQtRi1LSXBBaFBwMnlvVG5oOV9sT1gzRjVsQUltendBellIQQ?oc=5' target='_blank' rel='noopener noreferrer' class='news-headline-link' title='คลิกเพื่ออ่านข่าวต้นฉบับ'>Nokia vs. AT&amp;T: Which Telecom Stock Is a Better Buy for 2027? ↗</a> <span class='text-muted small'>(23 Nov 2026)</span></div></li></ul>
+                    <ul class="cat-list"><li style='margin-bottom: 8px;'><strong class='source-tag'>[ad-hoc-news.de]</strong> <span style='font-weight: 600; color: #f1f5f9;'>หุ้น Nokia: หุ้นเพิ่มขึ้น 8.80% จาก Xetra เป็น 7.00 ยูโร</span> <span class='badge badge-neutral' style='font-size:0.7rem; color:#94a3b8; background:rgba(148,163,184,0.12); border:1px solid rgba(148,163,184,0.25); vertical-align:middle;'>heuristic</span><div class='small' style='color: #94a3b8; margin-top: 2px; padding-left: 2px;'>↳ <a href='https://news.google.com/rss/articles/CBMitAFBVV95cUxOV0t6amx6Rjc3RENIM0l0RjI1NEdPYy1zckNJUEliZ09FS1lRN0szdmZEV09Jb1ptWEswSmplcjVWd3BpODlnX21VMUNJOXQtNVZaNnc4OUxvX3ZwX21yblc5cmlpd2EyMzU0cTVOUTMyQ0NoRzRfNTRsTkptUXpyYXR2NGVQU0V1dG8zSE5mNXBfTTZMNmpYeWVIbWlJV3N5RFpBUWVEZTZRMjIteFBTMm9nc1A?oc=5' target='_blank' rel='noopener noreferrer' class='news-headline-link' title='คลิกเพื่ออ่านข่าวต้นฉบับ'>Nokia stock: Shares gain 8.80% on Xetra to 7.00 euros ↗</a> <span class='text-muted small'>(23 Nov 2026)</span></div></li></ul>
                 </div>
                 <div class="bear-box" style="background: rgba(244, 63, 94, 0.04); padding: 14px; border-radius: var(--radius-sm); border: 1px solid rgba(244, 63, 94, 0.2);">
                     <div class="cat-label text-rose fw-bold small" style="margin-bottom: 8px;">🔴 พาดหัวข่าวจริงที่ต้องระวังและความเสี่ยง (Risk Factors):</div>
-                    <ul class="cat-list"><li style='margin-bottom: 8px;'><strong class='source-tag'>[ad-hoc-news.de]</strong> <span style='font-weight: 600; color: #f1f5f9;'>Nokia ร่วมมือกับ Semidynamics เพื่อตรวจสอบฮาร์ดแวร์ AI ของยุโรปที่ผลิตเอง</span> <span class='badge badge-neutral' style='font-size:0.7rem; color:#94a3b8; background:rgba(148,163,184,0.12); border:1px solid rgba(148,163,184,0.25); vertical-align:middle;'>heuristic</span><div class='small' style='color: #94a3b8; margin-top: 2px; padding-left: 2px;'>↳ <a href='https://news.google.com/rss/articles/CBMi2wFBVV95cUxQTXVZcEJzQWtDWWtwOVhYanhtaFRoMjNiWm1xVGcxUDZMdW9YLWYxWXpxZ0pjM0ZKbjFLaGNuVnlxell1bFpTbW1Ia1pxQ2psXzAyNXNiTHIzMl9QUnMzTVBnakRkZ3k0WF9yendkR05IQUlYV3BzRUgtY0ZYQUZJTmlDNjFpMFY1cnhTSHY3LThHQTNfYnlTUXFOUDlGMXNBVzk3RjdjUVlHNDQ3X2RyY3hzQ1IzejdMWU1vYkhHZ3VucHEydnRJc2dVbWpIVlYzR01FYURXX3BNLWc?oc=5' target='_blank' rel='noopener noreferrer' class='news-headline-link' title='คลิกเพื่ออ่านข่าวต้นฉบับ'>Nokia Ties Up With Semidynamics to Probe Homegrown European AI Hardware ↗</a> <span class='text-muted small'>(22 Nov 2026)</span></div></li></ul>
+                    <ul class="cat-list"><li><span class='text-muted'>ไม่มีข่าวร้ายรุนแรงในระยะสั้น.</span></li></ul>
                 </div>
             </div>
 
@@ -2055,8 +2093,8 @@ table td, table th, .kpi-value, .wealth-hud-val, .wealth-hud-sub,
                     <div style="font-size: 0.85rem; font-weight: 700; color: #fbbf24; text-transform: uppercase; letter-spacing: 0.05em; display: flex; align-items: center; gap: 6px;">
                         <span>🧭</span> แผนกลยุทธ์ฟันธงสำหรับ NOK (Action Roadmap):
                     </div>
-                    <button class="copy-cmd-btn" onclick="copyTradeCommand('python trades.py buy -t NOK -s 1 -p 6.88 --pay usd', this)" title="คลิกเพื่อคัดลอกคำสั่ง CLI ไปรันในเทอร์มินัล">
-                        <span>📋</span> คัดลอกคำสั่ง <code class="cmd-code">python trades.py buy -t NOK -s 1 -p 6.88 --pay usd</code>
+                    <button class="copy-cmd-btn" onclick="copyTradeCommand('python trades.py buy -t NOK -s 1 -p 7.55 --pay usd', this)" title="คลิกเพื่อคัดลอกคำสั่ง CLI ไปรันในเทอร์มินัล">
+                        <span>📋</span> คัดลอกคำสั่ง <code class="cmd-code">python trades.py buy -t NOK -s 1 -p 7.55 --pay usd</code>
                     </button>
                 </div>
                 <div style="font-size: 0.95rem; color: #ffffff; line-height: 1.55; margin-bottom: 10px;">
@@ -2072,15 +2110,15 @@ table td, table th, .kpi-value, .wealth-hud-val, .wealth-hud-sub,
             <!-- Header -->
             <div class="outlook-card-header">
                 <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
-                    <span class="ticker-pill clickable-ticker" style="font-size: 1.15rem; padding: 4px 12px;" onclick="openChartModal(&quot;BAC&quot;, &quot;NYSE&quot;, &quot;Bank of America Corp&quot;, &quot;Finance&quot;, 54.3123, 47.08, 45.27, 52.69, 45.27, 52.69, 62.16)" title="คลิกเปิดดูกราฟเทคนิคัลอัจฉริยะ">BAC 📈</span>
+                    <span class="ticker-pill clickable-ticker" style="font-size: 1.15rem; padding: 4px 12px;" onclick="openChartModal(&quot;BAC&quot;, &quot;NYSE&quot;, &quot;Bank of America Corp&quot;, &quot;Finance&quot;, 54.3123, 48.14, 47.74, 52.47, 46.3, 52.47, 62.16)" title="คลิกเปิดดูกราฟเทคนิคัลอัจฉริยะ">BAC 📈</span>
                     <strong style="font-size: 1.25rem;">Bank of America Corp</strong>
                     <span class="badge badge-neutral" style="font-size: 0.8rem;">Finance • Major Banks</span>
                     <span class="badge badge-neutral" style="font-size: 0.8rem; background: rgba(59, 130, 246, 0.1); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.25);">🟢 Resilient Major Bank (Value Deep Dip)</span>
                 </div>
                 <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
-                    <span class="badge badge-rose" style="font-size: 0.95rem; padding: 5px 12px;">-13.32%</span>
+                    <span class="badge badge-rose" style="font-size: 0.95rem; padding: 5px 12px;">-11.36%</span>
                     <span class="badge badge-neutral" style="font-size: 0.85rem;">สัดส่วน 3.0% (⭐⭐⭐)</span>
-                    <button onclick="openChartModal(&quot;BAC&quot;, &quot;NYSE&quot;, &quot;Bank of America Corp&quot;, &quot;Finance&quot;, 54.3123, 47.08, 45.27, 52.69, 45.27, 52.69, 62.16)" style="background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.35); color: #60a5fa; border-radius: 6px; padding: 5px 12px; font-size: 0.85rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.2s;">📈 ดูกราฟสด & แนวรับแนวต้าน</button>
+                    <button onclick="openChartModal(&quot;BAC&quot;, &quot;NYSE&quot;, &quot;Bank of America Corp&quot;, &quot;Finance&quot;, 54.3123, 48.14, 47.74, 52.47, 46.3, 52.47, 62.16)" style="background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.35); color: #60a5fa; border-radius: 6px; padding: 5px 12px; font-size: 0.85rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.2s;">📈 ดูกราฟสด & แนวรับแนวต้าน</button>
                 </div>
             </div>
 
@@ -2090,7 +2128,7 @@ table td, table th, .kpi-value, .wealth-hud-val, .wealth-hud-sub,
                     <div style="font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; color: #94a3b8;">🔭 วิสัยทัศน์และธีมการเติบโตหลักในอนาคต (Growth Thesis):</div>
                     <span class='text-muted small' style='font-size:0.72rem; font-weight:normal;'>บันทึกเขียนเอง อัปเดต 2026-10-17</span>
                 </div>
-                <div style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.4;">สถาบันการเงินยักษ์ใหญ่รับประโยชน์ดอกเบี้ยขาลง จังหวะย่อตัวรุนแรงในโซน Oversold (RSI 28) (ข้อมูลอ้างอิงเขียนเอง อัปเดตล่าสุด 2026-10-17)</div>
+                <div style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.4;">สถาบันการเงินยักษ์ใหญ่รับประโยชน์ดอกเบี้ยขาลง (ข้อมูลอ้างอิงเขียนเอง อัปเดตล่าสุด 2026-10-17)</div>
             </div>
 
             <!-- 4 Future Growth Drivers -->
@@ -2107,7 +2145,7 @@ table td, table th, .kpi-value, .wealth-hud-val, .wealth-hud-sub,
                 <div class="timeline-strip">
                     <div class="timeline-step">
                 <span class="timeline-step-badge">ระยะประชิด (0-14 วัน)</span>
-                <div class="timeline-step-desc">แรงซื้อดักเด้งทางเทคนิค (Mean Reversion) เพื่อกลับไปทดสอบเส้น SMA 20 ที่ $50.04</div>
+                <div class="timeline-step-desc">แรงซื้อดักเด้งทางเทคนิค (Mean Reversion) เพื่อกลับไปทดสอบเส้น SMA 20 ที่ $49.92</div>
             </div><div class="timeline-step">
                 <span class="timeline-step-badge">ระยะ 1-3 เดือน</span>
                 <div class="timeline-step-desc">การประชุม Fed FOMC รอบใหม่ และการส่งสัญญาณการฟื้นตัวของสินเชื่อเชิงพาณิชย์</div>
@@ -2131,7 +2169,7 @@ table td, table th, .kpi-value, .wealth-hud-val, .wealth-hud-sub,
                     </div>
                     <div class="ws-target-cell">
                         <div class="text-muted small">ราคาปัจจุบัน</div>
-                        <div class="fw-bold text-rose" style="font-size: 1.1rem;">$47.08</div>
+                        <div class="fw-bold text-rose" style="font-size: 1.1rem;">$48.14</div>
                     </div>
                     <div class="ws-target-cell">
                         <div class="text-muted small">เป้าต่ำสุด (Low)</div>
@@ -2139,7 +2177,7 @@ table td, table th, .kpi-value, .wealth-hud-val, .wealth-hud-sub,
                     </div>
                     <div class="ws-target-cell">
                         <div class="text-muted small">เป้าเฉลี่ย (Average)</div>
-                        <div class="fw-bold text-emerald" style="font-size: 1.1rem;">$62.16 <span class="small"> (+32.0%)</span></div>
+                        <div class="fw-bold text-emerald" style="font-size: 1.1rem;">$62.16 <span class="small"> (+29.1%)</span></div>
                     </div>
                     <div class="ws-target-cell">
                         <div class="text-muted small">เป้าสูงสุด (High)</div>
@@ -2147,7 +2185,7 @@ table td, table th, .kpi-value, .wealth-hud-val, .wealth-hud-sub,
                     </div>
                 </div>
                 <div class="small" style="color: #cbd5e1; background: rgba(0, 0, 0, 0.2); padding: 8px 12px; border-radius: 6px; border-left: 3px solid var(--emerald); margin-top: 6px;">
-                    📌 <strong>ข้อสรุปของวอลล์สตรีท:</strong> โบรกเกอร์ 24 แห่ง (Buy 19 / Hold 5 / Sell 0) เป้าหมายต่ำสุดของวอลล์สตรีทอยู่ที่ $55.00 ซึ่งสูงกว่าต้นทุนของคุณ ($54.31) อยู่ $0.69 เป้าหมายเฉลี่ย $62.16 (Upside +32.0%)
+                    📌 <strong>ข้อสรุปของวอลล์สตรีท:</strong> โบรกเกอร์ 24 แห่ง (Buy 19 / Hold 5 / Sell 0) เป้าหมายต่ำสุดของวอลล์สตรีทอยู่ที่ $55.00 ซึ่งสูงกว่าต้นทุนของคุณ ($54.31) อยู่ $0.69 เป้าหมายเฉลี่ย $62.16 (Upside +29.1%)
                 </div>
             </div>
 
@@ -2155,7 +2193,7 @@ table td, table th, .kpi-value, .wealth-hud-val, .wealth-hud-sub,
             <div class="grid-2-cols" style="gap: 14px; margin-bottom: 18px;">
                 <div class="bull-box" style="background: rgba(16, 185, 129, 0.04); padding: 14px; border-radius: var(--radius-sm); border: 1px solid rgba(16, 185, 129, 0.2);">
                     <div class="cat-label text-emerald fw-bold small" style="margin-bottom: 8px;">🟢 พาดหัวข่าวจริงเชิงบวกและปัจจัยหนุน (Positive News):</div>
-                    <ul class="cat-list"><li style='margin-bottom: 8px;'><strong class='source-tag'>[BeInCrypto]</strong> <span style='font-weight: 600; color: #f1f5f9;'>Bank of America ตั้งชื่อหุ้น 5 ตัวที่จะซื้อก่อนคริสต์มาสปี 2026</span> <span class='badge badge-neutral' style='font-size:0.7rem; color:#94a3b8; background:rgba(148,163,184,0.12); border:1px solid rgba(148,163,184,0.25); vertical-align:middle;'>heuristic</span><div class='small' style='color: #94a3b8; margin-top: 2px; padding-left: 2px;'>↳ <a href='https://news.google.com/rss/articles/CBMibEFVX3lxTE5RZ05yemVpaDFDbEVETm90bGJ1RVpId3drYzBUTEVKM0VNNmNYVUw0SUVHb0doRE5JeUIwRUNUN1pBVU5mOFJOcHZBamJvd25ib2JSSUlmd3dEbnRtckdSMFNyNGM3cV9sSVBTQQ?oc=5' target='_blank' rel='noopener noreferrer' class='news-headline-link' title='คลิกเพื่ออ่านข่าวต้นฉบับ'>Bank of America Names 5 Stocks to Buy Before Christmas 2026 ↗</a> <span class='text-muted small'>(23 Nov 2026)</span></div></li></ul>
+                    <ul class="cat-list"><li><span class='text-muted'>ยังไม่มีข่าวด้านบวกโดดเด่นในสัปดาห์นี้.</span></li></ul>
                 </div>
                 <div class="bear-box" style="background: rgba(244, 63, 94, 0.04); padding: 14px; border-radius: var(--radius-sm); border: 1px solid rgba(244, 63, 94, 0.2);">
                     <div class="cat-label text-rose fw-bold small" style="margin-bottom: 8px;">🔴 พาดหัวข่าวจริงที่ต้องระวังและความเสี่ยง (Risk Factors):</div>
@@ -2169,8 +2207,8 @@ table td, table th, .kpi-value, .wealth-hud-val, .wealth-hud-sub,
                     <div style="font-size: 0.85rem; font-weight: 700; color: #fbbf24; text-transform: uppercase; letter-spacing: 0.05em; display: flex; align-items: center; gap: 6px;">
                         <span>🧭</span> แผนกลยุทธ์ฟันธงสำหรับ BAC (Action Roadmap):
                     </div>
-                    <button class="copy-cmd-btn" onclick="copyTradeCommand('python trades.py buy -t BAC -s 1 -p 47.08 --pay usd', this)" title="คลิกเพื่อคัดลอกคำสั่ง CLI ไปรันในเทอร์มินัล">
-                        <span>📋</span> คัดลอกคำสั่ง <code class="cmd-code">python trades.py buy -t BAC -s 1 -p 47.08 --pay usd</code>
+                    <button class="copy-cmd-btn" onclick="copyTradeCommand('python trades.py buy -t BAC -s 1 -p 48.14 --pay usd', this)" title="คลิกเพื่อคัดลอกคำสั่ง CLI ไปรันในเทอร์มินัล">
+                        <span>📋</span> คัดลอกคำสั่ง <code class="cmd-code">python trades.py buy -t BAC -s 1 -p 48.14 --pay usd</code>
                     </button>
                 </div>
                 <div style="font-size: 0.95rem; color: #ffffff; line-height: 1.55; margin-bottom: 10px;">
@@ -2182,19 +2220,247 @@ table td, table th, .kpi-value, .wealth-hud-val, .wealth-hud-sub,
             </div>
         </div>
         
-        <div class="card outlook-card" style="margin-bottom: 24px; border-left: 4px solid var(--rose);">
+        <div class="card outlook-card" style="margin-bottom: 24px; border-left: 4px solid var(--emerald);">
             <!-- Header -->
             <div class="outlook-card-header">
                 <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
-                    <span class="ticker-pill clickable-ticker" style="font-size: 1.15rem; padding: 4px 12px;" onclick="openChartModal(&quot;TSM&quot;, &quot;NYSE&quot;, &quot;Taiwan Semiconductor Manufacturing Co., Ltd. Sponsored ADR&quot;, &quot;Electronic Technology&quot;, 320.5188, 319.145, 290.56, 422.16, 290.56, 422.16, 554.22)" title="คลิกเปิดดูกราฟเทคนิคัลอัจฉริยะ">TSM 📈</span>
+                    <span class="ticker-pill clickable-ticker" style="font-size: 1.15rem; padding: 4px 12px;" onclick="openChartModal(&quot;SKHY&quot;, &quot;NASDAQ&quot;, &quot;SK hynix Inc. Sponsored ADR&quot;, &quot;Electronic Technology&quot;, 105.1649, 124.28, 105.18, 155.99, 107.25, 155.99, 264.3)" title="คลิกเปิดดูกราฟเทคนิคัลอัจฉริยะ">SKHY 📈</span>
+                    <strong style="font-size: 1.25rem;">SK hynix Inc. Sponsored ADR</strong>
+                    <span class="badge badge-neutral" style="font-size: 0.8rem;">Electronic Technology • Semiconductors</span>
+                    <span class="badge badge-neutral" style="font-size: 0.8rem; background: rgba(59, 130, 246, 0.1); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.25);">🟡 Market Leader</span>
+                </div>
+                <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+                    <span class="badge badge-emerald" style="font-size: 0.95rem; padding: 5px 12px;">+18.18%</span>
+                    <span class="badge badge-neutral" style="font-size: 0.85rem;">สัดส่วน 0.4% (⭐⭐⭐)</span>
+                    <button onclick="openChartModal(&quot;SKHY&quot;, &quot;NASDAQ&quot;, &quot;SK hynix Inc. Sponsored ADR&quot;, &quot;Electronic Technology&quot;, 105.1649, 124.28, 105.18, 155.99, 107.25, 155.99, 264.3)" style="background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.35); color: #60a5fa; border-radius: 6px; padding: 5px 12px; font-size: 0.85rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.2s;">📈 ดูกราฟสด & แนวรับแนวต้าน</button>
+                </div>
+            </div>
+
+            <!-- Thesis Banner -->
+            <div class="thesis-banner" style="background: rgba(255, 255, 255, 0.025); border: 1px solid var(--border-color); color: var(--text-secondary);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; flex-wrap: wrap; gap: 4px;">
+                    <div style="font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; color: #94a3b8;">🔭 วิสัยทัศน์และธีมการเติบโตหลักในอนาคต (Growth Thesis):</div>
+                    
+                </div>
+                <div style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.4;">การวิเคราะห์เจาะลึกศักยภาพการเติบโต SKHY ในกลุ่ม Electronic Technology (Semiconductors)</div>
+            </div>
+
+            <!-- 4 Future Growth Drivers -->
+            <div class="drivers-box">
+                <div style="font-size: 0.88rem; font-weight: 700; color: #38bdf8; margin-bottom: 8px;">📈 4 เครื่องจักรขับเคลื่อนการเติบโตในอนาคต (Future Growth Drivers 1-12 เดือน):</div>
+                <ul class="drivers-list">
+                    <li>การขยายตัวของรายได้ระดับ +209.3% YoY และความสามารถในการทำกำไรสุทธิ +405.3% YoY</li><li>อัตราการประเมินมูลค่า P/E 6.9x และค่า PEG 0.01 เท่า สะท้อนระดับราคาต่อการเติบโต</li><li>ส่วนแบ่งการตลาดและความแข็งแกร่งของตราสินค้าในกลุ่มอุตสาหกรรม Semiconductors</li><li>การเพิ่มประสิทธิภาพการดำเนินงานและการบริหารจัดการต้นทุนเพื่อผลักดันกระแสเงินสดอิสระ</li>
+                </ul>
+            </div>
+
+            <!-- Catalyst Timeline -->
+            <div style="margin-bottom: 18px;">
+                <div style="font-size: 0.88rem; font-weight: 700; color: #cbd5e1; margin-bottom: 10px;">📅 ปฏิทินตัวเร่งราคาและปัจจัยสำคัญตามช่วงเวลา (Catalyst Timeline):</div>
+                <div class="timeline-strip">
+                    <div class="timeline-step">
+                <span class="timeline-step-badge">ปฏิทินงบ (66 วัน)</span>
+                <div class="timeline-step-desc">การแถลงงบการเงินและทิศทางคำสั่งซื้อในอนาคต</div>
+            </div><div class="timeline-step">
+                <span class="timeline-step-badge">ระยะ 1-3 เดือน</span>
+                <div class="timeline-step-desc">การปรับบทวิเคราะห์และประมาณการกำไรจากนักวิเคราะห์วอลล์สตรีท</div>
+            </div><div class="timeline-step">
+                <span class="timeline-step-badge">ระยะ 6-12 เดือน</span>
+                <div class="timeline-step-desc">การเปิดตัวผลิตภัณฑ์ใหม่และการขยายตลาดสู่กลุ่มเป้าหมายใหม่</div>
+            </div>
+                </div>
+            </div>
+
+            <!-- Wall Street Consensus & Targets -->
+            <div class="wallstreet-box">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+                    <div class="fw-bold" style="font-size: 0.95rem; color: #10b981;">🎯 มุมมองราคาเป้าหมายสถาบันการเงินวอลล์สตรีท (Wall Street Consensus)</div>
+                    <div class="small"><span class='text-emerald fw-bold'>🟢 Buy: 11</span> &nbsp;|&nbsp; <span class='text-amber fw-bold'>🟡 Hold: 1</span> &nbsp;|&nbsp; <span class='text-rose fw-bold'>🔴 Sell: 0</span></div>
+                </div>
+                <div class="ws-targets-grid">
+                    <div class="ws-target-cell">
+                        <div class="text-muted small">ต้นทุนของคุณ</div>
+                        <div class="fw-bold text-main" style="font-size: 1.1rem;">$105.16</div>
+                    </div>
+                    <div class="ws-target-cell">
+                        <div class="text-muted small">ราคาปัจจุบัน</div>
+                        <div class="fw-bold text-emerald" style="font-size: 1.1rem;">$124.28</div>
+                    </div>
+                    <div class="ws-target-cell">
+                        <div class="text-muted small">เป้าต่ำสุด (Low)</div>
+                        <div class="fw-bold text-amber" style="font-size: 1.1rem;">$200.00</div>
+                    </div>
+                    <div class="ws-target-cell">
+                        <div class="text-muted small">เป้าเฉลี่ย (Average)</div>
+                        <div class="fw-bold text-emerald" style="font-size: 1.1rem;">$264.30 <span class="small"> (+112.7%)</span></div>
+                    </div>
+                    <div class="ws-target-cell">
+                        <div class="text-muted small">เป้าสูงสุด (High)</div>
+                        <div class="fw-bold text-blue" style="font-size: 1.1rem;">$400.00</div>
+                    </div>
+                </div>
+                <div class="small" style="color: #cbd5e1; background: rgba(0, 0, 0, 0.2); padding: 8px 12px; border-radius: 6px; border-left: 3px solid var(--emerald); margin-top: 6px;">
+                    📌 <strong>ข้อสรุปของวอลล์สตรีท:</strong> โบรกเกอร์ 12 แห่ง (Buy 11 / Hold 1 / Sell 0) ราคาเป้าหมายเฉลี่ยสถาบันอยู่ที่ $264.30 (Upside +112.7%)
+                </div>
+            </div>
+
+            <!-- Live News & Catalysts Grid -->
+            <div class="grid-2-cols" style="gap: 14px; margin-bottom: 18px;">
+                <div class="bull-box" style="background: rgba(16, 185, 129, 0.04); padding: 14px; border-radius: var(--radius-sm); border: 1px solid rgba(16, 185, 129, 0.2);">
+                    <div class="cat-label text-emerald fw-bold small" style="margin-bottom: 8px;">🟢 พาดหัวข่าวจริงเชิงบวกและปัจจัยหนุน (Positive News):</div>
+                    <ul class="cat-list"><li style='margin-bottom: 8px;'><strong class='source-tag'>[GuruFocus]</strong> <span style='font-weight: 600; color: #f1f5f9;'>ดู SK hynix Inc (SKHY) หลังจากได้รับกำไร 20.0% -- มูลค่า GF $165</span> <span class='badge badge-neutral' style='font-size:0.7rem; color:#94a3b8; background:rgba(148,163,184,0.12); border:1px solid rgba(148,163,184,0.25); vertical-align:middle;'>heuristic</span><div class='small' style='color: #94a3b8; margin-top: 2px; padding-left: 2px;'>↳ <a href='https://news.google.com/rss/articles/CBMisAFBVV95cUxOMmY1a2EteHpTeTZSYkFlOHgtbDhSSmJmcHo3WEl1dUdLRnRhM0xhcldBcmNNSkFhNkVOb3Z0a2RWbFBzeHZjSXlHdndBTW50QkZxLXY2Wk5fakt6T0tINjJQM0dIQWdWbDlhbXNWbFRjZlhudmFpZThIZkhabmswNHZlZWlYaHZkelpISmZkbE9Kdk5oSUM3LW0zR0VtallFUmJfbEFueDdIM09lT05rOQ?oc=5' target='_blank' rel='noopener noreferrer' class='news-headline-link' title='คลิกเพื่ออ่านข่าวต้นฉบับ'>A Look at SK hynix Inc (SKHY) After 20.0% Gain -- GF Value $165. ↗</a> <span class='text-muted small'>(23 Nov 2026)</span></div></li></ul>
+                </div>
+                <div class="bear-box" style="background: rgba(244, 63, 94, 0.04); padding: 14px; border-radius: var(--radius-sm); border: 1px solid rgba(244, 63, 94, 0.2);">
+                    <div class="cat-label text-rose fw-bold small" style="margin-bottom: 8px;">🔴 พาดหัวข่าวจริงที่ต้องระวังและความเสี่ยง (Risk Factors):</div>
+                    <ul class="cat-list"><li><span class='text-muted'>ไม่มีข่าวร้ายรุนแรงในระยะสั้น.</span></li></ul>
+                </div>
+            </div>
+
+            <!-- Tailored Strategic Roadmap & Invalidation Risk (Action Card) -->
+            <div class="roadmap-callout" style="background: rgba(15, 23, 42, 0.75); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 12px; padding: 16px 18px; margin-top: 14px; box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 10px;">
+                    <div style="font-size: 0.85rem; font-weight: 700; color: #fbbf24; text-transform: uppercase; letter-spacing: 0.05em; display: flex; align-items: center; gap: 6px;">
+                        <span>🧭</span> แผนกลยุทธ์ฟันธงสำหรับ SKHY (Action Roadmap):
+                    </div>
+                    <button class="copy-cmd-btn" onclick="copyTradeCommand('python trades.py buy -t SKHY -s 1 -p 124.28 --pay usd', this)" title="คลิกเพื่อคัดลอกคำสั่ง CLI ไปรันในเทอร์มินัล">
+                        <span>📋</span> คัดลอกคำสั่ง <code class="cmd-code">python trades.py buy -t SKHY -s 1 -p 124.28 --pay usd</code>
+                    </button>
+                </div>
+                <div style="font-size: 0.95rem; color: #ffffff; line-height: 1.55; margin-bottom: 10px;">
+                    วันงบถัดไปอยู่ห่างอีก 66 วัน ไม่มีความเสี่ยงเรื่องงบตกใจในระยะสั้น. ติดตามกรอบแนวรับแนวต้านสำคัญทางเทคนิค และปฏิบัติตามวินัย Stop-Loss อย่างเคร่งครัด
+                </div>
+                <div style="font-size: 0.85rem; color: #fca5a5; background: rgba(244, 63, 94, 0.08); padding: 8px 12px; border-radius: 6px; border-left: 3px solid var(--rose);">
+                    🛑 <strong>สัญญาณเตือนภัย / จุดระวัง (Invalidation Risk):</strong> การปิดหลุดแนวรับโครงสร้างหลัก หรือตัวเลขอัตรากำไรสุทธิชะลอตัวลงเกิน 20%
+                </div>
+            </div>
+        </div>
+        
+        <div class="card outlook-card" style="margin-bottom: 24px; border-left: 4px solid var(--emerald);">
+            <!-- Header -->
+            <div class="outlook-card-header">
+                <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                    <span class="ticker-pill clickable-ticker" style="font-size: 1.15rem; padding: 4px 12px;" onclick="openChartModal(&quot;MU&quot;, &quot;NASDAQ&quot;, &quot;Micron Technology, Inc.&quot;, &quot;Electronic Technology&quot;, 600.9746, 707.7, 577.76, 907.94, 608.05, 907.94, 1620.62)" title="คลิกเปิดดูกราฟเทคนิคัลอัจฉริยะ">MU 📈</span>
+                    <strong style="font-size: 1.25rem;">Micron Technology, Inc.</strong>
+                    <span class="badge badge-neutral" style="font-size: 0.8rem;">Electronic Technology • Semiconductors</span>
+                    <span class="badge badge-neutral" style="font-size: 0.8rem; background: rgba(59, 130, 246, 0.1); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.25);">🟡 Market Leader</span>
+                </div>
+                <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+                    <span class="badge badge-emerald" style="font-size: 0.95rem; padding: 5px 12px;">+17.76%</span>
+                    <span class="badge badge-neutral" style="font-size: 0.85rem;">สัดส่วน 0.4% (⭐⭐⭐)</span>
+                    <button onclick="openChartModal(&quot;MU&quot;, &quot;NASDAQ&quot;, &quot;Micron Technology, Inc.&quot;, &quot;Electronic Technology&quot;, 600.9746, 707.7, 577.76, 907.94, 608.05, 907.94, 1620.62)" style="background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.35); color: #60a5fa; border-radius: 6px; padding: 5px 12px; font-size: 0.85rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.2s;">📈 ดูกราฟสด & แนวรับแนวต้าน</button>
+                </div>
+            </div>
+
+            <!-- Thesis Banner -->
+            <div class="thesis-banner" style="background: rgba(255, 255, 255, 0.025); border: 1px solid var(--border-color); color: var(--text-secondary);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; flex-wrap: wrap; gap: 4px;">
+                    <div style="font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; color: #94a3b8;">🔭 วิสัยทัศน์และธีมการเติบโตหลักในอนาคต (Growth Thesis):</div>
+                    
+                </div>
+                <div style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.4;">การวิเคราะห์เจาะลึกศักยภาพการเติบโต MU ในกลุ่ม Electronic Technology (Semiconductors)</div>
+            </div>
+
+            <!-- 4 Future Growth Drivers -->
+            <div class="drivers-box">
+                <div style="font-size: 0.88rem; font-weight: 700; color: #38bdf8; margin-bottom: 8px;">📈 4 เครื่องจักรขับเคลื่อนการเติบโตในอนาคต (Future Growth Drivers 1-12 เดือน):</div>
+                <ul class="drivers-list">
+                    <li>การขยายตัวของรายได้ระดับ +256.3% YoY และความสามารถในการทำกำไรสุทธิ +895.1% YoY</li><li>อัตราการประเมินมูลค่า P/E 9.5x และค่า PEG 0.01 เท่า สะท้อนระดับราคาต่อการเติบโต</li><li>ส่วนแบ่งการตลาดและความแข็งแกร่งของตราสินค้าในกลุ่มอุตสาหกรรม Semiconductors</li><li>การเพิ่มประสิทธิภาพการดำเนินงานและการบริหารจัดการต้นทุนเพื่อผลักดันกระแสเงินสดอิสระ</li>
+                </ul>
+            </div>
+
+            <!-- Catalyst Timeline -->
+            <div style="margin-bottom: 18px;">
+                <div style="font-size: 0.88rem; font-weight: 700; color: #cbd5e1; margin-bottom: 10px;">📅 ปฏิทินตัวเร่งราคาและปัจจัยสำคัญตามช่วงเวลา (Catalyst Timeline):</div>
+                <div class="timeline-strip">
+                    <div class="timeline-step">
+                <span class="timeline-step-badge">ปฏิทินงบ (24 วัน)</span>
+                <div class="timeline-step-desc">การแถลงงบการเงินและทิศทางคำสั่งซื้อในอนาคต</div>
+            </div><div class="timeline-step">
+                <span class="timeline-step-badge">ระยะ 1-3 เดือน</span>
+                <div class="timeline-step-desc">การปรับบทวิเคราะห์และประมาณการกำไรจากนักวิเคราะห์วอลล์สตรีท</div>
+            </div><div class="timeline-step">
+                <span class="timeline-step-badge">ระยะ 6-12 เดือน</span>
+                <div class="timeline-step-desc">การเปิดตัวผลิตภัณฑ์ใหม่และการขยายตลาดสู่กลุ่มเป้าหมายใหม่</div>
+            </div>
+                </div>
+            </div>
+
+            <!-- Wall Street Consensus & Targets -->
+            <div class="wallstreet-box">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+                    <div class="fw-bold" style="font-size: 0.95rem; color: #10b981;">🎯 มุมมองราคาเป้าหมายสถาบันการเงินวอลล์สตรีท (Wall Street Consensus)</div>
+                    <div class="small"><span class='text-emerald fw-bold'>🟢 Buy: 45</span> &nbsp;|&nbsp; <span class='text-amber fw-bold'>🟡 Hold: 3</span> &nbsp;|&nbsp; <span class='text-rose fw-bold'>🔴 Sell: 0</span></div>
+                </div>
+                <div class="ws-targets-grid">
+                    <div class="ws-target-cell">
+                        <div class="text-muted small">ต้นทุนของคุณ</div>
+                        <div class="fw-bold text-main" style="font-size: 1.1rem;">$600.97</div>
+                    </div>
+                    <div class="ws-target-cell">
+                        <div class="text-muted small">ราคาปัจจุบัน</div>
+                        <div class="fw-bold text-emerald" style="font-size: 1.1rem;">$707.70</div>
+                    </div>
+                    <div class="ws-target-cell">
+                        <div class="text-muted small">เป้าต่ำสุด (Low)</div>
+                        <div class="fw-bold text-amber" style="font-size: 1.1rem;">$1,100.00</div>
+                    </div>
+                    <div class="ws-target-cell">
+                        <div class="text-muted small">เป้าเฉลี่ย (Average)</div>
+                        <div class="fw-bold text-emerald" style="font-size: 1.1rem;">$1,620.62 <span class="small"> (+129.0%)</span></div>
+                    </div>
+                    <div class="ws-target-cell">
+                        <div class="text-muted small">เป้าสูงสุด (High)</div>
+                        <div class="fw-bold text-blue" style="font-size: 1.1rem;">$3,000.00</div>
+                    </div>
+                </div>
+                <div class="small" style="color: #cbd5e1; background: rgba(0, 0, 0, 0.2); padding: 8px 12px; border-radius: 6px; border-left: 3px solid var(--emerald); margin-top: 6px;">
+                    📌 <strong>ข้อสรุปของวอลล์สตรีท:</strong> โบรกเกอร์ 48 แห่ง (Buy 45 / Hold 3 / Sell 0) ราคาเป้าหมายเฉลี่ยสถาบันอยู่ที่ $1,620.62 (Upside +129.0%)
+                </div>
+            </div>
+
+            <!-- Live News & Catalysts Grid -->
+            <div class="grid-2-cols" style="gap: 14px; margin-bottom: 18px;">
+                <div class="bull-box" style="background: rgba(16, 185, 129, 0.04); padding: 14px; border-radius: var(--radius-sm); border: 1px solid rgba(16, 185, 129, 0.2);">
+                    <div class="cat-label text-emerald fw-bold small" style="margin-bottom: 8px;">🟢 พาดหัวข่าวจริงเชิงบวกและปัจจัยหนุน (Positive News):</div>
+                    <ul class="cat-list"><li style='margin-bottom: 8px;'><strong class='source-tag'>[Barron&#x27;s]</strong> <span style='font-weight: 600; color: #f1f5f9;'>หุ้นไมครอนกระโดด 19% ทำไมการชุมนุมจึงมีขา</span> <span class='badge badge-neutral' style='font-size:0.7rem; color:#94a3b8; background:rgba(148,163,184,0.12); border:1px solid rgba(148,163,184,0.25); vertical-align:middle;'>heuristic</span><div class='small' style='color: #94a3b8; margin-top: 2px; padding-left: 2px;'>↳ <a href='https://news.google.com/rss/articles/CBMifkFVX3lxTE0zVnhuVHFCalhhbUd5aXFSeHNMa2MxOUJJMDlQQWRHWnhNR3Q1U29OX3duQjVZYlhHY002QzhvUmJ4aWNpM1RpY2FiWjlGQ2J3X2VxZ21NNC1JVnczR3NsZi1OVkNlNmZQN2ZYX09KMDQ2bHlLZGJNY293YU5hdw?oc=5' target='_blank' rel='noopener noreferrer' class='news-headline-link' title='คลิกเพื่ออ่านข่าวต้นฉบับ'>Micron Stock Jumps 19%. Why the Rally Has Legs. ↗</a> <span class='text-muted small'>(23 Nov 2026)</span></div></li><li style='margin-bottom: 8px;'><strong class='source-tag'>[Stocks Down Under]</strong> <span style='font-weight: 600; color: #f1f5f9;'>หุ้นของ Micron (NASDAQ:MU) ทะยานเกือบ 20% เนื่องจากการกลับมาของ Nvidia จุดประกายหน่วยความจำ AI ขึ้นมา</span> <span class='badge badge-neutral' style='font-size:0.7rem; color:#94a3b8; background:rgba(148,163,184,0.12); border:1px solid rgba(148,163,184,0.25); vertical-align:middle;'>heuristic</span><div class='small' style='color: #94a3b8; margin-top: 2px; padding-left: 2px;'>↳ <a href='https://news.google.com/rss/articles/CBMidkFVX3lxTE1abkg4OTBxMlNfODF3b2VCdy1DOUJjczlRTGFtM0tmSTBQcXI3cklFYTYwaGtPN0ZEUUdfQU4wcGMtVzJ3c3RaM0VLWURBbzM3bTlxYWFCQjFzWXMxcUZVSms4X2Q5VWh2cVRHeUdiNV9NOV9paFE?oc=5' target='_blank' rel='noopener noreferrer' class='news-headline-link' title='คลิกเพื่ออ่านข่าวต้นฉบับ'>Micron (NASDAQ:MU) Stock Soars Nearly 20% as Nvidia’s Comeback Sparks AI Memory Rally ↗</a> <span class='text-muted small'>(23 Nov 2026)</span></div></li></ul>
+                </div>
+                <div class="bear-box" style="background: rgba(244, 63, 94, 0.04); padding: 14px; border-radius: var(--radius-sm); border: 1px solid rgba(244, 63, 94, 0.2);">
+                    <div class="cat-label text-rose fw-bold small" style="margin-bottom: 8px;">🔴 พาดหัวข่าวจริงที่ต้องระวังและความเสี่ยง (Risk Factors):</div>
+                    <ul class="cat-list"><li><span class='text-muted'>ไม่มีข่าวร้ายรุนแรงในระยะสั้น.</span></li></ul>
+                </div>
+            </div>
+
+            <!-- Tailored Strategic Roadmap & Invalidation Risk (Action Card) -->
+            <div class="roadmap-callout" style="background: rgba(15, 23, 42, 0.75); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 12px; padding: 16px 18px; margin-top: 14px; box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 10px;">
+                    <div style="font-size: 0.85rem; font-weight: 700; color: #fbbf24; text-transform: uppercase; letter-spacing: 0.05em; display: flex; align-items: center; gap: 6px;">
+                        <span>🧭</span> แผนกลยุทธ์ฟันธงสำหรับ MU (Action Roadmap):
+                    </div>
+                    <button class="copy-cmd-btn" onclick="copyTradeCommand('python trades.py buy -t MU -s 1 -p 707.70 --pay usd', this)" title="คลิกเพื่อคัดลอกคำสั่ง CLI ไปรันในเทอร์มินัล">
+                        <span>📋</span> คัดลอกคำสั่ง <code class="cmd-code">python trades.py buy -t MU -s 1 -p 707.70 --pay usd</code>
+                    </button>
+                </div>
+                <div style="font-size: 0.95rem; color: #ffffff; line-height: 1.55; margin-bottom: 10px;">
+                    วันงบถัดไปอยู่ห่างอีก 24 วัน ไม่มีความเสี่ยงเรื่องงบตกใจในระยะสั้น. ติดตามกรอบแนวรับแนวต้านสำคัญทางเทคนิค และปฏิบัติตามวินัย Stop-Loss อย่างเคร่งครัด
+                </div>
+                <div style="font-size: 0.85rem; color: #fca5a5; background: rgba(244, 63, 94, 0.08); padding: 8px 12px; border-radius: 6px; border-left: 3px solid var(--rose);">
+                    🛑 <strong>สัญญาณเตือนภัย / จุดระวัง (Invalidation Risk):</strong> การปิดหลุดแนวรับโครงสร้างหลัก หรือตัวเลขอัตรากำไรสุทธิชะลอตัวลงเกิน 20%
+                </div>
+            </div>
+        </div>
+        
+        <div class="card outlook-card" style="margin-bottom: 24px; border-left: 4px solid var(--emerald);">
+            <!-- Header -->
+            <div class="outlook-card-header">
+                <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                    <span class="ticker-pill clickable-ticker" style="font-size: 1.15rem; padding: 4px 12px;" onclick="openChartModal(&quot;TSM&quot;, &quot;NYSE&quot;, &quot;Taiwan Semiconductor Manufacturing Co., Ltd. Sponsored ADR&quot;, &quot;Electronic Technology&quot;, 320.5188, 363.6, 327.89, 421.07, 329.8, 421.07, 554.22)" title="คลิกเปิดดูกราฟเทคนิคัลอัจฉริยะ">TSM 📈</span>
                     <strong style="font-size: 1.25rem;">Taiwan Semiconductor Manufacturing Co., Ltd. Sponsored ADR</strong>
                     <span class="badge badge-neutral" style="font-size: 0.8rem;">Electronic Technology • Semiconductors</span>
                     <span class="badge badge-neutral" style="font-size: 0.8rem; background: rgba(59, 130, 246, 0.1); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.25);">🟡 Market Leader</span>
                 </div>
                 <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
-                    <span class="badge badge-rose" style="font-size: 0.95rem; padding: 5px 12px;">-0.43%</span>
-                    <span class="badge badge-neutral" style="font-size: 0.85rem;">สัดส่วน 0.3% (⭐⭐⭐)</span>
-                    <button onclick="openChartModal(&quot;TSM&quot;, &quot;NYSE&quot;, &quot;Taiwan Semiconductor Manufacturing Co., Ltd. Sponsored ADR&quot;, &quot;Electronic Technology&quot;, 320.5188, 319.145, 290.56, 422.16, 290.56, 422.16, 554.22)" style="background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.35); color: #60a5fa; border-radius: 6px; padding: 5px 12px; font-size: 0.85rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.2s;">📈 ดูกราฟสด & แนวรับแนวต้าน</button>
+                    <span class="badge badge-emerald" style="font-size: 0.95rem; padding: 5px 12px;">+13.44%</span>
+                    <span class="badge badge-neutral" style="font-size: 0.85rem;">สัดส่วน 0.4% (⭐⭐⭐)</span>
+                    <button onclick="openChartModal(&quot;TSM&quot;, &quot;NYSE&quot;, &quot;Taiwan Semiconductor Manufacturing Co., Ltd. Sponsored ADR&quot;, &quot;Electronic Technology&quot;, 320.5188, 363.6, 327.89, 421.07, 329.8, 421.07, 554.22)" style="background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.35); color: #60a5fa; border-radius: 6px; padding: 5px 12px; font-size: 0.85rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.2s;">📈 ดูกราฟสด & แนวรับแนวต้าน</button>
                 </div>
             </div>
 
@@ -2211,7 +2477,7 @@ table td, table th, .kpi-value, .wealth-hud-val, .wealth-hud-sub,
             <div class="drivers-box">
                 <div style="font-size: 0.88rem; font-weight: 700; color: #38bdf8; margin-bottom: 8px;">📈 4 เครื่องจักรขับเคลื่อนการเติบโตในอนาคต (Future Growth Drivers 1-12 เดือน):</div>
                 <ul class="drivers-list">
-                    <li>การขยายตัวของรายได้ระดับ +35.2% YoY และความสามารถในการทำกำไรสุทธิ +59.3% YoY</li><li>อัตราการประเมินมูลค่า P/E 20.5x และค่า PEG 0.38 เท่า สะท้อนระดับราคาต่อการเติบโต</li><li>ส่วนแบ่งการตลาดและความแข็งแกร่งของตราสินค้าในกลุ่มอุตสาหกรรม Semiconductors</li><li>การเพิ่มประสิทธิภาพการดำเนินงานและการบริหารจัดการต้นทุนเพื่อผลักดันกระแสเงินสดอิสระ</li>
+                    <li>การขยายตัวของรายได้ระดับ +35.2% YoY และความสามารถในการทำกำไรสุทธิ +59.3% YoY</li><li>อัตราการประเมินมูลค่า P/E 23.4x และค่า PEG 0.35 เท่า สะท้อนระดับราคาต่อการเติบโต</li><li>ส่วนแบ่งการตลาดและความแข็งแกร่งของตราสินค้าในกลุ่มอุตสาหกรรม Semiconductors</li><li>การเพิ่มประสิทธิภาพการดำเนินงานและการบริหารจัดการต้นทุนเพื่อผลักดันกระแสเงินสดอิสระ</li>
                 </ul>
             </div>
 
@@ -2245,7 +2511,7 @@ table td, table th, .kpi-value, .wealth-hud-val, .wealth-hud-sub,
                     </div>
                     <div class="ws-target-cell">
                         <div class="text-muted small">ราคาปัจจุบัน</div>
-                        <div class="fw-bold text-rose" style="font-size: 1.1rem;">$319.14</div>
+                        <div class="fw-bold text-emerald" style="font-size: 1.1rem;">$363.60</div>
                     </div>
                     <div class="ws-target-cell">
                         <div class="text-muted small">เป้าต่ำสุด (Low)</div>
@@ -2253,7 +2519,7 @@ table td, table th, .kpi-value, .wealth-hud-val, .wealth-hud-sub,
                     </div>
                     <div class="ws-target-cell">
                         <div class="text-muted small">เป้าเฉลี่ย (Average)</div>
-                        <div class="fw-bold text-emerald" style="font-size: 1.1rem;">$554.22 <span class="small"> (+73.7%)</span></div>
+                        <div class="fw-bold text-emerald" style="font-size: 1.1rem;">$554.22 <span class="small"> (+52.4%)</span></div>
                     </div>
                     <div class="ws-target-cell">
                         <div class="text-muted small">เป้าสูงสุด (High)</div>
@@ -2261,7 +2527,7 @@ table td, table th, .kpi-value, .wealth-hud-val, .wealth-hud-sub,
                     </div>
                 </div>
                 <div class="small" style="color: #cbd5e1; background: rgba(0, 0, 0, 0.2); padding: 8px 12px; border-radius: 6px; border-left: 3px solid var(--emerald); margin-top: 6px;">
-                    📌 <strong>ข้อสรุปของวอลล์สตรีท:</strong> โบรกเกอร์ 16 แห่ง (Buy 15 / Hold 1 / Sell 0) ราคาเป้าหมายเฉลี่ยสถาบันอยู่ที่ $554.22 (Upside +73.7%)
+                    📌 <strong>ข้อสรุปของวอลล์สตรีท:</strong> โบรกเกอร์ 16 แห่ง (Buy 15 / Hold 1 / Sell 0) ราคาเป้าหมายเฉลี่ยสถาบันอยู่ที่ $554.22 (Upside +52.4%)
                 </div>
             </div>
 
@@ -2269,11 +2535,11 @@ table td, table th, .kpi-value, .wealth-hud-val, .wealth-hud-sub,
             <div class="grid-2-cols" style="gap: 14px; margin-bottom: 18px;">
                 <div class="bull-box" style="background: rgba(16, 185, 129, 0.04); padding: 14px; border-radius: var(--radius-sm); border: 1px solid rgba(16, 185, 129, 0.2);">
                     <div class="cat-label text-emerald fw-bold small" style="margin-bottom: 8px;">🟢 พาดหัวข่าวจริงเชิงบวกและปัจจัยหนุน (Positive News):</div>
-                    <ul class="cat-list"><li style='margin-bottom: 8px;'><strong class='source-tag'>[The Motley Fool]</strong> <span style='font-weight: 600; color: #f1f5f9;'>กังวลเกี่ยวกับ Nvidia? ซื้อหุ้นปัญญาประดิษฐ์ (AI) อันน่าอัศจรรย์นี้แทน</span> <span class='badge badge-neutral' style='font-size:0.7rem; color:#94a3b8; background:rgba(148,163,184,0.12); border:1px solid rgba(148,163,184,0.25); vertical-align:middle;'>heuristic</span><div class='small' style='color: #94a3b8; margin-top: 2px; padding-left: 2px;'>↳ <a href='https://news.google.com/rss/articles/CBMiwAFBVV95cUxNblRabUlOYUo5djh3eVFTSVJwMllIdG1WY1BfcnN1V183dTM1Vld4V09wLTdDemhSYzhxd1JEdEluOU1mMjhsc0pNekVNNWFobjJPYUd1LVNOeXVxakVRcjZIaWRIWE12b1doQ3NNVi0yd3NHU3hGTFU5N2dQaHJBQ0ZEOVdOZjluLUluYXVnaDhoVHVvMTMxZzBkSkRkYnpMNTF6dFN0MTFfaHFmUjVuSkxOWmw0eHVTS0NVazV4clY?oc=5' target='_blank' rel='noopener noreferrer' class='news-headline-link' title='คลิกเพื่ออ่านข่าวต้นฉบับ'>Worried About Nvidia? Buy This Fantastic Artificial Intelligence (AI) Stock Instead ↗</a> <span class='text-muted small'>(23 Nov 2026)</span></div></li></ul>
+                    <ul class="cat-list"><li style='margin-bottom: 8px;'><strong class='source-tag'>[GuruFocus]</strong> <span style='font-weight: 600; color: #f1f5f9;'>หุ้นจีนขึ้นนำโดย TSMC (TSM) ขึ้นนำ</span> <span class='badge badge-neutral' style='font-size:0.7rem; color:#94a3b8; background:rgba(148,163,184,0.12); border:1px solid rgba(148,163,184,0.25); vertical-align:middle;'>heuristic</span><div class='small' style='color: #94a3b8; margin-top: 2px; padding-left: 2px;'>↳ <a href='https://news.google.com/rss/articles/CBMijwFBVV95cUxQR2VHZ2lSSUpyM1BlTUdTSndnZmlkWmtUWnNsdFN0SVcxZXhSNU41UGRNbS1aa2FvZ2ZtODA3TkNpaVVfVElDbXdySDZRQlhiOWpLR2Q4UHpoOGFfMHhndHoyU20tamlyM1lmRUp4YjBJbTAzZENFZm1NZ05SdXI0SjB6RWZJUi1hRExVUzllcw?oc=5' target='_blank' rel='noopener noreferrer' class='news-headline-link' title='คลิกเพื่ออ่านข่าวต้นฉบับ'>Chinese Stocks Rise with TSMC (TSM) Leading Gains ↗</a> <span class='text-muted small'>(23 Nov 2026)</span></div></li><li style='margin-bottom: 8px;'><strong class='source-tag'>[Yahoo Finance]</strong> <span style='font-weight: 600; color: #f1f5f9;'>ทำไมหุ้น TSMC ถึงพุ่งสูงขึ้นในวันนี้</span> <span class='badge badge-neutral' style='font-size:0.7rem; color:#94a3b8; background:rgba(148,163,184,0.12); border:1px solid rgba(148,163,184,0.25); vertical-align:middle;'>heuristic</span><div class='small' style='color: #94a3b8; margin-top: 2px; padding-left: 2px;'>↳ <a href='https://news.google.com/rss/articles/CBMilwFBVV95cUxOMEdpVWJwSTh1cU9tb25IQWwwR3VjdlNfYWZUYXI5b3lrZzRTb3c3SHBqVy00endjamt2M3RvMFZLcGZRTmRLcTZTOE92ejJqM09vejF6Y29zRy02XzRQeGJ2a2ZKaTVDNE5DeU1YbjJUc3NOM3plT3NJOWZWZ1ZoTm9YZ0JZZkZGMXZwUkNxQ3NnSVhDWDVn?oc=5' target='_blank' rel='noopener noreferrer' class='news-headline-link' title='คลิกเพื่ออ่านข่าวต้นฉบับ'>Why TSMC Stock Soared Today ↗</a> <span class='text-muted small'>(23 Nov 2026)</span></div></li><li style='margin-bottom: 8px;'><strong class='source-tag'>[The Motley Fool]</strong> <span style='font-weight: 600; color: #f1f5f9;'>ทำไมหุ้น TSMC ถึงพุ่งสูงขึ้นในวันนี้</span> <span class='badge badge-neutral' style='font-size:0.7rem; color:#94a3b8; background:rgba(148,163,184,0.12); border:1px solid rgba(148,163,184,0.25); vertical-align:middle;'>heuristic</span><div class='small' style='color: #94a3b8; margin-top: 2px; padding-left: 2px;'>↳ <a href='https://news.google.com/rss/articles/CBMiekFVX3lxTE92TkVUSlNHYU1SY3BsX3E1MWN3elI4c2hqQ0NONE5DOU5FVWl2cTZEVk1tb282dTE0TEJGU1RhRndzTTZhOU5rbXEyVVlRQzd2ckxua1dORnktSjljNG1KNnlrSVQtZEE2YUFxbDFoY0JRdXFRdnZ1UERn?oc=5' target='_blank' rel='noopener noreferrer' class='news-headline-link' title='คลิกเพื่ออ่านข่าวต้นฉบับ'>Why TSMC Stock Soared Today ↗</a> <span class='text-muted small'>(23 Nov 2026)</span></div></li></ul>
                 </div>
                 <div class="bear-box" style="background: rgba(244, 63, 94, 0.04); padding: 14px; border-radius: var(--radius-sm); border: 1px solid rgba(244, 63, 94, 0.2);">
                     <div class="cat-label text-rose fw-bold small" style="margin-bottom: 8px;">🔴 พาดหัวข่าวจริงที่ต้องระวังและความเสี่ยง (Risk Factors):</div>
-                    <ul class="cat-list"><li style='margin-bottom: 8px;'><strong class='source-tag'>[Taipei Times]</strong> <span style='font-weight: 600; color: #f1f5f9;'>นักลงทุนรายย่อยคว้าหุ้นล็อตคี่เนื่องจาก TSMC ดิ่งลง</span> <span class='badge badge-neutral' style='font-size:0.7rem; color:#94a3b8; background:rgba(148,163,184,0.12); border:1px solid rgba(148,163,184,0.25); vertical-align:middle;'>heuristic</span><div class='small' style='color: #94a3b8; margin-top: 2px; padding-left: 2px;'>↳ <a href='https://news.google.com/rss/articles/CBMidkFVX3lxTE1TeHZXOVNtWkRHX3FRMEpBYXlIMENBN09wQ0MwUFQtZUpoUzFtUVpsdWR1dmR6QjZ3M3VsaGVGbWlRcG1jMDVnNzkwdkVWS0Z6U2kyd05TMnJlbVRCd3ZNQVBTUEtYVmVySlhIQjB1SDZXYkhTc1E?oc=5' target='_blank' rel='noopener noreferrer' class='news-headline-link' title='คลิกเพื่ออ่านข่าวต้นฉบับ'>Retail investors grab odd-lot shares as TSMC plunges ↗</a> <span class='text-muted small'>(22 Nov 2026)</span></div></li><li style='margin-bottom: 8px;'><strong class='source-tag'>[Seeking Alpha]</strong> <span style='font-weight: 600; color: #f1f5f9;'>TSMC: ดูสัญญาณเตือนจากยักษ์ใหญ่ด้านเทคโนโลยีของจีน (NYSE:TSM)</span> <span class='badge badge-neutral' style='font-size:0.7rem; color:#94a3b8; background:rgba(148,163,184,0.12); border:1px solid rgba(148,163,184,0.25); vertical-align:middle;'>heuristic</span><div class='small' style='color: #94a3b8; margin-top: 2px; padding-left: 2px;'>↳ <a href='https://news.google.com/rss/articles/CBMinAFBVV95cUxNVndRbzM2WUFsNk5OT1J2WkRhSWpaUThEaUxRcEl3UlJDRWlEVmpuN3FIQ2ZWNmQ5U3lMTWlKWTY4clVoZkg4RHVnSER2X28tVmU2UWhvbmo4UDBiU1RXRnFCWEFKNzdpNUNsbnU3NDV5RVVhSUpveGNSc09FdkhxdmVqZDh1YzhMdjNEc3FWTUVLSU1ZbTV2ZXF1dXM?oc=5' target='_blank' rel='noopener noreferrer' class='news-headline-link' title='คลิกเพื่ออ่านข่าวต้นฉบับ'>TSMC: Look At The Warning Signs From Chinese Tech Giants (NYSE:TSM) ↗</a> <span class='text-muted small'>(21 Nov 2026)</span></div></li></ul>
+                    <ul class="cat-list"><li><span class='text-muted'>ไม่มีข่าวร้ายรุนแรงในระยะสั้น.</span></li></ul>
                 </div>
             </div>
 
@@ -2283,8 +2549,8 @@ table td, table th, .kpi-value, .wealth-hud-val, .wealth-hud-sub,
                     <div style="font-size: 0.85rem; font-weight: 700; color: #fbbf24; text-transform: uppercase; letter-spacing: 0.05em; display: flex; align-items: center; gap: 6px;">
                         <span>🧭</span> แผนกลยุทธ์ฟันธงสำหรับ TSM (Action Roadmap):
                     </div>
-                    <button class="copy-cmd-btn" onclick="copyTradeCommand('python trades.py buy -t TSM -s 1 -p 319.14 --pay usd', this)" title="คลิกเพื่อคัดลอกคำสั่ง CLI ไปรันในเทอร์มินัล">
-                        <span>📋</span> คัดลอกคำสั่ง <code class="cmd-code">python trades.py buy -t TSM -s 1 -p 319.14 --pay usd</code>
+                    <button class="copy-cmd-btn" onclick="copyTradeCommand('python trades.py buy -t TSM -s 1 -p 363.60 --pay usd', this)" title="คลิกเพื่อคัดลอกคำสั่ง CLI ไปรันในเทอร์มินัล">
+                        <span>📋</span> คัดลอกคำสั่ง <code class="cmd-code">python trades.py buy -t TSM -s 1 -p 363.60 --pay usd</code>
                     </button>
                 </div>
                 <div style="font-size: 0.95rem; color: #ffffff; line-height: 1.55; margin-bottom: 10px;">
@@ -2296,19 +2562,19 @@ table td, table th, .kpi-value, .wealth-hud-val, .wealth-hud-sub,
             </div>
         </div>
         
-        <div class="card outlook-card" style="margin-bottom: 24px; border-left: 4px solid var(--rose);">
+        <div class="card outlook-card" style="margin-bottom: 24px; border-left: 4px solid var(--emerald);">
             <!-- Header -->
             <div class="outlook-card-header">
                 <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
-                    <span class="ticker-pill clickable-ticker" style="font-size: 1.15rem; padding: 4px 12px;" onclick="openChartModal(&quot;SOXQ&quot;, &quot;NASDAQ&quot;, &quot;Invesco PHLX Semiconductor ETF&quot;, &quot;Miscellaneous&quot;, 66.6082, 66.23, 59.36, 89.21, 59.36, 89.21, null)" title="คลิกเปิดดูกราฟเทคนิคัลอัจฉริยะ">SOXQ 📈</span>
+                    <span class="ticker-pill clickable-ticker" style="font-size: 1.15rem; padding: 4px 12px;" onclick="openChartModal(&quot;SOXQ&quot;, &quot;NASDAQ&quot;, &quot;Invesco PHLX Semiconductor ETF&quot;, &quot;Miscellaneous&quot;, 66.6082, 75.45, 66.84, 88.97, 67.96, 88.97, null)" title="คลิกเปิดดูกราฟเทคนิคัลอัจฉริยะ">SOXQ 📈</span>
                     <strong style="font-size: 1.25rem;">Invesco PHLX Semiconductor ETF</strong>
                     <span class="badge badge-neutral" style="font-size: 0.8rem;">Miscellaneous • Investment Trusts/Mutual Funds</span>
                     <span class="badge badge-neutral" style="font-size: 0.8rem; background: rgba(59, 130, 246, 0.1); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.25);">🟡 Market Leader</span>
                 </div>
                 <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
-                    <span class="badge badge-rose" style="font-size: 0.95rem; padding: 5px 12px;">-0.57%</span>
-                    <span class="badge badge-neutral" style="font-size: 0.85rem;">สัดส่วน 0.3% (⭐⭐⭐)</span>
-                    <button onclick="openChartModal(&quot;SOXQ&quot;, &quot;NASDAQ&quot;, &quot;Invesco PHLX Semiconductor ETF&quot;, &quot;Miscellaneous&quot;, 66.6082, 66.23, 59.36, 89.21, 59.36, 89.21, null)" style="background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.35); color: #60a5fa; border-radius: 6px; padding: 5px 12px; font-size: 0.85rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.2s;">📈 ดูกราฟสด & แนวรับแนวต้าน</button>
+                    <span class="badge badge-emerald" style="font-size: 0.95rem; padding: 5px 12px;">+13.27%</span>
+                    <span class="badge badge-neutral" style="font-size: 0.85rem;">สัดส่วน 0.4% (⭐⭐⭐)</span>
+                    <button onclick="openChartModal(&quot;SOXQ&quot;, &quot;NASDAQ&quot;, &quot;Invesco PHLX Semiconductor ETF&quot;, &quot;Miscellaneous&quot;, 66.6082, 75.45, 66.84, 88.97, 67.96, 88.97, null)" style="background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.35); color: #60a5fa; border-radius: 6px; padding: 5px 12px; font-size: 0.85rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.2s;">📈 ดูกราฟสด & แนวรับแนวต้าน</button>
                 </div>
             </div>
 
@@ -2359,7 +2625,7 @@ table td, table th, .kpi-value, .wealth-hud-val, .wealth-hud-sub,
                     </div>
                     <div class="ws-target-cell">
                         <div class="text-muted small">ราคาปัจจุบัน</div>
-                        <div class="fw-bold text-rose" style="font-size: 1.1rem;">$66.23</div>
+                        <div class="fw-bold text-emerald" style="font-size: 1.1rem;">$75.45</div>
                     </div>
                     <div class="ws-target-cell">
                         <div class="text-muted small">เป้าต่ำสุด (Low)</div>
@@ -2397,8 +2663,8 @@ table td, table th, .kpi-value, .wealth-hud-val, .wealth-hud-sub,
                     <div style="font-size: 0.85rem; font-weight: 700; color: #fbbf24; text-transform: uppercase; letter-spacing: 0.05em; display: flex; align-items: center; gap: 6px;">
                         <span>🧭</span> แผนกลยุทธ์ฟันธงสำหรับ SOXQ (Action Roadmap):
                     </div>
-                    <button class="copy-cmd-btn" onclick="copyTradeCommand('python trades.py buy -t SOXQ -s 1 -p 66.23 --pay usd', this)" title="คลิกเพื่อคัดลอกคำสั่ง CLI ไปรันในเทอร์มินัล">
-                        <span>📋</span> คัดลอกคำสั่ง <code class="cmd-code">python trades.py buy -t SOXQ -s 1 -p 66.23 --pay usd</code>
+                    <button class="copy-cmd-btn" onclick="copyTradeCommand('python trades.py buy -t SOXQ -s 1 -p 75.45 --pay usd', this)" title="คลิกเพื่อคัดลอกคำสั่ง CLI ไปรันในเทอร์มินัล">
+                        <span>📋</span> คัดลอกคำสั่ง <code class="cmd-code">python trades.py buy -t SOXQ -s 1 -p 75.45 --pay usd</code>
                     </button>
                 </div>
                 <div style="font-size: 0.95rem; color: #ffffff; line-height: 1.55; margin-bottom: 10px;">
@@ -2410,19 +2676,19 @@ table td, table th, .kpi-value, .wealth-hud-val, .wealth-hud-sub,
             </div>
         </div>
         
-        <div class="card outlook-card" style="margin-bottom: 24px; border-left: 4px solid var(--rose);">
+        <div class="card outlook-card" style="margin-bottom: 24px; border-left: 4px solid var(--emerald);">
             <!-- Header -->
             <div class="outlook-card-header">
                 <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
-                    <span class="ticker-pill clickable-ticker" style="font-size: 1.15rem; padding: 4px 12px;" onclick="openChartModal(&quot;ASML&quot;, &quot;NASDAQ&quot;, &quot;ASML Holding NV Sponsored ADR&quot;, &quot;Electronic Technology&quot;, 1276.9938, 1266.22, 1163.29, 1624.75, 1163.29, 1624.75, 2436.94)" title="คลิกเปิดดูกราฟเทคนิคัลอัจฉริยะ">ASML 📈</span>
+                    <span class="ticker-pill clickable-ticker" style="font-size: 1.15rem; padding: 4px 12px;" onclick="openChartModal(&quot;ASML&quot;, &quot;NASDAQ&quot;, &quot;ASML Holding NV Sponsored ADR&quot;, &quot;Electronic Technology&quot;, 1276.9938, 1383.78, 1268.83, 1620.92, 1272.29, 1620.92, 2436.94)" title="คลิกเปิดดูกราฟเทคนิคัลอัจฉริยะ">ASML 📈</span>
                     <strong style="font-size: 1.25rem;">ASML Holding NV Sponsored ADR</strong>
                     <span class="badge badge-neutral" style="font-size: 0.8rem;">Electronic Technology • Semiconductors</span>
                     <span class="badge badge-neutral" style="font-size: 0.8rem; background: rgba(59, 130, 246, 0.1); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.25);">🟡 Market Leader</span>
                 </div>
                 <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
-                    <span class="badge badge-rose" style="font-size: 0.95rem; padding: 5px 12px;">-0.84%</span>
-                    <span class="badge badge-neutral" style="font-size: 0.85rem;">สัดส่วน 0.3% (⭐⭐⭐)</span>
-                    <button onclick="openChartModal(&quot;ASML&quot;, &quot;NASDAQ&quot;, &quot;ASML Holding NV Sponsored ADR&quot;, &quot;Electronic Technology&quot;, 1276.9938, 1266.22, 1163.29, 1624.75, 1163.29, 1624.75, 2436.94)" style="background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.35); color: #60a5fa; border-radius: 6px; padding: 5px 12px; font-size: 0.85rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.2s;">📈 ดูกราฟสด & แนวรับแนวต้าน</button>
+                    <span class="badge badge-emerald" style="font-size: 0.95rem; padding: 5px 12px;">+8.36%</span>
+                    <span class="badge badge-neutral" style="font-size: 0.85rem;">สัดส่วน 0.4% (⭐⭐⭐)</span>
+                    <button onclick="openChartModal(&quot;ASML&quot;, &quot;NASDAQ&quot;, &quot;ASML Holding NV Sponsored ADR&quot;, &quot;Electronic Technology&quot;, 1276.9938, 1383.78, 1268.83, 1620.92, 1272.29, 1620.92, 2436.94)" style="background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.35); color: #60a5fa; border-radius: 6px; padding: 5px 12px; font-size: 0.85rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.2s;">📈 ดูกราฟสด & แนวรับแนวต้าน</button>
                 </div>
             </div>
 
@@ -2439,7 +2705,7 @@ table td, table th, .kpi-value, .wealth-hud-val, .wealth-hud-sub,
             <div class="drivers-box">
                 <div style="font-size: 0.88rem; font-weight: 700; color: #38bdf8; margin-bottom: 8px;">📈 4 เครื่องจักรขับเคลื่อนการเติบโตในอนาคต (Future Growth Drivers 1-12 เดือน):</div>
                 <ul class="drivers-list">
-                    <li>การขยายตัวของรายได้ระดับ +29.0% YoY และความสามารถในการทำกำไรสุทธิ +49.9% YoY</li><li>อัตราการประเมินมูลค่า P/E 31.2x และค่า PEG 0.64 เท่า สะท้อนระดับราคาต่อการเติบโต</li><li>ส่วนแบ่งการตลาดและความแข็งแกร่งของตราสินค้าในกลุ่มอุตสาหกรรม Semiconductors</li><li>การเพิ่มประสิทธิภาพการดำเนินงานและการบริหารจัดการต้นทุนเพื่อผลักดันกระแสเงินสดอิสระ</li>
+                    <li>การขยายตัวของรายได้ระดับ +29.0% YoY และความสามารถในการทำกำไรสุทธิ +49.9% YoY</li><li>อัตราการประเมินมูลค่า P/E 34.1x และค่า PEG 0.60 เท่า สะท้อนระดับราคาต่อการเติบโต</li><li>ส่วนแบ่งการตลาดและความแข็งแกร่งของตราสินค้าในกลุ่มอุตสาหกรรม Semiconductors</li><li>การเพิ่มประสิทธิภาพการดำเนินงานและการบริหารจัดการต้นทุนเพื่อผลักดันกระแสเงินสดอิสระ</li>
                 </ul>
             </div>
 
@@ -2473,7 +2739,7 @@ table td, table th, .kpi-value, .wealth-hud-val, .wealth-hud-sub,
                     </div>
                     <div class="ws-target-cell">
                         <div class="text-muted small">ราคาปัจจุบัน</div>
-                        <div class="fw-bold text-rose" style="font-size: 1.1rem;">$1,266.22</div>
+                        <div class="fw-bold text-emerald" style="font-size: 1.1rem;">$1,383.78</div>
                     </div>
                     <div class="ws-target-cell">
                         <div class="text-muted small">เป้าต่ำสุด (Low)</div>
@@ -2481,7 +2747,7 @@ table td, table th, .kpi-value, .wealth-hud-val, .wealth-hud-sub,
                     </div>
                     <div class="ws-target-cell">
                         <div class="text-muted small">เป้าเฉลี่ย (Average)</div>
-                        <div class="fw-bold text-emerald" style="font-size: 1.1rem;">$2,436.94 <span class="small"> (+92.5%)</span></div>
+                        <div class="fw-bold text-emerald" style="font-size: 1.1rem;">$2,436.94 <span class="small"> (+76.1%)</span></div>
                     </div>
                     <div class="ws-target-cell">
                         <div class="text-muted small">เป้าสูงสุด (High)</div>
@@ -2489,7 +2755,7 @@ table td, table th, .kpi-value, .wealth-hud-val, .wealth-hud-sub,
                     </div>
                 </div>
                 <div class="small" style="color: #cbd5e1; background: rgba(0, 0, 0, 0.2); padding: 8px 12px; border-radius: 6px; border-left: 3px solid var(--emerald); margin-top: 6px;">
-                    📌 <strong>ข้อสรุปของวอลล์สตรีท:</strong> โบรกเกอร์ 38 แห่ง (Buy 33 / Hold 4 / Sell 1) ราคาเป้าหมายเฉลี่ยสถาบันอยู่ที่ $2,436.94 (Upside +92.5%)
+                    📌 <strong>ข้อสรุปของวอลล์สตรีท:</strong> โบรกเกอร์ 38 แห่ง (Buy 33 / Hold 4 / Sell 1) ราคาเป้าหมายเฉลี่ยสถาบันอยู่ที่ $2,436.94 (Upside +76.1%)
                 </div>
             </div>
 
@@ -2497,7 +2763,7 @@ table td, table th, .kpi-value, .wealth-hud-val, .wealth-hud-sub,
             <div class="grid-2-cols" style="gap: 14px; margin-bottom: 18px;">
                 <div class="bull-box" style="background: rgba(16, 185, 129, 0.04); padding: 14px; border-radius: var(--radius-sm); border: 1px solid rgba(16, 185, 129, 0.2);">
                     <div class="cat-label text-emerald fw-bold small" style="margin-bottom: 8px;">🟢 พาดหัวข่าวจริงเชิงบวกและปัจจัยหนุน (Positive News):</div>
-                    <ul class="cat-list"><li style='margin-bottom: 8px;'><strong class='source-tag'>[Yahoo Finance]</strong> <span style='font-weight: 600; color: #f1f5f9;'>Nvidia เพิ่งมอบผลลัพธ์ที่น่าเหลือเชื่อ ซื้อหุ้นปัญญาประดิษฐ์ (AI) นี้แทน หากคุณยังคงกังวลเกี่ยวกับอนาคตของยักษ์ใหญ่เซมิคอนดักเตอร์</span> <span class='badge badge-neutral' style='font-size:0.7rem; color:#94a3b8; background:rgba(148,163,184,0.12); border:1px solid rgba(148,163,184,0.25); vertical-align:middle;'>heuristic</span><div class='small' style='color: #94a3b8; margin-top: 2px; padding-left: 2px;'>↳ <a href='https://news.google.com/rss/articles/CBMipwFBVV95cUxOWmVjR2pPZV81aXlnbXVMblJIYTZka3ZuYS1FVl9aRW9IX3l5YS12eGRtZVVHT2xVeW9MbWU1WkQ1YmhBNnJZaDZxaTVRYVpZSEFyMTFPNXJIYTNpNDhUbkt5alM2ZTNIb0V3ckJHc2M2WHZxUnhIRDJUcnFEM2JqZXZQdlpqVjhIUmtBNDNoU3dxR0IzS1ZPRXI5MkRldXQyN3p5aV9Eaw?oc=5' target='_blank' rel='noopener noreferrer' class='news-headline-link' title='คลิกเพื่ออ่านข่าวต้นฉบับ'>Nvidia Just Delivered Incredible Results. Buy This Artificial Intelligence (AI) Stock Instead If You’re Still Worried About the Semiconductor Giant’s Future ↗</a> <span class='text-muted small'>(22 Nov 2026)</span></div></li><li style='margin-bottom: 8px;'><strong class='source-tag'>[The Motley Fool]</strong> <span style='font-weight: 600; color: #f1f5f9;'>Nvidia เพิ่งมอบผลลัพธ์ที่น่าเหลือเชื่อ ซื้อหุ้นปัญญาประดิษฐ์ (AI) นี้แทน หากคุณยังคงกังวลเกี่ยวกับอนาคตของยักษ์ใหญ่เซมิคอนดักเตอร์</span> <span class='badge badge-neutral' style='font-size:0.7rem; color:#94a3b8; background:rgba(148,163,184,0.12); border:1px solid rgba(148,163,184,0.25); vertical-align:middle;'>heuristic</span><div class='small' style='color: #94a3b8; margin-top: 2px; padding-left: 2px;'>↳ <a href='https://news.google.com/rss/articles/CBMiogJBVV95cUxONGVSVDRPNWxUVmRJWXFlZ19aSnVWQzloQjQ0T0NkcnpXV3dyOWgzcUdSdS05QXR4SWF2NzlUbUU3b0ZQQ1JGOTQ2dFA5MlhJSUxXLWd1NTVoaThYMWI5UGJMWWR1OThXQVRncXhGRjc0cHJfOGY0aWN2azZGUVdFbk4tN3VZdjhwNF9YQ2tVdVRVQURqTGlzQ1pXd0x6ZXRyQ1ZkU1dBbGY3ZGsySkJCVjBJSkdtSk5nYmRRRGI2TXNyVlNUZUtOYUM4QlhiVHlLVm5KSlVWYnBsVkRnYW9qN1Bkdlc5TnE3UmxrbmN0ZHJ0aVUyS0NHdlFmb1lmdDU5OG1CNUNaeTVUNzZiNVJYeHFoTEdzeHJTd0stMFBRbXh0Zw?oc=5' target='_blank' rel='noopener noreferrer' class='news-headline-link' title='คลิกเพื่ออ่านข่าวต้นฉบับ'>Nvidia Just Delivered Incredible Results. Buy This Artificial Intelligence (AI) Stock Instead If You’re Still Worried About the Semiconductor Giant’s Future ↗</a> <span class='text-muted small'>(22 Nov 2026)</span></div></li><li style='margin-bottom: 8px;'><strong class='source-tag'>[The Globe and Mail]</strong> <span style='font-weight: 600; color: #f1f5f9;'>ASML กับ SK Hynix: หุ้นปัญญาประดิษฐ์ตัวไหนน่าซื้อกว่าในปี 2570</span> <span class='badge badge-neutral' style='font-size:0.7rem; color:#94a3b8; background:rgba(148,163,184,0.12); border:1px solid rgba(148,163,184,0.25); vertical-align:middle;'>heuristic</span><div class='small' style='color: #94a3b8; margin-top: 2px; padding-left: 2px;'>↳ <a href='https://news.google.com/rss/articles/CBMi9AFBVV95cUxPZVNDWVNKa3J2c25iWkt6dzdxd0NMcmFZRlBaWXh4NXhCVmw4OWVnenAxR21hMHkwazFYckd4dWJmbWtaTUNObTZFZ0wxSURoeXJ4SFVoSm9uRUxmQUs4QnlqeE52UUphaW82Y29PZXBXWmdCTXVqSHFhb0tseFdGZTlFRnhMODRXeHA2M0tENGFQOEhWNnprdEZIMXJjRlU2S0tfQjlUQmFsbmpYdmJqTXNONmtfdkpYcjBWV05XdGlScGVodTI2ZXFpcFZNNElTWTFoVjdDWmdWWUV2MDVZdEstZHR1N1FqOC1SUWJSMzMtbTgy?oc=5' target='_blank' rel='noopener noreferrer' class='news-headline-link' title='คลิกเพื่ออ่านข่าวต้นฉบับ'>ASML vs. SK Hynix: Which Artificial Intelligence Stock Is a Better Buy for 2027? ↗</a> <span class='text-muted small'>(21 Nov 2026)</span></div></li></ul>
+                    <ul class="cat-list"><li style='margin-bottom: 8px;'><strong class='source-tag'>[Seeking Alpha]</strong> <span style='font-weight: 600; color: #f1f5f9;'>ASML เพิ่มขึ้น 9% เนื่องจากหุ้นชิปพุ่งขึ้น (ASML:NASDAQ)</span> <span class='badge badge-neutral' style='font-size:0.7rem; color:#94a3b8; background:rgba(148,163,184,0.12); border:1px solid rgba(148,163,184,0.25); vertical-align:middle;'>heuristic</span><div class='small' style='color: #94a3b8; margin-top: 2px; padding-left: 2px;'>↳ <a href='https://news.google.com/rss/articles/CBMifEFVX3lxTFBDTHVWdFhBU1B6Y0RWNmxFZG13akZXdjZGUXkxb1F5cGY3cVExejRnNmQ1bi0tUGl1akRvNDR5Y0o3UmlPaFp4c1hfbEV5eWdyOVhrN3FXTzl0SThHeU9KeFVpNkJBRG54Rnp2THdTRk0za3hsUlI4eWtoWDk?oc=5' target='_blank' rel='noopener noreferrer' class='news-headline-link' title='คลิกเพื่ออ่านข่าวต้นฉบับ'>ASML surges 9% as chip stocks rally (ASML:NASDAQ) ↗</a> <span class='text-muted small'>(23 Nov 2026)</span></div></li></ul>
                 </div>
                 <div class="bear-box" style="background: rgba(244, 63, 94, 0.04); padding: 14px; border-radius: var(--radius-sm); border: 1px solid rgba(244, 63, 94, 0.2);">
                     <div class="cat-label text-rose fw-bold small" style="margin-bottom: 8px;">🔴 พาดหัวข่าวจริงที่ต้องระวังและความเสี่ยง (Risk Factors):</div>
@@ -2511,240 +2777,12 @@ table td, table th, .kpi-value, .wealth-hud-val, .wealth-hud-sub,
                     <div style="font-size: 0.85rem; font-weight: 700; color: #fbbf24; text-transform: uppercase; letter-spacing: 0.05em; display: flex; align-items: center; gap: 6px;">
                         <span>🧭</span> แผนกลยุทธ์ฟันธงสำหรับ ASML (Action Roadmap):
                     </div>
-                    <button class="copy-cmd-btn" onclick="copyTradeCommand('python trades.py buy -t ASML -s 1 -p 1266.22 --pay usd', this)" title="คลิกเพื่อคัดลอกคำสั่ง CLI ไปรันในเทอร์มินัล">
-                        <span>📋</span> คัดลอกคำสั่ง <code class="cmd-code">python trades.py buy -t ASML -s 1 -p 1266.22 --pay usd</code>
+                    <button class="copy-cmd-btn" onclick="copyTradeCommand('python trades.py buy -t ASML -s 1 -p 1383.78 --pay usd', this)" title="คลิกเพื่อคัดลอกคำสั่ง CLI ไปรันในเทอร์มินัล">
+                        <span>📋</span> คัดลอกคำสั่ง <code class="cmd-code">python trades.py buy -t ASML -s 1 -p 1383.78 --pay usd</code>
                     </button>
                 </div>
                 <div style="font-size: 0.95rem; color: #ffffff; line-height: 1.55; margin-bottom: 10px;">
                     วันงบถัดไปอยู่ห่างอีก 65 วัน ไม่มีความเสี่ยงเรื่องงบตกใจในระยะสั้น. ติดตามกรอบแนวรับแนวต้านสำคัญทางเทคนิค และปฏิบัติตามวินัย Stop-Loss อย่างเคร่งครัด
-                </div>
-                <div style="font-size: 0.85rem; color: #fca5a5; background: rgba(244, 63, 94, 0.08); padding: 8px 12px; border-radius: 6px; border-left: 3px solid var(--rose);">
-                    🛑 <strong>สัญญาณเตือนภัย / จุดระวัง (Invalidation Risk):</strong> การปิดหลุดแนวรับโครงสร้างหลัก หรือตัวเลขอัตรากำไรสุทธิชะลอตัวลงเกิน 20%
-                </div>
-            </div>
-        </div>
-        
-        <div class="card outlook-card" style="margin-bottom: 24px; border-left: 4px solid var(--rose);">
-            <!-- Header -->
-            <div class="outlook-card-header">
-                <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
-                    <span class="ticker-pill clickable-ticker" style="font-size: 1.15rem; padding: 4px 12px;" onclick="openChartModal(&quot;MU&quot;, &quot;NASDAQ&quot;, &quot;Micron Technology, Inc.&quot;, &quot;Electronic Technology&quot;, 600.9746, 594.51, 582.9, 912.26, 501.76, 912.26, 1631.56)" title="คลิกเปิดดูกราฟเทคนิคัลอัจฉริยะ">MU 📈</span>
-                    <strong style="font-size: 1.25rem;">Micron Technology, Inc.</strong>
-                    <span class="badge badge-neutral" style="font-size: 0.8rem;">Electronic Technology • Semiconductors</span>
-                    <span class="badge badge-neutral" style="font-size: 0.8rem; background: rgba(59, 130, 246, 0.1); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.25);">🟡 Market Leader</span>
-                </div>
-                <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
-                    <span class="badge badge-rose" style="font-size: 0.95rem; padding: 5px 12px;">-1.08%</span>
-                    <span class="badge badge-neutral" style="font-size: 0.85rem;">สัดส่วน 0.3% (⭐⭐⭐)</span>
-                    <button onclick="openChartModal(&quot;MU&quot;, &quot;NASDAQ&quot;, &quot;Micron Technology, Inc.&quot;, &quot;Electronic Technology&quot;, 600.9746, 594.51, 582.9, 912.26, 501.76, 912.26, 1631.56)" style="background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.35); color: #60a5fa; border-radius: 6px; padding: 5px 12px; font-size: 0.85rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.2s;">📈 ดูกราฟสด & แนวรับแนวต้าน</button>
-                </div>
-            </div>
-
-            <!-- Thesis Banner -->
-            <div class="thesis-banner" style="background: rgba(255, 255, 255, 0.025); border: 1px solid var(--border-color); color: var(--text-secondary);">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; flex-wrap: wrap; gap: 4px;">
-                    <div style="font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; color: #94a3b8;">🔭 วิสัยทัศน์และธีมการเติบโตหลักในอนาคต (Growth Thesis):</div>
-                    
-                </div>
-                <div style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.4;">การวิเคราะห์เจาะลึกศักยภาพการเติบโต MU ในกลุ่ม Electronic Technology (Semiconductors)</div>
-            </div>
-
-            <!-- 4 Future Growth Drivers -->
-            <div class="drivers-box">
-                <div style="font-size: 0.88rem; font-weight: 700; color: #38bdf8; margin-bottom: 8px;">📈 4 เครื่องจักรขับเคลื่อนการเติบโตในอนาคต (Future Growth Drivers 1-12 เดือน):</div>
-                <ul class="drivers-list">
-                    <li>การขยายตัวของรายได้ระดับ +256.3% YoY และความสามารถในการทำกำไรสุทธิ +895.1% YoY</li><li>อัตราการประเมินมูลค่า P/E 8.0x และค่า PEG 0.01 เท่า สะท้อนระดับราคาต่อการเติบโต</li><li>ส่วนแบ่งการตลาดและความแข็งแกร่งของตราสินค้าในกลุ่มอุตสาหกรรม Semiconductors</li><li>การเพิ่มประสิทธิภาพการดำเนินงานและการบริหารจัดการต้นทุนเพื่อผลักดันกระแสเงินสดอิสระ</li>
-                </ul>
-            </div>
-
-            <!-- Catalyst Timeline -->
-            <div style="margin-bottom: 18px;">
-                <div style="font-size: 0.88rem; font-weight: 700; color: #cbd5e1; margin-bottom: 10px;">📅 ปฏิทินตัวเร่งราคาและปัจจัยสำคัญตามช่วงเวลา (Catalyst Timeline):</div>
-                <div class="timeline-strip">
-                    <div class="timeline-step">
-                <span class="timeline-step-badge">ปฏิทินงบ (24 วัน)</span>
-                <div class="timeline-step-desc">การแถลงงบการเงินและทิศทางคำสั่งซื้อในอนาคต</div>
-            </div><div class="timeline-step">
-                <span class="timeline-step-badge">ระยะ 1-3 เดือน</span>
-                <div class="timeline-step-desc">การปรับบทวิเคราะห์และประมาณการกำไรจากนักวิเคราะห์วอลล์สตรีท</div>
-            </div><div class="timeline-step">
-                <span class="timeline-step-badge">ระยะ 6-12 เดือน</span>
-                <div class="timeline-step-desc">การเปิดตัวผลิตภัณฑ์ใหม่และการขยายตลาดสู่กลุ่มเป้าหมายใหม่</div>
-            </div>
-                </div>
-            </div>
-
-            <!-- Wall Street Consensus & Targets -->
-            <div class="wallstreet-box">
-                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
-                    <div class="fw-bold" style="font-size: 0.95rem; color: #10b981;">🎯 มุมมองราคาเป้าหมายสถาบันการเงินวอลล์สตรีท (Wall Street Consensus)</div>
-                    <div class="small"><span class='text-emerald fw-bold'>🟢 Buy: 45</span> &nbsp;|&nbsp; <span class='text-amber fw-bold'>🟡 Hold: 3</span> &nbsp;|&nbsp; <span class='text-rose fw-bold'>🔴 Sell: 0</span></div>
-                </div>
-                <div class="ws-targets-grid">
-                    <div class="ws-target-cell">
-                        <div class="text-muted small">ต้นทุนของคุณ</div>
-                        <div class="fw-bold text-main" style="font-size: 1.1rem;">$600.97</div>
-                    </div>
-                    <div class="ws-target-cell">
-                        <div class="text-muted small">ราคาปัจจุบัน</div>
-                        <div class="fw-bold text-rose" style="font-size: 1.1rem;">$594.51</div>
-                    </div>
-                    <div class="ws-target-cell">
-                        <div class="text-muted small">เป้าต่ำสุด (Low)</div>
-                        <div class="fw-bold text-amber" style="font-size: 1.1rem;">$1,150.00</div>
-                    </div>
-                    <div class="ws-target-cell">
-                        <div class="text-muted small">เป้าเฉลี่ย (Average)</div>
-                        <div class="fw-bold text-emerald" style="font-size: 1.1rem;">$1,631.56 <span class="small"> (+174.4%)</span></div>
-                    </div>
-                    <div class="ws-target-cell">
-                        <div class="text-muted small">เป้าสูงสุด (High)</div>
-                        <div class="fw-bold text-blue" style="font-size: 1.1rem;">$3,000.00</div>
-                    </div>
-                </div>
-                <div class="small" style="color: #cbd5e1; background: rgba(0, 0, 0, 0.2); padding: 8px 12px; border-radius: 6px; border-left: 3px solid var(--emerald); margin-top: 6px;">
-                    📌 <strong>ข้อสรุปของวอลล์สตรีท:</strong> โบรกเกอร์ 48 แห่ง (Buy 45 / Hold 3 / Sell 0) ราคาเป้าหมายเฉลี่ยสถาบันอยู่ที่ $1,631.56 (Upside +174.4%)
-                </div>
-            </div>
-
-            <!-- Live News & Catalysts Grid -->
-            <div class="grid-2-cols" style="gap: 14px; margin-bottom: 18px;">
-                <div class="bull-box" style="background: rgba(16, 185, 129, 0.04); padding: 14px; border-radius: var(--radius-sm); border: 1px solid rgba(16, 185, 129, 0.2);">
-                    <div class="cat-label text-emerald fw-bold small" style="margin-bottom: 8px;">🟢 พาดหัวข่าวจริงเชิงบวกและปัจจัยหนุน (Positive News):</div>
-                    <ul class="cat-list"><li style='margin-bottom: 8px;'><strong class='source-tag'>[The Motley Fool]</strong> <span style='font-weight: 600; color: #f1f5f9;'>เทคโนโลยีไมครอนกับแซนดิสก์: หุ้นเทคโนโลยีใดน่าซื้อกว่าในปี 2570</span> <span class='badge badge-neutral' style='font-size:0.7rem; color:#94a3b8; background:rgba(148,163,184,0.12); border:1px solid rgba(148,163,184,0.25); vertical-align:middle;'>heuristic</span><div class='small' style='color: #94a3b8; margin-top: 2px; padding-left: 2px;'>↳ <a href='https://news.google.com/rss/articles/CBMiyAFBVV95cUxPTUx0TkZtWkxUS2UyRkZYRlBJNUswb3FHREFHNjU3emZuNkowMmN2OUtXMHNVTjFpSWc5c2pyZXdMYktlV1Nsb2lubUNpX1RVeTZYUkdJVUlPMUs3MkZteXVISTZIT3h2SUpHaEZvbWhDc3NqX0NVS0dSWElZZE1jUWZlU3RnNi0zQ2s2OUwtU3kwcVNlS2piZ2h3dWRyaE91UndySjZxNlZRUEZRSmVub29tS0hoQ1JBYWxnMmd3R0l1MXlreWRKdg?oc=5' target='_blank' rel='noopener noreferrer' class='news-headline-link' title='คลิกเพื่ออ่านข่าวต้นฉบับ'>Micron Technology vs. Sandisk: Which Technology Stock Is a Better Buy for 2027? ↗</a> <span class='text-muted small'>(22 Nov 2026)</span></div></li></ul>
-                </div>
-                <div class="bear-box" style="background: rgba(244, 63, 94, 0.04); padding: 14px; border-radius: var(--radius-sm); border: 1px solid rgba(244, 63, 94, 0.2);">
-                    <div class="cat-label text-rose fw-bold small" style="margin-bottom: 8px;">🔴 พาดหัวข่าวจริงที่ต้องระวังและความเสี่ยง (Risk Factors):</div>
-                    <ul class="cat-list"><li style='margin-bottom: 8px;'><strong class='source-tag'>[Quantisnow]</strong> <span style='font-weight: 600; color: #f1f5f9;'>ไมครอนร่วงลง 23.6% ในหนึ่งสัปดาห์ สอดคล้องกับ Nvidia เนื่องจากหุ้นชิปเทขาย</span> <span class='badge badge-neutral' style='font-size:0.7rem; color:#94a3b8; background:rgba(148,163,184,0.12); border:1px solid rgba(148,163,184,0.25); vertical-align:middle;'>heuristic</span><div class='small' style='color: #94a3b8; margin-top: 2px; padding-left: 2px;'>↳ <a href='https://news.google.com/rss/articles/CBMiqwFBVV95cUxNVGZ3X2RnWVRJWVBCUlMwVVlkWi1oTmF0eVBCc2JIU3pZa29WNzhiOEpZZFNSLTRTcDl0c3RSeElkRl9RSjBpUEN1cGtndjlGUlg0YmhVbzRqcXVldDFldi1sc2hSNXpXSFNWaFUwS3NYSXM4U3Bqb0o5RDBDT2lqNTEwTGRkU0phTmVZRzRheVdtYzRNejBkY0NHa1k5T3hkcFpoRzFnWVdzek0?oc=5' target='_blank' rel='noopener noreferrer' class='news-headline-link' title='คลิกเพื่ออ่านข่าวต้นฉบับ'>Micron falls 23.6% in a week, in line with Nvidia, as chip stocks sell off ↗</a> <span class='text-muted small'>(22 Nov 2026)</span></div></li></ul>
-                </div>
-            </div>
-
-            <!-- Tailored Strategic Roadmap & Invalidation Risk (Action Card) -->
-            <div class="roadmap-callout" style="background: rgba(15, 23, 42, 0.75); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 12px; padding: 16px 18px; margin-top: 14px; box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
-                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 10px;">
-                    <div style="font-size: 0.85rem; font-weight: 700; color: #fbbf24; text-transform: uppercase; letter-spacing: 0.05em; display: flex; align-items: center; gap: 6px;">
-                        <span>🧭</span> แผนกลยุทธ์ฟันธงสำหรับ MU (Action Roadmap):
-                    </div>
-                    <button class="copy-cmd-btn" onclick="copyTradeCommand('python trades.py buy -t MU -s 1 -p 594.51 --pay usd', this)" title="คลิกเพื่อคัดลอกคำสั่ง CLI ไปรันในเทอร์มินัล">
-                        <span>📋</span> คัดลอกคำสั่ง <code class="cmd-code">python trades.py buy -t MU -s 1 -p 594.51 --pay usd</code>
-                    </button>
-                </div>
-                <div style="font-size: 0.95rem; color: #ffffff; line-height: 1.55; margin-bottom: 10px;">
-                    วันงบถัดไปอยู่ห่างอีก 24 วัน ไม่มีความเสี่ยงเรื่องงบตกใจในระยะสั้น. ติดตามกรอบแนวรับแนวต้านสำคัญทางเทคนิค และปฏิบัติตามวินัย Stop-Loss อย่างเคร่งครัด
-                </div>
-                <div style="font-size: 0.85rem; color: #fca5a5; background: rgba(244, 63, 94, 0.08); padding: 8px 12px; border-radius: 6px; border-left: 3px solid var(--rose);">
-                    🛑 <strong>สัญญาณเตือนภัย / จุดระวัง (Invalidation Risk):</strong> การปิดหลุดแนวรับโครงสร้างหลัก หรือตัวเลขอัตรากำไรสุทธิชะลอตัวลงเกิน 20%
-                </div>
-            </div>
-        </div>
-        
-        <div class="card outlook-card" style="margin-bottom: 24px; border-left: 4px solid var(--rose);">
-            <!-- Header -->
-            <div class="outlook-card-header">
-                <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
-                    <span class="ticker-pill clickable-ticker" style="font-size: 1.15rem; padding: 4px 12px;" onclick="openChartModal(&quot;SKHY&quot;, &quot;NASDAQ&quot;, &quot;SK hynix Inc. Sponsored ADR&quot;, &quot;Electronic Technology&quot;, 105.1649, 103.57, 88.06, 157.01, 88.06, 157.01, 264.3)" title="คลิกเปิดดูกราฟเทคนิคัลอัจฉริยะ">SKHY 📈</span>
-                    <strong style="font-size: 1.25rem;">SK hynix Inc. Sponsored ADR</strong>
-                    <span class="badge badge-neutral" style="font-size: 0.8rem;">Electronic Technology • Semiconductors</span>
-                    <span class="badge badge-neutral" style="font-size: 0.8rem; background: rgba(59, 130, 246, 0.1); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.25);">🟡 Market Leader</span>
-                </div>
-                <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
-                    <span class="badge badge-rose" style="font-size: 0.95rem; padding: 5px 12px;">-1.52%</span>
-                    <span class="badge badge-neutral" style="font-size: 0.85rem;">สัดส่วน 0.3% (⭐⭐⭐)</span>
-                    <button onclick="openChartModal(&quot;SKHY&quot;, &quot;NASDAQ&quot;, &quot;SK hynix Inc. Sponsored ADR&quot;, &quot;Electronic Technology&quot;, 105.1649, 103.57, 88.06, 157.01, 88.06, 157.01, 264.3)" style="background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.35); color: #60a5fa; border-radius: 6px; padding: 5px 12px; font-size: 0.85rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.2s;">📈 ดูกราฟสด & แนวรับแนวต้าน</button>
-                </div>
-            </div>
-
-            <!-- Thesis Banner -->
-            <div class="thesis-banner" style="background: rgba(255, 255, 255, 0.025); border: 1px solid var(--border-color); color: var(--text-secondary);">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; flex-wrap: wrap; gap: 4px;">
-                    <div style="font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; color: #94a3b8;">🔭 วิสัยทัศน์และธีมการเติบโตหลักในอนาคต (Growth Thesis):</div>
-                    
-                </div>
-                <div style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.4;">การวิเคราะห์เจาะลึกศักยภาพการเติบโต SKHY ในกลุ่ม Electronic Technology (Semiconductors)</div>
-            </div>
-
-            <!-- 4 Future Growth Drivers -->
-            <div class="drivers-box">
-                <div style="font-size: 0.88rem; font-weight: 700; color: #38bdf8; margin-bottom: 8px;">📈 4 เครื่องจักรขับเคลื่อนการเติบโตในอนาคต (Future Growth Drivers 1-12 เดือน):</div>
-                <ul class="drivers-list">
-                    <li>การขยายตัวของรายได้ระดับ +209.3% YoY และความสามารถในการทำกำไรสุทธิ +405.3% YoY</li><li>อัตราการประเมินมูลค่า P/E 5.8x และค่า PEG 0.02 เท่า สะท้อนระดับราคาต่อการเติบโต</li><li>ส่วนแบ่งการตลาดและความแข็งแกร่งของตราสินค้าในกลุ่มอุตสาหกรรม Semiconductors</li><li>การเพิ่มประสิทธิภาพการดำเนินงานและการบริหารจัดการต้นทุนเพื่อผลักดันกระแสเงินสดอิสระ</li>
-                </ul>
-            </div>
-
-            <!-- Catalyst Timeline -->
-            <div style="margin-bottom: 18px;">
-                <div style="font-size: 0.88rem; font-weight: 700; color: #cbd5e1; margin-bottom: 10px;">📅 ปฏิทินตัวเร่งราคาและปัจจัยสำคัญตามช่วงเวลา (Catalyst Timeline):</div>
-                <div class="timeline-strip">
-                    <div class="timeline-step">
-                <span class="timeline-step-badge">ปฏิทินงบ (66 วัน)</span>
-                <div class="timeline-step-desc">การแถลงงบการเงินและทิศทางคำสั่งซื้อในอนาคต</div>
-            </div><div class="timeline-step">
-                <span class="timeline-step-badge">ระยะ 1-3 เดือน</span>
-                <div class="timeline-step-desc">การปรับบทวิเคราะห์และประมาณการกำไรจากนักวิเคราะห์วอลล์สตรีท</div>
-            </div><div class="timeline-step">
-                <span class="timeline-step-badge">ระยะ 6-12 เดือน</span>
-                <div class="timeline-step-desc">การเปิดตัวผลิตภัณฑ์ใหม่และการขยายตลาดสู่กลุ่มเป้าหมายใหม่</div>
-            </div>
-                </div>
-            </div>
-
-            <!-- Wall Street Consensus & Targets -->
-            <div class="wallstreet-box">
-                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
-                    <div class="fw-bold" style="font-size: 0.95rem; color: #10b981;">🎯 มุมมองราคาเป้าหมายสถาบันการเงินวอลล์สตรีท (Wall Street Consensus)</div>
-                    <div class="small"><span class='text-emerald fw-bold'>🟢 Buy: 11</span> &nbsp;|&nbsp; <span class='text-amber fw-bold'>🟡 Hold: 1</span> &nbsp;|&nbsp; <span class='text-rose fw-bold'>🔴 Sell: 0</span></div>
-                </div>
-                <div class="ws-targets-grid">
-                    <div class="ws-target-cell">
-                        <div class="text-muted small">ต้นทุนของคุณ</div>
-                        <div class="fw-bold text-main" style="font-size: 1.1rem;">$105.16</div>
-                    </div>
-                    <div class="ws-target-cell">
-                        <div class="text-muted small">ราคาปัจจุบัน</div>
-                        <div class="fw-bold text-rose" style="font-size: 1.1rem;">$103.57</div>
-                    </div>
-                    <div class="ws-target-cell">
-                        <div class="text-muted small">เป้าต่ำสุด (Low)</div>
-                        <div class="fw-bold text-amber" style="font-size: 1.1rem;">$200.00</div>
-                    </div>
-                    <div class="ws-target-cell">
-                        <div class="text-muted small">เป้าเฉลี่ย (Average)</div>
-                        <div class="fw-bold text-emerald" style="font-size: 1.1rem;">$264.30 <span class="small"> (+155.2%)</span></div>
-                    </div>
-                    <div class="ws-target-cell">
-                        <div class="text-muted small">เป้าสูงสุด (High)</div>
-                        <div class="fw-bold text-blue" style="font-size: 1.1rem;">$400.00</div>
-                    </div>
-                </div>
-                <div class="small" style="color: #cbd5e1; background: rgba(0, 0, 0, 0.2); padding: 8px 12px; border-radius: 6px; border-left: 3px solid var(--emerald); margin-top: 6px;">
-                    📌 <strong>ข้อสรุปของวอลล์สตรีท:</strong> โบรกเกอร์ 12 แห่ง (Buy 11 / Hold 1 / Sell 0) ราคาเป้าหมายเฉลี่ยสถาบันอยู่ที่ $264.30 (Upside +155.2%)
-                </div>
-            </div>
-
-            <!-- Live News & Catalysts Grid -->
-            <div class="grid-2-cols" style="gap: 14px; margin-bottom: 18px;">
-                <div class="bull-box" style="background: rgba(16, 185, 129, 0.04); padding: 14px; border-radius: var(--radius-sm); border: 1px solid rgba(16, 185, 129, 0.2);">
-                    <div class="cat-label text-emerald fw-bold small" style="margin-bottom: 8px;">🟢 พาดหัวข่าวจริงเชิงบวกและปัจจัยหนุน (Positive News):</div>
-                    <ul class="cat-list"><li style='margin-bottom: 8px;'><strong class='source-tag'>[The Globe and Mail]</strong> <span style='font-weight: 600; color: #f1f5f9;'>SOXX และ DRAM ลดลงระหว่าง 35.6% ถึง 51.9% จากระดับสูงสุดของพวกเขา นี่คือ ETF หุ้นที่มีการเติบโตที่ดียิ่งขึ้นที่จะซื้อในช่วงการแก้ไข Nasdaq</span> <span class='badge badge-neutral' style='font-size:0.7rem; color:#94a3b8; background:rgba(148,163,184,0.12); border:1px solid rgba(148,163,184,0.25); vertical-align:middle;'>heuristic</span><div class='small' style='color: #94a3b8; margin-top: 2px; padding-left: 2px;'>↳ <a href='https://news.google.com/rss/articles/CBMixAJBVV95cUxOUE5GRzFxWGRYM0dNMEdvazZxM3JaUmNKdnlLenBGd0dWRTlLcGV5cGl1c1dDWDRsRUdMMlk1NWRnazIxMklsTHowcHFIOHJ1cVpKQlNXV0RJd2xKbklrOE9qM3Y4THVsbTNkUEdBaWE4UVk3TExRdGtEUmxOZ1VOdFZPVWJnT0N1dnlBNktVQ3FqZlV6S19JQW12YTNocUNWcTZ3V2F5RkVWVTB0blhNck9teTZtSUtFTV9hQVRXMlJ3Q2gyMlJmZjJUdEJUTXlvSk9hTEhUd1VpV1cxQUJLVGVLWkJ3c2gyX3FTZXMtNE9DbjlDaWE3VkVCNmFfTGxQQXd3U3hMQzRYNmhaNnNJTVdDbU1ybWNrTVhDMTVrdjVFR1pqOGpGSmd4QVpLN3gyUDhGWmF6R3pPT3VKcjJlbkJuTmQ?oc=5' target='_blank' rel='noopener noreferrer' class='news-headline-link' title='คลิกเพื่ออ่านข่าวต้นฉบับ'>SOXX and DRAM Are Down Between 35.6% and 51.9% From Their Highs. Here’s an Even Better Growth Stock ETF to Buy During the Nasdaq Correction. ↗</a> <span class='text-muted small'>(22 Nov 2026)</span></div></li></ul>
-                </div>
-                <div class="bear-box" style="background: rgba(244, 63, 94, 0.04); padding: 14px; border-radius: var(--radius-sm); border: 1px solid rgba(244, 63, 94, 0.2);">
-                    <div class="cat-label text-rose fw-bold small" style="margin-bottom: 8px;">🔴 พาดหัวข่าวจริงที่ต้องระวังและความเสี่ยง (Risk Factors):</div>
-                    <ul class="cat-list"><li><span class='text-muted'>ไม่มีข่าวร้ายรุนแรงในระยะสั้น.</span></li></ul>
-                </div>
-            </div>
-
-            <!-- Tailored Strategic Roadmap & Invalidation Risk (Action Card) -->
-            <div class="roadmap-callout" style="background: rgba(15, 23, 42, 0.75); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 12px; padding: 16px 18px; margin-top: 14px; box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
-                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 10px;">
-                    <div style="font-size: 0.85rem; font-weight: 700; color: #fbbf24; text-transform: uppercase; letter-spacing: 0.05em; display: flex; align-items: center; gap: 6px;">
-                        <span>🧭</span> แผนกลยุทธ์ฟันธงสำหรับ SKHY (Action Roadmap):
-                    </div>
-                    <button class="copy-cmd-btn" onclick="copyTradeCommand('python trades.py buy -t SKHY -s 1 -p 103.57 --pay usd', this)" title="คลิกเพื่อคัดลอกคำสั่ง CLI ไปรันในเทอร์มินัล">
-                        <span>📋</span> คัดลอกคำสั่ง <code class="cmd-code">python trades.py buy -t SKHY -s 1 -p 103.57 --pay usd</code>
-                    </button>
-                </div>
-                <div style="font-size: 0.95rem; color: #ffffff; line-height: 1.55; margin-bottom: 10px;">
-                    วันงบถัดไปอยู่ห่างอีก 66 วัน ไม่มีความเสี่ยงเรื่องงบตกใจในระยะสั้น. ติดตามกรอบแนวรับแนวต้านสำคัญทางเทคนิค และปฏิบัติตามวินัย Stop-Loss อย่างเคร่งครัด
                 </div>
                 <div style="font-size: 0.85rem; color: #fca5a5; background: rgba(244, 63, 94, 0.08); padding: 8px 12px; border-radius: 6px; border-left: 3px solid var(--rose);">
                     🛑 <strong>สัญญาณเตือนภัย / จุดระวัง (Invalidation Risk):</strong> การปิดหลุดแนวรับโครงสร้างหลัก หรือตัวเลขอัตรากำไรสุทธิชะลอตัวลงเกิน 20%
